@@ -28,7 +28,13 @@ if (existsSync(lessonsDir)) {
     .map((d) => {
       const lp = join(lessonsDir, d, "lesson.md");
       if (!existsSync(lp)) return null;
-      return { file: `lessons/${d}/lesson.md`, dir: d, ...frontmatter(readFileSync(lp, "utf8")) };
+      const fm = frontmatter(readFileSync(lp, "utf8"));
+      // collect per-platform post URLs (url_devto / url_linkedin / url_medium / url_hashnode)
+      const links = {};
+      for (const p of ["devto", "linkedin", "medium", "hashnode"]) {
+        if (fm[`url_${p}`]) links[p] = fm[`url_${p}`];
+      }
+      return { file: `lessons/${d}/lesson.md`, dir: d, ...fm, links };
     })
     .filter(Boolean)
     .sort((a, b) => String(b.created).localeCompare(String(a.created)));

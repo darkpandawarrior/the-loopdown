@@ -41,6 +41,11 @@ project: ${project}
 tags: []
 status: draft            # draft | ready | scheduled | published
 created: ${date}
+live:                    # dev.to URL once published (also the README "read" link)
+url_devto:               # fill each when published — surfaced on the site's writing hub
+url_linkedin:
+url_medium:
+url_hashnode:
 channels: [linkedin, devto, hashnode, medium]
 series:                  # lore/series.md id, e.g. sensors-who-lie
 cast: []                 # lore/cast.md ids featured — powers the continuity index

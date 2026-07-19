@@ -9,6 +9,10 @@ status: published
 created: 2026-07-19
 published: 2026-07-20
 live: https://dev.to/darkpandawarrior/teaching-a-phone-to-disbelieve-its-own-gps-cip
+url_devto: https://dev.to/darkpandawarrior/teaching-a-phone-to-disbelieve-its-own-gps-cip
+url_linkedin: https://www.linkedin.com/posts/siddharth-pandalai_the-concussed-witness-ugcPost-7484693809122045952-8zta
+url_medium: https://medium.com/p/5ed5819043d7
+url_hashnode: https://darkpandawarrior.hashnode.dev/the-concussed-witness
 channels: [linkedin, devto, hashnode, medium]
 series: sensors-who-lie          # lore/series.md
 cast: [the-concussed-witness]    # lore/cast.md — introduces this character

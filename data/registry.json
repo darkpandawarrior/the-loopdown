@@ -211,7 +211,8 @@
       "cast": [
         "the-recomposer"
       ],
-      "loop_iteration": "6"
+      "loop_iteration": "6",
+      "links": {}
     },
     {
       "file": "lessons/2026-07-29-kmp-expect-actual-default/lesson.md",
@@ -241,7 +242,8 @@
       "cast": [
         "the-understudy"
       ],
-      "loop_iteration": "5"
+      "loop_iteration": "5",
+      "links": {}
     },
     {
       "file": "lessons/2026-07-24-lazycolumn-recomposition/lesson.md",
@@ -270,7 +272,8 @@
       "cast": [
         "the-recomposer"
       ],
-      "loop_iteration": "4"
+      "loop_iteration": "4",
+      "links": {}
     },
     {
       "file": "lessons/2026-07-22-foreground-service-five-seconds/lesson.md",
@@ -299,7 +302,8 @@
       "cast": [
         "doze-the-jailer"
       ],
-      "loop_iteration": "3"
+      "loop_iteration": "3",
+      "links": {}
     },
     {
       "file": "lessons/2026-07-20-coroutine-cancellation-messenger/lesson.md",
@@ -328,7 +332,8 @@
       "cast": [
         "the-messenger"
       ],
-      "loop_iteration": "2"
+      "loop_iteration": "2",
+      "links": {}
     },
     {
       "file": "lessons/2026-07-19-mileway-dead-reckoning/lesson.md",
@@ -349,6 +354,10 @@
       "created": "2026-07-19",
       "published": "2026-07-20",
       "live": "https://dev.to/darkpandawarrior/teaching-a-phone-to-disbelieve-its-own-gps-cip",
+      "url_devto": "https://dev.to/darkpandawarrior/teaching-a-phone-to-disbelieve-its-own-gps-cip",
+      "url_linkedin": "https://www.linkedin.com/posts/siddharth-pandalai_the-concussed-witness-ugcPost-7484693809122045952-8zta",
+      "url_medium": "https://medium.com/p/5ed5819043d7",
+      "url_hashnode": "https://darkpandawarrior.hashnode.dev/the-concussed-witness",
       "channels": [
         "linkedin",
         "devto",
@@ -359,7 +368,13 @@
       "cast": [
         "the-concussed-witness"
       ],
-      "loop_iteration": "1"
+      "loop_iteration": "1",
+      "links": {
+        "devto": "https://dev.to/darkpandawarrior/teaching-a-phone-to-disbelieve-its-own-gps-cip",
+        "linkedin": "https://www.linkedin.com/posts/siddharth-pandalai_the-concussed-witness-ugcPost-7484693809122045952-8zta",
+        "medium": "https://medium.com/p/5ed5819043d7",
+        "hashnode": "https://darkpandawarrior.hashnode.dev/the-concussed-witness"
+      }
     }
   ],
   "cast": [
