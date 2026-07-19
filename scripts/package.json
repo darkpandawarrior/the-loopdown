@@ -12,7 +12,9 @@
     "registry": "node build-registry.mjs",
     "check": "node check-setup.mjs",
     "export": "node export.mjs",
-    "metrics": "node metrics.mjs"
+    "distribute": "node distribute.mjs",
+    "metrics": "node metrics.mjs",
+    "dashboard": "node dashboard.mjs"
   },
   "dependencies": {
     "@resvg/resvg-js": "^2.6.2",

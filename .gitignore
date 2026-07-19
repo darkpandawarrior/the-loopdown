@@ -27,3 +27,6 @@ lessons/**/out/
 
 # per-lesson publish state (dev.to article ids etc; adopted via API)
 lessons/**/state.json
+
+# generated report
+dashboard.html

@@ -1,0 +1,53 @@
+name: loopdown-pipeline
+
+on:
+  push:
+    branches: [main]
+    paths: ["lessons/**", "scripts/**", "templates/**", "lore/**", "profile.yaml"]
+  pull_request:
+    paths: ["lessons/**", "scripts/**", "templates/**", "lore/**", "profile.yaml"]
+
+# one run per ref; cancel superseded runs
+concurrency:
+  group: pipeline-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: scripts/package-lock.json
+
+      - name: Install deps
+        working-directory: scripts
+        run: npm ci
+
+      - name: Lint voice (no em dashes / AI tells)
+        run: |
+          fail=0
+          for d in lessons/*/; do
+            node scripts/lint-voice.mjs "$d" || fail=1
+          done
+          exit $fail
+
+      - name: Graphics render smoke test
+        run: |
+          for d in lessons/*/; do
+            [ -f "$d/assets/card.yaml" ] && node scripts/render.mjs "$d"
+            [ -f "$d/assets/carousel.json" ] && node scripts/carousel.mjs "$d"
+          done
+
+      - name: Registry is up to date
+        run: |
+          node scripts/build-registry.mjs
+          if ! git diff --quiet -- data/registry.json README.md series/; then
+            echo "::error::registry/README/series are stale. Run 'node scripts/build-registry.mjs' and commit."
+            git --no-pager diff --stat -- data/registry.json README.md series/
+            exit 1
+          fi
