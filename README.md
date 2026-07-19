@@ -104,6 +104,8 @@ Accounts, tokens, and the publish flow: **[SETUP.md](SETUP.md)**.
 | `archive/` | Existing writing, converted to clean Markdown + frontmatter. |
 | `voice/voice-profile.md` | The style contract every post is checked against. |
 | `lore/` | The universe — [bible](lore/bible.md), [cast](lore/cast.md), [series](lore/series.md). |
+| `series/` | Generated bingeable hub page per arc (cross-post "read the series" target). |
+| `profile.yaml` | Cross-platform identity — handles + canonical strategy; threads into every footer. |
 | `lessons/<date>-<slug>/` | One folder per lesson: source + per-channel adapts + assets + metrics. |
 | `templates/svg/` | Branded graphic templates (dark dev aesthetic). |
 | `templates/copy/` | Hook formulas + per-channel skeletons. |
@@ -119,11 +121,17 @@ Accounts, tokens, and the publish flow: **[SETUP.md](SETUP.md)**.
 > Hook you with a scene, teach you something real, land a payload you didn't see
 > coming — while clearly having fun. See [`voice/voice-profile.md`](voice/voice-profile.md).
 
-## Publishing
+## Publishing — one connected campaign, not four copies
 
-- **LinkedIn** → scheduled via Buffer (free tier); I approve every post. No tool touches the account directly.
-- **dev.to + Hashnode** → native publish APIs (true automation, per-post approval).
-- **Medium** → semi-manual paste (their write API is effectively deprecated).
+Each lesson goes out as a *coordinated cross-platform drop* ([SETUP.md](SETUP.md)):
+
+- **dev.to + Hashnode + Medium** → native APIs (draft-first, per-post approval). Medium
+  uses the legacy token if your account has one, else a one-click import from the canonical URL.
+- **LinkedIn** → paste-ready file with the full-write-up link auto-embedded (optional Buffer queue). No tool touches the account directly.
+- **One canonical home** so cross-posts don't compete in search — the rest declare `canonical → it`.
+- **Consistent branded footer** on every article: series, featured cast, "previously in this
+  series," follow links — all generated from [`profile.yaml`](profile.yaml). Edit once, threads everywhere.
+- **Series hubs** ([`series/`](series/)) — a bingeable index page per arc, linked from every post in it.
 
 ## Roadmap
 

@@ -3,7 +3,8 @@
   "counts": {
     "archive": 10,
     "lessons": 1,
-    "cast": 1
+    "cast": 1,
+    "series": 1
   },
   "archive": [
     {
@@ -224,6 +225,13 @@
           "date": "2026-07-19"
         }
       ]
+    }
+  ],
+  "series": [
+    {
+      "id": "sensors-who-lie",
+      "title": "Sensors Who Lie",
+      "episodes": 1
     }
   ]
 }

@@ -1,0 +1,24 @@
+# Cross-platform identity — the single source for every cross-link and footer.
+# Fill the URLs that exist; the footer generator skips blanks. No secrets here
+# (this is public — tokens live in .env). Update once, threads everywhere.
+
+name: Siddharth Pandalai
+brand: The Loopdown
+tagline: field notes from an engineer who writes
+
+# Public profile URLs (fill yours; leave blank to omit from footers)
+url_site:      https://darkpandawarrior.github.io
+url_github:    https://github.com/darkpandawarrior/the-loopdown
+url_linkedin:  https://www.linkedin.com/in/siddharth-pandalai
+url_devto:     https://dev.to/darkpandawarrior
+url_hashnode:  https://siddharthpandalai.hashnode.dev
+url_medium:    https://medium.com/@siddharthpandalai990
+
+# Which profiles to surface in the "follow the loop" footer line, in order.
+follow_order: linkedin, devto, github
+
+# Canonical home strategy:
+#   auto  → first long-form platform published (dev.to) becomes canonical; others point to it.
+#   site  → use url_site + /the-loopdown/<slug> (best for SEO once your site hosts the posts).
+# Override per-run with CANONICAL_BASE_URL in .env.
+canonical_strategy: auto

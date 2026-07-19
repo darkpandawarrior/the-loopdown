@@ -24,9 +24,12 @@ export const KEYS = [
   "DEVTO_API_KEY",
   "HASHNODE_TOKEN",
   "HASHNODE_PUBLICATION_ID",
+  "MEDIUM_TOKEN",
+  "MEDIUM_USER_ID",
   "BUFFER_ACCESS_TOKEN",
   "BUFFER_LINKEDIN_PROFILE_ID",
   "GITHUB_ASSET_BASE_URL", // where card.png is reachable for cover images (e.g. raw.githubusercontent…)
+  "CANONICAL_BASE_URL",    // override profile.yaml canonical_strategy; e.g. https://yoursite/the-loopdown
 ];
 
 export const get = (k) => env[k] || "";

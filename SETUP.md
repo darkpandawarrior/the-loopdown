@@ -49,8 +49,25 @@ LinkedIn works **without** this: export always writes a paste-ready `out/linkedi
 
 Recommendation: **start with paste-to-LinkedIn** (highest control, best early engagement), add Buffer only if scheduling becomes a chore.
 
-## 5. Medium — no token 🔵
-Medium's write API is deprecated. Export writes `out/medium.md`; paste it, or use **medium.com/p/import** to pull from the published dev.to/Hashnode URL (keeps canonical clean).
+## 5. Medium — legacy API, one-click *if your account can still mint a token* 🔵
+Medium stopped issuing new integration tokens, but existing ones work and the field is
+often still there:
+1. **medium.com → Settings → Security and apps → Integration tokens.** If you see it,
+   create one → `.env` → `MEDIUM_TOKEN=...`
+2. `node check-setup.mjs` prints your user id → `.env` → `MEDIUM_USER_ID=...`
+3. Now `export.mjs` posts to Medium directly (draft-first), with canonical pointing home.
+
+**If the token field is gone** on your account: leave both blank. Export still writes
+`out/medium.md`, and you use **medium.com/p/import** to pull your published dev.to URL —
+one extra click, and canonical stays clean either way.
+
+## 6. Canonical home (SEO) — optional but recommended
+So cross-posts don't compete with each other in search, one URL is "the original" and the
+rest declare `canonical → it`. Default (`profile.yaml: canonical_strategy: auto`): **dev.to
+is the original**, Hashnode/Medium point to it. Better long-term: your own site —
+set `CANONICAL_BASE_URL=https://darkpandawarrior.github.io/the-loopdown` in `.env` and
+*you* own the SEO. Edit handles/cross-links once in **`profile.yaml`**; they thread into
+every post's footer automatically.
 
 ---
 

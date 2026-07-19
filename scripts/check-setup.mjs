@@ -75,8 +75,18 @@ if (!has("BUFFER_ACCESS_TOKEN")) {
   } catch (e) { line("Buffer (LinkedIn)", bad("✕"), `error: ${e.message}`); }
 }
 
-// Medium + assets
-line("Medium", dim("—"), "manual paste (API deprecated) — export writes a ready file");
+// Medium (legacy API — token may not be mintable on newer accounts)
+if (!has("MEDIUM_TOKEN")) {
+  line("Medium", dim("○"), "no MEDIUM_TOKEN — paste/import fallback (see SETUP.md)");
+} else {
+  try {
+    const r = await fetchJson("https://api.medium.com/v1/me", { headers: { Authorization: `Bearer ${get("MEDIUM_TOKEN")}`, Accept: "application/json" } });
+    if (r.status === 200 && r.json?.data?.id) {
+      line("Medium", ok("●"), `authed as @${r.json.data.username || "?"} — publish ready`);
+      if (!has("MEDIUM_USER_ID")) console.log(dim(`       set MEDIUM_USER_ID=${r.json.data.id}`));
+    } else line("Medium", bad("✕"), `token rejected (HTTP ${r.status})`);
+  } catch (e) { line("Medium", bad("✕"), `error: ${e.message}`); }
+}
 line("Cover URL", has("GITHUB_ASSET_BASE_URL") ? ok("●") : dim("○"), has("GITHUB_ASSET_BASE_URL") ? get("GITHUB_ASSET_BASE_URL") : "GITHUB_ASSET_BASE_URL unset (covers skipped)");
 
 console.log("  " + "─".repeat(44));

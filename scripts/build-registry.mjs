@@ -4,7 +4,7 @@
 // README.md between the <!-- REGISTRY:START --> / <!-- REGISTRY:END --> markers.
 //
 //   node scripts/build-registry.mjs
-import { readFileSync, writeFileSync, readdirSync, existsSync, statSync } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync, existsSync, statSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { parseFrontmatter } from "./lib/frontmatter.mjs";
@@ -46,10 +46,24 @@ const castIndex = Object.entries(cast)
   .map(([id, apps]) => ({ id, appearances: apps.length, in: apps }))
   .sort((a, b) => b.appearances - a.appearances);
 
+// --- series hubs: one bingeable index page per series (cross-platform "read the series" target) ---
+const bySeries = {};
+for (const l of lessons) if (l.series) (bySeries[l.series] ||= []).push(l);
+const seriesDir = join(ROOT, "series");
+if (Object.keys(bySeries).length) mkdirSync(seriesDir, { recursive: true });
+const titleize = (id) => String(id).split("-").map((w) => w[0]?.toUpperCase() + w.slice(1)).join(" ");
+for (const [id, eps] of Object.entries(bySeries)) {
+  eps.sort((a, b) => String(a.created).localeCompare(String(b.created)));
+  const rows = eps.map((e, i) => `${i + 1}. **[${e.title}](../${e.file})** — ${e.created} ${e.status === "published" ? "" : `_(${e.status})_`}`).join("\n");
+  writeFileSync(join(seriesDir, `${id}.md`),
+    `# ${titleize(id)}\n\n_Part of [The Loopdown](../README.md). ${eps.length} episode(s)._\n\n${rows}\n`);
+}
+const series = Object.entries(bySeries).map(([id, eps]) => ({ id, title: titleize(id), episodes: eps.length })).sort((a, b) => a.id.localeCompare(b.id));
+
 const registry = {
   generated: "run `node scripts/build-registry.mjs`",
-  counts: { archive: archive.length, lessons: lessons.length, cast: castIndex.length },
-  archive, lessons, cast: castIndex,
+  counts: { archive: archive.length, lessons: lessons.length, cast: castIndex.length, series: series.length },
+  archive, lessons, cast: castIndex, series,
 };
 writeFileSync(join(ROOT, "data", "registry.json"), JSON.stringify(registry, null, 2) + "\n");
 

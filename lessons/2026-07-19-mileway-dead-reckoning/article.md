@@ -56,8 +56,3 @@ The most reliable systems aren't the ones with the best inputs. They're the ones
 that **model how their inputs fail** and degrade gracefully when they do.
 
 Trust, but verify — even your own sensors.
-
----
-
-*From [The Loopdown](https://github.com/darkpandawarrior/the-loopdown) — field notes
-from building Android at scale.*
