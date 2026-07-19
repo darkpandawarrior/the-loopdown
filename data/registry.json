@@ -2,7 +2,8 @@
   "generated": "run `node scripts/build-registry.mjs`",
   "counts": {
     "archive": 10,
-    "lessons": 1
+    "lessons": 1,
+    "cast": 1
   },
   "archive": [
     {
@@ -204,6 +205,24 @@
         "devto",
         "hashnode",
         "medium"
+      ],
+      "series": "sensors-who-lie",
+      "cast": [
+        "the-concussed-witness"
+      ],
+      "loop_iteration": "1"
+    }
+  ],
+  "cast": [
+    {
+      "id": "the-concussed-witness",
+      "appearances": 1,
+      "in": [
+        {
+          "title": "Teaching a phone to disbelieve its own GPS",
+          "file": "lessons/2026-07-19-mileway-dead-reckoning/lesson.md",
+          "date": "2026-07-19"
+        }
       ]
     }
   ]

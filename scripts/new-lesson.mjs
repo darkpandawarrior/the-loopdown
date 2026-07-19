@@ -42,6 +42,9 @@ tags: []
 status: draft            # draft | ready | scheduled | published
 created: ${date}
 channels: [linkedin, devto, hashnode, medium]
+series:                  # lore/series.md id, e.g. sensors-who-lie
+cast: []                 # lore/cast.md ids featured — powers the continuity index
+loop_iteration:          # optional "Day N / Iteration N" device
 ---
 
 # ${title}
@@ -60,6 +63,10 @@ channels: [linkedin, devto, hashnode, medium]
 
 ## Receipts
 <!-- Links, commits, metrics that make it defensible in an interview. -->
+
+## Lore
+<!-- Which character carries this? New one? Give it a one-line origin (lore/bible.md rule 2).
+     Sign-off from lore/bible.md. Set series/cast in frontmatter above. -->
 `);
 
 write("linkedin.md", `<!-- LinkedIn adapt. Target: hook + ≤1300 chars + CTA + 3-5 hashtags. Check vs voice-profile.md ship checklist. -->

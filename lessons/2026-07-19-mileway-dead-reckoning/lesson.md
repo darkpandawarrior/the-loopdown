@@ -8,6 +8,9 @@ tags: [android, location, sensor-fusion, dead-reckoning, kalman]
 status: ready
 created: 2026-07-19
 channels: [linkedin, devto, hashnode, medium]
+series: sensors-who-lie          # lore/series.md
+cast: [the-concussed-witness]    # lore/cast.md — introduces this character
+loop_iteration: 1                # the "Day N / Iteration N" device
 ---
 
 # Teaching a phone to disbelieve its own GPS

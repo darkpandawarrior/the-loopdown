@@ -12,14 +12,34 @@ This repo does three jobs at once:
 2. **📡 Engine** — a pipeline that turns a project war-story into a multi-channel post + branded graphic.
 3. **🧱 Wall** — public proof of consistency. The registry below *is* the track record.
 
+## The universe
+
+The Loopdown isn't a content calendar — it's a *world*. An engineer stuck in a time loop
+(52 iterations of the same Wednesday), filing field notes on the same bugs and lying
+systems each pass. Because **seniority is the loop**: you don't know more code, you've
+just run the same failure enough times to name it on sight.
+
+Posts share a recurring cast — [The Concussed Witness](lore/cast.md) (GPS that lies with
+total confidence), [Doze the Jailer](lore/cast.md), [The Messenger](lore/cast.md)
+(CancellationException, forever mistaken for an assassin) — grouped into
+[series](lore/series.md) you can binge. Continuity is tracked automatically (see Cast
+Appearances below). The world is in [`lore/`](lore/bible.md); the voice is in
+[`voice/`](voice/voice-profile.md).
+
 ---
 
 <!-- REGISTRY:START -->
 ### 📡 Lessons (dev content)
 
-| Date | Title | Pillar | Status | Tags |
-|------|-------|--------|--------|------|
-| 2026-07-19 | [Teaching a phone to disbelieve its own GPS](lessons/2026-07-19-mileway-dead-reckoning/lesson.md) | location | ready | `android` `location` `sensor-fusion` `dead-reckoning` |
+| Date | Title | Pillar | Series | Status |
+|------|-------|--------|--------|--------|
+| 2026-07-19 | [Teaching a phone to disbelieve its own GPS](lessons/2026-07-19-mileway-dead-reckoning/lesson.md) | location | sensors-who-lie | ready |
+
+### 🎭 Cast appearances (continuity)
+
+| Character | Appearances | In |
+|-----------|-------------|----|
+| `the-concussed-witness` | 1 | [Teaching a phone to disbelieve its own GPS](lessons/2026-07-19-mileway-dead-reckoning/lesson.md) |
 
 ### 📚 Archive (10 pieces)
 
@@ -68,9 +88,14 @@ generic LinkedIn.
 cd scripts && npm install          # once (pulls @resvg/resvg-js for SVG→PNG)
 
 node new-lesson.mjs "dead reckoning" --pillar location --project Mileway --date 2026-07-19
-node render.mjs lessons/2026-07-19-dead-reckoning     # card.yaml → card.png
-node build-registry.mjs                                # regenerate registry + this README
+node render.mjs lessons/2026-07-19-dead-reckoning      # card.yaml → card.png
+node build-registry.mjs                                 # regenerate registry + this README
+node check-setup.mjs                                    # pipeline readiness dashboard
+node export.mjs lessons/<dir>                           # dry-run: plan + paste files (safe)
+node export.mjs lessons/<dir> --draft                   # dev.to drafts, reviewable on-platform
 ```
+
+Accounts, tokens, and the publish flow: **[SETUP.md](SETUP.md)**.
 
 ## Repo map
 
@@ -78,13 +103,15 @@ node build-registry.mjs                                # regenerate registry + t
 |------|------|
 | `archive/` | Existing writing, converted to clean Markdown + frontmatter. |
 | `voice/voice-profile.md` | The style contract every post is checked against. |
+| `lore/` | The universe — [bible](lore/bible.md), [cast](lore/cast.md), [series](lore/series.md). |
 | `lessons/<date>-<slug>/` | One folder per lesson: source + per-channel adapts + assets + metrics. |
 | `templates/svg/` | Branded graphic templates (dark dev aesthetic). |
 | `templates/copy/` | Hook formulas + per-channel skeletons. |
-| `scripts/` | `new-lesson` · `render` · `build-registry`. |
+| `scripts/` | `new-lesson` · `render` · `build-registry` · `check-setup` · `export`. |
 | `data/backlog.md` | Idea queue mined from projects. |
 | `data/registry.json` | Machine-readable source of truth (generated). |
-| `docs/DESIGN.md` | Why it's built this way. |
+| `docs/DESIGN.md` · `SETUP.md` | Why it's built this way · how to wire the accounts. |
+| `.env` | **Gitignored.** Your API tokens. Copy from `.env.example`. |
 | `private/` | **Gitignored.** Personal/admin docs + original binaries. Never pushed. |
 
 ## Voice, in one line
@@ -101,7 +128,9 @@ node build-registry.mjs                                # regenerate registry + t
 ## Roadmap
 
 - [x] Repo + archive + voice profile + visual engine + first lesson
-- [ ] `export.mjs` — dev.to/Hashnode API drafts (needs API tokens)
+- [x] Lore layer — universe bible, cast, series, continuity index
+- [x] `export.mjs` — dev.to/Hashnode/Buffer + paste files; `check-setup.mjs` dashboard
+- [ ] Fill `.env` tokens ([SETUP.md](SETUP.md)) + push to GitHub
 - [ ] GitHub Action — auto-render assets + rebuild registry on push
 - [ ] AI hero-image hook for flagship/story posts
 - [ ] Cadence: 2–3 posts/week from the backlog

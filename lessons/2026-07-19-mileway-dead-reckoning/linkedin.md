@@ -20,4 +20,6 @@ Trust, but verify. Even your own sensors.
 
 What's a signal your system learned to *distrust*? 👇
 
+— filed from iteration 1 of the loop. (New series: Sensors Who Lie. First witness for the defense: GPS.)
+
 #Android #MobileEngineering #SoftwareEngineering #Kotlin #SystemDesign
