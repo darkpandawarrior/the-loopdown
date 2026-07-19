@@ -85,21 +85,23 @@ if (want("devto")) {
   }
 }
 
-// --- Hashnode (canonical points to the resolved original) ---
+// --- Hashnode (FREE path = paste/import; its publish API needs Hashnode Pro) ---
 if (want("hashnode")) {
-  const ready = has("HASHNODE_TOKEN") && has("HASHNODE_PUBLICATION_ID");
-  if (mode === "dry-run") { log("hashnode", `would ${ready ? "publish" : "SKIP (token/publication id missing)"}${canonicalResolved ? " · canonical→" + canonicalResolved : ""}`); }
-  else if (mode === "draft") { log("hashnode", "skip — Hashnode API publishes immediately; use --publish"); }
-  else if (!ready) { log("hashnode", "skip — set HASHNODE_TOKEN + HASHNODE_PUBLICATION_ID"); }
-  else {
-    const body = articleBody + "\n" + footerFor(canonicalResolved);
+  const body = `# ${title}\n\n` + articleBody + "\n" + footerFor(canonicalResolved);
+  writeFileSync(resolve(outDir, "hashnode.md"), body + "\n"); // free: paste or import from canonical
+  const pro = has("HASHNODE_TOKEN") && has("HASHNODE_PUBLICATION_ID");
+  if (!pro) {
+    log("hashnode", `paste/import → out/hashnode.md${canonicalResolved ? "  (import from " + canonicalResolved + ")" : "  (API needs Hashnode Pro)"}`);
+  } else if (mode === "dry-run") {
+    log("hashnode", `would publish via API (Pro token present)${canonicalResolved ? " · canonical→" + canonicalResolved : ""}`);
+  } else {
     const mutation = `mutation Publish($input: PublishPostInput!) { publishPost(input: $input) { post { url } } }`;
     const input = { title, contentMarkdown: body, publicationId: get("HASHNODE_PUBLICATION_ID"), tags: tags.map((t) => ({ slug: t, name: t })), ...(canonicalResolved ? { originalArticleURL: canonicalResolved } : {}), ...(cover ? { coverImageOptions: { coverImageURL: cover } } : {}) };
     try {
       const r = await post("https://gql.hashnode.com", { method: "POST", headers: { "Content-Type": "application/json", Authorization: get("HASHNODE_TOKEN") }, body: JSON.stringify({ query: mutation, variables: { input } }) });
       const url = r.json?.data?.publishPost?.post?.url;
       if (url) { results.hashnode = { status: "published", url }; log("hashnode", `published: ${url}`); }
-      else log("hashnode", `FAILED: ${r.json?.errors?.[0]?.message || "HTTP " + r.status + " " + r.body.slice(0, 140)}`);
+      else log("hashnode", `FAILED (Pro required?): ${r.json?.errors?.[0]?.message || "HTTP " + r.status}`);
     } catch (e) { log("hashnode", `error: ${e.message}`); }
   }
 }

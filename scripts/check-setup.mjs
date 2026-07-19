@@ -37,7 +37,7 @@ if (!has("DEVTO_API_KEY")) {
 
 // Hashnode
 if (!has("HASHNODE_TOKEN")) {
-  line("Hashnode", bad("○"), "no HASHNODE_TOKEN — see SETUP.md (needs Pro to publish)");
+  line("Hashnode", dim("○"), "FREE path = import from dev.to URL (API publish needs Pro)");
 } else {
   try {
     const q = `{ me { username publications(first: 10) { edges { node { id title } } } } }`;

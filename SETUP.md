@@ -34,20 +34,16 @@ GITHUB_ASSET_BASE_URL=https://raw.githubusercontent.com/darkpandawarrior/the-loo
 
 Publishing creates a **draft by default** (`--draft`) so you review on-platform; `--publish` goes live.
 
-## 3. Hashnode — full automation, but needs Pro ⚠️
-> As of **2026-05-13**, Hashnode's API requires a **Hashnode Pro** subscription to read/publish. If you're not on Pro, skip Hashnode and cross-post there manually for now.
+## 3. Hashnode — FREE via import (its API needs Pro, so we skip the API) 🔵
+As of **2026-05-13** Hashnode's publish API requires **Pro**. On free, don't bother with a
+token. Instead: after dev.to publishes, either paste `out/hashnode.md`, or use Hashnode's
+**"Import from URL"** and give it your dev.to article URL — canonical stays clean, cost stays zero.
+Leave `HASHNODE_TOKEN`/`HASHNODE_PUBLICATION_ID` blank.
 
-1. Create a publication on Hashnode if you don't have one.
-2. **hashnode.com/settings/developer** → *Generate New Token* → paste → `.env` → `HASHNODE_TOKEN=...`
-3. Run `node check-setup.mjs` — it prints your **publication ids**. Copy one into `.env` → `HASHNODE_PUBLICATION_ID=...`
-
-## 4. Buffer (LinkedIn scheduling) — optional 🟡
-LinkedIn works **without** this: export always writes a paste-ready `out/linkedin.txt`. Buffer only adds auto-queueing, and its API needs a developer app.
-1. **buffer.com/developers/apps** → *Create an App* → get an **Access Token**.
-2. `.env` → `BUFFER_ACCESS_TOKEN=...`
-3. Find your LinkedIn profile id via Buffer's API (`/1/profiles.json`) → `.env` → `BUFFER_LINKEDIN_PROFILE_ID=...`
-
-Recommendation: **start with paste-to-LinkedIn** (highest control, best early engagement), add Buffer only if scheduling becomes a chore.
+## 4. LinkedIn — FREE, paste 🔵
+Export writes `out/linkedin.txt` (with the full-write-up link already embedded). Paste it into
+LinkedIn yourself — free, and honestly the best for early engagement (native posts beat
+scheduler posts). Buffer auto-queueing is optional and not needed; leave its keys blank.
 
 ## 5. Medium — legacy API, one-click *if your account can still mint a token* 🔵
 Medium stopped issuing new integration tokens, but existing ones work and the field is
