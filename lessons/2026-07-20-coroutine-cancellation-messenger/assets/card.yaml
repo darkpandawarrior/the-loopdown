@@ -1,0 +1,18 @@
+template: code-card
+accent: "#4ec9b0"
+pillar: the coroutine court
+handle: "@darkpandawarrior"
+title:
+  - "CancellationException"
+  - "is not an assassin"
+code:
+  - "try {"
+  - "  results = api.search(query)"
+  - "} catch (e: Exception) {"
+  - "  log(\"search failed\")  // eats"
+  - "  // CancellationException too."
+  - "  // the coroutine never stops."
+  - "}"
+takeaway:
+  - "Cancellation is a message."
+  - "Don't shoot the messenger."

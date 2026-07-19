@@ -33,12 +33,14 @@ Appearances below). The world is in [`lore/`](lore/bible.md); the voice is in
 
 | Date | Title | Series | Status | Live |
 |------|-------|--------|--------|------|
+| 2026-07-20 | [CancellationException is not an assassin](lessons/2026-07-20-coroutine-cancellation-messenger/lesson.md) | the-coroutine-court | 🟡 ready | — |
 | 2026-07-19 | [Teaching a phone to disbelieve its own GPS](lessons/2026-07-19-mileway-dead-reckoning/lesson.md) | sensors-who-lie | 🟢 live | [read →](https://dev.to/darkpandawarrior/teaching-a-phone-to-disbelieve-its-own-gps-cip) |
 
 ### 🎭 Cast appearances (continuity)
 
 | Character | Appearances | In |
 |-----------|-------------|----|
+| `the-messenger` | 1 | [CancellationException is not an assassin](lessons/2026-07-20-coroutine-cancellation-messenger/lesson.md) |
 | `the-concussed-witness` | 1 | [Teaching a phone to disbelieve its own GPS](lessons/2026-07-19-mileway-dead-reckoning/lesson.md) |
 
 ### 📚 Archive (10 pieces)

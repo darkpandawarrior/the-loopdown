@@ -43,14 +43,15 @@ Status: 🟢 introduced (has appeared) · ⚪ waiting in the wings (not yet used
 - **origin line (draft):** *"There's a gremlin in your UI redrawing things nobody asked to change."*
 - **lesson it carries:** stability and scoped state reads are how you starve it.
 
-## ⚪ The Messenger
+## 🟢 The Messenger
 - **id:** `the-messenger`
 - **is:** `CancellationException`.
 - **domain:** coroutines, structured concurrency.
 - **trait:** Wears an assassin's cloak but only ever delivers a note that says "we're
   done here." Everyone kills the messenger (catches it) and then wonders why cancellation
   broke. Sympathetic, tragically misread.
-- **origin line (draft):** *"CancellationException isn't an assassin. It's a messenger. Stop catching it."*
+- **origin line:** *"CancellationException is not an assassin. It only ever delivers a note."*
+- **first appearance:** `lessons/2026-07-20-coroutine-cancellation-messenger`
 - **lesson it carries:** cancellation is cooperative; let the exception propagate.
 
 ## ⚪ The Ferryman

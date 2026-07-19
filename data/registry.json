@@ -2,9 +2,9 @@
   "generated": "run `node scripts/build-registry.mjs`",
   "counts": {
     "archive": 10,
-    "lessons": 1,
-    "cast": 1,
-    "series": 1
+    "lessons": 2,
+    "cast": 2,
+    "series": 2
   },
   "archive": [
     {
@@ -185,6 +185,35 @@
   ],
   "lessons": [
     {
+      "file": "lessons/2026-07-20-coroutine-cancellation-messenger/lesson.md",
+      "dir": "2026-07-20-coroutine-cancellation-messenger",
+      "title": "CancellationException is not an assassin",
+      "slug": "coroutine-cancellation-messenger",
+      "type": "lesson",
+      "pillar": "concurrency",
+      "project": "Dice",
+      "tags": [
+        "kotlin",
+        "coroutines",
+        "cancellation",
+        "structured-concurrency",
+        "android"
+      ],
+      "status": "ready",
+      "created": "2026-07-20",
+      "channels": [
+        "linkedin",
+        "devto",
+        "hashnode",
+        "medium"
+      ],
+      "series": "the-coroutine-court",
+      "cast": [
+        "the-messenger"
+      ],
+      "loop_iteration": "2"
+    },
+    {
       "file": "lessons/2026-07-19-mileway-dead-reckoning/lesson.md",
       "dir": "2026-07-19-mileway-dead-reckoning",
       "title": "Teaching a phone to disbelieve its own GPS",
@@ -218,6 +247,17 @@
   ],
   "cast": [
     {
+      "id": "the-messenger",
+      "appearances": 1,
+      "in": [
+        {
+          "title": "CancellationException is not an assassin",
+          "file": "lessons/2026-07-20-coroutine-cancellation-messenger/lesson.md",
+          "date": "2026-07-20"
+        }
+      ]
+    },
+    {
       "id": "the-concussed-witness",
       "appearances": 1,
       "in": [
@@ -233,6 +273,11 @@
     {
       "id": "sensors-who-lie",
       "title": "Sensors Who Lie",
+      "episodes": 1
+    },
+    {
+      "id": "the-coroutine-court",
+      "title": "The Coroutine Court",
       "episodes": 1
     }
   ]

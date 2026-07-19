@@ -1,0 +1,44 @@
+{
+  "accent": "#4ec9b0",
+  "brand": "The Loopdown",
+  "handle": "@darkpandawarrior",
+  "slides": [
+    {
+      "kicker": "The Coroutine Court",
+      "head": ["I cancelled it.", "It kept", "running."],
+      "body": ["A coroutine I cancelled ran", "for 8 more seconds.", "The culprit was one line", "I wrote myself.", "", "Swipe."],
+      "arrow": "swipe >"
+    },
+    {
+      "kicker": "The mental model",
+      "head": ["Cancel is", "a message,", "not a bullet"],
+      "body": ["Cancelling a coroutine throws", "CancellationException up your", "suspend calls.", "That exception IS the message:", "we are done, unwind."]
+    },
+    {
+      "kicker": "The trap",
+      "head": ["The line", "that ate", "the message"],
+      "body": ["try { api.search(query) }", "catch (e: Exception) { ... }", "", "CancellationException is an", "Exception. This eats it."]
+    },
+    {
+      "kicker": "Fix 01",
+      "head": ["Catch what", "you expect"],
+      "body": ["Not Exception.", "Catch IOException,", "HttpException, the real thing.", "Cancellation sails past", "and does its job."]
+    },
+    {
+      "kicker": "Fix 02",
+      "head": ["Rethrow", "cancellation", "first"],
+      "body": ["catch (e:", "CancellationException)", "  { throw e }", "then your broad catch.", "Let the message through."]
+    },
+    {
+      "kicker": "The footgun",
+      "head": ["runCatching", "does it", "too"],
+      "body": ["runCatching { } also catches", "CancellationException.", "Handy, and a trap.", "For must-run cleanup use", "withContext(NonCancellable)."]
+    },
+    {
+      "kicker": "The takeaway",
+      "head": ["Don't shoot", "the", "messenger"],
+      "body": ["Cancellation is a conversation,", "not a kill switch.", "Swallow the message and the", "work never stops.", "", "Follow for more field notes."],
+      "arrow": "dev.to / LinkedIn"
+    }
+  ]
+}

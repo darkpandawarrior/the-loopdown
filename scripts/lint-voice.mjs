@@ -20,7 +20,7 @@ const HARD = [
   { re: /—/g, msg: "em dash (—) — use a full stop, comma, colon, or parentheses" },
   { re: /(\d)\s*–\s*(\d)/g, msg: "en dash in a number range — use 'to' or a plain hyphen" },
   { re: /–/g, msg: "en dash (–)" },
-  { re: /\b(is|are|was|were|isn't|aren't|it's)\s+not\s+(just\s+)?(a|an|about)\b[^.?!]*\bit'?s\b/gi, msg: "\"it's not X, it's Y\" construction — reframe as an image, not a negation" },
+  { re: /\b(?:(?:is|are|was|were)\s+not|(?:is|are|was|were)n['’]?t)\s+(?:just\s+)?(?:a|an)\b[^.?!]{0,50}?\bit(?:['’]s|\s+is)\s+(?:a|an|the)\b/gi, msg: "\"isn't a X, it's a Y\" construction — reframe as an image, not a negation" },
 ];
 // Phrase tells (case-insensitive, word-ish boundaries)
 const PHRASES = [
