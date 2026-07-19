@@ -5,54 +5,85 @@ tags: [android, location, kotlin, sensorfusion]
 cover: assets/card.png
 ---
 
-Our app once clocked a user — sitting dead still at a red light — doing 400 km/h.
+The bug report came in on a Tuesday. One line:
 
-The phone wasn't lying to be difficult. It was concussed. And that bug taught me
-more about building reliable systems than any amount of green CI ever did.
+> "Your app says I hit 400 kmph. I was at a red light."
 
-## GPS is a witness with a head injury
+He wasn't lying. Neither was the app. The phone genuinely believed it, and that is the interesting part.
 
-We treat GPS like a source of truth. It isn't. It's a witness — and in the places
-people actually drive, it's a witness with a concussion:
+I work on mileage tracking. If you have ever had an app quietly log your drives for expenses or taxes, that is the category. Trip accuracy is not a feature of the product. It is the product. When we started, ours sat around 50 percent, and almost every missing point traced back to the same thing: the phone lying to us with total confidence.
 
-- **Tunnels.** The receiver loses sky, so it repeats the last position it saw for
-  30–40 seconds, then *teleports* to catch up when it reacquires. That teleport,
-  divided by the time it took, is your 400 km/h.
-- **Urban canyons.** Signals bounce off glass towers (multipath) and place you
-  confidently two streets over.
-- **Parking garages.** Nothing, then noise.
+Here is how we got it to 95, and the one idea underneath all of it.
 
-Mileage tracking lives or dies on trip accuracy, and ours started around 50%. Every
-missing percent was a moment GPS lied *confidently*.
+## GPS is a witness with a concussion
 
-## The fix wasn't a better sensor
+We treat GPS like a source of truth. Out in the world, where people actually drive, it behaves more like a witness who took a hard knock to the head. Confident. Cooperative. Frequently wrong.
 
-It was teaching the software when to stop trusting the sensor it had. Three moves:
+Three places break it badly:
 
-### 1. Spike detection
-For the current travel mode there's a physically possible envelope of speed and
-acceleration. Any fix that implies stepping outside it is rejected as a liar. Cheap,
-and it kills the most embarrassing errors outright.
+**Tunnels.** The receiver loses its view of the sky. Instead of admitting that, it keeps reporting the last position it had, sometimes for 30 to 40 seconds. Then you come out the other end, it reacquires, and it snaps to your real location in a single jump. Take that jump, divide by the tiny time it took, and you get a parked car doing 400 kmph.
 
-### 2. Predictive dead reckoning
-When GPS is rejected or missing, don't freeze — estimate. Integrate the
-accelerometer against the last good heading and speed to carry position forward. The
-phone navigates like a sailor with no stars: it drifts, so you only lean on it
-*briefly*, but it bridges the gap until GPS sobers up.
+**Urban canyons.** Signals bounce off glass towers before reaching you (multipath, if you want the word). The phone averages the reflections and places you a street or two over, very sure of itself.
 
-### 3. Sensor fusion
-Blend GPS and inertial by confidence weight rather than trusting whichever spoke
-last. A strong, consistent fix pulls hard; a jittery one gets outvoted. (A Kalman
-filter is the textbook home for this; the point is the *weighting*, not the brand.)
+**Parking garages.** Nothing, then noise, then nothing again.
 
-Together: **50% → 95%** accuracy in production. Plus the unglamorous glue — a
-foreground service and a floating bubble to survive Doze and OEM battery
-restrictions, because a tracker that gets killed is 0% accurate no matter how good
-the math is.
+None of these are edge cases. They are Tuesday. So the question stopped being "how do we get better GPS" and became "how do we stop believing bad GPS."
 
-## The takeaway
+## Fix 1: catch the liars
 
-The most reliable systems aren't the ones with the best inputs. They're the ones
-that **model how their inputs fail** and degrade gracefully when they do.
+The cheapest win first. For any travel mode there is a physically possible envelope. A person walking does not teleport 200 meters in a second. A car does not accelerate like a missile. So before a reading touches the trip, check whether it implies something physics would not allow.
 
-Trust, but verify — even your own sensors.
+```kotlin
+fun GpsFix.isImpossible(prev: GpsFix, mode: Mode): Boolean {
+    val meters = haversine(prev, this)
+    val seconds = (timestamp - prev.timestamp).coerceAtLeast(1)
+    val speed = meters / seconds
+    return speed > mode.maxPlausibleSpeed   // walking, cycling, driving each differ
+}
+```
+
+If it is impossible, drop it. This one guard killed the most embarrassing errors on its own, including the 400 kmph report. It is not clever. It just refuses to be gaslit.
+
+## Fix 2: dead reckoning, so a gap is not a hole
+
+Rejecting bad points leaves you with gaps, and a tunnel is a big one. If you freeze until GPS comes back, the trip gets a straight line cutting across three streets.
+
+So when GPS drops out, stop waiting for it and estimate. Take the last good heading and speed, read the accelerometer, and carry the position forward yourself. Old sailors did this by feel, no stars, no landmarks, just direction and time and a good guess. It drifts, so you cannot lean on it for long. But a tunnel is short, and "roughly right for 40 seconds" beats "confidently wrong" or "a hole in the map."
+
+```kotlin
+fun deadReckon(last: Position, imu: Imu, dt: Float): Position {
+    val speed = last.speed + imu.forwardAccel * dt
+    val distance = speed * dt
+    return last.movedBy(distance, heading = last.heading + imu.turnRate * dt)
+}
+```
+
+The trick is knowing when to trust it and when to hand control back to GPS the moment GPS is worth trusting again.
+
+## Fix 3: fuse, do not just pick
+
+Which brings us to the real fix. Most of the accuracy came from stopping the "believe whoever spoke last" habit and weighing every input by how much it deserves belief right now.
+
+A clean, consistent GPS fix pulls the estimate hard toward itself. A jittery one barely moves it. The dead-reckoned guess fills the space between. Nobody gets a veto. Everybody gets a vote, weighted by confidence.
+
+A Kalman filter is the textbook home for this, and if you reach for one, good. But the win is not the filter. The win is the mindset: hold several noisy opinions at once, and lean toward the one that looks trustworthy this second.
+
+## The unglamorous half
+
+None of this matters if the tracker is dead. On Android, the moment the screen sleeps, the system starts looking for background work to kill, and aggressive OEM skins kill harder. We ran the pipeline in a foreground service with a small floating bubble, partly so the user could see it working, mostly so the OS would leave it alone. A tracker that gets killed is 0 percent accurate no matter how good the math is. I spent nearly as long on staying alive as on the algorithm.
+
+## What actually took us from 50 to 95
+
+Not one silver bullet. Spike detection removed the garbage. Dead reckoning covered the gaps. Fusion made the whole thing coherent. Staying alive made it real. Each one bought a chunk, and they compounded.
+
+## Steal this
+
+- Treat every external input as a witness who might be concussed, not a source of truth.
+- Give physics a veto. The cheapest correctness check is "could this even happen."
+- When a signal drops, degrade to a rough estimate instead of freezing or guessing wildly.
+- Weight inputs by live confidence, not recency.
+- Keep the thing alive first. Perfect logic in a killed process is worth nothing.
+
+The one line I kept after all of it: good systems are not the ones with perfect inputs, because nobody gets perfect inputs. Good systems assume their inputs will lie, and plan for the day they do.
+
+Trust, but verify. Especially your own sensors.

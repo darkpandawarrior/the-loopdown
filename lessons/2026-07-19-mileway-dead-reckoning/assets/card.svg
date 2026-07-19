@@ -32,14 +32,14 @@
   <text x="112" y="510" fill="#8b949e" font-size="30" xml:space="preserve">fun onFix(fix: GpsFix): Position {</text>
   <text x="112" y="560" fill="#8b949e" font-size="30" xml:space="preserve">if (fix.impliesImpossibleSpeed())</text>
   <text x="112" y="610" fill="#8b949e" font-size="30" xml:space="preserve">return deadReckon(lastGood, imu)</text>
-  <text x="112" y="660" fill="#8b949e" font-size="30" xml:space="preserve">// GPS is a witness with a</text>
-  <text x="112" y="710" fill="#8b949e" font-size="30" xml:space="preserve">// concussion — trust by weight,</text>
+  <text x="112" y="660" fill="#8b949e" font-size="30" xml:space="preserve">// a witness with a concussion:</text>
+  <text x="112" y="710" fill="#8b949e" font-size="30" xml:space="preserve">// trust by confidence weight,</text>
   <text x="112" y="760" fill="#8b949e" font-size="30" xml:space="preserve">// not by whoever spoke last</text>
   <text x="112" y="810" fill="#8b949e" font-size="30" xml:space="preserve">return fuse(fix, imu, confidence)</text>
 
   <!-- takeaway -->
-  <text x="72" y="965" fill="#7c5cff" font-size="34" font-weight="600" font-family="'SF Pro Display',sans-serif">▸ Reliable systems model how their</text>
-  <text x="72" y="1015" fill="#7c5cff" font-size="34" font-weight="600" font-family="'SF Pro Display',sans-serif">  inputs fail. 50% → 95% accuracy.</text>
+  <text x="72" y="965" fill="#7c5cff" font-size="34" font-weight="600" font-family="'SF Pro Display',sans-serif">▸ Assume your inputs will lie.</text>
+  <text x="72" y="1015" fill="#7c5cff" font-size="34" font-weight="600" font-family="'SF Pro Display',sans-serif">  Trip accuracy 50% to 95%.</text>
 
   <!-- footer -->
   <rect x="72" y="1090" width="1056" height="2" fill="#21262d"/>

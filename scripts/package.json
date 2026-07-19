@@ -7,11 +7,14 @@
   "scripts": {
     "new": "node new-lesson.mjs",
     "render": "node render.mjs",
+    "carousel": "node carousel.mjs",
+    "lint": "node lint-voice.mjs",
     "registry": "node build-registry.mjs",
     "check": "node check-setup.mjs",
     "export": "node export.mjs"
   },
   "dependencies": {
-    "@resvg/resvg-js": "^2.6.2"
+    "@resvg/resvg-js": "^2.6.2",
+    "pdf-lib": "^1.17.1"
   }
 }

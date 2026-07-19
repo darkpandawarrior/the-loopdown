@@ -1,25 +1,29 @@
-<!-- LinkedIn adapt · ~1180 chars · hook + payload + CTA + hashtags · passes ship checklist -->
+<!-- LinkedIn adapt · human, no em dashes · passes lint-voice + ship checklist -->
 
-Our app once clocked a user — sitting dead still at a red light — doing 400 km/h.
+"Your app says I hit 400 kmph. I was at a red light."
 
-The phone wasn't lying to be difficult. It was just... concussed.
+Got that bug report on a Tuesday. The user wasn't lying. Neither was the app. The phone genuinely believed it, and that's the fun part.
 
-Here's the thing nobody tells you about GPS: it's not a source of truth. It's a witness with a head injury. In a tunnel it repeats the last thing it saw for 40 seconds, then *teleports* to catch up (that's your 400 km/h). Off a glass tower, it swears you're two streets over.
+Quick one on why your GPS lies, and what we did about it.
 
-Mileage tracking lives or dies on this. Ours started at ~50% accuracy. We got it to 95% — not with a better sensor, but by teaching the software when to stop trusting the one it had:
+Think of GPS as a witness with a concussion. Confident, cooperative, often wrong. Drive into a tunnel and it just keeps reporting the last spot it saw for about 40 seconds. Then you come out, it snaps to your real position in one jump, and the math (big jump, tiny time) turns a parked car into a fighter jet.
 
-▸ Spike detection — if a fix implies impossible acceleration, the fix is a liar. Reject it.
-▸ Predictive dead reckoning — when GPS drops, estimate position from motion sensors. The phone navigates like a sailor with no stars. Briefly. But well enough to bridge the gap.
-▸ Sensor fusion — blend inputs by confidence, not by whoever spoke last. Good GPS pulls hard; bad GPS gets outvoted.
+We build mileage tracking. Trip accuracy isn't a feature, it's the whole product. Ours sat around 50 percent, and almost every missing point was a moment the phone lied with full confidence.
 
-The lesson that stuck with me:
+Three things took us from 50 to 95:
 
-The most reliable systems aren't the ones with the best inputs. They're the ones that model how their inputs fail — and degrade gracefully when they do.
+1. Catch the liars. If a reading needs you to accelerate like a rocket, it's fake. Drop it before it touches your data. This one guard killed the 400 kmph report on its own.
 
-Trust, but verify. Even your own sensors.
+2. Dead reckoning. When GPS goes dark, stop waiting. Estimate your position from the accelerometer and your last good heading, the way old sailors navigated by feel with no stars. It drifts, so you don't lean on it long. But it carries you through the tunnel.
 
-What's a signal your system learned to *distrust*? 👇
+3. Fuse, don't pick. Weigh every signal by how much you trust it right now, instead of blindly taking whoever spoke last. Clean GPS pulls hard. Jittery GPS gets outvoted.
 
-— filed from iteration 1 of the loop. (New series: Sensors Who Lie. First witness for the defense: GPS.)
+The part that stuck with me:
 
-#Android #MobileEngineering #SoftwareEngineering #Kotlin #SystemDesign
+Good systems aren't the ones with perfect inputs. Nobody gets perfect inputs. Good systems assume their inputs will lie, and plan for the day they do.
+
+Trust, but verify. Especially your own sensors.
+
+Ever had a metric or signal you learned the hard way not to believe? Tell me below.
+
+#Android #MobileEngineering #Kotlin #SystemDesign #SoftwareEngineering

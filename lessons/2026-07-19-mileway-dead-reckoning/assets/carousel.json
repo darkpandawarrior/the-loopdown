@@ -1,0 +1,44 @@
+{
+  "accent": "#7c5cff",
+  "brand": "The Loopdown",
+  "handle": "@darkpandawarrior",
+  "slides": [
+    {
+      "kicker": "Sensors Who Lie",
+      "head": ["Your GPS", "is lying", "to you"],
+      "body": ["Our app once clocked a", "parked car at 400 kmph.", "The phone was completely sure.", "", "Swipe for why, and the fix."],
+      "arrow": "swipe >"
+    },
+    {
+      "kicker": "The mental model",
+      "head": ["A witness", "with a", "concussion"],
+      "body": ["GPS looks like truth.", "It behaves like a witness", "who took a hit to the head.", "Confident. Cooperative.", "Often flat wrong."]
+    },
+    {
+      "kicker": "Why it happens",
+      "head": ["Tunnels,", "towers,", "garages"],
+      "body": ["In a tunnel it repeats the", "last spot for ~40s, then", "jumps to catch up.", "Big jump over tiny time", "is your 400 kmph."]
+    },
+    {
+      "kicker": "Fix 01",
+      "head": ["Catch", "the", "liars"],
+      "body": ["If a reading needs rocket", "acceleration, it is fake.", "Give physics a veto.", "Drop the point before it", "touches your data."]
+    },
+    {
+      "kicker": "Fix 02",
+      "head": ["Dead", "reckoning"],
+      "body": ["When GPS goes dark,", "estimate from motion sensors", "and your last good heading.", "Like a sailor with no stars.", "It bridges the gap."]
+    },
+    {
+      "kicker": "Fix 03",
+      "head": ["Fuse,", "don't", "pick"],
+      "body": ["Weight every signal by", "how much you trust it now.", "Clean GPS pulls hard.", "Jittery GPS gets outvoted.", "Nobody gets a veto."]
+    },
+    {
+      "kicker": "The takeaway",
+      "head": ["Assume", "inputs", "will lie"],
+      "body": ["Good systems don't need", "perfect inputs. They plan", "for the day inputs lie.", "", "Follow for more field notes."],
+      "arrow": "dev.to / LinkedIn"
+    }
+  ]
+}

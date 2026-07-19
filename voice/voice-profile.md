@@ -49,6 +49,32 @@ The archive is loose, long, and very jokey (college magazine energy). LinkedIn n
 - **Diary / timestamped beats.** *Deadline* and *The Loopdown* use "Day N". Great for build-in-public: "Commit 1… Commit 40… what I'd tell commit-1 me."
 - **The reveal.** Withhold the mechanism, describe the mystery, then drop the how.
 
+## Sound human, not generated (HARD RULES — enforced by `scripts/lint-voice.mjs`)
+
+The whole point is that this reads like a person wrote it. These are non-negotiable:
+
+- **No em dashes. Ever.** Not `—`, not `–`. Use a full stop, a comma, a colon, or
+  parentheses. Two short sentences beat one em-dash sentence. For number ranges use
+  "30 to 40" or "30-40" (a plain hyphen), never `30–40`.
+- **Kill the "It's not X, it's Y" reflex.** The hollow rhetorical flip is the loudest AI
+  tell there is. If you reframe (and you should), make it a vivid image, not a negation.
+  "Think of GPS as a witness with a concussion" is fine. "GPS isn't a sensor, it's a
+  liability" is a tell.
+- **Banned phrases** (the linter flags them): *here's the thing, at the end of the day,
+  when it comes to, in today's world, let's dive in, delve, game-changer, testament to,
+  underscores, in the realm of, needless to say, it's worth noting, that said, seamless,
+  robust solution, leverage (as a verb), unlock, elevate, supercharge, navigate the
+  landscape, the fact that, in conclusion, moreover, furthermore.*
+- **Vary your sentences.** Real writing has lumpy rhythm: a three-word line, then a long
+  winding one, then a fragment. Uniform medium-length sentences read like a machine.
+- **Don't over-list.** Not every idea needs a tidy rule-of-three. Sometimes it's two
+  things. Sometimes it's a mess you admit is a mess.
+- **First person, specific, a little rough.** Name the day the bug happened. Quote the
+  actual message. Admit what you got wrong. A real detail beats a smooth generalization.
+- **One joke or aside per post, minimum.** Your archive is funny. Let it be.
+
+Run `node scripts/lint-voice.mjs lessons/<dir>` before shipping. Zero flags or it doesn't go out.
+
 ## Hard limits (don't cross)
 
 - Never punch down; the humor is warm, self-deprecating, never mean.
