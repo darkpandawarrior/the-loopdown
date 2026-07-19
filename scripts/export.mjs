@@ -66,6 +66,18 @@ const results = {};
 const log = (c, msg) => console.log(`  [${c}] ${msg}`);
 async function post(url, opts) { const r = await fetch(url, opts); const body = await r.text(); let json; try { json = JSON.parse(body); } catch {} return { status: r.status, json, body }; }
 
+// Publish state (dev.to article id etc.) so re-runs UPDATE instead of creating duplicates.
+const statePath = resolve(lessonDir, "state.json");
+const loadState = () => (existsSync(statePath) ? JSON.parse(readFileSync(statePath, "utf8")) : {});
+const saveState = (patch) => writeFileSync(statePath, JSON.stringify({ ...loadState(), ...patch }, null, 2) + "\n");
+// Adopt an already-created dev.to article (e.g. a draft from a prior run) by exact title.
+async function findDevtoIdByTitle(t) {
+  try {
+    const r = await post("https://dev.to/api/articles/me/all?per_page=100", { headers: { "api-key": get("DEVTO_API_KEY") } });
+    return Array.isArray(r.json) ? r.json.find((a) => a.title === t)?.id : undefined;
+  } catch { return undefined; }
+}
+
 console.log(`\n  campaign: "${title}"  ·  mode: ${mode}  ·  channels: ${only.join(", ")}`);
 console.log(`  canonical: ${explicitCanonical || "auto (dev.to becomes the original)"}${prev ? `  ·  prev-in-series: ${prev.title}` : ""}\n`);
 
@@ -79,8 +91,13 @@ if (want("devto")) {
   else {
     const payload = { article: { title, body_markdown: body, published: live, tags: tags.join(","), series: fm.series || null, main_image: cover || null, canonical_url: explicitCanonical || null } };
     try {
-      const r = await post("https://dev.to/api/articles", { method: "POST", headers: { "api-key": get("DEVTO_API_KEY"), "Content-Type": "application/json" }, body: JSON.stringify(payload) });
-      if (r.status === 201) { results.devto = { status: live ? "published" : "draft", url: r.json?.url || "" }; if (!canonicalResolved && r.json?.url) canonicalResolved = r.json.url; log("devto", `${results.devto.status}: ${results.devto.url}`); }
+      // Reuse an existing article if we have one (idempotent: draft → publish updates the SAME post).
+      let id = loadState().devto?.id;
+      if (!id) id = await findDevtoIdByTitle(title);
+      const url = id ? `https://dev.to/api/articles/${id}` : "https://dev.to/api/articles";
+      const method = id ? "PUT" : "POST";
+      const r = await post(url, { method, headers: { "api-key": get("DEVTO_API_KEY"), "Content-Type": "application/json" }, body: JSON.stringify(payload) });
+      if (r.status === 200 || r.status === 201) { results.devto = { status: live ? "published" : "draft", url: r.json?.url || "" }; if (r.json?.id) saveState({ devto: { id: r.json.id, url: r.json.url, status: results.devto.status } }); if (!canonicalResolved && r.json?.url) canonicalResolved = r.json.url; log("devto", `${results.devto.status} (${method === "PUT" ? "updated" : "created"}): ${results.devto.url}`); }
       else log("devto", `FAILED HTTP ${r.status}: ${r.body.slice(0, 160)}`);
     } catch (e) { log("devto", `error: ${e.message}`); }
   }

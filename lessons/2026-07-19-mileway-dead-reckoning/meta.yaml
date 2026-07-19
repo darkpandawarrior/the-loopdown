@@ -5,3 +5,6 @@ channels:
   devto:     { status: pending, url: "", published: "", reactions: 0, comments: 0 }
   hashnode:  { status: pending, url: "", published: "", reactions: 0, comments: 0 }
   medium:    { status: pending, url: "", published: "", claps: 0 }
+
+# --- export draft (canonical: https://dev.to/darkpandawarrior/teaching-a-phone-to-disbelieve-its-own-gps-35kj-temp-slug-2185480) ---
+#   devto: draft https://dev.to/darkpandawarrior/teaching-a-phone-to-disbelieve-its-own-gps-35kj-temp-slug-2185480

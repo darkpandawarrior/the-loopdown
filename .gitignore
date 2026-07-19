@@ -24,3 +24,6 @@ lessons/**/out/
 # scratch
 *.tmp
 .tmp_*
+
+# per-lesson publish state (dev.to article ids etc; adopted via API)
+lessons/**/state.json
