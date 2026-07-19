@@ -1,0 +1,7 @@
+slug: foreground-service-five-seconds
+status: ready
+channels:
+  linkedin:  { status: pending, url: "", scheduled: "", published: "", impressions: 0, reactions: 0, comments: 0 }
+  devto:     { status: pending, url: "", published: "", reactions: 0, comments: 0 }
+  hashnode:  { status: pending, url: "", published: "", reactions: 0, comments: 0 }
+  medium:    { status: pending, url: "", published: "", claps: 0 }

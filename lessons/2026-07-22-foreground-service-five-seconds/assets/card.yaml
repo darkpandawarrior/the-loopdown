@@ -1,0 +1,18 @@
+template: code-card
+accent: "#f0883e"
+pillar: the night shift
+handle: "@darkpandawarrior"
+title:
+  - "The 5-second window"
+  - "that crashes your service"
+code:
+  - "onStartCommand(...) {"
+  - "  restoreLastTrip()   // slow io"
+  - "  settings.load()     // slow io"
+  - "  startForeground(...) // TOO LATE"
+  - "  // on a cheap phone you already"
+  - "  // blew the 5s window. crash."
+  - "}"
+takeaway:
+  - "startForeground() first."
+  - "Slow work after."

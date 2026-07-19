@@ -1,0 +1,18 @@
+template: code-card
+accent: "#38bdf8"
+pillar: one brain, two bodies
+handle: "@darkpandawarrior"
+title:
+  - "expect/actual is the"
+  - "wrong default in KMP"
+code:
+  - "// welded, can't fake or test"
+  - "expect class Clipboard()"
+  - ""
+  - "// injected, testable in 1 line"
+  - "interface Clipboard {"
+  - "  fun copy(text: String)"
+  - "}  // hand it in via DI"
+takeaway:
+  - "Interfaces compose and test."
+  - "expect/actual welds."

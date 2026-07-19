@@ -25,23 +25,36 @@ Status: 🟢 introduced (has appeared) · ⚪ waiting in the wings (not yet used
 - **first appearance:** `lessons/2026-07-19-mileway-dead-reckoning`
 - **lesson it carries:** reliable systems model how their inputs fail.
 
-## ⚪ Doze the Jailer
+## 🟢 Doze the Jailer
 - **id:** `doze-the-jailer`
-- **is:** Android Doze mode + OEM battery restrictions.
+- **is:** Android's background execution limits (the 5s startForeground window, Doze, OEM restrictions).
 - **domain:** background execution, foreground services, WorkManager.
-- **trait:** Comes for the night shift. Locks your background work in a cell the moment
-  the screen sleeps. Not cruel — just running the prison by the book.
-- **origin line (draft):** *"At 2 a.m. your app has a warden, and his name is Doze."*
+- **trait:** Runs the night shift. Gives you about 5 seconds to explain why your work
+  belongs, then closes the cell. Not cruel, just running the prison by the book.
+- **origin line:** *"You get 5 seconds to explain why your work deserves to keep running."*
+- **first appearance:** `lessons/2026-07-22-foreground-service-five-seconds`
 - **lesson it carries:** cooperate with the platform's lifecycle or die by it.
 
-## ⚪ The Recomposer
+## 🟢 The Recomposer
 - **id:** `the-recomposer`
-- **is:** unnecessary Compose recomposition.
-- **domain:** Compose performance, stability, state.
-- **trait:** A gremlin that redraws the room every time you blink. Helpful to a fault.
-  Feed it an unstable `List` and it repaints the whole house.
-- **origin line (draft):** *"There's a gremlin in your UI redrawing things nobody asked to change."*
-- **lesson it carries:** stability and scoped state reads are how you starve it.
+- **is:** unnecessary Compose recomposition (and off-screen collection).
+- **domain:** Compose performance, stability, state, lifecycle.
+- **trait:** A gremlin that redraws the room every time you blink, and does not mind an
+  empty room. Feed it an unstable `List` and it repaints the whole house.
+- **origin line:** *"There's a gremlin in your UI redrawing things nobody asked to change."*
+- **first appearance:** `lessons/2026-07-24-lazycolumn-recomposition` (returns in `collectasstate-leak`)
+- **lesson it carries:** stability and lifecycle-aware collection are how you starve it.
+
+## 🟢 The Understudy
+- **id:** `the-understudy`
+- **is:** a KMP `actual` declaration.
+- **domain:** Kotlin Multiplatform, architecture, expect/actual vs interfaces.
+- **trait:** A platform stand-in cast by name at compile time, on stage every night.
+  Perfect for a small fixed role. Useless when the part needs to change or rehearse,
+  because you cannot swap an understudy mid-run.
+- **origin line:** *"Cast one understudy for a fixed role, not for every part in the play."*
+- **first appearance:** `lessons/2026-07-29-kmp-expect-actual-default`
+- **lesson it carries:** interfaces + injection compose and test; expect/actual welds.
 
 ## 🟢 The Messenger
 - **id:** `the-messenger`

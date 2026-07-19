@@ -1,0 +1,18 @@
+template: code-card
+accent: "#db61ff"
+pillar: ghosts in the recomposition
+handle: "@darkpandawarrior"
+title:
+  - "collectAsState is quietly"
+  - "leaking your work"
+code:
+  - "// keeps collecting while the"
+  - "// app is backgrounded"
+  - "val s by flow.collectAsState()"
+  - ""
+  - "// stops below STARTED,"
+  - "// resumes on return"
+  - "flow.collectAsStateWithLifecycle()"
+takeaway:
+  - "Make the lifecycle-aware one"
+  - "your default."

@@ -2,9 +2,9 @@
   "generated": "run `node scripts/build-registry.mjs`",
   "counts": {
     "archive": 10,
-    "lessons": 2,
-    "cast": 2,
-    "series": 2
+    "lessons": 6,
+    "cast": 5,
+    "series": 5
   },
   "archive": [
     {
@@ -185,6 +185,123 @@
   ],
   "lessons": [
     {
+      "file": "lessons/2026-07-31-collectasstate-leak/lesson.md",
+      "dir": "2026-07-31-collectasstate-leak",
+      "title": "collectAsState is quietly leaking your work",
+      "slug": "collectasstate-leak",
+      "type": "lesson",
+      "pillar": "compose-performance",
+      "project": "Dice",
+      "tags": [
+        "android",
+        "jetpack-compose",
+        "flow",
+        "lifecycle",
+        "collectAsStateWithLifecycle"
+      ],
+      "status": "ready",
+      "created": "2026-07-31",
+      "channels": [
+        "linkedin",
+        "devto",
+        "hashnode",
+        "medium"
+      ],
+      "series": "ghosts-in-the-recomposition",
+      "cast": [
+        "the-recomposer"
+      ],
+      "loop_iteration": "6"
+    },
+    {
+      "file": "lessons/2026-07-29-kmp-expect-actual-default/lesson.md",
+      "dir": "2026-07-29-kmp-expect-actual-default",
+      "title": "expect/actual is the wrong default in KMP",
+      "slug": "kmp-expect-actual-default",
+      "type": "lesson",
+      "pillar": "kmp",
+      "project": "PaymentsLab",
+      "tags": [
+        "kotlin",
+        "kmp",
+        "multiplatform",
+        "architecture",
+        "expect-actual",
+        "di"
+      ],
+      "status": "ready",
+      "created": "2026-07-29",
+      "channels": [
+        "linkedin",
+        "devto",
+        "hashnode",
+        "medium"
+      ],
+      "series": "one-brain-two-bodies",
+      "cast": [
+        "the-understudy"
+      ],
+      "loop_iteration": "5"
+    },
+    {
+      "file": "lessons/2026-07-24-lazycolumn-recomposition/lesson.md",
+      "dir": "2026-07-24-lazycolumn-recomposition",
+      "title": "Your LazyColumn recomposes on every scroll",
+      "slug": "lazycolumn-recomposition",
+      "type": "lesson",
+      "pillar": "compose-performance",
+      "project": "Dice",
+      "tags": [
+        "android",
+        "jetpack-compose",
+        "recomposition",
+        "stability",
+        "performance"
+      ],
+      "status": "ready",
+      "created": "2026-07-24",
+      "channels": [
+        "linkedin",
+        "devto",
+        "hashnode",
+        "medium"
+      ],
+      "series": "ghosts-in-the-recomposition",
+      "cast": [
+        "the-recomposer"
+      ],
+      "loop_iteration": "4"
+    },
+    {
+      "file": "lessons/2026-07-22-foreground-service-five-seconds/lesson.md",
+      "dir": "2026-07-22-foreground-service-five-seconds",
+      "title": "The 5-second window that crashes your service",
+      "slug": "foreground-service-five-seconds",
+      "type": "lesson",
+      "pillar": "background-execution",
+      "project": "Mileway",
+      "tags": [
+        "android",
+        "foreground-service",
+        "workmanager",
+        "lifecycle",
+        "doze"
+      ],
+      "status": "ready",
+      "created": "2026-07-22",
+      "channels": [
+        "linkedin",
+        "devto",
+        "hashnode",
+        "medium"
+      ],
+      "series": "the-night-shift",
+      "cast": [
+        "doze-the-jailer"
+      ],
+      "loop_iteration": "3"
+    },
+    {
       "file": "lessons/2026-07-20-coroutine-cancellation-messenger/lesson.md",
       "dir": "2026-07-20-coroutine-cancellation-messenger",
       "title": "CancellationException is not an assassin",
@@ -247,6 +364,44 @@
   ],
   "cast": [
     {
+      "id": "the-recomposer",
+      "appearances": 2,
+      "in": [
+        {
+          "title": "collectAsState is quietly leaking your work",
+          "file": "lessons/2026-07-31-collectasstate-leak/lesson.md",
+          "date": "2026-07-31"
+        },
+        {
+          "title": "Your LazyColumn recomposes on every scroll",
+          "file": "lessons/2026-07-24-lazycolumn-recomposition/lesson.md",
+          "date": "2026-07-24"
+        }
+      ]
+    },
+    {
+      "id": "the-understudy",
+      "appearances": 1,
+      "in": [
+        {
+          "title": "expect/actual is the wrong default in KMP",
+          "file": "lessons/2026-07-29-kmp-expect-actual-default/lesson.md",
+          "date": "2026-07-29"
+        }
+      ]
+    },
+    {
+      "id": "doze-the-jailer",
+      "appearances": 1,
+      "in": [
+        {
+          "title": "The 5-second window that crashes your service",
+          "file": "lessons/2026-07-22-foreground-service-five-seconds/lesson.md",
+          "date": "2026-07-22"
+        }
+      ]
+    },
+    {
       "id": "the-messenger",
       "appearances": 1,
       "in": [
@@ -271,6 +426,16 @@
   ],
   "series": [
     {
+      "id": "ghosts-in-the-recomposition",
+      "title": "Ghosts In The Recomposition",
+      "episodes": 2
+    },
+    {
+      "id": "one-brain-two-bodies",
+      "title": "One Brain Two Bodies",
+      "episodes": 1
+    },
+    {
       "id": "sensors-who-lie",
       "title": "Sensors Who Lie",
       "episodes": 1
@@ -278,6 +443,11 @@
     {
       "id": "the-coroutine-court",
       "title": "The Coroutine Court",
+      "episodes": 1
+    },
+    {
+      "id": "the-night-shift",
+      "title": "The Night Shift",
       "episodes": 1
     }
   ]

@@ -33,6 +33,10 @@ Appearances below). The world is in [`lore/`](lore/bible.md); the voice is in
 
 | Date | Title | Series | Status | Live |
 |------|-------|--------|--------|------|
+| 2026-07-31 | [collectAsState is quietly leaking your work](lessons/2026-07-31-collectasstate-leak/lesson.md) | ghosts-in-the-recomposition | 🟡 ready | — |
+| 2026-07-29 | [expect/actual is the wrong default in KMP](lessons/2026-07-29-kmp-expect-actual-default/lesson.md) | one-brain-two-bodies | 🟡 ready | — |
+| 2026-07-24 | [Your LazyColumn recomposes on every scroll](lessons/2026-07-24-lazycolumn-recomposition/lesson.md) | ghosts-in-the-recomposition | 🟡 ready | — |
+| 2026-07-22 | [The 5-second window that crashes your service](lessons/2026-07-22-foreground-service-five-seconds/lesson.md) | the-night-shift | 🟡 ready | — |
 | 2026-07-20 | [CancellationException is not an assassin](lessons/2026-07-20-coroutine-cancellation-messenger/lesson.md) | the-coroutine-court | 🟡 ready | — |
 | 2026-07-19 | [Teaching a phone to disbelieve its own GPS](lessons/2026-07-19-mileway-dead-reckoning/lesson.md) | sensors-who-lie | 🟢 live | [read →](https://dev.to/darkpandawarrior/teaching-a-phone-to-disbelieve-its-own-gps-cip) |
 
@@ -40,6 +44,9 @@ Appearances below). The world is in [`lore/`](lore/bible.md); the voice is in
 
 | Character | Appearances | In |
 |-----------|-------------|----|
+| `the-recomposer` | 2 | [collectAsState is quietly leaking your work](lessons/2026-07-31-collectasstate-leak/lesson.md), [Your LazyColumn recomposes on every scroll](lessons/2026-07-24-lazycolumn-recomposition/lesson.md) |
+| `the-understudy` | 1 | [expect/actual is the wrong default in KMP](lessons/2026-07-29-kmp-expect-actual-default/lesson.md) |
+| `doze-the-jailer` | 1 | [The 5-second window that crashes your service](lessons/2026-07-22-foreground-service-five-seconds/lesson.md) |
 | `the-messenger` | 1 | [CancellationException is not an assassin](lessons/2026-07-20-coroutine-cancellation-messenger/lesson.md) |
 | `the-concussed-witness` | 1 | [Teaching a phone to disbelieve its own GPS](lessons/2026-07-19-mileway-dead-reckoning/lesson.md) |
 

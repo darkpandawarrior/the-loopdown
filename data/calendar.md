@@ -11,16 +11,16 @@ Rhythm per week:
 
 ## Launch plan (fill dates as you go)
 
-| Week | Slot | Post | Series | Format |
-|------|------|------|--------|--------|
-| 1 | Anchor | Teaching a phone to disbelieve its own GPS | Sensors Who Lie | carousel + article ✅ ready |
-| 1 | Jab | CancellationException is not an assassin | The Coroutine Court | card + LinkedIn |
-| 2 | Anchor | The 5-second window that crashes your foreground service | The Night Shift | carousel + article |
-| 2 | Jab | Your LazyColumn recomposes on every scroll. One reason. | Ghosts in the Recomposition | card + LinkedIn |
-| 3 | Anchor | expect/actual is the wrong default in KMP | (KMP) | carousel + article |
-| 3 | Jab | collectAsState is quietly leaking your coroutines | The Coroutine Court | card + LinkedIn |
-| 4 | Anchor | 24 Room migrations, zero data loss. The rules. | Crossing the Schema | carousel + article |
-| 4 | Jab | I code with a fleet of AI agents. The routing rule. | Notes from the Loop | card + LinkedIn |
+| Week | Slot | Post | Series | Format | State |
+|------|------|------|--------|--------|-------|
+| 1 | Anchor | Teaching a phone to disbelieve its own GPS | Sensors Who Lie | carousel + article | 🟢 LIVE |
+| 1 | Jab | CancellationException is not an assassin | The Coroutine Court | carousel + article | ✅ ready to fire |
+| 2 | Anchor | The 5-second window that crashes your service | The Night Shift | carousel + article | ✅ drafted |
+| 2 | Jab | Your LazyColumn recomposes on every scroll | Ghosts in the Recomposition | card + article | ✅ drafted |
+| 3 | Anchor | expect/actual is the wrong default in KMP | One Brain, Two Bodies | carousel + article | ✅ drafted |
+| 3 | Jab | collectAsState is quietly leaking your work | Ghosts in the Recomposition | card + article | ✅ drafted |
+| 4 | Anchor | 24 Room migrations, zero data loss. The rules. | Crossing the Schema | carousel + article | backlog |
+| 4 | Jab | I code with a fleet of AI agents. The routing rule. | Notes from the Loop | card + article | backlog |
 
 Rules of thumb:
 - Reply to every comment in the first 2 hours. Early engagement drives reach more than anything else.

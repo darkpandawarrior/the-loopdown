@@ -1,0 +1,18 @@
+template: code-card
+accent: "#db61ff"
+pillar: ghosts in the recomposition
+handle: "@darkpandawarrior"
+title:
+  - "Your LazyColumn recomposes"
+  - "on every scroll"
+code:
+  - "// unstable: rows can't skip"
+  - "fun Feed(items: List<Post>)"
+  - ""
+  - "// stable: skipping works"
+  - "fun Feed("
+  - "  items: ImmutableList<Post>)"
+  - "// + items(list, key = { it.id })"
+takeaway:
+  - "A plain List is unstable."
+  - "That's the whole bug."

@@ -1,0 +1,39 @@
+{
+  "accent": "#38bdf8",
+  "brand": "The Loopdown",
+  "handle": "@darkpandawarrior",
+  "slides": [
+    {
+      "kicker": "One Brain, Two Bodies",
+      "head": ["expect/actual", "is the wrong", "default"],
+      "body": ["Every KMP tutorial teaches it", "first.", "Then people use it for", "everything and the shared", "code becomes a knot. Swipe."],
+      "arrow": "swipe >"
+    },
+    {
+      "kicker": "What it is",
+      "head": ["A weld,", "not a", "wire"],
+      "body": ["expect/actual binds common to", "one platform impl by name,", "at compile time.", "One actual per platform.", "The compiler picks it."]
+    },
+    {
+      "kicker": "Where it hurts",
+      "head": ["You can't", "fake it"],
+      "body": ["No test actual, so common", "code can't be unit tested.", "No second implementation.", "No injected fake.", "Welded to the platform."]
+    },
+    {
+      "kicker": "The better default",
+      "head": ["Interface", "in common,", "injected"],
+      "body": ["interface Clipboard {", "  fun copy(text: String) }", "Real impl per platform,", "handed in via DI.", "Fake it in one line."]
+    },
+    {
+      "kicker": "When it IS right",
+      "head": ["Small,", "fixed", "joints"],
+      "body": ["A typealias to a platform type.", "A single declaration with one", "meaning per platform and", "nothing to test.", "The genuine permanent weld."]
+    },
+    {
+      "kicker": "The takeaway",
+      "head": ["Keep your", "options", "open"],
+      "body": ["Interfaces and injection", "compose and test.", "expect/actual welds.", "Weld only where you want", "one permanent joint."],
+      "arrow": "dev.to / LinkedIn"
+    }
+  ]
+}

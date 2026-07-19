@@ -1,0 +1,48 @@
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg" font-family="'SF Mono','JetBrains Mono','Menlo',monospace">
+  <!-- The Loopdown — code-card template. Placeholders: #db61ff GHOSTS IN THE RECOMPOSITION    @darkpandawarrior -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="accentbar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#db61ff"/>
+      <stop offset="1" stop-color="#db61ff" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="1200" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1200" height="10" fill="url(#accentbar)"/>
+
+  <!-- window chrome -->
+  <circle cx="70" cy="78" r="11" fill="#ff5f56"/>
+  <circle cx="108" cy="78" r="11" fill="#ffbd2e"/>
+  <circle cx="146" cy="78" r="11" fill="#27c93f"/>
+  <text x="200" y="86" fill="#6e7681" font-size="26">GHOSTS IN THE RECOMPOSITION</text>
+
+  <!-- pillar tag -->
+  <text x="72" y="210" fill="#db61ff" font-size="30" letter-spacing="3">// GHOSTS IN THE RECOMPOSITION</text>
+
+  <!-- title -->
+  <text x="72" y="300" fill="#e6edf3" font-size="62" font-weight="700" font-family="'SF Pro Display','Helvetica Neue',sans-serif">Your LazyColumn recomposes</text>
+  <text x="72" y="378" fill="#e6edf3" font-size="62" font-weight="700" font-family="'SF Pro Display','Helvetica Neue',sans-serif">on every scroll</text>
+
+  <!-- code block -->
+  <rect x="72" y="440" width="1056" height="440" rx="18" fill="#010409" stroke="#21262d" stroke-width="2"/>
+  <text x="112" y="510" fill="#8b949e" font-size="30" xml:space="preserve">// unstable: rows can't skip</text>
+  <text x="112" y="560" fill="#8b949e" font-size="30" xml:space="preserve">fun Feed(items: List&lt;Post&gt;)</text>
+  <text x="112" y="610" fill="#8b949e" font-size="30" xml:space="preserve"></text>
+  <text x="112" y="660" fill="#8b949e" font-size="30" xml:space="preserve">// stable: skipping works</text>
+  <text x="112" y="710" fill="#8b949e" font-size="30" xml:space="preserve">fun Feed(</text>
+  <text x="112" y="760" fill="#8b949e" font-size="30" xml:space="preserve">items: ImmutableList&lt;Post&gt;)</text>
+  <text x="112" y="810" fill="#8b949e" font-size="30" xml:space="preserve">// + items(list, key = { it.id })</text>
+
+  <!-- takeaway -->
+  <text x="72" y="965" fill="#db61ff" font-size="34" font-weight="600" font-family="'SF Pro Display',sans-serif">▸ A plain List is unstable.</text>
+  <text x="72" y="1015" fill="#db61ff" font-size="34" font-weight="600" font-family="'SF Pro Display',sans-serif">  That's the whole bug.</text>
+
+  <!-- footer -->
+  <rect x="72" y="1090" width="1056" height="2" fill="#21262d"/>
+  <text x="72" y="1145" fill="#e6edf3" font-size="30" font-weight="600">The Loopdown</text>
+  <text x="1128" y="1145" fill="#6e7681" font-size="28" text-anchor="end">@darkpandawarrior</text>
+</svg>

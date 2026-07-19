@@ -1,0 +1,44 @@
+{
+  "accent": "#f0883e",
+  "brand": "The Loopdown",
+  "handle": "@darkpandawarrior",
+  "slides": [
+    {
+      "kicker": "The Night Shift",
+      "head": ["It crashed", "only on", "cheap phones"],
+      "body": ["Our service died for thousands", "of users.", "The stack trace blamed a line", "that does nothing wrong.", "", "Swipe."],
+      "arrow": "swipe >"
+    },
+    {
+      "kicker": "The promise",
+      "head": ["5 seconds", "to keep", "your word"],
+      "body": ["Start a foreground service and", "you promise a notification.", "The system gives you ~5s to", "call startForeground().", "Miss it and it kills you."]
+    },
+    {
+      "kicker": "The trap",
+      "head": ["Slow work", "before the", "promise"],
+      "body": ["disk reads, db, init...", "then startForeground().", "80ms on your phone.", "5 seconds on a cold, cheap", "device under load. Crash."]
+    },
+    {
+      "kicker": "Fix 01",
+      "head": ["Notify", "first"],
+      "body": ["Call startForeground() on the", "first line, minimal notification.", "Do the slow work after.", "Update the notification once", "you have real content."]
+    },
+    {
+      "kicker": "Fix 02",
+      "head": ["Android 12:", "use", "WorkManager"],
+      "body": ["You often cannot start an FGS", "from the background at all.", "Use WorkManager with an", "expedited request instead.", "Let the system schedule it."]
+    },
+    {
+      "kicker": "The mental model",
+      "head": ["Doze is", "the night", "jailer"],
+      "body": ["You get 5 seconds to explain", "why your work belongs.", "The platform protects the", "user's battery, not attacks you.", "Explain fast."]
+    },
+    {
+      "kicker": "The takeaway",
+      "head": ["Work with", "the", "lifecycle"],
+      "body": ["Post the notification first.", "Respect the background limits.", "Then the system leaves your", "work alone.", "", "Follow for more field notes."],
+      "arrow": "dev.to / LinkedIn"
+    }
+  ]
+}
