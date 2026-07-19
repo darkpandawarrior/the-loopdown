@@ -11,7 +11,8 @@
     "lint": "node lint-voice.mjs",
     "registry": "node build-registry.mjs",
     "check": "node check-setup.mjs",
-    "export": "node export.mjs"
+    "export": "node export.mjs",
+    "metrics": "node metrics.mjs"
   },
   "dependencies": {
     "@resvg/resvg-js": "^2.6.2",

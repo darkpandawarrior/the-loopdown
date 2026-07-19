@@ -31,9 +31,9 @@ Appearances below). The world is in [`lore/`](lore/bible.md); the voice is in
 <!-- REGISTRY:START -->
 ### 📡 Lessons (dev content)
 
-| Date | Title | Pillar | Series | Status |
-|------|-------|--------|--------|--------|
-| 2026-07-19 | [Teaching a phone to disbelieve its own GPS](lessons/2026-07-19-mileway-dead-reckoning/lesson.md) | location | sensors-who-lie | ready |
+| Date | Title | Series | Status | Live |
+|------|-------|--------|--------|------|
+| 2026-07-19 | [Teaching a phone to disbelieve its own GPS](lessons/2026-07-19-mileway-dead-reckoning/lesson.md) | sensors-who-lie | 🟢 live | [read →](https://dev.to/darkpandawarrior/teaching-a-phone-to-disbelieve-its-own-gps-cip) |
 
 ### 🎭 Cast appearances (continuity)
 

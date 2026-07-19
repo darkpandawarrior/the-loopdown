@@ -71,8 +71,9 @@ writeFileSync(join(ROOT, "data", "registry.json"), JSON.stringify(registry, null
 const tags = (t) => (Array.isArray(t) ? t : t ? [t] : []).slice(0, 4).map((x) => `\`${x}\``).join(" ");
 const link = (title, file) => `[${title}](${file})`;
 
+const statusIcon = (s) => (s === "published" ? "🟢 live" : s === "ready" ? "🟡 ready" : s === "scheduled" ? "🔵 scheduled" : "⚪ draft");
 const lessonRows = lessons.length
-  ? lessons.map((l) => `| ${l.created || "—"} | ${link(l.title, l.file)} | ${l.pillar || "—"} | ${l.series || "—"} | ${l.status || "—"} |`).join("\n")
+  ? lessons.map((l) => `| ${l.created || "—"} | ${link(l.title, l.file)} | ${l.series || "—"} | ${statusIcon(l.status)} | ${l.live ? `[read →](${l.live})` : "—"} |`).join("\n")
   : "| — | _no lessons yet — run `node scripts/new-lesson.mjs`_ | | | |";
 
 const archiveRows = archive
@@ -86,8 +87,8 @@ const castRows = castIndex.length
 const block = `<!-- REGISTRY:START -->
 ### 📡 Lessons (dev content)
 
-| Date | Title | Pillar | Series | Status |
-|------|-------|--------|--------|--------|
+| Date | Title | Series | Status | Live |
+|------|-------|--------|--------|------|
 ${lessonRows}
 
 ### 🎭 Cast appearances (continuity)

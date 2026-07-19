@@ -199,8 +199,10 @@
         "dead-reckoning",
         "kalman"
       ],
-      "status": "ready",
+      "status": "published",
       "created": "2026-07-19",
+      "published": "2026-07-20",
+      "live": "https://dev.to/darkpandawarrior/teaching-a-phone-to-disbelieve-its-own-gps-cip",
       "channels": [
         "linkedin",
         "devto",

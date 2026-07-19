@@ -1,10 +1,31 @@
 slug: mileway-dead-reckoning
-status: ready
+status: published
+published: 2026-07-20
+canonical: https://dev.to/darkpandawarrior/teaching-a-phone-to-disbelieve-its-own-gps-cip
 channels:
-  linkedin:  { status: pending, url: "", scheduled: "", published: "", impressions: 0, reactions: 0, comments: 0 }
-  devto:     { status: pending, url: "", published: "", reactions: 0, comments: 0 }
-  hashnode:  { status: pending, url: "", published: "", reactions: 0, comments: 0 }
-  medium:    { status: pending, url: "", published: "", claps: 0 }
-
-# --- export draft (canonical: https://dev.to/darkpandawarrior/teaching-a-phone-to-disbelieve-its-own-gps-35kj-temp-slug-2185480) ---
-#   devto: draft https://dev.to/darkpandawarrior/teaching-a-phone-to-disbelieve-its-own-gps-35kj-temp-slug-2185480
+  devto:
+    status: published
+    url: https://dev.to/darkpandawarrior/teaching-a-phone-to-disbelieve-its-own-gps-cip
+    published: 2026-07-20
+    reactions: 0
+    comments: 0
+    views: 0
+  linkedin:
+    status: published
+    url: https://www.linkedin.com/posts/siddharth-pandalai_the-concussed-witness-ugcPost-7484693809122045952-8zta
+    published: 2026-07-20
+    format: text + 7-slide carousel
+    impressions: 0
+    reactions: 0
+    comments: 0
+  medium:
+    status: published
+    url: https://medium.com/p/5ed5819043d7
+    published: 2026-07-20
+    claps: 0
+  hashnode:
+    status: published
+    url: https://darkpandawarrior.hashnode.dev/the-concussed-witness
+    published: 2026-07-20
+    reactions: 0
+    comments: 0
