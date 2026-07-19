@@ -1,0 +1,15 @@
+{
+  "name": "the-loopdown-scripts",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Tooling for The Loopdown content engine: scaffold, render, registry.",
+  "scripts": {
+    "new": "node new-lesson.mjs",
+    "render": "node render.mjs",
+    "registry": "node build-registry.mjs"
+  },
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2"
+  }
+}

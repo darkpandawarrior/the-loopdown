@@ -1,0 +1,18 @@
+template: code-card
+accent: "#7c5cff"
+pillar: location engineering
+handle: "@siddharthpandalai"
+title:
+  - "Teaching a phone to"
+  - "disbelieve its own GPS"
+code:
+  - "fun onFix(fix: GpsFix): Position {"
+  - "  if (fix.impliesImpossibleSpeed())"
+  - "     return deadReckon(lastGood, imu)"
+  - "  // GPS is a witness with a"
+  - "  // concussion — trust by weight,"
+  - "  // not by whoever spoke last"
+  - "  return fuse(fix, imu, confidence)"
+takeaway:
+  - "Reliable systems model how their"
+  - "inputs fail. 50% → 95% accuracy."

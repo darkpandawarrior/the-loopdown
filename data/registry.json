@@ -1,0 +1,210 @@
+{
+  "generated": "run `node scripts/build-registry.mjs`",
+  "counts": {
+    "archive": 10,
+    "lessons": 1
+  },
+  "archive": [
+    {
+      "file": "archive/chronicles-of-an-nre-kid.md",
+      "title": "Chronicles Of An NRE Kid",
+      "slug": "chronicles-of-an-nre-kid",
+      "type": "archive",
+      "form": "essay",
+      "era": "personal-essay",
+      "status": "archived",
+      "tags": [
+        "memoir",
+        "identity",
+        "growing-up"
+      ],
+      "words": "1966",
+      "blurb": "Growing up between two worlds as a Non-Resident kid.",
+      "source": "private/originals"
+    },
+    {
+      "file": "archive/college-clubs.md",
+      "title": "College Clubs: Why Aren't You In Any?",
+      "slug": "college-clubs",
+      "type": "archive",
+      "form": "opinion",
+      "era": "opinion",
+      "status": "archived",
+      "tags": [
+        "opinion",
+        "college",
+        "soft-skills"
+      ],
+      "words": "363",
+      "blurb": "The case for joining a society when time, sleep, and parties are all in deficit.",
+      "source": "private/originals"
+    },
+    {
+      "file": "archive/ctc-cost-to-company.md",
+      "title": "CTC: Cost To Company",
+      "slug": "ctc-cost-to-company",
+      "type": "archive",
+      "form": "short-fiction",
+      "era": "2069 (written 2020)",
+      "status": "archived",
+      "tags": [
+        "dystopia",
+        "satire",
+        "world-building",
+        "corporate"
+      ],
+      "words": "1628",
+      "blurb": "A 2069 climate dystopia where salary is paid in days of drinkable water. Placement culture as speculative fiction.",
+      "source": "private/originals"
+    },
+    {
+      "file": "archive/deadline.md",
+      "title": "Deadline",
+      "slug": "deadline",
+      "type": "archive",
+      "form": "short-fiction",
+      "era": "2018",
+      "status": "archived",
+      "tags": [
+        "memento-mori",
+        "sci-fi",
+        "diary",
+        "philosophy"
+      ],
+      "words": "3164",
+      "blurb": "Death shows up in a skull t-shirt and hands you six months. A memento-mori meditation wearing a Deadpool costume.",
+      "source": "private/originals"
+    },
+    {
+      "file": "archive/honest-college-fests.md",
+      "title": "Honest College Fests",
+      "slug": "honest-college-fests",
+      "type": "archive",
+      "form": "humor",
+      "era": "humor",
+      "status": "archived",
+      "tags": [
+        "satire",
+        "college",
+        "listicle"
+      ],
+      "words": "978",
+      "blurb": "College fests, described honestly. The gap between the poster and the reality.",
+      "source": "private/originals"
+    },
+    {
+      "file": "archive/its-a-doggone-life.md",
+      "title": "It's A Doggone Life",
+      "slug": "its-a-doggone-life",
+      "type": "archive",
+      "form": "essay",
+      "era": "personal-essay",
+      "status": "archived",
+      "tags": [
+        "memoir",
+        "dogs",
+        "heart"
+      ],
+      "words": "1371",
+      "blurb": "A dog's-eye life, and everything it teaches.",
+      "source": "private/originals"
+    },
+    {
+      "file": "archive/pointer-games.md",
+      "title": "Pointer Games",
+      "slug": "pointer-games",
+      "type": "archive",
+      "form": "short-fiction",
+      "era": "campus-lore",
+      "status": "archived",
+      "tags": [
+        "campus-lore",
+        "mystery",
+        "hinglish",
+        "world-building"
+      ],
+      "words": "1739",
+      "blurb": "A midnight call from a legendary dropout, a conspiracy in the exam schedule, and the boogeyman of MANIT.",
+      "source": "private/originals"
+    },
+    {
+      "file": "archive/prophecy-201112003.md",
+      "title": "Prophecy #201112003",
+      "slug": "prophecy-201112003",
+      "type": "archive",
+      "form": "short-fiction",
+      "era": "campus-lore",
+      "status": "archived",
+      "tags": [
+        "campus-lore",
+        "mystery",
+        "world-building"
+      ],
+      "words": "1761",
+      "blurb": "A scholar number, a prophecy, and campus mythology.",
+      "source": "private/originals"
+    },
+    {
+      "file": "archive/the-loopdown-story.md",
+      "title": "The Loopdown",
+      "slug": "the-loopdown-story",
+      "type": "archive",
+      "form": "short-fiction",
+      "era": "2020",
+      "status": "archived",
+      "tags": [
+        "time-loop",
+        "sci-fi",
+        "world-building",
+        "diary"
+      ],
+      "words": "1973",
+      "blurb": "A week that refuses to end. 52 iterations of the same Wednesday — the namesake of this whole repo.",
+      "source": "private/originals"
+    },
+    {
+      "file": "archive/the-pun-force.md",
+      "title": "The Pun Force",
+      "slug": "the-pun-force",
+      "type": "archive",
+      "form": "humor",
+      "era": "humor",
+      "status": "archived",
+      "tags": [
+        "puns",
+        "meta",
+        "comedy",
+        "world-building"
+      ],
+      "words": "627",
+      "blurb": "An origin myth for the pun, narrated by the punniest man alive. The building block of humor, weaponized.",
+      "source": "private/originals"
+    }
+  ],
+  "lessons": [
+    {
+      "file": "lessons/2026-07-19-mileway-dead-reckoning/lesson.md",
+      "dir": "2026-07-19-mileway-dead-reckoning",
+      "title": "Teaching a phone to disbelieve its own GPS",
+      "slug": "mileway-dead-reckoning",
+      "type": "lesson",
+      "pillar": "location",
+      "project": "Mileway",
+      "tags": [
+        "android",
+        "location",
+        "sensor-fusion",
+        "dead-reckoning",
+        "kalman"
+      ],
+      "status": "ready",
+      "created": "2026-07-19",
+      "channels": [
+        "linkedin",
+        "devto",
+        "hashnode",
+        "medium"
+      ]
+    }
+  ]
+}

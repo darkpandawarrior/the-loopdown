@@ -1,0 +1,19 @@
+# --- PRIVATE LAYER (never pushed) ---
+# Personal/admin docs, original binaries, and any performance data with
+# account-identifying detail. Mirrors the DATA_CONTRACT public/private split.
+private/
+
+# node
+scripts/node_modules/
+node_modules/
+npm-debug.log*
+
+# os / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# scratch
+*.tmp
+.tmp_*
