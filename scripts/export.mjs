@@ -10,7 +10,7 @@
 // article, cross-links (LinkedIn → long-form), and "previously in this series"
 // threading pulled from data/registry.json.
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
-import { resolve, basename, join, dirname } from "node:path";
+import { resolve, basename, join, dirname, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { get, has } from "./lib/config.mjs";
 import { parseFrontmatter } from "./lib/frontmatter.mjs";
@@ -39,7 +39,8 @@ const title = fm.title || article.fm.title || basename(lessonDir);
 const slug = fm.slug || basename(lessonDir).replace(/^\d{4}-\d{2}-\d{2}-/, "");
 const tags = (Array.isArray(fm.tags) ? fm.tags : []).map((t) => t.replace(/[^a-z0-9]/gi, "").toLowerCase()).filter(Boolean).slice(0, 4);
 const articleBody = article.body || lesson.body;
-const cover = has("GITHUB_ASSET_BASE_URL") ? `${get("GITHUB_ASSET_BASE_URL").replace(/\/$/, "")}/${lessonDir.replace(/^\.?\//, "")}/assets/card.png` : "";
+const relLesson = relative(ROOT, resolve(lessonDir)); // repo-relative, e.g. lessons/2026-... (no leading ../)
+const cover = has("GITHUB_ASSET_BASE_URL") ? `${get("GITHUB_ASSET_BASE_URL").replace(/\/$/, "")}/${relLesson}/assets/card.png` : "";
 
 // --- previous-in-series (continuity) from registry.json ---
 let prev = null, seriesIndexUrl = "";
