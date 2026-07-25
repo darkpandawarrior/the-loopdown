@@ -3,6 +3,33 @@
 Each is a *hook + the lesson underneath*. Pull one, run `new-lesson.mjs`, write it in voice.
 Status: 🟢 ready to write · 🟡 needs a detail check · 💤 someday
 
+## ⭐ Provenance & confidence (the richest vein — see notes/gps-provenance-architecture.md)
+
+Came out of Alex's comment on post 001. His framing beats my original: the lesson is not
+"reject the absurd value", it is "carry confidence and provenance with every reading".
+That is the more senior idea and it should anchor the whole location series. All of these
+are backed by real Mileway/Dice code with verified constants in the notes doc.
+
+- 🟢 **"Filtered should never mean deleted."** ← do this next, strongest of the lot.
+  The bucket architecture: original / cleaned / abnormal / mock / spike. A system that
+  discards what it rejects can never tune its own filters. Generalises to metrics, fraud
+  scoring, observability, ML pipelines. The Concussed Witness returns.
+- 🟢 **"Your data model is where uncertainty goes to die."** The moment a row is just
+  lat/lng, confidence is gone forever. Provenance columns as a design discipline.
+- 🟢 **"One global threshold is how you delete valid data."** Speed-banded gates (2m walking,
+  3m cycling, 5m driving), gap-aware tiers, history-relative decisions. Thresholds should be
+  relative to context, never absolute.
+- 🟡 **"Trust the accelerometer over the GPS."** Independent signal correlation. When two
+  sensors disagree, rank them by what each is actually good at.
+- 🟡 **"Every filter needs a documented exception."** exceptionalStationary as the worked
+  example. A filter with no carve-outs has not met production yet.
+- 🟡 **"Invariants are cheap. Silent corruption is not."** cleaned = total - (mock + abnormal),
+  validated before submit, warnings on suspicious ratios, odometer cross-check.
+- 🟢 **"Never silently change a number someone gets paid on."** Explicit degradation, visible
+  removals, user-controlled toggle. Ethics-of-filtering angle, very shareable.
+- 🟡 **"Thresholds belong in config, not constants."** Making tuning a config change, and
+  proving the refactor was behaviour-neutral.
+
 ## Location / sensor engineering (Mileway)
 - 🟢 **"Our app clocked a parked user at 400 km/h."** → dead reckoning + spike detection. *(shipped as the first lesson)*
 - 🟢 **"The 5-second window that can crash your foreground service."** → `startForeground()` deadline, FGS types, the ANR if you miss it.
