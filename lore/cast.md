@@ -25,6 +25,27 @@ Status: 🟢 introduced (has appeared) · ⚪ waiting in the wings (not yet used
 - **first appearance:** `lessons/2026-07-19-mileway-dead-reckoning`
 - **lesson it carries:** reliable systems model how their inputs fail.
 
+## 🟢 The Archivist
+- **id:** `the-archivist`
+- **is:** provenance, invariants, and the audit trail. The discipline of keeping evidence.
+- **domain:** data integrity, schema design, validation, explicit degradation.
+- **trait:** Meticulous, unglamorous, faintly smug. Keeps every reading's papers in order: where
+  it came from, how sure it was, what we ruled about it. Nobody thanks the Archivist until a
+  number is disputed, at which point the Archivist is the only reason there is an answer.
+- **origin line:** *"You cannot backfill confidence you discarded at write time."*
+- **first appearance:** `lessons/2026-08-11-uncertainty-dies-in-data-model`
+- **lesson it carries:** store the doubt, assert the relationships, show your working.
+
+## 🟢 The Second Witness
+- **id:** `the-second-witness`
+- **is:** the IMU (and by extension any independent corroborating signal).
+- **domain:** sensor fusion, signal correlation.
+- **trait:** Cannot tell you where anything happened. Knows for certain whether anything happened
+  at all. Useless alone, decisive next to a witness with a concussion.
+- **origin line:** *"GPS said the car was moving. The accelerometer hadn't twitched in ten minutes."*
+- **first appearance:** `lessons/2026-08-13-accelerometer-outranks-gps`
+- **lesson it carries:** rank sensors per question, not overall; correlation beats cleverness.
+
 ## 🟢 Doze the Jailer
 - **id:** `doze-the-jailer`
 - **is:** Android's background execution limits (the 5s startForeground window, Doze, OEM restrictions).

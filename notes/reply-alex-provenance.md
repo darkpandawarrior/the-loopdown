@@ -11,34 +11,23 @@ He is right, and he asked a sharp question. Answer it with the real system.
 
 ---
 
-## THE REPLY (LinkedIn comment limit is 1,250 chars, this fits)
+## THE REPLY (1,247 chars, fits LinkedIn's 1,250 comment limit)
 
-Alex, this is exactly right, and it is where we landed only after getting it wrong first.
+Alex, exactly right, and we got here only after getting it wrong first.
 
 Short answer: we stopped deleting things. That is how we dodged the boundary problem.
 
-Only two cases drop outright, because they cannot be real: coordinates outside lat/lng range,
-and accuracy under 0.1m or over 250m. Everything else is persisted and classified. Every row
-keeps its accuracy, provider, bearing, altitude, gyro and accelerometer snapshot, battery and
-device model. Distance splits into buckets: original, cleaned, abnormal, mock, spike. Filtered
-never means gone. It means not counted toward the cleaned number, and here is why.
+Only two cases drop outright, because they cannot be real: coordinates out of range, and accuracy under 0.1m or over 250m. Everything else is persisted and classified. Every row keeps its accuracy, provider, bearing and IMU snapshot. Distance splits into buckets: original, cleaned, abnormal, mock, spike. Filtered never means gone. It means not counted toward the cleaned number, and here is why.
 
-On the boundary itself:
+Gates are speed banded, not global. 2m walking, 3m cycling, 5m driving. One global gate is what deletes valid data.
 
-Gates are speed banded, not global. 2m walking, 3m cycling, 5m driving. One global gate is what
-deletes valid edge cases.
+Caps are gap aware. Under 30s a 5km jump is a teleport. The cap relaxes by tier as the gap grows, and past 6h a flat distance gate replaces it.
 
-Caps are gap aware. Under 30s a 5km jump is a teleport. The cap relaxes by tier as the gap
-grows, and past 6h a flat distance gate replaces the speed test.
-
-A small step is only dropped when a rolling speed window shows no recent movement, so a traffic
-crawl survives.
+A small step is only dropped when a rolling speed window shows no recent movement, so a traffic crawl survives.
 
 The accelerometer outranks GPS. If the IMU says still, we believe it over GPS speed.
 
-The part I would push hardest: because nothing is deleted, the buckets became the tuning
-instrument. We can replay real journeys and ask what we called abnormal and whether it truly
-was. Delete the data and you can never answer that question.
+The part I push hardest: because nothing is deleted, the buckets became the tuning instrument. We can replay real journeys and ask what we called abnormal and whether it truly was. Delete the data and you can never answer that.
 
 ---
 

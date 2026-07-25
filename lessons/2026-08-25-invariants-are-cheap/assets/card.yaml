@@ -1,0 +1,18 @@
+template: code-card
+accent: "#f2cc60"
+pillar: chain of custody
+handle: "@darkpandawarrior"
+title:
+  - "Invariants are cheap."
+  - "Silent corruption is not."
+code:
+  - "// the rule everyone knew"
+  - "// and nothing enforced:"
+  - "cleaned = total -"
+  - "          (mock + abnormal)"
+  - ""
+  - "// spike excluded: never folded"
+  - "// into total, so never removed"
+takeaway:
+  - "Errors for what must not happen."
+  - "Warnings for what's suspicious."

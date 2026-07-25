@@ -1,0 +1,18 @@
+template: code-card
+accent: "#7c5cff"
+pillar: sensors who lie
+handle: "@darkpandawarrior"
+title:
+  - "Every filter needs a"
+  - "documented exception"
+code:
+  - "val exceptionalStationary ="
+  - "  speedMps <= 0.1f &&"
+  - "  accuracyM < 20f &&"
+  - "  hasMovementHistory()"
+  - ""
+  - "// reliably placed, not drifting"
+  - "// so it counts despite the gate"
+takeaway:
+  - "An unnamed special case is"
+  - "indistinguishable from a bug."

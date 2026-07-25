@@ -1,0 +1,18 @@
+template: code-card
+accent: "#7c5cff"
+pillar: sensors who lie
+handle: "@darkpandawarrior"
+title:
+  - "When two sensors disagree,"
+  - "rank them"
+code:
+  - "// GPS: confident, moving"
+  - "// IMU: hasn't twitched in 10min"
+  - ""
+  - "if ((d < gate) &&"
+  - "   (!hasMovementHistory()"
+  - "    || motionStill)) return null"
+  - "// stillness is authoritative"
+takeaway:
+  - "Rank sensors per question,"
+  - "not overall."

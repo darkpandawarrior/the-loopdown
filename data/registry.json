@@ -2,9 +2,9 @@
   "generated": "run `node scripts/build-registry.mjs`",
   "counts": {
     "archive": 10,
-    "lessons": 6,
-    "cast": 5,
-    "series": 5
+    "lessons": 14,
+    "cast": 7,
+    "series": 6
   },
   "archive": [
     {
@@ -184,6 +184,287 @@
     }
   ],
   "lessons": [
+    {
+      "file": "lessons/2026-08-27-thresholds-in-config/lesson.md",
+      "dir": "2026-08-27-thresholds-in-config",
+      "title": "Your thresholds do not belong in constants",
+      "slug": "thresholds-in-config",
+      "type": "lesson",
+      "pillar": "data-integrity",
+      "project": "Mileway",
+      "tags": [
+        "architecture",
+        "configuration",
+        "kotlin",
+        "refactoring",
+        "tuning"
+      ],
+      "status": "ready",
+      "created": "2026-08-27",
+      "live": "",
+      "url_devto": "",
+      "url_linkedin": "",
+      "url_medium": "",
+      "url_hashnode": "",
+      "channels": [
+        "linkedin",
+        "devto",
+        "hashnode",
+        "medium"
+      ],
+      "series": "chain-of-custody",
+      "cast": [
+        "the-archivist"
+      ],
+      "loop_iteration": "14",
+      "links": {}
+    },
+    {
+      "file": "lessons/2026-08-25-invariants-are-cheap/lesson.md",
+      "dir": "2026-08-25-invariants-are-cheap",
+      "title": "Invariants are cheap. Silent corruption is not.",
+      "slug": "invariants-are-cheap",
+      "type": "lesson",
+      "pillar": "data-integrity",
+      "project": "Mileway",
+      "tags": [
+        "data-integrity",
+        "validation",
+        "architecture",
+        "kotlin",
+        "testing"
+      ],
+      "status": "ready",
+      "created": "2026-08-25",
+      "live": "",
+      "url_devto": "",
+      "url_linkedin": "",
+      "url_medium": "",
+      "url_hashnode": "",
+      "channels": [
+        "linkedin",
+        "devto",
+        "hashnode",
+        "medium"
+      ],
+      "series": "chain-of-custody",
+      "cast": [
+        "the-archivist"
+      ],
+      "loop_iteration": "13",
+      "links": {}
+    },
+    {
+      "file": "lessons/2026-08-20-documented-exception/lesson.md",
+      "dir": "2026-08-20-documented-exception",
+      "title": "Every filter needs a documented exception",
+      "slug": "documented-exception",
+      "type": "lesson",
+      "pillar": "data-integrity",
+      "project": "Mileway",
+      "tags": [
+        "android",
+        "filtering",
+        "edge-cases",
+        "code-quality",
+        "location"
+      ],
+      "status": "ready",
+      "created": "2026-08-20",
+      "live": "",
+      "url_devto": "",
+      "url_linkedin": "",
+      "url_medium": "",
+      "url_hashnode": "",
+      "channels": [
+        "linkedin",
+        "devto",
+        "hashnode",
+        "medium"
+      ],
+      "series": "sensors-who-lie",
+      "cast": [
+        "the-concussed-witness"
+      ],
+      "loop_iteration": "12",
+      "links": {}
+    },
+    {
+      "file": "lessons/2026-08-18-never-silently-change-a-number/lesson.md",
+      "dir": "2026-08-18-never-silently-change-a-number",
+      "title": "Never silently change a number someone gets paid on",
+      "slug": "never-silently-change-a-number",
+      "type": "lesson",
+      "pillar": "data-integrity",
+      "project": "Dice",
+      "tags": [
+        "product-engineering",
+        "trust",
+        "ux",
+        "data-integrity",
+        "android"
+      ],
+      "status": "ready",
+      "created": "2026-08-18",
+      "live": "",
+      "url_devto": "",
+      "url_linkedin": "",
+      "url_medium": "",
+      "url_hashnode": "",
+      "channels": [
+        "linkedin",
+        "devto",
+        "hashnode",
+        "medium"
+      ],
+      "series": "chain-of-custody",
+      "cast": [
+        "the-archivist"
+      ],
+      "loop_iteration": "11",
+      "links": {}
+    },
+    {
+      "file": "lessons/2026-08-13-accelerometer-outranks-gps/lesson.md",
+      "dir": "2026-08-13-accelerometer-outranks-gps",
+      "title": "When two sensors disagree, rank them",
+      "slug": "accelerometer-outranks-gps",
+      "type": "lesson",
+      "pillar": "data-integrity",
+      "project": "Mileway",
+      "tags": [
+        "android",
+        "sensors",
+        "sensor-fusion",
+        "imu",
+        "location"
+      ],
+      "status": "ready",
+      "created": "2026-08-13",
+      "live": "",
+      "url_devto": "",
+      "url_linkedin": "",
+      "url_medium": "",
+      "url_hashnode": "",
+      "channels": [
+        "linkedin",
+        "devto",
+        "hashnode",
+        "medium"
+      ],
+      "series": "sensors-who-lie",
+      "cast": [
+        "the-concussed-witness",
+        "the-second-witness"
+      ],
+      "loop_iteration": "10",
+      "links": {}
+    },
+    {
+      "file": "lessons/2026-08-11-uncertainty-dies-in-data-model/lesson.md",
+      "dir": "2026-08-11-uncertainty-dies-in-data-model",
+      "title": "Your data model is where uncertainty goes to die",
+      "slug": "uncertainty-dies-in-data-model",
+      "type": "lesson",
+      "pillar": "data-integrity",
+      "project": "Mileway",
+      "tags": [
+        "data-modelling",
+        "architecture",
+        "provenance",
+        "sensors",
+        "api-design"
+      ],
+      "status": "ready",
+      "created": "2026-08-11",
+      "live": "",
+      "url_devto": "",
+      "url_linkedin": "",
+      "url_medium": "",
+      "url_hashnode": "",
+      "channels": [
+        "linkedin",
+        "devto",
+        "hashnode",
+        "medium"
+      ],
+      "series": "chain-of-custody",
+      "cast": [
+        "the-archivist"
+      ],
+      "loop_iteration": "9",
+      "links": {}
+    },
+    {
+      "file": "lessons/2026-08-06-one-global-threshold/lesson.md",
+      "dir": "2026-08-06-one-global-threshold",
+      "title": "One global threshold is how you delete valid data",
+      "slug": "one-global-threshold",
+      "type": "lesson",
+      "pillar": "data-integrity",
+      "project": "Mileway",
+      "tags": [
+        "android",
+        "location",
+        "thresholds",
+        "heuristics",
+        "sensor-fusion"
+      ],
+      "status": "ready",
+      "created": "2026-08-06",
+      "live": "",
+      "url_devto": "",
+      "url_linkedin": "",
+      "url_medium": "",
+      "url_hashnode": "",
+      "channels": [
+        "linkedin",
+        "devto",
+        "hashnode",
+        "medium"
+      ],
+      "series": "sensors-who-lie",
+      "cast": [
+        "the-concussed-witness"
+      ],
+      "loop_iteration": "8",
+      "links": {}
+    },
+    {
+      "file": "lessons/2026-08-04-filtered-never-deleted/lesson.md",
+      "dir": "2026-08-04-filtered-never-deleted",
+      "title": "Filtered should never mean deleted",
+      "slug": "filtered-never-deleted",
+      "type": "lesson",
+      "pillar": "data-integrity",
+      "project": "Mileway",
+      "tags": [
+        "android",
+        "data-modelling",
+        "filtering",
+        "observability",
+        "architecture"
+      ],
+      "status": "ready",
+      "created": "2026-08-04",
+      "live": "",
+      "url_devto": "",
+      "url_linkedin": "",
+      "url_medium": "",
+      "url_hashnode": "",
+      "channels": [
+        "linkedin",
+        "devto",
+        "hashnode",
+        "medium"
+      ],
+      "series": "sensors-who-lie",
+      "cast": [
+        "the-concussed-witness"
+      ],
+      "loop_iteration": "7",
+      "links": {}
+    },
     {
       "file": "lessons/2026-07-31-collectasstate-leak/lesson.md",
       "dir": "2026-07-31-collectasstate-leak",
@@ -379,6 +660,63 @@
   ],
   "cast": [
     {
+      "id": "the-concussed-witness",
+      "appearances": 5,
+      "in": [
+        {
+          "title": "Every filter needs a documented exception",
+          "file": "lessons/2026-08-20-documented-exception/lesson.md",
+          "date": "2026-08-20"
+        },
+        {
+          "title": "When two sensors disagree, rank them",
+          "file": "lessons/2026-08-13-accelerometer-outranks-gps/lesson.md",
+          "date": "2026-08-13"
+        },
+        {
+          "title": "One global threshold is how you delete valid data",
+          "file": "lessons/2026-08-06-one-global-threshold/lesson.md",
+          "date": "2026-08-06"
+        },
+        {
+          "title": "Filtered should never mean deleted",
+          "file": "lessons/2026-08-04-filtered-never-deleted/lesson.md",
+          "date": "2026-08-04"
+        },
+        {
+          "title": "Teaching a phone to disbelieve its own GPS",
+          "file": "lessons/2026-07-19-mileway-dead-reckoning/lesson.md",
+          "date": "2026-07-19"
+        }
+      ]
+    },
+    {
+      "id": "the-archivist",
+      "appearances": 4,
+      "in": [
+        {
+          "title": "Your thresholds do not belong in constants",
+          "file": "lessons/2026-08-27-thresholds-in-config/lesson.md",
+          "date": "2026-08-27"
+        },
+        {
+          "title": "Invariants are cheap. Silent corruption is not.",
+          "file": "lessons/2026-08-25-invariants-are-cheap/lesson.md",
+          "date": "2026-08-25"
+        },
+        {
+          "title": "Never silently change a number someone gets paid on",
+          "file": "lessons/2026-08-18-never-silently-change-a-number/lesson.md",
+          "date": "2026-08-18"
+        },
+        {
+          "title": "Your data model is where uncertainty goes to die",
+          "file": "lessons/2026-08-11-uncertainty-dies-in-data-model/lesson.md",
+          "date": "2026-08-11"
+        }
+      ]
+    },
+    {
       "id": "the-recomposer",
       "appearances": 2,
       "in": [
@@ -391,6 +729,17 @@
           "title": "Your LazyColumn recomposes on every scroll",
           "file": "lessons/2026-07-24-lazycolumn-recomposition/lesson.md",
           "date": "2026-07-24"
+        }
+      ]
+    },
+    {
+      "id": "the-second-witness",
+      "appearances": 1,
+      "in": [
+        {
+          "title": "When two sensors disagree, rank them",
+          "file": "lessons/2026-08-13-accelerometer-outranks-gps/lesson.md",
+          "date": "2026-08-13"
         }
       ]
     },
@@ -426,20 +775,14 @@
           "date": "2026-07-20"
         }
       ]
-    },
-    {
-      "id": "the-concussed-witness",
-      "appearances": 1,
-      "in": [
-        {
-          "title": "Teaching a phone to disbelieve its own GPS",
-          "file": "lessons/2026-07-19-mileway-dead-reckoning/lesson.md",
-          "date": "2026-07-19"
-        }
-      ]
     }
   ],
   "series": [
+    {
+      "id": "chain-of-custody",
+      "title": "Chain Of Custody",
+      "episodes": 4
+    },
     {
       "id": "ghosts-in-the-recomposition",
       "title": "Ghosts In The Recomposition",
@@ -453,7 +796,7 @@
     {
       "id": "sensors-who-lie",
       "title": "Sensors Who Lie",
-      "episodes": 1
+      "episodes": 5
     },
     {
       "id": "the-coroutine-court",

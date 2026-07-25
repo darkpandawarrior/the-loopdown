@@ -1,0 +1,21 @@
+{
+  "accent": "#f2cc60",
+  "brand": "The Loopdown",
+  "handle": "@darkpandawarrior",
+  "slides": [
+    { "kicker": "Chain of Custody", "head": ["We were", "right. And", "still wrong."],
+      "body": ["Our algorithm said the driver", "did 4km less than they thought.", "It was probably correct.", "Shipping it silently would", "still have been wrong. Swipe."], "arrow": "swipe >" },
+    { "kicker": "The stakes", "head": ["The number", "becomes", "money"],
+      "body": ["Mileage ends in an expense", "claim.", "Filtering stopped being a", "technical decision the moment", "the output paid somebody."] },
+    { "kicker": "Their view", "head": ["40km.", "App says", "36."],
+      "body": ["They cannot tell a careful", "algorithm from an employer", "shaving expenses.", "Both look the same:", "a smaller number, no reason."] },
+    { "kicker": "Fix 01", "head": ["Show", "the", "original"],
+      "body": ["Both numbers exist in the", "data model, so show both.", "We measured 40 and propose 36,", "not 36 as if it were all", "that ever happened."] },
+    { "kicker": "Fix 02", "head": ["Name what", "you removed"],
+      "body": ["Not 'adjusted for accuracy'.", "Abnormal. Mock. Spike.", "Categories are checkable.", "Vagueness is not."] },
+    { "kicker": "Fix 03", "head": ["Let them", "overrule", "you"],
+      "body": ["A toggle for whether abnormal", "is subtracted.", "They were there. You weren't.", "And if your threshold is wrong,", "this is the cheapest feedback."] },
+    { "kicker": "The rule", "head": ["Earn it,", "don't ask", "for it"],
+      "body": ["Money, time, reputation:", "correctness is table stakes,", "transparency is the product.", "Being right in silence is just", "asking to be trusted."], "arrow": "dev.to / LinkedIn" }
+  ]
+}

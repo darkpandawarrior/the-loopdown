@@ -1,0 +1,18 @@
+template: code-card
+accent: "#f2cc60"
+pillar: chain of custody
+handle: "@darkpandawarrior"
+title:
+  - "Never silently change a number"
+  - "someone gets paid on"
+code:
+  - "// correct, and still wrong:"
+  - "show(cleanedDistance)"
+  - ""
+  - "// show the working:"
+  - "var final = original"
+  - "if (removeAbnormal)"
+  - "  final -= abnormalDistance"
+takeaway:
+  - "Correctness is table stakes."
+  - "Transparency is the product."

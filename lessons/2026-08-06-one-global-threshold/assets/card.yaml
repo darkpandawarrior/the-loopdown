@@ -1,0 +1,18 @@
+template: code-card
+accent: "#7c5cff"
+pillar: sensors who lie
+handle: "@darkpandawarrior"
+title:
+  - "One global threshold is how"
+  - "you delete valid data"
+code:
+  - "// claims 5m means the same"
+  - "// parked, walking, driving"
+  - "if (d < 5.0) return"
+  - ""
+  - "// context, not constants:"
+  - "speed < 2.5 -> 2.0"
+  - "speed < 7.0 -> 3.0 else 5.0"
+takeaway:
+  - "A constant assumes every context."
+  - "That's a bug with a delay on it."

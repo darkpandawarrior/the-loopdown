@@ -1,0 +1,18 @@
+template: code-card
+accent: "#f2cc60"
+pillar: chain of custody
+handle: "@darkpandawarrior"
+title:
+  - "Your data model is where"
+  - "uncertainty goes to die"
+code:
+  - "// what the sensor gave you"
+  - "accuracy, provider, bearing,"
+  - "altitude, timestamp, IMU"
+  - ""
+  - "// what you stored"
+  - "data class Location("
+  - "  lat, lng, speed, date)"
+takeaway:
+  - "You cannot backfill confidence"
+  - "you discarded at write time."

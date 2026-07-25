@@ -20,6 +20,7 @@ this field straight to it.)
 | `the-coroutine-court` | **The Coroutine Court** | concurrency | The Messenger | Concurrency gotchas tried as courtroom cases. The defendant is usually your assumption. |
 | `crossing-the-schema` | **Crossing the Schema** | Room / security | The Ferryman, The Vault Keeper | Persistence as a one-way river: migrations, encryption, and not losing user data. |
 | `one-brain-two-bodies` | **One Brain, Two Bodies** | KMP | The Understudy | Shared logic, platform bodies. Kotlin Multiplatform boundaries, expect/actual vs interfaces, and where the seams go. |
+| `chain-of-custody` | **Chain of Custody** | data integrity / trust | The Archivist | Evidence handling for data. Provenance, invariants, explicit degradation, and never silently changing a number somebody gets paid on. |
 | `notes-from-the-loop` | **Notes from the Loop** | build-in-public | The Backlog, The Fleet | Diary from inside the loop — building PaymentsLab, Kursi, HireSignal, and a fleet of AI agents, in public. |
 
 ## Format notes

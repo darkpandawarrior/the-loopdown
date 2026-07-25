@@ -1,0 +1,18 @@
+template: code-card
+accent: "#7c5cff"
+pillar: sensors who lie
+handle: "@darkpandawarrior"
+title:
+  - "Filtered should never"
+  - "mean deleted"
+code:
+  - "// the version that rots:"
+  - "if (!fix.isPlausible()) return"
+  - ""
+  - "// the version you can tune:"
+  - "originalDistance += d"
+  - "if (abnormal) abnormalDistance += d"
+  - "else cleanedDistance += d"
+takeaway:
+  - "You can't audit what you deleted."
+  - "And you can't tune what you can't audit."

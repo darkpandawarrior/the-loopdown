@@ -1,0 +1,18 @@
+template: code-card
+accent: "#f2cc60"
+pillar: chain of custody
+handle: "@darkpandawarrior"
+title:
+  - "Your thresholds do not"
+  - "belong in constants"
+code:
+  - "// a week to move a number 0.5"
+  - "const val JITTER_M = 5.0"
+  - ""
+  - "// a hypothesis, not a constant"
+  - "data class AbnormalConfig("
+  - "  val drivingJitterM: Double"
+  - "    = 5.0,  /* + 17 more */ )"
+takeaway:
+  - "If tuning needs a release,"
+  - "you'll guess instead of measure."

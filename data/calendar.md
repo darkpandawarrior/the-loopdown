@@ -22,6 +22,18 @@ Rhythm per week:
 | 4 | Anchor | 24 Room migrations, zero data loss. The rules. | Crossing the Schema | carousel + article | backlog |
 | 4 | Jab | I code with a fleet of AI agents. The routing rule. | Notes from the Loop | card + article | backlog |
 
+| 5 | Anchor | Filtered should never mean deleted | Sensors Who Lie | carousel + article | ✅ drafted |
+| 5 | Jab | One global threshold is how you delete valid data | Sensors Who Lie | card + article | ✅ drafted |
+| 6 | Anchor | Your data model is where uncertainty goes to die | Chain of Custody | carousel + article | ✅ drafted |
+| 6 | Jab | When two sensors disagree, rank them | Sensors Who Lie | card + article | ✅ drafted |
+| 7 | Anchor | Never silently change a number someone gets paid on | Chain of Custody | carousel + article | ✅ drafted |
+| 7 | Jab | Every filter needs a documented exception | Sensors Who Lie | card + article | ✅ drafted |
+| 8 | Jab | Invariants are cheap. Silent corruption is not. | Chain of Custody | card + article | ✅ drafted |
+| 8 | Jab | Your thresholds do not belong in constants | Chain of Custody | card + article | ✅ drafted |
+
+Weeks 5-8 all come from Alex's comment on post 001 (see notes/gps-provenance-architecture.md).
+His reframe, provenance over rejection, turned one post into a two-series arc.
+
 Rules of thumb:
 - Reply to every comment in the first 2 hours. Early engagement drives reach more than anything else.
 - Anchor posts seed the series; jabs keep you in the feed between anchors.
