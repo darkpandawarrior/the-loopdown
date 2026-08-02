@@ -122,7 +122,11 @@ pre { font-family:var(--mono); font-size:31px; line-height:1.52; padding:0 34px;
 .plate .art { width:470px; }
 .plate .art svg { width:100%; height:auto; }
 .plate .label { width:100%; border-top:1px solid color-mix(in srgb, var(--accent) 34%, transparent);
-                margin-top:24px; padding-top:26px; display:flex; align-items:baseline; }
+                margin-top:24px; padding-top:26px; display:flex; align-items:center; gap:22px; }
+/* the sigil is the class name hashed into geometry, so it belongs next to the
+   class name and nowhere else */
+.plate .sig { width:92px; flex:0 0 92px; opacity:.9; }
+.plate .sig svg { width:100%; height:auto; display:block; }
 .plate .nm { font-size:38px; font-weight:800; letter-spacing:.08em; }
 .plate .cls { font-family:var(--mono); font-size:24px; color:var(--ink-faint); margin-top:10px; }
 .plate .ex { margin-left:auto; font-family:var(--mono); font-size:24px; color:var(--accent); }

@@ -23,7 +23,7 @@ import { chromium } from "playwright";
 import { PDFDocument } from "pdf-lib";
 import { highlightHtml } from "./kotlin-highlight.mjs";
 import { css } from "./slide-css.mjs";
-import { FIGURES, portrait, castMeta, esc } from "./design-kit.mjs";
+import { FIGURES, portrait, castMeta, sigil, esc } from "./design-kit.mjs";
 
 const args = process.argv.slice(2);
 const lessonDir = args.find((a) => !a.startsWith("--"));
@@ -116,6 +116,7 @@ const RENDER = {
       <div class="ticks"><i></i><i></i><i></i><i></i></div>
       <div class="art">${portrait(s.cast, ACCENT)}</div>
       <div class="label">
+        <div class="sig">${sigil(m.className, ACCENT, { size: 92, stroke: 2 })}</div>
         <div>
           <div class="nm">${esc(m.name)}</div>
           <div class="cls">${esc(m.className)}</div>
