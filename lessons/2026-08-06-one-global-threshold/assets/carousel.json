@@ -47,6 +47,16 @@
       ]
     },
     {
+      "type": "diagram",
+      "kicker": "Why it broke",
+      "head": [
+        "One number cannot",
+        "mean four things"
+      ],
+      "figure": "threshold-context",
+      "caption": "Five metres means something different parked, walking, cycling and driving. A flat line through all four deletes real movement at the bottom."
+    },
+    {
       "type": "fixes",
       "kicker": "The fix",
       "head": [

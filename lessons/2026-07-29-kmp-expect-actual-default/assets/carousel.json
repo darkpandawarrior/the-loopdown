@@ -44,6 +44,16 @@
       ]
     },
     {
+      "type": "diagram",
+      "kicker": "The real choice",
+      "head": [
+        "A weld, or",
+        "a pin you can pull"
+      ],
+      "figure": "weld-vs-hinge",
+      "caption": "expect/actual binds one implementation by name at compile time. An interface takes any implementation, including a fake, which is the whole difference for tests."
+    },
+    {
       "type": "fixes",
       "kicker": "How to choose",
       "head": [

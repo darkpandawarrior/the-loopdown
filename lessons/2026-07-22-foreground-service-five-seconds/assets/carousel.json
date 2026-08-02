@@ -53,6 +53,16 @@
       ]
     },
     {
+      "type": "diagram",
+      "kicker": "What the clock saw",
+      "head": [
+        "Two disk reads,",
+        "one dead service"
+      ],
+      "figure": "five-second-window",
+      "caption": "The countdown starts the moment you call startForegroundService(). On a cold, loaded phone those reads spend the whole window."
+    },
+    {
       "type": "fixes",
       "kicker": "The rules",
       "head": [

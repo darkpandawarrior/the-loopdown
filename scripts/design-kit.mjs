@@ -705,7 +705,151 @@ function messengerStack(accent, blocked) {
   return `<svg viewBox="0 0 920 570" xmlns="http://www.w3.org/2000/svg">${out}</svg>`;
 }
 
+// ── figure helpers ──────────────────────────────────────────────────────────
+const fig = (body, h = 570) => `<svg viewBox="0 0 920 ${h}" xmlns="http://www.w3.org/2000/svg">${body}</svg>`;
+const lbl = (x, y, t, fill, size = 24, anchor = "start", mono = true) =>
+  `<text x="${x}" y="${y}" fill="${fill}" font-family="${mono ? T.mono : T.sans}" font-size="${size}" text-anchor="${anchor}">${esc(t)}</text>`;
+const box = (x, y, w, h, stroke, r = 12) =>
+  `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="#04060A" fill-opacity="0.85" stroke="${stroke}" stroke-width="2.5"/>`;
+
+// The 5-second window. Before: two disk reads spend it. After: promise first.
+const fiveSecondWindow = (accent) => {
+  const X = 130, W = 700, s = (t) => X + (t / 7) * W;      // 0..7s across the track
+  const row = (y, label, spans, killAt, ok) => {
+    let o = lbl(X - 18, y + 8, label, T.inkFaint, 23, "end");
+    o += `<rect x="${X}" y="${y - 22}" width="${s(5) - X}" height="44" rx="8" fill="${T.amber}" fill-opacity="0.10" stroke="${T.amber}" stroke-opacity="0.35" stroke-width="2"/>`;
+    for (const [a, b, c, t] of spans) {
+      o += `<rect x="${s(a)}" y="${y - 14}" width="${s(b) - s(a)}" height="28" rx="6" fill="${c}" fill-opacity="0.85"/>`;
+      if (t) o += lbl(s(a) + 10, y + 7, t, "#04060A", 19);
+    }
+    if (killAt) {
+      o += `<line x1="${s(killAt)}" y1="${y - 34}" x2="${s(killAt)}" y2="${y + 34}" stroke="${T.danger}" stroke-width="3.5"/>`;
+      o += lbl(s(killAt) + 12, y - 26, "killed", T.danger, 21);
+    }
+    if (ok) o += lbl(s(6.6), y - 30, "alive", T.good, 21);
+    return o;
+  };
+  return fig(`
+    <line x1="${X}" y1="90" x2="${X + W}" y2="90" stroke="${T.line}" stroke-width="2"/>
+    ${[0, 1, 2, 3, 4, 5, 6, 7].map((t) => `<line x1="${s(t)}" y1="84" x2="${s(t)}" y2="96" stroke="${T.inkFaint}" stroke-width="2"/>${lbl(s(t), 72, t + "s", T.inkFaint, 20, "middle")}`).join("")}
+    ${lbl(s(2.5), 46, "the window you promised inside", T.amber, 22, "middle")}
+    ${row(200, "before", [[0, 2.6, "#8B98A8", "restoreLastTrip()"], [2.6, 5.4, "#8B98A8", "settings.load()"], [5.4, 6.2, accent, ""]], 5, false)}
+    ${lbl(X, 258, "the system stopped waiting a second before you called it", T.danger, 21)}
+    ${row(390, "after", [[0, 0.35, accent, ""], [0.6, 6.6, "#8B98A8", "the same slow work, now off the critical path"]], null, true)}
+    ${lbl(X, 448, "startForeground() first, enrich the notification later", T.good, 21)}
+  `);
+};
+
+// Filtered is not deleted: rows land, get classified, and the trusted number is
+// a view over the buckets rather than the only survivor.
+const filterBuckets = (accent) => {
+  const buckets = [["accepted", T.good, 118], ["jitter", accent, 358], ["impossible", T.danger, 598]];
+  return fig(`
+    ${lbl(60, 60, "every reading", T.inkFaint, 23)}
+    ${[0, 1, 2, 3, 4, 5, 6, 7].map((i) => `<circle cx="${70 + i * 34}" cy="96" r="8" fill="${T.inkDim}" fill-opacity="0.75"/>`).join("")}
+    <path d="M60 130 H860" stroke="${T.line}" stroke-width="2" stroke-dasharray="7 9"/>
+    ${box(300, 152, 320, 70, accent, 14)}
+    ${lbl(460, 196, "classify( )", accent, 30, "middle")}
+    ${buckets.map(([n, c, x]) => `
+      <path d="M460 222 C 460 262, ${x + 100} 262, ${x + 100} 300" fill="none" stroke="${c}" stroke-opacity="0.5" stroke-width="2.5"/>
+      ${box(x, 300, 200, 132, c, 14)}
+      ${lbl(x + 100, 344, n, c, 25, "middle")}
+      ${[0, 1, 2].map((r) => `<rect x="${x + 26}" y="${368 + r * 20}" width="${148 - r * 34}" height="9" rx="4" fill="${c}" fill-opacity="0.35"/>`).join("")}
+    `).join("")}
+    <path d="M60 470 H860" stroke="${T.line}" stroke-width="1.5"/>
+    ${lbl(460, 512, "the trusted number is a view over these, not the only survivor", T.inkFaint, 23, "middle", false)}
+  `);
+};
+
+// A row that carries doubt, next to the row that threw it away.
+const provenanceRow = (accent) => {
+  const cell = (x, y, w, t, c, dim) =>
+    `${box(x, y, w, 76, dim ? T.line : c, 10)}${lbl(x + w / 2, y + 46, t, dim ? T.inkFaint : c, 22, "middle")}`;
+  return fig(`
+    ${lbl(60, 56, "what the sensor handed you", T.inkFaint, 23)}
+    ${cell(60, 80, 150, "lat", accent)}${cell(220, 80, 150, "lng", accent)}
+    ${cell(380, 80, 150, "±4m", T.amber)}${cell(540, 80, 150, "gps", T.amber)}${cell(700, 80, 160, "t=09:14", T.amber)}
+    <path d="M460 186 V236" stroke="${T.danger}" stroke-width="3.5"/>
+    <path d="M460 236 l-11 -24 h22 Z" fill="${T.danger}"/>
+    ${lbl(486, 220, "the schema only had room for two", T.danger, 22, "start", false)}
+    ${lbl(60, 296, "what the row kept", T.inkFaint, 23)}
+    ${cell(60, 320, 150, "lat", accent)}${cell(220, 320, 150, "lng", accent)}
+    ${cell(380, 320, 480, "gone, and not recoverable", T.inkFaint, true)}
+    ${lbl(460, 470, "a 4 metre fix and a 200 metre fix are now the same fact", T.inkFaint, 23, "middle", false)}
+  `);
+};
+
+// Two signals, one question each. Rank per question, not overall.
+const twoSensors = (accent) => {
+  const trace = (y, d, c) => `<path d="${d}" fill="none" stroke="${c}" stroke-width="3" stroke-linejoin="round"/>`;
+  return fig(`
+    ${lbl(60, 62, "GPS", accent, 26)}
+    ${trace(0, "M60 120 L140 96 L200 150 L260 88 L330 156 L400 100 L470 140 L540 92 L620 148 L700 104 L780 138 L860 110", accent)}
+    ${lbl(860, 62, "says: moving", T.inkFaint, 22, "end")}
+    ${lbl(60, 250, "IMU", T.good, 26)}
+    ${trace(0, "M60 300 H860", T.good)}
+    ${lbl(860, 250, "says: nothing has moved in 10 min", T.inkFaint, 22, "end")}
+    <path d="M60 360 H860" stroke="${T.line}" stroke-width="1.5"/>
+    ${box(60, 392, 380, 120, T.good, 14)}
+    ${lbl(250, 434, "is it moving?", T.inkDim, 25, "middle")}
+    ${lbl(250, 476, "the IMU is authoritative", T.good, 24, "middle")}
+    ${box(480, 392, 380, 120, accent, 14)}
+    ${lbl(670, 434, "where is it?", T.inkDim, 25, "middle")}
+    ${lbl(670, 476, "GPS is authoritative", accent, 24, "middle")}
+  `);
+};
+
+// One flat threshold across four contexts, versus one that bends.
+const thresholdContext = (accent) => {
+  const bands = [["parked", 90], ["walking", 290], ["cycling", 490], ["driving", 690]];
+  const flatY = 300, step = [386, 348, 282, 200];
+  return fig(`
+    <!-- legend, kept clear of the plot so nothing overlaps a band -->
+    <line x1="70" y1="66" x2="128" y2="66" stroke="${T.danger}" stroke-width="3.5" stroke-dasharray="12 8"/>
+    ${lbl(140, 74, "one global threshold", T.danger, 23)}
+    <line x1="470" y1="66" x2="528" y2="66" stroke="${T.good}" stroke-width="6"/>
+    ${lbl(540, 74, "what each context needs", T.good, 23)}
+
+    ${bands.map(([n, x], i) => `
+      <rect x="${x}" y="120" width="170" height="330" rx="10" fill="#04060A" fill-opacity="0.55" stroke="${T.line}" stroke-width="1.5"/>
+      ${lbl(x + 85, 486, n, T.inkFaint, 23, "middle")}
+      <rect x="${x + 24}" y="${step[i]}" width="122" height="6" rx="3" fill="${T.good}"/>
+    `).join("")}
+    <rect x="90" y="${flatY}" width="370" height="92" fill="${T.danger}" fill-opacity="0.14"/>
+    <line x1="70" y1="${flatY}" x2="880" y2="${flatY}" stroke="${T.danger}" stroke-width="3.5" stroke-dasharray="12 8"/>
+    ${lbl(275, 532, "valid data the filter deletes", T.danger, 23, "middle", false)}
+  `);
+};
+
+// A weld you cannot undo, next to a hinge you can swap a pin out of.
+const weldVsHinge = (accent) => fig(`
+  ${lbl(230, 60, "expect / actual", T.danger, 27, "middle")}
+  ${box(120, 96, 220, 96, T.line)}${lbl(230, 154, "common", T.inkDim, 24, "middle")}
+  ${box(120, 268, 220, 96, T.line)}${lbl(230, 326, "androidMain", T.inkDim, 24, "middle")}
+  <path d="M160 192 L160 268 M230 192 L230 268 M300 192 L300 268" stroke="${T.danger}" stroke-width="9" stroke-linecap="round"/>
+  <path d="M140 224 h180" stroke="${T.danger}" stroke-width="3" stroke-dasharray="5 7" opacity="0.6"/>
+  ${lbl(230, 410, "welded at compile time", T.danger, 23, "middle", false)}
+  ${lbl(230, 444, "one impl, no fake, no swap", T.inkFaint, 22, "middle", false)}
+
+  <line x1="460" y1="60" x2="460" y2="470" stroke="${T.line}" stroke-width="1.5"/>
+
+  ${lbl(690, 60, "interface + injection", T.good, 27, "middle")}
+  ${box(580, 96, 220, 96, T.line)}${lbl(690, 154, "interface", T.inkDim, 24, "middle")}
+  ${box(580, 268, 220, 96, T.line)}${lbl(690, 326, "any impl", T.inkDim, 24, "middle")}
+  <path d="M620 192 C 620 226, 660 226, 660 268" fill="none" stroke="${T.good}" stroke-width="5"/>
+  <path d="M760 192 C 760 226, 720 226, 720 268" fill="none" stroke="${T.good}" stroke-width="5"/>
+  <circle cx="690" cy="230" r="17" fill="#04060A" stroke="${T.good}" stroke-width="4"/>
+  ${lbl(690, 410, "a pin you can pull", T.good, 23, "middle", false)}
+  ${lbl(690, 444, "fakes, two impls, real tests", T.inkFaint, 22, "middle", false)}
+`);
+
 export const FIGURES = {
   "messenger-intercepted": (accent) => messengerStack(accent, true),
   "messenger-through": (accent) => messengerStack(accent, false),
+  "five-second-window": fiveSecondWindow,
+  "filter-buckets": filterBuckets,
+  "provenance-row": provenanceRow,
+  "two-sensors": twoSensors,
+  "threshold-context": thresholdContext,
+  "weld-vs-hinge": weldVsHinge,
 };

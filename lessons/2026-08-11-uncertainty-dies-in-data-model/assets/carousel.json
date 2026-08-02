@@ -49,6 +49,16 @@
       ]
     },
     {
+      "type": "diagram",
+      "kicker": "Where it is lost",
+      "head": [
+        "The row is where",
+        "doubt goes to die"
+      ],
+      "figure": "provenance-row",
+      "caption": "The sensor hands you an accuracy radius, a provider and a timestamp. A two-column table drops all three, and nothing downstream can get them back."
+    },
+    {
       "type": "fixes",
       "kicker": "The columns",
       "head": [

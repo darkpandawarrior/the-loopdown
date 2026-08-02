@@ -43,6 +43,16 @@
       ]
     },
     {
+      "type": "diagram",
+      "kicker": "The shape that works",
+      "head": [
+        "Classify.",
+        "Do not discard."
+      ],
+      "figure": "filter-buckets",
+      "caption": "Every reading lands. The filter sorts it into a named bucket instead of a bin, and the trusted number becomes a query over those buckets."
+    },
+    {
       "type": "fixes",
       "kicker": "The pattern",
       "head": [

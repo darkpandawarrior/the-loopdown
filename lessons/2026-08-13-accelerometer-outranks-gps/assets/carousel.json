@@ -47,6 +47,16 @@
       ]
     },
     {
+      "type": "diagram",
+      "kicker": "Ask the better question",
+      "head": [
+        "Rank per question,",
+        "not overall"
+      ],
+      "figure": "two-sensors",
+      "caption": "Neither sensor is better. They are authoritative over different questions, and the disagreement itself is the signal."
+    },
+    {
       "type": "fixes",
       "kicker": "The method",
       "head": [
