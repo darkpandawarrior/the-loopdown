@@ -12,6 +12,7 @@ mkdirSync(outDir, { recursive: true });
 
 // Series accents, so the roster is checked in the colours it actually ships in.
 const ACCENT = {
+  "the-borrowed-hand": "#d9a441",
   "the-messenger": "#4ec9b0",
   "the-concussed-witness": "#7c5cff",
   "the-second-witness": "#7c5cff",

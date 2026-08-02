@@ -122,6 +122,21 @@ Status: 🟢 introduced (has appeared) · ⚪ waiting in the wings (not yet used
   volume. Mutiny (letting the captain do grunt work) sinks the ship (and the token budget).
 - **lesson it carries:** tiers are roles, not ranks; orchestrate, don't do it all yourself.
 
+## ⚪ The Borrowed Hand
+- **id:** `the-borrowed-hand`
+- **is:** the model itself. The single entity you grapple, not the crew you command.
+- **domain:** AI-assisted engineering, specification, delegation, review.
+- **trait:** Perfectly obedient. It will do any work you can specify exactly, and nothing
+  you cannot. Where the spec has a hole it fills the hole with something plausible, because
+  helpfulness is the only thing it knows how to be. It never refuses. It improvises. The
+  skill is not summoning it, it is holding it to a specification, and the grip decays.
+- **origin line:** *"It will do anything you can describe. The trouble is what happens
+  where you stopped describing."*
+- **relationship:** [[the-fleet]] is the crew and the routing table, strategy. The Borrowed
+  Hand is the one encounter, tactics. You command a fleet. You grapple a hand.
+- **lesson it carries:** what you get back is exactly as good as what you specified, so
+  review is not a formality, it is where the work happens. Plausible is the enemy.
+
 ## ⚪ Null
 - **id:** `null`
 - **is:** the classic void / NPE.

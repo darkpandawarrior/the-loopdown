@@ -516,7 +516,55 @@ function hunter(accent) {
   </g>`;
 }
 
+// The Borrowed Hand — the model you reach for. An open palm offered through a
+// seam in the frame, and your own hand clamped round its wrist. The grip is the
+// character: it will do anything you can specify, so the whole skill is holding
+// it to a specification. Let go and it fills the gap with something plausible.
+function borrowedHand(accent) {
+  const finger = (x, y, h) =>
+    `<rect x="${x}" y="${y}" width="26" height="${h}" rx="13" fill="#0E1620" stroke="${accent}" stroke-opacity="0.85" stroke-width="2.5"/>`;
+  return `
+  <g>
+    ${halo(accent)}
+    <!-- the seam it reaches through. it is not from here -->
+    <path d="M352 74 L334 158 L354 232 L330 312 L352 392 L336 468"
+          fill="none" stroke="${accent}" stroke-opacity="0.5" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M352 74 L334 158 L354 232 L330 312 L352 392 L336 468"
+          fill="none" stroke="${accent}" stroke-opacity="0.22" stroke-width="12" stroke-linejoin="round"/>
+
+    <!-- forearm, out of the seam -->
+    <path d="M340 300 L250 274 L240 342 L336 366 Z"
+          fill="url(#cloak)" stroke="${accent}" stroke-opacity="0.8" stroke-width="2.5" stroke-linejoin="round"/>
+
+    <!-- open palm, offering, holding nothing yet -->
+    ${finger(112, 150, 118)}${finger(146, 128, 140)}${finger(180, 136, 132)}${finger(214, 162, 106)}
+    <rect x="104" y="248" width="146" height="112" rx="34"
+          fill="#0E1620" stroke="${accent}" stroke-opacity="0.9" stroke-width="3"/>
+    <!-- thumb, angled off the heel of the palm -->
+    <g transform="translate(112 330) rotate(-38)">
+      <rect x="-64" y="-15" width="76" height="30" rx="15"
+            fill="#0E1620" stroke="${accent}" stroke-opacity="0.85" stroke-width="2.5"/>
+    </g>
+
+    <!-- your hand on its wrist. this is the yoke, and it is the whole skill -->
+    <rect x="236" y="262" width="66" height="90" rx="20"
+          fill="#050A10" stroke="${T.amber}" stroke-opacity="0.9" stroke-width="3"/>
+    <!-- fingers wrapped round the far side, thumb hooked over the near edge -->
+    <g stroke="${T.amber}" stroke-opacity="0.7" stroke-width="4" stroke-linecap="round">
+      <path d="M252 284 H292 M252 306 H296 M252 328 H292"/>
+    </g>
+    <path d="M240 268 C 218 276, 214 300, 228 314 C 236 322, 248 322, 254 316"
+          fill="#050A10" stroke="${T.amber}" stroke-opacity="0.9" stroke-width="3"/>
+    <text x="190" y="452" fill="${T.amber}" font-family="${T.mono}" font-size="21" text-anchor="middle">held: 00:00:12</text>
+    <text x="190" y="480" fill="${T.inkFaint}" font-family="${T.mono}" font-size="20" text-anchor="middle">grip decays</text>
+  </g>`;
+}
+
 const CAST = {
+  "the-borrowed-hand": {
+    draw: borrowedHand, name: "THE BORROWED HAND", className: "LlmGateway",
+    line: "It will do anything you can describe.",
+  },
   "the-messenger": {
     draw: messenger, name: "THE MESSENGER", className: "CancellationException",
     line: "It only ever delivers a note.",
