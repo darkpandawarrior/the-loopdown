@@ -32,7 +32,9 @@ export function buildFooter(profile, fm, ctx = {}) {
   const lines = ["", "---", ""];
 
   const iter = fm.loop_iteration ? `Iteration ${fm.loop_iteration} of ` : "";
-  lines.push(`*🌀 ${iter}**${brand}** — ${profile.tagline || "field notes from an engineer who writes"}.*`);
+  // No em dash. This footer ships on every post through every channel and the
+  // voice linter never sees it, so it quietly broke the one hard rule everywhere.
+  lines.push(`*🌀 ${iter}**${brand}**. ${profile.tagline || "Field notes from an engineer who writes"}.*`);
 
   const meta = [];
   if (fm.series) meta.push(`Series: **${titleize(fm.series)}**`);

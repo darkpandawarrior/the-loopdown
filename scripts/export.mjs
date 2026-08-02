@@ -51,7 +51,35 @@ const absolutiseAssets = (md) =>
     ? md.replace(/\]\((\.\/)?assets\//g, `](${get("GITHUB_ASSET_BASE_URL").replace(/\/$/, "")}/${relLesson}/assets/`)
     : md;
 
-const articleBody = absolutiseAssets(article.body || lesson.body);
+// dev.to (and Hashnode) render a single newline as a <br>, so a paragraph that
+// was hard-wrapped at 90 columns in the source ships with a ragged break after
+// every line. Reflow plain paragraphs into one line each on the way out, while
+// leaving verbatim everything where a line break is load-bearing: fenced code,
+// lists, quotes, headings, tables, indented blocks, and explicit two-space
+// hard breaks. The source stays comfortable to edit; the platform gets prose.
+function reflowParagraphs(md) {
+  const out = [];
+  let inFence = false, para = [];
+  const flush = () => { if (para.length) { out.push(para.join(" ")); para = []; } };
+  const verbatim = (l) =>
+    /^\s{4,}\S/.test(l) ||                       // indented block / list continuation
+    /^\s*(#{1,6}\s|>|[-*+]\s|\d+[.)]\s|\|)/.test(l) || // heading, quote, list, table
+    /^\s*(<|!\[)/.test(l) ||                     // raw HTML, image on its own line
+    /^\s*[-*_]{3,}\s*$/.test(l);                 // horizontal rule
+
+  for (const line of md.split("\n")) {
+    if (/^\s*```/.test(line)) { flush(); inFence = !inFence; out.push(line); continue; }
+    if (inFence) { out.push(line); continue; }
+    if (line.trim() === "") { flush(); out.push(""); continue; }
+    if (verbatim(line)) { flush(); out.push(line); continue; }
+    if (/ {2}$/.test(line)) { para.push(line.trimEnd()); flush(); continue; } // explicit hard break
+    para.push(line.trim());
+  }
+  flush();
+  return out.join("\n");
+}
+
+const articleBody = reflowParagraphs(absolutiseAssets(article.body || lesson.body));
 
 // --- previous-in-series (continuity) from registry.json ---
 let prev = null, seriesIndexUrl = "";
