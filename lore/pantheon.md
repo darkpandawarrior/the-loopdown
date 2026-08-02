@@ -79,3 +79,38 @@ older engineer explains to a younger one, the way `AsyncTask` is now, and when t
 Understudy should be able to hand the role over rather than quietly vanish from the wall.
 
 A pantheon that can bury its own names is the only kind that survives a long enough loop.
+
+## The sigil
+
+Every entity carries a mark, and nobody chose it.
+
+`scripts/design-kit.mjs` exports `sigil(className, accent)`. It hashes the entity's **real class
+name** with FNV-1a and derives the geometry from those bytes: vertex count, chord skip, ring
+count, which vertices are filled. The radial ticks around the outside are one per character, so
+the length of the API name is visible in the mark.
+
+`CancellationException` produces exactly one figure and always will. So the sigil is not
+decoration applied to the entity. It is the entity's own name written in another alphabet.
+
+This gives the pantheon a property real pantheons only pretend to have: **rename the class and
+the sigil changes.** When an Aspect dies and a Power is reborn, it cannot keep the old mark, because
+the mark was never the Power's. It belonged to the Aspect, which is to say to the API, which is to
+say to the era.
+
+## Summoning
+
+`scripts/summon.mjs` reads a Kotlin codebase and reports which of the cast are living in it.
+
+```
+node scripts/summon.mjs ~/Repos/Android/Mileway
+node scripts/summon.mjs . --entity the-messenger
+```
+
+Each rule is a genuine failure mode the entity already personifies, so the character is not a
+skin over a warning. The character **is** the warning, and was before the script existed. A hit
+prints the entity's name, what it found, and a line in its own voice.
+
+Every rule also declares its blind spot, out loud, in the output. These are regex heuristics over
+text rather than a parsed AST: they surface candidates, never verdicts. That constraint is not an
+apology, it is the house rule from `the-borrowed-hand` applied to the tool that reports on the
+house rules. A checker that overstates its certainty is the thing it is checking for.

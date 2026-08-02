@@ -217,6 +217,85 @@ function concussedWitness(accent) {
   </g>`;
 }
 
+// ═══════════════════════════════════════════════════════════════════════════
+// SIGILS
+// A mark derived from the entity's REAL class name, not chosen by anyone.
+// `CancellationException` hashes to exactly one geometry and always will, so the
+// sigil is not decoration applied to the API, it is the API's own name in
+// another alphabet. Rename the class and the sigil changes, which is correct:
+// a Power reborn into a new Aspect should not keep the old Aspect's mark.
+// ═══════════════════════════════════════════════════════════════════════════
+
+// FNV-1a. Small, stable across runs and machines, which matters because a sigil
+// that drifts between renders is just noise with extra steps.
+function hash32(str) {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < str.length; i++) {
+    h ^= str.charCodeAt(i);
+    h = Math.imul(h, 0x01000193) >>> 0;
+  }
+  return h >>> 0;
+}
+// deterministic stream of numbers from one seed
+function stream(seed) {
+  let s = seed >>> 0;
+  return () => { s ^= s << 13; s >>>= 0; s ^= s >>> 17; s ^= s << 5; s >>>= 0; return s / 0x100000000; };
+}
+
+export function sigil(className, accent, { size = 200, stroke = 2.4 } = {}) {
+  const seed = hash32(className);
+  const rnd = stream(seed);
+  const R = size / 2, cx = R, cy = R;
+  const r = R * 0.66;
+
+  // node count and ring count come straight off the hash, so the shape of the
+  // mark is a property of the name's bytes rather than a design decision
+  const n = 5 + (seed % 4);            // 5..8 vertices
+  const rings = 1 + ((seed >> 5) % 3); // 1..3 outer rings
+  const pts = Array.from({ length: n }, (_, i) => {
+    const a = (i / n) * Math.PI * 2 - Math.PI / 2;
+    return [cx + Math.cos(a) * r, cy + Math.sin(a) * r];
+  });
+
+  let o = "";
+  // outer rings, one dashed if the hash says so
+  for (let k = 0; k < rings; k++) {
+    const rr = r + 10 + k * 9;
+    const dash = (seed >> (k + 2)) & 1 ? ` stroke-dasharray="${2 + k} ${7 + k * 2}"` : "";
+    o += `<circle cx="${cx}" cy="${cy}" r="${rr.toFixed(1)}" fill="none" stroke="${accent}" stroke-opacity="${(0.5 - k * 0.13).toFixed(2)}" stroke-width="${stroke * 0.7}"${dash}/>`;
+  }
+
+  // the chord skip is the character of the mark: 2 gives a star, 1 a polygon
+  const skip = 2 + (seed % (n - 2 || 1));
+  const seen = new Set();
+  for (let i = 0; i < n; i++) {
+    const j = (i + skip) % n;
+    const key = [Math.min(i, j), Math.max(i, j)].join("-");
+    if (seen.has(key)) continue;
+    seen.add(key);
+    o += `<line x1="${pts[i][0].toFixed(1)}" y1="${pts[i][1].toFixed(1)}" x2="${pts[j][0].toFixed(1)}" y2="${pts[j][1].toFixed(1)}" stroke="${accent}" stroke-opacity="0.85" stroke-width="${stroke}" stroke-linecap="round"/>`;
+  }
+
+  // vertices, a couple of them filled depending on the stream
+  pts.forEach(([x, y]) => {
+    const filled = rnd() > 0.55;
+    o += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${(stroke * 1.9).toFixed(1)}" fill="${filled ? accent : "#04060A"}" stroke="${accent}" stroke-width="${stroke * 0.8}"/>`;
+  });
+
+  // radial ticks: one per character, so the name's LENGTH is visible in the mark
+  const ticks = Math.min(className.length, 28);
+  for (let i = 0; i < ticks; i++) {
+    const a = (i / ticks) * Math.PI * 2 - Math.PI / 2;
+    const r1 = r + 10 + (rings - 1) * 9 + 4, r2 = r1 + (rnd() > 0.5 ? 8 : 4);
+    o += `<line x1="${(cx + Math.cos(a) * r1).toFixed(1)}" y1="${(cy + Math.sin(a) * r1).toFixed(1)}" x2="${(cx + Math.cos(a) * r2).toFixed(1)}" y2="${(cy + Math.sin(a) * r2).toFixed(1)}" stroke="${accent}" stroke-opacity="0.55" stroke-width="${stroke * 0.7}"/>`;
+  }
+
+  // the core: one dot, always, because every Power has exactly one failure at its centre
+  o += `<circle cx="${cx}" cy="${cy}" r="${(stroke * 1.6).toFixed(1)}" fill="${accent}"/>`;
+
+  return `<svg viewBox="0 0 ${size} ${size}" xmlns="http://www.w3.org/2000/svg">${o}</svg>`;
+}
+
 // Shared framing so every specimen sits in the same optical space.
 const halo = (accent) => `
     <circle cx="190" cy="205" r="165" fill="url(#halo)"/>
