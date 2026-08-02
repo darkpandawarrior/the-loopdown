@@ -1,10 +1,33 @@
 slug: coroutine-cancellation-messenger
-status: ready
+status: published
+published: 2026-08-02
+canonical: https://dev.to/darkpandawarrior/cancellationexception-is-not-an-assassin-2220
 channels:
-  linkedin:  { status: pending, url: "", scheduled: "", published: "", impressions: 0, reactions: 0, comments: 0 }
-  devto:     { status: pending, url: "", published: "", reactions: 0, comments: 0 }
-  hashnode:  { status: pending, url: "", published: "", reactions: 0, comments: 0 }
-  medium:    { status: pending, url: "", published: "", claps: 0 }
-
-# --- export publish (canonical: https://dev.to/darkpandawarrior/cancellationexception-is-not-an-assassin-2220) ---
-#   devto: published https://dev.to/darkpandawarrior/cancellationexception-is-not-an-assassin-2220
+  devto:
+    status: published
+    url: https://dev.to/darkpandawarrior/cancellationexception-is-not-an-assassin-2220
+    published: 2026-08-02
+    tags: [kotlin, android, coroutines, programming]
+    reactions: 0
+    comments: 0
+    views: 0
+  linkedin:
+    status: pending
+    url: ""
+    scheduled: ""
+    published: ""
+    format: text + 7-slide carousel
+    impressions: 0
+    reactions: 0
+    comments: 0
+  medium:
+    status: pending
+    url: ""
+    published: ""
+    claps: 0
+  hashnode:
+    status: pending
+    url: ""
+    published: ""
+    reactions: 0
+    comments: 0

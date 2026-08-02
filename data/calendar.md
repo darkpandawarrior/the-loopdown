@@ -14,7 +14,7 @@ Rhythm per week:
 | Week | Slot | Post | Series | Format | State |
 |------|------|------|--------|--------|-------|
 | 1 | Anchor | Teaching a phone to disbelieve its own GPS | Sensors Who Lie | carousel + article | 🟢 LIVE |
-| 1 | Jab | CancellationException is not an assassin | The Coroutine Court | carousel + article | ✅ ready to fire |
+| 1 | Jab | CancellationException is not an assassin | The Coroutine Court | carousel + article | 🟡 dev.to LIVE 2026-08-02, LinkedIn pending |
 | 2 | Anchor | The 5-second window that crashes your service | The Night Shift | carousel + article | ✅ drafted |
 | 2 | Jab | Your LazyColumn recomposes on every scroll | Ghosts in the Recomposition | card + article | ✅ drafted |
 | 3 | Anchor | expect/actual is the wrong default in KMP | One Brain, Two Bodies | carousel + article | ✅ drafted |

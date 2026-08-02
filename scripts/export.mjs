@@ -89,7 +89,9 @@ if (want("devto")) {
   if (mode === "dry-run") { log("devto", `would ${has("DEVTO_API_KEY") ? (live ? "publish" : "draft") : "SKIP (no token)"} · tags: ${tags.join(",")}`); }
   else if (!has("DEVTO_API_KEY")) { log("devto", "skip — no DEVTO_API_KEY"); }
   else {
-    const payload = { article: { title, body_markdown: body, published: live, tags: tags.join(","), series: fm.series || null, main_image: cover || null, canonical_url: explicitCanonical || null } };
+    // tags MUST be an array. Passing the comma string makes dev.to accept the
+    // request and silently drop every tag (post 002 shipped untagged that way).
+    const payload = { article: { title, body_markdown: body, published: live, tags, series: fm.series || null, main_image: cover || null, canonical_url: explicitCanonical || null } };
     try {
       // Reuse an existing article if we have one (idempotent: draft → publish updates the SAME post).
       let id = loadState().devto?.id;
@@ -97,7 +99,11 @@ if (want("devto")) {
       const url = id ? `https://dev.to/api/articles/${id}` : "https://dev.to/api/articles";
       const method = id ? "PUT" : "POST";
       const r = await post(url, { method, headers: { "api-key": get("DEVTO_API_KEY"), "Content-Type": "application/json" }, body: JSON.stringify(payload) });
-      if (r.status === 200 || r.status === 201) { results.devto = { status: live ? "published" : "draft", url: r.json?.url || "" }; if (r.json?.id) saveState({ devto: { id: r.json.id, url: r.json.url, status: results.devto.status } }); if (!canonicalResolved && r.json?.url) canonicalResolved = r.json.url; log("devto", `${results.devto.status} (${method === "PUT" ? "updated" : "created"}): ${results.devto.url}`); }
+      if (r.status === 200 || r.status === 201) { results.devto = { status: live ? "published" : "draft", url: r.json?.url || "" }; if (r.json?.id) saveState({ devto: { id: r.json.id, url: r.json.url, status: results.devto.status } }); if (!canonicalResolved && r.json?.url) canonicalResolved = r.json.url; log("devto", `${results.devto.status} (${method === "PUT" ? "updated" : "created"}): ${results.devto.url}`);
+        // dev.to drops the whole set if any single tag is invalid, and still returns 200.
+        const landed = r.json?.tags || [];
+        if (tags.length && !landed.length) log("devto", `WARNING: tags were rejected (sent ${tags.join(",")}). Set valid ones on the post or fix lesson.md frontmatter.`);
+      }
       else log("devto", `FAILED HTTP ${r.status}: ${r.body.slice(0, 160)}`);
     } catch (e) { log("devto", `error: ${e.message}`); }
   }
