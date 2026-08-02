@@ -38,9 +38,20 @@ const fm = lesson.fm;
 const title = fm.title || article.fm.title || basename(lessonDir);
 const slug = fm.slug || basename(lessonDir).replace(/^\d{4}-\d{2}-\d{2}-/, "");
 const tags = (Array.isArray(fm.tags) ? fm.tags : []).map((t) => t.replace(/[^a-z0-9]/gi, "").toLowerCase()).filter(Boolean).slice(0, 4);
-const articleBody = article.body || lesson.body;
 const relLesson = relative(ROOT, resolve(lessonDir)); // repo-relative, e.g. lessons/2026-... (no leading ../)
 const cover = has("GITHUB_ASSET_BASE_URL") ? `${get("GITHUB_ASSET_BASE_URL").replace(/\/$/, "")}/${relLesson}/assets/card.png` : "";
+
+// Articles can reference their own art with ordinary relative markdown
+// (`![alt](assets/carousel/slide-02.png)`). Remote platforms cannot resolve
+// that, so rewrite every relative asset path to its absolute GitHub raw URL on
+// the way out. Keeps article.md readable in the repo and on GitHub, and means
+// the carousel art actually reaches dev.to instead of dying as a cover image.
+const absolutiseAssets = (md) =>
+  has("GITHUB_ASSET_BASE_URL")
+    ? md.replace(/\]\((\.\/)?assets\//g, `](${get("GITHUB_ASSET_BASE_URL").replace(/\/$/, "")}/${relLesson}/assets/`)
+    : md;
+
+const articleBody = absolutiseAssets(article.body || lesson.body);
 
 // --- previous-in-series (continuity) from registry.json ---
 let prev = null, seriesIndexUrl = "";

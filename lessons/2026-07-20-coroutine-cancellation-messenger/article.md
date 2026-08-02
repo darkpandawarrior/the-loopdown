@@ -15,9 +15,11 @@ fresh ones. I had called cancel. I had watched it run in the debugger. The job w
 
 The culprit was one line I wrote myself.
 
+![The Messenger, drawn as a specimen plate: a hooded figure in an assassin's cloak, holding out a folded note stamped NOTICE. Labelled THE MESSENGER, CancellationException, exhibit 07.](assets/carousel/slide-02.png)
+
 ## Cancellation is a message, not a bullet
 
-Here is the thing people miss about Kotlin coroutines. Cancelling one does not reach
+This is the part people miss about Kotlin coroutines. Cancelling one does not reach
 in and kill it. It cannot. The coroutine has to cooperate. So the machinery throws a
 `CancellationException` up through your suspend calls, and that exception is the
 message: we are done, unwind, release your resources, stop.
@@ -44,6 +46,8 @@ something. The work continues.
 
 You caught the messenger, logged that he looked upset, and locked him in a cell. The
 message he was carrying never got delivered.
+
+![Diagram: a cancellation signal travelling up the suspend stack from api.search(query), through try, and dying at catch (e: Exception), which is marked "swallows it". Above it, "your coroutine" sits in a dashed box marked "never hears it".](assets/carousel/slide-05.png)
 
 ## Four ways to stop doing this
 
@@ -95,6 +99,8 @@ try {
     }
 }
 ```
+
+![Diagram: the same suspend stack, fixed. The cancellation signal now travels all the way up, past catch (e: CancellationException) which rethrows, past catch (e: IOException), and reaches "coroutine unwinds", marked "clean shutdown".](assets/carousel/slide-06.png)
 
 ## Why the language made it this way
 

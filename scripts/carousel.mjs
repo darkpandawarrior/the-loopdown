@@ -17,7 +17,7 @@
 //   character  a specimen plate for a lore/cast.md character
 //   fixes      numbered cards
 //   takeaway   the payload line
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, unlinkSync } from "node:fs";
 import { resolve, join } from "node:path";
 import { chromium } from "playwright";
 import { PDFDocument } from "pdf-lib";
@@ -164,6 +164,12 @@ const page = (s, i, n) => `<!doctype html><html><head><meta charset="utf-8"><sty
 // ── build ────────────────────────────────────────────────────────────────────
 const outDir = resolve(lessonDir, "assets/carousel");
 mkdirSync(outDir, { recursive: true });
+// Drop slides left over from a longer previous edit, otherwise a deck that got
+// shorter keeps publishing an orphan last slide nobody meant to ship.
+for (const f of readdirSync(outDir)) {
+  const n = Number((f.match(/^slide-(\d+)\.png$/) || [])[1]);
+  if (n && n > slides.length) unlinkSync(join(outDir, f));
+}
 
 const browser = await chromium.launch();
 const tab = await browser.newPage({ viewport: { width: W, height: H }, deviceScaleFactor: 2 });

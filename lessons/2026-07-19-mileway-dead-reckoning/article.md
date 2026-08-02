@@ -15,6 +15,8 @@ I work on mileage tracking. If you have ever had an app quietly log your drives 
 
 Here is how we got it to 95, and the one idea underneath all of it.
 
+![The Concussed Witness, drawn as a specimen plate: a satellite with a bandaged, tilted dish and dizzy crossed-out eyes, confidently broadcasting a rejected reading of 400 km/h. Labelled THE CONCUSSED WITNESS, LocationManager, exhibit 01.](assets/carousel/slide-02.png)
+
 ## GPS is a witness with a concussion
 
 We treat GPS like a source of truth. Out in the world, where people actually drive, it behaves more like a witness who took a hard knock to the head. Confident. Cooperative. Frequently wrong.
@@ -71,6 +73,8 @@ A Kalman filter is the textbook home for this, and if you reach for one, good. B
 ## The unglamorous half
 
 None of this matters if the tracker is dead. On Android, the moment the screen sleeps, the system starts looking for background work to kill, and aggressive OEM skins kill harder. We ran the pipeline in a foreground service with a small floating bubble, partly so the user could see it working, mostly so the OS would leave it alone. A tracker that gets killed is 0 percent accurate no matter how good the math is. I spent nearly as long on staying alive as on the algorithm.
+
+![The three fixes as numbered cards: catch the liars, drop a reading that needs rocket acceleration; dead reckoning, estimate from the IMU and last good heading; fuse do not pick, weight each signal by how much you trust it now.](assets/carousel/slide-04.png)
 
 ## What actually took us from 50 to 95
 

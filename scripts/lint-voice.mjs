@@ -24,7 +24,10 @@ const HARD = [
 ];
 // Phrase tells (case-insensitive, word-ish boundaries)
 const PHRASES = [
-  "here's the thing", "at the end of the day", "when it comes to", "in today's world",
+  // Uncontracted variants matter: this voice avoids contractions on purpose, so
+  // "here is the thing" walked straight past the apostrophe form for two posts.
+  "here's the thing", "here is the thing", "it is worth noting", "that being said",
+  "at the end of the day", "when it comes to", "in today's world",
   "in today's fast-paced", "let's dive in", "let's dive into", "dive into", "delve",
   "game-changer", "game changer", "testament to", "underscores", "underscore the",
   "in the realm of", "needless to say", "it's worth noting", "that said,", "seamless",
