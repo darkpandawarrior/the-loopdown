@@ -1,48 +1,52 @@
-<svg width="1200" height="1200" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg" font-family="'SF Mono','JetBrains Mono','Menlo',monospace">
-  <!-- The Loopdown — code-card template. Placeholders: {{ACCENT}} {{PILLAR}} {{TITLE}} {{CODE}} {{TAKEAWAY}} {{HANDLE}} -->
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg">
+  <!-- The Loopdown code-card. Placeholders:
+       {{ACCENT}} {{PILLAR}} {{TITLE_1..2}} {{CODE_BLOCK}} {{TAKEAWAY_1..2}} {{HANDLE}}
+       Design language matches scripts/carousel.mjs. Code colour comes from
+       scripts/kotlin-highlight.mjs, injected as {{CODE_BLOCK}}. -->
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0d1117"/>
-      <stop offset="1" stop-color="#161b22"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0" stop-color="#0F131A"/><stop offset="1" stop-color="#080A0E"/>
     </linearGradient>
-    <linearGradient id="accentbar" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="{{ACCENT}}"/>
-      <stop offset="1" stop-color="{{ACCENT}}" stop-opacity="0.35"/>
+    <radialGradient id="glow" cx="0.12" cy="0.06" r="0.75">
+      <stop offset="0" stop-color="{{ACCENT}}" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="{{ACCENT}}" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="{{ACCENT}}"/><stop offset="1" stop-color="{{ACCENT}}" stop-opacity="0.2"/>
     </linearGradient>
+    <pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.5" fill="#5A6675" fill-opacity="0.16"/>
+    </pattern>
   </defs>
 
   <rect width="1200" height="1200" fill="url(#bg)"/>
-  <rect x="0" y="0" width="1200" height="10" fill="url(#accentbar)"/>
-
-  <!-- window chrome -->
-  <circle cx="70" cy="78" r="11" fill="#ff5f56"/>
-  <circle cx="108" cy="78" r="11" fill="#ffbd2e"/>
-  <circle cx="146" cy="78" r="11" fill="#27c93f"/>
-  <text x="200" y="86" fill="#6e7681" font-size="26">{{PILLAR}}</text>
+  <rect width="1200" height="1200" fill="url(#dots)"/>
+  <rect width="1200" height="1200" fill="url(#glow)"/>
+  <rect x="0" y="0" width="1200" height="8" fill="url(#rail)"/>
 
   <!-- pillar tag -->
-  <text x="72" y="210" fill="{{ACCENT}}" font-size="30" letter-spacing="3">// {{PILLAR}}</text>
+  <text x="72" y="150" fill="{{ACCENT}}" font-family="'SF Mono','JetBrains Mono',Menlo,monospace" font-size="30" letter-spacing="4">// {{PILLAR}}</text>
 
   <!-- title -->
-  <text x="72" y="300" fill="#e6edf3" font-size="62" font-weight="700" font-family="'SF Pro Display','Helvetica Neue',sans-serif">{{TITLE_1}}</text>
-  <text x="72" y="378" fill="#e6edf3" font-size="62" font-weight="700" font-family="'SF Pro Display','Helvetica Neue',sans-serif">{{TITLE_2}}</text>
+  <text x="70" y="272" fill="#EDF2F7" font-size="68" font-weight="800" letter-spacing="-1.5" font-family="'SF Pro Display','Helvetica Neue','Inter',sans-serif">{{TITLE_1}}</text>
+  <text x="70" y="356" fill="{{ACCENT}}" font-size="68" font-weight="800" letter-spacing="-1.5" font-family="'SF Pro Display','Helvetica Neue','Inter',sans-serif">{{TITLE_2}}</text>
 
-  <!-- code block -->
-  <rect x="72" y="440" width="1056" height="440" rx="18" fill="#010409" stroke="#21262d" stroke-width="2"/>
-  <text x="112" y="510" fill="#8b949e" font-size="30" xml:space="preserve">{{CODE_1}}</text>
-  <text x="112" y="560" fill="#8b949e" font-size="30" xml:space="preserve">{{CODE_2}}</text>
-  <text x="112" y="610" fill="#8b949e" font-size="30" xml:space="preserve">{{CODE_3}}</text>
-  <text x="112" y="660" fill="#8b949e" font-size="30" xml:space="preserve">{{CODE_4}}</text>
-  <text x="112" y="710" fill="#8b949e" font-size="30" xml:space="preserve">{{CODE_5}}</text>
-  <text x="112" y="760" fill="#8b949e" font-size="30" xml:space="preserve">{{CODE_6}}</text>
-  <text x="112" y="810" fill="#8b949e" font-size="30" xml:space="preserve">{{CODE_7}}</text>
+  <!-- code panel -->
+  <rect x="70" y="430" width="1060" height="450" rx="20" fill="#04060A" stroke="#1C2430" stroke-width="2"/>
+  <circle cx="112" cy="470" r="9" fill="#FF5F56"/>
+  <circle cx="144" cy="470" r="9" fill="#FFBD2E"/>
+  <circle cx="176" cy="470" r="9" fill="#27C93F"/>
+  {{CODE_BLOCK}}
 
   <!-- takeaway -->
-  <text x="72" y="965" fill="{{ACCENT}}" font-size="34" font-weight="600" font-family="'SF Pro Display',sans-serif">▸ {{TAKEAWAY_1}}</text>
-  <text x="72" y="1015" fill="{{ACCENT}}" font-size="34" font-weight="600" font-family="'SF Pro Display',sans-serif">  {{TAKEAWAY_2}}</text>
+  <rect x="70" y="944" width="86" height="5" rx="2.5" fill="{{ACCENT}}"/>
+  <text x="70" y="1024" fill="#EDF2F7" font-size="40" font-weight="700" font-family="'SF Pro Display','Helvetica Neue','Inter',sans-serif">{{TAKEAWAY_1}}</text>
+  <text x="70" y="1080" fill="{{ACCENT}}" font-size="40" font-weight="700" font-family="'SF Pro Display','Helvetica Neue','Inter',sans-serif">{{TAKEAWAY_2}}</text>
 
   <!-- footer -->
-  <rect x="72" y="1090" width="1056" height="2" fill="#21262d"/>
-  <text x="72" y="1145" fill="#e6edf3" font-size="30" font-weight="600">The Loopdown</text>
-  <text x="1128" y="1145" fill="#6e7681" font-size="28" text-anchor="end">{{HANDLE}}</text>
+  <rect x="70" y="1122" width="1060" height="1.5" fill="#1C2430"/>
+  <circle cx="82" cy="1166" r="11" fill="none" stroke="{{ACCENT}}" stroke-width="3"/>
+  <circle cx="82" cy="1166" r="4" fill="{{ACCENT}}"/>
+  <text x="108" y="1176" fill="#EDF2F7" font-family="'SF Mono','JetBrains Mono',Menlo,monospace" font-size="28" font-weight="600">The Loopdown</text>
+  <text x="1130" y="1176" fill="#5A6675" font-family="'SF Mono','JetBrains Mono',Menlo,monospace" font-size="26" text-anchor="end">{{HANDLE}}</text>
 </svg>

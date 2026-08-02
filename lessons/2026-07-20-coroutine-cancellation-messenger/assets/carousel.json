@@ -4,40 +4,67 @@
   "handle": "@darkpandawarrior",
   "slides": [
     {
+      "type": "cover",
       "kicker": "The Coroutine Court",
+      "ghost": "8s",
       "head": ["I cancelled it.", "It kept", "running."],
-      "body": ["A coroutine I cancelled ran", "for 8 more seconds.", "The culprit was one line", "I wrote myself.", "", "Swipe."],
-      "arrow": "swipe >"
+      "body": ["A coroutine I cancelled ran for", "8 more seconds. It did not care.", "", "The culprit was one line", "I wrote myself."],
+      "arrow": "swipe"
     },
     {
+      "type": "statement",
       "kicker": "The mental model",
       "head": ["Cancel is", "a message,", "not a bullet"],
-      "body": ["Cancelling a coroutine throws", "CancellationException up your", "suspend calls.", "That exception IS the message:", "we are done, unwind."]
+      "body": ["Cancelling a coroutine throws a", "CancellationException up through", "your suspend calls.", "", "That exception IS the message:", "we are done here, unwind."]
     },
     {
+      "type": "code",
       "kicker": "The trap",
-      "head": ["The line", "that ate", "the message"],
-      "body": ["try { api.search(query) }", "catch (e: Exception) { ... }", "", "CancellationException is an", "Exception. This eats it."]
+      "filename": "SearchViewModel.kt",
+      "head": ["The line that ate", "the message"],
+      "code": [
+        "try {",
+        "    results = api.search(query)",
+        "} catch (e: Exception) {",
+        "    log(\"search failed\")",
+        "}"
+      ],
+      "callout": [
+        "CancellationException is an Exception.",
+        "So this catch grabs it, logs the wrong",
+        "thing, and swallows it whole."
+      ]
     },
     {
-      "kicker": "Fix 01",
-      "head": ["Catch what", "you expect"],
-      "body": ["Not Exception.", "Catch IOException,", "HttpException, the real thing.", "Cancellation sails past", "and does its job."]
+      "type": "diagram",
+      "kicker": "What actually happens",
+      "head": ["You jailed", "the messenger"],
+      "figure": "messenger-intercepted",
+      "caption": ["The signal never reaches the coroutine. It keeps running,", "and sometimes wins the race against the fresh request."]
     },
     {
-      "kicker": "Fix 02",
-      "head": ["Rethrow", "cancellation", "first"],
-      "body": ["catch (e:", "CancellationException)", "  { throw e }", "then your broad catch.", "Let the message through."]
+      "type": "diagram",
+      "kicker": "The fix, drawn",
+      "head": ["Let the message", "through"],
+      "figure": "messenger-through",
+      "caption": ["Rethrow cancellation before your broad catch, or narrow", "the catch to the exception you actually expect."]
     },
     {
-      "kicker": "The footgun",
-      "head": ["runCatching", "does it", "too"],
-      "body": ["runCatching { } also catches", "CancellationException.", "Handy, and a trap.", "For must-run cleanup use", "withContext(NonCancellable)."]
+      "type": "fixes",
+      "kicker": "Pick one",
+      "head": ["Four ways out"],
+      "items": [
+        { "title": "Catch what you expect", "sub": "IOException, HttpException. Not Exception." },
+        { "title": "Rethrow cancellation first", "sub": "catch (e: CancellationException) { throw e }" },
+        { "title": "runCatching has the same trap", "sub": "it catches CancellationException too" },
+        { "title": "Cleanup that must run", "sub": "withContext(NonCancellable) { }" }
+      ]
     },
     {
-      "kicker": "The takeaway",
-      "head": ["Don't shoot", "the", "messenger"],
-      "body": ["Cancellation is a conversation,", "not a kill switch.", "Swallow the message and the", "work never stops.", "", "Follow for more field notes."],
+      "type": "takeaway",
+      "kicker": "The payload",
+      "head": ["Do not shoot", "the messenger"],
+      "body": ["Cancellation is a conversation,", "not a kill switch.", "", "Swallow the message and the work", "does not stop. It just stops telling", "you it is still running."],
       "arrow": "dev.to / LinkedIn"
     }
   ]

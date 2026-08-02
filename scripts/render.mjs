@@ -9,6 +9,7 @@ import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join, resolve } from "node:path";
 import { Resvg } from "@resvg/resvg-js";
+import { highlight } from "./kotlin-highlight.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -42,7 +43,9 @@ function parseCard(text) {
   }
   return out;
 }
-const unquote = (s) => s.replace(/^["']|["']$/g, "").trim();
+// Trim the YAML indent FIRST, then strip the quotes, so whitespace *inside* the
+// quotes survives. Code lines rely on that indentation to read as code.
+const unquote = (s) => s.trim().replace(/^["']|["']$/g, "");
 const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
 const card = parseCard(readFileSync(cardPath, "utf8"));
@@ -60,6 +63,14 @@ const scalars = {
 for (const [k, v] of Object.entries(scalars)) {
   svg = svg.replaceAll(`{{${k}}}`, esc(v));
 }
+// Code is syntax-highlighted into one block rather than filled line by line.
+const codeLines = Array.isArray(card.code) ? card.code : card.code ? [card.code] : [];
+const MONO = "'SF Mono','JetBrains Mono',Menlo,monospace";
+svg = svg.replaceAll(
+  "{{CODE_BLOCK}}",
+  codeLines.map((l, i) => highlight(l, 112, 550 + i * 46, 30, MONO)).join("\n  ")
+);
+
 const arrays = { TITLE: card.title, CODE: card.code, TAKEAWAY: card.takeaway };
 for (const [key, arr] of Object.entries(arrays)) {
   const list = Array.isArray(arr) ? arr : arr ? [arr] : [];

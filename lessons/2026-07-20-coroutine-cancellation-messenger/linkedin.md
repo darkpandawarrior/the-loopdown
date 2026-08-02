@@ -14,9 +14,9 @@ try {
     log("search failed")
 }
 
-CancellationException is an Exception. So when cancellation fires, this catch grabs it, logs "search failed", and swallows it whole. The coroutine never gets the message. It just keeps going, and sometimes it wins the race and paints stale results over fresh ones.
+CancellationException is an Exception. So when cancellation fires, this catch grabs it, logs "search failed" (a lie, nothing failed), and swallows it whole. The coroutine never gets the message. It just keeps going, and sometimes it wins the race and paints stale results over fresh ones.
 
-You caught the messenger and threw him in a cell. Of course nobody got the news.
+You caught the messenger and threw him in a cell. Then wondered why the news never arrived.
 
 The fixes, pick one:
 
@@ -24,7 +24,7 @@ The fixes, pick one:
 2. If you must catch broadly, rethrow cancellation first:
    catch (e: CancellationException) { throw e }
    catch (e: Exception) { ... }
-3. Know that runCatching { } has the exact same trap. It catches CancellationException too. Handy little footgun.
+3. Know that runCatching { } has the exact same trap. It catches CancellationException too. (Handy little footgun, that one.)
 4. For cleanup that must run even while cancelling, use withContext(NonCancellable) { }, not a naked catch.
 
 The lesson underneath:
@@ -33,6 +33,8 @@ Cancellation is a conversation, not a kill switch. If you swallow the message, t
 
 Do not shoot the messenger. Especially when it is the only reason your app shuts things down cleanly.
 
-Ever swallowed an exception you shouldn't have? What did it cost you?
+Ever swallowed an exception you should not have? What did it cost you?
+
+Filed from iteration 2 of the loop.
 
 #Kotlin #Coroutines #Android #AndroidDev #SoftwareEngineering

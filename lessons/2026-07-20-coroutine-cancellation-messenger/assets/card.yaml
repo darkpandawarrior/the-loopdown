@@ -9,7 +9,7 @@ code:
   - "try {"
   - "  results = api.search(query)"
   - "} catch (e: Exception) {"
-  - "  log(\"search failed\")  // eats"
+  - '  log("search failed")  // eats'
   - "  // CancellationException too."
   - "  // the coroutine never stops."
   - "}"
