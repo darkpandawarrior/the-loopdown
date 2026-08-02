@@ -1,7 +1,17 @@
 # Posting calendar
 
-Cadence: 2 to 3 posts per week. One "anchor" per week gets the full treatment (carousel
-+ article + LinkedIn). The others are lighter (LinkedIn + card, cross-post optional).
+Cadence, as of 2026-08-02, and now automated:
+
+- **dev.to: every 2 days.** `com.loopdown.devto` runs daily at 09:30 and publishes the next
+  queued lesson, enforcing the 2-day gap itself against `data/publish.log`. It gates on the
+  voice linter and the claim audit and publishes nothing if either fails.
+- **LinkedIn: 3x per week, Tue / Thu / Sat 09:00 IST.** `com.loopdown.linkedin` does NOT post.
+  It prepares `data/linkedin-queue.md` (text, carousel path, first comment) and raises a
+  notification. Posting stays manual, which is also the last read before it goes out.
+
+Pause either with `launchctl unload ~/Library/LaunchAgents/com.loopdown.<devto|linkedin>.plist`.
+A lesson only enters the dev.to queue when its `meta.yaml` says `status: ready`.
+
 Best LinkedIn windows (IST): Tue to Thu, 9 to 11am or 6 to 8pm.
 
 Rhythm per week:

@@ -2,9 +2,9 @@
   "generated": "run `node scripts/build-registry.mjs`",
   "counts": {
     "archive": 10,
-    "lessons": 14,
-    "cast": 7,
-    "series": 6
+    "lessons": 15,
+    "cast": 8,
+    "series": 7
   },
   "archive": [
     {
@@ -184,6 +184,41 @@
     }
   ],
   "lessons": [
+    {
+      "file": "lessons/2026-08-29-the-borrowed-hand/lesson.md",
+      "dir": "2026-08-29-the-borrowed-hand",
+      "title": "Plausible is worse than wrong",
+      "slug": "the-borrowed-hand",
+      "type": "lesson",
+      "pillar": "engineering-practice",
+      "project": "The Loopdown",
+      "tags": [
+        "ai-assisted-development",
+        "code-review",
+        "api-design",
+        "kotlin",
+        "android"
+      ],
+      "status": "ready",
+      "created": "2026-08-29",
+      "live": "",
+      "url_devto": "",
+      "url_linkedin": "",
+      "url_medium": "",
+      "url_hashnode": "",
+      "channels": [
+        "linkedin",
+        "devto",
+        "hashnode",
+        "medium"
+      ],
+      "series": "notes-from-the-loop",
+      "cast": [
+        "the-borrowed-hand"
+      ],
+      "loop_iteration": "15",
+      "links": {}
+    },
     {
       "file": "lessons/2026-08-27-thresholds-in-config/lesson.md",
       "dir": "2026-08-27-thresholds-in-config",
@@ -733,6 +768,17 @@
       ]
     },
     {
+      "id": "the-borrowed-hand",
+      "appearances": 1,
+      "in": [
+        {
+          "title": "Plausible is worse than wrong",
+          "file": "lessons/2026-08-29-the-borrowed-hand/lesson.md",
+          "date": "2026-08-29"
+        }
+      ]
+    },
+    {
       "id": "the-second-witness",
       "appearances": 1,
       "in": [
@@ -787,6 +833,11 @@
       "id": "ghosts-in-the-recomposition",
       "title": "Ghosts In The Recomposition",
       "episodes": 2
+    },
+    {
+      "id": "notes-from-the-loop",
+      "title": "Notes From The Loop",
+      "episodes": 1
     },
     {
       "id": "one-brain-two-bodies",

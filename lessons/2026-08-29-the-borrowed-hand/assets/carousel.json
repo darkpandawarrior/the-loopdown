@@ -1,0 +1,69 @@
+{
+  "accent": "#d9a441",
+  "brand": "The Loopdown",
+  "handle": "@darkpandawarrior",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Notes from the Loop",
+      "ghost": "200",
+      "cast": "the-borrowed-hand",
+      "head": ["It returned 200.", "It did", "nothing."],
+      "body": ["The article published. Every single tag was silently dropped, and nothing anywhere said so.", "", "I found it two days later, by accident."],
+      "arrow": "swipe"
+    },
+    {
+      "type": "character",
+      "kicker": "Meet the accused",
+      "head": ["It will do anything", "*you can describe"],
+      "cast": "the-borrowed-hand",
+      "exhibit": "08",
+      "caption": "It never refuses. Where your specification has a hole it fills the hole with something plausible, because helpfulness is the only mode it has."
+    },
+    {
+      "type": "code",
+      "kicker": "The line",
+      "filename": "export.mjs",
+      "head": ["Reasonable.", "Also a no-op."],
+      "code": [
+        "tags: tags.join(\",\")"
+      ],
+      "callout": [
+        "That endpoint wants an array.",
+        "Hand it a string and it returns 200, publishes the post, and drops every tag on the floor."
+      ]
+    },
+    {
+      "type": "statement",
+      "kicker": "The worse one",
+      "head": ["It fit perfectly.", "It proved", "*nothing."],
+      "body": [
+        "A generator picks a snippet for each slide. I specified \"the first block that fits\". It did that, perfectly.",
+        "",
+        "On a post about the five second startForeground() window it chose a WorkManager snippet. Right file, real API, wrong point."
+      ]
+    },
+    {
+      "type": "fixes",
+      "kicker": "What I do now",
+      "head": ["Four habits"],
+      "items": [
+        { "title": "Specify the predicate, not the shape", "sub": "\"fits\" can be satisfied by something useless" },
+        { "title": "Verify the outcome, not the call", "sub": "200 means received, not done" },
+        { "title": "Find where the instructions ran out", "sub": "that is where the plausible filler lives" },
+        { "title": "Make the check mechanical", "sub": "your attention is what degrades first" }
+      ]
+    },
+    {
+      "type": "takeaway",
+      "kicker": "The payload",
+      "head": ["Wrong code", "gets caught.", "*Plausible code ships."],
+      "body": [
+        "Borrowed work does not fail like bad work. It fails like confident work that answers a question slightly next to the one you asked.",
+        "",
+        "The trouble is what happens where you stopped describing."
+      ],
+      "arrow": "dev.to / LinkedIn"
+    }
+  ]
+}

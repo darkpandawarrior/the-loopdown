@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.loopdown.devto</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/opt/homebrew/bin/node</string>
+        <string>/Users/darkpandawarrior/Repos/Writing/the-loopdown/scripts/publish-next.mjs</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/darkpandawarrior/Repos/Writing/the-loopdown</string>
+
+    <!-- Runs daily at 09:30. The "every 2 days" cadence is enforced inside
+         publish-next.mjs against data/publish.log, because launchd's StartInterval
+         drifts and a calendar rule cannot say "every other day" across month ends.
+         Daily + an in-script gap also self-heals after the mac has been asleep. -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key><integer>9</integer>
+        <key>Minute</key><integer>30</integer>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/Users/darkpandawarrior/Repos/Writing/the-loopdown/data/launchd-devto.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/darkpandawarrior/Repos/Writing/the-loopdown/data/launchd-devto.log</string>
+
+    <key>RunAtLoad</key>
+    <false/>
+</dict>
+</plist>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.loopdown.linkedin</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/opt/homebrew/bin/node</string>
+        <string>/Users/darkpandawarrior/Repos/Writing/the-loopdown/scripts/linkedin-next.mjs</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/darkpandawarrior/Repos/Writing/the-loopdown</string>
+
+    <!-- Tue / Thu / Sat at 09:00 IST, inside the calendar's stated best window.
+         This does NOT post. LinkedIn has no usable document-post API, so the job
+         prepares data/linkedin-queue.md and raises a notification. -->
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict><key>Weekday</key><integer>2</integer><key>Hour</key><integer>9</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Weekday</key><integer>4</integer><key>Hour</key><integer>9</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Weekday</key><integer>6</integer><key>Hour</key><integer>9</integer><key>Minute</key><integer>0</integer></dict>
+    </array>
+
+    <key>StandardOutPath</key>
+    <string>/Users/darkpandawarrior/Repos/Writing/the-loopdown/data/launchd-linkedin.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/darkpandawarrior/Repos/Writing/the-loopdown/data/launchd-linkedin.log</string>
+
+    <key>RunAtLoad</key>
+    <false/>
+</dict>
+</plist>

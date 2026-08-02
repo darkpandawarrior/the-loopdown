@@ -1,0 +1,7 @@
+slug: the-borrowed-hand
+status: ready
+channels:
+  devto:     { status: pending, url: "", published: "", reactions: 0, comments: 0 }
+  linkedin:  { status: pending, url: "", scheduled: "", published: "", impressions: 0, reactions: 0, comments: 0 }
+  hashnode:  { status: pending, url: "", published: "", reactions: 0, comments: 0 }
+  medium:    { status: pending, url: "", published: "", claps: 0 }
