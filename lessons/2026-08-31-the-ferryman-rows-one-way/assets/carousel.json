@@ -1,0 +1,75 @@
+{
+  "accent": "#5ec6d8",
+  "brand": "The Loopdown",
+  "handle": "@darkpandawarrior",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Crossing the Schema",
+      "ghost": "47",
+      "cast": "the-ferryman",
+      "head": ["47 crossings.", "15 with", "a test."],
+      "body": ["I would have told you, confidently, that it was fine.", "", "I had been quoting the migration count as a strength."],
+      "arrow": "swipe"
+    },
+    {
+      "type": "character",
+      "kicker": "The toll collector",
+      "head": ["The boat only", "*rows one way"],
+      "cast": "the-ferryman",
+      "exhibit": "09",
+      "caption": "A migration is the only code you ship that gets exactly one attempt, on a device you cannot see, against data you cannot reproduce."
+    },
+    {
+      "type": "statement",
+      "kicker": "Why it is different",
+      "head": ["Everything else", "gets a", "second chance"],
+      "body": [
+        "A bad screen gets a hotfix. A failed request gets retried. A crash gets a patch release.",
+        "",
+        "If a migration is wrong the data is not broken, it is gone, and the row you would recover from is the one that did not survive."
+      ]
+    },
+    {
+      "type": "fixes",
+      "kicker": "Sort by what it touches",
+      "head": ["Coverage is the", "wrong instrument"],
+      "items": [
+        { "title": "Foreign key changes", "sub": "SQLite recreates the table and copies every row" },
+        { "title": "Data moves", "sub": "INSERT INTO ... SELECT transforms content, loses nothing" },
+        { "title": "Drops", "sub": "irreversible by construction" },
+        { "title": "Everything else", "sub": "honest bookkeeping, test it later" }
+      ]
+    },
+    {
+      "type": "code",
+      "kicker": "The line that matters",
+      "filename": "Migration16to17Test.kt",
+      "head": ["Assert the data,", "not the schema"],
+      "code": [
+        "val db = helper.runMigrationsAndValidate(",
+        "    TEST_DB, 17, true, MIGRATION_16_17)",
+        "",
+        "db.query(\"SELECT distance_m FROM trips\").use {",
+        "    assertTrue(it.moveToFirst())",
+        "    assertEquals(4200, it.getInt(0))",
+        "}"
+      ],
+      "callout": [
+        "runMigrationsAndValidate only proves the shape.",
+        "Reading a row back is the only thing that proves anything survived the crossing."
+      ]
+    },
+    {
+      "type": "takeaway",
+      "kicker": "The payload",
+      "head": ["Pay the toll", "before you get", "*on the boat"],
+      "body": [
+        "I did not find a bug this week. I found thirty-five crossings I had never rehearsed, and four of them touch the things that actually eat data.",
+        "",
+        "47 migrations sounds like maturity. It is only maturity if you can say what happens when each one runs."
+      ],
+      "arrow": "dev.to / LinkedIn"
+    }
+  ]
+}

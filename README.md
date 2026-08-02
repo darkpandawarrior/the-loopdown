@@ -33,6 +33,8 @@ Appearances below). The world is in [`lore/`](lore/bible.md); the voice is in
 
 | Date | Title | Series | Status | Live |
 |------|-------|--------|--------|------|
+| 2026-09-02 | [The captain routes. The captain never rows.](lessons/2026-09-02-the-captain-never-rows/lesson.md) | notes-from-the-loop | 🟡 ready | — |
+| 2026-08-31 | [I audited my own migrations. It was not fine.](lessons/2026-08-31-the-ferryman-rows-one-way/lesson.md) | crossing-the-schema | 🟡 ready | — |
 | 2026-08-29 | [Plausible is worse than wrong](lessons/2026-08-29-the-borrowed-hand/lesson.md) | notes-from-the-loop | 🟡 ready | — |
 | 2026-08-27 | [Your thresholds do not belong in constants](lessons/2026-08-27-thresholds-in-config/lesson.md) | chain-of-custody | 🟡 ready | — |
 | 2026-08-25 | [Invariants are cheap. Silent corruption is not.](lessons/2026-08-25-invariants-are-cheap/lesson.md) | chain-of-custody | 🟡 ready | — |
@@ -56,6 +58,8 @@ Appearances below). The world is in [`lore/`](lore/bible.md); the voice is in
 | `the-concussed-witness` | 5 | [Every filter needs a documented exception](lessons/2026-08-20-documented-exception/lesson.md), [When two sensors disagree, rank them](lessons/2026-08-13-accelerometer-outranks-gps/lesson.md), [One global threshold is how you delete valid data](lessons/2026-08-06-one-global-threshold/lesson.md), [Filtered should never mean deleted](lessons/2026-08-04-filtered-never-deleted/lesson.md), [Teaching a phone to disbelieve its own GPS](lessons/2026-07-19-mileway-dead-reckoning/lesson.md) |
 | `the-archivist` | 4 | [Your thresholds do not belong in constants](lessons/2026-08-27-thresholds-in-config/lesson.md), [Invariants are cheap. Silent corruption is not.](lessons/2026-08-25-invariants-are-cheap/lesson.md), [Never silently change a number someone gets paid on](lessons/2026-08-18-never-silently-change-a-number/lesson.md), [Your data model is where uncertainty goes to die](lessons/2026-08-11-uncertainty-dies-in-data-model/lesson.md) |
 | `the-recomposer` | 2 | [collectAsState is quietly leaking your work](lessons/2026-07-31-collectasstate-leak/lesson.md), [Your LazyColumn recomposes on every scroll](lessons/2026-07-24-lazycolumn-recomposition/lesson.md) |
+| `the-fleet` | 1 | [The captain routes. The captain never rows.](lessons/2026-09-02-the-captain-never-rows/lesson.md) |
+| `the-ferryman` | 1 | [I audited my own migrations. It was not fine.](lessons/2026-08-31-the-ferryman-rows-one-way/lesson.md) |
 | `the-borrowed-hand` | 1 | [Plausible is worse than wrong](lessons/2026-08-29-the-borrowed-hand/lesson.md) |
 | `the-second-witness` | 1 | [When two sensors disagree, rank them](lessons/2026-08-13-accelerometer-outranks-gps/lesson.md) |
 | `the-understudy` | 1 | [expect/actual is the wrong default in KMP](lessons/2026-07-29-kmp-expect-actual-default/lesson.md) |

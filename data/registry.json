@@ -2,9 +2,9 @@
   "generated": "run `node scripts/build-registry.mjs`",
   "counts": {
     "archive": 10,
-    "lessons": 15,
-    "cast": 8,
-    "series": 7
+    "lessons": 17,
+    "cast": 10,
+    "series": 8
   },
   "archive": [
     {
@@ -184,6 +184,75 @@
     }
   ],
   "lessons": [
+    {
+      "file": "lessons/2026-09-02-the-captain-never-rows/lesson.md",
+      "dir": "2026-09-02-the-captain-never-rows",
+      "title": "The captain routes. The captain never rows.",
+      "slug": "the-captain-never-rows",
+      "type": "lesson",
+      "pillar": "engineering-practice",
+      "project": "AgentHarness",
+      "tags": [
+        "ai-assisted-development",
+        "orchestration",
+        "cost-engineering",
+        "tooling"
+      ],
+      "status": "ready",
+      "created": "2026-09-02",
+      "live": "",
+      "url_devto": "",
+      "url_linkedin": "",
+      "url_medium": "",
+      "url_hashnode": "",
+      "channels": [
+        "linkedin",
+        "devto",
+        "hashnode",
+        "medium"
+      ],
+      "series": "notes-from-the-loop",
+      "cast": [
+        "the-fleet"
+      ],
+      "loop_iteration": "17",
+      "links": {}
+    },
+    {
+      "file": "lessons/2026-08-31-the-ferryman-rows-one-way/lesson.md",
+      "dir": "2026-08-31-the-ferryman-rows-one-way",
+      "title": "I audited my own migrations. It was not fine.",
+      "slug": "the-ferryman-rows-one-way",
+      "type": "lesson",
+      "pillar": "data-integrity",
+      "project": "Mileway",
+      "tags": [
+        "android",
+        "room",
+        "migrations",
+        "testing",
+        "kotlin"
+      ],
+      "status": "ready",
+      "created": "2026-08-31",
+      "live": "",
+      "url_devto": "",
+      "url_linkedin": "",
+      "url_medium": "",
+      "url_hashnode": "",
+      "channels": [
+        "linkedin",
+        "devto",
+        "hashnode",
+        "medium"
+      ],
+      "series": "crossing-the-schema",
+      "cast": [
+        "the-ferryman"
+      ],
+      "loop_iteration": "16",
+      "links": {}
+    },
     {
       "file": "lessons/2026-08-29-the-borrowed-hand/lesson.md",
       "dir": "2026-08-29-the-borrowed-hand",
@@ -768,6 +837,28 @@
       ]
     },
     {
+      "id": "the-fleet",
+      "appearances": 1,
+      "in": [
+        {
+          "title": "The captain routes. The captain never rows.",
+          "file": "lessons/2026-09-02-the-captain-never-rows/lesson.md",
+          "date": "2026-09-02"
+        }
+      ]
+    },
+    {
+      "id": "the-ferryman",
+      "appearances": 1,
+      "in": [
+        {
+          "title": "I audited my own migrations. It was not fine.",
+          "file": "lessons/2026-08-31-the-ferryman-rows-one-way/lesson.md",
+          "date": "2026-08-31"
+        }
+      ]
+    },
+    {
       "id": "the-borrowed-hand",
       "appearances": 1,
       "in": [
@@ -830,6 +921,11 @@
       "episodes": 4
     },
     {
+      "id": "crossing-the-schema",
+      "title": "Crossing The Schema",
+      "episodes": 1
+    },
+    {
       "id": "ghosts-in-the-recomposition",
       "title": "Ghosts In The Recomposition",
       "episodes": 2
@@ -837,7 +933,7 @@
     {
       "id": "notes-from-the-loop",
       "title": "Notes From The Loop",
-      "episodes": 1
+      "episodes": 2
     },
     {
       "id": "one-brain-two-bodies",

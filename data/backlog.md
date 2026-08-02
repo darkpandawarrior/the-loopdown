@@ -72,3 +72,15 @@ are backed by real Mileway/Dice code with verified constants in the notes doc.
 ## Lead-track reflections (payload-heavy, low-frequency)
 - 🟡 **"The jump from SDE-2 to Lead isn't more code. It's more *no*."**
 - 💤 **"I own a platform with 50k MAU. The scariest part isn't the traffic."**
+
+## From the shared dream (2026-08-02) — raw, see private/the-shared-dream.md
+- 🟢 **"works for the demo. add key when it actually changes."** → `remember { }` with no key
+  subscribes once and never resubscribes. The scope you skipped and the scope you remember
+  building look identical from outside, and nothing in Compose tells you which one you are
+  standing in front of. The Architect.
+- 🟢 **"You added one item and the whole list forgot itself."** → `LazyColumn` without
+  `key = { it.id }` falls back to positional identity, so an insert discards remembered state
+  for everything below it. Five characters, not a rewrite. The Architect.
+- 🟡 **"PRAGMA user_version reads 1 and no migration ever claimed credit."** → the seed database
+  nobody wrote a CREATE for. Where does version 1 come from, and what happens on a device that
+  installed before your first migration existed. The Ferryman.

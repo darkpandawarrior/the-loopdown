@@ -90,6 +90,18 @@ const audit = "/Users/darkpandawarrior/Tools/DevTools/AgentHarness/skills/claim-
 if (existsSync(audit)) gate("claim audit", () => execFileSync("node", [audit], { encoding: "utf8" }));
 else log("  gate skipped: claim audit not found on this machine");
 
+// --- soft check: who is this for? -----------------------------------------
+// Not a gate. A post with no named recipient still ships, because sometimes the
+// audience genuinely is "whoever hits this bug". But an unbroken run of them is
+// the tell that the writing has drifted from teaching into rehearsal, so it gets
+// said out loud in the log rather than noticed a year later.
+{
+  const lm = readFileSync(join(lessonsDir, next, "lesson.md"), "utf8");
+  const who = (lm.match(/^for:\s*(.+)$/m) || [])[1];
+  if (who) log(`  written for: ${who.trim()}`);
+  else log(`  note: no "for:" in lesson.md. Who was this written toward?`);
+}
+
 // --- publish --------------------------------------------------------------
 if (DRY) { log(`dry run: would publish ${next} to dev.to. Nothing sent.`); process.exit(0); }
 

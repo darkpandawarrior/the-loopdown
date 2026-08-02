@@ -1,0 +1,69 @@
+{
+  "accent": "#d9a441",
+  "brand": "The Loopdown",
+  "handle": "@darkpandawarrior",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Notes from the Loop",
+      "ghost": "2",
+      "cast": "the-fleet",
+      "head": ["Two runs died", "on rate limits", "in a week."],
+      "body": ["Not because the work was too big.", "", "Because the most expensive model in the fleet was doing the rowing."],
+      "arrow": "swipe"
+    },
+    {
+      "type": "character",
+      "kicker": "The crew",
+      "head": ["A captain who", "*never rows"],
+      "cast": "the-fleet",
+      "exhibit": "10",
+      "caption": "Its value is entirely in where it points. Mutiny, meaning letting the captain pick up an oar, sinks the ship and the token budget in the same afternoon."
+    },
+    {
+      "type": "statement",
+      "kicker": "The wrong model",
+      "head": ["Not a ladder.", "A set of", "*roles."],
+      "body": [
+        "Capability is what you need for one hard decision. Volume is what you need for four hundred easy ones.",
+        "",
+        "Those are different problems, and reading tiers as a quality ladder answers only the first one."
+      ]
+    },
+    {
+      "type": "fixes",
+      "kicker": "The routing rule",
+      "head": ["Four lines"],
+      "items": [
+        { "title": "Cheapest tier that covers it", "sub": "not the best available. the cheapest sufficient." },
+        { "title": "Escalate exactly one rung", "sub": "on verified failure or real spec ambiguity" },
+        { "title": "Never escalate on volume", "sub": "volume means go down a tier and parallelise" },
+        { "title": "Keep the top tier for deciding", "sub": "its value is entirely in where it points" }
+      ]
+    },
+    {
+      "type": "code",
+      "kicker": "The fix",
+      "filename": "orchestrator.prompt",
+      "head": ["One sentence,", "made mandatory"],
+      "code": [
+        "Delegate execution. Do not perform it."
+      ],
+      "callout": [
+        "Not \"prefer to delegate\".",
+        "That reads as permission, and permission loses to the more concrete instruction next to it. A model told to plan and execute will execute."
+      ]
+    },
+    {
+      "type": "takeaway",
+      "kicker": "The payload",
+      "head": ["The captain", "never rows"],
+      "body": [
+        "It has to be said out loud, because a captain built to be helpful will pick up an oar.",
+        "",
+        "It will look like enthusiasm right up until the ship stops steering."
+      ],
+      "arrow": "dev.to / LinkedIn"
+    }
+  ]
+}
