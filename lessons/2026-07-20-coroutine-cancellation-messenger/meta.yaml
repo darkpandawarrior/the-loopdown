@@ -7,7 +7,7 @@ channels:
     status: published
     url: https://dev.to/darkpandawarrior/cancellationexception-is-not-an-assassin-2220
     published: 2026-08-02
-    tags: [kotlin, android, coroutines, programming]
+    tags: [kotlin, coroutines, cancellation, structuredconcurrency]
     reactions: 0
     comments: 0
     views: 0
@@ -31,3 +31,6 @@ channels:
     published: ""
     reactions: 0
     comments: 0
+
+# --- export publish (canonical: https://dev.to/darkpandawarrior/cancellationexception-is-not-an-assassin-2220) ---
+#   devto: published https://dev.to/darkpandawarrior/cancellationexception-is-not-an-assassin-2220
