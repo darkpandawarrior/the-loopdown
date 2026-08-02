@@ -179,8 +179,11 @@ for (const f of readdirSync(outDir)) {
   if (n && n > slides.length) unlinkSync(join(outDir, f));
 }
 
+// 1080x1350 IS the LinkedIn carousel spec, and dev.to displays article images
+// around 800px wide. Rendering at 2x doubled every committed PNG for detail no
+// platform shows: one lesson's assets were 36MB. Ship the canonical size.
 const browser = await chromium.launch();
-const tab = await browser.newPage({ viewport: { width: W, height: H }, deviceScaleFactor: 2 });
+const tab = await browser.newPage({ viewport: { width: W, height: H }, deviceScaleFactor: 1 });
 const pdf = await PDFDocument.create();
 
 for (let i = 0; i < slides.length; i++) {
@@ -198,6 +201,6 @@ for (let i = 0; i < slides.length; i++) {
 
 await browser.close();
 writeFileSync(resolve(lessonDir, "assets/carousel.pdf"), await pdf.save());
-console.log(`carousel: ${slides.length} slides @2x`);
+console.log(`carousel: ${slides.length} slides`);
 console.log(`  PNGs → ${outDir}/slide-*.png`);
 console.log(`  PDF  → ${lessonDir}/assets/carousel.pdf  (upload as a LinkedIn document post)`);

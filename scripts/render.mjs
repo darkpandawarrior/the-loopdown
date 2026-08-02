@@ -92,9 +92,9 @@ footer{position:absolute;left:64px;right:64px;bottom:30px;z-index:3;display:flex
 </div></body></html>`;
 
 const browser = await chromium.launch();
-const tab = await browser.newPage({ viewport: { width: W, height: H }, deviceScaleFactor: 2 });
+const tab = await browser.newPage({ viewport: { width: W, height: H }, deviceScaleFactor: 1 });
 await tab.setContent(html, { waitUntil: "load" });
 const pngPath = resolve(lessonDir, "assets/card.png");
 writeFileSync(pngPath, await tab.screenshot({ type: "png" }));
 await browser.close();
-console.log(`rendered: ${pngPath}  (1200x630 @2x)`);
+console.log(`rendered: ${pngPath}  (1200x630)`);
