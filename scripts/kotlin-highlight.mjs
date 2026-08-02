@@ -20,6 +20,24 @@ export const CODE_COLOR = {
   fn: "#8AB4F8", type: "#C6A6FF", punct: "#8B98A8", ws: null, word: "#C9D4E0",
 };
 
+// Returns HTML spans for one line of code. Used by the Chromium renderer, which
+// unlike the SVG path gets real text layout and does not need a monospace grid.
+export function highlightHtml(line) {
+  let rest = line, out = "";
+  while (rest.length) {
+    let matched = false;
+    for (const [kind, re] of TOKENS) {
+      const m = rest.match(re);
+      if (!m || !m[0].length) continue;
+      const text = m[0];
+      out += kind === "ws" ? esc(text) : `<span class="t-${kind}">${esc(text)}</span>`;
+      rest = rest.slice(text.length); matched = true; break;
+    }
+    if (!matched) { out += esc(rest[0]); rest = rest.slice(1); }
+  }
+  return out || "&nbsp;";
+}
+
 // Returns SVG markup for one line of code laid out on a monospace grid.
 export function highlight(line, x, y, size, fontFamily) {
   let rest = line, out = "", col = 0;

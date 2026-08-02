@@ -7,15 +7,32 @@
       "type": "cover",
       "kicker": "The Coroutine Court",
       "ghost": "8s",
+      "cast": "the-messenger",
       "head": ["I cancelled it.", "It kept", "running."],
-      "body": ["A coroutine I cancelled ran for", "8 more seconds. It did not care.", "", "The culprit was one line", "I wrote myself."],
+      "body": [
+        "A coroutine I cancelled ran for 8 more seconds. It did not care.",
+        "",
+        "The culprit was one line I wrote myself."
+      ],
       "arrow": "swipe"
+    },
+    {
+      "type": "character",
+      "kicker": "Meet the accused",
+      "head": ["It only ever", "*delivers a note"],
+      "cast": "the-messenger",
+      "exhibit": "07",
+      "caption": "Wears an assassin's cloak, carries a slip of paper. Everyone kills it on sight, then wonders why cancellation broke."
     },
     {
       "type": "statement",
       "kicker": "The mental model",
       "head": ["Cancel is", "a message,", "not a bullet"],
-      "body": ["Cancelling a coroutine throws a", "CancellationException up through", "your suspend calls.", "", "That exception IS the message:", "we are done here, unwind."]
+      "body": [
+        "Cancelling a coroutine throws a CancellationException up through your suspend calls.",
+        "",
+        "That exception IS the message: we are done here, unwind."
+      ]
     },
     {
       "type": "code",
@@ -31,8 +48,7 @@
       ],
       "callout": [
         "CancellationException is an Exception.",
-        "So this catch grabs it, logs the wrong",
-        "thing, and swallows it whole."
+        "So this catch grabs it, logs the wrong thing, and swallows it whole."
       ]
     },
     {
@@ -40,14 +56,14 @@
       "kicker": "What actually happens",
       "head": ["You jailed", "the messenger"],
       "figure": "messenger-intercepted",
-      "caption": ["The signal never reaches the coroutine. It keeps running,", "and sometimes wins the race against the fresh request."]
+      "caption": "The signal never reaches the coroutine. It keeps running, and sometimes wins the race against the fresh request."
     },
     {
       "type": "diagram",
       "kicker": "The fix, drawn",
       "head": ["Let the message", "through"],
       "figure": "messenger-through",
-      "caption": ["Rethrow cancellation before your broad catch, or narrow", "the catch to the exception you actually expect."]
+      "caption": "Rethrow cancellation before your broad catch, or narrow the catch to the exception you actually expect."
     },
     {
       "type": "fixes",
@@ -64,7 +80,11 @@
       "type": "takeaway",
       "kicker": "The payload",
       "head": ["Do not shoot", "the messenger"],
-      "body": ["Cancellation is a conversation,", "not a kill switch.", "", "Swallow the message and the work", "does not stop. It just stops telling", "you it is still running."],
+      "body": [
+        "Cancellation is a conversation, not a kill switch.",
+        "",
+        "Swallow the message and the work does not stop. It just stops telling you it is still running."
+      ],
       "arrow": "dev.to / LinkedIn"
     }
   ]

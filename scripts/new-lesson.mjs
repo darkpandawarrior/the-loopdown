@@ -97,21 +97,16 @@ channels:
   medium:    { status: pending, url: "", published: "", claps: 0 }
 `);
 
-write("assets/card.yaml", `template: code-card
-accent: "#7c5cff"
+write("assets/card.yaml", `accent: "#7c5cff"
 pillar: ${pillar}
-handle: "@siddharthpandalai"
+handle: "@darkpandawarrior"
 title:
   - "First line of title"
   - "second line"
-code:
-  - "// up to 7 lines"
-  - "// of a code snippet"
-  - "// or pseudo-code that"
-  - "// stages the insight"
 takeaway:
   - "The one-line lesson,"
   - "the part they screenshot."
+# cast: the-messenger   # optional: a lore/cast.md id, drawn on the right
 `);
 
 console.log(`scaffolded ${dir}`);

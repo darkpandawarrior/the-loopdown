@@ -126,7 +126,8 @@ Accounts, tokens, and the publish flow: **[SETUP.md](SETUP.md)**.
 | `series/` | Generated bingeable hub page per arc (cross-post "read the series" target). |
 | `profile.yaml` | Cross-platform identity — handles + canonical strategy; threads into every footer. |
 | `lessons/<date>-<slug>/` | One folder per lesson: source + per-channel adapts + assets + metrics. |
-| `templates/svg/` | Branded graphic templates (dark dev aesthetic). |
+| `scripts/design-kit.mjs` | The visual identity: textures, diagram figures, and the **cast drawn as specimen plates**. |
+| `scripts/slide-css.mjs` | Carousel stylesheet. Slides are HTML, screenshotted through Chromium, so body copy wraps itself. |
 | `templates/copy/` | Hook formulas + per-channel skeletons. |
 | `scripts/` | `new-lesson` · `render` · `build-registry` · `check-setup` · `export`. |
 | `data/backlog.md` | Idea queue mined from projects. |
