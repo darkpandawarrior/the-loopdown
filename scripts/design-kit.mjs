@@ -242,7 +242,11 @@ function stream(seed) {
   return () => { s ^= s << 13; s >>>= 0; s ^= s >>> 17; s ^= s << 5; s >>>= 0; return s / 0x100000000; };
 }
 
-export function sigil(className, accent, { size = 200, stroke = 2.4 } = {}) {
+// `animate` makes the mark draw itself: every stroke runs its own
+// dasharray/dashoffset sweep, ordered outward-in, so the sigil is inscribed
+// rather than revealed. Pure CSS, so it works inline in HTML and in a
+// standalone .svg with no script.
+export function sigil(className, accent, { size = 200, stroke = 2.4, animate = false, duration = 2.6, delay = 0 } = {}) {
   const seed = hash32(className);
   const rnd = stream(seed);
   const R = size / 2, cx = R, cy = R;
@@ -293,7 +297,29 @@ export function sigil(className, accent, { size = 200, stroke = 2.4 } = {}) {
   // the core: one dot, always, because every Power has exactly one failure at its centre
   o += `<circle cx="${cx}" cy="${cy}" r="${(stroke * 1.6).toFixed(1)}" fill="${accent}"/>`;
 
-  return `<svg viewBox="0 0 ${size} ${size}" xmlns="http://www.w3.org/2000/svg">${o}</svg>`;
+  if (!animate) return `<svg viewBox="0 0 ${size} ${size}" xmlns="http://www.w3.org/2000/svg">${o}</svg>`;
+
+  // Tag every drawable in document order and give each its own start offset.
+  // Rings first, then chords, then vertices, then ticks, then the core: the mark
+  // is built from the outside in, which is also the order you read it.
+  let idx = 0;
+  const total = (o.match(/<(circle|line)\b/g) || []).length || 1;
+  // pathLength="1" normalises every stroke to unit length, so one dasharray rule
+  // covers a 6px chord and a 190px ring identically. Without it the rings would
+  // still be drawing while the chords had long finished.
+  const seq = o.replace(/<(circle|line)\b/g, (m) => `<${m.slice(1)} pathLength="1" class="dk-s dk-s${idx++}"`);
+  const css = Array.from({ length: total }, (_, i) => {
+    const t = (i / total) * duration * 0.72;
+    return `.dk-s${i}{animation-delay:${(delay + t).toFixed(2)}s}`;
+  }).join("");
+
+  return `<svg viewBox="0 0 ${size} ${size}" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .dk-s{stroke-dasharray:1;stroke-dashoffset:1;
+          animation:dk-draw ${(duration * 0.28).toFixed(2)}s ease-out forwards;}
+    @keyframes dk-draw{to{stroke-dashoffset:0}}
+    ${css}
+  </style>${seq}</svg>`;
 }
 
 // Shared framing so every specimen sits in the same optical space.
