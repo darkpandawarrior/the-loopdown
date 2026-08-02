@@ -173,9 +173,12 @@ for (let i = 0; i < slides.length; i++) {
   const s = slides[i];
   if (!RENDER[s.type || "statement"]) throw new Error(`slide ${i + 1}: unknown type "${s.type}"`);
   await tab.setContent(page(s, i, slides.length), { waitUntil: "load" });
-  const png = await tab.screenshot({ type: "png" });          // 2x for crisp type
-  writeFileSync(join(outDir, `slide-${String(i + 1).padStart(2, "0")}.png`), png);
-  const img = await pdf.embedPng(png);
+  // PNG on disk stays 2x and lossless (reuse for stills, dev.to, the wall).
+  writeFileSync(join(outDir, `slide-${String(i + 1).padStart(2, "0")}.png`), await tab.screenshot({ type: "png" }));
+  // The PDF embeds JPEG instead: 2x PNG pages made a ~45MB document for 8
+  // slides, which is a miserable upload. JPEG at 92 is visually identical here
+  // (flat dark UI, no gradients banding at this quality) and ~20x smaller.
+  const img = await pdf.embedJpg(await tab.screenshot({ type: "jpeg", quality: 92 }));
   pdf.addPage([W, H]).drawImage(img, { x: 0, y: 0, width: W, height: H });
 }
 
