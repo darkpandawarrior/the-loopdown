@@ -1,0 +1,86 @@
+{
+  "accent": "#4aa3ff",
+  "brand": "The Loopdown",
+  "handle": "@darkpandawarrior",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Ghosts in the Recomposition",
+      "ghost": "∅",
+      "cast": "the-recomposer",
+      "head": [
+        "Nobody is",
+        "looking at",
+        "this screen."
+      ],
+      "body": [
+        "It is still collecting. Still emitting. Still burning battery, for a user who switched apps ten minutes ago.",
+        "",
+        "One word fixes it."
+      ],
+      "arrow": "swipe"
+    },
+    {
+      "type": "character",
+      "kicker": "The cast",
+      "head": [
+        "It does not mind",
+        "*an empty room"
+      ],
+      "cast": "the-recomposer",
+      "exhibit": "05",
+      "caption": "Backgrounding the app does not leave the composition. So the collection keeps running, the flow keeps emitting, and the ViewModel keeps working for nobody."
+    },
+    {
+      "type": "code",
+      "kicker": "The one word",
+      "head": [
+        "collectAsState",
+        "WithLifecycle"
+      ],
+      "code": [
+        "val state by viewModel.data.collectAsStateWithLifecycle()"
+      ]
+    },
+    {
+      "type": "fixes",
+      "kicker": "The rule",
+      "head": [
+        "Make lifecycle the default"
+      ],
+      "items": [
+        {
+          "title": "Default to WithLifecycle",
+          "sub": "androidx.lifecycle.compose, stops below STARTED"
+        },
+        {
+          "title": "Plain collectAsState is the exception",
+          "sub": "and it needs a reason in the review"
+        },
+        {
+          "title": "Know what it costs",
+          "sub": "an off-screen flow still pays for every emission"
+        },
+        {
+          "title": "Check with the app backgrounded",
+          "sub": "the leak is invisible from the foreground"
+        }
+      ]
+    },
+    {
+      "type": "takeaway",
+      "kicker": "The payload",
+      "head": [
+        "Lifecycle is not",
+        "a thing you bolt",
+        "*on later"
+      ],
+      "body": [
+        "It is the difference between work that stops when the user leaves and work that quietly runs forever.",
+        "",
+        "Default to the one that respects it."
+      ],
+      "arrow": "dev.to / LinkedIn"
+    }
+  ]
+}

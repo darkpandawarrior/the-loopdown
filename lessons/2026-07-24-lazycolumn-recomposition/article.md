@@ -11,6 +11,9 @@ whose data had not changed at all.
 
 There was a ghost in the recomposition, and it had one cause.
 
+
+![The Recomposer, drawn as a specimen plate. It redraws the room every time you blink. Labelled THE RECOMPOSER, @Composable.](assets/carousel/slide-02.png)
+
 ## Compose can skip, if you let it
 
 Compose has a quiet superpower called skipping. When a composable's inputs have not

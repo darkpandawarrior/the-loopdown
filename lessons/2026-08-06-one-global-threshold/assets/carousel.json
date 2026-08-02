@@ -1,0 +1,90 @@
+{
+  "accent": "#7c5cff",
+  "brand": "The Loopdown",
+  "handle": "@darkpandawarrior",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Sensors Who Lie",
+      "ghost": "5m",
+      "cast": "the-concussed-witness",
+      "head": [
+        "It worked",
+        "perfectly.",
+        "Then: traffic."
+      ],
+      "body": [
+        "Our jitter filter was flawless right up until someone sat in Bangalore traffic.",
+        "",
+        "It could not tell a parked car from one moving at walking pace."
+      ],
+      "arrow": "swipe"
+    },
+    {
+      "type": "character",
+      "kicker": "The cast",
+      "head": [
+        "One number,",
+        "*every context"
+      ],
+      "cast": "the-concussed-witness",
+      "exhibit": "01",
+      "caption": "A single global threshold is the most confident wrong decision in your codebase. It swears the same thing is true while walking, cycling, driving, and standing still."
+    },
+    {
+      "type": "code",
+      "kicker": "The claim you made",
+      "head": [
+        "A constant is",
+        "an assumption"
+      ],
+      "code": [
+        "private fun minDisplacementForSpeed(speedMps: Double): Double = when {",
+        "    speedMps < 2.5 -> 2.0    // walking",
+        "    speedMps < 7.0 -> 3.0    // cycling",
+        "    else           -> 5.0    // driving",
+        "}"
+      ]
+    },
+    {
+      "type": "fixes",
+      "kicker": "The fix",
+      "head": [
+        "Thresholds take context"
+      ],
+      "items": [
+        {
+          "title": "Function of speed band",
+          "sub": "walking and motorway are not the same filter"
+        },
+        {
+          "title": "Function of time since last fix",
+          "sub": "a 30 second gap changes what is plausible"
+        },
+        {
+          "title": "Function of recent history",
+          "sub": "what was this device doing ten seconds ago"
+        },
+        {
+          "title": "Name the assumption in code",
+          "sub": "if it is \"all contexts\", that is the bug"
+        }
+      ]
+    },
+    {
+      "type": "takeaway",
+      "kicker": "The payload",
+      "head": [
+        "A constant with",
+        "no context is a",
+        "*bug on a delay"
+      ],
+      "body": [
+        "When you write a number into a filter, ask which context you are assuming.",
+        "",
+        "If the answer is \"all of them\", you have not written a threshold."
+      ],
+      "arrow": "dev.to / LinkedIn"
+    }
+  ]
+}

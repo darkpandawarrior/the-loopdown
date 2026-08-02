@@ -1,43 +1,94 @@
 {
-  "accent": "#f0883e",
+  "accent": "#ff9f45",
   "brand": "The Loopdown",
   "handle": "@darkpandawarrior",
   "slides": [
     {
+      "type": "cover",
       "kicker": "The Night Shift",
-      "head": ["It crashed", "only on", "cheap phones"],
-      "body": ["Our service died for thousands", "of users.", "The stack trace blamed a line", "that does nothing wrong.", "", "Swipe."],
-      "arrow": "swipe >"
+      "ghost": "5s",
+      "cast": "doze-the-jailer",
+      "head": [
+        "Five seconds.",
+        "Then it",
+        "pulls the plug."
+      ],
+      "body": [
+        "Our service crashed for thousands of users, and the stack trace blamed a line that does nothing wrong.",
+        "",
+        "It only happened on cheap phones. That was the clue."
+      ],
+      "arrow": "swipe"
     },
     {
-      "kicker": "The promise",
-      "head": ["5 seconds", "to keep", "your word"],
-      "body": ["Start a foreground service and", "you promise a notification.", "The system gives you ~5s to", "call startForeground().", "Miss it and it kills you."]
+      "type": "character",
+      "kicker": "The cast",
+      "head": [
+        "It runs the",
+        "*night shift"
+      ],
+      "cast": "doze-the-jailer",
+      "exhibit": "04",
+      "caption": "It gives you about five seconds to explain why your work belongs, then closes the cell. Not cruel. Just running the prison by the book."
     },
     {
+      "type": "code",
       "kicker": "The trap",
-      "head": ["Slow work", "before the", "promise"],
-      "body": ["disk reads, db, init...", "then startForeground().", "80ms on your phone.", "5 seconds on a cold, cheap", "device under load. Crash."]
+      "head": [
+        "Five seconds spent",
+        "before the promise"
+      ],
+      "code": [
+        "override fun onStartCommand(...): Int {",
+        "    val trip = tripStore.restoreLastTrip()  // disk",
+        "    val config = settings.load()            // more io",
+        "    startForeground(ID, notify(trip, config))",
+        "    return START_STICKY",
+        "}"
+      ],
+      "filename": "TripTrackingService.kt",
+      "callout": [
+        "The countdown starts at startForegroundService().",
+        "On a cold, loaded phone those two reads blow past the window, and the system kills the service before you ever keep the promise."
+      ]
     },
     {
-      "kicker": "Fix 01",
-      "head": ["Notify", "first"],
-      "body": ["Call startForeground() on the", "first line, minimal notification.", "Do the slow work after.", "Update the notification once", "you have real content."]
+      "type": "fixes",
+      "kicker": "The rules",
+      "head": [
+        "Working the night shift"
+      ],
+      "items": [
+        {
+          "title": "startForeground() first",
+          "sub": "before any init, permission read or coroutine"
+        },
+        {
+          "title": "Then do the slow work",
+          "sub": "warm-up, GPS, network, all of it after"
+        },
+        {
+          "title": "Test in Doze",
+          "sub": "adb shell dumpsys deviceidle force-idle"
+        },
+        {
+          "title": "Cheap devices are the truth",
+          "sub": "a cold, loaded phone is your real deadline"
+        }
+      ]
     },
     {
-      "kicker": "Fix 02",
-      "head": ["Android 12:", "use", "WorkManager"],
-      "body": ["You often cannot start an FGS", "from the background at all.", "Use WorkManager with an", "expedited request instead.", "Let the system schedule it."]
-    },
-    {
-      "kicker": "The mental model",
-      "head": ["Doze is", "the night", "jailer"],
-      "body": ["You get 5 seconds to explain", "why your work belongs.", "The platform protects the", "user's battery, not attacks you.", "Explain fast."]
-    },
-    {
-      "kicker": "The takeaway",
-      "head": ["Work with", "the", "lifecycle"],
-      "body": ["Post the notification first.", "Respect the background limits.", "Then the system leaves your", "work alone.", "", "Follow for more field notes."],
+      "type": "takeaway",
+      "kicker": "The payload",
+      "head": [
+        "The platform is",
+        "not out to get you"
+      ],
+      "body": [
+        "It is protecting the user's battery and attention from apps that want to run forever.",
+        "",
+        "Post your notification first, work with the lifecycle, and it leaves you alone."
+      ],
       "arrow": "dev.to / LinkedIn"
     }
   ]

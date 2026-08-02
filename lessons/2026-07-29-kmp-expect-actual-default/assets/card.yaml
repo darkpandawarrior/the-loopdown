@@ -1,5 +1,5 @@
 template: code-card
-accent: "#38bdf8"
+accent: "#c48bff"
 pillar: one brain, two bodies
 handle: "@darkpandawarrior"
 title:
@@ -16,3 +16,4 @@ code:
 takeaway:
   - "Interfaces compose and test."
   - "expect/actual welds."
+cast: the-understudy

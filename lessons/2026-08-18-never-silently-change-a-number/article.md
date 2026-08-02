@@ -8,6 +8,9 @@ cover: assets/card.png
 Our algorithm decided a driver had travelled 4km less than they thought. It was probably right.
 Shipping that silently would still have been wrong.
 
+
+![The Archivist, drawn as a specimen plate. You cannot backfill confidence you discarded. Labelled THE ARCHIVIST, Provenance.](assets/carousel/slide-02.png)
+
 ## When cleaning stops being technical
 
 Mileage tracking ends in an expense claim. Someone drives, the app measures, and the measurement

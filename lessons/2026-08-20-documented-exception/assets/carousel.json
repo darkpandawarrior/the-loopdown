@@ -1,0 +1,86 @@
+{
+  "accent": "#7c5cff",
+  "brand": "The Loopdown",
+  "handle": "@darkpandawarrior",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Sensors Who Lie",
+      "ghost": "1%",
+      "cast": "the-concussed-witness",
+      "head": [
+        "A filter with",
+        "no exceptions",
+        "is untested."
+      ],
+      "body": [
+        "The rule was right 99% of the time. The 1% was a parked delivery van, and it mattered more than the 99.",
+        "",
+        "It has only met your test data."
+      ],
+      "arrow": "swipe"
+    },
+    {
+      "type": "character",
+      "kicker": "The cast",
+      "head": [
+        "The legitimate case",
+        "*it breaks"
+      ],
+      "cast": "the-concussed-witness",
+      "exhibit": "01",
+      "caption": "Any rule strict enough to be useful will be wrong for some real case. That is not a failure of the rule. It is what rules are."
+    },
+    {
+      "type": "statement",
+      "kicker": "Name it",
+      "head": [
+        "An unnamed carve-out",
+        "reads as a bug"
+      ],
+      "body": [
+        "Any rule strict enough to be useful will be wrong for some real case. That is not a failure of the rule. It is what rules are."
+      ]
+    },
+    {
+      "type": "fixes",
+      "kicker": "The discipline",
+      "head": [
+        "Every exception earns three things"
+      ],
+      "items": [
+        {
+          "title": "A name",
+          "sub": "not an unexplained && in a condition"
+        },
+        {
+          "title": "A comment with the reasoning",
+          "sub": "the why, so the next person cannot delete it"
+        },
+        {
+          "title": "A test that pins it",
+          "sub": "the parked van becomes a fixture"
+        },
+        {
+          "title": "A hunt for the next one",
+          "sub": "write the rule, then go looking"
+        }
+      ]
+    },
+    {
+      "type": "takeaway",
+      "kicker": "The payload",
+      "head": [
+        "An undocumented",
+        "special case looks",
+        "*exactly like a bug"
+      ],
+      "body": [
+        "And it gets removed like one, during a cleanup, by someone reasonable.",
+        "",
+        "Give it a name, a reason, and a test."
+      ],
+      "arrow": "dev.to / LinkedIn"
+    }
+  ]
+}

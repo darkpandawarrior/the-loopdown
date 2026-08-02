@@ -1,21 +1,87 @@
 {
-  "accent": "#f2cc60",
+  "accent": "#6f86c9",
   "brand": "The Loopdown",
   "handle": "@darkpandawarrior",
   "slides": [
-    { "kicker": "Chain of Custody", "head": ["We were", "right. And", "still wrong."],
-      "body": ["Our algorithm said the driver", "did 4km less than they thought.", "It was probably correct.", "Shipping it silently would", "still have been wrong. Swipe."], "arrow": "swipe >" },
-    { "kicker": "The stakes", "head": ["The number", "becomes", "money"],
-      "body": ["Mileage ends in an expense", "claim.", "Filtering stopped being a", "technical decision the moment", "the output paid somebody."] },
-    { "kicker": "Their view", "head": ["40km.", "App says", "36."],
-      "body": ["They cannot tell a careful", "algorithm from an employer", "shaving expenses.", "Both look the same:", "a smaller number, no reason."] },
-    { "kicker": "Fix 01", "head": ["Show", "the", "original"],
-      "body": ["Both numbers exist in the", "data model, so show both.", "We measured 40 and propose 36,", "not 36 as if it were all", "that ever happened."] },
-    { "kicker": "Fix 02", "head": ["Name what", "you removed"],
-      "body": ["Not 'adjusted for accuracy'.", "Abnormal. Mock. Spike.", "Categories are checkable.", "Vagueness is not."] },
-    { "kicker": "Fix 03", "head": ["Let them", "overrule", "you"],
-      "body": ["A toggle for whether abnormal", "is subtracted.", "They were there. You weren't.", "And if your threshold is wrong,", "this is the cheapest feedback."] },
-    { "kicker": "The rule", "head": ["Earn it,", "don't ask", "for it"],
-      "body": ["Money, time, reputation:", "correctness is table stakes,", "transparency is the product.", "Being right in silence is just", "asking to be trusted."], "arrow": "dev.to / LinkedIn" }
+    {
+      "type": "cover",
+      "kicker": "Chain of Custody",
+      "ghost": "4km",
+      "cast": "the-archivist",
+      "head": [
+        "We were right.",
+        "We were",
+        "still wrong."
+      ],
+      "body": [
+        "Our algorithm decided a driver had travelled 4km less than they thought. It was probably correct.",
+        "",
+        "Shipping that silently would still have been wrong."
+      ],
+      "arrow": "swipe"
+    },
+    {
+      "type": "character",
+      "kicker": "The cast",
+      "head": [
+        "Show your",
+        "*working"
+      ],
+      "cast": "the-archivist",
+      "exhibit": "03",
+      "caption": "The moment your output becomes somebody's reimbursement, correctness stops being enough. We were about to win the argument and lose the user."
+    },
+    {
+      "type": "code",
+      "kicker": "Explicit degradation",
+      "head": [
+        "Report the delta,",
+        "not just the answer"
+      ],
+      "code": [
+        "var final = smartAnalysis.originalDistance",
+        "if (removeAbnormal) final -= smartAnalysis.abnormalDistance"
+      ]
+    },
+    {
+      "type": "fixes",
+      "kicker": "What the user is owed",
+      "head": [
+        "Four things, every time"
+      ],
+      "items": [
+        {
+          "title": "The original",
+          "sub": "what we measured before we touched it"
+        },
+        {
+          "title": "The delta",
+          "sub": "exactly what we removed, in their units"
+        },
+        {
+          "title": "The reason",
+          "sub": "in their language, not your enum name"
+        },
+        {
+          "title": "The right to push back",
+          "sub": "an appeal path, even a slow one"
+        }
+      ]
+    },
+    {
+      "type": "takeaway",
+      "kicker": "The payload",
+      "head": [
+        "Correctness is",
+        "table stakes.",
+        "*Transparency ships."
+      ],
+      "body": [
+        "When your output becomes an input to somebody's money, time or reputation, the working IS the product.",
+        "",
+        "Show the original, show the delta, show the reason, and let them argue."
+      ],
+      "arrow": "dev.to / LinkedIn"
+    }
   ]
 }

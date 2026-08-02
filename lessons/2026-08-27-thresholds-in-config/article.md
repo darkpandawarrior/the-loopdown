@@ -8,6 +8,9 @@ cover: assets/card.png
 Every tuning change needed a code review, a release, and a week of store rollout. So we stopped
 tuning, which is the worst possible outcome.
 
+
+![The Archivist, drawn as a specimen plate. You cannot backfill confidence you discarded. Labelled THE ARCHIVIST, Provenance.](assets/carousel/slide-02.png)
+
 ## Eighteen guesses in a const val
 
 Our location pipeline accumulated roughly eighteen numbers that shaped its behaviour:

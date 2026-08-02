@@ -54,6 +54,14 @@ const bodyHtml = (b) => {
   return parts.filter((p) => p.length).map((p) => `<p>${esc(p.join(" "))}</p>`).join("");
 };
 
+// Real snippets are short but wide. Size the type to the widest line instead of
+// rejecting anything over ~46 columns, which is what a fixed 31px forced.
+// Panel inner width is ~856px and a monospace advance is ~0.6em.
+const codeSize = (lines) => {
+  const cols = Math.max(1, ...lines.map((l) => l.length));
+  return Math.round(Math.max(18, Math.min(31, 856 / (0.6 * cols))));
+};
+
 const RENDER = {
   cover: (s) => `
     ${s.ghost ? `<div class="ghost">${esc(s.ghost)}</div>` : ""}
@@ -81,7 +89,7 @@ const RENDER = {
         <span class="dot" style="background:#27C93F"></span>
         ${s.filename ? `<span class="fname">${esc(s.filename)}</span>` : ""}
       </div>
-      <pre>${(s.code || []).map(highlightHtml).join("\n")}</pre>
+      <pre style="font-size:${codeSize(s.code || [])}px">${(s.code || []).map(highlightHtml).join("\n")}</pre>
     </div>
     ${s.callout ? `<div class="callout"><b>${esc(s.callout[0])}</b>${esc(s.callout.slice(1).join(" "))}</div>` : ""}
     <div class="spacer"></div>`,

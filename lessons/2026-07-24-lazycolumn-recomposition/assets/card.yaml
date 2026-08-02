@@ -1,5 +1,5 @@
 template: code-card
-accent: "#db61ff"
+accent: "#4aa3ff"
 pillar: ghosts in the recomposition
 handle: "@darkpandawarrior"
 title:
@@ -16,3 +16,4 @@ code:
 takeaway:
   - "A plain List is unstable."
   - "That's the whole bug."
+cast: the-recomposer

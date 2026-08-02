@@ -11,6 +11,9 @@ line that does nothing wrong.
 The exception was `ForegroundServiceDidNotStartInTimeException`. I had to look it up. And
 once I understood it, a whole class of "works on my machine" bugs made sense.
 
+
+![Doze The Jailer, drawn as a specimen plate. You get five seconds to explain yourself. Labelled DOZE THE JAILER, startForeground().](assets/carousel/slide-02.png)
+
 ## The promise you make
 
 When you start a foreground service, you are telling Android something specific: I am

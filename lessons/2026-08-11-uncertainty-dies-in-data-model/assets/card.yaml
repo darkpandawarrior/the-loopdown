@@ -1,5 +1,5 @@
 template: code-card
-accent: "#f2cc60"
+accent: "#6f86c9"
 pillar: chain of custody
 handle: "@darkpandawarrior"
 title:
@@ -16,3 +16,4 @@ code:
 takeaway:
   - "You cannot backfill confidence"
   - "you discarded at write time."
+cast: the-archivist

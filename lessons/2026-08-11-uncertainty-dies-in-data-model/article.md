@@ -8,6 +8,9 @@ cover: assets/card.png
 The sensor knew how much to trust itself. Our database column did not have room for that, so we
 threw it away on the way in.
 
+
+![The Archivist, drawn as a specimen plate. You cannot backfill confidence you discarded. Labelled THE ARCHIVIST, Provenance.](assets/carousel/slide-02.png)
+
 ## Everything arrives with an error bar
 
 Android hands you a `Location` object that is far richer than a point on a map. It has an accuracy

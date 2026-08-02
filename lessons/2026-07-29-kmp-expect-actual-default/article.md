@@ -12,6 +12,9 @@ first and then reach for it every single time common code needs to touch a platf
 That habit is how shared modules turn into a knot. `expect`/`actual` is a fine tool for a
 narrow job, and the wrong default for most of them.
 
+
+![The Understudy, drawn as a specimen plate. Cast by name at compile time. No swapping mid-run. Labelled THE UNDERSTUDY, actual.](assets/carousel/slide-02.png)
+
 ## What expect/actual actually is
 
 It is a compile-time binding by name. You declare something in common:

@@ -1,0 +1,86 @@
+{
+  "accent": "#6f86c9",
+  "brand": "The Loopdown",
+  "handle": "@darkpandawarrior",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Chain of Custody",
+      "ghost": "=",
+      "cast": "the-archivist",
+      "head": [
+        "Five numbers.",
+        "They did not",
+        "add up."
+      ],
+      "body": [
+        "They were supposed to. Nothing in the codebase checked that they did, and for a while they quietly did not.",
+        "",
+        "The assertion is one line."
+      ],
+      "arrow": "swipe"
+    },
+    {
+      "type": "character",
+      "kicker": "The cast",
+      "head": [
+        "Assert the",
+        "*relationships"
+      ],
+      "cast": "the-archivist",
+      "exhibit": "03",
+      "caption": "A relationship your code assumes but never states is a bug waiting for a refactor. The Archivist writes it down so a future stranger cannot quietly break it."
+    },
+    {
+      "type": "statement",
+      "kicker": "The validator",
+      "head": [
+        "Make the rule",
+        "executable"
+      ],
+      "body": [
+        "A relationship your code assumes but never states is a bug waiting for a refactor. The Archivist writes it down so a future stranger cannot quietly break it."
+      ]
+    },
+    {
+      "type": "fixes",
+      "kicker": "How to grade them",
+      "head": [
+        "Errors and warnings"
+      ],
+      "items": [
+        {
+          "title": "Components sum to the total",
+          "sub": "error. this must never be false."
+        },
+        {
+          "title": "A subset never exceeds its parent",
+          "sub": "error. structural, not stylistic."
+        },
+        {
+          "title": "Two measurements stay in range",
+          "sub": "warning. suspicious, not impossible."
+        },
+        {
+          "title": "Run it before it leaves the device",
+          "sub": "cheapest place to catch corruption"
+        }
+      ]
+    },
+    {
+      "type": "takeaway",
+      "kicker": "The payload",
+      "head": [
+        "Invariants are cheap.",
+        "Silent corruption",
+        "*is not."
+      ],
+      "body": [
+        "Find the relationships your code already assumes and make them run.",
+        "",
+        "One line now, or a support queue later."
+      ],
+      "arrow": "dev.to / LinkedIn"
+    }
+  ]
+}

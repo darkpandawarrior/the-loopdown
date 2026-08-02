@@ -7,6 +7,9 @@ cover: assets/card.png
 
 We had five numbers that were supposed to add up. Nothing in the codebase checked that they did.
 
+
+![The Archivist, drawn as a specimen plate. You cannot backfill confidence you discarded. Labelled THE ARCHIVIST, Provenance.](assets/carousel/slide-02.png)
+
 ## The relationship nobody wrote down
 
 A tracked journey produces five distance figures: `original`, `cleaned`, `mock`, `abnormal` and

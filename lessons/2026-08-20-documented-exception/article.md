@@ -7,6 +7,9 @@ cover: assets/card.png
 
 A filter with no exceptions has not met production yet. It has only met your test data.
 
+
+![The Concussed Witness, drawn as a specimen plate. Confident. Cooperative. Often wrong. Labelled THE CONCUSSED WITNESS, LocationManager.](assets/carousel/slide-02.png)
+
 ## The rule that was right nearly always
 
 GPS reports an accuracy radius with every reading. Ours had a straightforward rule: anything worse

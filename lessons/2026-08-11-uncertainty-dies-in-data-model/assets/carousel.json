@@ -1,19 +1,92 @@
 {
-  "accent": "#f2cc60",
+  "accent": "#6f86c9",
   "brand": "The Loopdown",
   "handle": "@darkpandawarrior",
   "slides": [
-    { "kicker": "Chain of Custody", "head": ["The sensor", "knew. Your", "schema didn't."],
-      "body": ["Every reading arrives with an", "error bar.", "Most tables store the value", "and bin the rest.", "", "Swipe."], "arrow": "swipe >" },
-    { "kicker": "What arrives", "head": ["More than", "a point"],
-      "body": ["Android Location carries:", "accuracy radius, provider,", "bearing, altitude, timestamp.", "It is telling you how much", "to believe it."] },
-    { "kicker": "What we stored", "head": ["lat, lng,", "speed,", "date"],
-      "body": ["Reasonable. Minimal.", "Exactly what the feature", "needed that week.", "It also discarded the error", "bar on every single write."] },
-    { "kicker": "Months later", "head": ["Questions", "you can't", "answer"],
-      "body": ["Was this tracked well or badly?", "Fused or raw GPS?", "Was the device even moving?", "", "Not an algorithm problem.", "A schema problem."] },
-    { "kicker": "The fix", "head": ["Store the", "papers too"],
-      "body": ["The reading.", "How much to trust it and", "where it came from.", "And your own verdict:", "isMock, isAbnormal, displacement."] },
-    { "kicker": "The rule", "head": ["Design the", "row to", "carry doubt"],
-      "body": ["Those columns are cheap.", "Add them before you need them.", "You cannot backfill confidence", "you threw away at write time.", "", "Follow for more field notes."], "arrow": "dev.to / LinkedIn" }
+    {
+      "type": "cover",
+      "kicker": "Chain of Custody",
+      "ghost": "±",
+      "cast": "the-archivist",
+      "head": [
+        "The sensor knew.",
+        "The column",
+        "did not."
+      ],
+      "body": [
+        "Every GPS reading arrives with an error estimate. Most schemas store the coordinate and bin the rest.",
+        "",
+        "We threw it away on the way in."
+      ],
+      "arrow": "swipe"
+    },
+    {
+      "type": "character",
+      "kicker": "The cast",
+      "head": [
+        "It keeps every",
+        "*reading's papers"
+      ],
+      "cast": "the-archivist",
+      "exhibit": "03",
+      "caption": "Where it came from, how sure it was, what we already ruled about it. Nobody thanks the Archivist until a number is disputed, at which point it is the only reason there is an answer."
+    },
+    {
+      "type": "code",
+      "kicker": "The schema",
+      "head": [
+        "Design the row",
+        "to carry doubt"
+      ],
+      "code": [
+        "@Entity",
+        "data class LocationData(",
+        "    val lat: Double,",
+        "    val lng: Double,",
+        "    val speed: Float,",
+        "    val date: Long,",
+        ")"
+      ]
+    },
+    {
+      "type": "fixes",
+      "kicker": "The columns",
+      "head": [
+        "What every row owes you"
+      ],
+      "items": [
+        {
+          "title": "The value",
+          "sub": "lat, lng, distance, whatever you measured"
+        },
+        {
+          "title": "How wrong it might be",
+          "sub": "accuracy radius, confidence, error bars"
+        },
+        {
+          "title": "Where it came from",
+          "sub": "provider, sensor, model version, timestamp"
+        },
+        {
+          "title": "What you already concluded",
+          "sub": "the verdict, so nobody re-litigates it"
+        }
+      ]
+    },
+    {
+      "type": "takeaway",
+      "kicker": "The payload",
+      "head": [
+        "You cannot backfill",
+        "confidence you",
+        "*discarded"
+      ],
+      "body": [
+        "Uncertainty does not get lost in the algorithm. It gets lost at write time, in the schema.",
+        "",
+        "Add the columns before you need them."
+      ],
+      "arrow": "dev.to / LinkedIn"
+    }
   ]
 }

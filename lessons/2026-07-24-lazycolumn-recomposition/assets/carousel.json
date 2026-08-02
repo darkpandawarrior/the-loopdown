@@ -1,0 +1,90 @@
+{
+  "accent": "#4aa3ff",
+  "brand": "The Loopdown",
+  "handle": "@darkpandawarrior",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Ghosts in the Recomposition",
+      "ghost": "∞",
+      "cast": "the-recomposer",
+      "head": [
+        "Every row.",
+        "Every scroll.",
+        "Every time."
+      ],
+      "body": [
+        "Your LazyColumn redraws every visible row whenever anything changes.",
+        "",
+        "There is usually one reason, and you handed it over yourself."
+      ],
+      "arrow": "swipe"
+    },
+    {
+      "type": "character",
+      "kicker": "The cast",
+      "head": [
+        "It redraws the room",
+        "*every time you blink"
+      ],
+      "cast": "the-recomposer",
+      "exhibit": "05",
+      "caption": "A gremlin that repaints the house when you were not looking, and does not mind an empty room. Feed it an unstable List and it repaints everything."
+    },
+    {
+      "type": "code",
+      "kicker": "The cause",
+      "head": [
+        "A List is not",
+        "a stable type"
+      ],
+      "code": [
+        "// before: List is unstable, rows cannot skip",
+        "@Composable fun Feed(items: List<Post>) { ... }",
+        "",
+        "// after: an immutable list is stable, skipping works",
+        "@Composable fun Feed(items: ImmutableList<Post>) { ... }"
+      ]
+    },
+    {
+      "type": "fixes",
+      "kicker": "The fix",
+      "head": [
+        "Let it prove nothing changed"
+      ],
+      "items": [
+        {
+          "title": "Hand it an ImmutableList",
+          "sub": "kotlinx.collections.immutable, not List"
+        },
+        {
+          "title": "Or mark the holder @Immutable",
+          "sub": "when you can promise it never mutates"
+        },
+        {
+          "title": "Give items a stable key",
+          "sub": "items(list, key = { it.id })"
+        },
+        {
+          "title": "Measure, do not guess",
+          "sub": "turn on recomposition counts and scroll"
+        }
+      ]
+    },
+    {
+      "type": "takeaway",
+      "kicker": "The payload",
+      "head": [
+        "Compose is fast.",
+        "You handed it a",
+        "*puzzle"
+      ],
+      "body": [
+        "It can skip anything it can prove did not change. Stability is that proof.",
+        "",
+        "Most \"Compose is janky\" is really \"I gave it something it could not reason about\"."
+      ],
+      "arrow": "dev.to / LinkedIn"
+    }
+  ]
+}

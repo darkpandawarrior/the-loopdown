@@ -1,5 +1,5 @@
 template: code-card
-accent: "#db61ff"
+accent: "#4aa3ff"
 pillar: ghosts in the recomposition
 handle: "@darkpandawarrior"
 title:
@@ -16,3 +16,4 @@ code:
 takeaway:
   - "Make the lifecycle-aware one"
   - "your default."
+cast: the-recomposer

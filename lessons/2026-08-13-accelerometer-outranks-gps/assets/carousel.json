@@ -1,0 +1,89 @@
+{
+  "accent": "#7c5cff",
+  "brand": "The Loopdown",
+  "handle": "@darkpandawarrior",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Sensors Who Lie",
+      "ghost": "2",
+      "cast": "the-second-witness",
+      "head": [
+        "One says moving.",
+        "One says",
+        "it never moved."
+      ],
+      "body": [
+        "GPS said the car was travelling. The accelerometer had not twitched in ten minutes.",
+        "",
+        "Only one of them is right, and it is not the one you think."
+      ],
+      "arrow": "swipe"
+    },
+    {
+      "type": "character",
+      "kicker": "The cast",
+      "head": [
+        "Cannot say where.",
+        "*Knows whether."
+      ],
+      "cast": "the-second-witness",
+      "exhibit": "02",
+      "caption": "Useless on its own. Decisive standing next to a witness with a concussion. It fails differently, which is the entire reason it is worth having."
+    },
+    {
+      "type": "code",
+      "kicker": "The better question",
+      "head": [
+        "Rank per question,",
+        "not overall"
+      ],
+      "code": [
+        "fun process(",
+        "    fix: GpsFix,",
+        "    motionStill: Boolean = false,   // IMU says physically still",
+        "    harshAccel: Boolean = false,    // hard accel or braking this fix",
+        "): ProcessResult?"
+      ]
+    },
+    {
+      "type": "fixes",
+      "kicker": "The method",
+      "head": [
+        "Corroborate, do not tune"
+      ],
+      "items": [
+        {
+          "title": "Find a signal that fails differently",
+          "sub": "a second thermometer is not a second opinion"
+        },
+        {
+          "title": "Ask what each is authoritative for",
+          "sub": "IMU owns \"moving\". GPS owns \"where\"."
+        },
+        {
+          "title": "Disagreement is information",
+          "sub": "log it, do not average it away"
+        },
+        {
+          "title": "Stop tuning the lonely sensor",
+          "sub": "a filter on one input is a guess about itself"
+        }
+      ]
+    },
+    {
+      "type": "takeaway",
+      "kicker": "The payload",
+      "head": [
+        "Correlation beats",
+        "*cleverness"
+      ],
+      "body": [
+        "Do not build a smarter threshold on a lonely sensor.",
+        "",
+        "Find a second signal that fails differently, and give it authority over the one question it is actually good at."
+      ],
+      "arrow": "dev.to / LinkedIn"
+    }
+  ]
+}

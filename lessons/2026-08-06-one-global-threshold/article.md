@@ -7,6 +7,9 @@ cover: assets/card.png
 
 Our GPS filter worked perfectly, right up until someone sat in Bangalore traffic.
 
+
+![The Concussed Witness, drawn as a specimen plate. Confident. Cooperative. Often wrong. Labelled THE CONCUSSED WITNESS, LocationManager.](assets/carousel/slide-02.png)
+
 ## The phantom distance problem
 
 A parked phone does not sit still in the data. The reported position wanders a few metres in every

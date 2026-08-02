@@ -1,38 +1,86 @@
 {
-  "accent": "#38bdf8",
+  "accent": "#c48bff",
   "brand": "The Loopdown",
   "handle": "@darkpandawarrior",
   "slides": [
     {
+      "type": "cover",
       "kicker": "One Brain, Two Bodies",
-      "head": ["expect/actual", "is the wrong", "default"],
-      "body": ["Every KMP tutorial teaches it", "first.", "Then people use it for", "everything and the shared", "code becomes a knot. Swipe."],
-      "arrow": "swipe >"
+      "ghost": "1:1",
+      "cast": "the-understudy",
+      "head": [
+        "expect/actual",
+        "is the wrong",
+        "default"
+      ],
+      "body": [
+        "Every KMP tutorial teaches it first. Then people use it for everything, and the shared code turns into a knot."
+      ],
+      "arrow": "swipe"
     },
     {
-      "kicker": "What it is",
-      "head": ["A weld,", "not a", "wire"],
-      "body": ["expect/actual binds common to", "one platform impl by name,", "at compile time.", "One actual per platform.", "The compiler picks it."]
+      "type": "character",
+      "kicker": "The cast",
+      "head": [
+        "Cast by name.",
+        "*No swapping."
+      ],
+      "cast": "the-understudy",
+      "exhibit": "06",
+      "caption": "A stand-in cast at compile time, on stage every night. Perfect for a small fixed role. Useless when the part needs to change, because you cannot swap an understudy mid-run."
     },
     {
-      "kicker": "Where it hurts",
-      "head": ["You can't", "fake it"],
-      "body": ["No test actual, so common", "code can't be unit tested.", "No second implementation.", "No injected fake.", "Welded to the platform."]
+      "type": "code",
+      "kicker": "The alternative",
+      "head": [
+        "An interface in common,",
+        "injected per platform"
+      ],
+      "code": [
+        "// androidMain",
+        "actual class Clipboard actual constructor() {",
+        "    actual fun copy(text: String) { /* android impl */ }",
+        "}"
+      ]
     },
     {
-      "kicker": "The better default",
-      "head": ["Interface", "in common,", "injected"],
-      "body": ["interface Clipboard {", "  fun copy(text: String) }", "Real impl per platform,", "handed in via DI.", "Fake it in one line."]
+      "type": "fixes",
+      "kicker": "How to choose",
+      "head": [
+        "Weld, or hinge?"
+      ],
+      "items": [
+        {
+          "title": "Varies, or needs a fake",
+          "sub": "interface in common, inject the platform impl"
+        },
+        {
+          "title": "Small, fixed, one per platform",
+          "sub": "expect/actual is fine, and simplest"
+        },
+        {
+          "title": "Ask: can I test this?",
+          "sub": "you cannot inject a fake into a weld"
+        },
+        {
+          "title": "Ask: will there be two?",
+          "sub": "an understudy plays exactly one role"
+        }
+      ]
     },
     {
-      "kicker": "When it IS right",
-      "head": ["Small,", "fixed", "joints"],
-      "body": ["A typealias to a platform type.", "A single declaration with one", "meaning per platform and", "nothing to test.", "The genuine permanent weld."]
-    },
-    {
-      "kicker": "The takeaway",
-      "head": ["Keep your", "options", "open"],
-      "body": ["Interfaces and injection", "compose and test.", "expect/actual welds.", "Weld only where you want", "one permanent joint."],
+      "type": "takeaway",
+      "kicker": "The payload",
+      "head": [
+        "Reach for the tool",
+        "that keeps your",
+        "*options open"
+      ],
+      "body": [
+        "Interfaces and injection compose, and they test. expect/actual welds.",
+        "",
+        "Use the weld only where you genuinely want one permanent joint."
+      ],
       "arrow": "dev.to / LinkedIn"
     }
   ]

@@ -1,0 +1,86 @@
+{
+  "accent": "#6f86c9",
+  "brand": "The Loopdown",
+  "handle": "@darkpandawarrior",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Chain of Custody",
+      "ghost": "18",
+      "cast": "the-archivist",
+      "head": [
+        "Tuning needed",
+        "a release.",
+        "So we stopped."
+      ],
+      "body": [
+        "Every change needed a code review, a release, and a week of store rollout.",
+        "",
+        "So we stopped tuning, which is the worst possible outcome."
+      ],
+      "arrow": "swipe"
+    },
+    {
+      "type": "character",
+      "kicker": "The cast",
+      "head": [
+        "A threshold is a",
+        "*hypothesis"
+      ],
+      "cast": "the-archivist",
+      "exhibit": "03",
+      "caption": "Constants are for things that cannot change, like the number of metres in a kilometre. A jitter threshold is a current best guess wearing a constant's clothes."
+    },
+    {
+      "type": "statement",
+      "kicker": "The move",
+      "head": [
+        "One config object,",
+        "not eighteen consts"
+      ],
+      "body": [
+        "Constants are for things that cannot change, like the number of metres in a kilometre. A jitter threshold is a current best guess wearing a constant's clothes."
+      ]
+    },
+    {
+      "type": "fixes",
+      "kicker": "The ladder",
+      "head": [
+        "Make tuning cheap"
+      ],
+      "items": [
+        {
+          "title": "Gather them into one object",
+          "sub": "18 scattered const val became one config"
+        },
+        {
+          "title": "Make it serialisable",
+          "sub": "now it can come from somewhere else"
+        },
+        {
+          "title": "Then a settings change",
+          "sub": "tune without touching the algorithm"
+        },
+        {
+          "title": "Then a server change",
+          "sub": "tune without shipping at all"
+        }
+      ]
+    },
+    {
+      "type": "takeaway",
+      "kicker": "The payload",
+      "head": [
+        "Separate the algorithm",
+        "from its",
+        "*parameters"
+      ],
+      "body": [
+        "A hypothesis needs to be cheap to revise. If tuning costs a release, people guess instead of measuring.",
+        "",
+        "And then they defend the guess."
+      ],
+      "arrow": "dev.to / LinkedIn"
+    }
+  ]
+}

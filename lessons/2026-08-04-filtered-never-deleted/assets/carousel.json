@@ -3,19 +3,84 @@
   "brand": "The Loopdown",
   "handle": "@darkpandawarrior",
   "slides": [
-    { "kicker": "Sensors Who Lie", "head": ["We filtered", "bad data.", "Then lost it."],
-      "body": ["Months later someone asked", "if the filter was working.", "I could not answer.", "The evidence was gone.", "", "Swipe."], "arrow": "swipe >" },
-    { "kicker": "The trap", "head": ["return", "destroys", "the proof"],
-      "body": ["if (!plausible) return", "", "Clean data comes out.", "Feels responsible.", "You just deleted your only", "way to check the filter."] },
-    { "kicker": "The delete list", "head": ["Two", "things.", "That's all."],
-      "body": ["Coordinates out of range.", "Accuracy under 0.1m or", "over 250m.", "Physically impossible.", "Nothing else is ever dropped."] },
-    { "kicker": "Instead: buckets", "head": ["Label it,", "don't", "lose it"],
-      "body": ["original: everything we saw", "mock: fake provider", "abnormal: failed the check", "spike: teleports over 5km", "cleaned: what we trust"] },
-    { "kicker": "Provenance", "head": ["The row", "keeps its", "papers"],
-      "body": ["accuracy, provider, bearing,", "altitude, gyro + accelerometer,", "battery, device model,", "isMock, isAbnormal.", "Not just a coordinate."] },
-    { "kicker": "What it bought", "head": ["A filter", "you can", "argue with"],
-      "body": ["Disputes: show what came out.", "Thresholds: replay and count.", "Twice the data said we were", "wrong. We moved the line.", "Impossible if you delete."] },
-    { "kicker": "The rule", "head": ["Where do", "your rows", "go?"],
-      "body": ["Fraud scoring, metrics, logs,", "feature stores. Same shape.", "Filtered means not counted,", "and here is why.", "", "Follow for more field notes."], "arrow": "dev.to / LinkedIn" }
+    {
+      "type": "cover",
+      "kicker": "Sensors Who Lie",
+      "ghost": "?",
+      "cast": "the-concussed-witness",
+      "head": [
+        "Filtered",
+        "should never",
+        "mean deleted"
+      ],
+      "body": [
+        "We shipped a filter that threw away bad GPS. Months later someone asked whether it was working.",
+        "",
+        "I could not answer. The evidence was gone."
+      ],
+      "arrow": "swipe"
+    },
+    {
+      "type": "character",
+      "kicker": "The cast",
+      "head": [
+        "We threw away",
+        "*its testimony"
+      ],
+      "cast": "the-concussed-witness",
+      "exhibit": "01",
+      "caption": "Dropping a bad reading destroys the only evidence that could have told you whether dropping it was correct."
+    },
+    {
+      "type": "statement",
+      "kicker": "The shape",
+      "head": [
+        "Classify.",
+        "Do not discard."
+      ],
+      "body": [
+        "Dropping a bad reading destroys the only evidence that could have told you whether dropping it was correct."
+      ]
+    },
+    {
+      "type": "fixes",
+      "kicker": "The pattern",
+      "head": [
+        "Keep the rejects"
+      ],
+      "items": [
+        {
+          "title": "Persist everything",
+          "sub": "the raw row lands before any judgement"
+        },
+        {
+          "title": "Classify into named buckets",
+          "sub": "not a boolean, a reason"
+        },
+        {
+          "title": "The trusted number is a view",
+          "sub": "a query over the data, not the only survivor"
+        },
+        {
+          "title": "The buckets are the instrument",
+          "sub": "they are how you tune the filter later"
+        }
+      ]
+    },
+    {
+      "type": "takeaway",
+      "kicker": "The payload",
+      "head": [
+        "You cannot tune",
+        "a filter you",
+        "*cannot audit"
+      ],
+      "body": [
+        "And you cannot audit what you deleted.",
+        "",
+        "If your pipeline drops rows, know where they go. \"Nowhere\" is an answer, just not a good one."
+      ],
+      "arrow": "dev.to / LinkedIn"
+    }
   ]
 }

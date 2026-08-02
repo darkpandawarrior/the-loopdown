@@ -7,6 +7,9 @@ cover: assets/card.png
 
 GPS said the car was moving. The accelerometer said the phone had not twitched in ten minutes.
 
+
+![The Second Witness, drawn as a specimen plate. Cannot say where. Knows whether. Labelled THE SECOND WITNESS, Sensor.TYPE_ACCELEROMETER.](assets/carousel/slide-02.png)
+
 ## Asking a sensor to check itself
 
 Stationary drift is the oldest problem in location tracking. A parked phone reports small

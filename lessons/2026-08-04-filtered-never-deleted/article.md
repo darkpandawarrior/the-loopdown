@@ -10,6 +10,9 @@ working, and I could not answer. The evidence was gone.
 
 That question changed how I build anything that rejects data.
 
+
+![The Concussed Witness, drawn as a specimen plate. Confident. Cooperative. Often wrong. Labelled THE CONCUSSED WITNESS, LocationManager.](assets/carousel/slide-02.png)
+
 ## The obvious version, and why it rots
 
 Mileage tracking depends on trustworthy distance, and GPS lies constantly. So the first version of

@@ -14,6 +14,9 @@ val state by viewModel.data.collectAsState()
 It looks harmless. It is the standard way to turn a `Flow` into Compose state. And on a
 screen with live data, it quietly keeps working long after the user has walked away.
 
+
+![The Recomposer, drawn as a specimen plate. It redraws the room every time you blink. Labelled THE RECOMPOSER, @Composable.](assets/carousel/slide-02.png)
+
 ## The screen nobody is watching
 
 `collectAsState` starts collecting the flow and stops only when the composable leaves the
