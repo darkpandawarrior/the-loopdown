@@ -128,7 +128,8 @@ Accounts, tokens, and the publish flow: **[SETUP.md](SETUP.md)**.
 |------|------|
 | `archive/` | Existing writing, converted to clean Markdown + frontmatter. |
 | `voice/voice-profile.md` | The style contract every post is checked against. |
-| `lore/` | The universe — [bible](lore/bible.md), [cast](lore/cast.md), [series](lore/series.md). |
+| `lore/` | The universe: [bible](lore/bible.md), [cast](lore/cast.md), [pantheon](lore/pantheon.md), [series](lore/series.md). |
+| `lore/bestiary.md` · `docs/bestiary.png` | **Generated.** Every entity, its sigil, its dead Aspect, and every post it has appeared in. Rebuilds with the registry. |
 | `series/` | Generated bingeable hub page per arc (cross-post "read the series" target). |
 | `profile.yaml` | Cross-platform identity — handles + canonical strategy; threads into every footer. |
 | `lessons/<date>-<slug>/` | One folder per lesson: source + per-channel adapts + assets + metrics. |

@@ -116,3 +116,14 @@ readme = readme.replace(/<!-- REGISTRY:START -->[\s\S]*?<!-- REGISTRY:END -->/, 
 writeFileSync(readmePath, readme);
 
 console.log(`registry: ${archive.length} archive, ${lessons.length} lessons → data/registry.json + README updated`);
+
+// The bestiary is a record, not a claim, so it rebuilds whenever the registry
+// does rather than whenever someone remembers. It shells out instead of
+// importing because it launches Chromium and should not block a plain registry
+// build if that fails on a headless box.
+try {
+  const { execFileSync } = await import("node:child_process");
+  execFileSync("node", [new URL("bestiary.mjs", import.meta.url).pathname], { stdio: "inherit" });
+} catch (e) {
+  console.log("  bestiary skipped:", e.message.split("\n")[0]);
+}

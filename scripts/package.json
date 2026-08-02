@@ -14,7 +14,9 @@
     "export": "node export.mjs",
     "distribute": "node distribute.mjs",
     "metrics": "node metrics.mjs",
-    "dashboard": "node dashboard.mjs"
+    "dashboard": "node dashboard.mjs",
+    "bestiary": "node bestiary.mjs",
+    "summon": "node summon.mjs"
   },
   "dependencies": {
     "@resvg/resvg-js": "^2.6.2",
