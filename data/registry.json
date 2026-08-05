@@ -1,7 +1,7 @@
 {
   "generated": "run `node scripts/build-registry.mjs`",
   "counts": {
-    "archive": 10,
+    "archive": 11,
     "lessons": 17,
     "cast": 10,
     "series": 8
@@ -180,6 +180,24 @@
       ],
       "words": "627",
       "blurb": "An origin myth for the pun, narrated by the punniest man alive. The building block of humor, weaponized.",
+      "source": "private/originals"
+    },
+    {
+      "file": "archive/the-tour.md",
+      "title": "The Tour",
+      "slug": "the-tour",
+      "type": "archive",
+      "form": "short-fiction",
+      "era": "2020",
+      "status": "archived",
+      "tags": [
+        "time-travel",
+        "lockdown",
+        "satire",
+        "campus-lore"
+      ],
+      "words": "1071",
+      "blurb": "Researchers from 2436 study a locked-down student of 2020, logged as timestamped field notes. He never gets a name — only a scholar number, and the notes stop before the record does.",
       "source": "private/originals"
     }
   ],
