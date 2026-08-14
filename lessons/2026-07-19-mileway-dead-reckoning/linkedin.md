@@ -8,7 +8,7 @@ Quick one on why your GPS lies, and what we did about it.
 
 Think of GPS as a witness with a concussion. Confident, cooperative, often wrong. Drive into a tunnel and it just keeps reporting the last spot it saw for about 40 seconds. Then you come out, it snaps to your real position in one jump, and the math (big jump, tiny time) turns a parked car into a fighter jet.
 
-We build mileage tracking. Trip accuracy isn't a feature, it's the whole product. Ours sat around 50 percent, and almost every missing point was a moment the phone lied with full confidence.
+We build mileage tracking. The number at the end of a trip is the entire product, and someone gets reimbursed off it. Ours sat around 50 percent, and almost every missing point was a moment the phone lied with full confidence.
 
 Three things took us from 50 to 95:
 
