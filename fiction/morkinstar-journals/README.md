@@ -74,17 +74,45 @@ blank when the season ends.
 
 ---
 
-## The plates
+## The art
 
-Twenty-one images in [`assets/`](assets/), plus half-scale JPEGs in `assets/web/` that the site
-inlines.
+Three layers, and which layer a thing belongs to is a canon decision, not a design one.
+
+| Layer | What | How |
+|---|---|---|
+| **Plates** | One per entry. Draws the **mechanism** of that world's phenomenon. | Generated, deterministic |
+| **Sigils** | One per entry. Geometry hashed from the entity's **name**. | Generated, deterministic |
+| **Witnesses** | Ten hand-drawn ink-and-wash portraits of the **tellers**. | Drawn by an image model, paid for, not reproducible |
+
+**Why the split.** Canon law five: the heroes lose, and the tellers are why there is a story at
+all. Gods and monsters have no faces, so they get marks derived from their names, and renaming
+one changes its mark because the mark was never the entity's. It belonged to the name. The
+people are the thesis, so the people get drawn. Abstractions get geometry. Faces get faces.
+
+Tveggi is drawn cutting the mark into stone. That is the same object as `assets/mark.svg`, which
+is the same object the site uses as its section divider. The illustration and the canon are not
+related. They are the same thing.
 
 ```bash
-node scripts/morkinstar-plates.mjs          # all of both seasons + the cover
+node scripts/morkinstar-plates.mjs          # 21 plates, both seasons + cover
 node scripts/morkinstar-plates.mjs 07       # one Season 1 plate
 node scripts/morkinstar-plates.mjs s2-04    # one Season 2 plate
+node scripts/morkinstar-art.mjs             # 20 sigils, the mark, the-fourteen
 node scripts/morkinstar-site.mjs            # rebuild site.html
+
+# costs money, announces before spending, --probe draws exactly one
+with-openrouter node scripts/morkinstar-illustrations.mjs --probe
+with-openrouter node scripts/morkinstar-illustrations.mjs
 ```
+
+**What is committed and what is not, and the rule is not size.** Plates and sigils are
+gitignored: they come out of a script byte for byte, so keeping 45MB of PNG in git buys nothing.
+**The ten portraits are committed at full resolution**, because they came out of an image model,
+cost $1.40 measured, and a re-run returns *different pictures*. Derived and regenerable is safe
+to ignore. Paid for and unrepeatable is not.
+
+The general pipeline behind the portraits is reusable: see the `image-generation` skill and
+`openrouter-image`.
 
 **Season One plates are the Directory's survey form**: dark ground, cold accent, corner ticks,
 `ENTRY #NNNN` in tape amber. An institution producing immaculate documentation of things it
