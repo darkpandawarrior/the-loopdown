@@ -11,7 +11,7 @@ planet: "Vœrhan"
 phenomenon: "A family that has maintained a rain which does not exist for nine generations"
 status: draft
 tags: [world-building, mythology, sci-fi, framed-narrative, concluded, myth-without-truth]
-words: 1804
+words: 2048
 blurb: "On a Concluded world where nobody wonders about anything any more, one family still waits for a rain that was never real, and their children are the only children on the planet who ask why."
 lore: [the-concluded, myth-without-truth-requirement]
 ---
@@ -35,6 +35,8 @@ There is no such rain. I want to say that plainly and get it out of the way, bec
 So she said it might rain. Not tomorrow. Not this season. Once, someday, and you will know it when you see it, and it will not come again until your grandchildren are old enough to doubt you.
 
 And her family believed her, or decided to, which on a world with nothing left to wonder about may amount to the same choice.
+
+I should be exact about what kind of world that is, because visitors arrive with the wrong one in their heads. Nobody did this to Vœrhan. There is no council that suppressed anything, no office holding the interesting parts back, nobody keeping a lid on. That would at least be a story with a villain in it and a lid you could lift. Vœrhan simply finished. Every question anyone thought to ask got a good answer, and the answers were correct, and then there was nothing left that needed a person to go and find out. What Emmerin was working against was not a regime. It was completion.
 
 Here is the part of this page I actually want you to sit with, because the rain itself is not the interesting object. The interesting object is what they built to watch for it.
 

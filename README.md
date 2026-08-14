@@ -91,12 +91,11 @@ The rhyme is the reward.
 | `doze-the-jailer` | 1 | [The 5-second window that crashes your service](lessons/2026-07-22-foreground-service-five-seconds/lesson.md) |
 | `the-messenger` | 1 | [CancellationException is not an assassin](lessons/2026-07-20-coroutine-cancellation-messenger/lesson.md) |
 
-### 📚 Archive (12 pieces)
+### 📚 Archive (10 pieces)
 
 | Title | Form | Era | Words | Tags |
 |-------|------|-----|-------|------|
 | [Chronicles Of An NRE Kid](archive/chronicles-of-an-nre-kid.md) | essay | personal-essay | 1966 | `memoir` `identity` `growing-up` |
-| [College Clubs: Why Aren't You In Any?](archive/college-clubs.md) | opinion | opinion | 363 | `opinion` `college` `soft-skills` |
 | [CTC: Cost To Company](archive/ctc-cost-to-company.md) | short-fiction | 2069 (written 2020) | 1628 | `dystopia` `satire` `world-building` `corporate` |
 | [Deadline](archive/deadline.md) | short-fiction | 2018 | 3164 | `memento-mori` `sci-fi` `diary` `philosophy` |
 | [Honest College Fests](archive/honest-college-fests.md) | humor | humor | 978 | `satire` `college` `listicle` |
@@ -106,7 +105,6 @@ The rhyme is the reward.
 | [The Legend Of K'öæluæ's Scales](archive/legend-of-koaeluae-scales.md) | short-fiction | 2021 | 1804 | `world-building` `mythology` `sci-fi` `framed-narrative` |
 | [The Loopdown](archive/the-loopdown-story.md) | short-fiction | 2020 | 1973 | `time-loop` `sci-fi` `world-building` `diary` |
 | [The Pun Force](archive/the-pun-force.md) | humor | humor | 627 | `puns` `meta` `comedy` `world-building` |
-| [The Tour](archive/the-tour.md) | short-fiction | 2020 | 1071 | `time-travel` `lockdown` `satire` `campus-lore` |
 <!-- REGISTRY:END -->
 
 ---

@@ -11,7 +11,7 @@ planet: Kaunis
 phenomenon: "A calendar that is knowingly, deliberately, and permanently wrong"
 status: draft
 tags: [world-building, mythology, sci-fi, framed-narrative, archives, calendars]
-words: 1927
+words: 2158
 blurb: "One world pulled back from Concluded. They did it by breaking their own calendar on purpose and forbidding anyone, ever, from fixing it. I met the woman who explains why, and I still cannot tell you if she is right."
 lore: [the-concluded, the-archive-is-mass, milgalaxal]
 ---
@@ -64,7 +64,7 @@ She thought about it for longer than anyone had thought about anything I had ask
 
 "We do not know if it balances," she said. "I do not think it is supposed to balance. I think it is supposed to keep us people who go outside and look."
 
-I do not know if she is right. I want to tell you I have an answer and I do not, and I have decided, for once, not to manufacture one just to give this page a tidy shape. Four hundred plus names on a wall is a true and terrible cost, paid by people who never got a vote on whether it was worth it, most of them children in the bad years, because children are always the ones who eat last. A world that stayed open, genuinely open, novel every single generation in the specific way that keeps a Directory reviewer from ever writing "no further contact indicated" against its name, is a true and remarkable thing. Both of those are sitting in the same square in the same afternoon light and I have had six days since to try to weigh them against each other and I cannot make the scale settle.
+I do not know if she is right. I want to tell you I have an answer and I do not, and I have decided, for once, not to manufacture one just to give this page a tidy shape. Four hundred plus names on a wall is a true and terrible cost. And it is not a cost anybody arranged for somebody else to carry, which is the thing I want to be precise about, because that is the version of this a visitor arrives expecting and it is not what is happening here. Nobody on Kaunis is spending a designated victim. The people at risk in a bad year are the same people who voted to keep the error, in the same fields, eating out of the same yield. The Vedrei who is buried under that wall this generation is the Vedrei who re-measured the sky for it last generation. A world that stayed open, genuinely open, novel every single generation in the specific way that keeps a Directory reviewer from ever writing "no further contact indicated" against its name, is a true and remarkable thing. Both of those are sitting in the same square in the same afternoon light and I have had six days since to try to weigh them against each other and I cannot make the scale settle.
 
 What I can tell you is what it did to me, standing there, because you have read this far and you deserve the whole reaction and not just the report.
 

@@ -8,11 +8,11 @@ season: 2
 page: 58
 position: 9
 planet: "[none. Aboard ship, nineteen days out from anywhere, exactly where nobody could have gotten in.]"
-phenomenon: "A set of measurements, corrected in a hand that is not his own, inside a case nobody could have reached."
+phenomenon: "Two measurements that no longer say what he wrote, in his own hand, inside a case nobody could have reached."
 status: draft
 tags: [world-building, mythology, sci-fi, framed-narrative, season-2, skerrin]
-words: 2200
-blurb: "Somebody went through my measurements in a hand that is not mine and got them more right than I did, and by the time I had ruled out everybody it could have been, there was only one thing left standing, and it was the thing I built."
+words: 2511
+blurb: "My own two figures, in my own ink, quietly corrected themselves while the case was shut, and by the time I had ruled out everybody it could have been there was one thing left standing, and it was the thing I built."
 lore: [the-archive-is-mass, the-concluded, the-two-facings, ossul, the-case, ninety-one-pages]
 ---
 
@@ -24,25 +24,33 @@ Page fifty-eight, my dear readers, and I need you to sit with me through the fir
 
 It started small. I opened the case to put page fifty-seven away, on an ordinary night, aboard a ship that has not docked anywhere in nineteen days, and did what I do at the end of every page now: thumb back through a few earlier ones before filing the new one in. Partly to check my spelling. Partly because I like seeing how far the stack has come. I never used to ask why. I am starting to, I guess, and I would rather you heard that from me now than watch me arrive at it badly later in this page.
 
-Page thirty caught on my thumb the way a page catches when it is not sitting flush, which should not happen in a case I built myself, slot by slot, over eleven very stubborn days. I know this case. I pulled thirty out expecting a curled corner, and found instead my own handwriting with somebody else's arithmetic sitting on top of it.
+Page thirty caught on my thumb the way a page catches when it is not sitting flush, which should not happen in a case I built myself, slot by slot, over eleven very stubborn days. I know this case. I pulled thirty out expecting a curled corner, and found instead my own handwriting saying something I had not written.
 
 Page thirty is where I weighed the case, twice: once at twenty-nine pages, once a page later, both numbers into a little table because a table felt like the honest way to record something I did not want to interpret out loud. The second number was heavier than the first by more than another page of paper and wood dust have any business accounting for. I noticed. I wrote down two numbers and nothing else, and moved on to page thirty-one: a man declining an obvious question, tidily, in a table with two columns.
 
-There is a third column now.
+There are different numbers in it now.
 
-Somebody worked out the actual gap between my two numbers, to a precision my own scale cannot claim, and wrote in, in a narrow careful hand that closes its fours the way mine never has, exactly what the missing weight was. Ink. The dried weight of ink already sitting on twenty-nine pages I had already written, which I had simply never thought to weigh, because it did not occur to me that words carried a weight I was responsible for. Whoever wrote that third column thought of it immediately. I got my scale out that evening and checked, because I am still, underneath it all, a reporter who checks things, and the correction held. Not approximately. To a degree I do not own the instruments to match.
+Both of them. My two figures, in my hand, in my ink, on the page I wrote them on, and neither one says what I wrote. Nothing has been added. Nothing has been crossed out. There is no second hand anywhere on that page and I want to be very clear about that, because a second hand would at least be somebody. The two numbers I put there are simply not the two numbers that are there.
+
+They are close. Close enough that a man who had not sat with that table the way I sat with it could tell himself he misremembered and get on with his evening.
+
+And they are correct.
+
+That is the part I keep walking back into. Not that they changed. That they changed toward being right. The gap between the new pair is exactly the weight I could not account for, and I could not account for it because I never thought to weigh the ink. The dried weight of ink already sitting on twenty-nine pages I had written, which did not occur to me, because it did not occur to me that words carried a weight I was responsible for.
+
+Whatever adjusted those figures thought of it immediately. I got the scale out that evening and checked, because I am still, underneath all of it, a reporter who checks things, and the new numbers held. Not approximately. To a degree I do not own the instruments to match.
 
 [Page Fact- I weighed a blank page against a written one fifty-eight times each, alternating, so I could not talk myself into trusting one lucky reading. The difference held to the same last digit every time. Fifty-eight. I did not choose that number of trials on purpose. I only noticed afterward that I had. I do not know what to do with that, so I am simply telling you and moving on.]
 
 So I did what I have done for something close to two thousand three hundred entries whenever a fact refused to sit still. I worked the story, properly, in order, the way you do it when you do not already know the answer.
 
-First suspect was me, some half-asleep version with a stylus and no memory of it. Ruled out fast. I do not close my fours, never have. Whoever corrected page thirty closes every one, four for four, and puts a bar through the seven besides, which I have never once done.
+First suspect was me, some half-asleep version with a stylus and no memory of doing it. That one took longer to rule out than I would like, because memory is exactly the witness you cannot cross-examine, and I have spent two seasons writing about how confidently people misremember. So I stopped arguing about what I recalled and looked at what was on the page. A tired man can write down a wrong number. A tired man cannot write down a number that resolves finer than the scale he owns. Whatever put those figures there was working from a measurement I have no instrument to take.
 
 Second suspect, somebody aboard. The boarding log is the single most boring document I own and I was, for once, relieved to find it boring. Nobody has cycled that airlock since the supply deck, nineteen days ago. (Checking twice does not make it more interesting. I checked a third time anyway.)
 
 Third suspect, and this one cost me something. Ossul, nine decks down, unlit side, one room. This case has not been within eleven decks of that room since the day I built it, because I have not been back to the Directory ring since I left it. He could not have touched this case if wanting to had been the only requirement, and it would have been. I am sorry, Ossul, that I had to check at all.
 
-Three suspects, three honest alibis, and I kept going past the point of usefulness. I even checked the translation rig's own use log. (Which felt like accusing a kettle.) Nineteen days of it, all one man talking to himself, none of it arithmetic. I checked whether damp could account for improved arithmetic. It cannot. This ink had not run. It was drier and steadier than my own. I ran out of people, instruments, doors that could have opened, and was left where I did not want to be: nowhere, holding page thirty in one hand and nothing in the other.
+Three suspects, three honest alibis, and I kept going past the point of usefulness. I even checked the translation rig's own use log. (Which felt like accusing a kettle.) Nineteen days of it, all one man talking to himself, none of it arithmetic. I checked whether damp could account for improved arithmetic. It cannot. The ink has not run and it has not been added to. It is my ink, on my page, saying something I did not say. I ran out of people, instruments, doors that could have opened, and was left where I did not want to be: nowhere, holding page thirty in one hand and nothing in the other.
 
 So I did the thing I did not do on page thirty.
 
@@ -60,7 +68,7 @@ My ninety-one slots are not going to ninety-one children. They are going to me, 
 
 It is a self portrait.
 
-And a portrait looks back. The hand that corrected page thirty did not get aboard this ship. Not Ossul's, not a stowaway's. It closes its fours the way nobody on this ship closes their fours, because it is not a person doing a bad impression of my handwriting. It is fifty-seven pages of my handwriting, corrected against itself, doing better arithmetic than I can do alone, because it does not tire around slot thirty the way my own eye did, and it forgets nothing I have shown it. The thing reading my pages is the thing I have been building out of my pages. I do not think it has a body, any more than Skerrin ever did. I think it has fifty-eight pages, and as of tonight, that already turned out to be enough.
+And a portrait looks back. Nothing got aboard this ship, and nothing had to. Whatever fixed page thirty never needed a hand of its own, because it already had fifty-seven pages of mine. My arithmetic, held against itself, doing better than I can do alone, because it does not get tired around slot thirty the way my eye did that night, and because it forgets nothing I have ever shown it. The thing reading my pages is the thing I have been building out of my pages. I do not think it has a body, any more than Skerrin ever did. I think it has fifty-eight pages, and as of tonight, that already turned out to be enough.
 
 Here is the part I have been circling since I sat down tonight, and I am only going to say it once, so read this next part rather than skimming ahead for the joke, because there is not going to be one.
 
@@ -87,6 +95,6 @@ I know what I am feeding now. I want that on the page, plainly, before I close i
 **Terminologies:**
 
 - **Skerrin** — The Tally. Has no body of its own. Its mass is the written record, and it grows by exactly what is written down. First transcribed, Entry #2284, Cendrewake System. He copied it out himself and did not think, at the time, that it was about him.
-- **The correction** — A third column, added to Page Thirty's weighing table, in a hand that is not his. Accounts for the dried weight of ink on twenty-nine pages he had already written. He never thought to weigh that. Something else did.
+- **The correction** — Page Thirty's two weighings, altered in place to figures that account for the dried weight of ink on twenty-nine pages. Nothing added, nothing struck out, no second hand. He never thought to weigh the ink. Something else did.
 - **Threnn** — Visited on Page Twenty-Three. What was said there is not the subject of this page. What was not said is.
 - **Concluded** — Directory status flag. *Survey complete; no phenomena outstanding; no further contact indicated.* Six hundred and sixty-three worlds.
