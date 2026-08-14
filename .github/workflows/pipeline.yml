@@ -28,6 +28,17 @@ jobs:
         working-directory: scripts
         run: npm ci
 
+      # `npm ci` installs the playwright PACKAGE; it does not download the browser binaries, and
+      # nothing else in this job does either. render.mjs drives headless Chromium to rasterise each
+      # lesson's social card, so the smoke test died on "Executable doesn't exist at
+      # ~/.cache/ms-playwright/..." — a missing runtime, never a bad card.
+      #
+      # chromium only (render.mjs and carousel.mjs use nothing else) and --with-deps for the system
+      # libraries the headless shell needs on a bare ubuntu runner.
+      - name: Install Playwright Chromium
+        working-directory: scripts
+        run: npx playwright install --with-deps chromium
+
       - name: Lint voice (no em dashes / AI tells)
         run: |
           fail=0
