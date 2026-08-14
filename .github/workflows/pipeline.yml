@@ -1,11 +1,16 @@
 name: loopdown-pipeline
 
+# `archive/**` belongs in these filters even though no step reads it directly: build-registry.mjs
+# scans archive/*.md, and the "Registry is up to date" step fails when data/registry.json or the
+# README table drifts from it. Without the trigger, adding an archive piece cannot run the check
+# that exists to catch exactly that — the staleness surfaces later, on an unrelated PR, looking
+# like that PR's fault. This is how the README sat a row behind until 2026-08-14.
 on:
   push:
     branches: [main]
-    paths: ["lessons/**", "scripts/**", "templates/**", "lore/**", "profile.yaml"]
+    paths: ["lessons/**", "archive/**", "scripts/**", "templates/**", "lore/**", "profile.yaml"]
   pull_request:
-    paths: ["lessons/**", "scripts/**", "templates/**", "lore/**", "profile.yaml"]
+    paths: ["lessons/**", "archive/**", "scripts/**", "templates/**", "lore/**", "profile.yaml"]
 
 # one run per ref; cancel superseded runs
 concurrency:
