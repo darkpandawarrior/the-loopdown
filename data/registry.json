@@ -1,7 +1,7 @@
 {
   "generated": "run `node scripts/build-registry.mjs`",
   "counts": {
-    "archive": 12,
+    "archive": 10,
     "lessons": 17,
     "cast": 10,
     "series": 8,
@@ -1244,7 +1244,7 @@
         "system": "",
         "phenomenon": "A family that has maintained a rain which does not exist for nine generations",
         "blurb": "On a Concluded world where nobody wonders about anything any more, one family still waits for a rain that was never real, and their children are the only children on the planet who ask why.",
-        "words": "1804",
+        "words": "2048",
         "tags": [
           "world-building",
           "mythology",
@@ -1383,7 +1383,7 @@
         "system": "",
         "phenomenon": "A calendar that is knowingly, deliberately, and permanently wrong",
         "blurb": "One world pulled back from Concluded. They did it by breaking their own calendar on purpose and forbidding anyone, ever, from fixing it. I met the woman who explains why, and I still cannot tell you if she is right.",
-        "words": "1927",
+        "words": "2158",
         "tags": [
           "world-building",
           "mythology",
@@ -1404,9 +1404,9 @@
         "page": "58",
         "planet": "[none. Aboard ship, nineteen days out from anywhere, exactly where nobody could have gotten in.]",
         "system": "",
-        "phenomenon": "A set of measurements, corrected in a hand that is not his own, inside a case nobody could have reached.",
-        "blurb": "Somebody went through my measurements in a hand that is not mine and got them more right than I did, and by the time I had ruled out everybody it could have been, there was only one thing left standing, and it was the thing I built.",
-        "words": "2200",
+        "phenomenon": "Two measurements that no longer say what he wrote, in his own hand, inside a case nobody could have reached.",
+        "blurb": "My own two figures, in my own ink, quietly corrected themselves while the case was shut, and by the time I had ruled out everybody it could have been there was one thing left standing, and it was the thing I built.",
+        "words": "2511",
         "tags": [
           "world-building",
           "mythology",
@@ -1765,6 +1765,88 @@
           "Jötunheimr"
         ]
       ]
-    }
+    },
+    "witnesses": [
+      {
+        "id": "feeriko",
+        "name": "Feeriko",
+        "entry": "s1-01",
+        "of": "Exxobar",
+        "did": "Talked a serpent out of giving up, for a full momenta, because the deal was that if she stopped, he would stop.",
+        "art": "fiction/morkinstar-journals/assets/witnesses/feeriko.png"
+      },
+      {
+        "id": "tveggi",
+        "name": "Tveggi",
+        "entry": "s1-02",
+        "of": "Grïnjdarlay",
+        "did": "Could not hear names being eaten, so she was the only one who could keep the count. Then she worked out that a name does not have to be a sound, and cut a mark.",
+        "art": "fiction/morkinstar-journals/assets/witnesses/tveggi.png"
+      },
+      {
+        "id": "soebra",
+        "name": "Sœbra",
+        "entry": "s1-03",
+        "of": "Vædrun",
+        "did": "Wrote the terms down on wet bark in a hurry. The bark burned that night. They put her in the pantheon anyway, over the priesthood's objections.",
+        "art": "fiction/morkinstar-journals/assets/witnesses/soebra.png"
+      },
+      {
+        "id": "soelvi",
+        "name": "Sœlvi",
+        "entry": "s1-04",
+        "of": "Marlt",
+        "did": "Became the first Marltain who was one, found the grammar had no way to say it, and invented the act of addressing someone who is not there.",
+        "art": "fiction/morkinstar-journals/assets/witnesses/soelvi.png"
+      },
+      {
+        "id": "aedri",
+        "name": "Ædri",
+        "entry": "s1-05",
+        "of": "Killuga Var",
+        "did": "Kept the first ledger of cold-holds. It is still public, it is still updated, and it is still not a small number.",
+        "art": "fiction/morkinstar-journals/assets/witnesses/aedri.png"
+      },
+      {
+        "id": "hild-ronn",
+        "name": "Hild-Ronn",
+        "entry": "s1-06",
+        "of": "Jötunheimr",
+        "did": "Worked out that the line did not need power, it needed occupancy. Then she dug the first shaft and put her own mother in it, standing up.",
+        "art": "fiction/morkinstar-journals/assets/witnesses/hild-ronn.png"
+      },
+      {
+        "id": "the-cendran-child",
+        "name": "The Cendran child",
+        "entry": "s1-07",
+        "of": "Cendre",
+        "did": "Was handed a stylus on the morning after everything burned and asked for one thing nobody had ever written down. Wrote the fourteenth's name.",
+        "art": "fiction/morkinstar-journals/assets/witnesses/the-cendran-child.png"
+      },
+      {
+        "id": "ilta",
+        "name": "Ilta",
+        "entry": "s1-08",
+        "of": "Solvei",
+        "did": "Walked around to the other side. Described in every telling as unremarkable, and in most as slightly annoying.",
+        "art": "fiction/morkinstar-journals/assets/witnesses/ilta.png"
+      },
+      {
+        "id": "ossul",
+        "name": "Ossul",
+        "entry": "s2-01",
+        "of": "Deep Registry",
+        "did": "Quietly failed to action four correction requests for twenty-two galaxals, because the safest place for a number is a queue nobody reads.",
+        "art": "fiction/morkinstar-journals/assets/witnesses/ossul.png"
+      },
+      {
+        "id": "hallovar",
+        "name": "Hallovar",
+        "entry": "s2-04",
+        "of": "Ilmarrow",
+        "did": "Announced the hour he would stop, then spent three hundred clicks teaching them to do his job. He did not finish lesson three hundred and forty one.",
+        "art": "fiction/morkinstar-journals/assets/witnesses/hallovar.png"
+      }
+    ]
   }
 }

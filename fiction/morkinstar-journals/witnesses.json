@@ -1,0 +1,75 @@
+{
+  "_comment": "Canon law five: the heroes lose, and the tellers are why there is a story at all. The gods and monsters get sigils, which are geometry hashed from a name. The people get faces. Each caption names what this person DID, because that is the only reason they are in the anthology.",
+  "witnesses": [
+    {
+      "id": "feeriko",
+      "name": "Feeriko",
+      "entry": "s1-01",
+      "of": "Exxobar",
+      "did": "Talked a serpent out of giving up, for a full momenta, because the deal was that if she stopped, he would stop."
+    },
+    {
+      "id": "tveggi",
+      "name": "Tveggi",
+      "entry": "s1-02",
+      "of": "Grïnjdarlay",
+      "did": "Could not hear names being eaten, so she was the only one who could keep the count. Then she worked out that a name does not have to be a sound, and cut a mark."
+    },
+    {
+      "id": "soebra",
+      "name": "Sœbra",
+      "entry": "s1-03",
+      "of": "Vædrun",
+      "did": "Wrote the terms down on wet bark in a hurry. The bark burned that night. They put her in the pantheon anyway, over the priesthood's objections."
+    },
+    {
+      "id": "soelvi",
+      "name": "Sœlvi",
+      "entry": "s1-04",
+      "of": "Marlt",
+      "did": "Became the first Marltain who was one, found the grammar had no way to say it, and invented the act of addressing someone who is not there."
+    },
+    {
+      "id": "aedri",
+      "name": "Ædri",
+      "entry": "s1-05",
+      "of": "Killuga Var",
+      "did": "Kept the first ledger of cold-holds. It is still public, it is still updated, and it is still not a small number."
+    },
+    {
+      "id": "hild-ronn",
+      "name": "Hild-Ronn",
+      "entry": "s1-06",
+      "of": "Jötunheimr",
+      "did": "Worked out that the line did not need power, it needed occupancy. Then she dug the first shaft and put her own mother in it, standing up."
+    },
+    {
+      "id": "the-cendran-child",
+      "name": "The Cendran child",
+      "entry": "s1-07",
+      "of": "Cendre",
+      "did": "Was handed a stylus on the morning after everything burned and asked for one thing nobody had ever written down. Wrote the fourteenth's name."
+    },
+    {
+      "id": "ilta",
+      "name": "Ilta",
+      "entry": "s1-08",
+      "of": "Solvei",
+      "did": "Walked around to the other side. Described in every telling as unremarkable, and in most as slightly annoying."
+    },
+    {
+      "id": "ossul",
+      "name": "Ossul",
+      "entry": "s2-01",
+      "of": "Deep Registry",
+      "did": "Quietly failed to action four correction requests for twenty-two galaxals, because the safest place for a number is a queue nobody reads."
+    },
+    {
+      "id": "hallovar",
+      "name": "Hallovar",
+      "entry": "s2-04",
+      "of": "Ilmarrow",
+      "did": "Announced the hour he would stop, then spent three hundred clicks teaching them to do his job. He did not finish lesson three hundred and forty one."
+    }
+  ]
+}

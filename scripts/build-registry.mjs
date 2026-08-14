@@ -100,6 +100,18 @@ if (existsSync(ficDir)) {
   };
 
   const starmapPath = join(ficDir, "starmap.json");
+  // The tellers. Sigils are geometry hashed from a name, which is right for a
+  // thing with no face. These are the people, and they are the whole thesis, so
+  // they are drawn rather than generated.
+  const witPath = join(ficDir, "witnesses.json");
+  const witDir = join(ficDir, "assets/witnesses");
+  const drawn = existsSync(witDir) ? readdirSync(witDir).filter((f) => f.endsWith(".png")) : [];
+  const witnesses = existsSync(witPath)
+    ? JSON.parse(readFileSync(witPath, "utf8")).witnesses
+        .filter((w) => drawn.includes(`${w.id}.png`))
+        .map((w) => ({ ...w, art: `fiction/morkinstar-journals/assets/witnesses/${w.id}.png` }))
+    : [];
+
   anthology = {
     slug: "the-morkinstar-journals",
     title: "The Morkinstar Journals",
@@ -110,6 +122,7 @@ if (existsSync(ficDir)) {
     ],
     entries: [...s1Files.map(entryOf(1)), ...s2Files.map(entryOf(2))],
     starmap: existsSync(starmapPath) ? JSON.parse(readFileSync(starmapPath, "utf8")) : null,
+    witnesses,
   };
 }
 
