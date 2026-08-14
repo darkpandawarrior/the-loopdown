@@ -38,9 +38,6 @@ const PIECES = [
   { slug: "the-pun-force", title: "The Pun Force", era: "humor", form: "humor",
     tags: ["puns", "meta", "comedy", "world-building"],
     blurb: "An origin myth for the pun, narrated by the punniest man alive. The building block of humor, weaponized." },
-  { slug: "college-clubs", title: "College Clubs: Why Aren't You In Any?", era: "opinion", form: "opinion",
-    tags: ["opinion", "college", "soft-skills"],
-    blurb: "The case for joining a society when time, sleep, and parties are all in deficit." },
 ];
 
 let ingested = 0;

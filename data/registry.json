@@ -26,23 +26,6 @@
       "source": "private/originals"
     },
     {
-      "file": "archive/college-clubs.md",
-      "title": "College Clubs: Why Aren't You In Any?",
-      "slug": "college-clubs",
-      "type": "archive",
-      "form": "opinion",
-      "era": "opinion",
-      "status": "archived",
-      "tags": [
-        "opinion",
-        "college",
-        "soft-skills"
-      ],
-      "words": "363",
-      "blurb": "The case for joining a society when time, sleep, and parties are all in deficit.",
-      "source": "private/originals"
-    },
-    {
       "file": "archive/ctc-cost-to-company.md",
       "title": "CTC: Cost To Company",
       "slug": "ctc-cost-to-company",
@@ -207,24 +190,6 @@
       ],
       "words": "627",
       "blurb": "An origin myth for the pun, narrated by the punniest man alive. The building block of humor, weaponized.",
-      "source": "private/originals"
-    },
-    {
-      "file": "archive/the-tour.md",
-      "title": "The Tour",
-      "slug": "the-tour",
-      "type": "archive",
-      "form": "short-fiction",
-      "era": "2020",
-      "status": "archived",
-      "tags": [
-        "time-travel",
-        "lockdown",
-        "satire",
-        "campus-lore"
-      ],
-      "words": "1071",
-      "blurb": "Researchers from 2436 study a locked-down student of 2020, logged as timestamped field notes. He never gets a name — only a scholar number, and the notes stop before the record does.",
       "source": "private/originals"
     }
   ],
