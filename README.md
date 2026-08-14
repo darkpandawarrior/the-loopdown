@@ -66,7 +66,7 @@ Appearances below). The world is in [`lore/`](lore/bible.md); the voice is in
 | `doze-the-jailer` | 1 | [The 5-second window that crashes your service](lessons/2026-07-22-foreground-service-five-seconds/lesson.md) |
 | `the-messenger` | 1 | [CancellationException is not an assassin](lessons/2026-07-20-coroutine-cancellation-messenger/lesson.md) |
 
-### 📚 Archive (11 pieces)
+### 📚 Archive (12 pieces)
 
 | Title | Form | Era | Words | Tags |
 |-------|------|-----|-------|------|
@@ -78,6 +78,7 @@ Appearances below). The world is in [`lore/`](lore/bible.md); the voice is in
 | [It's A Doggone Life](archive/its-a-doggone-life.md) | essay | personal-essay | 1371 | `memoir` `dogs` `heart` |
 | [Pointer Games](archive/pointer-games.md) | short-fiction | campus-lore | 1739 | `campus-lore` `mystery` `hinglish` `world-building` |
 | [Prophecy #201112003](archive/prophecy-201112003.md) | short-fiction | campus-lore | 1761 | `campus-lore` `mystery` `world-building` |
+| [The Legend Of K'öæluæ's Scales](archive/legend-of-koaeluae-scales.md) | short-fiction | 2021 | 1804 | `world-building` `mythology` `sci-fi` `framed-narrative` |
 | [The Loopdown](archive/the-loopdown-story.md) | short-fiction | 2020 | 1973 | `time-loop` `sci-fi` `world-building` `diary` |
 | [The Pun Force](archive/the-pun-force.md) | humor | humor | 627 | `puns` `meta` `comedy` `world-building` |
 | [The Tour](archive/the-tour.md) | short-fiction | 2020 | 1071 | `time-travel` `lockdown` `satire` `campus-lore` |
