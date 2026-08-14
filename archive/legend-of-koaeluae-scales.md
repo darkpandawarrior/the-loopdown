@@ -6,6 +6,14 @@ form: short-fiction
 era: "2021"
 status: archived
 tags: [world-building, mythology, sci-fi, framed-narrative]
+series: the-morkinstar-journals
+season: 1
+entry: 2245
+position: 1
+planet: Exxobar
+system: "Alpha Axmoiri"
+series_position: "4 of 16"
+phenomenon: "Why it snows for a half momenta every click"
 words: 1804
 blurb: "A galactic field reporter transcribes why it snows on a frozen planet — a fire serpent, a water god, and the fisherwoman who talked one of them out of giving up."
 source: private/originals

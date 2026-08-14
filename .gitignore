@@ -43,3 +43,11 @@ data/linkedin-queue.md
 # Code knowledge graph (graphify). Derived, rebuildable, and large; it also mirrors every
 # symbol name in the repo, so it is never committed. Rebuild: node ~/Tools/DevTools/AgentHarness/scripts/graph.mjs build
 graphify-out/
+
+# The Morkinstar Journals: derived artifacts, all regenerable and large.
+# Full-res plates are ~45MB (node scripts/morkinstar-plates.mjs).
+# The standalone reader is ~2.2MB and rebuilt on every change
+# (node scripts/morkinstar-site.mjs). The half-scale web JPEGs in
+# assets/web/ ARE committed: the cv-siddharth build fetches them.
+fiction/morkinstar-journals/assets/*.png
+fiction/morkinstar-journals/site.html

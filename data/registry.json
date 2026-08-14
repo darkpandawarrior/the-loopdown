@@ -4,7 +4,8 @@
     "archive": 12,
     "lessons": 17,
     "cast": 10,
-    "series": 8
+    "series": 8,
+    "anthology": 20
   },
   "archive": [
     {
@@ -160,6 +161,14 @@
         "sci-fi",
         "framed-narrative"
       ],
+      "series": "the-morkinstar-journals",
+      "season": "1",
+      "entry": "2245",
+      "position": "1",
+      "planet": "Exxobar",
+      "system": "Alpha Axmoiri",
+      "series_position": "4 of 16",
+      "phenomenon": "Why it snows for a half momenta every click",
       "words": "1804",
       "blurb": "A galactic field reporter transcribes why it snows on a frozen planet — a fire serpent, a water god, and the fisherwoman who talked one of them out of giving up.",
       "source": "private/originals"
@@ -991,5 +1000,806 @@
       "title": "The Night Shift",
       "episodes": 1
     }
-  ]
+  ],
+  "anthology": {
+    "slug": "the-morkinstar-journals",
+    "title": "The Morkinstar Journals",
+    "tagline": "Fourteen gods. Fourteen monsters. Thirteen names.",
+    "seasons": [
+      {
+        "n": 1,
+        "title": "The Directory",
+        "blurb": "He files. Ten entries, each a world's legend and the phenomenon it explains."
+      },
+      {
+        "n": 2,
+        "title": "The Ninety-One Pages",
+        "blurb": "He stops filing. Each page must contain something nobody has ever written down."
+      }
+    ],
+    "entries": [
+      {
+        "season": 1,
+        "idx": 1,
+        "title": "The Legend Of K'öæluæ's Scales",
+        "slug": "legend-of-koaeluae-scales",
+        "file": "archive/legend-of-koaeluae-scales.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s1-01-legend-of-koaeluae-scales.jpg",
+        "entry": "2245",
+        "page": null,
+        "planet": "Exxobar",
+        "system": "Alpha Axmoiri",
+        "phenomenon": "Why it snows for a half momenta every click",
+        "blurb": "A galactic field reporter transcribes why it snows on a frozen planet — a fire serpent, a water god, and the fisherwoman who talked one of them out of giving up.",
+        "words": "1804",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative"
+        ]
+      },
+      {
+        "season": 1,
+        "idx": 2,
+        "title": "The Ninety-Nine Names Of Silence",
+        "slug": "ninety-nine-names-of-silence",
+        "file": "fiction/morkinstar-journals/02-the-ninety-nine-names-of-silence.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s1-02-ninety-nine-names-of-silence.jpg",
+        "entry": "2250",
+        "page": null,
+        "planet": "Grïnjdarlay",
+        "system": "Alpha Axmoiri",
+        "phenomenon": "The Ösk, a half-momenta every click in which nobody speaks aloud",
+        "blurb": "On the coldest world in Alpha Axmoiri, everything has ninety-nine names, and once a click ninety-eight of them are gone. A deaf child, a god with no name of his own, and the invention of writing as an act of war.",
+        "words": "1891",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "language"
+        ]
+      },
+      {
+        "season": 1,
+        "idx": 3,
+        "title": "The Tide That Owes",
+        "slug": "the-tide-that-owes",
+        "file": "fiction/morkinstar-journals/03-the-tide-that-owes.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s1-03-the-tide-that-owes.jpg",
+        "entry": "2259",
+        "page": null,
+        "planet": "Vædrun",
+        "system": "Alpha Axmoiri",
+        "phenomenon": "The Withdrawal, nine days a click in which the sea leaves and does not come back",
+        "blurb": "A queen borrowed nine days of ocean to end a famine. Nobody wrote down the terms. Four thousand clicks later, the sea is still collecting.",
+        "words": "1988",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "debt"
+        ]
+      },
+      {
+        "season": 1,
+        "idx": 4,
+        "title": "The Word Marltains Do Not Have",
+        "slug": "the-word-marltains-do-not-have",
+        "file": "fiction/morkinstar-journals/04-the-word-marltains-do-not-have.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s1-04-the-word-marltains-do-not-have.jpg",
+        "entry": "2263",
+        "page": null,
+        "planet": "Marlt",
+        "system": "Brixby",
+        "phenomenon": "Marltains are born in pairs and have no word for being alone",
+        "blurb": "The Directory logged the Marltain binary wrong, and I repeated the error. Here is the correction, and the story of the first Marltain to be one.",
+        "words": "2519",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "grief",
+          "language"
+        ]
+      },
+      {
+        "season": 1,
+        "idx": 5,
+        "title": "The Arm Shake",
+        "slug": "the-arm-shake",
+        "file": "fiction/morkinstar-journals/05-the-arm-shake.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s1-05-the-arm-shake.jpg",
+        "entry": "2269",
+        "page": null,
+        "planet": "Killuga Var",
+        "system": "Killuga",
+        "phenomenon": "Killugans embrace strangers on meeting, and hold for a count of eleven",
+        "blurb": "I made a joke about this system in Entry #2245. Then I came here and found out that the hug is not a greeting. It is a test, it has been running for four thousand clicks, and it has never been switched off.",
+        "words": "1907",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "trust",
+          "humour"
+        ]
+      },
+      {
+        "season": 1,
+        "idx": 6,
+        "title": "The Standing Dead",
+        "slug": "the-standing-dead",
+        "file": "fiction/morkinstar-journals/06-the-standing-dead.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s1-06-the-standing-dead.jpg",
+        "entry": "2277",
+        "page": null,
+        "planet": "Jötunheimr",
+        "system": "Ymirsgald",
+        "phenomenon": "The dead are buried standing, and every grave on the planet faces the same fixed celestial bearing",
+        "blurb": "On Jötunheimr the dead do not lie down. They are surveyed, aimed, and set into a line four thousand clicks long, and the line is still being extended, and I made the mistake of asking what it points at.",
+        "words": "2581",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "inheritance",
+          "death"
+        ]
+      },
+      {
+        "season": 1,
+        "idx": 7,
+        "title": "The Kindling",
+        "slug": "the-kindling",
+        "file": "fiction/morkinstar-journals/07-the-kindling.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s1-07-the-kindling.jpg",
+        "entry": "2284",
+        "page": null,
+        "planet": "Cendre",
+        "system": "Cendrewake",
+        "phenomenon": "Every ninth generation the Væhn destroy their complete written record, on purpose, entirely",
+        "blurb": "Every ninth generation, an entire civilisation burns everything it has ever written. They keep one page. A child writes it. I read the oldest one and then I did something I have never done in 2284 entries.",
+        "words": "2644",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "memory",
+          "archives"
+        ]
+      },
+      {
+        "season": 1,
+        "idx": 8,
+        "title": "Two Suns, One Shadow",
+        "slug": "two-suns-one-shadow",
+        "file": "fiction/morkinstar-journals/08-two-suns-one-shadow.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s1-08-two-suns-one-shadow.jpg",
+        "entry": "2291",
+        "page": null,
+        "planet": "Solvei",
+        "system": "Dvær Binary",
+        "phenomenon": "Two stars in the sky, and every object on the surface casts exactly one shadow",
+        "blurb": "On Solvei the word for god and the word for monster are the same word, inflected by which way you are standing. I went to file a linguistic curiosity. I came back with an arithmetic problem.",
+        "words": "2832",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "perspective",
+          "language"
+        ]
+      },
+      {
+        "season": 1,
+        "idx": 9,
+        "title": "The World With No Number",
+        "slug": "the-world-with-no-number",
+        "file": "fiction/morkinstar-journals/09-the-world-with-no-number.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s1-09-the-world-with-no-number.jpg",
+        "entry": "2296",
+        "page": null,
+        "planet": "[unnamed]",
+        "system": "[unassigned]",
+        "phenomenon": "None. That is the phenomenon.",
+        "blurb": "I found a world that is not in the Directory. It has people on it. They are well. They have no gods, no monsters, and no word for why. This is the shortest entry I have ever filed.",
+        "words": "1283",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "silence"
+        ]
+      },
+      {
+        "season": 1,
+        "idx": 10,
+        "title": "Why We Measure Time In Hells",
+        "slug": "why-we-measure-time-in-hells",
+        "file": "fiction/morkinstar-journals/10-why-we-measure-time-in-hells.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s1-10-why-we-measure-time-in-hells.jpg",
+        "entry": "2300",
+        "page": null,
+        "planet": "The Galactic Directory",
+        "system": "[none]",
+        "phenomenon": "Every date in Galactic Standard is written in units named after afterlives",
+        "blurb": "Four hundred entries of filing complaints about a conversion table that does not multiply out. I finally went and asked in person. The error is not an error. It is a headstone.",
+        "words": "2419",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "archives",
+          "finale"
+        ]
+      },
+      {
+        "season": 2,
+        "idx": 1,
+        "title": "The Second Chair",
+        "slug": "the-second-chair",
+        "file": "fiction/morkinstar-journals/s2-01-the-second-chair.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s2-01-the-second-chair.jpg",
+        "entry": null,
+        "page": "1",
+        "planet": "[none. A wooden case, wherever I happen to be sitting.]",
+        "system": "",
+        "phenomenon": "A case with ninety-one slots, built badly, on purpose.",
+        "blurb": "I bought wood, I borrowed a number I did not earn, and I wrote down the first thing that has never been on file anywhere: a man nine decks down and what he eats for breakfast.",
+        "words": "2262",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "season-2",
+          "ossul"
+        ]
+      },
+      {
+        "season": 2,
+        "idx": 2,
+        "title": "The Weather They Made Up",
+        "slug": "the-weather-they-made-up",
+        "file": "fiction/morkinstar-journals/s2-02-the-weather-they-made-up.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s2-02-the-weather-they-made-up.jpg",
+        "entry": null,
+        "page": "4",
+        "planet": "Vœrhan",
+        "system": "",
+        "phenomenon": "A family that has maintained a rain which does not exist for nine generations",
+        "blurb": "On a Concluded world where nobody wonders about anything any more, one family still waits for a rain that was never real, and their children are the only children on the planet who ask why.",
+        "words": "1804",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "concluded",
+          "myth-without-truth"
+        ]
+      },
+      {
+        "season": 2,
+        "idx": 3,
+        "title": "The Cold Case Of All Fourteen",
+        "slug": "the-cold-case-of-all-fourteen",
+        "file": "fiction/morkinstar-journals/s2-03-the-cold-case-of-all-fourteen.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s2-03-the-cold-case-of-all-fourteen.jpg",
+        "entry": null,
+        "page": "9",
+        "planet": "Dhurin",
+        "system": "",
+        "phenomenon": "All fourteen gods and all fourteen monsters of Dhurin died in the same night, four thousand clicks ago, and the Directory file on it has never closed",
+        "blurb": "A civilisation of detectives hands an outsider their oldest cold case: twenty eight murders, one night, no suspects, four thousand clicks unsolved. I got close enough to the answer that I wish I hadn't.",
+        "words": "2041",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "investigation",
+          "archives"
+        ]
+      },
+      {
+        "season": 2,
+        "idx": 4,
+        "title": "The Last Thing He Taught Them",
+        "slug": "the-last-thing-he-taught-them",
+        "file": "fiction/morkinstar-journals/s2-04-the-last-thing-he-taught-them.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s2-04-the-last-thing-he-taught-them.jpg",
+        "entry": null,
+        "page": "16",
+        "planet": "Ilmarrow",
+        "system": "",
+        "phenomenon": "A planet's axial wander corrected by a god who trained his own replacements and ran out of time by exactly one lesson",
+        "blurb": "A god announced the hour he would stop, three hundred clicks out, and spent every one of them teaching a room full of people to do his job. They finished the syllabus. They did not finish in time.",
+        "words": "2153",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "grief",
+          "engineering",
+          "teaching"
+        ]
+      },
+      {
+        "season": 2,
+        "idx": 5,
+        "title": "What You Have Not Said Out Loud",
+        "slug": "what-you-have-not-said-out-loud",
+        "file": "fiction/morkinstar-journals/s2-05-what-you-have-not-said-out-loud.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s2-05-what-you-have-not-said-out-loud.jpg",
+        "entry": null,
+        "page": "23",
+        "planet": "Threnn",
+        "system": "",
+        "phenomenon": "Every Ovai narrates what they feel, in full and out loud, to whoever is nearest, continuously, as a matter of survival",
+        "blurb": "On Threnn a thing can only hurt you if you have not said it out loud, so they say everything, immediately, to whoever is near. They noticed I was not doing that. I left anyway.",
+        "words": "2205",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "confession",
+          "silence"
+        ]
+      },
+      {
+        "season": 2,
+        "idx": 6,
+        "title": "The Weight Of The Case",
+        "slug": "the-weight-of-the-case",
+        "file": "fiction/morkinstar-journals/s2-06-the-weight-of-the-case.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s2-06-the-weight-of-the-case.jpg",
+        "entry": null,
+        "page": "30",
+        "planet": "[none, aboard ship]",
+        "system": "",
+        "phenomenon": "A case that weighs more than the sum of its own empty weight and its own pages, by a small and growing margin",
+        "blurb": "I weighed the case. Then I weighed the pages. Then I weighed the case with nothing in it. The numbers do not add up the way numbers are supposed to, and I have decided the honest thing to do about that is write down the numbers and nothing else.",
+        "words": "1381",
+        "tags": [
+          "world-building",
+          "sci-fi",
+          "framed-narrative",
+          "archives",
+          "dread",
+          "measurement"
+        ]
+      },
+      {
+        "season": 2,
+        "idx": 7,
+        "title": "Six Worlds, Six Fences",
+        "slug": "six-worlds-six-fences",
+        "file": "fiction/morkinstar-journals/s2-07-six-worlds-six-fences.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s2-07-six-worlds-six-fences.jpg",
+        "entry": null,
+        "page": "38",
+        "planet": "The Galactic Directory",
+        "system": "",
+        "phenomenon": "Six standing bearings, plotted as real lines from each world's own position instead of as directions, land on each other in pairs",
+        "blurb": "I promised to keep measuring and report the result either way. I reported a negative from Entry #2300. It was true and it was not the whole answer, and Ossul owns a sewing kit that proved it.",
+        "words": "1932",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "archives",
+          "dread"
+        ]
+      },
+      {
+        "season": 2,
+        "idx": 8,
+        "title": "The One That Stayed Open",
+        "slug": "the-one-that-stayed-open",
+        "file": "fiction/morkinstar-journals/s2-08-the-one-that-stayed-open.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s2-08-the-one-that-stayed-open.jpg",
+        "entry": null,
+        "page": "47",
+        "planet": "Kaunis",
+        "system": "",
+        "phenomenon": "A calendar that is knowingly, deliberately, and permanently wrong",
+        "blurb": "One world pulled back from Concluded. They did it by breaking their own calendar on purpose and forbidding anyone, ever, from fixing it. I met the woman who explains why, and I still cannot tell you if she is right.",
+        "words": "1927",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "archives",
+          "calendars"
+        ]
+      },
+      {
+        "season": 2,
+        "idx": 9,
+        "title": "Someone Has Been Reading",
+        "slug": "someone-has-been-reading",
+        "file": "fiction/morkinstar-journals/s2-09-someone-has-been-reading.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s2-09-someone-has-been-reading.jpg",
+        "entry": null,
+        "page": "58",
+        "planet": "[none. Aboard ship, nineteen days out from anywhere, exactly where nobody could have gotten in.]",
+        "system": "",
+        "phenomenon": "A set of measurements, corrected in a hand that is not his own, inside a case nobody could have reached.",
+        "blurb": "Somebody went through my measurements in a hand that is not mine and got them more right than I did, and by the time I had ruled out everybody it could have been, there was only one thing left standing, and it was the thing I built.",
+        "words": "0",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "season-2",
+          "skerrin"
+        ]
+      },
+      {
+        "season": 2,
+        "idx": 10,
+        "title": "The Back Of The Case",
+        "slug": "the-back-of-the-case",
+        "file": "fiction/morkinstar-journals/s2-10-the-back-of-the-case.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s2-10-the-back-of-the-case.jpg",
+        "entry": null,
+        "page": "91",
+        "planet": "[none. Deep Registry, nine decks down, and the back of a wooden case.]",
+        "system": "",
+        "phenomenon": "A Standard Interval assigned a length for the first time since the Directory's founding, sitting beside one that still has none",
+        "blurb": "I wrote the last page of this case eighty-one pages before I had any right to reach it, and put the one word I have refused all season somewhere it will never be spoken aloud again. Then I went and found out a unit of time has been assigned a length for the first time since the Directory was founded, and nobody will say why.",
+        "words": "0",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "season-2",
+          "ossul",
+          "archives",
+          "finale"
+        ]
+      }
+    ],
+    "starmap": {
+      "systems": {
+        "Alpha Axmoiri": [
+          -150,
+          20,
+          40
+        ],
+        "Brixby": [
+          95,
+          -70,
+          -110
+        ],
+        "Killuga": [
+          200,
+          55,
+          70
+        ],
+        "Ymirsgald": [
+          -55,
+          -130,
+          -160
+        ],
+        "Cendrewake": [
+          -235,
+          95,
+          -75
+        ],
+        "Dvær Binary": [
+          70,
+          140,
+          150
+        ],
+        "Vœrhan Reach": [
+          -120,
+          165,
+          -190
+        ],
+        "Dhurin": [
+          235,
+          -105,
+          -35
+        ],
+        "Ilmarrow": [
+          -25,
+          60,
+          225
+        ],
+        "Threnn": [
+          150,
+          -160,
+          130
+        ],
+        "Kaunis": [
+          -215,
+          -55,
+          145
+        ]
+      },
+      "worlds": [
+        {
+          "n": "Exxobar",
+          "s": "Alpha Axmoiri",
+          "o": [
+            18,
+            10,
+            6
+          ],
+          "st": "lit",
+          "k": "1-1",
+          "d": "Why it snows"
+        },
+        {
+          "n": "Grïnjdarlay",
+          "s": "Alpha Axmoiri",
+          "o": [
+            -22,
+            -14,
+            12
+          ],
+          "st": "lit",
+          "k": "1-2",
+          "d": "Why nobody speaks aloud"
+        },
+        {
+          "n": "Vædrun",
+          "s": "Alpha Axmoiri",
+          "o": [
+            6,
+            24,
+            -18
+          ],
+          "st": "lit",
+          "k": "1-3",
+          "d": "Nine days of tide, still owed"
+        },
+        {
+          "n": "Marlt",
+          "s": "Brixby",
+          "o": [
+            10,
+            8,
+            8
+          ],
+          "st": "lit",
+          "k": "1-4",
+          "d": "No word for being alone"
+        },
+        {
+          "n": "Killuga Var",
+          "s": "Killuga",
+          "o": [
+            -8,
+            12,
+            -10
+          ],
+          "st": "lit",
+          "k": "1-5",
+          "d": "A count of eleven, still running"
+        },
+        {
+          "n": "Jötunheimr",
+          "s": "Ymirsgald",
+          "o": [
+            12,
+            -8,
+            10
+          ],
+          "st": "lit",
+          "k": "1-6",
+          "d": "Four billion graves, each one aimed"
+        },
+        {
+          "n": "Cendre",
+          "s": "Cendrewake",
+          "o": [
+            8,
+            10,
+            10
+          ],
+          "st": "lit",
+          "k": "1-7",
+          "d": "Burns everything. Keeps one page."
+        },
+        {
+          "n": "Solvei",
+          "s": "Dvær Binary",
+          "o": [
+            -10,
+            -12,
+            8
+          ],
+          "st": "lit",
+          "k": "1-8",
+          "d": "Two suns, one shadow"
+        },
+        {
+          "n": "[unnamed]",
+          "s": "Vœrhan Reach",
+          "o": [
+            58,
+            -42,
+            48
+          ],
+          "st": "concluded",
+          "at": 611,
+          "k": "1-9",
+          "d": "Survey complete. No phenomena outstanding."
+        },
+        {
+          "n": "The Directory",
+          "s": "Brixby",
+          "o": [
+            -72,
+            58,
+            62
+          ],
+          "st": "self",
+          "k": "1-10",
+          "d": "A ring about the size of a small moon"
+        },
+        {
+          "n": "Vœrhan",
+          "s": "Vœrhan Reach",
+          "o": [
+            -14,
+            12,
+            -10
+          ],
+          "st": "concluded",
+          "at": 615,
+          "k": "2-2",
+          "d": "Concluded. Kept open by a lie."
+        },
+        {
+          "n": "Dhurin",
+          "s": "Dhurin",
+          "o": [
+            0,
+            0,
+            0
+          ],
+          "st": "open",
+          "k": "2-3",
+          "d": "The only open file in the sky"
+        },
+        {
+          "n": "Ilmarrow",
+          "s": "Ilmarrow",
+          "o": [
+            0,
+            0,
+            0
+          ],
+          "st": "lit",
+          "k": "2-4",
+          "d": "Lesson 341 has no content"
+        },
+        {
+          "n": "Threnn",
+          "s": "Threnn",
+          "o": [
+            0,
+            0,
+            0
+          ],
+          "st": "lit",
+          "k": "2-5",
+          "d": "Only the unsaid can reach you"
+        },
+        {
+          "n": "Kaunis",
+          "s": "Kaunis",
+          "o": [
+            0,
+            0,
+            0
+          ],
+          "st": "lit",
+          "k": "2-8",
+          "d": "A calendar kept wrong on purpose"
+        },
+        {
+          "n": "Heskald",
+          "s": "Dvær Binary",
+          "o": [
+            85,
+            -75,
+            -65
+          ],
+          "st": "lit",
+          "d": "A fence world"
+        },
+        {
+          "n": "Orrin",
+          "s": "Killuga",
+          "o": [
+            -95,
+            -88,
+            -72
+          ],
+          "st": "lit",
+          "d": "A fence world"
+        },
+        {
+          "n": "Tal-Vey",
+          "s": "Cendrewake",
+          "o": [
+            98,
+            -82,
+            92
+          ],
+          "st": "lit",
+          "d": "A fence world"
+        },
+        {
+          "n": "Munnar",
+          "s": "Ymirsgald",
+          "o": [
+            -82,
+            92,
+            88
+          ],
+          "st": "lit",
+          "d": "A fence world"
+        },
+        {
+          "n": "◇",
+          "s": "Alpha Axmoiri",
+          "o": [
+            -98,
+            108,
+            -108
+          ],
+          "st": "ruin",
+          "d": "Designation withheld. Concluded. A Hellheim was keyed to its year, and the only surviving record of that year is a conversion error nobody has corrected."
+        }
+      ],
+      "fences": [
+        [
+          "Jötunheimr",
+          "Vædrun"
+        ],
+        [
+          "Vædrun",
+          "Heskald"
+        ],
+        [
+          "Heskald",
+          "Orrin"
+        ],
+        [
+          "Orrin",
+          "Tal-Vey"
+        ],
+        [
+          "Tal-Vey",
+          "Munnar"
+        ],
+        [
+          "Munnar",
+          "Jötunheimr"
+        ]
+      ]
+    }
+  }
 }

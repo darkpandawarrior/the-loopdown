@@ -26,6 +26,31 @@ total confidence), [Doze the Jailer](lore/cast.md), [The Messenger](lore/cast.md
 Appearances below). The world is in [`lore/`](lore/bible.md); the voice is in
 [`voice/`](voice/voice-profile.md).
 
+## 🔭 The Morkinstar Journals — the fiction anthology
+
+Separate universe, same author. **[Two seasons, twenty entries](fiction/morkinstar-journals/README.md)**,
+grown out of a single 2021 story in the archive that turned out to have a whole series folded
+inside it.
+
+> A field correspondent visits worlds that cannot yet leave them and writes down the story each
+> one tells about its own weather. Every world independently reports fourteen gods and fourteen
+> monsters. Nobody anywhere can name the fourteenth.
+
+- **[Read it in the browser →](fiction/morkinstar-journals/site.html)** (one self-contained file,
+  both seasons, every plate)
+- Canon: [S1 bible](fiction/morkinstar-journals/bible.md) · [S2 bible](fiction/morkinstar-journals/s2-bible.md)
+- Both seasons were audited by multi-lens councils plus cross-family ensembles:
+  [S1](fiction/morkinstar-journals/council-2026-08-15.md) ·
+  [S2 ownership audit](fiction/morkinstar-journals/council-s2-2026-08-15.md)
+
+```bash
+node scripts/morkinstar-plates.mjs   # 21 field plates, both seasons
+node scripts/morkinstar-site.mjs     # → site.html
+```
+
+This is **not** The Loopdown's cosmology and does not cross over with the cast above. They rhyme.
+The rhyme is the reward.
+
 ---
 
 <!-- REGISTRY:START -->

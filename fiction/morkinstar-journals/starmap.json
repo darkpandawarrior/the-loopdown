@@ -1,0 +1,324 @@
+{
+  "systems": {
+    "Alpha Axmoiri": [
+      -150,
+      20,
+      40
+    ],
+    "Brixby": [
+      95,
+      -70,
+      -110
+    ],
+    "Killuga": [
+      200,
+      55,
+      70
+    ],
+    "Ymirsgald": [
+      -55,
+      -130,
+      -160
+    ],
+    "Cendrewake": [
+      -235,
+      95,
+      -75
+    ],
+    "Dvær Binary": [
+      70,
+      140,
+      150
+    ],
+    "Vœrhan Reach": [
+      -120,
+      165,
+      -190
+    ],
+    "Dhurin": [
+      235,
+      -105,
+      -35
+    ],
+    "Ilmarrow": [
+      -25,
+      60,
+      225
+    ],
+    "Threnn": [
+      150,
+      -160,
+      130
+    ],
+    "Kaunis": [
+      -215,
+      -55,
+      145
+    ]
+  },
+  "worlds": [
+    {
+      "n": "Exxobar",
+      "s": "Alpha Axmoiri",
+      "o": [
+        18,
+        10,
+        6
+      ],
+      "st": "lit",
+      "k": "1-1",
+      "d": "Why it snows"
+    },
+    {
+      "n": "Grïnjdarlay",
+      "s": "Alpha Axmoiri",
+      "o": [
+        -22,
+        -14,
+        12
+      ],
+      "st": "lit",
+      "k": "1-2",
+      "d": "Why nobody speaks aloud"
+    },
+    {
+      "n": "Vædrun",
+      "s": "Alpha Axmoiri",
+      "o": [
+        6,
+        24,
+        -18
+      ],
+      "st": "lit",
+      "k": "1-3",
+      "d": "Nine days of tide, still owed"
+    },
+    {
+      "n": "Marlt",
+      "s": "Brixby",
+      "o": [
+        10,
+        8,
+        8
+      ],
+      "st": "lit",
+      "k": "1-4",
+      "d": "No word for being alone"
+    },
+    {
+      "n": "Killuga Var",
+      "s": "Killuga",
+      "o": [
+        -8,
+        12,
+        -10
+      ],
+      "st": "lit",
+      "k": "1-5",
+      "d": "A count of eleven, still running"
+    },
+    {
+      "n": "Jötunheimr",
+      "s": "Ymirsgald",
+      "o": [
+        12,
+        -8,
+        10
+      ],
+      "st": "lit",
+      "k": "1-6",
+      "d": "Four billion graves, each one aimed"
+    },
+    {
+      "n": "Cendre",
+      "s": "Cendrewake",
+      "o": [
+        8,
+        10,
+        10
+      ],
+      "st": "lit",
+      "k": "1-7",
+      "d": "Burns everything. Keeps one page."
+    },
+    {
+      "n": "Solvei",
+      "s": "Dvær Binary",
+      "o": [
+        -10,
+        -12,
+        8
+      ],
+      "st": "lit",
+      "k": "1-8",
+      "d": "Two suns, one shadow"
+    },
+    {
+      "n": "[unnamed]",
+      "s": "Vœrhan Reach",
+      "o": [
+        58,
+        -42,
+        48
+      ],
+      "st": "concluded",
+      "at": 611,
+      "k": "1-9",
+      "d": "Survey complete. No phenomena outstanding."
+    },
+    {
+      "n": "The Directory",
+      "s": "Brixby",
+      "o": [
+        -72,
+        58,
+        62
+      ],
+      "st": "self",
+      "k": "1-10",
+      "d": "A ring about the size of a small moon"
+    },
+    {
+      "n": "Vœrhan",
+      "s": "Vœrhan Reach",
+      "o": [
+        -14,
+        12,
+        -10
+      ],
+      "st": "concluded",
+      "at": 615,
+      "k": "2-2",
+      "d": "Concluded. Kept open by a lie."
+    },
+    {
+      "n": "Dhurin",
+      "s": "Dhurin",
+      "o": [
+        0,
+        0,
+        0
+      ],
+      "st": "open",
+      "k": "2-3",
+      "d": "The only open file in the sky"
+    },
+    {
+      "n": "Ilmarrow",
+      "s": "Ilmarrow",
+      "o": [
+        0,
+        0,
+        0
+      ],
+      "st": "lit",
+      "k": "2-4",
+      "d": "Lesson 341 has no content"
+    },
+    {
+      "n": "Threnn",
+      "s": "Threnn",
+      "o": [
+        0,
+        0,
+        0
+      ],
+      "st": "lit",
+      "k": "2-5",
+      "d": "Only the unsaid can reach you"
+    },
+    {
+      "n": "Kaunis",
+      "s": "Kaunis",
+      "o": [
+        0,
+        0,
+        0
+      ],
+      "st": "lit",
+      "k": "2-8",
+      "d": "A calendar kept wrong on purpose"
+    },
+    {
+      "n": "Heskald",
+      "s": "Dvær Binary",
+      "o": [
+        85,
+        -75,
+        -65
+      ],
+      "st": "lit",
+      "d": "A fence world"
+    },
+    {
+      "n": "Orrin",
+      "s": "Killuga",
+      "o": [
+        -95,
+        -88,
+        -72
+      ],
+      "st": "lit",
+      "d": "A fence world"
+    },
+    {
+      "n": "Tal-Vey",
+      "s": "Cendrewake",
+      "o": [
+        98,
+        -82,
+        92
+      ],
+      "st": "lit",
+      "d": "A fence world"
+    },
+    {
+      "n": "Munnar",
+      "s": "Ymirsgald",
+      "o": [
+        -82,
+        92,
+        88
+      ],
+      "st": "lit",
+      "d": "A fence world"
+    },
+    {
+      "n": "◇",
+      "s": "Alpha Axmoiri",
+      "o": [
+        -98,
+        108,
+        -108
+      ],
+      "st": "ruin",
+      "d": "Designation withheld. Concluded. A Hellheim was keyed to its year, and the only surviving record of that year is a conversion error nobody has corrected."
+    }
+  ],
+  "fences": [
+    [
+      "Jötunheimr",
+      "Vædrun"
+    ],
+    [
+      "Vædrun",
+      "Heskald"
+    ],
+    [
+      "Heskald",
+      "Orrin"
+    ],
+    [
+      "Orrin",
+      "Tal-Vey"
+    ],
+    [
+      "Tal-Vey",
+      "Munnar"
+    ],
+    [
+      "Munnar",
+      "Jötunheimr"
+    ]
+  ]
+}
