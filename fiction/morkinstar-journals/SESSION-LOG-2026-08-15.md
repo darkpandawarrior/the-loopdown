@@ -262,3 +262,55 @@ frontmatter parser that checked for an array after the quotes had been stripped,
 that left a blank line so `^#` never matched, and now a feather whose gradient never reached the
 edge. In all three the code reads as if it works. Only the artifact says otherwise. **Look at
 the output, at the size it will actually be seen.**
+
+---
+
+## Cutting the tellers off their paper
+
+The feather fix above removed the hard edge and replaced it with a faint grey cloud. That was
+still wrong, and it was wrong for the reason both earlier attempts were wrong: **the paper was
+being treated as something to disguise rather than something to remove.** Duotone gave a card.
+Feather gave a smudge. A rectangle of the wrong tone is still a rectangle.
+
+The portraits are ink on aged, foxed, unevenly lit sheets. The fix is a **flat-field matte**:
+blur the greyscale heavily to get a *local* estimate of paper tone at every pixel, subtract it,
+and what remains is ink density alone. Push that into alpha, paint the RGB flat, and the drawing
+arrives with its own silhouette as its edge — nothing to feather, no ground to hide.
+
+The local estimate is the load-bearing part. Measured under a global threshold, ink coverage of
+these scans came out at **20-45%** when real linework is nearer **8%** — the sheet's own vignette
+and foxing were being counted as drawing. No global threshold can separate ink from a page whose
+corners are darker than its middle.
+
+One SVG trap worth recording. `feComposite operator="arithmetic"` runs on the **alpha channel**
+too, so the obvious `paper - grey` gives `alpha = 1 - 1 = 0` across the entire interior. The
+first render showed the drawing gone and only the blurred boundary surviving, as a pale frame.
+Written as `paper + (1 - grey) - 1` the RGB result is identical and alpha stays 1 inside the
+image and clamps to 0 outside it.
+
+### What the fix made possible
+
+With no paper to hide, the tellers stopped needing to be small. They are now drawn **first**, at
+roughly three times the old size, with the mechanism's diagram over them. Canon law five is that
+the heroes lose and the tellers are why there is a story at all, and the plates had been putting
+them in the corner of their own entry.
+
+Two consequences, both fixed at the shared helper rather than the call site:
+
+- Any label can now land over linework, so `lbl()`/`plbl()` carry a `paint-order: stroke` halo in
+  the plate's own ground colour. Ten labels collided today; moving those ten would have moved the
+  problem to the next re-layout.
+- The teller's caption moved to the illustration box's top-left. Centred under a 640-wide figure
+  it landed wherever the plate drew next, and on s1-02 the eye's opaque fill painted over it —
+  the teller's name was not on the plate at all.
+
+### The lesson, third time now
+
+Every defect in this session's art has been **an intention encoded correctly and executed into
+nothing**: a parser checking for an array after the quotes were stripped, a strip regex leaving a
+blank line so `^#` never matched, a feather whose gradient never reached the edge, and a
+subtraction that zeroed its own alpha. In each the code reads as if it works.
+
+And twice the *verifier* was the thing that failed — an agent declared s1-02 clean, and my own
+guard on this change threw a false positive by counting a palette colour used all through the
+drawing code. **Look at the artifact, at the size it will actually be seen.**
