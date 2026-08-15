@@ -33,12 +33,20 @@ const P = Math.PI;
 const pol = (cx, cy, r, a) => [cx + Math.cos(a) * r, cy + Math.sin(a) * r];
 const ln = (x1, y1, x2, y2, s, o = 1, w = 2) =>
   `<line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="${s}" stroke-opacity="${o}" stroke-width="${w}" stroke-linecap="round"/>`;
+// `paint-order: stroke` draws the stroke UNDER the fill, so a stroke in the
+// plate's own ground colour becomes a halo that separates the word from
+// whatever it lies over without outlining it. This is here rather than at the
+// call sites because the tellers are now composited at full size behind the
+// mechanisms, so any label can end up over linework — moving the ten labels
+// that collide today would just move the problem to the next re-layout.
+const halo = (ground, w = 3.5) =>
+  `stroke="${ground}" stroke-width="${w}" stroke-linejoin="round" paint-order="stroke" stroke-opacity="1"`;
 const lbl = (x, y, t, c = T.inkFaint, sz = 17, anchor = "start") =>
-  `<text x="${x}" y="${y}" text-anchor="${anchor}" font-family="${T.mono}" font-size="${sz}" fill="${c}" letter-spacing="1.4">${esc(t)}</text>`;
+  `<text x="${x}" y="${y}" text-anchor="${anchor}" font-family="${T.mono}" font-size="${sz}" fill="${c}" letter-spacing="1.4" ${halo(T.bg1)}>${esc(t)}</text>`;
 
 // 01 — Exxobar. A serpent coil torn down the middle; the residue falls as snow.
 function exxobar(a) {
-  let o = witness("feeriko", "Feeriko", 860, 395, 180, a, T.bg1, 0.55, (x, y, t) => lbl(x, y, t, T.inkFaint, 14, "middle"));
+  let o = witness("feeriko", "Feeriko", 560, 400, 620, traceInk(a), 0.5, (x, y, t) => lbl(x, y, t, T.inkDim, 13, "start"));
   // the click: 15 momentas round, one half-momenta of warmth
   o += `<circle cx="215" cy="230" r="120" fill="none" stroke="${T.line}" stroke-width="2"/>`;
   for (let i = 0; i < 15; i++) {
@@ -81,7 +89,7 @@ function exxobar(a) {
 
 // 02 — Grïnjdarlay. Ninety-nine names, ninety-eight eaten, one held.
 function grinjdarlay(a) {
-  let o = witness("tveggi", "Tveggi", 500, 458, 180, a, T.bg1, 0.55, (x, y, t) => lbl(x, y, t, T.inkFaint, 14, "middle")), cx = 500, cy = 300, r = 210;
+  let o = witness("tveggi", "Tveggi", 500, 400, 640, traceInk(a), 0.5, (x, y, t) => lbl(x, y, t, T.inkDim, 13, "start")), cx = 500, cy = 300, r = 210;
   o += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${T.line}" stroke-width="2"/>`;
   for (let i = 0; i < 99; i++) {
     const ang = (i / 99) * 2 * P - P / 2;
@@ -108,7 +116,7 @@ function grinjdarlay(a) {
 
 // 03 — Vædrun. Nine days of tide, borrowed once, collected forever.
 function vaedrun(a) {
-  let o = witness("soebra", "Sœbra", 490, 600, 180, a, T.bg1, 0.55, (x, y, t) => lbl(x, y, t, T.inkFaint, 14, "middle"));
+  let o = witness("soebra", "Sœbra", 500, 415, 620, traceInk(a), 0.48, (x, y, t) => lbl(x, y, t, T.inkDim, 13, "start"));
   const base = 470;
   o += `<path d="M60 ${base} L200 ${base} L260 ${base - 46} L360 ${base - 40} L420 ${base} L640 ${base} L700 ${base - 58} L800 ${base - 30} L860 ${base} L940 ${base}" fill="none" stroke="${T.inkDim}" stroke-width="2.5"/>`;
   // the borrowed line, high and dashed
@@ -139,7 +147,7 @@ function vaedrun(a) {
 
 // 04 — Marlt. Two chairs. One occupied. The list with a blank line.
 function marlt(a) {
-  let o = witness("soelvi", "Sœlvi", 190, 250, 210, a, T.bg1, 0.55, (x, y, t) => lbl(x, y, t, T.inkFaint, 14, "middle"));
+  let o = witness("soelvi", "Sœlvi", 430, 390, 600, traceInk(a), 0.5, (x, y, t) => lbl(x, y, t, T.inkDim, 13, "start"));
   // Side-view chairs, so they read as chairs and not as frames round the figures.
   const seat = (x, fy, solid) => {
     const st = solid ? a : T.inkFaint, dash = solid ? "" : ` stroke-dasharray="6 7"`;
@@ -178,7 +186,7 @@ function marlt(a) {
 
 // 05 — Killuga Var. The eleven count. A test, still running.
 function killuga(a) {
-  let o = witness("aedri", "Ædri", 500, 440, 190, a, T.bg1, 0.55, (x, y, t) => lbl(x, y, t, T.inkFaint, 14, "middle"));
+  let o = witness("aedri", "Ædri", 500, 405, 640, traceInk(a), 0.48, (x, y, t) => lbl(x, y, t, T.inkDim, 13, "start"));
   o += `<circle cx="410" cy="270" r="150" fill="${a}" fill-opacity="0.12" stroke="${a}" stroke-width="3"/>`;
   o += `<circle cx="590" cy="270" r="150" fill="${T.bg0}" fill-opacity="0.6" stroke="${T.inkDim}" stroke-width="3" stroke-dasharray="9 8"/>`;
   for (let i = 0; i < 7; i++) o += ln(300 + i * 12, 200 + i * 4, 316 + i * 12, 188 + i * 4, a, 0.55, 2);
@@ -200,7 +208,7 @@ function killuga(a) {
 
 // 06 — Jötunheimr. Four billion graves, each surveyed, all aimed at empty sky.
 function jotunheimr(a) {
-  let o = witness("hild-ronn", "Hild-Ronn", 430, 480, 240, a, T.bg1, 0.55, (x, y, t) => lbl(x, y, t, T.inkFaint, 14, "middle"));
+  let o = witness("hild-ronn", "Hild-Ronn", 480, 400, 660, traceInk(a), 0.46, (x, y, t) => lbl(x, y, t, T.inkDim, 13, "start"));
   // the target: nothing
   o += `<circle cx="820" cy="120" r="46" fill="none" stroke="${T.inkFaint}" stroke-opacity="0.6" stroke-width="2" stroke-dasharray="4 9"/>`;
   o += lbl(752, 104, "NO OBJECT", T.inkFaint, 16, "end");
@@ -230,7 +238,7 @@ function jotunheimr(a) {
 
 // 07 — Cendre. Burn everything. Keep one page. A child writes it.
 function cendre(a) {
-  let o = witness("the-cendran-child", "The Cendran Child", 235, 630, 220, a, T.bg1, 0.55, (x, y, t) => lbl(x, y, t, T.inkFaint, 14, "middle"));
+  let o = witness("the-cendran-child", "The Cendran Child", 470, 415, 640, traceInk(a), 0.46, (x, y, t) => lbl(x, y, t, T.inkDim, 13, "start"));
   // The case, unlocked, up top and alone. What survives.
   o += lbl(500, 50, "NOT LOCKED", T.inkFaint, 15, "middle");
   o += `<rect x="340" y="68" width="320" height="176" rx="8" fill="${T.panel}" fill-opacity="0.9" stroke="${T.line}" stroke-width="2"/>`;
@@ -258,7 +266,7 @@ function cendre(a) {
 
 // 08 — Solvei. Two suns, one shadow. One entity, two facings.
 function solvei(a) {
-  let o = witness("ilta", "Ilta", 500, 655, 230, a, T.bg1, 0.55, (x, y, t) => lbl(x, y, t, T.inkFaint, 14, "middle"));
+  let o = witness("ilta", "Ilta", 500, 410, 640, traceInk(a), 0.48, (x, y, t) => lbl(x, y, t, T.inkDim, 13, "start"));
   o += `<circle cx="250" cy="110" r="58" fill="${a}" fill-opacity="0.85"/>`;
   o += `<circle cx="700" cy="126" r="26" fill="${T.danger}" fill-opacity="0.45"/>`;
   o += lbl(250, 194, "PRIMARY", T.inkFaint, 15, "middle");
@@ -399,51 +407,90 @@ const rgb01 = (hex) => {
   const n = parseInt(hex.slice(1), 16);
   return [((n >> 16) & 255) / 255, ((n >> 8) & 255) / 255, (n & 255) / 255];
 };
-// Grayscale the portrait, then a 2-stop duotone: the source's dark linework
-// maps to `ink`, its light paper maps to `ground`. Pass S1's bright accent as
-// `ink` and its near-black background as `ground` and this reads as an
-// invert (paper -> near-black, linework -> bright) so the portrait sits IN
-// the dark ground instead of looking pasted on top of it. Pass S2's own ink
-// and paper tones and the same filter barely moves the source at all, which
-// is the "much less" treatment the warm plates need.
-function witnessFilter(id, ink, ground) {
-  const [ir, ig, ib] = rgb01(ink), [gr, gg, gb] = rgb01(ground);
-  return `<filter id="${id}" x="-15%" y="-15%" width="130%" height="130%">
-    <feColorMatrix type="matrix" values="0.30 0.59 0.11 0 0  0.30 0.59 0.11 0 0  0.30 0.59 0.11 0 0  0 0 0 1 0"/>
-    <feComponentTransfer>
-      <feFuncR type="table" tableValues="${ir.toFixed(3)} ${gr.toFixed(3)}"/>
-      <feFuncG type="table" tableValues="${ig.toFixed(3)} ${gg.toFixed(3)}"/>
-      <feFuncB type="table" tableValues="${ib.toFixed(3)} ${gb.toFixed(3)}"/>
+// Season One's tellers arrive as instrument traces on a dark survey form, so
+// they want to read cool and luminous rather than in the entry's accent —
+// a saturated amber or red line drawing at this size turns into decoration.
+// A breath of the accent keeps each plate tied to its entry without the
+// rendering pretending to be a colour illustration.
+const mixHex = (a, b, t) => {
+  const [ar, ag, ab] = rgb01(a), [br, bg, bb] = rgb01(b);
+  const c = (x, y) => Math.round((x + (y - x) * t) * 255).toString(16).padStart(2, "0");
+  return `#${c(ar, br)}${c(ag, bg)}${c(ab, bb)}`;
+};
+const traceInk = (accent) => mixHex(T.ink, accent, 0.26);
+// Cut the drawing off its paper, and keep only the ink.
+//
+// The portraits are ink on aged, foxed, unevenly lit paper. Every previous
+// attempt treated that paper as something to disguise — duotone it into the
+// plate's ground, then feather the edges — and both failed the same way,
+// because a rectangle of the wrong tone is still a rectangle. Duotone gave a
+// hard-edged card; feathering gave a smudge. Neither is a portrait.
+//
+// This removes the paper instead. Blurring the greyscale heavily gives a
+// LOCAL estimate of the paper tone at every pixel, which is the standard
+// flat-field correction and is the part that matters: a global threshold
+// cannot separate ink from a sheet whose corners are darker than the middle,
+// which is why the measured ink coverage of these scans came out at 20-45%
+// when real linework is nearer 8%. Subtract the local paper from the image
+// and what is left is ink density alone. Push that into the ALPHA channel and
+// paint the RGB a flat `ink` colour, and the drawing arrives with its own
+// silhouette as its edge. There is no ground to hide and no rectangle to
+// feather, so the mask this used to need is gone.
+//
+// `w` is needed because SVG filters work in user space: the source is 1408px
+// wide drawn at `w` units, so the blur radius has to be scaled or the paper
+// estimate is wrong by whatever the layout happens to be.
+const WITNESS_BLUR = 60;   // in SOURCE pixels, at the portraits' native 1408 width
+const WITNESS_RANGE = 0.46; // paper-to-ink luminance span that maps to full opacity
+function witnessFilter(id, ink, w) {
+  const [ir, ig, ib] = rgb01(ink);
+  const sd = (WITNESS_BLUR * w / 1408).toFixed(3);
+  return `<filter id="${id}" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+    <feColorMatrix type="matrix" in="SourceGraphic" result="grey"
+      values="0.30 0.59 0.11 0 0  0.30 0.59 0.11 0 0  0.30 0.59 0.11 0 0  0 0 0 1 0"/>
+    <feGaussianBlur in="grey" stdDeviation="${sd}" result="paper"/>
+    <feComponentTransfer in="grey" result="invgrey">
+      <feFuncR type="table" tableValues="1 0"/>
+      <feFuncG type="table" tableValues="1 0"/>
+      <feFuncB type="table" tableValues="1 0"/>
     </feComponentTransfer>
+    <!-- density = paper - grey, written as paper + (1-grey) - 1 on purpose.
+         feComposite arithmetic runs on the ALPHA channel too, so the direct
+         form gives alpha = 1 - 1 = 0 across the whole interior: the drawing
+         vanished and only the blurred boundary survived, as a pale frame.
+         Adding an inverted input instead leaves alpha = 1 + 1 - 1 = 1 inside
+         the image and negative (so clamped transparent) outside it. -->
+    <feComposite in="paper" in2="invgrey" operator="arithmetic" k1="0" k2="1" k3="1" k4="-1" result="density"/>
+    <feComponentTransfer in="density" result="norm">
+      <feFuncR type="linear" slope="${(1 / WITNESS_RANGE).toFixed(3)}"/>
+      <feFuncG type="linear" slope="${(1 / WITNESS_RANGE).toFixed(3)}"/>
+      <feFuncB type="linear" slope="${(1 / WITNESS_RANGE).toFixed(3)}"/>
+    </feComponentTransfer>
+    <feComponentTransfer in="norm" result="shaped">
+      <feFuncR type="gamma" amplitude="1" exponent="0.92"/>
+      <feFuncG type="gamma" amplitude="1" exponent="0.92"/>
+      <feFuncB type="gamma" amplitude="1" exponent="0.92"/>
+    </feComponentTransfer>
+    <feColorMatrix in="shaped" type="matrix"
+      values="0 0 0 0 ${ir.toFixed(3)}  0 0 0 0 ${ig.toFixed(3)}  0 0 0 0 ${ib.toFixed(3)}  1 0 0 0 0"/>
   </filter>`;
 }
 // One teller, composited small under the mechanism and captioned. cx/cy/w sit
 // in the illustration's own 1000x760 box; h follows the portraits' fixed
 // 1408x768 ratio. `label` is the plate's own lbl()/plbl() so the caption
 // reads as part of the same rendering, not a sticker on top of it.
-function witness(id, name, cx, cy, w, ink, ground, opacity, label) {
-  const h = w * (768 / 1408), x = cx - w / 2, y = cy - h / 2, fid = `wf-${id}`, mid = `wm-${id}`;
-  // A soft radial mask feathers the portrait's edges to nothing, so it fades
-  // into the plate's own ground instead of reading as a rectangle laid on
-  // top of it. "Sits under" as a matter of edges, not just opacity.
-  //
-  // The stops have to finish well inside 0.5. A radialGradient in
-  // objectBoundingBox units is an ELLIPSE matched to the box, so r=0.5 only
-  // just touches the edge midpoints and the corners sit out at about 0.707.
-  // An earlier version faded from 0.45 to 1.0, which meant the mask was still
-  // opaque where the rectangle ended: the feather existed in the code and the
-  // plate still showed a hard-edged grey box, which is exactly what it looked
-  // like at thumbnail size on the site.
-  return `<defs>${witnessFilter(fid, ink, ground)}
-    <radialGradient id="${mid}g" cx="0.5" cy="0.5" r="1">
-      <stop offset="0.14" stop-color="#fff"/>
-      <stop offset="0.30" stop-color="#fff" stop-opacity="0.72"/>
-      <stop offset="0.44" stop-color="#fff" stop-opacity="0"/>
-    </radialGradient>
-    <mask id="${mid}"><rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" fill="url(#${mid}g)"/></mask>
-  </defs>` +
-    `<image href="${witnessUri(id)}" x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" opacity="${opacity}" filter="url(#${fid})" mask="url(#${mid})"/>` +
-    label(cx, y + h + 24, name.toUpperCase());
+function witness(id, name, cx, cy, w, ink, opacity, label) {
+  const h = w * (768 / 1408), x = cx - w / 2, y = cy - h / 2, fid = `wf-${id}`;
+  // The caption goes in the illustration box's top-left, not under the image.
+  // The teller is now drawn FIRST so the mechanism can sit over them, and a
+  // caption centred beneath a 640-wide figure lands wherever that plate
+  // happens to draw next — on s1-02 the eye's opaque fill painted straight
+  // over it and the teller's name simply was not on the plate. Top-left is
+  // the one region every mechanism leaves clear, and it reads as a field on
+  // the form, which is what the Directory would have put there anyway.
+  return `<defs>${witnessFilter(fid, ink, w)}</defs>` +
+    `<image href="${witnessUri(id)}" x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" opacity="${opacity}" filter="url(#${fid})"/>` +
+    label(26, 32, `TELLER · ${name.toUpperCase()}`);
 }
 // A large, near-invisible copy of the entity's own sigil, centred on or near
 // the mechanism it belongs to, sitting behind everything the illustration
@@ -643,13 +690,13 @@ function slotFrame(x, y, w, h, accent, page) {
 }
 
 const plbl = (x, y, t, c = PT.inkFaint, sz = 17, anchor = "start") =>
-  `<text x="${x}" y="${y}" text-anchor="${anchor}" font-family="${PT.mono}" font-size="${sz}" fill="${c}" letter-spacing="1.3">${esc(t)}</text>`;
+  `<text x="${x}" y="${y}" text-anchor="${anchor}" font-family="${PT.mono}" font-size="${sz}" fill="${c}" letter-spacing="1.3" ${halo(PT.paper1, 3)}>${esc(t)}</text>`;
 const pln = (x1, y1, x2, y2, s, o = 1, w = 2) =>
   `<line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="${s}" stroke-opacity="${o}" stroke-width="${w}" stroke-linecap="round"/>`;
 
 // P1 — the case. Ninety-one slots, one filled. And two chairs.
 function s2case(a) {
-  let o = witness("ossul", "Ossul", 830, 682, 140, PT.ink, PT.paper1, 0.8, (x, y, t) => plbl(x, y, t, PT.inkFaint, 14, "middle"));
+  let o = witness("ossul", "Ossul", 520, 400, 560, PT.ink, 0.5, (x, y, t) => plbl(x, y, t, PT.inkDim, 13, "start"));
   o += `<rect x="90" y="90" width="560" height="330" rx="6" fill="none" stroke="${PT.ink}" stroke-width="3"/>`;
   o += pln(90, 132, 650, 132, PT.ink, 0.5, 2);
   o += plbl(370, 74, "LID DOES NOT SIT FLUSH", PT.red, 14, "middle");
@@ -736,7 +783,7 @@ function s2syllabus(a) {
   // as a backdrop instead of washing the portrait out; portrait sized/placed
   // to clear both the panel's borders and the "nothing under it" caption.
   o += `<rect x="80" y="500" width="840" height="150" rx="6" fill="${PT.panel}" fill-opacity="0.7" stroke="${a}" stroke-width="3"/>`;
-  o += witness("hallovar", "Hallovar", 760, 555, 150, PT.ink, PT.paper1, 0.8, (x, y, t) => plbl(x, y, t, PT.inkFaint, 14, "middle"));
+  o += witness("hallovar", "Hallovar", 520, 400, 560, PT.ink, 0.5, (x, y, t) => plbl(x, y, t, PT.inkDim, 13, "start"));
   o += plbl(104, 540, "LESSON 341", a, 18);
   o += plbl(104, 580, "“What To Do When It Goes Wrong", PT.ink, 25);
   o += plbl(104, 614, "And I Am Not Here”", PT.ink, 25);
