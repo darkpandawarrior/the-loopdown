@@ -5,12 +5,21 @@ name: loopdown-pipeline
 # README table drifts from it. Without the trigger, adding an archive piece cannot run the check
 # that exists to catch exactly that — the staleness surfaces later, on an unrelated PR, looking
 # like that PR's fault. This is how the README sat a row behind until 2026-08-14.
+#
+# `fiction/**` is here for exactly the same reason, and the same mistake was made again on
+# 2026-08-15: build-registry.mjs now also scans fiction/morkinstar-journals for the anthology
+# block, the trigger was not widened to match, and two commits landed with a stale registry that
+# only failed once an unrelated push happened to touch scripts/**. The rule the paragraph above
+# was written to teach applies to every directory the generator reads, not just the one that
+# taught it.
+#
+# `.github/workflows/**` is here so a change to this file runs the pipeline it is changing.
 on:
   push:
     branches: [main]
-    paths: ["lessons/**", "archive/**", "scripts/**", "templates/**", "lore/**", "profile.yaml"]
+    paths: ["lessons/**", "archive/**", "fiction/**", "scripts/**", "templates/**", "lore/**", "profile.yaml", ".github/workflows/**"]
   pull_request:
-    paths: ["lessons/**", "archive/**", "scripts/**", "templates/**", "lore/**", "profile.yaml"]
+    paths: ["lessons/**", "archive/**", "fiction/**", "scripts/**", "templates/**", "lore/**", "profile.yaml", ".github/workflows/**"]
 
 # one run per ref; cancel superseded runs
 concurrency:
