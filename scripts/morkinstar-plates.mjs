@@ -14,7 +14,7 @@
 // The plate is the Galactic Directory's own survey form, which is the joke: the
 // anthology is about an institution that files beautiful records of things it does
 // not understand. Chrome is identical on all ten. Only the middle changes.
-import { writeFileSync, mkdirSync } from "node:fs";
+import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "playwright";
@@ -38,7 +38,7 @@ const lbl = (x, y, t, c = T.inkFaint, sz = 17, anchor = "start") =>
 
 // 01 — Exxobar. A serpent coil torn down the middle; the residue falls as snow.
 function exxobar(a) {
-  let o = "";
+  let o = witness("feeriko", "Feeriko", 860, 395, 180, a, T.bg1, 0.55, (x, y, t) => lbl(x, y, t, T.inkFaint, 14, "middle"));
   // the click: 15 momentas round, one half-momenta of warmth
   o += `<circle cx="215" cy="230" r="120" fill="none" stroke="${T.line}" stroke-width="2"/>`;
   for (let i = 0; i < 15; i++) {
@@ -81,7 +81,7 @@ function exxobar(a) {
 
 // 02 — Grïnjdarlay. Ninety-nine names, ninety-eight eaten, one held.
 function grinjdarlay(a) {
-  let o = "", cx = 500, cy = 300, r = 210;
+  let o = witness("tveggi", "Tveggi", 500, 458, 180, a, T.bg1, 0.55, (x, y, t) => lbl(x, y, t, T.inkFaint, 14, "middle")), cx = 500, cy = 300, r = 210;
   o += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${T.line}" stroke-width="2"/>`;
   for (let i = 0; i < 99; i++) {
     const ang = (i / 99) * 2 * P - P / 2;
@@ -108,7 +108,7 @@ function grinjdarlay(a) {
 
 // 03 — Vædrun. Nine days of tide, borrowed once, collected forever.
 function vaedrun(a) {
-  let o = "";
+  let o = witness("soebra", "Sœbra", 490, 600, 180, a, T.bg1, 0.55, (x, y, t) => lbl(x, y, t, T.inkFaint, 14, "middle"));
   const base = 470;
   o += `<path d="M60 ${base} L200 ${base} L260 ${base - 46} L360 ${base - 40} L420 ${base} L640 ${base} L700 ${base - 58} L800 ${base - 30} L860 ${base} L940 ${base}" fill="none" stroke="${T.inkDim}" stroke-width="2.5"/>`;
   // the borrowed line, high and dashed
@@ -139,7 +139,7 @@ function vaedrun(a) {
 
 // 04 — Marlt. Two chairs. One occupied. The list with a blank line.
 function marlt(a) {
-  let o = "";
+  let o = witness("soelvi", "Sœlvi", 190, 250, 210, a, T.bg1, 0.55, (x, y, t) => lbl(x, y, t, T.inkFaint, 14, "middle"));
   // Side-view chairs, so they read as chairs and not as frames round the figures.
   const seat = (x, fy, solid) => {
     const st = solid ? a : T.inkFaint, dash = solid ? "" : ` stroke-dasharray="6 7"`;
@@ -178,7 +178,7 @@ function marlt(a) {
 
 // 05 — Killuga Var. The eleven count. A test, still running.
 function killuga(a) {
-  let o = "";
+  let o = witness("aedri", "Ædri", 500, 440, 190, a, T.bg1, 0.55, (x, y, t) => lbl(x, y, t, T.inkFaint, 14, "middle"));
   o += `<circle cx="410" cy="270" r="150" fill="${a}" fill-opacity="0.12" stroke="${a}" stroke-width="3"/>`;
   o += `<circle cx="590" cy="270" r="150" fill="${T.bg0}" fill-opacity="0.6" stroke="${T.inkDim}" stroke-width="3" stroke-dasharray="9 8"/>`;
   for (let i = 0; i < 7; i++) o += ln(300 + i * 12, 200 + i * 4, 316 + i * 12, 188 + i * 4, a, 0.55, 2);
@@ -200,7 +200,7 @@ function killuga(a) {
 
 // 06 — Jötunheimr. Four billion graves, each surveyed, all aimed at empty sky.
 function jotunheimr(a) {
-  let o = "";
+  let o = witness("hild-ronn", "Hild-Ronn", 430, 480, 240, a, T.bg1, 0.55, (x, y, t) => lbl(x, y, t, T.inkFaint, 14, "middle"));
   // the target: nothing
   o += `<circle cx="820" cy="120" r="46" fill="none" stroke="${T.inkFaint}" stroke-opacity="0.6" stroke-width="2" stroke-dasharray="4 9"/>`;
   o += lbl(752, 104, "NO OBJECT", T.inkFaint, 16, "end");
@@ -230,7 +230,7 @@ function jotunheimr(a) {
 
 // 07 — Cendre. Burn everything. Keep one page. A child writes it.
 function cendre(a) {
-  let o = "";
+  let o = witness("the-cendran-child", "The Cendran Child", 235, 630, 220, a, T.bg1, 0.55, (x, y, t) => lbl(x, y, t, T.inkFaint, 14, "middle"));
   // The case, unlocked, up top and alone. What survives.
   o += lbl(500, 50, "NOT LOCKED", T.inkFaint, 15, "middle");
   o += `<rect x="340" y="68" width="320" height="176" rx="8" fill="${T.panel}" fill-opacity="0.9" stroke="${T.line}" stroke-width="2"/>`;
@@ -258,7 +258,7 @@ function cendre(a) {
 
 // 08 — Solvei. Two suns, one shadow. One entity, two facings.
 function solvei(a) {
-  let o = "";
+  let o = witness("ilta", "Ilta", 500, 655, 230, a, T.bg1, 0.55, (x, y, t) => lbl(x, y, t, T.inkFaint, 14, "middle"));
   o += `<circle cx="250" cy="110" r="58" fill="${a}" fill-opacity="0.85"/>`;
   o += `<circle cx="700" cy="126" r="26" fill="${T.danger}" fill-opacity="0.45"/>`;
   o += lbl(250, 194, "PRIMARY", T.inkFaint, 15, "middle");
@@ -327,12 +327,138 @@ function directory(a) {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
+// THE MEDIUM. Season 1 was broadcast. Season 2 was never sent — so it gets no
+// equivalent chrome anywhere below, and that bare absence is the point, not
+// an oversight. Season 3's fire is its own medium already and is untouched.
+// ═══════════════════════════════════════════════════════════════════════════
+
+// Faint horizontal relay banding across the ground: the receiving end's noise
+// floor. Restrained well below the grain texture already on every plate, so
+// it reads as chrome, not damage, and never competes with a label.
+function relayBand(W, H) {
+  let o = "";
+  for (let y = 0; y < H; y += 16) {
+    const strong = (y / 16) % 9 === 0;
+    o += `<line x1="0" y1="${y}" x2="${W}" y2="${y}" stroke="${T.inkDim}" stroke-opacity="${strong ? 0.05 : 0.022}" stroke-width="1"/>`;
+  }
+  return o;
+}
+
+// The signal figure in the header relay strip. Not meaningful telemetry, just
+// a received-state that varies plate to plate the way a real one would.
+const relaySignal = (entry) => (95 + (entry % 5)).toFixed(1);
+
+// The rig's fingerprints: the Directory's own rendering-status stamp, in its
+// own dry institutional voice. RESOLVED is the default and covers most of the
+// season. Strained or failed language appears ONLY where canon itself says
+// the record does not close cleanly — restraint is the rule, not the joke.
+const RENDER_STATUS = {
+  "07": { text: "FIELD 14 WITHHELD, NOT MISSING", strained: true },   // Cendre: the name is present. Withheld is not the same as missing.
+  "04": { text: "FIELD 14 WILL NOT RESOLVE", strained: true },        // Marlt: blank on every copy. Not an omission, a property of the list.
+  "09": { text: "RESOLVED — SURVEY COMPLETE, NOTHING OUTSTANDING", strained: false }, // the world with no number: leaning into the emptiness, not damage.
+  "10": { text: "SELF-SUBJECT. NOT NEUTRAL.", strained: true },       // the Directory rendering itself: the one thing it cannot do neutrally.
+};
+const renderStatus = (n) => RENDER_STATUS[n] ?? { text: "RESOLVED", strained: false };
+
+// Tveggi's mark (assets/mark.svg): the vertical scratch that stands in for a
+// name with no sound, and the object that made writing possible at all. A
+// tiny, constant registration mark in the same corner of every plate across
+// all three seasons, quiet and consistent, the way a printer's mark sits on
+// a plate — it is on every written thing here for the same reason written
+// things exist.
+const regMark = (color, opacity = 0.5) =>
+  `<line x1="1100" y1="48" x2="1100" y2="70" stroke="${color}" stroke-opacity="${opacity}" stroke-width="3.5" stroke-linecap="round"/>`;
+
+// ═══════════════════════════════════════════════════════════════════════════
+// THE RENDERING. species.md's doctrine: a plate is not a diagram, it is the
+// Directory's rendering of a world, and a rendering is the mechanism AND the
+// mark AND the person. Two things follow.
+//
+// (1) The teller goes INTO the plate. Ten worlds have a drawn witness
+// (fiction/morkinstar-journals/assets/witnesses/<id>.png) who is currently
+// visible nowhere but a separate page. witness() composites the real portrait
+// small, at the scale of the phenomenon it belongs to, knocked back under the
+// mechanism by a duotone filter tinted toward the plate's own ground — an
+// invert on S1's dark plates, a gentle re-tint on S2's paper ones — captioned
+// in the plate's own label style.
+//
+// (2) The sigil goes INTO the plate, not just the footer chip. sigilWatermark
+// drops a large, very faint copy of the entity's own hashed mark behind the
+// mechanism, because the mark of the thing an entry is about belongs in its
+// own rendering.
+const WITNESS_DIR = resolve(ROOT, "fiction/morkinstar-journals/assets/witnesses");
+const witnessCache = new Map();
+function witnessUri(id) {
+  if (!witnessCache.has(id)) {
+    const buf = readFileSync(resolve(WITNESS_DIR, `${id}.png`));
+    witnessCache.set(id, `data:image/png;base64,${buf.toString("base64")}`);
+  }
+  return witnessCache.get(id);
+}
+const rgb01 = (hex) => {
+  const n = parseInt(hex.slice(1), 16);
+  return [((n >> 16) & 255) / 255, ((n >> 8) & 255) / 255, (n & 255) / 255];
+};
+// Grayscale the portrait, then a 2-stop duotone: the source's dark linework
+// maps to `ink`, its light paper maps to `ground`. Pass S1's bright accent as
+// `ink` and its near-black background as `ground` and this reads as an
+// invert (paper -> near-black, linework -> bright) so the portrait sits IN
+// the dark ground instead of looking pasted on top of it. Pass S2's own ink
+// and paper tones and the same filter barely moves the source at all, which
+// is the "much less" treatment the warm plates need.
+function witnessFilter(id, ink, ground) {
+  const [ir, ig, ib] = rgb01(ink), [gr, gg, gb] = rgb01(ground);
+  return `<filter id="${id}" x="-15%" y="-15%" width="130%" height="130%">
+    <feColorMatrix type="matrix" values="0.30 0.59 0.11 0 0  0.30 0.59 0.11 0 0  0.30 0.59 0.11 0 0  0 0 0 1 0"/>
+    <feComponentTransfer>
+      <feFuncR type="table" tableValues="${ir.toFixed(3)} ${gr.toFixed(3)}"/>
+      <feFuncG type="table" tableValues="${ig.toFixed(3)} ${gg.toFixed(3)}"/>
+      <feFuncB type="table" tableValues="${ib.toFixed(3)} ${gb.toFixed(3)}"/>
+    </feComponentTransfer>
+  </filter>`;
+}
+// One teller, composited small under the mechanism and captioned. cx/cy/w sit
+// in the illustration's own 1000x760 box; h follows the portraits' fixed
+// 1408x768 ratio. `label` is the plate's own lbl()/plbl() so the caption
+// reads as part of the same rendering, not a sticker on top of it.
+function witness(id, name, cx, cy, w, ink, ground, opacity, label) {
+  const h = w * (768 / 1408), x = cx - w / 2, y = cy - h / 2, fid = `wf-${id}`, mid = `wm-${id}`;
+  // A soft radial mask feathers the portrait's edges to nothing, so it fades
+  // into the plate's own ground instead of reading as a rectangle laid on
+  // top of it. "Sits under" as a matter of edges, not just opacity.
+  //
+  // The stops have to finish well inside 0.5. A radialGradient in
+  // objectBoundingBox units is an ELLIPSE matched to the box, so r=0.5 only
+  // just touches the edge midpoints and the corners sit out at about 0.707.
+  // An earlier version faded from 0.45 to 1.0, which meant the mask was still
+  // opaque where the rectangle ended: the feather existed in the code and the
+  // plate still showed a hard-edged grey box, which is exactly what it looked
+  // like at thumbnail size on the site.
+  return `<defs>${witnessFilter(fid, ink, ground)}
+    <radialGradient id="${mid}g" cx="0.5" cy="0.5" r="1">
+      <stop offset="0.14" stop-color="#fff"/>
+      <stop offset="0.30" stop-color="#fff" stop-opacity="0.72"/>
+      <stop offset="0.44" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="${mid}"><rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" fill="url(#${mid}g)"/></mask>
+  </defs>` +
+    `<image href="${witnessUri(id)}" x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${w.toFixed(1)}" height="${h.toFixed(1)}" opacity="${opacity}" filter="url(#${fid})" mask="url(#${mid})"/>` +
+    label(cx, y + h + 24, name.toUpperCase());
+}
+// A large, near-invisible copy of the entity's own sigil, centred on or near
+// the mechanism it belongs to, sitting behind everything the illustration
+// draws (callers place it before the illustration's own markup).
+function sigilWatermark(glyph, accent, cx, cy, size, opacity = 0.1) {
+  return `<svg x="${(cx - size / 2).toFixed(1)}" y="${(cy - size / 2).toFixed(1)}" width="${size}" height="${size}" opacity="${opacity}">${sigil(glyph, accent, { size, stroke: 1.6 })}</svg>`;
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
 const ENTRIES = [
   { n: "01", slug: "legend-of-koaeluae-scales", entry: 2245, title: "The Legend Of K'öæluæ's Scales",
     system: "Alpha Axmoiri", pos: "4 of 16", planet: "Exxobar", cat: 3,
     phenom: "Why it snows for a half momenta every click",
     note: "A fire serpent, a water god, and the fisherwoman who talked one of them out of giving up.",
-    accent: "#8FD3FF", art: exxobar, glyph: "K'öæluæ" },
+    accent: "#8FD3FF", art: exxobar, glyph: "K'öæluæ", wm: [280, 240, 420] },
   { n: "02", slug: "ninety-nine-names-of-silence", entry: 2250, title: "The Ninety-Nine Names Of Silence",
     system: "Alpha Axmoiri", pos: "7 of 16", planet: "Grïnjdarlay", cat: 3,
     phenom: "Why nobody speaks aloud for a half momenta every click",
@@ -372,15 +498,15 @@ const ENTRIES = [
     system: "[unassigned]", pos: "[none]", planet: "[unnamed]", cat: 3,
     phenom: "None. That is the phenomenon.",
     note: "Forty million people, well and fed, with no gods, no stories, and no word for why.",
-    accent: "#6B7684", art: nothing, glyph: "Concluded" },
+    accent: "#6B7684", art: nothing, glyph: "Concluded", wm: [500, 540, 380] },
   { n: "10", slug: "why-we-measure-time-in-hells", entry: 2300, title: "Why We Measure Time In Hells",
     system: "[none]", pos: "[none]", planet: "The Galactic Directory", cat: null,
     phenom: "Why every date in Galactic Standard is named after an afterlife",
     note: "The conversion error is not an error. It is the last surviving measurement of a Concluded world.",
-    accent: T.amber, art: directory, glyph: "Done" },
+    accent: T.amber, art: directory, glyph: "Done", wm: [300, 300, 420] },
 ];
 
-const plate = (e) => `<!doctype html><html><head><meta charset="utf-8"><style>
+const plate = (e) => { const rs = renderStatus(e.n), artBottom = (e.n === "09" ? 400 : 356) + 734; return `<!doctype html><html><head><meta charset="utf-8"><style>
   *{margin:0;padding:0;box-sizing:border-box}
   body{width:${W}px;height:${H}px;background:${T.bg0};font-family:${T.sans};overflow:hidden}
   .p{position:relative;width:${W}px;height:${H}px}
@@ -391,11 +517,15 @@ const plate = (e) => `<!doctype html><html><head><meta charset="utf-8"><style>
     font-family:${T.mono};font-size:19px;letter-spacing:2.6px;color:${T.inkFaint}}
   .head b{color:${e.accent};font-weight:600}
   .head .r{margin-left:auto;color:${T.amber}}
+  .relay{left:76px;right:76px;top:105px;font-family:${T.mono};font-size:13px;letter-spacing:2px;color:${T.inkFaint};opacity:.72}
+  .relay b{color:${T.amber};font-weight:600}
   .ttl{left:76px;right:76px;top:132px}
   .ttl h1{font-size:74px;line-height:1.02;letter-spacing:-2px;color:${T.ink};font-weight:700}
   .ttl .sub{margin-top:22px;font-family:${T.mono};font-size:21px;color:${T.inkDim};letter-spacing:.6px}
   .ttl .sub s{text-decoration:none;color:${e.accent}}
   .art{left:76px;top:${e.n === "09" ? 400 : 356}px;width:1048px;height:734px}
+  .rstat{right:76px;top:${artBottom + 26}px;font-family:${T.mono};font-size:14px;letter-spacing:1.4px;
+    text-align:right;color:${rs.strained ? T.danger : T.inkFaint};opacity:.85}
   .foot{left:76px;right:76px;bottom:78px}
   .foot .rule{height:1px;background:rgba(255,255,255,.10);margin-bottom:26px}
   .foot .ph{font-size:29px;line-height:1.34;color:${T.ink};font-weight:600;letter-spacing:-.3px}
@@ -405,18 +535,21 @@ const plate = (e) => `<!doctype html><html><head><meta charset="utf-8"><style>
   .foot .bar .sg{width:56px;height:56px;opacity:.95}
   .foot .bar .sp{margin-left:auto;color:${e.accent}}
 </style></head><body><div class="p">
-  <svg class="bg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">${defs(e.accent)}${ground(W, H)}</svg>
+  <svg class="bg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">${defs(e.accent)}${ground(W, H)}${relayBand(W, H)}</svg>
   <svg class="fr" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
     <rect x="44" y="44" width="${W - 88}" height="${H - 88}" fill="none" stroke="${T.line}" stroke-width="1.5"/>
     ${plateTicks(44, 44, W - 88, H - 88, e.accent, 34)}
+    ${regMark(T.inkFaint)}
   </svg>
   <div class="c head"><b>GALACTIC DIRECTORY</b>&nbsp;&nbsp;·&nbsp;&nbsp;FIELD PLATE&nbsp;&nbsp;·&nbsp;&nbsp;L. MORKINSTAR
     <span class="r">ENTRY #${e.entry}</span></div>
+  <div class="c relay">RECEIVED VIA RELAY &nbsp;·&nbsp; CARRIER LOCKED &nbsp;·&nbsp; SIGNAL <b>${relaySignal(e.entry)}%</b></div>
   <div class="c ttl">
     <h1>${esc(e.title)}</h1>
     <div class="sub"><s>${esc(e.planet)}</s> &nbsp;·&nbsp; ${esc(e.system)} &nbsp;·&nbsp; SERIES ${esc(e.pos)}${e.cat ? " &nbsp;·&nbsp; CATEGORY " + e.cat : ""}</div>
   </div>
-  <svg class="c art" viewBox="0 0 1000 760">${e.art(e.accent)}</svg>
+  <svg class="c art" viewBox="0 0 1000 760">${sigilWatermark(e.glyph, e.accent, ...(e.wm || [500, 340, 460]))}${e.art(e.accent)}</svg>
+  <div class="c rstat">RENDERING: ${esc(rs.text)}</div>
   <div class="c foot">
     <div class="rule"></div>
     <div class="ph">${esc(e.phenom)}</div>
@@ -427,7 +560,7 @@ const plate = (e) => `<!doctype html><html><head><meta charset="utf-8"><style>
       <span class="sp">THE MORKINSTAR JOURNALS · ${e.n} / 10</span>
     </div>
   </div>
-</div></body></html>`;
+</div></body></html>`; };
 
 const cover = () => `<!doctype html><html><head><meta charset="utf-8"><style>
   *{margin:0;padding:0;box-sizing:border-box}
@@ -516,7 +649,7 @@ const pln = (x1, y1, x2, y2, s, o = 1, w = 2) =>
 
 // P1 — the case. Ninety-one slots, one filled. And two chairs.
 function s2case(a) {
-  let o = "";
+  let o = witness("ossul", "Ossul", 830, 682, 140, PT.ink, PT.paper1, 0.8, (x, y, t) => plbl(x, y, t, PT.inkFaint, 14, "middle"));
   o += `<rect x="90" y="90" width="560" height="330" rx="6" fill="none" stroke="${PT.ink}" stroke-width="3"/>`;
   o += pln(90, 132, 650, 132, PT.ink, 0.5, 2);
   o += plbl(370, 74, "LID DOES NOT SIT FLUSH", PT.red, 14, "middle");
@@ -589,8 +722,7 @@ function s2coldcase(a) {
 
 // P16 — the syllabus. Three hundred and forty lessons, and a heading.
 function s2syllabus(a) {
-  let o = "";
-  o += plbl(80, 78, "THE SYLLABUS OF HALLOVAR", PT.inkDim, 16);
+  let o = plbl(80, 78, "THE SYLLABUS OF HALLOVAR", PT.inkDim, 16);
   for (let i = 0; i < 340; i++) {
     const col = i % 34, row = Math.floor(i / 34);
     const x = 84 + col * 25, y = 112 + row * 34;
@@ -600,7 +732,11 @@ function s2syllabus(a) {
   o += plbl(920, 112, "1", PT.inkFaint, 13, "end");
   o += plbl(920, 452, "340", PT.inkFaint, 13, "end");
   o += plbl(80, 452, "the handwriting gets worse. you can date them by it.", PT.inkFaint, 14);
+  // Panel drawn before the portrait (not after) so its translucent fill sits
+  // as a backdrop instead of washing the portrait out; portrait sized/placed
+  // to clear both the panel's borders and the "nothing under it" caption.
   o += `<rect x="80" y="500" width="840" height="150" rx="6" fill="${PT.panel}" fill-opacity="0.7" stroke="${a}" stroke-width="3"/>`;
+  o += witness("hallovar", "Hallovar", 760, 555, 150, PT.ink, PT.paper1, 0.8, (x, y, t) => plbl(x, y, t, PT.inkFaint, 14, "middle"));
   o += plbl(104, 540, "LESSON 341", a, 18);
   o += plbl(104, 580, "“What To Do When It Goes Wrong", PT.ink, 25);
   o += plbl(104, 614, "And I Am Not Here”", PT.ink, 25);
@@ -777,7 +913,7 @@ const S2 = [
   { n: "01", p: 1, slug: "the-second-chair", title: "The Second Chair", where: "The case", concluded: 613,
     phenom: "He builds the case, and has no good reason for ninety-one",
     note: "The only reader he is certain of is one clerk, nine decks down, who has a second chair.",
-    accent: "#8A6A2F", art: s2case, glyph: "The Case" },
+    accent: "#8A6A2F", art: s2case, glyph: "The Case", wm: [370, 250, 420] },
   { n: "02", p: 4, slug: "the-weather-they-made-up", title: "The Weather They Made Up", where: "Vœrhan", concluded: 617,
     phenom: "A rain that has never fallen, measured for nine generations",
     note: "A fabricated myth works exactly as well as a true one. Nobody checks the provenance of hope.",
@@ -793,7 +929,7 @@ const S2 = [
   { n: "05", p: 23, slug: "what-you-have-not-said-out-loud", title: "What You Have Not Said Out Loud", where: "Threnn", concluded: 631,
     phenom: "Only the unsaid can harm you",
     note: "They offered to listen. More than once. Kindly. He left, and it left with him.",
-    accent: "#5B4A7A", art: s2unsaid, glyph: "The Ovai" },
+    accent: "#5B4A7A", art: s2unsaid, glyph: "The Ovai", wm: [300, 400, 420] },
   { n: "06", p: 30, slug: "the-weight-of-the-case", title: "The Weight Of The Case", where: "His ship", concluded: 640,
     phenom: "The case weighs more than the case plus the pages",
     note: "I am recording measurements. I am not recording conclusions.",
@@ -813,7 +949,7 @@ const S2 = [
   { n: "10", p: 91, slug: "the-back-of-the-case", title: "The Back Of The Case", where: "The case", concluded: 671,
     phenom: "He writes the last page eighty-one pages early",
     note: "Vænheim has a number now. Something has lasted long enough to need it.",
-    accent: "#9E3B2E", art: s2backofcase, glyph: "Vænheim" },
+    accent: "#9E3B2E", art: s2backofcase, glyph: "Vænheim", wm: [350, 230, 420] },
 ];
 
 const paperPlate = (e) => `<!doctype html><html><head><meta charset="utf-8"><style>
@@ -840,14 +976,14 @@ const paperPlate = (e) => `<!doctype html><html><head><meta charset="utf-8"><sty
   .foot .bar .sp{margin-left:auto;color:${e.accent}}
 </style></head><body><div class="p">
   <svg class="bg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">${paperDefs(e.accent)}${paperGround(W, H)}</svg>
-  <svg class="fr" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">${slotFrame(76, 44, W - 152, H - 88, e.accent, e.p)}</svg>
+  <svg class="fr" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">${slotFrame(76, 44, W - 152, H - 88, e.accent, e.p)}${regMark(PT.inkFaint)}</svg>
   <div class="c head"><b>PAGE ${e.p} OF 91</b>&nbsp;&nbsp;·&nbsp;&nbsp;NOT FILED&nbsp;&nbsp;·&nbsp;&nbsp;L. MORKINSTAR
     <span class="r">CONCLUDED: ${e.concluded}</span></div>
   <div class="c ttl">
     <h1>${esc(e.title)}</h1>
     <div class="sub"><s>${esc(e.where)}</s> &nbsp;·&nbsp; THE NINETY-ONE PAGES &nbsp;·&nbsp; SEASON TWO</div>
   </div>
-  <svg class="c art" viewBox="0 0 1000 760">${e.art(e.accent)}</svg>
+  <svg class="c art" viewBox="0 0 1000 760">${sigilWatermark(e.glyph, e.accent, ...(e.wm || [500, 310, 460]))}${e.art(e.accent)}</svg>
   <div class="c foot">
     <div class="rule"></div>
     <div class="ph">${esc(e.phenom)}</div>
@@ -1183,11 +1319,21 @@ function withdrawnFrame(x, y, w, h, accent, dmg, seed) {
 }
 // The kept frame: calm, no stamp of removal. A quieter mark that says this
 // one stayed.
+//
+// Quiet is a matter of TREATMENT, not of contrast. The first version drew the
+// word in the entry's accent at 0.8 on pale paper, which measured about 1.4:1
+// and was effectively invisible — the one undamaged plate in the season had
+// the one unreadable label in it. Every WITHDRAWN stamp reads fine because it
+// uses a solid ink-weight red. So this now takes its calm from what it does
+// NOT do — no rotation, no heavy rule, no red — and keeps the accent as a
+// bar down the left edge, where colour is decoration rather than the only
+// thing carrying the word.
 function keptFrame(x, y, w, h, accent) {
   return `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="none" stroke="${PT.line}" stroke-opacity="0.7" stroke-width="1.5"/>
   <g transform="translate(${x + w - 190},${y + 40})">
-    <rect x="0" y="0" width="172" height="54" rx="4" fill="none" stroke="${accent}" stroke-width="2.5" stroke-opacity="0.75"/>
-    <text x="86" y="35" text-anchor="middle" font-family="${PT.mono}" font-size="20" letter-spacing="3" fill="${accent}" fill-opacity="0.8">KEPT</text>
+    <rect x="0" y="0" width="172" height="54" rx="4" fill="none" stroke="${PT.inkDim}" stroke-width="1.5"/>
+    <rect x="0" y="0" width="4" height="54" fill="${accent}"/>
+    <text x="90" y="35" text-anchor="middle" font-family="${PT.mono}" font-size="20" letter-spacing="3" fill="${PT.ink}">KEPT</text>
   </g>`;
 }
 
@@ -1300,13 +1446,13 @@ const s3Plate = (e) => {
   .foot .bar .sp{margin-left:auto;color:${e.accent}}
 </style></head><body><div class="p">
   <svg class="bg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">${s3Defs(e.accent)}${s3Ground(W, H, e.accent, dmg)}</svg>
-  <svg class="fr" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">${kept ? keptFrame(76, 44, W - 152, H - 88, e.accent) : withdrawnFrame(76, 44, W - 152, H - 88, e.accent, dmg, e.k)}</svg>
+  <svg class="fr" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">${kept ? keptFrame(76, 44, W - 152, H - 88, e.accent) : withdrawnFrame(76, 44, W - 152, H - 88, e.accent, dmg, e.k)}${regMark(PT.inkFaint)}</svg>
   <div class="c head"><b>${headTxt}</b>&nbsp;&nbsp;·&nbsp;&nbsp;L. MORKINSTAR</div>
   <div class="c ttl">
     <h1>${esc(e.title)}</h1>
     <div class="sub">${subTxt}</div>
   </div>
-  <svg class="c art" viewBox="0 0 1000 760">${e.art(e.accent, dmg)}</svg>
+  <svg class="c art" viewBox="0 0 1000 760">${sigilWatermark(e.glyph, e.accent, ...(e.wm || [500, 300, 400]))}${e.art(e.accent, dmg)}</svg>
   <div class="c foot">
     <div class="rule"></div>
     <div class="ph">${esc(e.ph)}</div>
