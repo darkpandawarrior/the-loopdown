@@ -12,7 +12,7 @@ status: draft
 tags: [morkinstar-journals, season-three, fiction]
 words: 280
 blurb: "The shortest page in the case is one sentence and an apology for being one sentence. He burns it faster than he can explain why he wrote it."
-lore: morkinstar-journals
+lore: [morkinstar-journals]
 ---
 
 # The Shortest Page In The Case
@@ -41,5 +41,5 @@ that I have not already told you.
 
 There. Page thirty four withdrawn.
 
-That is the whole entry. I am aware it is the whole entry. Eighty eight to go, and some of them
+That is the whole entry. I am aware it is the whole entry. Eighty six to go, and some of them
 will take longer than this took.

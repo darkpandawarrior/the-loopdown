@@ -41,11 +41,12 @@ So the cure is not co-signing. The cure is the fire, and it costs him two season
 
 ## The clock, and it is his own fault
 
-Season Two ended with the case one slot from complete, because **he wrote the last page first.**
+Season Two ended with the case complete, because **he wrote the last page first.**
 
 Ninety-one slots. Page ninety-one is filled, at the back, written early and on purpose. Which
-means the case completes when the ninetieth slot fills, not the ninety-first. He built a trap and
-dated it himself and did not notice, because he was busy being pleased with the gesture.
+means the case was always going to complete the moment the last ordinary slot filled, regardless
+of the order he filled the rest in. He built a trap and dated it himself and did not notice,
+because he was busy being pleased with the gesture.
 
 And a case with ninety-one of ninety-one slots filled is a **complete account**. Complete is
 finished. Finished is Concluded. Concluded is the word the Cendran child wrote.
@@ -53,7 +54,8 @@ finished. Finished is Concluded. Concluded is the word the Cendran child wrote.
 He spent two seasons refusing to conclude anything and has been assembling a completed record the
 entire time, one page at a time, on purpose, with enthusiasm.
 
-**Season Three opens with eighty-nine slots filled and him holding page ninety.**
+**Season Three opens with the case full: ninety-one of ninety-one slots.** (Confirmed on the page
+in #s3-01: *"a fire going, a case in front of me, and ninety-one of ninety-one slots filled."*)
 
 ## The engine, which the first draft did not have
 

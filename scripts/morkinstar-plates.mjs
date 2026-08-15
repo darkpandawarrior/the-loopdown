@@ -857,6 +857,466 @@ const paperPlate = (e) => `<!doctype html><html><head><meta charset="utf-8"><sty
   </div>
 </div></body></html>`;
 
+// ═══════════════════════════════════════════════════════════════════════════
+// SEASON THREE. He is burning his own case, one page at a time, in the correct
+// order. Same paper as Season Two — it is the same case — but every plate here
+// is that page in the process of being destroyed: scorch eating in from the
+// edge nearest the fire, char, curl, ash, the ink losing its color as it goes.
+// Damage is driven by the piece's position in the burn (1 of 13 .. 13 of 13),
+// not hand-tuned per plate, so the case gets visibly, systematically thinner as
+// the season goes. The frame stops being a slot marker — how many pages are
+// left — and becomes a WITHDRAWN stamp: this one is leaving. Plate 14 breaks
+// the pattern on purpose. It is the only page that goes back in unburnt.
+// ═══════════════════════════════════════════════════════════════════════════
+const BURN = "#241811", SCORCH = "#7A4526";
+
+// Tiny seeded PRNG so the char marks are stable across renders, not fresh
+// noise on every run — a scorch pattern that changed each rebuild would read
+// as random damage, not as the same page burning the same way twice.
+function lcg(seed) {
+  let s = (seed >>> 0) || 1;
+  return () => (s = (s * 48271) % 0x7fffffff) / 0x7fffffff;
+}
+const hexLerp = (c1, c2, t) => {
+  const n1 = parseInt(c1.slice(1), 16), n2 = parseInt(c2.slice(1), 16);
+  const ch = (n) => [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+  const [r1, g1, b1] = ch(n1), [r2, g2, b2] = ch(n2);
+  const m = (x, y) => Math.round(x + (y - x) * t);
+  return `rgb(${m(r1, r2)},${m(g1, g2)},${m(b1, b2)})`;
+};
+
+// damage 0 (untouched) .. 1 (nearly gone), eased so the first few pages read
+// as lightly marked and the loss compounds toward the end of the case.
+const burnDmg = (i, of = 13) => Math.pow(i / of, 1.3);
+
+// A jagged burnt hole: black centre, scorched rim. Same shape vocabulary every
+// time — it's paper burning, not a different kind of damage per plate.
+function charHole(cx, cy, r, seed) {
+  const rnd = lcg(seed);
+  let d = "";
+  for (let i = 0; i <= 11; i++) {
+    const ang = (i / 11) * 2 * Math.PI;
+    const rr = r * (0.55 + rnd() * 0.55);
+    d += `${i ? "L" : "M"}${(cx + Math.cos(ang) * rr).toFixed(1)} ${(cy + Math.sin(ang) * rr).toFixed(1)}`;
+  }
+  return `<path d="${d}Z" fill="${BURN}"/><path d="${d}Z" fill="none" stroke="${SCORCH}" stroke-width="3" stroke-opacity="0.85"/>`;
+}
+
+// The damage pass every burned plate's art ends with: holes climbing off the
+// bottom-right (the edge nearest the fire in his hand), a curling corner, ash.
+function charOverlay(dmg, seed) {
+  if (dmg <= 0.02) return "";
+  const rnd = lcg(seed * 97 + 1);
+  let o = "";
+  // Kept to the far bottom-right — every piece keeps its own caption text
+  // left- or centre-set well clear of this corner, so damage never eats words.
+  const holes = Math.round(2 + dmg * 9);
+  for (let i = 0; i < holes; i++) {
+    const cx = 780 + rnd() * 200, cy = 440 + rnd() * 280;
+    o += charHole(cx, cy, 8 + rnd() * 12 + dmg * 12, seed * 7 + i + 1);
+  }
+  const cr = 50 + dmg * 200;
+  o += `<path d="M${(1000 - cr).toFixed(1)} 760 Q${(1000 - cr * 0.4).toFixed(1)} ${(760 - cr * 0.7).toFixed(1)} 1000 ${(760 - cr).toFixed(1)} L1000 760 Z" fill="${BURN}" opacity="${(0.55 + dmg * 0.4).toFixed(2)}"/>`;
+  o += `<path d="M${(1000 - cr).toFixed(1)} 760 Q${(1000 - cr * 0.4).toFixed(1)} ${(760 - cr * 0.7).toFixed(1)} 1000 ${(760 - cr).toFixed(1)}" fill="none" stroke="${SCORCH}" stroke-width="4.5" opacity="0.85"/>`;
+  const ash = Math.round(dmg * 14);
+  for (let i = 0; i < ash; i++) {
+    const x = 480 + rnd() * 520, y = 40 + rnd() * 680;
+    o += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${(1 + rnd() * 2).toFixed(1)}" fill="${SCORCH}" fill-opacity="${(0.3 + rnd() * 0.4).toFixed(2)}"/>`;
+  }
+  return o;
+}
+
+// ── the fourteen remnants ────────────────────────────────────────────────
+// Each draws a SIMPLIFIED, already-wrecked sketch of the page it is burning
+// (its own S1/S2 plate motif where one exists, an invented one for the four
+// pages nobody has seen), then hands off to charOverlay for the systematic
+// damage pass. The wreck is in the drawing; the SEVERITY is in the index.
+
+// 01 — page 1, Ossul. The case, one tick lit, and the word he can't reread.
+function s3ossul(a, dmg) {
+  let o = "";
+  o += `<rect x="90" y="90" width="560" height="230" rx="6" fill="none" stroke="${PT.ink}" stroke-opacity="${(0.85 - dmg * 0.3).toFixed(2)}" stroke-width="3"/>`;
+  for (let i = 0; i < 91; i++) {
+    const col = i % 26, row = Math.floor(i / 26);
+    const x = 118 + col * 20, y = 128 + row * 62;
+    o += pln(x, y, x, y + 46, i === 0 ? a : PT.line, i === 0 ? 1 : 0.4, i === 0 ? 4 : 1.4);
+  }
+  o += plbl(90, 350, "PAGE ONE. WHAT WENT IN FIRST.", PT.inkDim, 16);
+  const rows = [["THE PASTE", true], ["THE STONE", true], ["THE WORD", false]];
+  rows.forEach(([t, ok], i) => {
+    const y = 410 + i * 46;
+    o += plbl(90, y, t, ok ? PT.ink : PT.red, 19);
+    if (ok) o += pln(280, y - 6, 560, y - 6, PT.inkFaint, 0.5, 2);
+    else {
+      let d = "M280 " + (y - 6);
+      for (let k = 1; k <= 10; k++) d += ` L${280 + k * 28} ${y - 6 + (k % 2 ? -9 : 9)}`;
+      o += `<path d="${d}" fill="none" stroke="${PT.red}" stroke-opacity="0.75" stroke-width="2.5" stroke-linecap="round"/>`;
+    }
+  });
+  o += plbl(90, 610, "TWENTY-TWO GALAXALS. NOBODY STAYED LONG ENOUGH TO HEAR IT TWICE.", PT.inkFaint, 15);
+  return o + charOverlay(dmg, 1);
+}
+
+// 02 — page 12, unseen. Mrit'havn: one question, once, and a smoke column.
+function s3askdead(a, dmg) {
+  let o = "";
+  o += `<ellipse cx="260" cy="260" rx="150" ry="180" fill="${PT.panel}" fill-opacity="0.6" stroke="${a}" stroke-width="3"/>`;
+  [190, 240, 290, 330, 370].forEach((y) => {
+    o += pln(200, y, 320, y, PT.inkFaint, 0.5, 2);
+    o += pln(205, y - 8, 315, y + 8, PT.red, 0.55, 2);
+  });
+  o += pln(200, 410, 320, 410, a, 0.95, 3.5);
+  o += plbl(260, 452, "SÖLRUN'S HUNDRED AND SIX", PT.inkDim, 15, "middle");
+  o += `<path d="M700 640 C 690 560, 730 520, 706 460 C 686 410, 730 370, 706 300" fill="none" stroke="${a}" stroke-opacity="0.7" stroke-width="3" stroke-dasharray="2 10"/>`;
+  o += pln(620, 640, 780, 640, PT.line, 1, 2);
+  o += plbl(700, 680, "THE COLUMN HOLDS ITS SHAPE, THEN DOESN'T", PT.inkFaint, 14, "middle");
+  o += plbl(90, 80, "MRIT'HAVN · YOU MAY ASK YOUR DEAD ONE QUESTION. ONCE.", PT.inkDim, 16);
+  o += plbl(90, 720, "A LIFE SPENT ARRIVING AT IT.", a, 18);
+  return o + charOverlay(dmg, 2);
+}
+
+// 03 — page 16, Ilmarrow. The syllabus, and Lesson 341 with nothing under it.
+function s3lesson(a, dmg) {
+  let o = "";
+  o += plbl(80, 78, "THE SYLLABUS OF HALLOVAR", PT.inkDim, 16);
+  for (let i = 0; i < 200; i++) {
+    const col = i % 34, row = Math.floor(i / 34);
+    const x = 84 + col * 25, y = 112 + row * 34;
+    o += pln(x, y, x + 17, y, PT.ink, 0.5, 2);
+  }
+  o += `<rect x="80" y="360" width="840" height="130" rx="6" fill="${PT.panel}" fill-opacity="0.65" stroke="${a}" stroke-width="3"/>`;
+  o += plbl(104, 400, "LESSON 341", a, 18);
+  o += plbl(104, 436, "“What To Do When It Goes Wrong", PT.ink, 22);
+  o += plbl(104, 466, "And I Am Not Here”", PT.ink, 22);
+  o += plbl(896, 400, "( nothing under it )", PT.red, 15, "end");
+  o += plbl(80, 540, "THE HAND HURRIES BY LESSON THREE HUNDRED.", PT.inkFaint, 15);
+  o += plbl(80, 600, "HE READ THIS ONE MOST NIGHTS. NOT FOR THE RECORD.", PT.ink, 17);
+  return o + charOverlay(dmg, 3);
+}
+
+// 04 — page 23, Threnn. Two figures, a broken arc, and a sentence that stops.
+function s3threnn(a, dmg) {
+  let o = "";
+  const fig = (x, y, solid) => `<g transform="translate(${x},${y})" fill="none" stroke="${solid ? PT.ink : PT.red}" stroke-opacity="${solid ? 0.9 : 0.55}" stroke-width="3" stroke-linecap="round"${solid ? "" : ` stroke-dasharray="6 8"`}>
+    <circle cx="0" cy="-90" r="22"/><path d="M0 -68 V-10"/><path d="M-24 -48 H24"/><path d="M0 -10 L-20 48 M0 -10 L20 48"/></g>`;
+  o += fig(260, 340, true) + fig(320, 350, false);
+  o += `<path d="M180 220 Q290 170 400 220" fill="none" stroke="${a}" stroke-opacity="0.6" stroke-width="2.5" stroke-dasharray="3 9"/>`;
+  o += plbl(90, 80, "ONLY THE UNSAID CAN REACH YOU.", PT.ink, 18);
+  o += plbl(90, 470, "SHE ASKED TWICE. HE SAID NO TWICE.", PT.inkDim, 16);
+  o += plbl(90, 560, "“Well.", PT.red, 30);
+  o += plbl(90, 596, "It starts.”", PT.inkFaint, 22);
+  o += plbl(90, 660, "THAT IS AS FAR AS IT EVER GOT.", PT.red, 16);
+  return o + charOverlay(dmg, 4);
+}
+
+// 05 — page 34, unseen. One sentence, blind fish, a door, an apology under it.
+function s3fish(a, dmg) {
+  let o = "";
+  o += pln(80, 420, 920, 420, PT.line, 0.9, 2.5);
+  o += `<rect x="740" y="220" width="90" height="200" rx="4" fill="none" stroke="${PT.ink}" stroke-opacity="0.8" stroke-width="3"/>`;
+  o += plbl(785, 448, "THE DOOR", PT.inkFaint, 14, "middle");
+  o += `<path d="M300 460 Q360 440 420 460 Q460 468 500 452 L560 462 Q600 452 640 462 L700 452" fill="none" stroke="${a}" stroke-opacity="0.85" stroke-width="3" stroke-linecap="round"/>`;
+  o += `<circle cx="695" cy="452" r="5" fill="${a}"/>`;
+  o += plbl(90, 90, "ONE SENTENCE.", PT.inkDim, 18);
+  o += plbl(90, 560, "“The blind fish in the flooded temple", PT.ink, 24);
+  o += plbl(90, 596, "still turn toward the door when it opens.”", PT.ink, 24);
+  o += plbl(90, 650, "AN APOLOGY UNDERNEATH, IN SMALLER WRITING.", PT.inkFaint, 15);
+  return o + charOverlay(dmg, 5);
+}
+
+// 06 — page 30. The weighing, run once more before it goes.
+function s3weighing(a, dmg) {
+  let o = "";
+  const pan = (x, y, w, l1, v, red) => {
+    let s = `<path d="M${x} ${y} L${x + w} ${y}" stroke="${PT.ink}" stroke-width="3"/>`;
+    s += `<path d="M${x + w / 2} ${y} V${y - 50}" stroke="${PT.ink}" stroke-width="2.5"/>`;
+    s += `<path d="M${x + 8} ${y} Q${x + w / 2} ${y + 40} ${x + w - 8} ${y}" fill="none" stroke="${PT.ink}" stroke-width="2.5"/>`;
+    s += plbl(x + w / 2, y - 64, l1, PT.inkDim, 14, "middle");
+    s += plbl(x + w / 2, y + 76, v, red ? PT.red : PT.ink, 22, "middle");
+    return s;
+  };
+  o += pan(120, 240, 220, "WHOLE, THAT NIGHT", "7268g", false);
+  o += plbl(500, 250, "→", PT.red, 40, "middle");
+  o += pan(660, 240, 220, "TONIGHT, ONE PAGE STILL IN", "6991g", true);
+  o += plbl(90, 400, "LIGHTER BY MORE THAN THE PAPER ACCOUNTS FOR.", PT.red, 17);
+  o += plbl(90, 460, "SIX. EIGHT. NINETEEN. NO EXPLANATION WRITTEN UNDER IT.", PT.inkDim, 16);
+  o += plbl(90, 560, "“THAT IS THE ENTIRE ENTRY.", PT.ink, 20);
+  o += plbl(90, 596, "I AM NOT GOING TO WRITE WHAT I THINK IT MEANS.”", PT.ink, 20);
+  return o + charOverlay(dmg, 6);
+}
+
+// 07 — page 44, unseen. Sorvann's fourteenth, finally named after him.
+function s3sorvann(a, dmg) {
+  let o = "";
+  for (let i = 0; i < 14; i++) {
+    const y = 110 + i * 40, last = i === 13;
+    o += pln(90, y, last ? 320 : 260 + (i % 3) * 20, y, last ? a : PT.inkFaint, last ? 1 : 0.55, last ? 3.5 : 1.8);
+  }
+  o += plbl(90, 90, "FOURTEEN GODS. FOURTEEN MONSTERS.", PT.inkDim, 16);
+  o += plbl(340, 668, "MÖRK", a, 30);
+  o += plbl(340, 700, "the fourteenth's name, given after he left", PT.inkFaint, 15);
+  o += `<path d="M600 200 Q660 140 740 200 Q800 260 740 340 Q660 400 600 340 Q560 260 600 200 Z" fill="${PT.panel}" fill-opacity="0.5" stroke="${PT.line}" stroke-width="2"/>`;
+  o += plbl(670, 440, "SORVANN · THE MARSH", PT.inkDim, 15, "middle");
+  o += plbl(90, 560, "HE COULD HAVE WRITTEN BACK. HE HAD THE CLICKS.", PT.red, 17);
+  return o + charOverlay(dmg, 7);
+}
+
+// 08 — page 47, Kaunis. The Vedrei's wall, and the one he does not have.
+function s3wall(a, dmg) {
+  let o = "";
+  for (let i = 0; i < 40; i++) {
+    const x = 84 + (i % 10) * 42, y = 110 + Math.floor(i / 10) * 46;
+    o += `<rect x="${x}" y="${y}" width="32" height="34" fill="none" stroke="${PT.line}" stroke-width="1.4"/>`;
+  }
+  o += `<rect x="80" y="330" width="840" height="150" rx="4" fill="none" stroke="${PT.ink}" stroke-width="3"/>`;
+  o += plbl(500, 380, "THE VEDREI'S WALL", PT.inkDim, 15, "middle");
+  o += plbl(500, 436, "41,206", PT.red, 46, "middle");
+  o += plbl(500, 466, "NAMED, IN DAYLIGHT, ON A WALL BUILT FOR THE PURPOSE.", PT.inkDim, 14, "middle");
+  o += plbl(80, 560, "I HAVE NINETY PAGES AND NO WALL.", PT.ink, 19);
+  o += plbl(80, 596, "A WORLD THAT GETS A WALL, AND A MAN WHO DOES NOT.", PT.inkFaint, 15);
+  return o + charOverlay(dmg, 8);
+}
+
+// 09 — page 61, unseen. A lineage that ends on Yska, and stops there.
+function s3lineage(a, dmg) {
+  let o = "";
+  const names = ["VOTHRIN", "ALDIS", "RANKA", "YSKA"];
+  names.forEach((n, i) => {
+    const x = 140 + i * 200;
+    o += `<circle cx="${x}" cy="300" r="8" fill="${a}"/>`;
+    o += plbl(x, 340, n, PT.ink, 16, "middle");
+    if (i < names.length - 1) o += pln(x + 14, 300, x + 186, 300, a, 0.8, 2.5);
+  });
+  o += `<line x1="940" y1="300" x2="990" y2="300" stroke="${PT.red}" stroke-opacity="0.7" stroke-width="2.5" stroke-dasharray="3 6" stroke-linecap="round"/>`;
+  o += plbl(990, 390, "( no next name. never was. )", PT.red, 14, "end");
+  o += plbl(90, 90, "A LINE NEVER WRITTEN DOWN — UNTIL THAT NIGHT, ON ILYRSK.", PT.inkDim, 16);
+  o += plbl(90, 560, "THE ONLY PAGE HE DID NOT WRITE ALONE.", PT.ink, 19);
+  o += plbl(90, 596, "IT TOOK TWO OF THEM TO WRITE IT. ONE OF HIM TO BURN IT.", PT.inkFaint, 15);
+  return o + charOverlay(dmg, 9);
+}
+
+// 10 — page 38. Six worlds, six fences, the map nobody else ever had.
+function s3map(a, dmg) {
+  let o = "";
+  const W3 = [[220, 180], [740, 220], [820, 500], [520, 620], [200, 520], [430, 340]];
+  for (let i = 0; i < W3.length; i++) {
+    const [x1, y1] = W3[i], [x2, y2] = W3[(i + 3) % W3.length];
+    o += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${a}" stroke-opacity="0.5" stroke-width="2" stroke-dasharray="6 6" stroke-linecap="round"/>`;
+  }
+  W3.forEach(([x, y]) => { o += `<circle cx="${x}" cy="${y}" r="16" fill="${PT.paper0}" stroke="${PT.ink}" stroke-width="2.5"/>`; });
+  o += plbl(90, 90, "SIX WORLDS. THREE PAIRS OF LINES COME DOWN ON TOP OF EACH OTHER.", PT.inkDim, 16);
+  o += plbl(90, 700, "NOBODY ELSE HAS THIS MAP. IN A MINUTE, NOBODY WILL.", PT.red, 18);
+  return o + charOverlay(dmg, 10);
+}
+
+// 11 — page 73, unseen. Four names. Two he can still do something with.
+function s3fournames(a, dmg) {
+  let o = "";
+  const rows = [["SARN", true], ["ÖYLA", true], ["RÆL", false], ["TUVID", false]];
+  rows.forEach(([n, known], i) => {
+    const y = 200 + i * 90;
+    o += `<rect x="200" y="${y - 40}" width="600" height="64" rx="6" fill="none" stroke="${known ? a : PT.red}" stroke-opacity="${known ? 0.8 : 0.5}" stroke-width="2.5"${known ? "" : ` stroke-dasharray="6 7"`}/>`;
+    o += plbl(500, y, n, known ? PT.ink : PT.red, 26, "middle");
+  });
+  o += plbl(90, 90, "FOUR NAMES. NOTHING ELSE ON THE PAGE.", PT.inkDim, 17);
+  o += plbl(90, 640, "TWO HE CAN STILL DO SOMETHING WITH.", PT.ink, 17);
+  o += plbl(90, 676, "TWO ARE ALREADY GONE FROM EVERYWHERE ELSE.", PT.red, 17);
+  return o + charOverlay(dmg, 11);
+}
+
+// 12 — page 58. The turn: a hand that is not his, and a self-portrait.
+function s3turn(a, dmg) {
+  let o = "";
+  const rows = [["day 1", "0.0005", "0.00051"], ["momenta 1", "0.0009", "0.00094"], ["momenta 2", "0.0014", "0.00139"]];
+  rows.forEach(([d, mine, fixed], i) => {
+    const y = 150 + i * 70;
+    o += plbl(104, y, d, PT.inkFaint, 16);
+    o += plbl(360, y, mine, PT.ink, 19, "end");
+    o += pln(280, y - 6, 380, y - 6, PT.red, 0.8, 2);
+    o += plbl(440, y - 10, fixed, PT.red, 19);
+  });
+  o += plbl(440, 96, "in a hand that is not his", PT.red, 15);
+  o += `<rect x="80" y="420" width="840" height="120" rx="6" fill="none" stroke="${a}" stroke-width="3"/>`;
+  o += plbl(500, 468, "AN ARCHIVE OF ONE AUTHOR IS NOT AN ARCHIVE.", a, 20, "middle");
+  o += plbl(500, 502, "IT IS A SELF-PORTRAIT. AND A PORTRAIT LOOKS BACK.", PT.inkDim, 16, "middle");
+  o += plbl(90, 610, "HE WORKED IT OUT. HE DID NOT LISTEN.", PT.red, 18);
+  return o + charOverlay(dmg, 12);
+}
+
+// 13 — page 91. The fourteenth's name, in the last slot, hardest to burn.
+function s3name(a, dmg) {
+  let o = "";
+  o += `<rect x="200" y="130" width="600" height="220" rx="6" fill="${PT.panel}" fill-opacity="0.7" stroke="${PT.red}" stroke-width="3"/>`;
+  o += plbl(500, 250, "████", PT.red, 46, "middle");
+  o += plbl(500, 300, "THE FOURTEENTH'S NAME", PT.red, 16, "middle");
+  o += plbl(90, 90, "THE LAST SLOT. FILLED A WHOLE SEASON EARLY, ON PURPOSE.", PT.inkDim, 16);
+  o += plbl(90, 460, "WRITTEN ONCE, WHERE NOBODY WOULD EVER GO.", PT.ink, 18);
+  o += plbl(90, 496, "THE FIRE IS THAT PLACE NOW TOO. HE KNOWS IT.", PT.inkFaint, 16);
+  o += plbl(90, 600, "NINETY-ONE SLOTS. EVERY ONE OF THEM ABOUT TO BE EMPTY.", PT.red, 17);
+  return o + charOverlay(dmg, 13);
+}
+
+// 14 — the kept page. No damage pass. The only intact object in the season.
+function s3kept(a) {
+  let o = "";
+  o += `<rect x="260" y="140" width="480" height="340" rx="6" fill="none" stroke="${a}" stroke-opacity="0.55" stroke-width="2.5"/>`;
+  o += plbl(500, 540, "NOTHING WRITTEN ON IT.", PT.inkDim, 17, "middle");
+  o += plbl(500, 574, "NOT TO MAKE A POINT OF IT.", PT.inkFaint, 15, "middle");
+  o += plbl(500, 660, "THE ONLY THING LEFT THAT HAS NEVER HAD ANYTHING WRITTEN ON IT.", PT.inkDim, 15, "middle");
+  return o;
+}
+
+// The withdrawn frame: no longer a count of how much of the case is left,
+// only a mark that THIS page is leaving, plus corners chewed by whatever
+// plate this is in the burn.
+function withdrawnFrame(x, y, w, h, accent, dmg, seed) {
+  let o = `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="none" stroke="${PT.line}" stroke-opacity="${(0.9 - dmg * 0.4).toFixed(2)}" stroke-width="1.5"/>`;
+  if (dmg > 0.05) {
+    o += charHole(x, y, 14 + dmg * 40, seed + 11);
+    o += charHole(x + w, y + h, 12 + dmg * 44, seed + 23);
+  }
+  o += `<g transform="translate(${x + w - 214},${y + 40}) rotate(-8)" opacity="${(0.6 + dmg * 0.3).toFixed(2)}">
+    <rect x="0" y="0" width="196" height="54" rx="4" fill="none" stroke="${PT.red}" stroke-width="3"/>
+    <text x="98" y="35" text-anchor="middle" font-family="${PT.mono}" font-size="22" letter-spacing="3.2" fill="${PT.red}">WITHDRAWN</text>
+  </g>`;
+  return o;
+}
+// The kept frame: calm, no stamp of removal. A quieter mark that says this
+// one stayed.
+function keptFrame(x, y, w, h, accent) {
+  return `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="none" stroke="${PT.line}" stroke-opacity="0.7" stroke-width="1.5"/>
+  <g transform="translate(${x + w - 190},${y + 40})">
+    <rect x="0" y="0" width="172" height="54" rx="4" fill="none" stroke="${accent}" stroke-width="2.5" stroke-opacity="0.75"/>
+    <text x="86" y="35" text-anchor="middle" font-family="${PT.mono}" font-size="20" letter-spacing="3" fill="${accent}" fill-opacity="0.8">KEPT</text>
+  </g>`;
+}
+
+// Background: the same paper as Season Two, with a scorch climbing from the
+// bottom edge — the end nearest the fire in his hand — proportional to damage.
+function s3Defs(accent) {
+  return paperDefs(accent) + `<defs><linearGradient id="s3scorch" x1="0" y1="1" x2="0" y2="0">
+    <stop offset="0" stop-color="${BURN}"/><stop offset="0.35" stop-color="${SCORCH}" stop-opacity="0.85"/>
+    <stop offset="1" stop-color="${SCORCH}" stop-opacity="0"/></linearGradient></defs>`;
+}
+function s3Ground(W, H, accent, dmg) {
+  let o = paperGround(W, H);
+  if (dmg > 0.02) {
+    // Capped well above the footer's caption block: the fire eats the page,
+    // never the record printed below it, so the plate stays readable at any
+    // damage level.
+    const h = Math.min(60 + dmg * (H * 0.58), H - 1150);
+    o += `<rect x="0" y="${(H - h).toFixed(1)}" width="${W}" height="${h.toFixed(1)}" fill="url(#s3scorch)" opacity="${(0.35 + dmg * 0.45).toFixed(2)}"/>`;
+  }
+  return o;
+}
+const s3TitleColor = (dmg) => hexLerp(PT.ink, SCORCH, Math.min(dmg, 0.7) * 0.6);
+
+const S3 = [
+  { n: "01", p: 1, k: 1, slug: "the-page-about-ossul", title: "The Page About Ossul", where: "Ossul, nine decks down",
+    ph: "The first thing he put in is the first thing that goes.",
+    nt: "A meal, a stone, and a word he can no longer read his own handwriting well enough to burn honestly.",
+    art: s3ossul, glyph: "Ossul" },
+  { n: "02", p: 12, k: 2, slug: "a-world-that-asks-the-dead-one-question", title: "A World That Asks The Dead One Question", where: "Mrit'havn — never filed",
+    ph: "One question. Once. A life spent arriving at it.",
+    nt: "There is exactly one copy of this page anywhere, and it is between two fingers.",
+    art: s3askdead, glyph: "Sölrun" },
+  { n: "03", p: 16, k: 3, slug: "the-lesson-he-does-not-reread", title: "The Lesson He Does Not Reread", where: "Ilmarrow",
+    ph: "Three hundred and forty lessons, taught in full. The one after them, never.",
+    nt: "On the nights the fire will not catch, this is the page he reads for company. Not tonight.",
+    art: s3lesson, glyph: "Hallovar" },
+  { n: "04", p: 23, k: 4, slug: "the-thing-i-did-not-say-on-threnn", title: "The Thing I Did Not Say On Threnn", where: "Threnn",
+    ph: "She asked twice. He is about to burn the sentence unsaid, on purpose.",
+    nt: "A whole world built to make it easy. He did not do the easy thing.",
+    art: s3threnn, glyph: "The Ovai" },
+  { n: "05", p: 34, k: 5, slug: "the-shortest-page-in-the-case", title: "The Shortest Page In The Case", where: "[unrecorded]",
+    ph: "One sentence, and an apology for being one sentence.",
+    nt: "There was nothing to add that would not make it worse. He agrees.",
+    art: s3fish, glyph: "The Fish" },
+  { n: "06", p: 30, k: 6, slug: "the-table-that-was-the-entire-entry", title: "The Table That Was The Entire Entry", where: "His ship",
+    ph: "Run once more. Still lighter than the paper accounts for.",
+    nt: "He kept the discipline of leaving a number alone. He wants you to know what that cost tonight.",
+    art: s3weighing, glyph: "The Weight" },
+  { n: "07", p: 44, k: 7, slug: "the-world-that-named-it-after-me", title: "The World That Named It After Me", where: "Sorvann — never filed",
+    ph: "A stranger came, wrote everything down, and left. The marsh kept the name.",
+    nt: "He is burning the only page that says he meant to write back.",
+    art: s3sorvann, glyph: "Mörk" },
+  { n: "08", p: 47, k: 8, slug: "the-wall-with-the-number-on-it", title: "The Wall With The Number On It", where: "Kaunis",
+    ph: "A world that gets a wall, and a man who does not.",
+    nt: "The Vedrei carve their cost where the next generation trips over it. He has ninety pages and no wall.",
+    art: s3wall, glyph: "The Vedrei" },
+  { n: "09", p: 61, k: 9, slug: "the-only-page-i-did-not-write-alone", title: "The Only Page I Did Not Write Alone", where: "Ilyrsk — never filed",
+    ph: "A lineage never written down, until the night there was nobody left to say it.",
+    nt: "It ends on her name and nothing after. He built a good argument for keeping it. He is not keeping it.",
+    art: s3lineage, glyph: "Yska" },
+  { n: "10", p: 38, k: 10, slug: "the-map-i-never-showed-them", title: "The Map I Never Showed Them", where: "Six worlds",
+    ph: "The only table the six lines were ever laid on together.",
+    nt: "When this goes in, the map does not become harder to find. It stops existing.",
+    art: s3map, glyph: "The Bearing" },
+  { n: "11", p: 73, k: 11, slug: "four-names-and-nothing-else", title: "Four Names And Nothing Else", where: "[unrecorded]",
+    ph: "Four names, in his own hand. He can place two of them.",
+    nt: "Ræl and Tuvid go in with the rest of the page, already gone from everywhere else.",
+    art: s3fournames, glyph: "Ræl · Tuvid" },
+  { n: "12", p: 58, k: 12, slug: "the-page-where-i-worked-it-out", title: "The Page Where I Worked It Out", where: "His ship",
+    ph: "An archive of one author is not an archive. It is a self-portrait.",
+    nt: "He wrote the cure down clearly enough for a stranger to read cold, and kept going anyway.",
+    art: s3turn, glyph: "Skerrin" },
+  { n: "13", p: 91, k: 13, slug: "the-name-goes-last", title: "The Name Goes Last", where: "The case",
+    ph: "Written once, on purpose, in the one place nobody would ever go.",
+    nt: "The fire is that place now too. He knows it, and says so, and lets it burn anyway.",
+    art: s3name, glyph: "The Unnamed" },
+  { n: "14", p: null, k: 14, slug: "one-page-kept", title: "One Page Kept", where: "The case, emptied",
+    ph: "Ninety-one slots. Every one of them empty. One page, blank, going back in.",
+    nt: "A complete account is a finished one. A page with nothing on it cannot be Concluded.",
+    art: s3kept, glyph: "Kept" },
+].map((e) => ({ ...e, accent: e.p ? hexLerp(T.amber, "#6E2418", (e.k - 1) / 12) : "#C9B27A" }));
+
+const s3Plate = (e) => {
+  const dmg = e.p ? burnDmg(e.k) : 0;
+  const kept = !e.p;
+  const headTxt = kept ? "KINDLING · ONE PAGE KEPT" : `KINDLING · PAGE ${e.p} WITHDRAWN`;
+  const subTxt = kept
+    ? `<s>${esc(e.where)}</s> &nbsp;·&nbsp; SEASON THREE &nbsp;·&nbsp; THE KEPT PAGE`
+    : `<s>${esc(e.where)}</s> &nbsp;·&nbsp; KINDLING ${e.k} OF 14 &nbsp;·&nbsp; SEASON THREE`;
+  return `<!doctype html><html><head><meta charset="utf-8"><style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:${W}px;height:${H}px;background:${PT.paper1};font-family:${PT.sans};overflow:hidden}
+  .p{position:relative;width:${W}px;height:${H}px}
+  .bg{position:absolute;inset:0}.fr{position:absolute;inset:0;z-index:2}
+  .c{position:absolute;z-index:3}
+  .head{left:112px;right:76px;top:74px;display:flex;align-items:baseline;
+    font-family:${PT.mono};font-size:19px;letter-spacing:2.6px;color:${PT.inkFaint}}
+  .head b{color:${kept ? e.accent : PT.red};font-weight:600}
+  .ttl{left:112px;right:76px;top:132px}
+  .ttl h1{font-size:${kept ? 78 : 72}px;line-height:1.03;letter-spacing:-1.8px;color:${s3TitleColor(dmg)};font-weight:700}
+  .ttl .sub{margin-top:20px;font-family:${PT.mono};font-size:21px;color:${PT.inkDim};letter-spacing:.5px}
+  .ttl .sub s{text-decoration:none;color:${e.accent};font-weight:600}
+  .art{left:112px;top:360px;width:1012px;height:734px}
+  .foot{left:112px;right:76px;bottom:78px}
+  .foot .rule{height:1.5px;background:${PT.line};margin-bottom:24px}
+  .foot .ph{font-size:29px;line-height:1.32;color:${PT.ink};font-weight:600;letter-spacing:-.3px}
+  .foot .nt{margin-top:14px;font-size:22px;line-height:1.42;color:${PT.inkDim}}
+  .foot .bar{margin-top:26px;display:flex;align-items:center;gap:18px;
+    font-family:${PT.mono};font-size:17px;letter-spacing:1.7px;color:${PT.inkFaint}}
+  .foot .bar .sp{margin-left:auto;color:${e.accent}}
+</style></head><body><div class="p">
+  <svg class="bg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">${s3Defs(e.accent)}${s3Ground(W, H, e.accent, dmg)}</svg>
+  <svg class="fr" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">${kept ? keptFrame(76, 44, W - 152, H - 88, e.accent) : withdrawnFrame(76, 44, W - 152, H - 88, e.accent, dmg, e.k)}</svg>
+  <div class="c head"><b>${headTxt}</b>&nbsp;&nbsp;·&nbsp;&nbsp;L. MORKINSTAR</div>
+  <div class="c ttl">
+    <h1>${esc(e.title)}</h1>
+    <div class="sub">${subTxt}</div>
+  </div>
+  <svg class="c art" viewBox="0 0 1000 760">${e.art(e.accent, dmg)}</svg>
+  <div class="c foot">
+    <div class="rule"></div>
+    <div class="ph">${esc(e.ph)}</div>
+    <div class="nt">${esc(e.nt)}</div>
+    <div class="bar"><span>${esc(e.glyph.toUpperCase())}</span>
+      <span class="sp">THE MORKINSTAR JOURNALS · S3 · ${e.n} / 14</span></div>
+  </div>
+</div></body></html>`;
+};
+
 // ── render ──────────────────────────────────────────────────────────────────
 const only = process.argv[2];
 mkdirSync(OUT, { recursive: true });
@@ -880,11 +1340,14 @@ async function shoot(html, w, h, file) {
 }
 
 // arg forms:  (none) = everything · "07" = S1 plate 07 · "s2" = all S2 · "s2-04" = one S2 plate
+//             "s3" = all S3 · "s3-04" = one S3 plate
 const s2Only = only && only.startsWith("s2");
 const s2Pick = s2Only && only.includes("-") ? only.split("-")[1] : null;
+const s3Only = only && only.startsWith("s3");
+const s3Pick = s3Only && only.includes("-") ? only.split("-")[1] : null;
 
 if (!only) await shoot(cover(), 1200, 630, "00-series-cover.png");
-if (!s2Only) {
+if (!s2Only && !s3Only) {
   for (const e of ENTRIES) {
     if (only && only !== e.n) continue;
     await shoot(plate(e), W, H, `s1-${e.n}-${e.slug}.png`);
@@ -894,6 +1357,12 @@ if (!only || s2Only) {
   for (const e of S2) {
     if (s2Pick && s2Pick !== e.n) continue;
     await shoot(paperPlate(e), W, H, `s2-${e.n}-${e.slug}.png`);
+  }
+}
+if (!only || s3Only) {
+  for (const e of S3) {
+    if (s3Pick && s3Pick !== e.n) continue;
+    await shoot(s3Plate(e), W, H, `s3-${e.n}-${e.slug}.png`);
   }
 }
 await browser.close();

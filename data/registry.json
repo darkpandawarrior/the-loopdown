@@ -5,7 +5,7 @@
     "lessons": 17,
     "cast": 10,
     "series": 8,
-    "anthology": 20
+    "anthology": 34
   },
   "archive": [
     {
@@ -980,6 +980,11 @@
         "n": 2,
         "title": "The Ninety-One Pages",
         "blurb": "He stops filing. Each page must contain something nobody has ever written down."
+      },
+      {
+        "n": 3,
+        "title": "The Kindling",
+        "blurb": "He burns ninety pages of his own case, on purpose, to stay alive, then keeps one blank."
       }
     ],
     "entries": [
@@ -1439,6 +1444,330 @@
           "ossul",
           "archives",
           "finale"
+        ]
+      },
+      {
+        "season": 3,
+        "idx": 1,
+        "title": "The Page About Ossul",
+        "slug": "the-page-about-ossul",
+        "file": "fiction/morkinstar-journals/s3-01-the-page-about-ossul.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s3-01-the-page-about-ossul.jpg",
+        "entry": null,
+        "page": "1",
+        "planet": "",
+        "system": "",
+        "phenomenon": "",
+        "blurb": "I wrote the last page of this case first and forgot what that did to the count. Tonight I found out, and the first thing out of the case is the first thing that ever went in: a meal, a stone, and a word I can no longer read my own handwriting well enough to burn honestly.",
+        "words": "892",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "season-3",
+          "ossul",
+          "kindling"
+        ]
+      },
+      {
+        "season": 3,
+        "idx": 2,
+        "title": "A World That Asks The Dead One Question",
+        "slug": "a-world-that-asks-the-dead-one-question",
+        "file": "fiction/morkinstar-journals/s3-02-a-world-that-asks-the-dead-one-question.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s3-02-a-world-that-asks-the-dead-one-question.jpg",
+        "entry": null,
+        "page": "12",
+        "planet": "",
+        "system": "",
+        "phenomenon": "",
+        "blurb": "Page twelve was a world I never filed: one question, once, to your dead, a stone you spend a lifetime arguing with, and a woman who tended other people's smoke for forty years because she could not get her own question down past three lines.",
+        "words": "798",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "season-3",
+          "unseen-page"
+        ]
+      },
+      {
+        "season": 3,
+        "idx": 3,
+        "title": "The Lesson He Does Not Reread",
+        "slug": "the-lesson-he-does-not-reread",
+        "file": "fiction/morkinstar-journals/s3-03-the-lesson-he-does-not-reread.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s3-03-the-lesson-he-does-not-reread.jpg",
+        "entry": null,
+        "page": "16",
+        "planet": "",
+        "system": "",
+        "phenomenon": "",
+        "blurb": "Page sixteen is Ilmarrow, and the god who taught his own replacements until he ran out of time by exactly one lesson. He holds it, does not reread it, and tells us the real reason why.",
+        "words": "977",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "grief",
+          "memory",
+          "teaching"
+        ]
+      },
+      {
+        "season": 3,
+        "idx": 4,
+        "title": "The Thing I Did Not Say On Threnn",
+        "slug": "the-thing-i-did-not-say-on-threnn",
+        "file": "fiction/morkinstar-journals/s3-04-the-thing-i-did-not-say-on-threnn.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s3-04-the-thing-i-did-not-say-on-threnn.jpg",
+        "entry": null,
+        "page": "23",
+        "planet": "",
+        "system": "",
+        "phenomenon": "",
+        "blurb": "He takes page twenty three out of the case, the one where a whole world offered to listen, and finds he still has not said the thing, and is about to burn it unsaid on purpose.",
+        "words": "447",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "confession",
+          "silence"
+        ]
+      },
+      {
+        "season": 3,
+        "idx": 5,
+        "title": "The Shortest Page In The Case",
+        "slug": "the-shortest-page-in-the-case",
+        "file": "fiction/morkinstar-journals/s3-05-the-shortest-page-in-the-case.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s3-05-the-shortest-page-in-the-case.jpg",
+        "entry": null,
+        "page": "34",
+        "planet": "",
+        "system": "",
+        "phenomenon": "",
+        "blurb": "The shortest page in the case is one sentence and an apology for being one sentence. He burns it faster than he can explain why he wrote it.",
+        "words": "280",
+        "tags": [
+          "morkinstar-journals",
+          "season-three",
+          "fiction"
+        ]
+      },
+      {
+        "season": 3,
+        "idx": 6,
+        "title": "The Table That Was The Entire Entry",
+        "slug": "the-table-that-was-the-entire-entry",
+        "file": "fiction/morkinstar-journals/s3-06-the-table-that-was-the-entire-entry.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s3-06-the-table-that-was-the-entire-entry.jpg",
+        "entry": null,
+        "page": "30",
+        "planet": "",
+        "system": "",
+        "phenomenon": "",
+        "blurb": "Page thirty was never a story, only a table: three weighings and a difference that would not sit still. Tonight he runs the same table one more time before he burns it, and the case comes out lighter than the paper in his hand can account for.",
+        "words": "802",
+        "tags": [
+          "world-building",
+          "sci-fi",
+          "framed-narrative",
+          "season-3",
+          "archives",
+          "measurement",
+          "kindling"
+        ]
+      },
+      {
+        "season": 3,
+        "idx": 7,
+        "title": "The World That Named It After Me",
+        "slug": "the-world-that-named-it-after-me",
+        "file": "fiction/morkinstar-journals/s3-07-the-world-that-named-it-after-me.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s3-07-the-world-that-named-it-after-me.jpg",
+        "entry": null,
+        "page": "44",
+        "planet": "",
+        "system": "",
+        "phenomenon": "",
+        "blurb": "A marsh world I visited once, wrote down, and left. Long after, it gave its unnamed fourteenth a name, and the name was mine.",
+        "words": "810",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "unseen-page"
+        ]
+      },
+      {
+        "season": 3,
+        "idx": 8,
+        "title": "The Wall With The Number On It",
+        "slug": "the-wall-with-the-number-on-it",
+        "file": "fiction/morkinstar-journals/s3-08-the-wall-with-the-number-on-it.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s3-08-the-wall-with-the-number-on-it.jpg",
+        "entry": null,
+        "page": "47",
+        "planet": "",
+        "system": "",
+        "phenomenon": "",
+        "blurb": "Page forty seven was the good one. The Vedrei carve their cost into a wall and resurface it every generation so nobody stops reading it. He has no wall. He is about to have less of one.",
+        "words": "370",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "archives",
+          "calendars",
+          "kindling"
+        ]
+      },
+      {
+        "season": 3,
+        "idx": 9,
+        "title": "The Only Page I Did Not Write Alone",
+        "slug": "the-only-page-i-did-not-write-alone",
+        "file": "fiction/morkinstar-journals/s3-09-the-only-page-i-did-not-write-alone.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s3-09-the-only-page-i-did-not-write-alone.jpg",
+        "entry": null,
+        "page": "61",
+        "planet": "",
+        "system": "",
+        "phenomenon": "",
+        "blurb": "Page sixty-one is the only page in the case he did not write alone. He builds a very good reason to keep it anyway, and burns it exactly like the other eighty-nine.",
+        "words": "1097",
+        "tags": [
+          "morkinstar-journals",
+          "season-three",
+          "fiction"
+        ]
+      },
+      {
+        "season": 3,
+        "idx": 10,
+        "title": "The Map I Never Showed Them",
+        "slug": "the-map-i-never-showed-them",
+        "file": "fiction/morkinstar-journals/s3-10-the-map-i-never-showed-them.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s3-10-the-map-i-never-showed-them.jpg",
+        "entry": null,
+        "page": "38",
+        "planet": "",
+        "system": "",
+        "phenomenon": "",
+        "blurb": "Page thirty eight is six worlds, six fences, and three old wars nobody knows they are still fighting. He is the only entity who has ever seen all six lines on one table, and in a minute there will be nobody who has.",
+        "words": "855",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "archives",
+          "kindling"
+        ]
+      },
+      {
+        "season": 3,
+        "idx": 11,
+        "title": "Four Names And Nothing Else",
+        "slug": "four-names-and-nothing-else",
+        "file": "fiction/morkinstar-journals/s3-11-four-names-and-nothing-else.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s3-11-four-names-and-nothing-else.jpg",
+        "entry": null,
+        "page": "73",
+        "planet": "",
+        "system": "",
+        "phenomenon": "",
+        "blurb": "Page seventy three is four names in his hand and nothing else. He can place two of them. He tries very hard on the other two, and loses, and cannot decide whose fault that is.",
+        "words": "580",
+        "tags": [
+          "morkinstar-journals",
+          "season-three",
+          "fiction",
+          "kindling"
+        ]
+      },
+      {
+        "season": 3,
+        "idx": 12,
+        "title": "The Page Where I Worked It Out",
+        "slug": "the-page-where-i-worked-it-out",
+        "file": "fiction/morkinstar-journals/s3-12-the-page-where-i-worked-it-out.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s3-12-the-page-where-i-worked-it-out.jpg",
+        "entry": null,
+        "page": "58",
+        "planet": "",
+        "system": "",
+        "phenomenon": "",
+        "blurb": "Page fifty eight is where I ruled out everyone who could have reached the case and worked out, in my own hand, that an archive of one author is a self portrait. I am burning the only proof I understood that, and there will be no way to tell, once it is ash, whether that makes me right or simply lucky.",
+        "words": "947",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "season-3",
+          "skerrin",
+          "self-portrait",
+          "kindling"
+        ]
+      },
+      {
+        "season": 3,
+        "idx": 13,
+        "title": "The Name Goes Last",
+        "slug": "the-name-goes-last",
+        "file": "fiction/morkinstar-journals/s3-13-the-name-goes-last.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s3-13-the-name-goes-last.jpg",
+        "entry": null,
+        "page": "91",
+        "planet": "",
+        "system": "",
+        "phenomenon": "",
+        "blurb": "Page ninety-one is the last page in the case, the fourteenth's name, written once and on purpose in the one place he was certain nobody would ever go. Tonight the fire is that place too, and he knows it, and says so before he lets it burn.",
+        "words": "1098",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "season-3",
+          "cendre",
+          "kindling"
+        ]
+      },
+      {
+        "season": 3,
+        "idx": 14,
+        "title": "One Page Kept",
+        "slug": "one-page-kept",
+        "file": "fiction/morkinstar-journals/s3-14-one-page-kept.md",
+        "plate": "fiction/morkinstar-journals/assets/web/s3-14-one-page-kept.jpg",
+        "entry": null,
+        "page": "0",
+        "planet": "",
+        "system": "",
+        "phenomenon": "",
+        "blurb": "The case is empty, and the rule says he has to keep one page holding something nobody has ever written down. He goes looking for that in everything he has ever been, finds nothing, and understands, at last, what the only unwritten thing left in this case could only ever be.",
+        "words": "891",
+        "tags": [
+          "world-building",
+          "mythology",
+          "sci-fi",
+          "framed-narrative",
+          "season-3",
+          "finale",
+          "kindling",
+          "vaehn",
+          "skerrin",
+          "the-concluded"
         ]
       }
     ],

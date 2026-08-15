@@ -12,7 +12,7 @@ status: draft
 tags: [morkinstar-journals, season-three, fiction, kindling]
 words: 580
 blurb: "Page seventy three is four names in his hand and nothing else. He can place two of them. He tries very hard on the other two, and loses, and cannot decide whose fault that is."
-lore: morkinstar-journals
+lore: [morkinstar-journals]
 ---
 
 # Four Names And Nothing Else

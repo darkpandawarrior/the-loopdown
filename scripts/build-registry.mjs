@@ -77,6 +77,7 @@ if (existsSync(ficDir)) {
   const s1Files = ["../../archive/legend-of-koaeluae-scales.md",
     ...readdirSync(ficDir).filter((f) => /^\d\d-.*\.md$/.test(f)).sort()];
   const s2Files = readdirSync(ficDir).filter((f) => /^s2-\d\d-.*\.md$/.test(f)).sort();
+  const s3Files = readdirSync(ficDir).filter((f) => /^s3-\d\d-.*\.md$/.test(f)).sort();
   const webDir = join(ficDir, "assets/web");
   const plates = existsSync(webDir) ? readdirSync(webDir) : [];
   const plateFor = (season, idx) =>
@@ -119,8 +120,9 @@ if (existsSync(ficDir)) {
     seasons: [
       { n: 1, title: "The Directory", blurb: "He files. Ten entries, each a world's legend and the phenomenon it explains." },
       { n: 2, title: "The Ninety-One Pages", blurb: "He stops filing. Each page must contain something nobody has ever written down." },
+      { n: 3, title: "The Kindling", blurb: "He burns ninety pages of his own case, on purpose, to stay alive, then keeps one blank." },
     ],
-    entries: [...s1Files.map(entryOf(1)), ...s2Files.map(entryOf(2))],
+    entries: [...s1Files.map(entryOf(1)), ...s2Files.map(entryOf(2)), ...s3Files.map(entryOf(3))],
     starmap: existsSync(starmapPath) ? JSON.parse(readFileSync(starmapPath, "utf8")) : null,
     witnesses,
   };
