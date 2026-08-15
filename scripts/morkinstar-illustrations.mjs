@@ -42,36 +42,43 @@ const FORCE = process.argv.includes("--force");
 // twenty prompts. Ink and wash on aged paper is the right register: this is a
 // correspondent's field journal, and a field journal is drawn, not photographed.
 const STYLE =
-  "Hand-drawn ink and wash portrait in the style of a nineteenth century naturalist's field journal. " +
-  "Loose confident pen linework with visible crosshatching, a single muted wash tone, aged paper ground with " +
-  "slight foxing at the edges. Warm, particular, human, a little caricatured in the way a good field sketch " +
-  "exaggerates the one feature the artist actually noticed. Not photorealistic, not digital painting, not 3D. " +
-  "Absolutely no text, no lettering, no captions, no signatures, no borders or frames anywhere in the image.";
+  "Ink and wash on aged foxed paper, loose confident pen linework, heavy crosshatching, a single " +
+  "muted sepia tone, the register of a nineteenth century naturalist's field plate. The MEDIUM is " +
+  "restrained and hand-drawn; the SUBJECT is not of this world. This is a rendering produced by a " +
+  "translation instrument, so it may resolve cleanly, or strain, or fail at its edges. " +
+  "CRITICAL: the subject is a non-human intelligent being. Not a person in costume. Not a human " +
+  "with an ornament. No human clothing of any period, no coats, no hats, no spectacles. " +
+  "Emotion must be carried by posture, tension and where the attention is aimed, NOT by a human " +
+  "face and NOT by eyes. Several of these have no face at all. " +
+  "The HANDS or manipulators must stay clearly legible and busy with their task: that is the " +
+  "entire emotional anchor of the image. However strange the body, the hands read as a person " +
+  "doing careful work. " +
+  "Absolutely no text, lettering, captions, signatures, numerals, borders or frames.";
 
 // The tellers. Each is a real person inside a story, named in the canon, and the
 // brief is the one thing that story says they DID, because that is what a field
 // sketch is of: not a face, a person caught mid-doing.
 const WITNESSES = [
   { id: "feeriko", from: "s1-01",
-    brief: "A young woman in heavy fur-lined winter clothing, sitting cross-legged on sea ice beside a fishing hole, mid-sentence, one hand raised in explanation. She is talking someone out of giving up and she has been talking for a long time. Exhausted and animated at once." },
+    brief: "A tall narrow non-human figure seated cross-legged on sea ice beside a cut fishing hole, mid-sentence, one long hand raised in explanation. God-blooded: cold light moves under translucent skin, and overlapping serpent scales surface along the forearms where frost once bit. Fine snow is falling OUT of the figure rather than onto it, drifting up off the shoulders. Long multi-jointed fingers, entirely legible. Exhausted and animated at once. She has been talking a very long time and cannot stop." },
   { id: "tveggi", from: "s1-02",
-    brief: "A deaf child kneeling on ice in a thin freezing landscape, scratching a single vertical mark into flat stone with a burnt stick. Total concentration. She is the only person on her world who can still count, and she has just realised a name does not have to be a sound." },
+    brief: "A small non-human child-form kneeling on ice, cutting a single vertical mark into flat stone with a burnt stick. The world around is smeared and vibrating with sound made visible, all motion and interference. The figure alone is drawn in absolute stillness, perfectly sharp, silent. Along the lower jaw of this species runs a long fringed sensory membrane; on this one the jaw is smooth and bare, the membrane absent. The cut mark is the single brightest thing in the frame." },
   { id: "soebra", from: "s1-03",
-    brief: "A middle-aged clerk in a small boat, hunched protectively over a wet bark scroll, writing fast in shorthand while spray comes over the side. A tally-keeper doing her job in bad conditions while something enormous happens just out of frame." },
+    brief: "A low wide-stanced non-human form crouched in a small boat, long prehensile toes gripping the hull, writing fast onto wet bark with a fine stylus. Spray coming over the side. The tally being written runs off the bark, over the gunwale, out across the water in a continuous line to the horizon and does not end. The bark is already smouldering at one corner in the hands that hold it." },
   { id: "soelvi", from: "s1-04",
-    brief: "A lone figure walking an empty road under a completely empty sky, mouth open, speaking aloud to nobody at their left shoulder. The posture of conversation: head slightly turned, hand gesturing to a listener who is not there." },
+    brief: "A lone non-human figure walking an empty road under an empty sky. The body is bilaterally asymmetric: one entire side is formed to interlock with a second body, with a shortened shoulder, a socketed flank and a hand shaped to fit another hand. Beside that side, where the pair should be, there is a clean torn HOLE IN THE PAPER in the shape of a person. Not a ghost, not a shadow: an absence with a hard edge. The figure gestures toward it, mid-conversation." },
   { id: "aedri", from: "s1-05",
-    brief: "A woman holding a stranger in a full two-armed embrace in a doorway, eyes open over the stranger's shoulder, counting. Warmth and vigilance in the same face at the same moment." },
+    brief: "Two non-human forms in a full two-armed embrace in a doorway. The near one is drawn in dense ink and blooming heat, with broad flanged heat-shedding plates along the forearms and spine that have spread open with the arms. The one being held is drawn in NOTHING: an unrendered void in the exact shape of a held body, blank paper. The warm one's hands are locked and counting." },
   { id: "hild-ronn", from: "s1-06",
-    brief: "A stonemason, powerfully built, standing waist-deep in a narrow grave shaft she has just dug, looking up along a ridge line. A surveying instrument of stone rests on the lip of the shaft beside her hands." },
+    brief: "An enormous columnar non-human form, massively built and heat-retaining, standing waist deep in a narrow grave shaft on a cold ridge. Behind and beside it a line of upright buried forms recedes to the horizon and beyond, thousands upon thousands, every one aimed the same way. The great blunt hands set a fitted stone, and among the blunt digits is one small precise finger doing the fine work. Scale: the figure dwarfs the shaft, the shaft dwarfs the viewer." },
   { id: "the-cendran-child", from: "s1-07",
-    brief: "A six or seven year old child sitting alone on the floor of a plain room with one window, holding an oversized stylus, one blank page in front of them. The room is completely empty of books. They have been asked for one thing nobody has ever said." },
+    brief: "A very small non-human child-form seated alone on the floor of a plain empty room, holding an oversized stylus in both hands over one blank page. Behind, filling most of the frame, an enormous fire consuming a mountain of pages, ninety-one burnings' worth. The blank page in the small hands is the brightest object in the image. The room contains no books at all." },
   { id: "ilta", from: "s1-08",
-    brief: "An ordinary, slightly irritating-looking woman caught mid-stride walking around behind something very large that is deliberately left out of frame. Everyone else in the scene faces the other way. She is the only one moving." },
+    brief: "A non-human figure caught mid-stride, walking around behind something vast. That vast thing is rendered so both of its facings are visible at once in a single impossible silhouette: a giving, opening, benevolent form and a taking, closing, devouring form occupying the same outline simultaneously. Everyone else in the scene faces the other way and sees only one of them. She is the only one moving, and the only one positioned to see both." },
   { id: "ossul", from: "s2-01",
-    brief: "An old archive clerk at a desk in a small windowless room nine decks down, one lamp, shelves of unread queues behind him. A second chair sits beside the desk, empty, plainly carried in from somewhere else." },
+    brief: "A REFUSAL of a portrait. A small windowless archive room nine decks down, one oil lamp, a desk, shelves of bundled unread queues. On the desk, two clearly drawn non-human hands at work on paperwork. Where the body and head should resolve, the rendering does not: the figure breaks up into unresolved paper grain, hatching that fails, blank ground. Beside the desk, plainly drawn and completely solid, an empty second chair carried in from somewhere else." },
   { id: "hallovar", from: "s2-04",
-    brief: "An ageing teacher at a lectern, mid-lesson, one hand shaking slightly as he writes. Students out of focus in front of him. He is patient and visibly tired and he is running out of time and knows the exact hour." },
+    brief: "One frame holding two scales at once. In the foreground a non-human teacher-form at a lectern, tired, mid-lesson, writing with many-jointed hands, one of which is visibly unsteady. Behind and around, the same figure rendered at the scale of a world, hands braced against the tilted axis of a planet, holding its seasons still. Students out of focus below. Both scales are true at the same time and one of them is running out of time." },
 ];
 
 const est = (n) => (n * 1290 * 12) / 1e6; // gemini-3-pro-image: ~1290 out tok/image, $12/Mtok

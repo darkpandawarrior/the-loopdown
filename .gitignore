@@ -52,3 +52,6 @@ graphify-out/
 fiction/morkinstar-journals/assets/*.png
 fiction/morkinstar-journals/site.html
 fiction/morkinstar-journals/assets/the-fourteen.png
+# Superseded first-pass witness portraits: ten humans in period costume, kept
+# locally as a record of the failure and not worth 19MB in history.
+fiction/morkinstar-journals/assets/witnesses-v1/

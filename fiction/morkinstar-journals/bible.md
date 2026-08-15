@@ -135,6 +135,36 @@ Every law is visible in the 2021 original. Nothing here was bolted on.
    further contact indicated.* 611 worlds at #2296. 612 at #2300. All populated. All well.
    The Væhn child's word for the fourteenth renders as **Done**.
 
+## The Rendering (added 2026-08-15, series-level)
+
+Everything in this anthology reached the reader through **a translation rig and a Directory form**.
+Both are established in the text: the rig "renders", it is argued with, its renderings vary
+between tellings and sometimes fail; the Directory has spent sixty galaxals copying unverified
+first impressions forward. **"Bipedal category species" is not an observation. It is a checkbox.**
+
+So no description in thirty entries is a photograph. Every one is a rendering.
+
+This is not a retcon. It is what the frame always was, and the Template Hypothesis is the proof:
+the correspondent's great wrong idea was that the Directory pressed a familiar shape onto the
+worlds it filed. He was wrong about the count of fourteen because he tested it on the **gods**.
+**He never tested it on the bodies.**
+
+Three things follow, and all three are load-bearing:
+
+1. **The art may go as far as it likes.** A plate that resolves cleanly means the rig held. A
+   figure half-dissolved into what it actually is means the rig strained. Hands in an unrendered
+   void means it failed. **Ossul is a refusal**, because his species is never named anywhere in
+   thirty entries and the instrument does not get to invent one.
+2. **Variance between plates is canon, not inconsistency.** A teller who reads humanlike is a
+   rendering that resolved toward the familiar, which is exactly what a Directory instrument
+   would do, and the reader is entitled to distrust it.
+3. **The correspondent has no body.** He is never described, never given a species, never named
+   as anything, across the entire corpus. Everyone else at least got a rendering. He did not.
+   **The only thing he is, is the account.** Season Three is built on that, and it is why burning
+   the case is not an escape.
+
+Full doctrine and the ten renderings: [`species.md`](species.md).
+
 ### Warmth, never contempt
 
 Four cultures in a row go out of their way to tell Morkinstar their monster meant no harm.
