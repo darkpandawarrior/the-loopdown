@@ -218,3 +218,47 @@ Anyone touching this repo should read these before "fixing" something.
    Rendering. See `species.md`.
 5. **Season 3's visible burns are a selection**, not all ninety. Most of the case empties
    off-page. Seeded early on purpose.
+
+---
+
+## The art revamp, and the two defects that survived a verify pass
+
+The last pass composited the tellers **into** the plates, dropped the sigils back to large faint
+watermarks, banded Season One as a received relay transmission, and added a registration mark.
+An automated verify agent found and fixed four collisions (Feeriko over the s1-01 clock circle,
+the Cendran Child over the s1-07 page box, a z-order bug where s2-04's panel painted over
+Hallovar, Ossul over the s2-01 chairs) and declared s1-02 clean.
+
+**s1-02 was not clean, and the verifier was not entirely wrong either.** Cropped and upscaled,
+Tveggi is perfectly legible at full resolution — a kneeling figure, a stone, a burnt stick. But
+the portrait terminated in a hard rectangle, and the site shows these as thumbnail cards, where
+a hard-edged warm rectangle on a dark plate reads as a pasted grey box. The verifier checked
+legibility. The defect was in the edges.
+
+The cause is the kind that survives review because the code says the right thing:
+
+- `witness()` **already had** a radial feather mask. It faded nothing. The gradient ran
+  `r="0.6"` with its transparent stop at `1.0`, and a `radialGradient` in `objectBoundingBox`
+  units is an **ellipse matched to the box** — `r=0.5` only just reaches the edge midpoints and
+  the corners sit out near `0.707`. The mask was still fully opaque where the rectangle ended.
+  Stops now finish at `0.44`.
+
+The second defect is the mirror image — a deliberate choice taken one step too far:
+
+- Plate 14 is the one undamaged object in Season Three and it carried **the one unreadable
+  label in the season**. `KEPT` was drawn in the entry's accent at 0.8 opacity on pale paper,
+  about **1.4:1**. Every `WITHDRAWN` stamp reads fine because it uses solid ink-weight red.
+  Quiet is a matter of *treatment*, not of contrast: the badge now takes its calm from what it
+  does not do — no rotation, no heavy rule, no red — and keeps the accent as a bar down the left
+  edge, where colour decorates rather than carries the word.
+
+Both shipped in `3bac146`, and `cv-siddharth` PR #30 regenerates against that commit so the
+site gets the fixed renders rather than the pre-fix ones.
+
+### The lesson worth keeping
+
+Twice now the failure has been **an intention encoded correctly and executed into nothing**: a
+frontmatter parser that checked for an array after the quotes had been stripped, a strip regex
+that left a blank line so `^#` never matched, and now a feather whose gradient never reached the
+edge. In all three the code reads as if it works. Only the artifact says otherwise. **Look at
+the output, at the size it will actually be seen.**
