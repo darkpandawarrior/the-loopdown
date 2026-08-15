@@ -36,8 +36,8 @@ inside it.
 > one tells about its own weather. Every world independently reports fourteen gods and fourteen
 > monsters. Nobody anywhere can name the fourteenth.
 
-- **[Read it in the browser →](fiction/morkinstar-journals/site.html)** (one self-contained file,
-  both seasons, every plate)
+- **[Read it on the site →](https://cv-siddharth.vercel.app/anthology)** (both seasons, every entry,
+  the plates, the tellers and the starmap)
 - Canon: [S1 bible](fiction/morkinstar-journals/bible.md) · [S2 bible](fiction/morkinstar-journals/s2-bible.md)
 - Both seasons were audited by multi-lens councils plus cross-family ensembles:
   [S1](fiction/morkinstar-journals/council-2026-08-15.md) ·

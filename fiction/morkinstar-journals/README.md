@@ -8,7 +8,7 @@ seasons: 2
 
 # The Morkinstar Journals
 
-![The Morkinstar Journals](assets/00-series-cover.png)
+![The Morkinstar Journals](assets/web/00-series-cover.jpg)
 
 > Fourteen gods. Fourteen monsters. Thirteen names.
 > Nobody will tell me the fourteenth.
@@ -20,8 +20,11 @@ each one tells about its own weather.
 Entry #2245 was written in 2021 and lives in [`archive/`](../../archive/legend-of-koaeluae-scales.md).
 It had the whole frame in it and did not know it was a series yet. The other nineteen grew out of it.
 
-**Read it in the browser:** [`site.html`](site.html) — every entry, both seasons, with plates.
-Rebuild with `node scripts/morkinstar-site.mjs`.
+**Read it on the site:** <https://cv-siddharth.vercel.app/anthology> — both seasons, every entry,
+the plates, the tellers and the starmap.
+
+A self-contained local copy can be rebuilt any time with `node scripts/morkinstar-site.mjs`.
+It is gitignored because it is 2.2MB of generated output that changes on every run.
 
 ---
 
