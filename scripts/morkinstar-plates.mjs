@@ -1311,7 +1311,7 @@ const s3Plate = (e) => {
     <div class="rule"></div>
     <div class="ph">${esc(e.ph)}</div>
     <div class="nt">${esc(e.nt)}</div>
-    <div class="bar"><span>${esc(e.glyph.toUpperCase())}</span>
+    <div class="bar"><span style="color:${hexLerp(PT.inkFaint, "#C7B58C", Math.min(dmg * 1.6, 1))}">${esc(e.glyph.toUpperCase())}</span>
       <span class="sp">THE MORKINSTAR JOURNALS · S3 · ${e.n} / 14</span></div>
   </div>
 </div></body></html>`;

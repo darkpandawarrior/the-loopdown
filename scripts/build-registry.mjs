@@ -94,6 +94,10 @@ if (existsSync(ficDir)) {
       file: f.startsWith("../") ? "archive/legend-of-koaeluae-scales.md" : `fiction/morkinstar-journals/${f}`,
       plate: plateFor(season, idx) ? `fiction/morkinstar-journals/assets/web/${plateFor(season, idx)}` : "",
       entry: fm.entry ?? null, page: fm.page ?? null,
+      // Season 3 only: which of the fourteen burnings this is. The reading page
+      // uses it to deepen the scorch across the season from data rather than a
+      // hardcoded slug, so it has to survive the registry hop.
+      kindling: fm.kindling ?? null,
       planet: fm.planet ?? "", system: fm.system ?? "",
       phenomenon: fm.phenomenon ?? "", blurb: fm.blurb ?? "",
       words: fm.words ?? "", tags: fm.tags ?? [],
