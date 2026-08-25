@@ -59,6 +59,12 @@ jobs:
           for d in lessons/*/; do
             node scripts/lint-voice.mjs "$d" || fail=1
           done
+          # fiction/** was never in this loop, so no published entry has ever
+          # been linted for anything, including the residue-tag check lint-voice.mjs
+          # just learned. Same gate as the lessons above, not a separate one:
+          # this is the fix for s3-09 shipping `</content>` for weeks after its
+          # source was already clean, and a second, softer gate would repeat it.
+          node scripts/lint-voice.mjs fiction/morkinstar-journals || fail=1
           exit $fail
 
       - name: Graphics render smoke test
