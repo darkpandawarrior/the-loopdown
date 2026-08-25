@@ -119,10 +119,24 @@ if (existsSync(ficDir)) {
   const witPath = join(ficDir, "witnesses.json");
   const witDir = join(ficDir, "assets/witnesses");
   const drawn = existsSync(witDir) ? readdirSync(witDir).filter((f) => f.endsWith(".png")) : [];
+  // A teller without a portrait still ships, with art: "".
+  //
+  // This used to FILTER on the drawn file existing, which quietly discarded any
+  // teller who had been harvested but not yet drawn. Season Four's fourteen
+  // landed and the roster went from 20 to 34 while the registry stayed at 20,
+  // because none of them had a portrait: the canon fix was correct and
+  // invisible, and nothing said so.
+  //
+  // The site has handled this state since the tellers tab was rebuilt. It draws
+  // a deliberate undrawn card rather than a broken image, on the same footing
+  // as the argued absences, because law five is about who told it and a missing
+  // drawing is not a missing teller. Dropping the record was the generator
+  // deciding a person does not exist until an illustrator gets to them.
   const witnesses = existsSync(witPath)
-    ? JSON.parse(readFileSync(witPath, "utf8")).witnesses
-        .filter((w) => drawn.includes(`${w.id}.png`))
-        .map((w) => ({ ...w, art: `fiction/morkinstar-journals/assets/witnesses/${w.id}.png` }))
+    ? JSON.parse(readFileSync(witPath, "utf8")).witnesses.map((w) => ({
+        ...w,
+        art: drawn.includes(`${w.id}.png`) ? `fiction/morkinstar-journals/assets/witnesses/${w.id}.png` : "",
+      }))
     : [];
 
   // The seasons array is the discovery list: `filesFor` reads the number off it.
