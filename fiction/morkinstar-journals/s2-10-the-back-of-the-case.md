@@ -30,9 +30,9 @@ Whatever this case becomes. Whoever opens it last, whenever that is, whatever st
 
 Some of you will remember Entry #2284, from Cendre, the hardest thing I ever filed: ninety-one pages kept across four thousand clicks by a people who burn everything else on purpose, and on the oldest of them, a single word, the true name of the fourteenth. I read it. I told you I was not going to write it down, and gave you the small honest reason instead of the noble one, because the noble one would have been a lie. My logbook was the thing I opened every day of my life, and I did not want to see that word waiting in it.
 
-Season one ended with me finding out what it renders as. A few of you asked, gently, whether I meant to say it myself now that the excuse of not knowing was gone.
+The last entry I ever filed ended with me finding out what it renders as. A few of you asked, gently, whether I meant to say it myself now that the excuse of not knowing was gone.
 
-I have not, not once, across nine pages. There is a version of this season where I never do, where the not saying it becomes its own discipline. I considered it seriously.
+I have not, not once, across nine pages. There is a version of this case where I never do, where the not saying it becomes its own discipline. I considered it seriously.
 
 Here is what moved me off it. I already know, and have known since a page I am not putting in this account taught it to me the hard way, exactly what every mark in this case costs: writing a thing down does not make it safer, it makes the case heavier, by exactly that much, and there is no version of tonight where this word does anything different. That was never the question keeping me up, and pretending it suddenly matters now would be cowardice dressed up as caution. The weight was already spent. What was left to decide was narrower: not whether the word gets written, but where a written thing is safest once it exists.
 
