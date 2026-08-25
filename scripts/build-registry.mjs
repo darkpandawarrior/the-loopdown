@@ -147,12 +147,43 @@ if (existsSync(ficDir)) {
     { n: 4, title: "The Standing Charge", blurb: "Fourteen notices, posted on a public wall in a city built to the dimensions of his own filing. Each one carries the schedule it will be painted over on, in its first line." },
   ];
 
+  // Unfiled work: fiction set in this universe that has not been given a season,
+  // a series, or a designation. Discovered by the `pilot-` prefix rather than by
+  // frontmatter, for the same reason the seasons are discovered by filename:
+  // a rule you can see in `ls` does not drift from the rule in the generator.
+  //
+  // It is a SEPARATE array on purpose, not a season zero and not an extra row in
+  // `entries`. Four seasons and forty-eight entries are load-bearing numbers,
+  // asserted by guards on both sides of the registry hop and printed on four
+  // pages, and an unfiled piece is not one of the forty-eight. It is what the
+  // corpus calls it: a designation that has not been assigned.
+  const unfiled = ficFiles
+    .filter((f) => /^pilot-.*\.md$/.test(f))
+    .sort()
+    .map((f, i) => {
+      const fm = read(f);
+      return {
+        idx: i + 1,
+        slug: fm.slug,
+        title: fm.title,
+        file: `fiction/morkinstar-journals/${f}`,
+        // The frontmatter's own answer, printed rather than resolved. The corpus
+        // uses square brackets for a value a form requires and nobody has filled
+        // in, so "[unassigned]" is the designation, not a missing one.
+        series: fm.series ?? "[unassigned]",
+        blurb: fm.blurb ?? "",
+        words: fm.words ?? "",
+        tags: fm.tags ?? [],
+      };
+    });
+
   anthology = {
     slug: "the-morkinstar-journals",
     title: "The Morkinstar Journals",
     tagline: "Fourteen gods. Fourteen monsters. Thirteen names.",
     seasons,
     entries: seasons.flatMap((s) => filesFor(s.n).map(entryOf(s.n))),
+    unfiled,
     starmap: existsSync(starmapPath) ? JSON.parse(readFileSync(starmapPath, "utf8")) : null,
     witnesses,
   };

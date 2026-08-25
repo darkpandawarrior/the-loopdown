@@ -2210,6 +2210,25 @@
         ]
       }
     ],
+    "unfiled": [
+      {
+        "idx": 1,
+        "slug": "pilot-the-restatement",
+        "title": "The Restatement",
+        "file": "fiction/morkinstar-journals/pilot-the-restatement.md",
+        "series": "[unassigned]",
+        "blurb": "Four documents. Three offices. One figure, correct at every step down. The objection period closed with nothing filed against it, and the notice board was cleared for repainting on the next scheduled pass.",
+        "words": "726",
+        "tags": [
+          "world-building",
+          "bureaucracy",
+          "sci-fi",
+          "documents",
+          "restatement",
+          "pilot"
+        ]
+      }
+    ],
     "starmap": {
       "systems": {
         "Alpha Axmoiri": [
