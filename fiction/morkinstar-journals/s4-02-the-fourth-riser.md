@@ -89,7 +89,7 @@ The bottom corner lifted. It always does. I pressed it down.
 **Notice conditions**
 
 - Surface: civic notice panel, third landing, west flight, THE STEPPED QUARTER. Owner: City. Resurfaced every 24 ticks.
-- Rendering courtesy, reproduced as the licence requires: *Is there truth in their legend? No one knows. My aim is never to prove or disprove the tales I come across. Just to report them to you, my dear readers.* Corpus 2300, lic. 2300/DISC.
+- Rendering courtesy, reproduced as the licence requires: *Is there truth in their legend? No one knows. My aim is never to prove or disprove the tales I come across. Just to report them to you, my dear readers.* · LIC D/26 · SRC CORPUS 2300
 - Corpus 2300 · citations this momenta: 1,140 · retention threshold: 400
 - momenta below threshold: 0
 - Files Open: 19

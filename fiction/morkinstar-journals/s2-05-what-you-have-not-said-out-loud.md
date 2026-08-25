@@ -11,7 +11,7 @@ planet: Threnn
 phenomenon: "Every Ovai narrates what they feel, in full and out loud, to whoever is nearest, continuously, as a matter of survival"
 status: draft
 tags: [world-building, mythology, sci-fi, framed-narrative, confession, silence]
-words: 2205
+words: 2364
 blurb: "On Threnn a thing can only hurt you if you have not said it out loud, so they say everything, immediately, to whoever is near. They noticed I was not doing that. I left anyway."
 lore: [the-two-facings, the-withheld-name]
 ---
@@ -41,6 +41,10 @@ So they tell. Constantly. Immediately. Out loud, to whoever happens to be standi
 I watched a woman at a fruit stall hand a boy his change and tell him, in the same breath, completely unprompted, that she had been short with his mother the week before over a debt that was not actually the mother's fault, and that she intended to say so to the mother directly by evening, and that she was telling him now because he was there and she did not want it sitting in her a moment longer than it had to. The boy nodded like she had told him the price of the fruit. He was twelve, maybe. This did not strike him as an unusual thing to hear.
 
 [Page Fact- they apparently do this to livestock too. I watched a farmer near what the rig kept calling Second Bank spend eleven straight minutes explaining to a heifer exactly why he had resented it since spring, in full sentences, with specifics. The heifer did not appear moved either way. I do not know what I expected]
+
+I did measure it, because measuring is the one thing I am reliably good for and because a rule this tidy deserves to be checked by somebody who is not charmed by it. Over four mornings in the same market I paced the standing distance between people in conversation: two hundred and eleven pairs, and the median came out at fourteen inches, which is closer than any species I have filed and about half what the Marltains will tolerate. Eleven pairs stood further apart than thirty inches. All eleven, when I asked, turned out to involve somebody who had something they had not got round to saying yet, and every one of them named it to me without being asked twice. It is checkable, my dear readers. That is the part I want on the record. I paced it myself and the numbers hold.
+
+I did not pace the distance around me. I want that on the record too.
 
 I want to be honest about how it felt to be around, because the honesty is sort of the whole point of the place and I would be a hypocrite to file this entry any other way. It is exhausting. Two days in I found myself flinching slightly whenever anyone made eye contact, because eye contact on Threnn is very often the opening move of somebody about to tell you something true and specific about themselves that you did not ask for and cannot politely decline. Grief, debt, old resentment, who they wanted and did not get, what they thought of your coat. All of it, immediately, as if withholding were the rude thing and disclosure were the courtesy, which on Threnn it is.
 

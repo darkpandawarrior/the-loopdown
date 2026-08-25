@@ -12,7 +12,7 @@ phenomenon: "A Standard Interval assigned a length for the first time since the 
 status: draft
 tags: [world-building, mythology, sci-fi, framed-narrative, season-2, ossul, archives, finale]
 words: 2400
-blurb: "I wrote the last page of this case eighty-one pages before I had any right to reach it, and put the one word I have refused all season somewhere it will never be spoken aloud again. Then I went and found out a unit of time has been assigned a length for the first time since the Directory was founded, and nobody will say why."
+blurb: "I wrote the last page of this case thirty-two pages before I had any right to reach it, and put the one word I have refused all season somewhere it will never be spoken aloud again. Then I went and found out a unit of time has been assigned a length for the first time since the Directory was founded, and nobody will say why."
 lore: [ossul, deep-registry, the-case, ninety-one-pages, the-withheld-name, the-archive-is-mass, the-concluded, vaenheim]
 ---
 
@@ -22,9 +22,9 @@ lore: [ossul, deep-registry, the-case, ninety-one-pages, the-withheld-name, the-
 
 Greetings, my dear readers. Lu'kifær Morkinstar. Page ninety-one.
 
-Not page eleven, which is where any sensible accounting says I should be tonight. Nine pages are filled so far, eighty-two empty slots around them, and the tenth page should by every ordinary rule drop into the tenth slot. I have sat with that plain fact for an evening, and I am not going to do it.
+Not page fifty-nine, which is where any sensible accounting says I should be tonight. Fifty-eight pages are filled so far, thirty-three empty slots behind them, and the fifty-ninth page should by every ordinary rule drop into the fifty-ninth slot. I have sat with that plain fact for an evening, and I am not going to do it.
 
-I am reaching past eighty-one blank slots to get to the very back of the case, writing the last page first. Let me tell you why before I tell you what: it is the clearest thought I have had all season, and I would rather hand it to you straight than get there sideways.
+I am reaching past thirty-two blank slots to get to the very back of the case, writing the last page first. Let me tell you why before I tell you what: it is the clearest thought I have had all season, and I would rather hand it to you straight than get there sideways.
 
 Whatever this case becomes. Whoever opens it last, whenever that is, whatever state I am in by then, or am not in any more, I want the final word inside it to be one I chose, not one that landed there because I ran out of pages, or time, or simply happened to be what I was holding when it happened. Tonight I still get a say. I am still the one choosing. That will not be true of most pages already in here. But it is true tonight, and I am not going to waste the one evening this season hands me to say so.
 
@@ -32,7 +32,7 @@ Some of you will remember Entry #2284, from Cendre, the hardest thing I ever fil
 
 The last entry I ever filed ended with me finding out what it renders as. A few of you asked, gently, whether I meant to say it myself now that the excuse of not knowing was gone.
 
-I have not, not once, across nine pages. There is a version of this case where I never do, where the not saying it becomes its own discipline. I considered it seriously.
+I have not, not once, across fifty-eight pages. There is a version of this case where I never do, where the not saying it becomes its own discipline. I considered it seriously.
 
 Here is what moved me off it. I already know, and have known since a page I am not putting in this account taught it to me the hard way, exactly what every mark in this case costs: writing a thing down does not make it safer, it makes the case heavier, by exactly that much, and there is no version of tonight where this word does anything different. That was never the question keeping me up, and pretending it suddenly matters now would be cowardice dressed up as caution. The weight was already spent. What was left to decide was narrower: not whether the word gets written, but where a written thing is safest once it exists.
 
@@ -44,13 +44,13 @@ Ossul taught me the other half without meaning to: why a number that should have
 
 And then there is Tveggi, on Grïnjdarlay, a child born without the organ that let Uhl take a name from someone by speaking it near her, who worked out, sitting on the ice with a burnt stick, that a name does not have to be a sound. She scratched a mark instead. Uhl is a mouth and nothing else, and a mouth with no hands cannot touch a mark nobody has to speak aloud for it to keep meaning what it means. The written thing is the safe one. The spoken thing is the one that gets eaten.
 
-So here is where that leaves a man with a stylus and a word carried unwritten for a whole season. Not made safe by deleting it, Cendre tried that and kept exactly one page anyway, because you cannot get all the way to zero. Not made safe by staying unwritten either: an unwritten thing lives entirely in whoever is carrying it, and I have never much liked my own odds as the last copy of anything. It is made safe by being written exactly once, on purpose, by a hand that means it, and put somewhere it will not be spoken again. Not hidden. Filed. Behind eighty-one blank slots, in a case with a lid that has never once sat flush, that I am the only living person who opens on anything like a schedule. I am doing, on purpose, tonight, precisely what Ossul did by accident twenty-two galaxals ago. He is going to be embarrassed when I tell him that. I am going to tell him anyway.
+So here is where that leaves a man with a stylus and a word carried unwritten for a whole season. Not made safe by deleting it, Cendre tried that and kept exactly one page anyway, because you cannot get all the way to zero. Not made safe by staying unwritten either: an unwritten thing lives entirely in whoever is carrying it, and I have never much liked my own odds as the last copy of anything. It is made safe by being written exactly once, on purpose, by a hand that means it, and put somewhere it will not be spoken again. Not hidden. Filed. Behind thirty-two blank slots, in a case with a lid that has never once sat flush, that I am the only living person who opens on anything like a schedule. I am doing, on purpose, tonight, precisely what Ossul did by accident twenty-two galaxals ago. He is going to be embarrassed when I tell him that. I am going to tell him anyway.
 
 So. Page ninety-one. I sharpened the same stylus I have used since page one, so that nothing about how it was written was special. Only where it went.
 
 I wrote one word.
 
-It is the word the rig gave me at the close of last season, after four renderings returned the same answer every time. Done is Concluded, in whatever tongue looks at it: the flag now stamped on six hundred and seventy-one files and rising, the outcome my own founding charter's opening line promised for every world in this galaxy. It is the word I chose for myself, years ago, when I thought it sounded proper, and signed under my own name at the bottom of every entry I ever wrote, until the one where I stopped.
+It is the word the rig gave me at the close of last season, after four renderings returned the same answer every time. Done is Concluded, in whatever tongue looks at it: the flag now stamped on six hundred and sixty-four files and rising, the outcome my own founding charter's opening line promised for every world in this galaxy. It is the word I chose for myself, years ago, when I thought it sounded proper, and signed under my own name at the bottom of every entry I ever wrote, until the one where I stopped.
 
 I wrote: Done.
 
@@ -60,7 +60,7 @@ I have not brought the word back into use, have not said it about anything, and 
 
 I went down to Deep Registry the next morning, telling myself it was not about the page, and giving that up by the third deck: wanting to sit across a desk from the one person I am fairly sure has read some of what I have written, and not talk about any of it.
 
-Ossul had the paste out, the stone close to his hand, and still only the two chairs in that room, his and mine, in a space built for one. [Page Fact- Deep Registry has had exactly two chairs since the day he brought the second one down for no reason he ever gave me, and neither of us has once mentioned getting a third. I guess some furniture is better left uncounted.] He asked how the case was coming along. I told him it had just acquired its last page, and he did not ask me to explain that about a case with eighty-two slots still empty, which is one of maybe four things I love about him.
+Ossul had the paste out, the stone close to his hand, and still only the two chairs in that room, his and mine, in a space built for one. [Page Fact- Deep Registry has had exactly two chairs since the day he brought the second one down for no reason he ever gave me, and neither of us has once mentioned getting a third. I guess some furniture is better left uncounted.] He asked how the case was coming along. I told him it had just acquired its last page, and he did not ask me to explain that about a case with thirty-two slots still empty, which is one of maybe four things I love about him.
 
 While I was there I asked to see the charter again. Section three. He got it down without asking why, the case still unlocked, and set it down the way you set down something you trust the other person not to drop.
 
@@ -86,17 +86,17 @@ Something is. And it has only just now turned old enough that the Directory, whi
 
 I closed the charter the way Ossul had opened it, did not ask him to leave the second chair out any longer than usual, though he left it out anyway, and sat in it a while before climbing back up to the ship.
 
-Eighty-one blank pages between here and the one I already wrote.
+Thirty-two blank pages between here and the one I already wrote.
 
-I know, roughly, how this case ends. I have known since I read one Cendran word off a page I refused to copy, back when refusing felt like the whole of the courage I owned. I know what the last page says, because I put it there tonight, on purpose, ahead of everything that has not happened to me yet. What I do not know, what none of the eighty-one empty slots will tell me until every one is filled, is how ten pages becomes ninety-one, or what kind of correspondent is sitting here the day the ninetieth goes in.
+I know, roughly, how this case ends. I have known since I read one Cendran word off a page I refused to copy, back when refusing felt like the whole of the courage I owned. I know what the last page says, because I put it there tonight, on purpose, ahead of everything that has not happened to me yet. What I do not know, what none of the thirty-two empty slots will tell me until every one is filled, is how fifty-nine pages becomes ninety-one, or what kind of correspondent is sitting here the day the ninetieth goes in.
 
-I have eighty-one pages in which to be wrong about how this goes. That is not nothing. On a bad night it is closer to everything I have got.
+I have thirty-two pages in which to be wrong about how this goes. That is not nothing. On a bad night it is closer to everything I have got.
 
 So. My dear readers, whoever you have turned out to be. Writing that phrase for what must be the four hundredth time, I notice I am no longer half as bothered by the question as I was on page one.
 
 This is Lu'kifær Morkinstar. Page ninety-one is finished for tonight, and I nearly wrote done there instead, the small ordinary kind, before stopping to check whether that is still a word I am allowed near. It is. The danger was never the word in a sentence about an evening's work or a bowl of grain paste. It was the word at the bottom of an entry, meaning exactly what it means, said by me, about something I had decided was over. I am not doing that tonight, and do not plan to again.
 
-Eighty-one slots stand empty between here and the front of the case, scattered through it the way they have been since page one, most of them not so much as looked at yet.
+Thirty-two slots stand empty behind this one, fifty nine through ninety, in a single unbroken run the way they have sat since I first reached past them, most of them not so much as looked at yet.
 
 I am going to go look at one of them now.
 
@@ -120,4 +120,4 @@ Section 3 of the Founding Charter of the Galactic Directory, *Standard Intervals
 The Vænheim line is the only figure in this table, back to the founding, that multiplies out exactly. Nobody has said who entered it, or when, or why now.
 
 - **Done** — Single-syllable rendering of the fourteenth's name. Read once, on Cendre, in Entry #2284. Written once, here, and nowhere else.
-- **Concluded** — Directory status flag. *Survey complete; no phenomena outstanding; no further contact indicated.* Six hundred and seventy-one worlds.
+- **Concluded** — Directory status flag. *Survey complete; no phenomena outstanding; no further contact indicated.* Six hundred and sixty-four worlds.

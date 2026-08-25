@@ -97,7 +97,7 @@ The bottom corner lifted while I was still standing there. I pressed it back dow
 **Notice conditions**
 
 - Surface: facilities panel, east head, Covered Level Four. Owner: the Levels facilities office. This surface is resurfaced every 66 ticks.
-- Rendering courtesy, reproduced in full as the licence requires: *Is there truth in their legend? No one knows. My aim is never to prove or disprove the tales I come across. Just to report them to you, my dear readers.* `Corpus 2300`
+- Rendering courtesy, reproduced in full as the licence requires: *Is there truth in their legend? No one knows. My aim is never to prove or disprove the tales I come across. Just to report them to you, my dear readers.* · LIC D/26 · SRC CORPUS 2300
 - `Corpus 2300 · citations this momenta: 907 · retention threshold: 400`
 - `momenta below threshold: 0`
 - `Files Open: 17`

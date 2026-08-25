@@ -29,11 +29,11 @@ That got more mail than the rest of the entry combined. Most of it was people as
 
 It is true. It is also not what I said it was, in any respect, and I have now been on Killuga Var for a momenta and I would like to walk it back with both hands.
 
-First: "arm shake" is the Directory's term, not the Killugans'. The Directory's term comes from a survey report filed 40 galaxals ago by an officer who was hugged on the landing pad, hugged again at customs, hugged a third time by a customs official's supervisor who had come out specially, and who then filed the whole business under *Greetings, physical, handshake-equivalent* and went to lunch.
+First: "arm shake" is the Directory's term, not the Killugans'. The Directory's term comes from a survey report filed 40 clicks ago by an officer who was hugged on the landing pad, hugged again at customs, hugged a third time by a customs official's supervisor who had come out specially, and who then filed the whole business under *Greetings, physical, handshake-equivalent* and went to lunch.
 
 (Regular readers will recognise the pattern from my Marlt correction two entries back. I am beginning to think the Galactic Directory is less a census than a very large pile of first impressions. I say this with love. They pay for the ship.)
 
-And here, my dear readers, is another point for the Template Hypothesis, and I am going to enjoy this one. A surveyor panics on a landing pad, reaches for the nearest box on a form drawn up once and never revisited, and forty galaxals of Killugans get filed under Greetings, physical. That is not a fact about Killuga Var, that is a fact about the paperwork, and I am adding it to the pile.
+And here, my dear readers, is another point for the Template Hypothesis, and I am going to enjoy this one. A surveyor panics on a landing pad, reaches for the nearest box on a form drawn up once and never revisited, and forty clicks of Killugans get filed under Greetings, physical. That is not a fact about Killuga Var, that is a fact about the paperwork, and I am adding it to the pile.
 
 Second, and this is the entry: it is not a greeting.
 
@@ -95,11 +95,11 @@ Which means the greeting on Killuga Var is not a memorial.
 
 It is a screening protocol, and it has been running continuously, on every individual, at every meeting, for four thousand clicks, because it was never switched off, because the thing it screens for was never found.
 
-Every hug you get on that planet is a live security check. They hugged me at the pad. They hugged me at customs. The customs supervisor came out specially, exactly as she did for that surveyor 40 galaxals ago, and I understand now that this was not enthusiasm, it was a second opinion.
+Every hug you get on that planet is a live security check. They hugged me at the pad. They hugged me at customs. The customs supervisor came out specially, exactly as she did for that surveyor 40 clicks ago, and I understand now that this was not enthusiasm, it was a second opinion.
 
 I have not been able to stop thinking about the fact that they smile while they do it.
 
-Because that is the part I actually came away with, my dear readers, and it is the part the Directory has had 40 galaxals to notice and has not.
+Because that is the part I actually came away with, my dear readers, and it is the part the Directory has had 40 clicks to notice and has not.
 
 A culture that discovered there is something walking among them wearing their neighbours' faces had, at that point, two available cultures to become. They could have become the one you are imagining. Sealed doors, papers, suspicion as a civic virtue, a species that never touches anyone again.
 
@@ -145,6 +145,6 @@ I let them hug me at the pad on the way out. All three of them. I counted along.
 
 - **Click** — Equivalent to 1 Hellheim or 2 Earth Years.
 - **Momenta** — Equivalent to 1 Purgaheim or 50 Earth Days.
-- **Galaxal** — Equivalent to 228 Hellheims or 456 Earth Years.
+- **Milgalaxal** — Equivalent to 2228 Hellheims or 2455 Earth Years.
 - **Ombri** — Self-term of the Killugans. A possessive. "Ombra's."
 - **The Eleven** — The held count. Directory entry KLGA-011 still files it as *Greetings, physical*.
