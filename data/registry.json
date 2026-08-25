@@ -153,7 +153,7 @@
       "series_position": "4 of 16",
       "phenomenon": "Why it snows for a half momenta every click",
       "words": "1804",
-      "blurb": "A galactic field reporter transcribes why it snows on a frozen planet: a fire serpent, a water god, and the fisherwoman who talked one of them out of giving up.",
+      "blurb": "A galactic field reporter transcribes why it snows on a frozen planet — a fire serpent, a water god, and the fisherwoman who talked one of them out of giving up.",
       "source": "private/originals"
     },
     {
@@ -171,7 +171,7 @@
         "diary"
       ],
       "words": "1973",
-      "blurb": "A week that refuses to end. 52 iterations of the same Wednesday, the namesake of this whole repo.",
+      "blurb": "A week that refuses to end. 52 iterations of the same Wednesday — the namesake of this whole repo.",
       "source": "private/originals"
     },
     {
@@ -1001,7 +1001,7 @@
         "planet": "Exxobar",
         "system": "Alpha Axmoiri",
         "phenomenon": "Why it snows for a half momenta every click",
-        "blurb": "A galactic field reporter transcribes why it snows on a frozen planet: a fire serpent, a water god, and the fisherwoman who talked one of them out of giving up.",
+        "blurb": "A galactic field reporter transcribes why it snows on a frozen planet — a fire serpent, a water god, and the fisherwoman who talked one of them out of giving up.",
         "words": "1804",
         "tags": [
           "world-building",
@@ -1861,6 +1861,46 @@
           -215,
           -55,
           145
+        ],
+        "Thræsk": [
+          275,
+          120,
+          -60
+        ],
+        "Ombrykt": [
+          -290,
+          -140,
+          80
+        ],
+        "Kaldris": [
+          60,
+          -195,
+          270
+        ],
+        "Vyrn": [
+          -40,
+          215,
+          -300
+        ],
+        "Sorvann": [
+          185,
+          190,
+          -155
+        ],
+        "Ilyrsk": [
+          -175,
+          -180,
+          -40
+        ],
+        "[position withheld]": [
+          -60,
+          310,
+          60
+        ],
+        "[unrecorded]": [
+          60,
+          340,
+          -60
         ]
       },
       "worlds": [
@@ -1983,7 +2023,7 @@
           ],
           "st": "self",
           "k": "1-10",
-          "d": "A ring about the size of a small moon"
+          "d": "A ring about the size of a small moon. Nine decks down, on the unlit side, one room and one clerk."
         },
         {
           "n": "Vœrhan",
@@ -1994,17 +2034,16 @@
             -10
           ],
           "st": "concluded",
-          "at": 615,
           "k": "2-2",
-          "d": "Concluded. Kept open by a lie."
+          "d": "Concluded forty galaxals ago. Kept open by a lie."
         },
         {
           "n": "Dhurin",
           "s": "Dhurin",
           "o": [
-            0,
-            0,
-            0
+            9,
+            -11,
+            7
           ],
           "st": "open",
           "k": "2-3",
@@ -2014,9 +2053,9 @@
           "n": "Ilmarrow",
           "s": "Ilmarrow",
           "o": [
-            0,
-            0,
-            0
+            -12,
+            8,
+            -9
           ],
           "st": "lit",
           "k": "2-4",
@@ -2026,69 +2065,121 @@
           "n": "Threnn",
           "s": "Threnn",
           "o": [
-            0,
-            0,
-            0
+            11,
+            9,
+            -8
           ],
           "st": "lit",
           "k": "2-5",
           "d": "Only the unsaid can reach you"
         },
         {
+          "n": "Thræsk",
+          "s": "Thræsk",
+          "o": [
+            12,
+            8,
+            -9
+          ],
+          "st": "lit",
+          "k": "2-7",
+          "d": "A fence world. Aimed at Ombrykt, which is aiming back."
+        },
+        {
+          "n": "Ombrykt",
+          "s": "Ombrykt",
+          "o": [
+            -10,
+            -9,
+            11
+          ],
+          "st": "lit",
+          "k": "2-7",
+          "d": "A fence world. Aimed at Thræsk, and does not know it."
+        },
+        {
+          "n": "Kaldris",
+          "s": "Kaldris",
+          "o": [
+            9,
+            -12,
+            8
+          ],
+          "st": "lit",
+          "k": "2-7",
+          "d": "A fence world. Aimed at Vyrn, to within a third of a degree."
+        },
+        {
+          "n": "Vyrn",
+          "s": "Vyrn",
+          "o": [
+            -11,
+            10,
+            -7
+          ],
+          "st": "lit",
+          "k": "2-7",
+          "d": "A fence world. Keeping half of a watch it thinks is its own."
+        },
+        {
           "n": "Kaunis",
           "s": "Kaunis",
           "o": [
-            0,
-            0,
-            0
+            -9,
+            -10,
+            11
           ],
           "st": "lit",
           "k": "2-8",
           "d": "A calendar kept wrong on purpose"
         },
         {
-          "n": "Heskald",
-          "s": "Dvær Binary",
+          "n": "Mrit'havn",
+          "s": "[position withheld]",
           "o": [
-            85,
-            -75,
-            -65
+            6,
+            -8,
+            5
           ],
-          "st": "lit",
-          "d": "A fence world"
+          "st": "withdrawn",
+          "k": "3-2",
+          "d": "Page 12, withdrawn. One question, once, for as long as the smoke holds its shape."
         },
         {
-          "n": "Orrin",
-          "s": "Killuga",
+          "n": "[unremembered]",
+          "s": "[unrecorded]",
           "o": [
-            -95,
-            -88,
-            -72
+            -7,
+            6,
+            -6
           ],
-          "st": "lit",
-          "d": "A fence world"
+          "st": "withdrawn",
+          "k": "3-5",
+          "d": "Page 34, withdrawn. The blind fish still turn toward the door. He no longer knows which world it was."
         },
         {
-          "n": "Tal-Vey",
-          "s": "Cendrewake",
+          "n": "Sorvann",
+          "s": "Sorvann",
           "o": [
-            98,
-            -82,
-            92
+            10,
+            -7,
+            9
           ],
           "st": "lit",
-          "d": "A fence world"
+          "k": "3-7",
+          "d": "Gave its fourteenth a name eleven clicks after a stranger left"
         },
         {
-          "n": "Munnar",
-          "s": "Ymirsgald",
+          "n": "Ilyrsk",
+          "s": "Ilyrsk",
           "o": [
-            -82,
-            92,
-            88
+            -8,
+            11,
+            -6
           ],
-          "st": "lit",
-          "d": "A fence world"
+          "st": "withdrawn",
+          "k": "3-9",
+          "d": "Page 61, withdrawn. A line that only existed while somebody was still saying it."
         },
         {
           "n": "◇",
@@ -2108,24 +2199,12 @@
           "Vædrun"
         ],
         [
-          "Vædrun",
-          "Heskald"
+          "Thræsk",
+          "Ombrykt"
         ],
         [
-          "Heskald",
-          "Orrin"
-        ],
-        [
-          "Orrin",
-          "Tal-Vey"
-        ],
-        [
-          "Tal-Vey",
-          "Munnar"
-        ],
-        [
-          "Munnar",
-          "Jötunheimr"
+          "Kaldris",
+          "Vyrn"
         ]
       ]
     },
@@ -2197,7 +2276,7 @@
       {
         "id": "ossul",
         "name": "Ossul",
-        "entry": "s2-01",
+        "entry": "s1-10",
         "of": "Deep Registry",
         "did": "Quietly failed to action four correction requests for twenty-two galaxals, because the safest place for a number is a queue nobody reads.",
         "art": "fiction/morkinstar-journals/assets/witnesses/ossul.png"
@@ -2209,6 +2288,86 @@
         "of": "Ilmarrow",
         "did": "Announced the hour he would stop, then spent three hundred clicks teaching them to do his job. He did not finish lesson three hundred and forty one.",
         "art": "fiction/morkinstar-journals/assets/witnesses/hallovar.png"
+      },
+      {
+        "id": "emmerin",
+        "name": "Emmerin",
+        "entry": "s2-02",
+        "of": "Vœrhan",
+        "did": "Stood on the Semmer flats on an ordinary evening with nothing wrong and nothing happening, could not bear that this was going to be true forever, and said it might rain. Nine generations later her family still checks the cord every morning and writes still.",
+        "art": "fiction/morkinstar-journals/assets/witnesses/emmerin.png"
+      },
+      {
+        "id": "the-dhurin-examiner",
+        "name": "The Examiner",
+        "entry": "s2-03",
+        "of": "Dhurin",
+        "did": "Walked an outsider through four thousand clicks of unsolved deaths, handed him the file because he had no stake in the answer, let him talk himself all the way to a theory, and then told him kindly that a theory is not evidence and evidence is not a career.",
+        "art": "fiction/morkinstar-journals/assets/witnesses/the-dhurin-examiner.png"
+      },
+      {
+        "id": "ilvra",
+        "name": "Ilvra",
+        "entry": "s2-04",
+        "of": "Ilmarrow",
+        "did": "Keeps the plain stone room where every attempt anyone has ever made at Lesson three hundred and forty one is kept, six generations of her family before her, and asked a stranger if he wanted to hold the original. He gave it back with both hands.",
+        "art": "fiction/morkinstar-journals/assets/witnesses/ilvra.png"
+      },
+      {
+        "id": "yssa",
+        "name": "Ÿssa",
+        "entry": "s2-05",
+        "of": "Threnn",
+        "did": "Noticed a visitor was carrying something, told him the story of Sevra so he would have the mechanism and not just the rule, and offered twice to sit with him for as long as it took. She asked the second time quietly, at the dock, not in front of anyone.",
+        "art": "fiction/morkinstar-journals/assets/witnesses/yssa.png"
+      },
+      {
+        "id": "torsa",
+        "name": "Torsa",
+        "entry": "s2-08",
+        "of": "Kaunis",
+        "did": "Said it slowly, twice, because she has said it many times to people about to get it wrong: the Vedrei keep the method and throw away the answer, and a child who is only ever handed the answer never learns that a sky is a thing you have to go and look at.",
+        "art": "fiction/morkinstar-journals/assets/witnesses/torsa.png"
+      },
+      {
+        "id": "soelrun",
+        "name": "Sölrun",
+        "entry": "s3-02",
+        "of": "Mrit'havn",
+        "did": "Tended other people's burnings for forty years and never once asked her own question, having a hundred and six of them and no way to get the stone down past three lines. Decided it was better to die with the wrong hundred than bury the one right one underneath all the others.",
+        "art": "fiction/morkinstar-journals/assets/witnesses/soelrun.png"
+      },
+      {
+        "id": "orvaskt",
+        "name": "Órvaskt",
+        "entry": "s3-07",
+        "of": "Sorvann",
+        "did": "Fed a stranger for a tick and a half, never once asked why he kept declining the soup, and told him without a trace of complaint that on Sorvann being noticed is the entire function of a god or a monster. Her world later looked at the shape he left behind and gave its unnamed fourteenth his name.",
+        "art": "fiction/morkinstar-journals/assets/witnesses/orvaskt.png"
+      },
+      {
+        "id": "yska",
+        "name": "Yska",
+        "entry": "s3-09",
+        "of": "Ilyrsk",
+        "did": "Could not sleep, so past midnight she gave a stranger with a stylus the lineage her people had never written down, because there was nobody left on that world whose ear it belonged to. Gave a syllable back twice, identically, and confirmed twice that the line ends on her own name.",
+        "art": "fiction/morkinstar-journals/assets/witnesses/yska.png"
+      },
+      {
+        "id": "sarn",
+        "name": "Sarn",
+        "entry": "s3-11",
+        "of": "Threnn",
+        "did": "Taught him Threnn's numeral system backward on purpose, because forward is how every outsider tries to learn it and backward is how every outsider ends up with it. Thought that was funny in a way she never once smiled about while saying it.",
+        "art": "fiction/morkinstar-journals/assets/witnesses/sarn.png"
+      },
+      {
+        "id": "oyla",
+        "name": "Öyla",
+        "entry": "s3-11",
+        "of": "Kaunis",
+        "did": "Ran a supply skiff off Kaunis and lied to a customs officer twice, on two separate mornings, so a man she owed nothing would not miss a ship he had no real claim on missing. Asked once why, she changed the subject so cleanly he did not notice for an hour that she had done it.",
+        "art": "fiction/morkinstar-journals/assets/witnesses/oyla.png"
       }
     ]
   }

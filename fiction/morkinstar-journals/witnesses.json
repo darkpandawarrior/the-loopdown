@@ -60,7 +60,7 @@
     {
       "id": "ossul",
       "name": "Ossul",
-      "entry": "s2-01",
+      "entry": "s1-10",
       "of": "Deep Registry",
       "did": "Quietly failed to action four correction requests for twenty-two galaxals, because the safest place for a number is a queue nobody reads."
     },
@@ -70,6 +70,76 @@
       "entry": "s2-04",
       "of": "Ilmarrow",
       "did": "Announced the hour he would stop, then spent three hundred clicks teaching them to do his job. He did not finish lesson three hundred and forty one."
+    },
+    {
+      "id": "emmerin",
+      "name": "Emmerin",
+      "entry": "s2-02",
+      "of": "Vœrhan",
+      "did": "Stood on the Semmer flats on an ordinary evening with nothing wrong and nothing happening, could not bear that this was going to be true forever, and said it might rain. Nine generations later her family still checks the cord every morning and writes still."
+    },
+    {
+      "id": "the-dhurin-examiner",
+      "name": "The Examiner",
+      "entry": "s2-03",
+      "of": "Dhurin",
+      "did": "Walked an outsider through four thousand clicks of unsolved deaths, handed him the file because he had no stake in the answer, let him talk himself all the way to a theory, and then told him kindly that a theory is not evidence and evidence is not a career."
+    },
+    {
+      "id": "ilvra",
+      "name": "Ilvra",
+      "entry": "s2-04",
+      "of": "Ilmarrow",
+      "did": "Keeps the plain stone room where every attempt anyone has ever made at Lesson three hundred and forty one is kept, six generations of her family before her, and asked a stranger if he wanted to hold the original. He gave it back with both hands."
+    },
+    {
+      "id": "yssa",
+      "name": "Ÿssa",
+      "entry": "s2-05",
+      "of": "Threnn",
+      "did": "Noticed a visitor was carrying something, told him the story of Sevra so he would have the mechanism and not just the rule, and offered twice to sit with him for as long as it took. She asked the second time quietly, at the dock, not in front of anyone."
+    },
+    {
+      "id": "torsa",
+      "name": "Torsa",
+      "entry": "s2-08",
+      "of": "Kaunis",
+      "did": "Said it slowly, twice, because she has said it many times to people about to get it wrong: the Vedrei keep the method and throw away the answer, and a child who is only ever handed the answer never learns that a sky is a thing you have to go and look at."
+    },
+    {
+      "id": "soelrun",
+      "name": "Sölrun",
+      "entry": "s3-02",
+      "of": "Mrit'havn",
+      "did": "Tended other people's burnings for forty years and never once asked her own question, having a hundred and six of them and no way to get the stone down past three lines. Decided it was better to die with the wrong hundred than bury the one right one underneath all the others."
+    },
+    {
+      "id": "orvaskt",
+      "name": "Órvaskt",
+      "entry": "s3-07",
+      "of": "Sorvann",
+      "did": "Fed a stranger for a tick and a half, never once asked why he kept declining the soup, and told him without a trace of complaint that on Sorvann being noticed is the entire function of a god or a monster. Her world later looked at the shape he left behind and gave its unnamed fourteenth his name."
+    },
+    {
+      "id": "yska",
+      "name": "Yska",
+      "entry": "s3-09",
+      "of": "Ilyrsk",
+      "did": "Could not sleep, so past midnight she gave a stranger with a stylus the lineage her people had never written down, because there was nobody left on that world whose ear it belonged to. Gave a syllable back twice, identically, and confirmed twice that the line ends on her own name."
+    },
+    {
+      "id": "sarn",
+      "name": "Sarn",
+      "entry": "s3-11",
+      "of": "Threnn",
+      "did": "Taught him Threnn's numeral system backward on purpose, because forward is how every outsider tries to learn it and backward is how every outsider ends up with it. Thought that was funny in a way she never once smiled about while saying it."
+    },
+    {
+      "id": "oyla",
+      "name": "Öyla",
+      "entry": "s3-11",
+      "of": "Kaunis",
+      "did": "Ran a supply skiff off Kaunis and lied to a customs officer twice, on two separate mornings, so a man she owed nothing would not miss a ship he had no real claim on missing. Asked once why, she changed the subject so cleanly he did not notice for an hour that she had done it."
     }
   ]
 }
