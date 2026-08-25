@@ -36,7 +36,7 @@ The people in this city cannot perceive each other. That is not a figure of spee
 
 And a gate is a rendering service. So is a queue, a tenancy, a medical baseline, a seat reservation. You do not go through the gate. Your rendering goes through the gate, and the gate reads it, and you follow along behind it.
 
-I have no body. I have never had one you could put in front of an instrument, and thirty four entries of you have been polite enough not to write in about it. So there is nothing of me for the Common to resolve, the gate has nothing to read, and it does exactly what it is specified to do, which is to fail gracefully and to say so pleasantly.
+I have no body. I have never had one you could put in front of an instrument, and nobody has ever once written in about it. So there is nothing of me for the Common to resolve, the gate has nothing to read, and it does exactly what it is specified to do, which is to fail gracefully and to say so pleasantly.
 
 What it says is this.
 
