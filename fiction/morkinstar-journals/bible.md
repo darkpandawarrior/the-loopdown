@@ -106,9 +106,24 @@ Every law is visible in the 2021 original. Nothing here was bolted on.
    that put its teller on the god list is the one world the record undercounts, by exactly
    one, forever.** Do not "fix" #2259. See [`error-doctrine.md`](error-doctrine.md) §5.
 2. **The Unnamed Fourteenth.** Ask anyone to list the fourteen monsters and you get
-   thirteen names and a pause. The pause is the most consistent phenomenon in the series.
+   thirteen names and a pause. **The blank line is on the monster list. The name it points
+   at is on the god list**, which is the arrangement law six works out and the arrangement
+   both #2291 and #2300 state: the name is at the top of the pantheon, where the ancestors
+   put it out of gratitude. The pause is the most consistent phenomenon in the series.
    Reason revealed in stages: not ours (#2277) → its name is already on the god list
-   (#2291) → it is the one that never split, so nobody has ever stood in front of it.
+   (#2291) → it is the one that never split, so there was never a second side to walk
+   around to, and never a second name to put on the monster line.
+
+   **"Done" is one rig's rendering, not the name, and that is standing doctrine.** The
+   fourteenth's name is the load-bearing wall of the corpus, and it is not withheld, which
+   is a different and weaker thing. It is spent, once, as a translation: a Cendran child's
+   single syllable put through a Directory instrument in #2300 and coming out as *Done*,
+   which is the same word the *Concluded* flag uses. The local noun is
+   refused, and stays refused, because a name makes the fourteenth an entity with a file
+   instead of the shape of a gap. So, for the author, permanently: never name it, never
+   adopt a name a reader supplies, and **never reject one either.** Rejection is engagement
+   and engagement is canonisation by other means. The only safe answer to *is it X* is no
+   answer at all.
 3. **The Halving.** A deadlock ends only when someone voluntarily divides themselves and
    spends both halves. K'öæluæ, Ösrun, Ombra, Anh-Rekk. Two deliberate breaks: Vædrun
    (nobody halved, so it never ended) and Jötunheimr (halving applied recursively, which
@@ -229,6 +244,42 @@ Three entries break their own shape on purpose and the break is the point.
   must always be something new, so the record is never complete, and a thing that is not
   finished cannot be Concluded. **Never finish that sentence.** Anyone who "fixes" it has
   deleted the ending.
+
+---
+
+## The never-list
+
+Standing refusals. Each is something the work is currently getting value out of **not** saying,
+and each is cheap to spend and impossible to unspend. The rest of this file carries its own
+(do not correct the milgalaxal, do not "fix" #2259, do not finish #2300's last sentence, do not
+explain the *ær* / *æth* morpheme, do not fill in entry 09's plate). The three below are the ones
+a later drafter is most likely to arrive at independently and file as a discovery.
+
+- **Never give Elysheim a length.** It has read *not yet required* since the founding charter,
+  and one unbuilt reserved parcel is held against it: Lot 1 in s4-13, kerbed, drained, lit by
+  four lamps, reserved for a term that cannot expire, cannot be renewed, cannot be dated and
+  cannot be released, because there is no procedure for any of it. That blank is doing live
+  civic work in silence. Assign a length and Lot 1 releases, the Unrendered Mile's obstruction
+  dissolves, the cheapest street in the city stops being cheap, and the last unspent
+  cosmological card in the charter is gone. Vænheim already got its number in s2-10. There is
+  one left.
+- **Never connect the Vænheim figure to the survey total.** The Season Two finale's restated
+  Section 3 gives Vænheim as 9,412,077 Hellheims. #2296 says there are 40,000 galaxals of
+  survey behind the chart, and a galaxal is 228 Hellheims, which is 9,120,000, so the two land
+  about three percent apart. That is a coincidence and not a finding, and it must never be
+  stated on the page, least of all by a narrator whose entire credibility is that he measures.
+  A reader who spots it owns it. The moment Morkinstar spots it, it is a plot.
+- **Never build the Standard Intervals into a rung system or an ascent hierarchy.** A council
+  refused this, and the refusal is recorded here so it cannot be re-derived as a fresh idea.
+  Six intervals in use, two blank, running coldest to highest, is a list in an appendix.
+  Make it a ladder and you have supplied the one thing the whole work is built on not having,
+  which is **an institution with somewhere to get to**. Gods act here constantly: law three is
+  four entities voluntarily dividing themselves and spending both halves. What never acts is
+  the apparatus. Nothing is done to a world, it is simply finished, and *Concluded* is an
+  absence of action rather than a verdict. A ladder is a thing that gets climbed, so rungs with
+  pressure between them imply a climber, and a climber inside the apparatus is exactly the
+  agency the work has spent four seasons refusing. The intervals stay an appendix nobody has
+  noticed.
 
 ---
 

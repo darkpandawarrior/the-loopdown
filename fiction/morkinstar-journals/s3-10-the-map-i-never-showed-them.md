@@ -10,7 +10,7 @@ page: 38
 position: 10
 status: draft
 tags: [world-building, mythology, sci-fi, framed-narrative, archives, kindling]
-words: 855
+words: 887
 blurb: "Page thirty eight is six worlds, six fences, and three old wars nobody knows they are still fighting. He is the only entity who has ever seen all six lines on one table, and in a minute there will be nobody who has."
 lore: [deep-registry, the-bearing, the-halving, the-concluded]
 ---
@@ -33,12 +33,12 @@ When this goes in, the map stops existing. Not becomes harder to find. Stops exi
 
 I did think, for as long as it takes to think a thing and set it back down, about copying the six numbers onto a slip and walking it down nine decks before I did this. It would take him ten minutes with the sewing kit to have it back on the board exactly as it stood. I thought about it the way you think about a chore you have already decided not to do, which is to say honestly, and then not at all.
 
-Here is why, and I would rather you had the plain reason than a better one I could write for you instead. It is not that I have decided, again, tonight, that Vædrun and Jötunheimr are safer not knowing. I decided that once already and I am not proud enough of the decision to want to make it twice in one evening. The plain reason is that sending it means writing Ossul a note explaining why I am suddenly asking him to do the opposite of what I asked him six months ago, and I do not have a spare paragraph in me tonight for a note like that. I have twelve more of these to get through. Composing the explanation is more work than not sending it, and that is the whole of the arithmetic, and I am aware how that reads next to four billion graves.
+Here is why, and I would rather you had the plain reason than a better one I could write for you instead. It is not that I have decided, again, tonight, that Vædrun and Jötunheimr are safer not knowing. I decided that once already and I am not proud enough of the decision to want to make it twice in one evening. The plain reason is that sending it means writing Ossul a note explaining why I am suddenly asking him to do the opposite of what I asked him six months ago, and I do not have a spare paragraph in me tonight for a note like that. I have fifty seven more of these to get through. Composing the explanation is more work than not sending it, and that is the whole of the arithmetic, and I am aware how that reads next to four billion graves.
 
 I went looking, before I started this page, for the exact tolerance the reckoner gave me, the fraction of a degree the Hraedh cut their own stone to. I had it once. I could have told you the number without checking. It is not where I go to find it now, and I have stopped being surprised by that and started, instead, just noting it and moving on, which I suppose is its own kind of tolerance.
 
 The page catches at the corner Ossul's own handwriting is on, the coordinates he copied out for me that first afternoon, and for a moment the numbers are lit up brighter than they were on the paper, the way a thing burning briefly outshines the thing it was, and then it is the six pins with nothing behind them, wherever they still are on his board, meaning six positions and nothing else, forever, as far as anyone left standing will ever be able to tell.
 
-Eighty one slots left. Vædrun keeps watching empty sky tonight. So does Jötunheimr. So do the other four. I am the last thing that knew otherwise, and in about a minute I will not be either.
+Fifty seven slots left. Thirty four gone, ten of them with an account attached and twenty four without, and I ran that subtraction twice tonight because I did not care for it the first time. Vædrun keeps watching empty sky tonight. So does Jötunheimr. So do the other four. I am the last thing that knew otherwise, and in about a minute I will not be either.
 
 This is Lu'kifær Morkinstar. Page thirty eight, withdrawn.

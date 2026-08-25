@@ -22,7 +22,7 @@ Greetings again, my dear readers. Posted on the approach to Mixing House Six, ou
 
 I have spent the last two ticks going down. Not down as in a descent with a view of anything, because there is no view and there is nowhere in this district you could stand and get one. Down as in a service lift with a rated load painted inside it, then a landing, then another lift that only runs when the first one has finished, then a corridor that is warm along one wall and cold along the other and has a stencil every twenty paces telling you which wall is which, in case you had somehow failed to notice with your entire body. The Lower Plenum is not a place you arrive at. It is a place you keep getting further into, and then a door opens and the sound changes, and that is how you know.
 
-The sound is the thing I want to give you first, because I do not think I will be able to give it to you later. It is a low, wide, absolutely even note, and it does not waver, and it is coming out of a room roughly the size of a freight hall with a walkway hung down the middle of it at about the height of a third floor. Under the walkway: fourteen columns, ranked, dressed in grey lagging with the lagging tags still on, going down further than the light goes. That is a mixing house. There are nine of them on this tier, and the six of them at this end serve about a third of the city, and I am going to be honest with you and say that when I walked out onto that gantry I stopped, and I did not have a professional reason for stopping.
+The sound is the thing I want to give you first, because I do not think I will be able to give it to you later. It is a low, wide, absolutely even note, and it does not waver, and it is coming out of a room roughly the size of a freight hall with a walkway hung down the middle of it at about the height of a third floor. Under the walkway: fourteen columns, ranked, dressed in grey lagging with the lagging tags still on, going down further than the light goes. That is a mixing house. There are nine of them on this tier, and this one serves about a third of the city, and I am going to be honest with you and say that when I walked out onto that gantry I stopped, and I did not have a professional reason for stopping.
 
 **Here is the wrong thing, and it is not hidden, and nobody down here would even accept the word wrong for it.**
 
@@ -80,7 +80,7 @@ I pressed the bottom corner flat with my thumb until the paste took, because tha
 
 Municipal notice panel, Mixing House Six approach, THE LOWER PLENUM. Surface owner: Plenum Estates (civic). This surface is resurfaced every 48 ticks.
 
-Rendering courtesy, reproduced in full as the licence requires: *Is there truth in their legend? No one knows. My aim is never to prove or disprove the tales I come across. Just to report them to you, my dear readers.* Corpus 2300.
+Rendering courtesy, reproduced in full as the licence requires: *Is there truth in their legend? No one knows. My aim is never to prove or disprove the tales I come across. Just to report them to you, my dear readers.* · LIC D/26 · SRC CORPUS 2300
 
 `Corpus 2300 · citations this momenta: 1,004 · retention threshold: 400`
 

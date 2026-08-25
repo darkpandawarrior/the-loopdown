@@ -68,8 +68,11 @@ slightly wrong.
 | Job | Catalogue what a world explains | Keep worlds from closing |
 | The count | A tally of fourteens he is chasing | A tally of Concluded worlds he is causing |
 
-Page numbers are non-contiguous. The gaps are pages he wrote and did not show us. Eighty-one
-are still blank when the season ends.
+Page numbers are non-contiguous. The gaps are pages he wrote and did not show us: by page 91 he
+has filled one through fifty eight, and thirty two stand empty behind him, fifty nine through
+ninety, which is the run page 91 reaches over. He closes them off the page. Season Three opens
+with page one out of the case and "ninety slots left, and every one of them still full", so the
+case is full before the fire starts. Ten pages are shown. Ninety-one are written.
 
 ### "My dear readers"
 
@@ -95,7 +98,9 @@ He goes on saying it because stopping would mean admitting there is nobody.
 ## The two dreads
 
 **1. The Concluded count.** 612 at the end of S1, and it rises every page: 613 · 617 · 619 ·
-624 · 631 · 640 · 651 · 659 · 663. It lives in the Terminologies block of every page, stated
+624 · 631 · 640 · 651 · 659 · 663 · **664**. Ten pages, ten figures, and this table is the
+authority: the last one is the number Season Three's finale inherits and still carries, because
+nothing is surveyed from a ship's galley. It lives in the Terminologies block of every page, stated
 flatly, never remarked on more than once a season. A reader should start checking it unprompted
 and then work out, around Page 30, what the increments are tracking.
 

@@ -10,7 +10,7 @@ page: 44
 position: 7
 status: draft
 tags: [world-building, mythology, sci-fi, framed-narrative, unseen-page]
-words: 810
+words: 804
 blurb: "A marsh world I visited once, wrote down, and left. Long after, it gave its unnamed fourteenth a name, and the name was mine."
 lore: [count-of-fourteen, the-unnamed-fourteenth, the-witness-who-tells-it, the-rendering]
 ---
@@ -21,7 +21,7 @@ lore: [count-of-fourteen, the-unnamed-fourteenth, the-witness-who-tells-it, the-
 
 Page forty four is short, which should have made this one easier, and has not.
 
-It is a marsh world I visited exactly once and never went back to, filed under the name the Directory gave it, because somebody filled out a form before anybody thought to ask the marsh what it called itself: Sorvann. The Sorvanni, if you trust the checkbox. Tessek, if you trust the two elders who fed me for a tick and a half and never once asked why a man with no visible means of digestion kept declining the soup.
+It is a marsh world I visited exactly once and never went back to, filed under the name the Directory gave it, because somebody filled out a form before anybody thought to ask the marsh what it called itself: Sorvann. The Sorvanni, if you trust the checkbox. Tessek, if you trust the two elders who fed me for a tick and a half and never once asked why a man kept declining the soup.
 
 Tessek, near as it renders, means the noticed. That is their self-term, the whole of it, no qualifier. Órvaskt, the elder who did most of the talking while the other one watched the pot, told me without a trace of complaint that on Sorvann being noticed is the entire function of a god or a monster. Everything the fourteen of each actually do, she said, is just commentary on the noticing.
 

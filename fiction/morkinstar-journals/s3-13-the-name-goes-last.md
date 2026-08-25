@@ -10,7 +10,7 @@ page: 91
 position: 13
 status: draft
 tags: [world-building, mythology, sci-fi, framed-narrative, season-3, cendre, kindling]
-words: 1098
+words: 1100
 blurb: "Page ninety-one is the last page in the case, the fourteenth's name, written once and on purpose in the one place he was certain nobody would ever go. Tonight the fire is that place too, and he knows it, and says so before he lets it burn."
 lore: [cendre, the-unnamed-fourteenth, ossul, the-rendering, the-concluded]
 ---
@@ -21,7 +21,7 @@ lore: [cendre, the-unnamed-fourteenth, ossul, the-rendering, the-concluded]
 
 Page ninety-one.
 
-There is nothing else in the case tonight, and I want that said plainly before anything else, because every page I have taken out of this box so far this season came out of a case that still had most of itself left behind it. This one does not. Ninety of ninety-one slots are already gone, some of them in front of you, most of them not, because not every night this season needed telling and there were a great many nights. Tonight there is one slot left, at the very back, exactly where I put it a whole season before I had any right to reach it, so that whatever else happened first, this would happen last.
+There is nothing else in the case tonight, and I want that said plainly before anything else, because every page I have taken out of this box in front of you this season came out of a case that still had most of itself left behind it. This one does not. Ninety of ninety-one slots are already gone, some of them in front of you, most of them not, because not every night this season needed telling and there were a great many nights. Tonight there is one slot left, at the very back, exactly where I put it a whole season before I had any right to reach it, so that whatever else happened first, this would happen last.
 
 I have known for a long time why I put it there. What I had not worked out, until tonight, sitting with the last page in my hand and nothing behind it, is what it costs to save the hardest one for the end. There is no case still half full to point at. No other page to do first, to say, honestly, that most of the account survives and this is only one page among many. It is not among anything any more. It is the only page in a box built for ninety-one, and it is the last thing I am going to take out of it.
 

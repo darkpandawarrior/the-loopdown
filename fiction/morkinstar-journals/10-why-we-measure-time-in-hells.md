@@ -127,9 +127,9 @@ A mason on Jötunheimr told me the fourteenth is not one of theirs, because it i
 
 A custodian on Cendre showed me a page with one word on it, four thousand clicks old, written by a child, and told me it was the fourteenth's name, and I read it and would not copy it, and I am about to.
 
-A storyteller on Solvei told me, as an aside, that there were only ever fourteen, that each has a front and a back, that thirteen of them split when they were finally observed from both sides, and that the one that did not split appears only on the monster lists because nobody has ever stood in front of it.
+A storyteller on Solvei told me, as an aside, that there were only ever fourteen, that each has a front and a back, that thirteen of them split when they were finally observed from both sides, and that the one that did not split is named only on the god lists, because its front and its back are the same face and it only ever had the one name.
 
-Its name is not missing from the pantheons, he said. Its name is on the other page.
+It has no name on the monster lists, he said. Its name is already on the other one.
 
 And on a world with no number, forty million people are well, and fed, and healthy, and have no gods and no stories and no word for *why*, and their file carries a status flag that reads:
 
