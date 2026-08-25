@@ -25,13 +25,13 @@ I have a fire going, a case in front of me, and ninety-one of ninety-one slots f
 
 I wrote the last page first. That was page ninety-one, filled a whole season before its turn, because I wanted the final word in this case to be mine on purpose and not whatever I happened to be holding when the slots ran out. It felt, that night, like the clearest thing I had done all season. Nobody warned me that clarity and arithmetic are not the same skill. The case does not fill at ninety-one. It fills at ninety, because ninety-one was already spoken for, and I spent a whole season not noticing what that did to the count.
 
-A case with ninety-one of ninety-one slots is a complete account. A complete account is a finished one. I am not going to tell you what a finished one is called, my dear readers, on the grounds that you already know it, and I have spent two seasons refusing to use that word about myself and I would rather not break the streak in my opening paragraph.
+A case with ninety-one of ninety-one slots is a complete account. A complete account is a finished one. I am not going to tell you what a finished one is called, my dear readers, on the grounds that you already know it, and I have spent this whole case refusing to use that word about myself and I would rather not break the streak in my opening paragraph.
 
-(Small correction that has kept me up two nights running. I did not defeat that word by refusing it. I built a box with a slot for exactly its shape and then, very diligently, across two seasons, filled the box.)
+(Small correction that has kept me up two nights running. I did not defeat that word by refusing it. I built a box with a slot for exactly its shape and then, very diligently, across ninety-one pages, filled the box.)
 
 So. The fire, which I did not build for warmth. And the case, which I am about to open for the last time in the order that actually matters.
 
-Page one comes out first, and I want to be honest about why, because the honest reason is smaller than you would expect from a man about to do this thirteen more times. It is not that page one deserves it, or that there is a ceremony owed to firsts. It is that page one is the first thing I put in, and if I opened this case anywhere else tonight, at page forty, at page seventy, I would only have found a clever way to not have started yet. I have gotten very good at that, across four hundred entries and two whole seasons. Not tonight.
+Page one comes out first, and I want to be honest about why, because the honest reason is smaller than you would expect from a man about to do this thirteen more times. It is not that page one deserves it, or that there is a ceremony owed to firsts. It is that page one is the first thing I put in, and if I opened this case anywhere else tonight, at page forty, at page seventy, I would only have found a clever way to not have started yet. I have gotten very good at that, across four hundred entries. Not tonight.
 
 Page one was Ossul.
 
