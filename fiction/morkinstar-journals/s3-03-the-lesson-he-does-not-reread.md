@@ -10,7 +10,7 @@ page: 16
 position: 3
 status: draft
 tags: [world-building, mythology, sci-fi, framed-narrative, grief, memory, teaching]
-words: 977
+words: 978
 blurb: "Page sixteen is Ilmarrow, and the god who taught his own replacements until he ran out of time by exactly one lesson. I am holding it, I am not going to reread it, and I will tell you the real reason why."
 lore: [the-kindling, blank-line-motif, the-witness-who-tells-it]
 ---
@@ -41,4 +41,4 @@ It goes in easily, for what that is worth. It is never the ones you expect.
 
 And here is a small thing, my dear readers, which I am only going to say once and then go on, because the season is long and there are pages left and I do not intend to make a habit of stopping the whole account for every strange thing that happens at this table. I wanted to tell you the exact lesson number where the hand changes, the one Ilvra actually pointed to. I remember her finger on the page. I remember thinking I would never need to write the number down, because how does a person forget a thing like that. I have just reached for it, with the page still smoking in the grate, and it is not there, and it did not come back on a second try, and I am going to stop reaching before I make this table about me instead of about him.
 
-Seventeen next.
+Twenty three next.

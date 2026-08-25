@@ -3,7 +3,7 @@ title: The Morkinstar Journals
 type: index
 status: living
 created: 2026-08-15
-seasons: 3
+seasons: 4
 ---
 
 # The Morkinstar Journals
@@ -13,14 +13,14 @@ seasons: 3
 > Fourteen gods. Fourteen monsters. Thirteen names.
 > Nobody will tell me the fourteenth.
 
-Thirty-four entries from the field notebooks of **Lu'kifær Morkinstar**, correspondent for the
+Forty-eight entries from the field notebooks of **Lu'kifær Morkinstar**, correspondent for the
 Galactic Directory, who visits worlds that cannot yet leave them and writes down the story
 each one tells about its own weather, until the season he stops visiting anywhere at all.
 
 Entry #2245 was written in 2021 and lives in [`archive/`](../../archive/legend-of-koaeluae-scales.md).
-It had the whole frame in it and did not know it was a series yet. The other thirty-three grew out of it.
+It had the whole frame in it and did not know it was a series yet. The other forty-seven grew out of it.
 
-**Read it on the site:** <https://cv-siddharth.vercel.app/anthology> — all three seasons, every
+**Read it on the site:** <https://cv-siddharth.vercel.app/anthology>. All four seasons, every
 entry, the plates, the tellers and the starmap.
 
 A self-contained local copy can be rebuilt any time with `node scripts/morkinstar-site.mjs`.
@@ -104,6 +104,37 @@ Canon: [`s3-bible.md`](s3-bible.md). Species and the rendering doctrine: [`speci
 The Concluded count appears exactly once this season, in the final piece, and it has not risen
 from where Season Two left it.
 
+
+## Season Four · The Standing Charge
+
+He posts. When the merged jurisdiction needed a standard for describing a body to somebody who
+cannot perceive it, it bought the only dataset in the galaxy that held numbers about bodies, and
+the largest part of that dataset was his. So every doorway width, step riser, handrail height and
+air mix in the city is dimensioned off sixty galaxals of survey forms, and he cannot get through a
+fare gate in it.
+
+Fourteen districts. Fourteen notices, on fourteen walls, each one cleared on its own schedule.
+
+| # | Entry | District |
+|---|---|---|
+| 01 | [The Line It Plays When It Cannot See You](s4-01-the-line-it-plays-when-it-cannot-see-you.md) | The Long Concourse |
+| 02 | [The Fourth Riser](s4-02-the-fourth-riser.md) | The Stepped Quarter |
+| 03 | [Read As A Fever](s4-03-read-as-a-fever.md) | Eleven Hold |
+| 04 | [The Queue With No Front](s4-04-the-queue-with-no-front.md) | The Middle Window |
+| 05 | [It Rains At Fourteen Past](s4-05-it-rains-at-fourteen-past.md) | The Covered Levels |
+| 06 | [Field Fourteen Is Disabled](s4-06-field-fourteen-is-disabled.md) | The Returns Hall |
+| 07 | [Fourteen Parts, By Volume](s4-07-fourteen-parts-by-volume.md) | The Lower Plenum |
+| 08 | [The Doors She Maintains And Cannot Use](s4-08-the-doors-she-maintains-and-cannot-use.md) | The Great Gauge |
+| 09 | [The Levy With No Instrument](s4-09-the-levy-with-no-instrument.md) | The Settlement Rows |
+| 10 | [Every Sentence Where He Was Not Sure](s4-10-every-sentence-where-he-was-not-sure.md) | The Reconciliation Floor |
+| 11 | [The File That Keeps Me](s4-11-the-file-that-keeps-me.md) | Deep Registry Annexe |
+| 12 | [The Thing In The Stacks](s4-12-the-thing-in-the-stacks.md) | The Holding Tiers |
+| 13 | [Nine Days On The Unrendered Mile](s4-13-nine-days-on-the-unrendered-mile.md) | The Unrendered Mile |
+| 14 | [The Corner That Lifts](s4-14-the-corner-that-lifts.md) | The Long Concourse |
+
+Canon: [`s4-bible.md`](s4-bible.md). The custody rule for every number in the corpus that does not
+close: [`error-doctrine.md`](error-doctrine.md).
+
 ---
 
 ## The art
@@ -114,7 +145,7 @@ Three layers, and which layer a thing belongs to is a canon decision, not a desi
 |---|---|---|
 | **Plates** | One per entry. Seasons 1 and 2 draw the **mechanism** of that world's phenomenon; Season 3 draws the **fire**, a page burning. | Generated, deterministic |
 | **Sigils** | One per entry. Geometry hashed from the entity's **name**. | Generated, deterministic |
-| **Witnesses** | Ten hand-drawn ink-and-wash portraits of the **tellers**. | Drawn by an image model, paid for, not reproducible |
+| **Witnesses** | Thirty-four hand-drawn ink-and-wash portraits of the **tellers**. | Drawn by an image model, paid for, not reproducible |
 
 **Why the split.** Canon law five: the heroes lose, and the tellers are why there is a story at
 all. Gods and monsters have no faces, so they get marks derived from their names, and renaming
@@ -126,10 +157,11 @@ is the same object the site uses as its section divider. The illustration and th
 related. They are the same thing.
 
 ```bash
-node scripts/morkinstar-plates.mjs          # 35 plates, all three seasons + cover
+node scripts/morkinstar-plates.mjs          # 49 plates, all four seasons + cover
 node scripts/morkinstar-plates.mjs 07       # one Season 1 plate
 node scripts/morkinstar-plates.mjs s2-04    # one Season 2 plate
 node scripts/morkinstar-plates.mjs s3-04    # one Season 3 plate
+node scripts/morkinstar-plates.mjs s4-04    # one Season 4 plate
 node scripts/morkinstar-art.mjs             # sigils, the mark, the-fourteen
 node scripts/morkinstar-site.mjs            # rebuild site.html
 
@@ -140,8 +172,8 @@ with-openrouter node scripts/morkinstar-illustrations.mjs
 
 **What is committed and what is not, and the rule is not size.** Plates and sigils are
 gitignored: they come out of a script byte for byte, so keeping 45MB of PNG in git buys nothing.
-**The ten portraits are committed at full resolution**, because they came out of an image model,
-cost $1.40 measured, and a re-run returns *different pictures*. Derived and regenerable is safe
+**The thirty-four portraits are committed at full resolution**, because they came out of an image
+model, were paid for, and a re-run returns *different pictures*. Derived and regenerable is safe
 to ignore. Paid for and unrepeatable is not.
 
 The general pipeline behind the portraits is reusable: see the `image-generation` skill and
@@ -157,10 +189,21 @@ ninety-one notches and a marker at the one you are reading.
 **Season Three plates are the fire**: the same paper as Season Two, progressively scorched,
 foxed, curled and gone, each one carrying a visible damaged remnant of that page's own Season One
 or Season Two plate. The final plate, for the blank page he keeps, is the only clean, unmarked
-paper in the season. All three seasons are meant to be distinguishable as *objects* from across a
-room, because that is the premise: filing, then writing, then burning.
+paper in the season.
 
-All three obey the same rule for the middle: **draw the mechanism, not a mood.**
+**Season Four plates are a fly posted municipal notice**, photographed at night under the
+district's own lighting: a public panel with the ghosts of earlier notices under the paint,
+layers countable at a torn corner on every single plate from the first. That is the damage
+register again and it is the exact inverse of Season Three's. Three was destruction. Four is
+**accumulation**, and the wall is measurably thicker at plate fourteen than at plate one, at
+the same crop and the same scale, which is how the reader checks the finale's arithmetic
+without a line in the prose saying so. The signage layer has right of way and a fly poster
+does not.
+
+All four seasons are meant to be distinguishable as *objects* from across a room, because that
+is the premise: filing, then writing, then burning, then posting.
+
+All four obey the same rule for the middle: **draw the mechanism, not a mood.**
 
 ## Four things that look like mistakes and are not
 
@@ -177,14 +220,14 @@ All three obey the same rule for the middle: **draw the mechanism, not a mood.**
    argued with in the text, both fallible. A plate that reads humanlike is a rendering that
    resolved toward the familiar. A plate that is half-dissolved is one where the rig strained.
    A plate that is mostly absence (Ossul's) is a refusal, because his species is never named in
-   thirty-four entries and the rig does not get to invent one. This is the **Rendering
+   forty-eight entries and the rig does not get to invent one. This is the **Rendering
    doctrine**, canon since 2026-08-15: see [`species.md`](species.md) and the "Rendering"
    section of [`bible.md`](bible.md). A reader who does not know it will look at ten
    inconsistent-seeming portraits and conclude the art direction wandered. It didn't.
 
 ## Provenance
 
-All three seasons audited by multi-lens Claude councils plus cross-family ensembles via
+Seasons One to Three audited by multi-lens Claude councils plus cross-family ensembles via
 OpenRouter (cross-lab.0474 and cross-lab.0420, measured, for Seasons 1 and 2). The Season 2
 audit was an **ownership test**: ten premises sent to seven labs with no context, asking them to
 name the source. Six were named by two or more labs independently and were killed. What

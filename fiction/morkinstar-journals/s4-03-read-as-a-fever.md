@@ -87,7 +87,7 @@ Then I put my thumb on the bottom corner, where it always lifts, and held it the
 **Notice conditions**
 
 - Surface: municipal notice panel, ELEVEN HOLD, lower barrier, platform two. Resurfaced every 90 ticks.
-- Rendering courtesy, reproduced as the licence requires: *"Is there truth in their legend? No one knows. My aim is never to prove or disprove the tales I come across. Just to report them to you, my dear readers."* Licence: Corpus 2300.
+- Rendering courtesy, reproduced as the licence requires: *"Is there truth in their legend? No one knows. My aim is never to prove or disprove the tales I come across. Just to report them to you, my dear readers."* · LIC D/26 · SRC CORPUS 2300
 - `Corpus 2300 · citations this momenta: 998 · retention threshold: 400`
 - `momenta below threshold: 0`
 - `Files Open: 18`

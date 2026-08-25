@@ -108,7 +108,7 @@ I pressed the bottom corner flat with the heel of my hand and held it a moment w
 
 Surface owner: Great Gauge District Board. This panel is resurfaced every 120 ticks.
 
-Rendering courtesy, reproduced as the licence requires: *Is there truth in their legend? No one knows. My aim is never to prove or disprove the tales I come across. Just to report them to you, my dear readers.* Corpus 2300.
+Rendering courtesy, reproduced as the licence requires: *Is there truth in their legend? No one knows. My aim is never to prove or disprove the tales I come across. Just to report them to you, my dear readers.* · LIC D/26 · SRC CORPUS 2300
 
 Corpus 2300 · citations this momenta: 744 · retention threshold: 400
 

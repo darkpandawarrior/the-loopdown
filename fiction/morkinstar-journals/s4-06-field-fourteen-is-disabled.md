@@ -10,7 +10,7 @@ district: "The Returns Hall"
 status: draft
 tags: [world-building, sci-fi, framed-narrative, season-4, forms, the-unnamed-fourteenth, humour]
 words: 2026
-blurb: "The residency return in this city still asks every resident to list their fourteen monsters, and it gives them thirteen boxes and a fourteenth that has been greyed out. I went to find the person who greyed it. She had checked properly before she did it, she was right, and she asked me for the one piece of evidence I have never had."
+blurb: "The residency return in this city still asks every resident to list their fourteen monsters, and it gives them thirteen boxes and a fourteenth that has been greyed out. I went to find the person who greyed it. She had checked properly before she did it, she was right, and she asked me for the one piece of evidence I cannot produce."
 lore: [count-of-fourteen, the-unnamed-fourteenth, the-rendering]
 ---
 
@@ -72,7 +72,7 @@ She thought about it properly. Then she asked me for one filled one.
 
 One return. Any jurisdiction, any cycle, any species, any hand. One box fourteen with something written in it. Not thirteen and a stop. The fourteenth, filled.
 
-I do not have one. I have never had one. I have an account, and an account is not evidence, and I have spent a very long time telling people that I do not prove or disprove things, so I could hardly stand at a counter and demand that a form take my word for it.
+I do not have one. A fire does not issue receipts. I have an account, and an account is not evidence, and I have spent a very long time telling people that I do not prove or disprove things, so I could hardly stand at a counter and demand that a form take my word for it.
 
 And she was kind about it. Not soft, kind. She said she had looked. She said she always looks before she disables anything, because a null rate is sometimes a broken input and not a missing answer, and the way you tell the difference is you go and find one instance of the thing being answered anywhere and then work out why it stopped. She ran the search across every return in the retained set. She said the number, and the number is large, and she said it the way you say a number you have said before.
 
@@ -97,7 +97,7 @@ Then I put my thumb on the bottom corner and held it there until the paste took.
 **Notice conditions**
 
 - Surface: Returns Hall public notice panel, east vestibule. Municipal Surfaces. Resurfaced on a 12 tick cycle.
-- Rendering courtesy, reproduced as the licence requires: *Is there truth in their legend? No one knows. My aim is never to prove or disprove the tales I come across. Just to report them to you, my dear readers.* Corpus 2300.
+- Rendering courtesy, reproduced as the licence requires: *Is there truth in their legend? No one knows. My aim is never to prove or disprove the tales I come across. Just to report them to you, my dear readers.* · LIC D/26 · SRC CORPUS 2300
 - Corpus 2300 · citations this momenta: 803 · retention threshold: 400
 - momenta below threshold: 0
 - Files Open: 15

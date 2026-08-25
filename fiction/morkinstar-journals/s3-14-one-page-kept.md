@@ -57,4 +57,4 @@ For tonight: ninety blank slots, one blank page, and the rest of my life.
 
 **Terminologies:**
 
-- **Concluded** — Directory status flag. *Survey complete; no phenomena outstanding; no further contact indicated.* Six hundred and seventy-one worlds.
+- **Concluded** — Directory status flag. *Survey complete; no phenomena outstanding; no further contact indicated.* Six hundred and sixty-four worlds.
