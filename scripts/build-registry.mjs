@@ -74,10 +74,15 @@ const ficDir = join(ROOT, "fiction/morkinstar-journals");
 let anthology = null;
 if (existsSync(ficDir)) {
   const read = (f) => frontmatter(readFileSync(join(ficDir, f), "utf8"));
-  const s1Files = ["../../archive/legend-of-koaeluae-scales.md",
-    ...readdirSync(ficDir).filter((f) => /^\d\d-.*\.md$/.test(f)).sort()];
-  const s2Files = readdirSync(ficDir).filter((f) => /^s2-\d\d-.*\.md$/.test(f)).sort();
-  const s3Files = readdirSync(ficDir).filter((f) => /^s3-\d\d-.*\.md$/.test(f)).sort();
+  // Season one predates the sN- prefix, so its entries are bare `NN-` and its
+  // first entry lives in the archive. Every season after it is `sN-NN-`, so
+  // discovery is derived from the season number rather than written out again:
+  // a fifth season is one row in `seasons` below and nothing here.
+  const ficFiles = readdirSync(ficDir);
+  const filesFor = (n) => [
+    ...(n === 1 ? ["../../archive/legend-of-koaeluae-scales.md"] : []),
+    ...ficFiles.filter((f) => (n === 1 ? /^\d\d-.*\.md$/ : new RegExp(`^s${n}-\\d\\d-.*\\.md$`)).test(f)).sort(),
+  ];
   const webDir = join(ficDir, "assets/web");
   const plates = existsSync(webDir) ? readdirSync(webDir) : [];
   const plateFor = (season, idx) =>
@@ -98,7 +103,10 @@ if (existsSync(ficDir)) {
       // uses it to deepen the scorch across the season from data rather than a
       // hardcoded slug, so it has to survive the registry hop.
       kindling: fm.kindling ?? null,
-      planet: fm.planet ?? "", system: fm.system ?? "",
+      // Season 4 is one city, so its place field is `district`, not `planet`.
+      // Carried alongside rather than folded into planet: a consumer that says
+      // "planet" under a card would be lying about a stairwell.
+      planet: fm.planet ?? "", system: fm.system ?? "", district: fm.district ?? "",
       phenomenon: fm.phenomenon ?? "", blurb: fm.blurb ?? "",
       words: fm.words ?? "", tags: fm.tags ?? [],
     };
@@ -117,16 +125,20 @@ if (existsSync(ficDir)) {
         .map((w) => ({ ...w, art: `fiction/morkinstar-journals/assets/witnesses/${w.id}.png` }))
     : [];
 
+  // The seasons array is the discovery list: `filesFor` reads the number off it.
+  const seasons = [
+    { n: 1, title: "The Directory", blurb: "He files. Ten entries, each a world's legend and the phenomenon it explains." },
+    { n: 2, title: "The Ninety-One Pages", blurb: "He stops filing. Each page must contain something nobody has ever written down." },
+    { n: 3, title: "The Kindling", blurb: "He burns ninety pages of his own case, on purpose, to stay alive, then keeps one blank." },
+    { n: 4, title: "The Standing Charge", blurb: "Fourteen notices, posted on a public wall in a city built to the dimensions of his own filing. Each one carries the schedule it will be painted over on, in its first line." },
+  ];
+
   anthology = {
     slug: "the-morkinstar-journals",
     title: "The Morkinstar Journals",
     tagline: "Fourteen gods. Fourteen monsters. Thirteen names.",
-    seasons: [
-      { n: 1, title: "The Directory", blurb: "He files. Ten entries, each a world's legend and the phenomenon it explains." },
-      { n: 2, title: "The Ninety-One Pages", blurb: "He stops filing. Each page must contain something nobody has ever written down." },
-      { n: 3, title: "The Kindling", blurb: "He burns ninety pages of his own case, on purpose, to stay alive, then keeps one blank." },
-    ],
-    entries: [...s1Files.map(entryOf(1)), ...s2Files.map(entryOf(2)), ...s3Files.map(entryOf(3))],
+    seasons,
+    entries: seasons.flatMap((s) => filesFor(s.n).map(entryOf(s.n))),
     starmap: existsSync(starmapPath) ? JSON.parse(readFileSync(starmapPath, "utf8")) : null,
     witnesses,
   };

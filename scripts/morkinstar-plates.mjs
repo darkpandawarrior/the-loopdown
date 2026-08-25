@@ -44,7 +44,7 @@ const halo = (ground, w = 3.5) =>
 const lbl = (x, y, t, c = T.inkFaint, sz = 17, anchor = "start") =>
   `<text x="${x}" y="${y}" text-anchor="${anchor}" font-family="${T.mono}" font-size="${sz}" fill="${c}" letter-spacing="1.4" ${halo(T.bg1)}>${esc(t)}</text>`;
 
-// 01 — Exxobar. A serpent coil torn down the middle; the residue falls as snow.
+// 01. Exxobar. A serpent coil torn down the middle; the residue falls as snow.
 function exxobar(a) {
   let o = witness("feeriko", "Feeriko", 560, 400, 620, traceInk(a), 0.5, (x, y, t) => lbl(x, y, t, T.inkDim, 13, "start"));
   // the click: 15 momentas round, one half-momenta of warmth
@@ -87,7 +87,7 @@ function exxobar(a) {
   return o;
 }
 
-// 02 — Grïnjdarlay. Ninety-nine names, ninety-eight eaten, one held.
+// 02. Grïnjdarlay. Ninety-nine names, ninety-eight eaten, one held.
 function grinjdarlay(a) {
   let o = witness("tveggi", "Tveggi", 500, 400, 640, traceInk(a), 0.5, (x, y, t) => lbl(x, y, t, T.inkDim, 13, "start")), cx = 500, cy = 300, r = 210;
   o += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${T.line}" stroke-width="2"/>`;
@@ -114,7 +114,7 @@ function grinjdarlay(a) {
   return o;
 }
 
-// 03 — Vædrun. Nine days of tide, borrowed once, collected forever.
+// 03. Vædrun. Nine days of tide, borrowed once, collected forever.
 function vaedrun(a) {
   let o = witness("soebra", "Sœbra", 500, 415, 620, traceInk(a), 0.48, (x, y, t) => lbl(x, y, t, T.inkDim, 13, "start"));
   const base = 470;
@@ -145,7 +145,7 @@ function vaedrun(a) {
   return o;
 }
 
-// 04 — Marlt. Two chairs. One occupied. The list with a blank line.
+// 04. Marlt. Two chairs. One occupied. The list with a blank line.
 function marlt(a) {
   let o = witness("soelvi", "Sœlvi", 430, 390, 600, traceInk(a), 0.5, (x, y, t) => lbl(x, y, t, T.inkDim, 13, "start"));
   // Side-view chairs, so they read as chairs and not as frames round the figures.
@@ -184,7 +184,7 @@ function marlt(a) {
   return o;
 }
 
-// 05 — Killuga Var. The eleven count. A test, still running.
+// 05. Killuga Var. The eleven count. A test, still running.
 function killuga(a) {
   let o = witness("aedri", "Ædri", 500, 405, 640, traceInk(a), 0.48, (x, y, t) => lbl(x, y, t, T.inkDim, 13, "start"));
   o += `<circle cx="410" cy="270" r="150" fill="${a}" fill-opacity="0.12" stroke="${a}" stroke-width="3"/>`;
@@ -206,7 +206,7 @@ function killuga(a) {
   return o;
 }
 
-// 06 — Jötunheimr. Four billion graves, each surveyed, all aimed at empty sky.
+// 06. Jötunheimr. Four billion graves, each surveyed, all aimed at empty sky.
 function jotunheimr(a) {
   let o = witness("hild-ronn", "Hild-Ronn", 480, 400, 660, traceInk(a), 0.46, (x, y, t) => lbl(x, y, t, T.inkDim, 13, "start"));
   // the target: nothing
@@ -236,7 +236,7 @@ function jotunheimr(a) {
   return o;
 }
 
-// 07 — Cendre. Burn everything. Keep one page. A child writes it.
+// 07. Cendre. Burn everything. Keep one page. A child writes it.
 function cendre(a) {
   let o = witness("the-cendran-child", "The Cendran Child", 470, 415, 640, traceInk(a), 0.46, (x, y, t) => lbl(x, y, t, T.inkDim, 13, "start"));
   // The case, unlocked, up top and alone. What survives.
@@ -264,7 +264,7 @@ function cendre(a) {
   return o;
 }
 
-// 08 — Solvei. Two suns, one shadow. One entity, two facings.
+// 08. Solvei. Two suns, one shadow. One entity, two facings.
 function solvei(a) {
   let o = witness("ilta", "Ilta", 500, 410, 640, traceInk(a), 0.48, (x, y, t) => lbl(x, y, t, T.inkDim, 13, "start"));
   o += `<circle cx="250" cy="110" r="58" fill="${a}" fill-opacity="0.85"/>`;
@@ -288,7 +288,7 @@ function solvei(a) {
   return o;
 }
 
-// 09 — the world with no number. The illustration is the absence of one.
+// 09. the world with no number. The illustration is the absence of one.
 function nothing(a) {
   let o = "";
   o += ln(60, 400, 940, 400, T.line, 0.7, 2);
@@ -301,7 +301,7 @@ function nothing(a) {
   return o;
 }
 
-// 10 — the Directory. Fourteen founders. Eight intervals, two with no length.
+// 10. the Directory. Fourteen founders. Eight intervals, two with no length.
 function directory(a) {
   let o = "";
   o += `<circle cx="300" cy="290" r="180" fill="none" stroke="${T.line}" stroke-width="3"/>`;
@@ -1115,7 +1115,7 @@ function charOverlay(dmg, seed) {
 // pages nobody has seen), then hands off to charOverlay for the systematic
 // damage pass. The wreck is in the drawing; the SEVERITY is in the index.
 
-// 01 — page 1, Ossul. The case, one tick lit, and the word he can't reread.
+// 01. page 1, Ossul. The case, one tick lit, and the word he can't reread.
 function s3ossul(a, dmg) {
   let o = "";
   o += `<rect x="90" y="90" width="560" height="230" rx="6" fill="none" stroke="${PT.ink}" stroke-opacity="${(0.85 - dmg * 0.3).toFixed(2)}" stroke-width="3"/>`;
@@ -1140,7 +1140,7 @@ function s3ossul(a, dmg) {
   return o + charOverlay(dmg, 1);
 }
 
-// 02 — page 12, unseen. Mrit'havn: one question, once, and a smoke column.
+// 02. page 12, unseen. Mrit'havn: one question, once, and a smoke column.
 function s3askdead(a, dmg) {
   let o = "";
   o += `<ellipse cx="260" cy="260" rx="150" ry="180" fill="${PT.panel}" fill-opacity="0.6" stroke="${a}" stroke-width="3"/>`;
@@ -1158,7 +1158,7 @@ function s3askdead(a, dmg) {
   return o + charOverlay(dmg, 2);
 }
 
-// 03 — page 16, Ilmarrow. The syllabus, and Lesson 341 with nothing under it.
+// 03. page 16, Ilmarrow. The syllabus, and Lesson 341 with nothing under it.
 function s3lesson(a, dmg) {
   let o = "";
   o += plbl(80, 78, "THE SYLLABUS OF HALLOVAR", PT.inkDim, 16);
@@ -1177,7 +1177,7 @@ function s3lesson(a, dmg) {
   return o + charOverlay(dmg, 3);
 }
 
-// 04 — page 23, Threnn. Two figures, a broken arc, and a sentence that stops.
+// 04. page 23, Threnn. Two figures, a broken arc, and a sentence that stops.
 function s3threnn(a, dmg) {
   let o = "";
   const fig = (x, y, solid) => `<g transform="translate(${x},${y})" fill="none" stroke="${solid ? PT.ink : PT.red}" stroke-opacity="${solid ? 0.9 : 0.55}" stroke-width="3" stroke-linecap="round"${solid ? "" : ` stroke-dasharray="6 8"`}>
@@ -1192,7 +1192,7 @@ function s3threnn(a, dmg) {
   return o + charOverlay(dmg, 4);
 }
 
-// 05 — page 34, unseen. One sentence, blind fish, a door, an apology under it.
+// 05. page 34, unseen. One sentence, blind fish, a door, an apology under it.
 function s3fish(a, dmg) {
   let o = "";
   o += pln(80, 420, 920, 420, PT.line, 0.9, 2.5);
@@ -1207,7 +1207,7 @@ function s3fish(a, dmg) {
   return o + charOverlay(dmg, 5);
 }
 
-// 06 — page 30. The weighing, run once more before it goes.
+// 06. page 30. The weighing, run once more before it goes.
 function s3weighing(a, dmg) {
   let o = "";
   const pan = (x, y, w, l1, v, red) => {
@@ -1228,7 +1228,7 @@ function s3weighing(a, dmg) {
   return o + charOverlay(dmg, 6);
 }
 
-// 07 — page 44, unseen. Sorvann's fourteenth, finally named after him.
+// 07. page 44, unseen. Sorvann's fourteenth, finally named after him.
 function s3sorvann(a, dmg) {
   let o = "";
   for (let i = 0; i < 14; i++) {
@@ -1244,7 +1244,7 @@ function s3sorvann(a, dmg) {
   return o + charOverlay(dmg, 7);
 }
 
-// 08 — page 47, Kaunis. The Vedrei's wall, and the one he does not have.
+// 08. page 47, Kaunis. The Vedrei's wall, and the one he does not have.
 function s3wall(a, dmg) {
   let o = "";
   for (let i = 0; i < 40; i++) {
@@ -1260,7 +1260,7 @@ function s3wall(a, dmg) {
   return o + charOverlay(dmg, 8);
 }
 
-// 09 — page 61, unseen. A lineage that ends on Yska, and stops there.
+// 09. page 61, unseen. A lineage that ends on Yska, and stops there.
 function s3lineage(a, dmg) {
   let o = "";
   const names = ["VOTHRIN", "ALDIS", "RANKA", "YSKA"];
@@ -1278,7 +1278,7 @@ function s3lineage(a, dmg) {
   return o + charOverlay(dmg, 9);
 }
 
-// 10 — page 38. Six worlds, six fences, the map nobody else ever had.
+// 10. page 38. Six worlds, six fences, the map nobody else ever had.
 function s3map(a, dmg) {
   let o = "";
   const W3 = [[220, 180], [740, 220], [820, 500], [520, 620], [200, 520], [430, 340]];
@@ -1292,7 +1292,7 @@ function s3map(a, dmg) {
   return o + charOverlay(dmg, 10);
 }
 
-// 11 — page 73, unseen. Four names. Two he can still do something with.
+// 11. page 73, unseen. Four names. Two he can still do something with.
 function s3fournames(a, dmg) {
   let o = "";
   const rows = [["SARN", true], ["ÖYLA", true], ["RÆL", false], ["TUVID", false]];
@@ -1307,7 +1307,7 @@ function s3fournames(a, dmg) {
   return o + charOverlay(dmg, 11);
 }
 
-// 12 — page 58. The turn: a hand that is not his, and a self-portrait.
+// 12. page 58. The turn: a hand that is not his, and a self-portrait.
 function s3turn(a, dmg) {
   let o = "";
   const rows = [["day 1", "0.0005", "0.00051"], ["momenta 1", "0.0009", "0.00094"], ["momenta 2", "0.0014", "0.00139"]];
@@ -1326,7 +1326,7 @@ function s3turn(a, dmg) {
   return o + charOverlay(dmg, 12);
 }
 
-// 13 — page 91. The fourteenth's name, in the last slot, hardest to burn.
+// 13. page 91. The fourteenth's name, in the last slot, hardest to burn.
 function s3name(a, dmg) {
   let o = "";
   o += `<rect x="200" y="130" width="600" height="220" rx="6" fill="${PT.panel}" fill-opacity="0.7" stroke="${PT.red}" stroke-width="3"/>`;
@@ -1339,7 +1339,7 @@ function s3name(a, dmg) {
   return o + charOverlay(dmg, 13);
 }
 
-// 14 — the kept page. No damage pass. The only intact object in the season.
+// 14. the kept page. No damage pass. The only intact object in the season.
 function s3kept(a) {
   let o = "";
   o += `<rect x="260" y="140" width="480" height="340" rx="6" fill="none" stroke="${a}" stroke-opacity="0.55" stroke-width="2.5"/>`;
@@ -1510,6 +1510,530 @@ const s3Plate = (e) => {
 </div></body></html>`;
 };
 
+// ═══════════════════════════════════════════════════════════════════════════
+// SEASON FOUR. His medium stops being the notice and becomes the schema: a
+// plate is now a municipal notice fly posted to a city wall, photographed at
+// night under the district's own lighting, with a civic sign bolted over the
+// top of it. See fiction/morkinstar-journals/s4-bible.md, "Art doctrine".
+// Chrome is byte identical on all fourteen. Only the middle changes, same
+// rule as every other season.
+//
+// Colour now means COVERAGE CLASS, not identity: full coverage reads a clean
+// cyan, partial reads sodium orange, under review reads magenta, no coverage
+// gets no neon at all (a plain steel grey, still legible, just not lit).
+//
+// Every hex below is measured against the two grounds it actually sits on,
+// not chosen by eye. This project has shipped a 1.4:1 label before.
+//   ground #0B0F0D vs cyan    #22D3EE = 10.68:1   panel #1E2723 vs cyan    #22D3EE = 8.48:1
+//   ground #0B0F0D vs orange  #FFA733 =  9.95:1   panel #1E2723 vs orange  #FFA733 = 7.90:1
+//   ground #0B0F0D vs magenta #F154D6 =  6.41:1   panel #1E2723 vs magenta #F154D6 = 5.10:1
+//   ground #0B0F0D vs steel   #9AA5B1 =  7.71:1   panel #1E2723 vs steel   #9AA5B1 = 6.13:1
+// All four clear WCAG AA's 4.5:1 for text and are well past AA-large's 3:1 for
+// the heavier signage strokes. Ink, inkDim, inkFaint and amber are T's own
+// tokens, already measured against this class of dark ground in every other
+// season, so they are reused rather than re-justified here.
+const S4T = {
+  bg0: "#0B0F0D", bg1: "#151B18", panel: "#1E2723", line: "#2A322D",
+  cyan: "#22D3EE", orange: "#FFA733", magenta: "#F154D6", steel: "#9AA5B1",
+};
+const TIER_ACCENT = { full: S4T.cyan, partial: S4T.orange, review: S4T.magenta, none: S4T.steel };
+const TIER_LABEL = { full: "FULL COVERAGE", partial: "PARTIAL COVERAGE", review: "UNDER REVIEW", none: "NO COVERAGE" };
+
+function s4Defs(accent) {
+  return `<defs>
+    <linearGradient id="s4bg" x1="0.1" y1="0" x2="0.7" y2="1">
+      <stop offset="0" stop-color="${S4T.bg1}"/><stop offset="0.6" stop-color="${S4T.bg0}"/><stop offset="1" stop-color="#050706"/>
+    </linearGradient>
+    <radialGradient id="s4wet" cx="0.22" cy="0.02" r="0.9">
+      <stop offset="0" stop-color="${accent}" stop-opacity="0.16"/><stop offset="0.5" stop-color="${accent}" stop-opacity="0.04"/><stop offset="1" stop-color="${accent}" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="s4sheen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0.32" stop-color="#FFFFFF" stop-opacity="0"/><stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0.05"/><stop offset="0.68" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="s4vig" cx="0.5" cy="0.48" r="0.76">
+      <stop offset="0.55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.52"/>
+    </radialGradient>
+    <filter id="s4grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <pattern id="s4hatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="9" stroke="${T.ink}" stroke-width="1.6" stroke-opacity="0.9"/>
+    </pattern>
+  </defs>`;
+}
+const s4Ground = (W, H) => `
+  <rect width="${W}" height="${H}" fill="url(#s4bg)"/>
+  <rect width="${W}" height="${H}" fill="url(#s4wet)"/>
+  <rect width="${W}" height="${H}" fill="url(#s4sheen)"/>
+  <rect width="${W}" height="${H}" fill="url(#s4vig)"/>
+  <rect width="${W}" height="${H}" filter="url(#s4grain)" opacity="0.05"/>`;
+
+// Labels on the wet ground, haloed the same way every other season's are.
+const s4lbl = (x, y, t, c = T.inkFaint, sz = 17, anchor = "start") =>
+  `<text x="${x}" y="${y}" text-anchor="${anchor}" font-family="${T.mono}" font-size="${sz}" fill="${c}" letter-spacing="1.3" ${halo(S4T.bg0, 3.5)}>${esc(t)}</text>`;
+
+// The torn corner: countable ghost layers of earlier notices under the paint,
+// one more layer per plate across the season, so a reader can hold plate
+// fourteen's stack up against plate one's and count. Per the revision: this
+// is the reader's audit trail against the finale, so it is drawn to a rule,
+// never to taste. `n` is the plate's own position, 1 through 14.
+function wallLayers(x, y, n, accent) {
+  let o = "";
+  for (let i = 0; i < n; i++) {
+    const off = i * 2.1;
+    const w = 108 - i * 2.2, h = 70 - i * 1.4;
+    const tone = i % 2 ? T.inkFaint : accent;
+    o += `<path d="M${(x + off).toFixed(1)} ${(y - off).toFixed(1)} L${(x + off + w).toFixed(1)} ${(y - off).toFixed(1)} L${(x + off).toFixed(1)} ${(y - off + h).toFixed(1)} Z"
+      fill="${tone}" fill-opacity="${(0.05 + (i % 3) * 0.018).toFixed(3)}" stroke="${T.inkFaint}" stroke-opacity="0.4" stroke-width="1"/>`;
+  }
+  o += s4lbl(x + 6, y + 92, `${n} LAYER${n === 1 ? "" : "S"}`, T.inkFaint, 12);
+  return o;
+}
+
+// The flat wayfinding figure every accessibility pictogram in this city uses:
+// no interior, no face, no eyes, per the doctrine. Reused across every
+// mechanism so the rendering choice reads as the CITY's, not fourteen
+// different artists'. Only the hands, drawn separately by each art function
+// at real crosshatch fidelity, are ever busy.
+function s4fig(cx, cy, accent, { armL = "", armR = "" } = {}) {
+  return `<g>
+    <circle cx="${cx}" cy="${cy - 74}" r="21" fill="${accent}"/>
+    <path d="M${cx - 28} ${cy - 40} L${cx + 28} ${cy - 40} L${cx + 21} ${cy + 58} L${cx - 21} ${cy + 58} Z" fill="${accent}"/>
+    <path d="M${cx - 15} ${cy + 58} L${cx - 21} ${cy + 126} M${cx + 15} ${cy + 58} L${cx + 21} ${cy + 126}" stroke="${accent}" stroke-width="12" stroke-linecap="round"/>
+    ${armL ? `<path d="M${cx - 22} ${cy - 28} ${armL}" stroke="${accent}" stroke-width="12" stroke-linecap="round" fill="none"/>` : ""}
+    ${armR ? `<path d="M${cx + 22} ${cy - 28} ${armR}" stroke="${accent}" stroke-width="12" stroke-linecap="round" fill="none"/>` : ""}
+  </g>`;
+}
+// A hand: crosshatch fill at a fidelity nothing else in the frame has, per
+// the doctrine, because the one thing the rig can never flatten is what
+// somebody is doing with theirs.
+const s4hand = (cx, cy, r = 15) =>
+  `<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="${r}" fill="url(#s4hatch)" stroke="${T.ink}" stroke-width="1.6"/>`;
+
+// ── the fourteen mechanisms ──────────────────────────────────────────────
+// Draw the mechanism, not a mood. A reader who has read the piece should be
+// able to point at the part of the sign that is the twist.
+
+// 01. Gate fourteen cycles open for nobody. The licence code under the
+// grille is Corpus 2300: the only sentence of his ever reproduced at scale.
+function s4gate(a) {
+  let o = "";
+  for (const x of [270, 560]) o += `<rect x="${x}" y="120" width="26" height="360" rx="6" fill="${S4T.panel}" stroke="${T.inkFaint}" stroke-width="2"/>`;
+  o += `<rect x="296" y="286" width="264" height="15" rx="6" fill="${a}" fill-opacity="0.9" transform="rotate(-8 428 293)"/>`;
+  o += s4lbl(296, 250, "GATE 14 · CYCLES OPEN", a, 19);
+  o += s4lbl(296, 500, "NO BODY DETECTED · CLOSED 11 TIMES", T.danger, 16);
+  o += `<rect x="650" y="140" width="230" height="150" rx="8" fill="${S4T.panel}" stroke="${T.inkFaint}" stroke-width="2"/>`;
+  for (let i = 0; i < 6; i++) o += ln(672, 168 + i * 16, 858, 168 + i * 16, T.inkFaint, 0.45, 2);
+  o += s4lbl(650, 320, "SPEAKER GRILLE", T.inkFaint, 13);
+  o += s4lbl(650, 344, "LIC. CORPUS 2300", T.amber, 16);
+  o += s4fig(150, 470, a, { armR: "L210 400 L235 440" });
+  o += s4hand(235, 440);
+  o += `<rect x="215" y="392" width="30" height="42" rx="4" fill="${T.ink}" fill-opacity="0.14" stroke="${T.inkFaint}" stroke-width="1.5"/>`;
+  o += s4lbl(120, 570, "ORDINARY GATE, WORKING FINE", T.inkFaint, 14);
+  o += s4lbl(90, 700, "ONE NOTICE, READ. ONE FAULT, FIXED.", T.ink, 19);
+  return o;
+}
+
+// 02. The fourth riser, cut wrong on every public stair. Ondrit's tape is
+// calibrated to a standard retired two rebasings ago, on purpose.
+function s4riser(a) {
+  let o = "";
+  const steps = [0, 1, 2, 3, 4, 5];
+  let x = 90;
+  steps.forEach((i) => {
+    const wrong = i === 3, h = wrong ? 96 : 62, w = 96;
+    o += `<rect x="${x}" y="${560 - h}" width="${w}" height="${h}" fill="${S4T.panel}" stroke="${wrong ? T.danger : T.inkFaint}" stroke-width="${wrong ? 3 : 2}"/>`;
+    if (wrong) o += s4lbl(x + 4, 560 - h - 14, "RISER 4 · BYELAW 14", T.danger, 14);
+    x += w;
+  });
+  o += s4lbl(90, 600, "MANDATED IN THE CODE. NOBODY KNOWS WHY.", T.inkDim, 16);
+  o += s4fig(770, 420, a, { armR: "L850 380 L880 350" });
+  o += s4hand(880, 350, 13);
+  o += `<rect x="700" y="330" width="200" height="20" rx="5" fill="none" stroke="${a}" stroke-width="3" transform="rotate(-14 800 340)"/>`;
+  o += s4lbl(700, 300, "TAPE, RETIRED STANDARD", a, 15);
+  o += s4lbl(90, 700, "ONDRIT LETS HIM HOLD IT. HE GIVES IT BACK.", T.ink, 19);
+  return o;
+}
+
+// 03. The Ombri baseline was averaged from cold hold readings: the alarm
+// state, filed as the greeting. Everyone's normal is someone's worst hour.
+function s4eleven(a) {
+  let o = "";
+  o += `<rect x="90" y="90" width="360" height="200" rx="10" fill="${S4T.panel}" stroke="${T.inkFaint}" stroke-width="2"/>`;
+  o += s4lbl(112, 122, "PUBLIC HEALTH BASELINE", T.inkDim, 14);
+  o += s4lbl(112, 240, "READS AS: FEVER", T.danger, 24);
+  o += s4lbl(112, 268, "SOURCE: COLD HOLD LEDGER", a, 14);
+  o += s4fig(650, 430, a, { armL: "L580 470 L560 510", armR: "L720 470 L740 510" });
+  o += s4hand(560, 510, 16) + s4hand(740, 510, 16);
+  o += `<rect x="540" y="500" width="220" height="60" rx="10" fill="none" stroke="${a}" stroke-width="3"/>`;
+  o += s4lbl(650, 600, "GRIPPING SOMETHING COLD. BOTH HANDS. NOT LETTING GO.", a, 15, "middle");
+  o += s4lbl(90, 660, "PLATFORM HEATER: SEASONAL SCHEDULE", T.inkFaint, 15);
+  o += s4lbl(90, 700, "RECALIBRATION: COSTED, APPROVED IN PRINCIPLE, DEFERRED.", T.inkDim, 16);
+  return o;
+}
+
+// 04. A queue with no front. Both arms grow outward from a fixed midpoint.
+function s4queue(a) {
+  let o = "";
+  o += ln(120, 380, 500, 380, a, 0.85, 4);
+  o += ln(500, 380, 880, 380, T.inkDim, 0.6, 4);
+  for (let i = 1; i <= 6; i++) { o += `<circle cx="${500 - i * 58}" cy="380" r="15" fill="none" stroke="${a}" stroke-width="2.5"/>`; }
+  for (let i = 1; i <= 5; i++) { o += `<circle cx="${500 + i * 58}" cy="380" r="15" fill="none" stroke="${T.inkDim}" stroke-opacity="0.7" stroke-width="2"/>`; }
+  o += `<rect x="470" y="330" width="60" height="100" rx="8" fill="${S4T.panel}" stroke="${a}" stroke-width="3"/>`;
+  o += s4lbl(500, 300, "THE MIDDLE WINDOW", a, 18, "middle");
+  o += s4fig(500, 560, a, { armR: "L560 520 L590 500" });
+  o += s4hand(590, 500, 14);
+  o += `<circle cx="640" cy="480" r="40" fill="none" stroke="${a}" stroke-width="3" stroke-dasharray="6 6"/>`;
+  o += s4lbl(700, 486, "THE WHEEL · MOVED BY HAND, DAILY", a, 15);
+  o += s4lbl(90, 718, "NOBODY IS EVER FIRST. NOBODY IS EVER LAST.", T.ink, 19);
+  o += s4lbl(90, 748, "NO PHENOMENA OUTSTANDING.", T.inkFaint, 15);
+  return o;
+}
+
+// 05. It rains indoors at fourteen past, on a facilities schedule nine
+// generations mistook for scripture. The rain is real. The invention is theirs.
+function s4rain(a) {
+  let o = "";
+  for (let i = 0; i < 24; i++) o += ln(120 + (i % 8) * 90, 100 + Math.floor(i / 8) * 60, 108 + (i % 8) * 90, 140 + Math.floor(i / 8) * 60, a, 0.5, 2.5);
+  o += s4lbl(120, 320, "HEAT EXCHANGE SCHEDULE, BURIED IN A FACILITIES CONTRACT", T.inkDim, 15);
+  o += `<circle cx="820" cy="200" r="70" fill="none" stroke="${T.inkFaint}" stroke-width="3"/>`;
+  o += `<line x1="820" y1="200" x2="820" y2="150" stroke="${a}" stroke-width="4"/>`;
+  o += `<line x1="820" y1="200" x2="855" y2="200" stroke="${a}" stroke-width="4"/>`;
+  o += s4lbl(820, 296, ":14 PAST, EVERY TICK", a, 16, "middle");
+  o += s4fig(300, 500, a, { armL: "L240 550 L220 590" });
+  o += s4hand(220, 590, 15);
+  o += `<path d="M190 590 Q220 610 250 590" fill="none" stroke="${T.inkFaint}" stroke-width="3"/>`;
+  o += s4lbl(90, 660, "NINE GENERATIONS CHECK THE CORD EVERY MORNING.", T.inkDim, 16);
+  o += s4lbl(90, 700, "WHAT THEY INVENTED WAS THE INVENTION.", T.ink, 19);
+  return o;
+}
+
+// 06. Field fourteen: thirteen boxes and a fourteenth, greyed out, on a
+// form filed by everyone in the galaxy. The pause, rendered as a UI state.
+function s4field(a) {
+  let o = "";
+  for (let i = 0; i < 13; i++) o += `<rect x="90" y="${100 + i * 34}" width="360" height="26" rx="3" fill="none" stroke="${T.inkFaint}" stroke-opacity="0.7" stroke-width="2"/>`;
+  const gy = 100 + 13 * 34;
+  o += `<rect x="90" y="${gy}" width="360" height="26" rx="3" fill="${T.inkFaint}" fill-opacity="0.14" stroke="${T.danger}" stroke-opacity="0.6" stroke-width="2" stroke-dasharray="4 5"/>`;
+  o += s4lbl(90, gy - 10, "FIELD 14 · DISABLED, NOT DELETED", T.danger, 14);
+  o += s4fig(700, 380, a, { armR: "L770 340 L800 310" });
+  o += s4hand(800, 310, 15);
+  o += `<rect x="620" y="220" width="220" height="70" rx="6" fill="${S4T.panel}" stroke="${a}" stroke-width="2.5"/>`;
+  o += s4lbl(632, 262, "RETIRED PROOF, IN A DRAWER", a, 15);
+  o += s4lbl(90, 600, "100% NULL, FOUR COLLECTION CYCLES RUNNING.", T.inkDim, 16);
+  o += s4lbl(90, 660, "A DATA QUALITY DEFECT. SHE IS RIGHT.", T.ink, 19);
+  o += s4lbl(90, 700, "THE LINE IS STILL THERE. IN EVERY FORM IN THE GALAXY.", T.inkFaint, 15);
+  return o;
+}
+
+// 07. Public air, mixed to one blend, fourteen parts by volume, weighted to
+// a galaxy that stopped existing. Rimmeleth counted three times over.
+function s4air(a) {
+  let o = "";
+  const parts = [3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]; // Rimmeleth's share, tripled
+  let y = 100;
+  parts.forEach((p, i) => {
+    const h = 26 * p;
+    o += `<rect x="120" y="${y}" width="120" height="${h - 3}" fill="${i === 0 ? a : T.inkFaint}" fill-opacity="${i === 0 ? 0.85 : 0.28}"/>`;
+    y += h;
+  });
+  o += s4lbl(120, 88, "PUBLIC BLEND · 14 PARTS BY VOLUME", T.inkDim, 15);
+  o += s4lbl(260, 118, "RIMMELETH, 3X OVERWEIGHTED", a, 15);
+  o += s4fig(650, 420, a, { armR: "L720 380 L750 350" });
+  o += s4hand(750, 350, 14);
+  o += `<path d="M770 300 L800 300 L800 360 L770 360 Q756 330 770 300 Z" fill="${S4T.panel}" stroke="${a}" stroke-width="2.5"/>`;
+  o += s4lbl(650, 470, "CERTIFIED REFERENCE BOTTLE", a, 15, "middle");
+  o += s4lbl(90, 620, "RECERTIFYING THE PLANT MEANS RECERTIFYING THE TIER.", T.inkDim, 16);
+  o += s4lbl(90, 660, "COMFORTABLE FOR NOBODY. SURVIVABLE FOR EVERYONE.", T.ink, 18);
+  o += s4lbl(90, 700, "FOURTEEN IS A WORKING NUMBER HERE.", T.inkFaint, 15);
+  return o;
+}
+
+// 08. A district built to the scale of the largest species, which priced
+// that species out of it. Halkri commutes in to service doors she cannot use.
+function s4gauge(a) {
+  let o = "";
+  o += `<rect x="120" y="90" width="560" height="420" rx="16" fill="none" stroke="${T.inkFaint}" stroke-width="3"/>`;
+  o += `<rect x="180" y="150" width="120" height="300" rx="8" fill="${S4T.panel}" stroke="${a}" stroke-width="3"/>`;
+  o += s4lbl(150, 126, "DOOR, BUILT TO THE HRAEDH HAND", a, 15);
+  o += s4fig(340, 420, T.inkFaint, {});
+  o += s4lbl(340, 610, "SMALL SPECIES, VERY CHEAP RENT", T.inkFaint, 14, "middle");
+  // Halkri: much larger scale, one fine digit at the hinge
+  o += `<g transform="translate(760,330)">
+    <circle cx="0" cy="-150" r="42" fill="${a}"/>
+    <path d="M-58 -84 L58 -84 L44 120 L-44 120 Z" fill="${a}"/>
+    <path d="M-30 120 L-40 250 M30 120 L40 250" stroke="${a}" stroke-width="22" stroke-linecap="round"/>
+    <path d="M-58 -60 L-140 20" stroke="${a}" stroke-width="20" stroke-linecap="round"/>
+  </g>`;
+  o += s4hand(636, 388, 11);
+  o += s4lbl(760, 560, "HALKRI · ONE FINE DIGIT", a, 16, "middle");
+  o += s4lbl(90, 640, "COST PER RESIDENT AT THIS SCALE. ARITHMETIC, NOT POLICY.", T.inkDim, 16);
+  o += s4lbl(90, 700, "“THEN DO NOT WASTE THE PAPER ON ME.”", T.ink, 18);
+  return o;
+}
+
+// 09. A ground levy with no originating instrument, securitised anyway into
+// a pension. No paper means no end date. Rœst does not unfold the sheet all the way.
+function s4rows(a) {
+  let o = "";
+  o += `<rect x="500" y="90" width="360" height="220" rx="8" fill="${S4T.panel}" stroke="${T.danger}" stroke-opacity="0.7" stroke-width="2.5" stroke-dasharray="3 3"/>`;
+  o += s4lbl(520, 130, "ORIGINATING INSTRUMENT", T.danger, 15);
+  o += s4lbl(520, 160, "NOT ON FILE. NEVER HAS BEEN.", T.danger, 15);
+  for (let i = 0; i < 5; i++) o += `<rect x="90" y="${370 + i * 30}" width="330" height="22" rx="3" fill="none" stroke="${a}" stroke-opacity="0.7" stroke-width="2"/>`;
+  o += s4lbl(90, 358, "QUARTERLY LEVY, COLLECTED FOREVER", a, 15);
+  o += s4fig(700, 470, a, { armR: "L770 430 L800 400" });
+  o += s4hand(800, 400, 14);
+  o += `<rect x="620" y="606" width="220" height="120" rx="4" fill="${T.paper}" fill-opacity="0.08" stroke="${T.inkFaint}" stroke-width="1.5" transform="rotate(-4 730 666)"/>`;
+  o += s4lbl(632, 648, "ELEVEN YEARS FOLDED.", T.inkDim, 14);
+  o += s4lbl(632, 672, "NOT UNFOLDED ALL THE WAY.", T.inkDim, 14);
+  o += s4lbl(90, 700, "THE WHOLE RETIREMENT PROVISION OF A PEOPLE, SECURITISED.", T.ink, 17);
+  return o;
+}
+
+// 10. The reject log: every sentence he wrote with a hedge in it, unparseable
+// at load, retained. The density curve peaks at #2284 and never comes back down.
+function s4reject(a) {
+  let o = "";
+  const pts = [40, 60, 90, 150, 260, 400, 340, 260, 210, 180];
+  let d = "";
+  pts.forEach((v, i) => { const x = 120 + i * 76, y = 560 - v; d += `${i ? "L" : "M"}${x} ${y}`; });
+  o += `<path d="${d}" fill="none" stroke="${a}" stroke-width="3.5"/>`;
+  o += ln(120, 560, 120 + 9 * 76, 560, T.inkFaint, 0.6, 2);
+  o += s4lbl(120 + 5 * 76, 178, "PEAK · ENTRY #2284", a, 16, "middle");
+  o += s4lbl(90, 90, "REJECTION DENSITY, PER SOURCE ENTRY", T.inkDim, 15);
+  o += s4fig(760, 460, a, { armR: "L820 420 L850 400" });
+  o += s4hand(850, 400, 14);
+  o += s4lbl(90, 660, "NO COLUMN FOR A HEDGE. A HEDGE IS NOT A VALUE.", T.ink, 18);
+  o += s4lbl(90, 700, "THE REJECT LOG IS LONGER THAN THE DATASET.", T.inkFaint, 15);
+  return o;
+}
+
+// 11. His own accreditation, still open, coded as a survey file by mistake,
+// long ago. Nobody is protecting it. Danvik brings a chair, unexplained.
+function s4annexe(a) {
+  let o = "";
+  o += `<rect x="120" y="100" width="420" height="280" rx="8" fill="${S4T.panel}" stroke="${a}" stroke-width="2.5"/>`;
+  o += s4lbl(140, 136, "SURVEY FILE, STILL OPEN", a, 16);
+  for (let i = 0; i < 4; i++) o += ln(140, 180 + i * 30, 500, 180 + i * 30, T.inkFaint, 0.5, 2);
+  o += s4lbl(140, 340, "NO STATED END DATE.", T.danger, 15);
+  o += `<rect x="600" y="240" width="90" height="140" rx="6" fill="none" stroke="${T.inkFaint}" stroke-width="2.5"/>`;
+  o += `<rect x="600" y="360" width="90" height="10" fill="${T.inkFaint}" fill-opacity="0.5"/>`;
+  o += s4lbl(600, 400, "THE CHAIR. NOT EXPLAINED.", T.inkFaint, 14);
+  o += s4fig(830, 420, a, { armL: "L780 460 L750 480" });
+  o += s4hand(750, 480, 14);
+  o += s4lbl(90, 620, "A FILING ERROR, NOT A CONSPIRACY.", T.inkDim, 16);
+  o += s4lbl(90, 660, "HE IS A CORRESPONDENT BECAUSE OF ONE.", T.ink, 18);
+  o += s4lbl(90, 700, "FILES OPEN: UP, FOR THE FIRST TIME ALL SEASON.", T.danger, 15);
+  return o;
+}
+
+// 12. Two columns: what reinforcement costs forever, and what unweighting
+// would cost once. Column two is larger. It always will be. Osvær marks the pillar.
+function s4tiers(a) {
+  let o = "";
+  const col = (x, label, v, big) => {
+    let s = `<rect x="${x}" y="${560 - v}" width="180" height="${v}" fill="${big ? a : T.inkFaint}" fill-opacity="${big ? 0.7 : 0.35}"/>`;
+    s += s4lbl(x + 90, 580, label, T.inkDim, 14, "middle");
+    s += s4lbl(x + 90, 596, big ? "LARGER, EVERY YEAR" : "PAID, EVERY QUARTER", big ? a : T.inkFaint, 12, "middle");
+    return s;
+  };
+  o += col(240, "GENERAL UNWEIGHTING", 420, true);
+  o += col(560, "REINFORCEMENT, IN PERPETUITY", 260, false);
+  o += s4lbl(90, 100, "SIGNED. COMPETENT. DEFERRED.", T.inkDim, 16);
+  o += `<rect x="850" y="180" width="60" height="380" fill="${S4T.panel}" stroke="${T.inkFaint}" stroke-width="2"/>`;
+  o += ln(850, 400, 910, 400, a, 1, 4);
+  o += s4hand(940, 400, 13);
+  o += s4lbl(840, 620, "THIS YEAR'S MARK", a, 14, "end");
+  o += s4lbl(90, 660, "“THAT IS SKERRIN'S MASS, NO NAME ON IT.”", T.ink, 17);
+  return o;
+}
+
+// 13. No Common here. Nobody perceives anybody. Rails are continuous, doors
+// have bells you feel, and he is not the exception, for the only time in his life.
+function s4mile(a) {
+  let o = "";
+  o += `<path d="M90 500 H910" stroke="${a}" stroke-width="6" stroke-linecap="round"/>`;
+  for (const x of [220, 460, 700]) {
+    o += `<rect x="${x}" y="300" width="70" height="200" rx="4" fill="${S4T.panel}" stroke="${T.inkFaint}" stroke-width="2"/>`;
+    o += `<circle cx="${x + 35}" cy="360" r="10" fill="none" stroke="${a}" stroke-width="2.5"/>`;
+    o += s4lbl(x + 35, 340, "BELL, FELT", T.inkFaint, 11, "middle");
+  }
+  o += s4lbl(90, 260, "RAILS: CONTINUOUS. DOORS: BELLS YOU FEEL THROUGH THE FRAME.", T.inkDim, 15);
+  o += s4lbl(90, 620, "NO CANDIDATE FOR COVERAGE HERE COULD PERCEIVE ANOTHER EITHER.", T.inkFaint, 14);
+  o += s4lbl(90, 660, "NOBODY IS THE EXCEPTION, BECAUSE NOBODY IS THE RULE.", T.ink, 18);
+  o += s4lbl(90, 700, "THE SERVICE CHARGE IS THE ONLY THING HE CANNOT PAY.", T.inkFaint, 15);
+  return o;
+}
+
+// 14. The corner that lifts. All fourteen layers, stacked, and a hand
+// pressing the one that keeps rising back down. Paint is not fire.
+function s4corner(a) {
+  let o = wallLayers(150, 460, 14, a);
+  o += s4fig(650, 420, a, { armR: "L700 380 L730 360" });
+  o += s4hand(730, 360, 15);
+  o += `<rect x="600" y="200" width="260" height="140" rx="4" fill="none" stroke="${a}" stroke-width="2.5"/>`;
+  o += s4lbl(730, 170, "TODAY'S NOTICE, GOING UP", a, 15, "middle");
+  o += s4lbl(90, 130, "CLEARED IN 0 TICKS: THE WALL'S SCHEDULE, NOT A KINDNESS.", T.inkDim, 15);
+  o += s4lbl(90, 640, "HE IS PLEASED. HE HAS DONE THE ARITHMETIC WRONG.", T.ink, 18);
+  o += s4lbl(90, 680, "PAINT IS NOT FIRE. NOTHING HAS EVER LEFT THIS WALL.", T.danger, 17);
+  o += s4lbl(90, 720, "HEVRIT READS THEM ALL, IN ORDER. SHE KEEPS NONE.", T.inkFaint, 14);
+  return o;
+}
+
+// ── the register ─────────────────────────────────────────────────────────
+// Every figure below is copied straight out of s4-bible.md's register table
+// and arc table, not invented here, so nothing in the small print can drift
+// against the source of truth.
+const ENTRIES4 = [
+  { n: "01", slug: "the-line-it-plays-when-it-cannot-see-you", title: "The Line It Plays When It Cannot See You",
+    district: "THE LONG CONCOURSE", abbr: "LC", tier: "full", clearedIn: "40 TICKS", filesOpen: 19, citations: 1206,
+    momentaBelow: 0, accession: "CIVIC · LC-00", corpusCite: "#2300", owner: "TRANSIT AUTHORITY",
+    phenom: "A fare gate that opens for nobody, once a shift, closed as fixed eleven times.",
+    note: "The licence code under the speaker grille is Corpus 2300. He posts a notice about gate fourteen, and somebody reads it.",
+    art: s4gate, glyph: "Gate Fourteen" },
+  { n: "02", slug: "the-fourth-riser", title: "The Fourth Riser",
+    district: "THE STEPPED QUARTER", abbr: "SQ", tier: "full", clearedIn: "24 TICKS", filesOpen: 19, citations: 1140,
+    momentaBelow: 0, accession: "ACC 03", corpusCite: "#0412", owner: "CIVIC WORKS DEPT",
+    phenom: "Every public stair in the city has one riser cut to the wrong height, mandated in the code.",
+    note: "Ondrit's tape is calibrated to a standard retired two rebasings ago, on purpose, because the old stairs were cut to it.",
+    art: s4riser, glyph: "Ondrit" },
+  { n: "03", slug: "read-as-a-fever", title: "Read As A Fever",
+    district: "ELEVEN HOLD", abbr: "EH", tier: "partial", clearedIn: "90 TICKS", filesOpen: 18, citations: 998,
+    momentaBelow: 0, accession: "ACC 01", corpusCite: "#2269", owner: "HEALTH & WELFARE OFFICE",
+    phenom: "The Ombri baseline reads as fever because it was averaged from cold hold readings, the alarm state, not the greeting.",
+    note: "Recalibration is costed and approved in principle. The file does not move. The board moves anyway, for reasons unrelated to him.",
+    art: s4eleven, glyph: "Ombri" },
+  { n: "04", slug: "the-queue-with-no-front", title: "The Queue With No Front",
+    district: "THE MIDDLE WINDOW", abbr: "MW", tier: "full", clearedIn: "30 TICKS", filesOpen: 18, citations: 941,
+    momentaBelow: 0, accession: "ACC 04 · 05", corpusCite: "#1871", owner: "TRANSIT AUTHORITY",
+    phenom: "The licensed queue form requires joining at the midpoint. Both arms grow outward. Nobody is first or last.",
+    note: "Sævrin measures both arms every morning, splits the difference by hand, and never gets it exactly right, and says so.",
+    art: s4queue, glyph: "The Midpoint" },
+  { n: "05", slug: "it-rains-at-fourteen-past", title: "It Rains At Fourteen Past",
+    district: "THE COVERED LEVELS", abbr: "CL", tier: "partial", clearedIn: "66 TICKS", filesOpen: 17, citations: 907,
+    momentaBelow: 0, accession: "ACC 06", corpusCite: "#0873", owner: "FACILITIES CONTRACT HOLDER",
+    phenom: "It rains indoors at fourteen minutes past, every tick, because of a heat exchange schedule in a facilities contract.",
+    note: "Nine generations of ritual grew up around a rain that is real and mechanical. What they invented is the invention.",
+    art: s4rain, glyph: "Fourteen Past" },
+  { n: "06", slug: "field-fourteen-is-disabled", title: "Field Fourteen Is Disabled",
+    district: "THE RETURNS HALL", abbr: "RH", tier: "full", clearedIn: "12 TICKS", filesOpen: 15, citations: 803,
+    momentaBelow: 0, accession: "CIVIC · RH-00", corpusCite: "NO ENTRY · FIELD UNRESOLVED", owner: "FORMS DESIGN OFFICE",
+    phenom: "Thirteen boxes and a fourteenth that is greyed out. A hundred percent null rate is a data quality defect.",
+    note: "Vessik disabled it rather than deleting it, so the fourteenth line is still there, in every form in the galaxy, unreachable.",
+    art: s4field, glyph: "", noSigil: true },
+  { n: "07", slug: "fourteen-parts-by-volume", title: "Fourteen Parts, By Volume",
+    district: "THE LOWER PLENUM", abbr: "LP", tier: "review", clearedIn: "48 TICKS", filesOpen: 15, citations: 1004,
+    momentaBelow: 0, accession: "ACC 08", corpusCite: "#1104", owner: "AIR STANDARDS PLANT",
+    phenom: "Public air is one blend, fourteen parts by volume, weighted to population shares taken at the merge.",
+    note: "Rimmeleth appear three times in the corpus under three descriptions, so their share is three times too high, and the air is wrong.",
+    art: s4air, glyph: "Rimmelin" },
+  { n: "08", slug: "the-doors-she-maintains-and-cannot-use", title: "The Doors She Maintains And Cannot Use",
+    district: "THE GREAT GAUGE", abbr: "GG", tier: "partial", clearedIn: "120 TICKS", filesOpen: 14, citations: 744,
+    momentaBelow: 0, accession: "ACC 02", corpusCite: "#2277", owner: "CIVIC WORKS DEPT",
+    phenom: "A district built at the largest species' scale, whose cost per resident priced that species out of it.",
+    note: "Halkri commutes in to service doors built to her hand and nobody else's. She likes the job, and says so plainly, twice.",
+    art: s4gauge, glyph: "Hraedh" },
+  { n: "09", slug: "the-levy-with-no-instrument", title: "The Levy With No Instrument",
+    district: "THE SETTLEMENT ROWS", abbr: "SR", tier: "partial", clearedIn: "75 TICKS", filesOpen: 12, citations: 690,
+    momentaBelow: 0, accession: "ACC 07", corpusCite: "#2288", owner: "COLLECTIONS OFFICE",
+    phenom: "A ground levy collected forever, whose originating instrument does not exist and never has, in any archive.",
+    note: "No paper means no end date, so the receivable has been valued, securitised, and bought as a pension.",
+    art: s4rows, glyph: "Ashgrenni" },
+  { n: "10", slug: "every-sentence-where-he-was-not-sure", title: "Every Sentence Where He Was Not Sure",
+    district: "THE RECONCILIATION FLOOR", abbr: "RF", tier: "full", clearedIn: "12 TICKS", filesOpen: 11, citations: 651,
+    momentaBelow: 0, accession: "CIVIC · RF-00", corpusCite: "#2284", owner: "DATA RECONCILIATION OFFICE",
+    phenom: "There was no column for a hedge, so every sentence in which he was unsure did not survive the load.",
+    note: "Ummi has read every line of his that failed to load, in order. The rejection density peaks at #2284 and never returns.",
+    art: s4reject, glyph: "The Reject Log" },
+  { n: "11", slug: "the-file-that-keeps-me", title: "The File That Keeps Me",
+    district: "DEEP REGISTRY ANNEXE", abbr: "DA", tier: "full", clearedIn: "400 TICKS", filesOpen: 12, citations: 588,
+    momentaBelow: 0, accession: "CIVIC · DA-00 · HERITAGE LISTED", corpusCite: "SURVEY FILE · NO CORPUS ENTRY", owner: "HERITAGE ESTATE",
+    phenom: "His own accreditation, coded as a survey file long ago. A survey file cannot close while the survey is open.",
+    note: "Nobody is protecting it. Danvik finds it in six minutes and comes back with a chair. Nothing is said about the chair.",
+    art: s4annexe, glyph: "The Survey File" },
+  { n: "12", slug: "the-thing-in-the-stacks", title: "The Thing In The Stacks",
+    district: "THE HOLDING TIERS", abbr: "HT", tier: "none", clearedIn: "8 TICKS", filesOpen: 9, citations: 502,
+    momentaBelow: 0, accession: "CIVIC · HT-00", corpusCite: "#2284", owner: "HOLDING TIERS WORKS",
+    phenom: "The load figure for the reinforcement programme, published quarterly, is higher every quarter and always will be.",
+    note: "Column two, the cost of a general unweighting, is larger, every year prepared. The deferral is correct, and signed.",
+    art: s4tiers, glyph: "Skerrin" },
+  { n: "13", slug: "nine-days-on-the-unrendered-mile", title: "Nine Days On The Unrendered Mile",
+    district: "THE UNRENDERED MILE", abbr: "UM", tier: "none", clearedIn: "NOT SCHEDULED", filesOpen: 5, citations: 461,
+    momentaBelow: 0, accession: "ACC 09", corpusCite: "#0288", owner: "RESIDENTS' ASSOCIATION, LOT 1",
+    phenom: "A street the Common does not serve. Nobody there perceives anybody. Rails are continuous, doors have bells you feel.",
+    note: "He is not the exception here, for the only time in his life, because nobody can be an exception to nothing.",
+    art: s4mile, glyph: "", noSigil: true },
+  { n: "14", slug: "the-corner-that-lifts", title: "The Corner That Lifts",
+    district: "THE LONG CONCOURSE", abbr: "LC", tier: "full", clearedIn: "0 TICKS", filesOpen: 3, citations: 397,
+    momentaBelow: 1, accession: "CIVIC · LC-00", corpusCite: "#2300", owner: "TRANSIT AUTHORITY",
+    phenom: "The last notice of the season, carried to the wall on the day its own resurfacing crew was already two panels down the row.",
+    note: "He works out that he has been unweighting for free all season. Paint is not fire. Nothing has left that wall.",
+    art: s4corner, glyph: "Hevrit" },
+].map((e) => ({ ...e, accent: TIER_ACCENT[e.tier], licence: `${e.abbr}-${e.n}`, resurface: e.clearedIn === "NOT SCHEDULED" ? "NOT SCHEDULED" : `EVERY ${e.clearedIn}` }));
+
+const DISCLAIMER = "RENDERING COURTESY (LICENSED, CORPUS 2300): Is there truth in this notice. No claim is made. The surface does not confirm or deny what is posted here. Reproduced for information only. Author of record: L. MORKINSTAR.";
+
+const s4Plate = (e) => `<!doctype html><html><head><meta charset="utf-8"><style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:${W}px;height:${H}px;background:${S4T.bg0};font-family:${T.sans};overflow:hidden}
+  .p{position:relative;width:${W}px;height:${H}px}
+  .bg{position:absolute;inset:0}
+  .fr{position:absolute;inset:0;z-index:2}
+  .c{position:absolute;z-index:3}
+  .head{left:76px;right:76px;top:74px;display:flex;align-items:baseline;
+    font-family:${T.mono};font-size:18px;letter-spacing:2.4px;color:${T.inkFaint}}
+  .head b{color:${e.accent};font-weight:600}
+  .head .r{margin-left:auto;color:${e.accent}}
+  .plaque{left:76px;right:76px;top:106px;font-family:${T.mono};font-size:13px;letter-spacing:1.8px;color:${T.inkFaint};opacity:.75}
+  .plaque b{color:${T.inkDim}}
+  .ttl{left:76px;right:76px;top:134px}
+  .ttl h1{font-size:58px;line-height:1.04;letter-spacing:-1.4px;color:${T.ink};font-weight:800;text-transform:uppercase}
+  .ttl .sub{margin-top:16px;font-family:${T.sans};font-size:23px;font-style:italic;color:${T.inkDim};letter-spacing:.2px;opacity:.88}
+  .art{left:76px;top:356px;width:1048px;height:734px}
+  .foot{left:76px;right:76px;bottom:78px}
+  .foot .rule{height:1px;background:rgba(255,255,255,.10);margin-bottom:22px}
+  .foot .ph{font-size:27px;line-height:1.32;color:${T.ink};font-weight:600;letter-spacing:-.2px}
+  .foot .nt{margin-top:12px;font-size:20px;line-height:1.42;color:${T.inkDim}}
+  .foot .nc{margin-top:20px;font-family:${T.mono};font-size:13px;line-height:1.7;color:${T.amber};letter-spacing:.6px;opacity:.92}
+  .foot .bar{margin-top:16px;display:flex;align-items:center;gap:18px;
+    font-family:${T.mono};font-size:16px;letter-spacing:1.6px;color:${T.inkFaint}}
+  .foot .bar .sg{width:48px;height:48px;opacity:.95}
+  .foot .bar .sp{margin-left:auto;color:${e.accent}}
+</style></head><body><div class="p">
+  <svg class="bg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">${s4Defs(e.accent)}${s4Ground(W, H)}</svg>
+  <svg class="fr" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
+    <rect x="44" y="44" width="${W - 88}" height="${H - 88}" fill="none" stroke="${T.inkFaint}" stroke-opacity="0.35" stroke-width="1.5"/>
+    ${plateTicks(44, 44, W - 88, H - 88, e.accent, 26)}
+    ${wallLayers(982, 176, Number(e.n), e.accent)}
+    ${regMark(T.inkFaint)}
+  </svg>
+  <div class="c head"><b>POSTED</b>&nbsp;&nbsp;·&nbsp;&nbsp;${esc(e.district)}&nbsp;&nbsp;·&nbsp;&nbsp;CLEARED IN ${esc(e.clearedIn)}
+    <span class="r">${TIER_LABEL[e.tier]}</span></div>
+  <div class="c plaque">GALACTIC DIRECTORY MERGED JURISDICTION &nbsp;·&nbsp; SURFACE LICENSED &nbsp;·&nbsp; <b>${esc(e.accession)}</b></div>
+  <div class="c ttl">
+    <h1>${esc(e.district)}</h1>
+    <div class="sub">${esc(e.title)}</div>
+  </div>
+  <svg class="c art" viewBox="0 0 1000 760">${sigilWatermark(e.glyph || e.district, e.accent, 500, 340, 460, 0.06)}${e.art(e.accent)}</svg>
+  <div class="c foot">
+    <div class="rule"></div>
+    <div class="ph">${esc(e.phenom)}</div>
+    <div class="nt">${esc(e.note)}</div>
+    <div class="nc">NOTICE CONDITIONS &nbsp;·&nbsp; SURFACE: MUNICIPAL NOTICE BOARD &nbsp;·&nbsp; OWNER: ${esc(e.owner)} &nbsp;·&nbsp; RESURFACE: ${esc(e.resurface)}<br/>
+      ${esc(DISCLAIMER)}<br/>
+      CORPUS 2300 &nbsp;·&nbsp; CITATIONS THIS MOMENTA: ${e.citations.toLocaleString("en-US")} &nbsp;·&nbsp; RETENTION THRESHOLD: 400 &nbsp;·&nbsp; MOMENTA BELOW THRESHOLD: ${e.momentaBelow}<br/>
+      FILES OPEN: ${e.filesOpen} &nbsp;·&nbsp; CALIBRATED FROM: ${esc(e.corpusCite)} &nbsp;·&nbsp; LICENCE ${esc(e.licence)}</div>
+    <div class="bar">
+      <div class="sg">${e.noSigil
+        ? `<svg viewBox="0 0 56 56"><rect x="4" y="4" width="48" height="48" rx="6" fill="none" stroke="${e.accent}" stroke-width="2" stroke-dasharray="4 4"/><text x="28" y="36" text-anchor="middle" font-family="${T.mono}" font-size="26" fill="${e.accent}">Ø</text></svg>`
+        : sigil(e.glyph, e.accent, { size: 48, stroke: 1.4 })}</div>
+      <span>${esc((e.glyph || "NO CLASS").toUpperCase())}</span>
+      <span class="sp">THE MORKINSTAR JOURNALS · S4 · ${e.n} / 14</span>
+    </div>
+  </div>
+</div></body></html>`;
+
 // ── render ──────────────────────────────────────────────────────────────────
 const only = process.argv[2];
 mkdirSync(OUT, { recursive: true });
@@ -1533,14 +2057,16 @@ async function shoot(html, w, h, file) {
 }
 
 // arg forms:  (none) = everything · "07" = S1 plate 07 · "s2" = all S2 · "s2-04" = one S2 plate
-//             "s3" = all S3 · "s3-04" = one S3 plate
+//             "s3" = all S3 · "s3-04" = one S3 plate · "s4" = all S4 · "s4-04" = one S4 plate
 const s2Only = only && only.startsWith("s2");
 const s2Pick = s2Only && only.includes("-") ? only.split("-")[1] : null;
 const s3Only = only && only.startsWith("s3");
 const s3Pick = s3Only && only.includes("-") ? only.split("-")[1] : null;
+const s4Only = only && only.startsWith("s4");
+const s4Pick = s4Only && only.includes("-") ? only.split("-")[1] : null;
 
 if (!only) await shoot(cover(), 1200, 630, "00-series-cover.png");
-if (!s2Only && !s3Only) {
+if (!s2Only && !s3Only && !s4Only) {
   for (const e of ENTRIES) {
     if (only && only !== e.n) continue;
     await shoot(plate(e), W, H, `s1-${e.n}-${e.slug}.png`);
@@ -1556,6 +2082,12 @@ if (!only || s3Only) {
   for (const e of S3) {
     if (s3Pick && s3Pick !== e.n) continue;
     await shoot(s3Plate(e), W, H, `s3-${e.n}-${e.slug}.png`);
+  }
+}
+if (!only || s4Only) {
+  for (const e of ENTRIES4) {
+    if (s4Pick && s4Pick !== e.n) continue;
+    await shoot(s4Plate(e), W, H, `s4-${e.n}-${e.slug}.png`);
   }
 }
 await browser.close();
