@@ -91,10 +91,20 @@ appendices to standards documents are the safest place in any civilisation to hi
 
 Every law is visible in the 2021 original. Nothing here was bolted on.
 
-1. **The Count of Fourteen.** Every world reports 14 gods and 14 monsters. Unconnected
-   worlds, unrelated languages, identical census. Morkinstar notices at world **two**
-   (#2250, out loud, and shrugs it off), starts the tally at world **three** (#2259),
-   and stops joking at world **four**.
+1. **The Count of Fourteen.** Every world's legend holds 14 gods and 14 monsters, and the
+   Directory files 14 and 14, because the form has fourteen fields. Unconnected worlds,
+   unrelated languages, identical census. Morkinstar notices at world **two** (#2250, out
+   loud, and shrugs it off), starts the tally at world **three** (#2259), and stops joking
+   at world **four**.
+
+   **A census is a count. A pantheon is a document, and documents get amended.** Vædrun's
+   has fifteen names on it, because the Sülm voted Sœbra on roughly 900 clicks after the
+   fact over the priesthood's objection, and the Directory's file on Vædrun says fourteen,
+   because there has never been a fifteenth field. Both are correct. Neither is the census,
+   and the fourteen of the Standing are the entities with a front and a back (law six), which
+   a clerk who lost a scroll is not. **This is the law's proof, not a hole in it: the one world
+   that put its teller on the god list is the one world the record undercounts, by exactly
+   one, forever.** Do not "fix" #2259. See [`error-doctrine.md`](error-doctrine.md) §5.
 2. **The Unnamed Fourteenth.** Ask anyone to list the fourteen monsters and you get
    thirteen names and a pause. The pause is the most consistent phenomenon in the series.
    Reason revealed in stages: not ours (#2277) → its name is already on the god list
