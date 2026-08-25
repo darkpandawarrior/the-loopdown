@@ -11,7 +11,7 @@ position: 3
 status: draft
 tags: [world-building, mythology, sci-fi, framed-narrative, grief, memory, teaching]
 words: 977
-blurb: "Page sixteen is Ilmarrow, and the god who taught his own replacements until he ran out of time by exactly one lesson. He holds it, does not reread it, and tells us the real reason why."
+blurb: "Page sixteen is Ilmarrow, and the god who taught his own replacements until he ran out of time by exactly one lesson. I am holding it, I am not going to reread it, and I will tell you the real reason why."
 lore: [the-kindling, blank-line-motif, the-witness-who-tells-it]
 ---
 

@@ -11,7 +11,7 @@ position: 9
 status: draft
 tags: [morkinstar-journals, season-three, fiction]
 words: 1097
-blurb: "Page sixty-one is the only page in the case he did not write alone. He builds a very good reason to keep it anyway, and burns it exactly like the other eighty-nine."
+blurb: "Page sixty-one is the only page in this case I did not write alone. I built a very good reason to keep it, and then burned it exactly like the other eighty-nine."
 lore: [morkinstar-journals]
 ---
 
