@@ -11,7 +11,7 @@ position: 5
 status: draft
 tags: [morkinstar-journals, season-three, fiction]
 words: 280
-blurb: "The shortest page in the case is one sentence and an apology for being one sentence. He burns it faster than he can explain why he wrote it."
+blurb: "The shortest page in the case is one sentence and an apology for being one sentence. It went faster than I could explain why I wrote it."
 lore: [morkinstar-journals]
 ---
 

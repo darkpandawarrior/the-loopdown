@@ -127,9 +127,9 @@ if (existsSync(ficDir)) {
 
   // The seasons array is the discovery list: `filesFor` reads the number off it.
   const seasons = [
-    { n: 1, title: "The Directory", blurb: "He files. Ten entries, each a world's legend and the phenomenon it explains." },
-    { n: 2, title: "The Ninety-One Pages", blurb: "He stops filing. Each page must contain something nobody has ever written down." },
-    { n: 3, title: "The Kindling", blurb: "He burns ninety pages of his own case, on purpose, to stay alive, then keeps one blank." },
+    { n: 1, title: "The Directory", blurb: "Ten entries off the Directory beat. One world each: its legend, and the phenomenon the legend was built to explain." },
+    { n: 2, title: "The Ninety-One Pages", blurb: "Ten pages out of a case of ninety-one. Nothing filed, nothing signed, and every page has to hold something nobody has ever written down." },
+    { n: 3, title: "The Kindling", blurb: "Fourteen nights at one fire, the case emptying a page at a time, under a rule borrowed from Cendre: exactly one page survives." },
     { n: 4, title: "The Standing Charge", blurb: "Fourteen notices, posted on a public wall in a city built to the dimensions of his own filing. Each one carries the schedule it will be painted over on, in its first line." },
   ];
 

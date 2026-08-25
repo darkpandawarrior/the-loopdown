@@ -11,7 +11,7 @@ position: 6
 status: draft
 tags: [world-building, sci-fi, framed-narrative, season-3, archives, measurement, kindling]
 words: 802
-blurb: "Page thirty was never a story, only a table: three weighings and a difference that would not sit still. Tonight he runs the same table one more time before he burns it, and the case comes out lighter than the paper in his hand can account for."
+blurb: "Page thirty was never a story, only a table: three weighings and a difference that would not sit still. Tonight I run it one more time before it goes, and the case comes out heavier than the paper in it."
 lore: [the-archive-is-mass, the-concluded, the-case]
 ---
 
