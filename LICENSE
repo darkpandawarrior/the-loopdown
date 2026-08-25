@@ -1,0 +1,39 @@
+The Loopdown is two things under one roof, and they carry different terms.
+
+SOFTWARE (the engine) is MIT-licensed. This covers scripts/, templates/,
+voice/, dashboard.html, launchd/, and any other code or configuration in
+this repository.
+
+WRITTEN AND CREATIVE WORK (the archive) is NOT covered by the MIT license
+below. All rights reserved. This covers lessons/, fiction/, lore/, series/,
+archive/, notes/, and docs/ — the essays, field notes, narrative and the
+Loopdown universe itself. You may read it. You may quote it with attribution
+and a link. You may not republish, redistribute, adapt or train on it
+without written permission.
+
+The MIT license below applies to the SOFTWARE only.
+
+-----------------------------------------------------------------------
+
+MIT License
+
+Copyright (c) 2024-2026 Siddharth Pandalai
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+

@@ -194,3 +194,17 @@ Each lesson goes out as a *coordinated cross-platform drop* ([SETUP.md](SETUP.md
 - [ ] GitHub Action — auto-render assets + rebuild registry on push
 - [ ] AI hero-image hook for flagship/story posts
 - [ ] Cadence: 2–3 posts/week from the backlog
+
+## License
+
+Two licenses, because this repo holds two different kinds of work.
+
+**The engine is MIT.** `scripts/`, `templates/`, `voice/`, `launchd/` and the
+dashboard are yours to take, fork and adapt. That is what they are for.
+
+**The writing is not.** `lessons/`, `fiction/`, `lore/`, `series/`, `archive/`,
+`notes/` and `docs/` are all rights reserved. Read them, quote them with
+attribution and a link, but republishing or adapting them needs a yes from me
+first. The pipeline is a tool. The field notes are the work.
+
+See [LICENSE](LICENSE) for the exact terms.
