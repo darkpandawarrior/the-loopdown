@@ -11,7 +11,7 @@ position: 4
 status: draft
 tags: [world-building, mythology, sci-fi, framed-narrative, confession, silence]
 words: 447
-blurb: "He takes page twenty three out of the case, the one where a whole world offered to listen, and finds he still has not said the thing, and is about to burn it unsaid on purpose."
+blurb: "Page twenty three is Threnn, the one world where saying a thing out loud is the cure, and a woman who offered twice to sit and hear mine."
 lore: [the-two-facings]
 ---
 
@@ -29,7 +29,7 @@ You already know the rule. A thing can only harm you if you have not said it out
 
 I said no both times.
 
-And here is the part I did not write down two seasons ago. I have the sentence half formed. I have had it half formed since the transit dock lifted off. It starts, near as I can get it, with
+And here is the part I did not write down when I wrote this page. I have the sentence half formed. I have had it half formed since the transit dock lifted off. It starts, near as I can get it, with
 
 Well.
 
@@ -41,7 +41,7 @@ That is the whole of it. This is the one page in the entire case where the cure 
 
 I am doing it anyway.
 
-The page catches slower than the last one did. Wet paper burns slower, and I do not know why it still smells faintly of somewhere green, three seasons and however many milgalaxals of ship time later, but it does, right up until it does not, and then Threnn is thirteen unnamed people, one rule, and a woman who asked twice, and nothing else, anywhere, that remembers she asked.
+The page catches slower than the last one did. Wet paper burns slower, and I do not know why it still smells faintly of somewhere green, however many milgalaxals of ship time later, but it does, right up until it does not, and then Threnn is thirteen unnamed people, one rule, and a woman who asked twice, and nothing else, anywhere, that remembers she asked.
 
 Is there truth in their legend? No one knows. My aim is never to prove or disprove the tales I come across. Just to report them to you, my dear readers, on the pages where I still can.
 

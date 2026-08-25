@@ -12,7 +12,7 @@ phenomenon: "Two measurements that no longer say what he wrote, in his own hand,
 status: draft
 tags: [world-building, mythology, sci-fi, framed-narrative, season-2, skerrin]
 words: 2511
-blurb: "My own two figures, in my own ink, quietly corrected themselves while the case was shut, and by the time I had ruled out everybody it could have been there was one thing left standing, and it was the thing I built."
+blurb: "Two figures in my own ink, in a case only I open, corrected themselves while the lid was shut. Nineteen days from any dock, I run the suspects."
 lore: [the-archive-is-mass, the-concluded, the-two-facings, ossul, the-case, ninety-one-pages]
 ---
 
@@ -44,7 +44,7 @@ Whatever adjusted those figures thought of it immediately. I got the scale out t
 
 So I did what I have done for something close to two thousand three hundred entries whenever a fact refused to sit still. I worked the story, properly, in order, the way you do it when you do not already know the answer.
 
-First suspect was me, some half-asleep version with a stylus and no memory of doing it. That one took longer to rule out than I would like, because memory is exactly the witness you cannot cross-examine, and I have spent two seasons writing about how confidently people misremember. So I stopped arguing about what I recalled and looked at what was on the page. A tired man can write down a wrong number. A tired man cannot write down a number that resolves finer than the scale he owns. Whatever put those figures there was working from a measurement I have no instrument to take.
+First suspect was me, some half-asleep version with a stylus and no memory of doing it. That one took longer to rule out than I would like, because memory is exactly the witness you cannot cross-examine, and I have spent four hundred entries writing about how confidently people misremember. So I stopped arguing about what I recalled and looked at what was on the page. A tired man can write down a wrong number. A tired man cannot write down a number that resolves finer than the scale he owns. Whatever put those figures there was working from a measurement I have no instrument to take.
 
 Second suspect, somebody aboard. The boarding log is the single most boring document I own and I was, for once, relieved to find it boring. Nobody has cycled that airlock since the supply deck, nineteen days ago. (Checking twice does not make it more interesting. I checked a third time anyway.)
 

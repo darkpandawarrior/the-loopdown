@@ -974,17 +974,17 @@
       {
         "n": 1,
         "title": "The Directory",
-        "blurb": "He files. Ten entries, each a world's legend and the phenomenon it explains."
+        "blurb": "Ten entries off the Directory beat. One world each: its legend, and the phenomenon the legend was built to explain."
       },
       {
         "n": 2,
         "title": "The Ninety-One Pages",
-        "blurb": "He stops filing. Each page must contain something nobody has ever written down."
+        "blurb": "Ten pages out of a case of ninety-one. Nothing filed, nothing signed, and every page has to hold something nobody has ever written down."
       },
       {
         "n": 3,
         "title": "The Kindling",
-        "blurb": "He burns ninety pages of his own case, on purpose, to stay alive, then keeps one blank."
+        "blurb": "Fourteen nights at one fire, the case emptying a page at a time, under a rule borrowed from Cendre: exactly one page survives."
       }
     ],
     "entries": [
@@ -1001,7 +1001,7 @@
         "planet": "Exxobar",
         "system": "Alpha Axmoiri",
         "phenomenon": "Why it snows for a half momenta every click",
-        "blurb": "A galactic field reporter transcribes why it snows on a frozen planet — a fire serpent, a water god, and the fisherwoman who talked one of them out of giving up.",
+        "blurb": "Why it snows for a half momenta every click on Exxobar: a fire serpent, a water god, and the fisherwoman who talked one of them out of giving up.",
         "words": "1804",
         "tags": [
           "world-building",
@@ -1429,7 +1429,7 @@
         "planet": "[none. Aboard ship, nineteen days out from anywhere, exactly where nobody could have gotten in.]",
         "system": "",
         "phenomenon": "Two measurements that no longer say what he wrote, in his own hand, inside a case nobody could have reached.",
-        "blurb": "My own two figures, in my own ink, quietly corrected themselves while the case was shut, and by the time I had ruled out everybody it could have been there was one thing left standing, and it was the thing I built.",
+        "blurb": "Two figures in my own ink, in a case only I open, corrected themselves while the lid was shut. Nineteen days from any dock, I run the suspects.",
         "words": "2511",
         "tags": [
           "world-building",
@@ -1453,7 +1453,7 @@
         "planet": "[none. Deep Registry, nine decks down, and the back of a wooden case.]",
         "system": "",
         "phenomenon": "A Standard Interval assigned a length for the first time since the Directory's founding, sitting beside one that still has none",
-        "blurb": "I wrote the last page of this case eighty-one pages before I had any right to reach it, and put the one word I have refused all season somewhere it will never be spoken aloud again. Then I went and found out a unit of time has been assigned a length for the first time since the Directory was founded, and nobody will say why.",
+        "blurb": "I reached past eighty-one blank slots to write the last page first, and put the one word I have refused since page one somewhere it will never be spoken aloud again.",
         "words": "2400",
         "tags": [
           "world-building",
@@ -1528,7 +1528,7 @@
         "planet": "",
         "system": "",
         "phenomenon": "",
-        "blurb": "Page sixteen is Ilmarrow, and the god who taught his own replacements until he ran out of time by exactly one lesson. He holds it, does not reread it, and tells us the real reason why.",
+        "blurb": "Page sixteen is Ilmarrow: the god who taught his own replacements and ran out of time by exactly one lesson, and a page I am not going to open before I burn it.",
         "words": "977",
         "tags": [
           "world-building",
@@ -1553,7 +1553,7 @@
         "planet": "",
         "system": "",
         "phenomenon": "",
-        "blurb": "He takes page twenty three out of the case, the one where a whole world offered to listen, and finds he still has not said the thing, and is about to burn it unsaid on purpose.",
+        "blurb": "Page twenty three is Threnn, the one world where saying a thing out loud is the cure, and a woman who offered twice to sit and hear mine.",
         "words": "447",
         "tags": [
           "world-building",
@@ -1577,7 +1577,7 @@
         "planet": "",
         "system": "",
         "phenomenon": "",
-        "blurb": "The shortest page in the case is one sentence and an apology for being one sentence. He burns it faster than he can explain why he wrote it.",
+        "blurb": "Page thirty four is not an entry. It is one sentence, and underneath it, in smaller writing, an apology for being one sentence.",
         "words": "280",
         "tags": [
           "morkinstar-journals",
@@ -1598,7 +1598,7 @@
         "planet": "",
         "system": "",
         "phenomenon": "",
-        "blurb": "Page thirty was never a story, only a table: three weighings and a difference that would not sit still. Tonight he runs the same table one more time before he burns it, and the case comes out lighter than the paper in his hand can account for.",
+        "blurb": "Page thirty was never a story, only a table: three weighings of this case and a difference that would not sit still. Tonight I run it one last time.",
         "words": "802",
         "tags": [
           "world-building",
@@ -1646,7 +1646,7 @@
         "planet": "",
         "system": "",
         "phenomenon": "",
-        "blurb": "Page forty seven was the good one. The Vedrei carve their cost into a wall and resurface it every generation so nobody stops reading it. He has no wall. He is about to have less of one.",
+        "blurb": "Page forty seven is Kaunis, where the Vedrei cut the cost of their own honesty into a wall and resurface it every generation so nobody stops reading it.",
         "words": "370",
         "tags": [
           "world-building",
@@ -1671,7 +1671,7 @@
         "planet": "",
         "system": "",
         "phenomenon": "",
-        "blurb": "Page sixty-one is the only page in the case he did not write alone. He builds a very good reason to keep it anyway, and burns it exactly like the other eighty-nine.",
+        "blurb": "Page sixty-one is the only page in this case I did not write alone: a lineage recited once, at midnight, on a world I was only grounded on by weather.",
         "words": "1097",
         "tags": [
           "morkinstar-journals",
@@ -1692,7 +1692,7 @@
         "planet": "",
         "system": "",
         "phenomenon": "",
-        "blurb": "Page thirty eight is six worlds, six fences, and three old wars nobody knows they are still fighting. He is the only entity who has ever seen all six lines on one table, and in a minute there will be nobody who has.",
+        "blurb": "Page thirty eight is six worlds, six fences, and three old wars nobody knows they are still fighting. It is the only copy of that map anywhere.",
         "words": "855",
         "tags": [
           "world-building",
@@ -1716,7 +1716,7 @@
         "planet": "",
         "system": "",
         "phenomenon": "",
-        "blurb": "Page seventy three is four names in his hand and nothing else. He can place two of them. He tries very hard on the other two, and loses, and cannot decide whose fault that is.",
+        "blurb": "Page seventy three is four names in my own hand and nothing else. No world above them, no sentence under them, and I can only place two.",
         "words": "580",
         "tags": [
           "morkinstar-journals",
@@ -1764,7 +1764,7 @@
         "planet": "",
         "system": "",
         "phenomenon": "",
-        "blurb": "Page ninety-one is the last page in the case, the fourteenth's name, written once and on purpose in the one place he was certain nobody would ever go. Tonight the fire is that place too, and he knows it, and says so before he lets it burn.",
+        "blurb": "Page ninety-one is the last page in the case, filled first and on purpose, holding the one word I wrote exactly once. There is nothing behind it tonight.",
         "words": "1098",
         "tags": [
           "world-building",
@@ -1789,7 +1789,7 @@
         "planet": "",
         "system": "",
         "phenomenon": "",
-        "blurb": "The case is empty, and the rule says he has to keep one page holding something nobody has ever written down. He goes looking for that in everything he has ever been, finds nothing, and understands, at last, what the only unwritten thing left in this case could only ever be.",
+        "blurb": "The case is empty, and the rule says one page has to go back in holding something nobody has ever written down. I go looking for that in what I have left.",
         "words": "891",
         "tags": [
           "world-building",

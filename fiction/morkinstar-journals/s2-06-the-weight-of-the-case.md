@@ -26,7 +26,7 @@ I am on the ship. No world this time. We are between two systems I am not going 
 
 So I weighed the case.
 
-I want to be honest that this was not a suspicious act. I was not testing anything. I hooked the case's carry strap onto the stores scale, the old hanging one by the aft locker with the needle and the dial, because the manifest form has a line for it and I am, whatever else I have stopped doing this season, still a man who fills in a form correctly.
+I want to be honest that this was not a suspicious act. I was not testing anything. I hooked the case's carry strap onto the stores scale, the old hanging one by the aft locker with the needle and the dial, because the manifest form has a line for it and I am, whatever else I have stopped doing lately, still a man who fills in a form correctly.
 
 The case with all twenty-nine pages currently in it: **3,841 grams**, near enough, and I am rendering that in grams for you rather than the Directory's own unit because I do not trust myself to convert without checking it twice, and we all know by now what happens when a conversion goes unchecked. [Page Fact- the stores scale was calibrated on a moon I could not point to on a chart, four owners of this ship ago, and the calibration sticker is peeling up at one corner. I keep meaning to get it looked at. I guess I will, eventually, probably. ]
 
@@ -72,7 +72,7 @@ Here is my table, because I trust a table more than I trust myself right now:
 
 That is the entire entry. I am not going to write underneath it what I think it means, and I want to tell you exactly why, because I think you deserve the real reason and not a tidier one. The professional reason is that a measurement can be checked by whoever reads this after me and a suspicion cannot, and a page in this case is only worth the space it takes up in the box if it survives being handed to someone with a better scale than mine. That reason is true. It is also not the whole of it, and I am experienced enough at this particular kind of self report to know the difference between a reason and an excuse dressed as one, and I am choosing, today, on page thirty of ninety one, to write down the numbers and let the numbers be the whole page.
 
-One more thing and then I am done, because it belongs in this entry and I do not want to give it more than the one sentence it is getting. The Concluded count stands at six hundred and forty as of this morning. It has climbed by twenty eight since I built this case, which is more than it climbed in the whole of last season. Anyway.
+One more thing and then I am done, because it belongs in this entry and I do not want to give it more than the one sentence it is getting. The Concluded count stands at six hundred and forty as of this morning. It has climbed by twenty eight since I built this case, which is more than it climbed across my last two hundred entries. Anyway.
 
 I put the case back on the shelf by the bunk. I did not weigh it again for four more days, which was harder to manage than it has any right to have been for an object made of wood and paper and a strap.
 
