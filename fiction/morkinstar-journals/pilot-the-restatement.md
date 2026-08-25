@@ -16,9 +16,9 @@ blurb: "Four documents. Three offices. One figure, correct at every step down. T
 
 ---
 
-**CLOSURE NOTICE**
-Standards Directorate
-Reference: Survey Designation 71-119
+**CLOSURE NOTICE**\
+Standards Directorate\
+Reference: Survey Designation 71-119\
 Filed: click 4, galaxal 883
 
 Subject: status change to Concluded
@@ -41,9 +41,9 @@ Standing Order Six, reproduced for the file, as it is reproduced on every closur
 
 ---
 
-**REBASING WORKSHEET**
-Table Custodianship, Ferrow
-Reference: Standard Span, keyed value SV-71119
+**REBASING WORKSHEET**\
+Table Custodianship, Ferrow\
+Reference: Standard Span, keyed value SV-71119\
 Filed: click 19, galaxal 883
 
 The Standard Span has been defined, since the founding survey, as one four-hundred-thousandth of the meridian arc of Survey Designation 71-119. Following the closure notice of click 4, galaxal 883, this office identifies the Span as a keyed value requiring rebasing under Standing Order Six.
@@ -70,9 +70,9 @@ Distribution: all Reaches subscribed to any of the four values, 2,206 registries
 
 ---
 
-**NOTICE OF CADASTRAL RESTATEMENT**
-Parcel Registry, Coombe Reach
-Reference: Cadastral Sheet 12, Boundary Marker CM-118
+**NOTICE OF CADASTRAL RESTATEMENT**\
+Parcel Registry, Coombe Reach\
+Reference: Cadastral Sheet 12, Boundary Marker CM-118\
 Filed: click 61, galaxal 883
 
 Boundary Marker CM-118 defines the eastern easement of Parcel 12-C at a recorded offset of one Standard Assessment Distance from Boundary Marker CM-117.
@@ -89,8 +89,8 @@ Distribution: holders of record for Cadastral Sheet 12, notice by post. Public n
 
 ---
 
-**FILING NOTE**
-Parcel Registry, Coombe Reach
+**FILING NOTE**\
+Parcel Registry, Coombe Reach\
 Reference: Notice of Cadastral Restatement, click 61, galaxal 883
 
 Copies posted: 1. Copies requested since posting: 0.
