@@ -2560,11 +2560,7 @@
         {
           "n": "Mrit'havn",
           "s": "[position withheld]",
-          "o": [
-            6,
-            -8,
-            5
-          ],
+          "o": null,
           "st": "withdrawn",
           "k": "3-2",
           "d": "Page 12, withdrawn. One question, once, for as long as the smoke holds its shape."
@@ -2572,11 +2568,7 @@
         {
           "n": "[unremembered]",
           "s": "[unrecorded]",
-          "o": [
-            -7,
-            6,
-            -6
-          ],
+          "o": null,
           "st": "withdrawn",
           "k": "3-5",
           "d": "Page 34, withdrawn. The blind fish still turn toward the door. He no longer knows which world it was."
@@ -2608,11 +2600,7 @@
         {
           "n": "◇",
           "s": "Alpha Axmoiri",
-          "o": [
-            -98,
-            108,
-            -108
-          ],
+          "o": null,
           "st": "ruin",
           "d": "Designation withheld. Concluded. A Hellheim was keyed to its year, and the only surviving record of that year is a conversion error nobody has corrected."
         }
