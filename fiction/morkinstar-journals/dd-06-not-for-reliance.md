@@ -21,7 +21,7 @@ blurb: "A repair shop needs the held copy of a specification fitted in nine thou
 Reading Room, Public Access Counter\
 Form R-2, revision 9
 
-Received: tick 9, momenta 4, click 8, galaxal 899\
+Received: tick 9, momenta 4, click 21, galaxal 884\
 Class indicated by applicant: ~~III~~ II\
 Name: Aldvik\
 Of: Rull and Aldvik, door and gate repairs, Coombe Reach
@@ -30,7 +30,7 @@ Description of the thing wanted, in the applicant's own words, to be entered by 
 
 > I have ticked the search box and then crossed it out, because the notice by the slips says a search is a search and a copy is a copy, and what I want is a copy. It also says to describe the thing as exactly as I can. So here it is, as exactly as I can put it.
 >
-> Specification 4-118, door check, Pattern 4. Fittings Standards Office, Ferrow. Issued click 12, galaxal 741. Twenty two sheets, with the parts schedule on sheets 9 to 14. I want the whole of it and I will pay for the whole of it, but if it helps you to know which sheet I am really after, it is sheet 11, and on sheet 11 it is the seat depth for the friction shoe, part 4c.
+> Specification 4-118, door check, Pattern 4. Fittings Standards Office, Ferrow. Issued click 189, galaxal 883. Twenty two sheets, with the parts schedule on sheets 9 to 14. I want the whole of it and I will pay for the whole of it, but if it helps you to know which sheet I am really after, it is sheet 11, and on sheet 11 it is the seat depth for the friction shoe, part 4c.
 >
 > Why, in case you need that too. There are about nine thousand of these checks hung in this Reach and the two either side of it. Stair doors and lobby doors, mostly, in housing that went up in a hurry a long time ago. The pattern has not been made in my lifetime and it will not be made again. We keep them going. That is most of what the shop does now. A check comes off a door, the shoe is worn, we cut a new shoe, and the shoe has to sit at the right depth, because a shoe seated shallow shuts the door hard enough to catch somebody on the stair side, and a shoe seated deep leaves the door off the latch, which in a stair door is worse.
 >
@@ -41,16 +41,16 @@ Description of the thing wanted, in the applicant's own words, to be entered by 
 > Somebody there said this office holds one. If you hold it I will take a copy of all twenty two sheets and I will pay the sheet rate. I do not need it quickly. I need it to be the held one.
 
 Signed: Aldvik\
-Dated: tick 9, momenta 4, click 8, galaxal 899
+Dated: tick 9, momenta 4, click 21, galaxal 884
 
 ---
 
 **RETRIEVAL RESPONSE**\
 Form R-11, revision 4\
 Request 11-0501, class II\
-Issued: tick 47, momenta 4, click 8, galaxal 899
+Issued: tick 47, momenta 4, click 21, galaxal 884
 
-The item is twenty two sheets, unbound, in a folder, 0.01 linear, sound throughout. Sheet 11 carries a repair to the lower left corner, executed in a paper of a different weight, and the repair does not cross the schedule. The sheets are numbered in the original hand at the foot and the numbering is complete. The item is Specification 4-118, door check, Pattern 4, Fittings Standards Office, Ferrow, issued click 12, galaxal 741.
+The item is twenty two sheets, unbound, in a folder, 0.01 linear, sound throughout. Sheet 11 carries a repair to the lower left corner, executed in a paper of a different weight, and the repair does not cross the schedule. The sheets are numbered in the original hand at the foot and the numbering is complete. The item is Specification 4-118, door check, Pattern 4, Fittings Standards Office, Ferrow, issued click 189, galaxal 883.
 
 The description entered on the slip matches the item held at title, number, issuing office, date of issue and extent. A copy of all twenty two sheets is produced with this response and is issued on collection. The copy is a line copy taken at the copying frame at full size.
 
@@ -98,7 +98,7 @@ Access: no restriction. Retrieval available on production of a description.
 
 The series is not a subject series. The items described into it have no subject in common and are not held to have one. An item is described into Series 9 where it is present at an inventory and no deposit record is held for it. An item leaves the series where a deposit record is produced, and is redescribed into the series appropriate to its provenance at the next inventory following.
 
-Item 9/44. Specification 4-118, door check, Pattern 4, Fittings Standards Office, Ferrow, issued click 12, galaxal 741. Twenty two sheets, unbound, in a folder, sound. Sheet 11 repaired at the lower left corner. Described at item level at the last inventory.
+Item 9/44. Specification 4-118, door check, Pattern 4, Fittings Standards Office, Ferrow, issued click 189, galaxal 883. Twenty two sheets, unbound, in a folder, sound. Sheet 11 repaired at the lower left corner. Described at item level at the last inventory.
 
 ---
 
@@ -112,7 +112,7 @@ Sheets 1 and 22 of the copy, reproduced with the response under Part 7.7
 SPECIFICATION 4-118\
 DOOR CHECK, PATTERN 4\
 Fittings Standards Office, Ferrow\
-Issued: click 12, galaxal 741. Supersedes Specification 4-96, door check, Pattern 3.
+Issued: click 189, galaxal 883. Supersedes Specification 4-96, door check, Pattern 3.
 
 1. Scope. This specification covers the door check, Pattern 4, for use on a hinged leaf of mass not exceeding forty units, hung on two or three knuckle hinges, in stair, lobby and corridor positions. It does not cover the Pattern 4 check as fitted to a leaf carrying a vision panel, for which see Addendum 1, not issued.
 
@@ -126,11 +126,11 @@ Issued: click 12, galaxal 741. Supersedes Specification 4-96, door check, Patter
 
 WITHDRAWAL NOTE\
 Fittings Standards Office, Ferrow\
-Endorsed: click 40, galaxal 764
+Endorsed: click 211, galaxal 883
 
-Manufacture of the Pattern 4 check ceased at click 38, galaxal 764. This specification is withdrawn for new work at the date of this endorsement, and remains in force for the maintenance and repair of checks already fitted, for as long as any remain in service.
+Manufacture of the Pattern 4 check ceased at click 209, galaxal 883. This specification is withdrawn for new work at the date of this endorsement, and remains in force for the maintenance and repair of checks already fitted, for as long as any remain in service.
 
-The number of checks in service at the date of this endorsement is not held by this office. The last return made to this office, at click 31, galaxal 764, gave the number fitted across the Coombe, Ferrow and Tellin Reaches as eight thousand nine hundred and forty. That figure is a return and not a survey.
+The number of checks in service at the date of this endorsement is not held by this office. The last return made to this office, at click 202, galaxal 883, gave the number fitted across the Coombe, Ferrow and Tellin Reaches as eight thousand nine hundred and forty. That figure is a return and not a survey.
 
 No successor pattern is specified. Enquiries as to a successor pattern are to be made to the Trade Registry.
 
@@ -138,7 +138,7 @@ No successor pattern is specified. Enquiries as to a successor pattern are to be
 
 **NOTE ENTERED BY THE APPLICANT ON COLLECTION**\
 Form R-2, revision 9, reverse\
-Received: tick 2, momenta 5, click 8, galaxal 899
+Received: tick 2, momenta 5, click 21, galaxal 884
 
 > I have paid and I have the sheets, and I want to put something on the file, and the notice says a note may be entered on the reverse, so here it is.
 >

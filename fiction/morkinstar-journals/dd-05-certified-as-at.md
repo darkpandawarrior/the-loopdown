@@ -20,10 +20,10 @@ blurb: "A workshop stands twenty thousandths of a Span outside a line. Hesk pays
 **REQUEST FOR A CERTIFIED COPY**\
 Form R/IV, revision 9\
 Retrieval counter\
-Received: click 11, galaxal 895\
+Received: click 21, galaxal 884\
 Request 11-0488
 
-Requester: Hesk. Date: click 11, galaxal 895.
+Requester: Hesk. Date: click 21, galaxal 884.
 
 Class of retrieval requested, tick one: I [ ] · II [ ] · III ~~[x]~~ · IV [x]
 
@@ -48,10 +48,10 @@ Fee taken in advance, Schedule 2, revision 19: certification 12.00, copying 0.40
 **RESPONSE OF THIS OFFICE**\
 Form C4/R, revision 12\
 Certification Section\
-Filed: click 13, galaxal 895\
+Filed: click 22, galaxal 884\
 Reference: Request 11-0488
 
-Produced: two certificates, one sheet each, sealed at the foot in violet, and one enclosure of two sheets, unbound. Four sheets, all new. Retrieval was completed on click 12, galaxal 895, and certification on click 13, galaxal 895. The service standard for class IV is one click plus certification. The return is inside the standard.
+Produced: two certificates, one sheet each, sealed at the foot in violet, and one enclosure of two sheets, unbound. Four sheets, all new. Retrieval was completed on click 22, galaxal 884, and certification on the same click. The service standard for class IV is one click plus certification. The return is inside the standard.
 
 The item described is an entry on the Standing Table of Standard Values, held by this repository at fonds 4, series 2, item 19. The table is bound in nine volumes and is amended by revision. The entry described is Standard Bond Radius, default.
 
@@ -76,12 +76,12 @@ Certificate C4-2211
 
 This office certifies that the entry set out below is a true copy of the entry held at the reference stated, as at the date stated, and certifies nothing further.
 
-Reference: Standing Table of Standard Values, Table Custodianship, Marn. Revision 61, posted click 84, galaxal 894.\
+Reference: Standing Table of Standard Values, Table Custodianship, Marn. Revision 61, posted click 15, galaxal 884.\
 Entry: Standard Bond Radius, default.\
 Value: 900.034200 Spans.\
-As at: click 11, galaxal 895.
+As at: click 21, galaxal 884.
 
-Sealed: click 13, galaxal 895.
+Sealed: click 22, galaxal 884.
 
 ---
 
@@ -92,12 +92,12 @@ Certificate C4-2212
 
 This office certifies that the entry set out below is a true copy of the entry held at the reference stated, as at the date stated, and certifies nothing further.
 
-Reference: Standing Table of Standard Values, Table Custodianship, Marn. Revision 62, posted click 12, galaxal 895.\
+Reference: Standing Table of Standard Values, Table Custodianship, Marn. Revision 62, posted click 22, galaxal 884.\
 Entry: Standard Bond Radius, default.\
 Value: 900.068401 Spans.\
-As at: click 13, galaxal 895.
+As at: click 22, galaxal 884.
 
-Sealed: click 13, galaxal 895.
+Sealed: click 22, galaxal 884.
 
 ---
 
@@ -106,11 +106,11 @@ Sealed: click 13, galaxal 895.
 **EXTRACT, REPUBLICATION ADDENDUM TO THE STANDING TABLE**\
 Table Custodianship, Marn\
 Reference: Standing Table, revision 62\
-Filed and posted: click 12, galaxal 895
+Filed and posted: click 22, galaxal 884
 
-Survey Designation 88-402 received the Concluded flag effective click 2, galaxal 895.
+Survey Designation 88-402 received the Concluded flag effective click 20, galaxal 884.
 
-The Standard Span has been defined against the meridian arc of that designation since the rebasing of galaxal 883. This office identifies the Span as a keyed value requiring rebasing under the standing order. Active reference assigned: Survey Designation 14-651.
+The Standard Span has been defined against the meridian arc of that designation since the rebasing of click 14, galaxal 884. This office identifies the Span as a keyed value requiring rebasing under the standing order. Active reference assigned: Survey Designation 14-651.
 
 Every value on this table derived from the Span, at any remove, is restated in the same proportion, thirty eight parts in a million, on the date of this addendum. All four recompute without remainder. No further rounding is applied at this office.
 
@@ -136,7 +136,7 @@ Reproduced for the file:
 **RECEIPT AND NOTE OF RELEASE**\
 Form F/3, revision 21\
 Retrieval counter\
-Filed: click 13, galaxal 895\
+Filed: click 22, galaxal 884\
 Reference: Request 11-0488
 
 Supplementary demand of 13.20 rendered at the counter and paid in full at the counter on the same tick. Total received against this request: 25.60.
@@ -150,14 +150,14 @@ A return is released as one. The signature is for the return and not for any she
 **ENQUIRY**\
 Form Q/1, revision 4\
 Retrieval counter\
-Received: click 13, galaxal 895\
+Received: click 22, galaxal 884\
 Class I. No charge. Lodged against Request 11-0488.
 
-Requester: Hesk. Date: click 13, galaxal 895.
+Requester: Hesk. Date: click 22, galaxal 884.
 
 > I have read both of them at your counter with the lamp on and I have read them twice.
 >
-> On the first one I am twenty thousandths of a Span outside the line. On the second one I am fourteen thousandths inside it. Between the two of them nobody has come near my workshop. Nobody has walked the ground. Nobody has stood at the centre mark of the Ferris holding with an instrument in their hands. I filed on the eleventh and the eleventh is on your first certificate and the twelfth is on your second one, and on the twelfth I was in Halloway Reach moving stock out of the rain in a building that you have now told me twice is in two different places.
+> On the first one I am twenty thousandths of a Span outside the line. On the second one I am fourteen thousandths inside it. Between the two of them nobody has come near my workshop. Nobody has walked the ground. Nobody has stood at the centre mark of the Ferris holding with an instrument in their hands. I filed on the twenty first and the twenty first is on your first certificate and the twenty second is on your second one, and on the twenty second I was in Halloway Reach moving stock out of the rain in a building that you have now told me twice is in two different places.
 >
 > So I would like to ask two things and I am told they are both class I, which is free, which is the only free thing that has happened to me in this room.
 >
@@ -172,12 +172,12 @@ Requester: Hesk. Date: click 13, galaxal 895.
 **RESPONSE OF THIS OFFICE**\
 Form Q/1, revision 4\
 Certification Section\
-Filed: click 13, galaxal 895, same tick\
+Filed: click 22, galaxal 884, same tick\
 Reference: Enquiry lodged against Request 11-0488
 
 The enquiry asks two questions. Both are answerable from published schedules and both are answered below at no charge.
 
-**First.** The rebasing was executed by Table Custodianship, Marn, under the standing order reproduced at enclosure 3, and is signed at the foot of the addendum with the post title of the officer of the day. The addendum records that no survey was conducted and no mark was moved. The restatement is arithmetic and takes effect on posting. The objection period against the addendum is one momenta from click 12, galaxal 895, and is open.
+**First.** The rebasing was executed by Table Custodianship, Marn, under the standing order reproduced at enclosure 3, and is signed at the foot of the addendum with the post title of the officer of the day. The addendum records that no survey was conducted and no mark was moved. The restatement is arithmetic and takes effect on posting. The objection period against the addendum is one momenta from click 22, galaxal 884, and is open.
 
 A measured value recorded at a survey is not a value derived from a Standard value. The standing order restates derived values. It does not restate observations. The recorded offset of the workshop is a measured value, taken at the survey of galaxal 871, and has not been restated at any revision of the standing table.
 

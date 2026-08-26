@@ -20,10 +20,10 @@ blurb: "A tenant whose agreement runs for one Elysheim would like to know how lo
 **REQUEST SLIP**\
 Reading Services, Public Counter\
 Form Q/1, revision 12\
-Request 11-0463. Received: click 96, galaxal 884.
+Request 11-0463. Received: click 21, galaxal 884.
 
 Name of requester: Nirras\
-Date: click 96, galaxal 884
+Date: click 21, galaxal 884
 
 Class requested, tick one: I ☐ · II ☐ · III ☒ · IV ☐
 
@@ -52,7 +52,7 @@ Class requested, tick one: I ☐ · II ☐ · III ☒ · IV ☐
 **COUNTER RETURN**\
 Reading Services, Public Counter\
 Form R/1, revision 14\
-Request 11-0463. Received: click 96, galaxal 884. Returned: click 96, galaxal 884, within the tick of receipt.\
+Request 11-0463. Received: click 21, galaxal 884. Returned: click 21, galaxal 884, within the tick of receipt.\
 Service standard for class I: same tick. Standard met.
 
 The request as filed is marked class III. Class is assigned on what is requested and not on how the request is marked. A search is the identification of documents the requester has not cited. The requester has cited the document by name and by section, correctly, and the document is published and stands at this counter. Production of a schedule cited by the requester is class I. The request is classed I. Class I carries no charge and no charge is raised.

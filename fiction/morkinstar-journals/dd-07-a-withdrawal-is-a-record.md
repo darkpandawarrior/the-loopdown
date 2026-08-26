@@ -20,13 +20,13 @@ blurb: "Vunn filed something eleven clicks ago and would like it taken out, and 
 **REQUEST SLIP**\
 Form R/2\
 Reading Room counter\
-Received: click 140, galaxal 901
+Received: click 22, galaxal 884
 
 Requester: Vunn. Class requested: III.
 
 Description of what is sought, in the requester's hand, reproduced as supplied:
 
-> I filed a request at this counter on click 129 of this galaxal, in my own name, and I would like it withdrawn. I do not want an answer to it. I have not wanted one for a good while now and I would rather it was not sitting somewhere still owed to me.
+> I filed a request at this counter on click 11 of this galaxal, in my own name, and I would like it withdrawn. I do not want an answer to it. I have not wanted one for a good while now and I would rather it was not sitting somewhere still owed to me.
 >
 > The form asks what it was about. I am not going to write it down a second time, and ~~that is the~~ not writing it down is the whole of my difficulty, so I am hoping the date and the name will do. I was told at the counter that they will do. Please take it out.
 >
@@ -40,7 +40,7 @@ Description of what is sought, in the requester's hand, reproduced as supplied:
 >
 > I will pay what it costs, and I know it will not be nothing. I am not making a complaint and there is nothing to complain of. Please.
 >
-> Vunn. Click 140, galaxal 901.
+> Vunn. Click 22, galaxal 884.
 
 ---
 
@@ -48,9 +48,9 @@ Description of what is sought, in the requester's hand, reproduced as supplied:
 Form R/5\
 Reading Room, issued at the counter\
 Reference: Request 11-0509\
-Issued: click 141, galaxal 901
+Issued: click 23, galaxal 884
 
-The request is a search of the request register, class III, for an entry received click 129, galaxal 901, in the name given. The search was made across two volumes. One entry answers the description. Four descriptions are produced and are scheduled below.
+The request is a search of the request register, class III, for an entry received click 11, galaxal 884, in the name given. The search was made across two volumes. One entry answers the description. Four descriptions are produced and are scheduled below.
 
 The request further asks that the entry be withdrawn, and that the withdrawal not be kept. Both are answered here.
 
@@ -75,14 +75,14 @@ Reference: Request 11-0509
 | Field | Entry |
 |---|---|
 | Reference | 06-2214 |
-| Received | click 129, galaxal 901 |
+| Received | click 11, galaxal 884 |
 | Requester of record | Vunn |
 | Class | not assigned |
-| Disposition | withdrawn, click 140, galaxal 901 |
+| Disposition | withdrawn, click 22, galaxal 884 |
 
 The register records requester, date of receipt, class, and disposition. It does not record subject. Subject is carried on the slip.
 
-Prior to the annotation of click 140 the disposition field carried no value. A request marked withdrawn is not counted as a request in the class in which it was received.
+Prior to the annotation of click 22 the disposition field carried no value. A request marked withdrawn is not counted as a request in the class in which it was received.
 
 **2. The slip held with entry 06-2214.** Extent: one sheet. Condition: not stated.
 
@@ -99,10 +99,10 @@ The sheet is held.
 | Field | Entry |
 |---|---|
 | Reference | 11-0509 |
-| Received | click 140, galaxal 901 |
+| Received | click 22, galaxal 884 |
 | Requester of record | Vunn |
 | Class | III |
-| Disposition | returned complete, click 141, galaxal 901 |
+| Disposition | returned complete, click 23, galaxal 884 |
 
 The slip held with this entry is one sheet, form R/2, ink on the ruled side, folded once for the file, sound. The hand reduces in size over the last four lines. The description of what is sought is complete as supplied and is reproduced at the head of this file.
 
@@ -115,7 +115,7 @@ Issued at the counter. No signature is applied to a form R/5.
 **WITHDRAWAL OF A REQUEST**\
 Form W/9, revision 4\
 Issued by the Standing Regulations Office\
-In force from click 12, galaxal 897. Revisions 1 to 3 are held.
+In force from click 18, galaxal 884. Revisions 1 to 3 are held.
 
 1. A requester may withdraw a request at any time before it is answered. No ground need be given and none is assessed.
 2. Withdrawal is effected by completing this form at the counter, or by post to the address printed at the foot. A withdrawal by post takes effect on receipt and not on posting.
@@ -138,14 +138,14 @@ Form W/9, revision 4, as completed. Reproduced for the file.
 | Field | As completed |
 |---|---|
 | Request to be withdrawn, reference if known | 06-2214 |
-| Date of receipt of that request | click 129, galaxal 901 |
+| Date of receipt of that request | click 11, galaxal 884 |
 | Requester of record | Vunn |
 | Class in which that request was received | not assigned |
 | Reason for withdrawal. This field is optional and is not used in processing | *struck matter, omitted* |
 | Signature | Vunn |
-| Date | click 140, galaxal 901 |
+| Date | click 22, galaxal 884 |
 
-Counter receipt: received click 140, galaxal 901. Stamped. Filed same day.
+Counter receipt: received click 22, galaxal 884. Stamped. Filed same day.
 
 ---
 
@@ -154,14 +154,14 @@ Counter receipt: received click 140, galaxal 901. Stamped. Filed same day.
 **MEMORANDUM**\
 Reading Room to Standing Regulations Office\
 Reference: Request 11-0509\
-Filed: click 140, galaxal 901
+Filed: click 22, galaxal 884
 
 A requester asks that a completed withdrawal not be retained. The retention schedule in force sets a retention period for series 4 and specifies no disposal action at its expiry. This office asks which office holds the procedure for the disposal of such a record.
 
 **REPLY**\
 Standing Regulations Office to Reading Room\
 Reference: as above\
-Filed: click 141, galaxal 901
+Filed: click 23, galaxal 884
 
 The retention schedule sets retention periods. Where no disposal action is specified, none is specified, and that is not a disposal action of nil.
 
@@ -174,7 +174,7 @@ For completeness, the schedule is itself a record and is retained. Its supersede
 **FILE NOTE**\
 Reading Room\
 Reference: Request 11-0509\
-Filed: click 141, galaxal 901
+Filed: click 23, galaxal 884
 
 The record is held at this office. The procedures available to this office in respect of a record of a request are those printed in form W/9, revision 4. The correspondence is complete and is filed with the request.
 
@@ -182,7 +182,7 @@ The record is held at this office. The procedures available to this office in re
 
 **RETRIEVAL NOTE**\
 Reference: Request 11-0509\
-Written on issue, click 141, galaxal 901
+Written on issue, click 23, galaxal 884
 
 Holding cited: Series 2, Request Register, volumes 6 and 11. Series 4, Withdrawals, item 1,318. One sheet held with entry 06-2214, not described.
 

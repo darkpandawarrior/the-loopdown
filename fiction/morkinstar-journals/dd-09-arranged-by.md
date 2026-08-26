@@ -20,7 +20,7 @@ blurb: "A stone dresser with six days and thirty in her pocket describes a thing
 **REQUEST SLIP**\
 Form R/2\
 Reading Room counter\
-Received: tick 12, click 20, galaxal 904
+Received: tick 97, click 22, galaxal 884
 
 Requester: Semmi. Class requested: III.
 
@@ -46,7 +46,7 @@ Description of what is sought, in the requester's hand, reproduced as supplied:
 Form R/5, revision 9\
 Reading Services, Search Room\
 Reference: Request 11-0530\
-Issued: tick 197, click 20, galaxal 904
+Issued: tick 98, click 22, galaxal 884
 
 The request is a search of a series against a description, class III. The description supplied is of a physical form. It is sufficient and no further description was sought.
 
@@ -60,7 +60,7 @@ The schedule of items produced is attached and forms part of this response.
 
 Fees, per the schedule of fees and charges, revision 12. Search, two hours at the class III rate of 11 the hour: 22. Production, no charge. Copying at the copying frame, 2 the sheet, not taken. Copying by hand at the table is not a service of this office and no charge arises. Receipted at the counter on issue.
 
-Class III service standard is one click. The request was received at tick 12 and the items were on the table at tick 197 of the same click. The return is inside the standard.
+Class III service standard is one click. The request was received at tick 97 and the items were on the table at tick 98 of the same click. The return is inside the standard.
 
 Signed for the repository: Reading Services, Search Room. Form R/5, revision 9.
 
@@ -69,7 +69,7 @@ Signed for the repository: Reading Services, Search Room. Form R/5, revision 9.
 **SCHEDULE OF ITEMS PRODUCED**\
 Attached to and forming part of the response above\
 Reference: Request 11-0530\
-Written at production, tick 197, click 20, galaxal 904
+Written at production, tick 98, click 22, galaxal 884
 
 Forty one items, recorded in the order produced.
 
@@ -124,7 +124,7 @@ Every item answering the description is on this schedule. The schedule is retain
 **REQUEST SLIP**\
 Form R/2\
 Reading Room counter\
-Received: tick 8, click 22, galaxal 904
+Received: tick 99, click 22, galaxal 884
 
 Requester: Semmi. Second production under request 11-0530.
 
@@ -140,9 +140,9 @@ Requester: Semmi. Second production under request 11-0530.
 Form R/5, revision 9\
 Reading Services, Search Room\
 Reference: Request 11-0530, second production\
-Issued: tick 44, click 22, galaxal 904
+Issued: tick 99, click 22, galaxal 884
 
-**Second production.** The forty one items produced under this request on click 20 are produced again on this click. Item 12/499/8 is among them and is at the position it carries in the schedule.
+**Second production.** The forty one items produced under this request on tick 98 are produced again on this tick. Item 12/499/8 is among them and is at the position it carries in the schedule.
 
 A schedule of items produced was written at this production, as one is written at every production. Two schedules exist for this request and they do not differ. The second was made because a second production was made. Both are retained. The repository does not discard a schedule on the grounds that it is duplicated.
 
@@ -173,16 +173,16 @@ Access: no restriction. Retrieval available on production of a description. No s
 
 Scope and content: setting out sheets, job sheets, orders, accounts and correspondence of a works office that cut, hung and dressed mill stones.
 
-Dates of description: entered at the inventory of galaxal 891, amended at the inventory of galaxal 903. The amendment was to condition. The entry before amendment is retained.
+Dates of description: entered at the inventory of galaxal 883, amended at the inventory of galaxal 884. The amendment was to condition. The entry before amendment is retained.
 
 ---
 
 **COUNTER NOTE**\
 Reading Room\
 Reference: Request 11-0530\
-Filed: tick 260, click 22, galaxal 904
+Filed: tick 100, click 22, galaxal 884
 
-The requester attended on click 20 and click 22 and copied by hand at the table. The items were returned to the shelf at the close of each day and the production was complete on each occasion. The fee is receipted.
+The requester attended on tick 98 and tick 99 and copied by hand at the table. The items were returned to the shelf at the close of each day and the production was complete on each occasion. The fee is receipted.
 
 A communication was left at the counter on collection of the receipt. A communication received at the counter is filed with the request it relates to. It is reproduced.
 
@@ -190,7 +190,7 @@ A communication was left at the counter on collection of the receipt. A communic
 >
 > Say this to whoever sets the trolley out. The second day it came off the same way as the first, in the same order, and the one I wanted was eleventh along both times, and I never once had to hunt for it. That is an hour I did not have and it was given to me. I would shake the hand of it.
 >
-> Semmi. Click 22, galaxal 904. I go out on the eighth.
+> Semmi. Tick 99, click 22, galaxal 884. I go out on the eighth.
 
 The communication is filed. Nothing further arises.
 
@@ -198,7 +198,7 @@ The communication is filed. Nothing further arises.
 
 **RETRIEVAL NOTE**\
 Reference: Request 11-0530\
-Written on issue, tick 262, click 22, galaxal 904
+Written on issue, tick 100, click 22, galaxal 884
 
 Holding cited: Series 12, Mill Works, Thurl Reach, forty one items, scheduled. Enclosure A: fonds 1, series 1, the entry for series 12.\
 Extent and condition: 0.3 linear, forty one items, sheets loose and folded and two notebooks, sound; four items carry the conditions stated in the schedule and none of them crosses a drawn line.\

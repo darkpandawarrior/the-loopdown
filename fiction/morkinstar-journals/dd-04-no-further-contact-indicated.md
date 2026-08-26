@@ -20,7 +20,7 @@ blurb: "A man who left a world at seven walks into a reading room and asks what 
 **REQUEST SLIP**\
 Reading room, public counter\
 Form A1 rev. 9\
-Fee period 11. Register entry 11-0471. Received click 14, galaxal 891.
+Fee period 11. Register entry 11-0471. Received click 21, galaxal 884.
 
 Requester: **Dovek**
 
@@ -40,14 +40,14 @@ I do not have a number for the world. My mother called it Sekk. It is six days o
 
 I have ticked the box for the certified one because I would like it to be the proper answer and not a man at a counter telling me from memory. I have brought the fee for it. If that is the wrong box, tell me the right box and I will fill in another slip. I do not mind. I have the whole day and I have come a long way to spend it.
 
-Dovek. Click 14, galaxal 891.
+Dovek. Click 21, galaxal 884.
 
 ---
 
 **COUNTER MEMORANDUM**\
 Reading room, public counter\
 Form A4 rev. 3\
-Reference: register entry 11-0471. Click 14, galaxal 891.
+Reference: register entry 11-0471. Click 21, galaxal 884.
 
 Class requested: IV. Class assigned: I.
 
@@ -65,7 +65,7 @@ The designation is recorded above because this counter recorded it. It is not ce
 
 **REPOSITORY RESPONSE**\
 Form R2 rev. 31\
-Reference: register entry 11-0471. Class I. Click 14, galaxal 891.
+Reference: register entry 11-0471. Class I. Click 21, galaxal 884.
 
 The request asks for the definition of a survey state. The definition is a value on a published schedule. The repository holds the schedule.
 

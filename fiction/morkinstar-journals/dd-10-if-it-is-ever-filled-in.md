@@ -20,7 +20,7 @@ blurb: "A woman who was given a complete and correct answer once already comes b
 **REQUEST SLIP**\
 Form R/1, revision 12\
 Reading Room, General Index\
-Received: tick 2, click 141, galaxal 908
+Received: tick 121, click 22, galaxal 884
 
 *Field 1. Name of requester.*
 
@@ -28,7 +28,7 @@ Nirras
 
 *Field 2. Date.*
 
-tick 2, click 141, galaxal 908
+tick 121, click 22, galaxal 884
 
 *Field 3. Previous request, if this request relates to one. Give the register number if you have it. If you do not have it, describe the earlier request in your own words and this office will look it up at the counter at no charge.*
 
@@ -44,7 +44,7 @@ tick 2, click 141, galaxal 908
 
 *Field 6. Reason for the request. This field is optional. This office does not require a reason, does not record one against the item, and does not act on one.*
 
-Signed: Nirras. Date: tick 2, click 141, galaxal 908.
+Signed: Nirras. Date: tick 121, click 22, galaxal 884.
 
 ---
 
@@ -71,7 +71,7 @@ Received for the repository: Reading Room, counter. Form R/4, revision 6.
 Reading Room, Retrievals\
 Form R/9, revision 14\
 Reference: request 11-0544\
-Issued: tick 2, click 141, galaxal 908
+Issued: tick 121, click 22, galaxal 884
 
 The description at field 5 of the slip refers to the length. Field 3 of the slip cites request 11-0463 of this register, which was a class I retrieval of a published schedule, produced complete, in the same tick, at no charge, and which named the interval and the column. The two fields together are sufficient to match and no search was required to establish it. Nothing in this memorandum reaches past the description given on the slip.
 
@@ -122,17 +122,17 @@ Form R/R, revision 3. Volume 11. Kept at the counter, in the order of receipt, i
 | Field | Entry |
 |---|---|
 | Register number | 11-0463 |
-| Received | tick 4, click 96, galaxal 884 |
+| Received | tick 124, click 21, galaxal 884 |
 | Requester | Nirras |
 | Class assigned | I |
 | Disposition | returned complete |
-| Date returned | tick 4, click 96, galaxal 884 |
+| Date returned | tick 124, click 21, galaxal 884 |
 | Fee assessed | none |
 
 | Field | Entry |
 |---|---|
 | Register number | 11-0544 |
-| Received | tick 2, click 141, galaxal 908 |
+| Received | tick 121, click 22, galaxal 884 |
 | Requester | Nirras |
 | Class assigned | not assigned |
 | Disposition |  |

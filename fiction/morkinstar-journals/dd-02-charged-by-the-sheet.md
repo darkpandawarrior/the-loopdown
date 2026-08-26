@@ -20,10 +20,10 @@ blurb: "A parcel holder asks when his eastern boundary moved and who moved it. H
 **REQUEST SLIP**\
 Reading Services, Public Counter\
 Form Q/1, revision 12\
-Request 11-0452. Received: click 94, galaxal 884.
+Request 11-0452. Received: click 21, galaxal 884.
 
 Name of requester: Orven\
-Date: click 94, galaxal 884
+Date: click 21, galaxal 884
 
 Class requested, tick one: I ☐ · II ☒ · III ☐ · IV ☐
 
@@ -48,7 +48,7 @@ Class requested, tick one: I ☐ · II ☒ · III ☐ · IV ☐
 **SEARCH REPORT**\
 Reading Services, Search Room\
 Form R/3, revision 9\
-Request 11-0452. Received: click 94, galaxal 884. Returned: click 95, galaxal 884.\
+Request 11-0452. Received: click 21, galaxal 884. Returned: click 22, galaxal 884.\
 Service standard for class III: one click. Standard met.
 
 The request as filed is marked class II. Class is assigned on what is requested and not on how the request is marked. A copy of a document cited by the requester is class II. Identification of documents the requester has not cited is a search, and a search is class III. The request is classed III. The fee basis for class III is per hour, minimum one hour, and is posted at the public counter. Copies are charged by the sheet at the rate posted beside it.
@@ -95,7 +95,7 @@ Reading Services, Search Room. Form R/3, revision 9.
 **CLOSURE NOTICE**\
 Standards Directorate\
 Reference: Survey Designation 71-119\
-Filed: click 4, galaxal 883
+Filed: click 13, galaxal 884
 
 Subject: status change to Concluded
 
@@ -128,9 +128,9 @@ Standing Order Six, reproduced for the file, as it is reproduced on every closur
 **REBASING WORKSHEET**\
 Table Custodianship, Ferrow\
 Reference: Standard Span, keyed value SV-71119\
-Filed: click 19, galaxal 883
+Filed: click 14, galaxal 884
 
-The Standard Span has been defined, since the founding survey, as one four-hundred-thousandth of the meridian arc of Survey Designation 71-119. Following the closure notice of click 4, galaxal 883, this office identifies the Span as a keyed value requiring rebasing under Standing Order Six.
+The Standard Span has been defined, since the founding survey, as one four-hundred-thousandth of the meridian arc of Survey Designation 71-119. Following the closure notice of click 13, galaxal 884, this office identifies the Span as a keyed value requiring rebasing under Standing Order Six.
 
 Active reference assigned: Survey Designation 88-402.
 
@@ -166,11 +166,11 @@ Subscribed: Hjalt Ombrun, Custodian of the Standing Table.
 **NOTICE OF CADASTRAL RESTATEMENT**\
 Parcel Registry, Coombe Reach\
 Reference: Cadastral Sheet 12, Boundary Marker CM-118\
-Filed: click 61, galaxal 883
+Filed: click 17, galaxal 884
 
 Boundary Marker CM-118 defines the eastern easement of Parcel 12-C at a recorded offset of one Standard Assessment Distance from Boundary Marker CM-117.
 
-Following the Table Custodianship's republication of click 19, galaxal 883, the Standard Assessment Distance restates from 40.000000 Spans to 40.001520 Spans. The recorded offset of CM-118 is amended accordingly.
+Following the Table Custodianship's republication of click 14, galaxal 884, the Standard Assessment Distance restates from 40.000000 Spans to 40.001520 Spans. The recorded offset of CM-118 is amended accordingly.
 
 Old offset: 40.000000 Spans. New offset: 40.001520 Spans.
 
@@ -189,11 +189,11 @@ Subscribed: Vell Torrig, Registrar of Parcels, Coombe Reach.
 
 **FILING NOTE**\
 Parcel Registry, Coombe Reach\
-Reference: Notice of Cadastral Restatement, click 61, galaxal 883
+Reference: Notice of Cadastral Restatement, click 17, galaxal 884
 
 Copies posted: 1. Copies requested since posting: 0.
 
-The public notice board is inspected on a maintenance schedule of one galaxal and was last cleared for repainting on click 40, galaxal 884. The notice was removed at that time, along with eleven others. No record was kept of which.
+The public notice board is inspected on a maintenance schedule of one galaxal and was last cleared for repainting on click 19, galaxal 884. The notice was removed at that time, along with eleven others. No record was kept of which.
 
 Subscribed: Idda Kreel, Posting Clerk.
 
