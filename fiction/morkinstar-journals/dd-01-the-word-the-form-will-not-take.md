@@ -7,7 +7,7 @@ series: the-dark-directory
 dd: 1
 status: draft
 tags: [world-building, bureaucracy, sci-fi, documents, archives, retrieval, the-dark-directory]
-words: 2033
+words: 2065
 blurb: "A residency form will not take a word, so the woman it belongs to walks into a reading room and asks to buy the one line it was written on. The line is there, it has always been there, and the list the form checks against was compiled from it."
 ---
 
@@ -20,7 +20,7 @@ blurb: "A residency form will not take a word, so the woman it belongs to walks 
 **REQUEST SLIP**\
 Form R/1, revision 12\
 Reading Room, General Index\
-Received: tick 9, momenta 3, period 11
+Received: tick 9, momenta 3, click 91, galaxal 884
 
 Name of requester: Tervi
 
@@ -41,7 +41,7 @@ Description of the item required. Be as exact as you are able. Match is by descr
 >
 > The word is Möndri. The ö carries two dots. That is the whole of the difference, and I would not have come otherwise.
 
-Signed: Tervi. Date: tick 9, momenta 3, period 11.
+Signed: Tervi. Date: tick 9, momenta 3, click 91, galaxal 884.
 
 Attached by the requester: one notice, Registrations and Residency, Brack Reach, form RR/4c, two sides. Retained on the file.
 
@@ -51,7 +51,7 @@ Attached by the requester: one notice, Registrations and Residency, Brack Reach,
 Registrations and Residency, Brack Reach\
 Form RR/4c, revision 7\
 Reference: application R-88214\
-Filed: tick 2, momenta 3, period 11
+Filed: tick 2, momenta 3, click 91, galaxal 884
 
 Your application for entry in the residency register is returned to you with your papers, all of which are enclosed and none of which is retained. The application is not refused. It is not accepted at the counter, which is a different thing, and the difference is set out below because applicants ask and are entitled to be told.
 
@@ -88,7 +88,7 @@ General Index, Reading Room Two\
 Form GI/22, revision 9\
 Request 11-0447
 
-Received: tick 9, momenta 3, period 11. Returned: tick 4, momenta 4, period 11. The service standard for class II is one momenta. The standard is met.
+Received: tick 9, momenta 3, click 91, galaxal 884. Returned: tick 4, momenta 4, click 91, galaxal 884. The service standard for class II is one momenta. The standard is met.
 
 Class assigned: II, a copy of a held document. The class shown on the slip was I. Class is assigned on what is asked for and not on who is asking, and what is asked for is a copy of a held document. Note 3 of form R/1 applies. No correction has been made to the slip, the slip being a record of what was written on it.
 
@@ -116,7 +116,7 @@ Authority: the post of Custodian of the General Index. A form of this class is i
 > General Index\
 > Form GI/31\
 > Fonds 3, series 12, item 4471, third column, line 19\
-> Copied by hand, tick 3, momenta 4, period 11
+> Copied by hand, tick 3, momenta 4, click 91, galaxal 884
 >
 > Möndri. Two hundred and nine at the water. They give the word themselves and no other.
 >
@@ -137,7 +137,7 @@ Request 11-0447
 | Extract from a published schedule | Fee Schedule 3, item 1 | no charge |
 | Search | not applicable, the item was described | no charge |
 
-Total assessed: 4 marks. Tendered at the counter: 5 marks. Overpayment of 1 mark returned at the counter and receipted. Paid in full, tick 6, momenta 4, period 11.
+Total assessed: 4 marks. Tendered at the counter: 5 marks. Overpayment of 1 mark returned at the counter and receipted. Paid in full, tick 6, momenta 4, click 91, galaxal 884.
 
 The copy was collected in person on the date of payment. Nothing was posted. The requester asked at the counter whether the reading room holds a second sheet from the same district and was told that it holds eight, all sound, all available on production of a description, and did not describe one.
 

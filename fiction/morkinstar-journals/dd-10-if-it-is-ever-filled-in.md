@@ -117,16 +117,16 @@ Issued for the repository: Reading Room, Retrievals. A form of this class is iss
 Extract from the request register. Certified as a true copy of the item held. No certification is offered as to anything the item states.
 
 **REQUEST REGISTER**, fee period 11\
-Form R/R, revision 3. Volume 4. Kept at the counter, in the order of receipt, in one hand.
+Form R/R, revision 3. Volume 11. Kept at the counter, in the order of receipt, in one hand.
 
 | Field | Entry |
 |---|---|
 | Register number | 11-0463 |
-| Received | tick 4, click 96, galaxal 908 |
+| Received | tick 4, click 96, galaxal 884 |
 | Requester | Nirras |
 | Class assigned | I |
 | Disposition | returned complete |
-| Date returned | tick 4, click 96, galaxal 908 |
+| Date returned | tick 4, click 96, galaxal 884 |
 | Fee assessed | none |
 
 | Field | Entry |
@@ -145,7 +145,7 @@ Form R/R, revision 3. Volume 4. Kept at the counter, in the order of receipt, in
 
 ---
 
-Holding cited: request 11-0544, one sheet, form R/1 revision 12, filed at the counter under its register number. Request register, fee period 11, volume 4, the two entries reproduced at enclosure A.
+Holding cited: request 11-0544, one sheet, form R/1 revision 12, filed at the counter under its register number. Request register, fee period 11, volume 11, the two entries reproduced at enclosure A.
 
 Extent and condition: one sheet, 0.21 by 0.30, printed both sides, one line of writing at field 5 in one ink, the figure at field 3 in a second ink, sound, unfolded, overleaf blank.
 

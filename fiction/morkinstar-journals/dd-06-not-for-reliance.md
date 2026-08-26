@@ -21,7 +21,7 @@ blurb: "A repair shop needs the held copy of a specification fitted in nine thou
 Reading Room, Public Access Counter\
 Form R-2, revision 9
 
-Received: tick 9, momenta 4, click 8, galaxal 906\
+Received: tick 9, momenta 4, click 8, galaxal 899\
 Class indicated by applicant: ~~III~~ II\
 Name: Aldvik\
 Of: Rull and Aldvik, door and gate repairs, Coombe Reach
@@ -41,14 +41,14 @@ Description of the thing wanted, in the applicant's own words, to be entered by 
 > Somebody there said this office holds one. If you hold it I will take a copy of all twenty two sheets and I will pay the sheet rate. I do not need it quickly. I need it to be the held one.
 
 Signed: Aldvik\
-Dated: tick 9, momenta 4, click 8, galaxal 906
+Dated: tick 9, momenta 4, click 8, galaxal 899
 
 ---
 
 **RETRIEVAL RESPONSE**\
 Form R-11, revision 4\
 Request 11-0501, class II\
-Issued: tick 47, momenta 4, click 8, galaxal 906
+Issued: tick 47, momenta 4, click 8, galaxal 899
 
 The item is twenty two sheets, unbound, in a folder, 0.01 linear, sound throughout. Sheet 11 carries a repair to the lower left corner, executed in a paper of a different weight, and the repair does not cross the schedule. The sheets are numbered in the original hand at the foot and the numbering is complete. The item is Specification 4-118, door check, Pattern 4, Fittings Standards Office, Ferrow, issued click 12, galaxal 741.
 
@@ -138,7 +138,7 @@ No successor pattern is specified. Enquiries as to a successor pattern are to be
 
 **NOTE ENTERED BY THE APPLICANT ON COLLECTION**\
 Form R-2, revision 9, reverse\
-Received: tick 2, momenta 5, click 8, galaxal 906
+Received: tick 2, momenta 5, click 8, galaxal 899
 
 > I have paid and I have the sheets, and I want to put something on the file, and the notice says a note may be entered on the reverse, so here it is.
 >
