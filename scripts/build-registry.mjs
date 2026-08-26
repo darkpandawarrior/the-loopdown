@@ -177,6 +177,54 @@ if (existsSync(ficDir)) {
       };
     });
 
+  // THE DARK DIRECTORY. A sibling series, not a fifth season, and the shape of
+  // this block is the argument. Four seasons and forty-eight entries are
+  // load-bearing numbers, printed on four pages and asserted on both sides of
+  // the registry hop, and the sibling is not one of them: it shares a universe
+  // and not a cast, and a reader who has read neither must lose nothing.
+  //
+  // So it gets `siblings`, an array, because there will be more than one of
+  // these before there is a fifth season. Discovery is by filename prefix, the
+  // same rule the seasons use, for the same reason: a rule you can see in `ls`
+  // does not drift from the rule in the generator. lint-coverage.mjs already
+  // learned that lesson the expensive way.
+  const SIBLINGS = [
+    {
+      slug: "the-dark-directory",
+      title: "The Dark Directory",
+      tagline: "Ten retrieval files. Nine requesters. One index that has never once been wrong.",
+      // The parent's four media are four relations between a record and its
+      // reader: broadcast, never sent, destroyed, executed. This is the fifth
+      // and the only one where somebody asked.
+      medium: "retrieval",
+      prefix: "dd",
+    },
+  ];
+
+  const siblings = SIBLINGS.map((s) => {
+    const files = ficFiles.filter((f) => new RegExp(`^${s.prefix}-\\d\\d-.*\\.md$`).test(f)).sort();
+    return {
+      ...s,
+      prefix: undefined,
+      entries: files.map((f, i) => {
+        const fm = read(f);
+        const idx = i + 1;
+        const key = `${s.prefix}-${String(idx).padStart(2, "0")}`;
+        const plate = plates.find((pl) => pl.startsWith(`${key}-`)) || "";
+        return {
+          idx,
+          slug: fm.slug,
+          title: fm.title,
+          file: `fiction/morkinstar-journals/${f}`,
+          plate: plate ? `fiction/morkinstar-journals/assets/web/${plate}` : "",
+          blurb: fm.blurb ?? "",
+          words: fm.words ?? "",
+          tags: fm.tags ?? [],
+        };
+      }),
+    };
+  });
+
   anthology = {
     slug: "the-morkinstar-journals",
     title: "The Morkinstar Journals",
@@ -184,6 +232,7 @@ if (existsSync(ficDir)) {
     seasons,
     entries: seasons.flatMap((s) => filesFor(s.n).map(entryOf(s.n))),
     unfiled,
+    siblings,
     starmap: existsSync(starmapPath) ? JSON.parse(readFileSync(starmapPath, "utf8")) : null,
     witnesses,
   };

@@ -2229,6 +2229,199 @@
         ]
       }
     ],
+    "siblings": [
+      {
+        "slug": "the-dark-directory",
+        "title": "The Dark Directory",
+        "tagline": "Ten retrieval files. Nine requesters. One index that has never once been wrong.",
+        "medium": "retrieval",
+        "entries": [
+          {
+            "idx": 1,
+            "slug": "the-word-the-form-will-not-take",
+            "title": "The Word The Form Will Not Take",
+            "file": "fiction/morkinstar-journals/dd-01-the-word-the-form-will-not-take.md",
+            "plate": "fiction/morkinstar-journals/assets/web/dd-01-the-word-the-form-will-not-take.jpg",
+            "blurb": "A residency form will not take a word, so the woman it belongs to walks into a reading room and asks to buy the one line it was written on. The line is there, it has always been there, and the list the form checks against was compiled from it.",
+            "words": "2065",
+            "tags": [
+              "world-building",
+              "bureaucracy",
+              "sci-fi",
+              "documents",
+              "archives",
+              "retrieval",
+              "the-dark-directory"
+            ]
+          },
+          {
+            "idx": 2,
+            "slug": "charged-by-the-sheet",
+            "title": "Charged By The Sheet",
+            "file": "fiction/morkinstar-journals/dd-02-charged-by-the-sheet.md",
+            "plate": "fiction/morkinstar-journals/assets/web/dd-02-charged-by-the-sheet.jpg",
+            "blurb": "A parcel holder asks when his eastern boundary moved and who moved it. He is given ten sheets, every office named, every hand subscribed, and a fee schedule that was posted at the counter before he walked in.",
+            "words": "2001",
+            "tags": [
+              "world-building",
+              "bureaucracy",
+              "sci-fi",
+              "documents",
+              "archives",
+              "retrieval",
+              "restatement",
+              "boundaries"
+            ]
+          },
+          {
+            "idx": 3,
+            "slug": "the-column-is-present",
+            "title": "The Column Is Present",
+            "file": "fiction/morkinstar-journals/dd-03-the-column-is-present.md",
+            "plate": "fiction/morkinstar-journals/assets/web/dd-03-the-column-is-present.jpg",
+            "blurb": "A tenant whose agreement runs for one Elysheim would like to know how long that is, because a floor costs four hundred and ten and she will only lay it if she is going to be standing on it. The fastest class in the archive, no fee, no wait, and the whole schedule produced inside the tick.",
+            "words": "2063",
+            "tags": [
+              "world-building",
+              "bureaucracy",
+              "sci-fi",
+              "documents",
+              "archives",
+              "retrieval",
+              "schedules",
+              "tenancy"
+            ]
+          },
+          {
+            "idx": 4,
+            "slug": "no-further-contact-indicated",
+            "title": "No Further Contact Indicated",
+            "file": "fiction/morkinstar-journals/dd-04-no-further-contact-indicated.md",
+            "plate": "fiction/morkinstar-journals/assets/web/dd-04-no-further-contact-indicated.jpg",
+            "blurb": "A man who left a world at seven walks into a reading room and asks what a word on a form means. He gets the word, complete, on the tick of receipt, at no charge, with all three notes, and the notes are about a survey.",
+            "words": "1916",
+            "tags": [
+              "world-building",
+              "bureaucracy",
+              "sci-fi",
+              "documents",
+              "archives",
+              "retrieval",
+              "the-concluded"
+            ]
+          },
+          {
+            "idx": 5,
+            "slug": "certified-as-at",
+            "title": "Certified As At",
+            "file": "fiction/morkinstar-journals/dd-05-certified-as-at.md",
+            "plate": "fiction/morkinstar-journals/assets/web/dd-05-certified-as-at.jpg",
+            "blurb": "A workshop stands twenty thousandths of a Span outside a line. Hesk pays in advance for a certified copy of the figure that puts it there, and the return is complete, and it contains two certificates, and both of them are true.",
+            "words": "2003",
+            "tags": [
+              "world-building",
+              "bureaucracy",
+              "sci-fi",
+              "documents",
+              "archives",
+              "certification",
+              "retrieval"
+            ]
+          },
+          {
+            "idx": 6,
+            "slug": "not-for-reliance",
+            "title": "Not For Reliance",
+            "file": "fiction/morkinstar-journals/dd-06-not-for-reliance.md",
+            "plate": "fiction/morkinstar-journals/assets/web/dd-06-not-for-reliance.jpg",
+            "blurb": "A repair shop needs the held copy of a specification fitted in nine thousand doors, because every copy they own is a copy of a copy and none of them agree. The copy is produced complete, and every sheet of it carries a stamp, and the stamp is not a warning.",
+            "words": "2167",
+            "tags": [
+              "world-building",
+              "bureaucracy",
+              "sci-fi",
+              "documents",
+              "archives",
+              "retrieval",
+              "provenance",
+              "repair"
+            ]
+          },
+          {
+            "idx": 7,
+            "slug": "a-withdrawal-is-a-record",
+            "title": "A Withdrawal Is A Record",
+            "file": "fiction/morkinstar-journals/dd-07-a-withdrawal-is-a-record.md",
+            "plate": "fiction/morkinstar-journals/assets/web/dd-07-a-withdrawal-is-a-record.jpg",
+            "blurb": "Vunn filed something eleven clicks ago and would like it taken out, and he would like no note kept of the taking out. Both are handled at the counter, in full, inside the standard, at the minimum charge, by an office that has never destroyed anything and holds no procedure that would.",
+            "words": "1884",
+            "tags": [
+              "world-building",
+              "sci-fi",
+              "documents",
+              "bureaucracy",
+              "archives",
+              "retrieval",
+              "season-1"
+            ]
+          },
+          {
+            "idx": 8,
+            "slug": "described-at-item-level",
+            "title": "Described At Item Level",
+            "file": "fiction/morkinstar-journals/dd-08-described-at-item-level.md",
+            "plate": "fiction/morkinstar-journals/assets/web/dd-08-described-at-item-level.jpg",
+            "blurb": "A drainage contractor prices an archive against a trial trench, and asks the only sensible question first, which is how big the thing he is about to search actually is. He is given the answer at item level, with the qualifier that is always printed, and he decides it is close enough for a budget. It is.",
+            "words": "1967",
+            "tags": [
+              "world-building",
+              "sci-fi",
+              "documents",
+              "bureaucracy",
+              "archives",
+              "retrieval",
+              "finding-aid"
+            ]
+          },
+          {
+            "idx": 9,
+            "slug": "arranged-by",
+            "title": "Arranged By",
+            "file": "fiction/morkinstar-journals/dd-09-arranged-by.md",
+            "plate": "fiction/morkinstar-journals/assets/web/dd-09-arranged-by.jpg",
+            "blurb": "A stone dresser with six days and thirty in her pocket describes a thing the catalogue has no path to, and gets all forty one of them, complete, inside the standard, at a fair fee. She asks one question that is not a request, and it is answered, correctly, out of the field provided.",
+            "words": "2393",
+            "tags": [
+              "world-building",
+              "sci-fi",
+              "documents",
+              "bureaucracy",
+              "archives",
+              "retrieval",
+              "season-1"
+            ]
+          },
+          {
+            "idx": 10,
+            "slug": "if-it-is-ever-filled-in",
+            "title": "If It Is Ever Filled In",
+            "file": "fiction/morkinstar-journals/dd-10-if-it-is-ever-filled-in.md",
+            "plate": "fiction/morkinstar-journals/assets/web/dd-10-if-it-is-ever-filled-in.jpg",
+            "blurb": "A woman who was given a complete and correct answer once already comes back to the counter with a single line and no fee to pay. The counter takes the line, describes the sheet it is written on, and enters it in the register under the only class that fits.",
+            "words": "1897",
+            "tags": [
+              "world-building",
+              "bureaucracy",
+              "sci-fi",
+              "documents",
+              "archives",
+              "retrieval",
+              "the-dark-directory"
+            ]
+          }
+        ]
+      }
+    ],
     "starmap": {
       "systems": {
         "Alpha Axmoiri": [
