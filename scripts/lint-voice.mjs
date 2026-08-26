@@ -22,7 +22,7 @@ const lessonFiles = isDir ? FILES.map((f) => resolve(target, f)).filter(existsSy
 // list, and it was never run before now, so no published entry has ever been
 // linted for anything.
 //
-// The filter is `^(?:s\d+-)?\d+-`, not "every .md": a fiction directory also
+// The filter is a PREFIX ALLOW-LIST, not "every .md": a fiction directory also
 // holds bible.md, the council/audit records and README.md, and those are
 // working files, not published prose — bible.md and leak-doctrine.md say so
 // themselves (they are precisely the .md files a reader must never reach).
@@ -32,7 +32,20 @@ const lessonFiles = isDir ? FILES.map((f) => resolve(target, f)).filter(existsSy
 const genericFiles =
   isDir && lessonFiles.length === 0
     ? readdirSync(target)
-        .filter((f) => f.endsWith(".md") && /^(?:s\d+-)?\d+-/.test(f))
+        //
+        // `dd-` is in here because it was NOT, and that is the most expensive
+        // kind of bug this repo produces. The pattern was `^(?:s\d+-)?\d+-`,
+        // which matches `02-`, `s4-01-` and nothing else. A whole sibling
+        // season shipped as `dd-01-` through `dd-10-`, and the directory run
+        // linted 47 files, could not see the other ten, and printed "clean,
+        // sounds human" over a season it had never opened. Green, and proving
+        // nothing.
+        //
+        // So the rule when a series adds a prefix is: add it HERE, in the same
+        // change, or the gate silently stops covering it. lintVoiceScope.test.mjs
+        // holds the pattern against the directory's actual contents so the next
+        // prefix cannot arrive unnoticed.
+        .filter((f) => f.endsWith(".md") && /^(?:s\d+-|dd-)?\d+-|^pilot-/.test(f))
         .sort()
         .map((f) => resolve(target, f))
     : [];

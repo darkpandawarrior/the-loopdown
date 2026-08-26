@@ -65,6 +65,15 @@ jobs:
           # this is the fix for s3-09 shipping `</content>` for weeks after its
           # source was already clean, and a second, softer gate would repeat it.
           node scripts/lint-voice.mjs fiction/morkinstar-journals || fail=1
+          # And the gate's own coverage, because lint-voice selects by FILENAME
+          # PREFIX and a prefix allow-list stops covering a series the day that
+          # series picks a new prefix. The sibling season shipped as `dd-01-`
+          # through `dd-10-`, the pattern matched neither those nor the pilot,
+          # and the run above linted 47 of 58 published pieces and printed
+          # "clean". Green, over eleven files it had never opened. This checks
+          # coverage against `type: fiction` in the frontmatter, which is the one
+          # thing a filename convention cannot drift away from.
+          node scripts/lint-coverage.mjs fiction/morkinstar-journals || fail=1
           exit $fail
 
       - name: Graphics render smoke test
