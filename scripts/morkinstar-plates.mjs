@@ -2034,6 +2034,881 @@ const s4Plate = (e) => `<!doctype html><html><head><meta charset="utf-8"><style>
   </div>
 </div></body></html>`;
 
+// ═══════════════════════════════════════════════════════════════════════════
+// THE DARK DIRECTORY. The fifth object, and the only one of the five that is
+// neither published, kept, destroyed nor executed, only produced: a production
+// tray on a reading room counter, photographed square on under the desk lamp,
+// after hours. The room is empty, so there are no hands in any frame. The
+// tether is the HANDWRITING: the slip is the one object rendered at full
+// fidelity and everything else in the tray is flat.
+//
+// The chrome is byte identical on all ten (`ddChrome` takes three strings and
+// nothing else, and `assertChromeIdentical` below proves it). Only the middle
+// changes. Monochrome throughout, one paper stock; the only colour in the
+// season is DD.violet, and it is the same violet on every plate, so colour
+// identifies nothing. Plate ten carries RECEIVED and no CLOSED, and nothing
+// about it is emphasised.
+// ═══════════════════════════════════════════════════════════════════════════
+const DD = {
+  counter0: "#0C0B09", counter1: "#191713", counter2: "#2C2822",
+  trayHi: "#4E473C", trayMid: "#332E27", trayLo: "#1E1B17", trayWell: "#15130F",
+  paper0: "#DCD5C6", paper1: "#CDC5B4", paper2: "#BAB19D", edge: "#8E8674",
+  ink: "#221F19", inkDim: "#4E483C", inkFaint: "#7A7362", rule: "#A79E8A",
+  // The one colour in the season. A counter stamp pad: aniline violet.
+  violet: "#6B3FA0",
+  hand: "'Bradley Hand','Noteworthy','Snell Roundhand',cursive",
+  serif: "'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif",
+  mono: T.mono,
+};
+
+// ── the geometry, fixed. Every number here is chrome. ───────────────────────
+const DDG = {
+  tray: [70, 104, 1060, 1352],       // x, y, w, h
+  well: [92, 126, 1016, 1264],
+  lip: 1390,                          // top of the front rail
+  slip: [126, 166, 462, 660],
+  turn: [614, 166, 470, 660],
+  flatL: [126, 856, 462, 304],
+  flatR: [614, 856, 470, 304],
+  note: [126, 1186, 958, 186],
+  fast: [146, 186],                   // the fastener, top left
+  label: [392, 1364, 416, 76],
+  stampR: [456, 222, -5],             // RECEIVED: cx, cy, deg
+  stampC: [946, 1284, 4],             // CLOSED
+};
+
+function ddDefs() {
+  return `<defs>
+    <linearGradient id="ddlamp" x1="0" y1="0" x2="1" y2="0.55">
+      <stop offset="0" stop-color="${DD.counter2}"/><stop offset="0.45" stop-color="${DD.counter1}"/><stop offset="1" stop-color="${DD.counter0}"/>
+    </linearGradient>
+    <radialGradient id="ddfall" cx="0.02" cy="-0.04" r="0.95">
+      <stop offset="0" stop-color="#FFF6E2" stop-opacity="0.30"/>
+      <stop offset="0.45" stop-color="#FFF6E2" stop-opacity="0.07"/>
+      <stop offset="1" stop-color="#FFF6E2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ddpaper" x1="0" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="${DD.paper0}"/><stop offset="0.55" stop-color="${DD.paper1}"/><stop offset="1" stop-color="${DD.paper2}"/>
+    </linearGradient>
+    <linearGradient id="ddwall" x1="0" y1="0" x2="1" y2="0.4">
+      <stop offset="0" stop-color="${DD.trayHi}"/><stop offset="0.5" stop-color="${DD.trayMid}"/><stop offset="1" stop-color="${DD.trayLo}"/>
+    </linearGradient>
+    <radialGradient id="ddvig" cx="0.34" cy="0.3" r="0.92">
+      <stop offset="0.5" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.62"/>
+    </radialGradient>
+    <filter id="ddgrain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+    <filter id="ddpad" x="-12%" y="-40%" width="124%" height="180%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.09 0.14" numOctaves="3" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3.4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="ddshadow" x="-30%" y="-30%" width="170%" height="180%">
+      <feDropShadow dx="7" dy="11" stdDeviation="9" flood-color="#000" flood-opacity="0.55"/>
+    </filter>
+    <filter id="ddsheet" x="-14%" y="-14%" width="132%" height="136%">
+      <feDropShadow dx="3" dy="5" stdDeviation="4" flood-color="#000" flood-opacity="0.42"/>
+    </filter>
+  </defs>`;
+}
+
+// ── sheet primitives. Everything but the slip is FLAT. ──────────────────────
+const ddSheet = (x, y, w, h, { rot = 0, shade = 0 } = {}) =>
+  `<g transform="rotate(${rot} ${(x + w / 2).toFixed(1)} ${(y + h / 2).toFixed(1)})" filter="url(#ddsheet)">
+    <rect x="${x}" y="${y}" width="${w}" height="${h}" fill="url(#ddpaper)"/>
+    ${shade ? `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#000" opacity="${shade}"/>` : ""}
+    <rect x="${x}" y="${y}" width="${w}" height="${h}" fill="none" stroke="${DD.edge}" stroke-opacity="0.7" stroke-width="1"/>
+  </g>`;
+// printed office lettering: a form heading
+const dh = (x, y, t, sz = 13, c = DD.ink, anchor = "start") =>
+  `<text x="${x}" y="${y}" text-anchor="${anchor}" font-family="${DD.mono}" font-size="${sz}" fill="${c}" letter-spacing="1.5">${esc(t)}</text>`;
+// printed office lettering: administrative prose
+const dp = (x, y, t, sz = 14, c = DD.inkDim, anchor = "start", style = "") =>
+  `<text x="${x}" y="${y}" text-anchor="${anchor}" font-family="${DD.serif}" font-size="${sz}" fill="${c}"${style}>${esc(t)}</text>`;
+const dr = (x, y, w, o = 0.5, c = DD.rule) =>
+  `<line x1="${x}" y1="${y}" x2="${x + w}" y2="${y}" stroke="${c}" stroke-opacity="${o}" stroke-width="1"/>`;
+// a run of flat ruled lines standing in for body copy nobody is meant to read
+const ddBody = (x, y, w, n, step = 17) => {
+  let o = "";
+  for (let i = 0; i < n; i++) o += dr(x, y + i * step, i % 4 === 3 ? w * 0.62 : w, 0.42, DD.inkFaint);
+  return o;
+};
+
+// ── the handwriting. The one object at full fidelity. ───────────────────────
+// Ink and pressure: each line carries its own weight and opacity, a struck line
+// carries a single horizontal stroke through it, and `sz` steps down where the
+// hand gets smaller. Nothing else in the frame is drawn this way.
+function ddHand(x, y, lines) {
+  let o = "", cy = y;
+  for (const l of lines) {
+    const sz = l.sz ?? 19, press = l.press ?? 1;
+    o += `<text x="${x}" y="${cy.toFixed(1)}" font-family="${DD.hand}" font-size="${sz}" fill="${DD.ink}" fill-opacity="${(0.72 + 0.24 * press).toFixed(2)}" letter-spacing="${(0.2 * press).toFixed(2)}">${esc(l.t)}</text>`;
+    if (l.strike) {
+      // one horizontal stroke, the way a person crosses a thing out at a counter
+      const w = l.t.length * sz * 0.455;
+      o += `<line x1="${(x - 3).toFixed(1)}" y1="${(cy - sz * 0.32).toFixed(1)}" x2="${(x + w).toFixed(1)}" y2="${(cy - sz * 0.30).toFixed(1)}" stroke="${DD.ink}" stroke-opacity="0.85" stroke-width="${(sz * 0.075).toFixed(2)}" stroke-linecap="round"/>`;
+    }
+    cy += l.gap ?? 22;
+  }
+  return o;
+}
+
+// ── the stamps. Two of them, in the season's only colour. ───────────────────
+// A counter date stamp: the word on a fixed band, the date on the movable one
+// below it. The frame is the same size on every plate; only the two date lines
+// change, which is what a date stamp is.
+function ddStamp(cx, cy, deg, word, fine, coarse) {
+  const w = 232, h = 90, x = cx - w / 2, y = cy - h / 2;
+  return `<g transform="rotate(${deg} ${cx} ${cy})" filter="url(#ddpad)" opacity="0.88">
+    <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="5" fill="none" stroke="${DD.violet}" stroke-width="3.4"/>
+    <rect x="${x + 9}" y="${y + 9}" width="${w - 18}" height="${h - 18}" rx="2" fill="none" stroke="${DD.violet}" stroke-width="1.2" stroke-opacity="0.75"/>
+    <text x="${cx}" y="${y + 38}" text-anchor="middle" font-family="${DD.mono}" font-size="21" font-weight="700" fill="${DD.violet}" letter-spacing="3.6">${esc(word)}</text>
+    <line x1="${x + 16}" y1="${y + 49}" x2="${x + w - 16}" y2="${y + 49}" stroke="${DD.violet}" stroke-width="1.2" stroke-opacity="0.7"/>
+    <text x="${cx}" y="${y + 65}" text-anchor="middle" font-family="${DD.mono}" font-size="11" fill="${DD.violet}" letter-spacing="1.5">${esc(coarse)}</text>
+    <text x="${cx}" y="${y + 79}" text-anchor="middle" font-family="${DD.mono}" font-size="9.5" fill="${DD.violet}" fill-opacity="0.9" letter-spacing="1.2">${esc(fine)}</text>
+  </g>`;
+}
+
+// ── THE CHROME. Byte identical on all ten. ──────────────────────────────────
+// It takes three strings and nothing else, so there is no route by which one
+// plate's tray, lamp, label, fastener or stamp geometry can drift from
+// another's. `closed` of null draws no CLOSED stamp, which is plate ten, and
+// nothing else about plate ten changes.
+function ddChrome({ label }) {
+  const [tx, ty, tw, th] = DDG.tray, [wx, wy, ww, wh] = DDG.well;
+  const [lx, ly, lw, lh] = DDG.label;
+  return `
+  <rect width="${W}" height="${H}" fill="url(#ddlamp)"/>
+  <rect width="${W}" height="${H}" fill="url(#ddfall)"/>
+  <g filter="url(#ddshadow)">
+    <rect x="${tx}" y="${ty}" width="${tw}" height="${th}" rx="10" fill="url(#ddwall)"/>
+  </g>
+  <rect x="${tx}" y="${ty}" width="${tw}" height="${th}" rx="10" fill="none" stroke="#000" stroke-opacity="0.5" stroke-width="1.5"/>
+  <rect x="${tx + 2}" y="${ty + 2}" width="${tw - 4}" height="${th - 4}" rx="9" fill="none" stroke="#FFF6E2" stroke-opacity="0.10" stroke-width="1.5"/>
+  <rect x="${wx}" y="${wy}" width="${ww}" height="${wh}" fill="${DD.trayWell}"/>
+  <rect x="${wx}" y="${wy}" width="${ww}" height="42" fill="#000" opacity="0.42"/>
+  <rect x="${wx}" y="${wy}" width="${ww}" height="${wh}" fill="none" stroke="#000" stroke-opacity="0.7" stroke-width="2"/>
+  <line x1="${wx}" y1="${DDG.lip}" x2="${wx + ww}" y2="${DDG.lip}" stroke="#FFF6E2" stroke-opacity="0.09" stroke-width="2"/>
+  <rect x="${lx}" y="${ly}" width="${lw}" height="${lh}" rx="2" fill="${DD.paper1}" filter="url(#ddsheet)"/>
+  <rect x="${lx}" y="${ly}" width="${lw}" height="${lh}" rx="2" fill="none" stroke="${DD.edge}" stroke-width="1"/>
+  ${dh(lx + lw / 2, ly + 30, "CALL NUMBER", 10.5, DD.inkFaint, "middle")}
+  ${dh(lx + lw / 2, ly + 56, label, 15, DD.ink, "middle")}
+  <g>
+    <rect x="${lx + lw / 2 - 34}" y="${ly - 12}" width="68" height="30" rx="4" fill="${DD.trayHi}" stroke="#000" stroke-opacity="0.55" stroke-width="1.2"/>
+    <rect x="${lx + lw / 2 - 26}" y="${ly - 6}" width="52" height="9" rx="3" fill="#000" fill-opacity="0.34"/>
+  </g>
+  `;
+}
+
+// The fastener holds the file down, so it is drawn over the paper rather than
+// under it. Chrome all the same, and the assertion below covers it.
+function ddFastener() {
+  const [fx, fy] = DDG.fast;
+  return `<g filter="url(#ddsheet)">
+    <rect x="${fx - 5}" y="${fy - 34}" width="10" height="32" rx="4" fill="${DD.trayHi}" stroke="#000" stroke-opacity="0.5" stroke-width="1"/>
+    <rect x="${fx + 6}" y="${fy - 5}" width="34" height="10" rx="4" fill="${DD.trayHi}" stroke="#000" stroke-opacity="0.5" stroke-width="1"/>
+    <ellipse cx="${fx}" cy="${fy}" rx="16" ry="11" fill="${DD.trayHi}" stroke="#000" stroke-opacity="0.6" stroke-width="1.2"/>
+    <ellipse cx="${fx - 4}" cy="${fy - 3}" rx="7" ry="4" fill="#FFF6E2" fill-opacity="0.12"/>
+    <ellipse cx="${fx}" cy="${fy}" rx="5" ry="3.4" fill="#000" fill-opacity="0.5"/>
+  </g>`;
+}
+
+// The stamps are pressed onto the paper, so they are emitted after the sheets
+// rather than inside the tray. Geometry and frame are chrome; only the two date
+// lines change, which is what a counter date stamp is.
+function ddStamps({ received, closed }) {
+  const [rx, ry, rd] = DDG.stampR, [cx, cy, cd] = DDG.stampC;
+  return ddStamp(rx, ry, rd, "RECEIVED", received.fine, received.coarse)
+    + (closed ? ddStamp(cx, cy, cd, "CLOSED", closed.fine, closed.coarse) : "");
+}
+// grain and the lamp's falloff, laid over everything in the frame
+const ddFinish = () => `<rect width="${W}" height="${H}" filter="url(#ddgrain)" opacity="0.055"/>
+  <rect width="${W}" height="${H}" fill="url(#ddvig)"/>`;
+
+// ── the middles. One per file, and each one draws the MECHANISM: the sheet in
+// the tray that a reader who has read the piece can point at.
+// The turn sheet's inner box is x 642..1056, y 210..796.
+const TX = 642, TW = 414;
+// a form's field block. A field with no value keeps its ruled line, printed and
+// empty, because the container still has to show the missing thing's size.
+function ddFields(y, rows, { lw = 128, step = 30, big = null } = {}) {
+  let o = "";
+  rows.forEach(([k, v], i) => {
+    const yy = y + i * step;
+    o += dp(TX, yy, k, 13, DD.inkDim);
+    o += dr(TX, yy + 6, TW, 0.35, DD.inkFaint);
+    if (v) o += dp(TX + lw, yy, v, big === i ? 15.5 : 13, big === i ? DD.ink : DD.inkDim);
+  });
+  return o;
+}
+function ddTable(y, cols, rows, { head = true, step = 26, mark = -1 } = {}) {
+  let o = "", x = TX;
+  const xs = cols.map((c) => { const at = x; x += c.w; return at; });
+  if (head) {
+    cols.forEach((c, i) => { o += dh(xs[i] + (c.a === "end" ? c.w - 8 : 0), y, c.t, 10.5, DD.inkFaint, c.a || "start"); });
+    o += dr(TX, y + 8, TW, 0.7, DD.rule);
+  }
+  rows.forEach((r, ri) => {
+    const yy = y + (head ? 28 : 4) + ri * step;
+    if (ri === mark) o += `<rect x="${TX - 8}" y="${yy - 16}" width="${TW + 16}" height="${step}" fill="${DD.ink}" opacity="0.055"/>`;
+    r.forEach((cell, ci) => {
+      if (cell === "") return;
+      o += dp(xs[ci] + (cols[ci].a === "end" ? cols[ci].w - 8 : 0), yy, cell, 12.5, ri === mark ? DD.ink : DD.inkDim, cols[ci].a || "start");
+    });
+    o += dr(TX, yy + 8, TW, 0.28, DD.inkFaint);
+  });
+  return o;
+}
+const ddHead = (y, lines) => lines.map((t, i) => dh(TX, y + i * 19, t, i ? 11 : 13.5, i ? DD.inkFaint : DD.ink)).join("");
+
+// 01. The line is there, sixteen words, and the permitted value list on the
+// form she cannot fill in was compiled from the series it sits in.
+const ddWord = () => ddHead(228, ["TRUE COPY OF AN ITEM HELD", "GENERAL INDEX · FORM GI/31", "FONDS 3, SERIES 12, ITEM 4471"])
+  + dr(TX, 292, TW, 0.7, DD.rule)
+  + dp(TX, 318, "Third column, line 19. Sixteen words.", 12.5, DD.inkFaint)
+  + dp(TX, 356, "Möndri. Two hundred and nine at the", 17, DD.ink)
+  + dp(TX, 380, "water. They give the word themselves", 17, DD.ink)
+  + dp(TX, 404, "and no other.", 17, DD.ink)
+  + dr(TX, 432, TW, 0.5, DD.rule)
+  + dp(TX, 456, "The marked vowel is present in the original and is", 12, DD.inkDim)
+  + dp(TX, 472, "reproduced here. The line is not amended, struck,", 12, DD.inkDim)
+  + dp(TX, 488, "overwritten, queried or annotated.", 12, DD.inkDim)
+  // the sheet it was copied off: eight ruled columns, nine rows, the water line
+  // crossing the lower third and not reaching the third column.
+  + (() => {
+    let o = `<rect x="${TX}" y="524" width="${TW}" height="150" fill="none" stroke="${DD.inkFaint}" stroke-opacity="0.55" stroke-width="1"/>`;
+    for (let i = 1; i < 8; i++) o += `<line x1="${TX + (TW / 8) * i}" y1="524" x2="${TX + (TW / 8) * i}" y2="674" stroke="${DD.inkFaint}" stroke-opacity="0.4" stroke-width="1"/>`;
+    for (let i = 1; i < 9; i++) o += dr(TX, 524 + (150 / 9) * i, TW, 0.28, DD.inkFaint);
+    o += `<rect x="${TX + (TW / 8) * 2}" y="${(524 + (150 / 9) * 5).toFixed(1)}" width="${TW / 8}" height="${150 / 9}" fill="none" stroke="${DD.ink}" stroke-width="2"/>`;
+    o += `<path d="M${TX} 636 Q${TX + 60} 626 ${TX + 104} 640 T${TX + 190} 638" fill="none" stroke="${DD.paper2}" stroke-width="9" stroke-opacity="0.85"/>`;
+    o += dp(TX, 694, "One sheet, 0.28 by 0.41, ruled in eight columns, one", 12, DD.inkDim)
+       + dp(TX, 710, "hand throughout, sound. The water line does not", 12, DD.inkDim)
+       + dp(TX, 726, "reach the third column.", 12, DD.inkDim);
+    o += dh(TX, 762, "THIS OFFICE CERTIFIES THE COPY.", 11.5, DD.ink)
+       + dh(TX, 780, "THIS OFFICE DOES NOT CERTIFY THE ITEM.", 11.5, DD.ink);
+    return o;
+  })();
+
+// 02. The mark never moved. The Span did, and four values built on it restated
+// in the same proportion on the same date, without a materiality floor.
+const ddSpan = () => ddHead(228, ["REBASING WORKSHEET", "TABLE CUSTODIANSHIP, FERROW · TC 4/88/3", "STANDARD SPAN, KEYED VALUE SV-71119"])
+  + `<rect x="${TX - 10}" y="196" width="${TW + 20}" height="18" fill="${DD.paper2}" opacity="0.75"/>`
+  + dr(TX, 292, TW, 0.7, DD.rule)
+  + ddTable(316, [{ t: "REFERENCE", w: 214 }, { t: "MERIDIAN ARC", w: 110 }, { t: "SPAN", w: 90, a: "end" }], [
+      ["Old (71-119)", "retired", "1.000000"],
+      ["New (88-402)", "active", "1.000038"],
+    ], { mark: 1 })
+  + dp(TX, 412, "Four values are held on the standing table. All four", 12, DD.inkDim)
+  + dp(TX, 428, "are restated below, in the same proportion, on the", 12, DD.inkDim)
+  + dp(TX, 444, "same date.", 12, DD.inkDim)
+  + ddTable(478, [{ t: "DERIVED VALUE", w: 190 }, { t: "OLD", w: 112, a: "end" }, { t: "NEW", w: 112, a: "end" }], [
+      ["Assessment Distance", "40.000000", "40.001520"],
+      ["Apprenticeship Term", "6.000000", "6.000228"],
+      ["Bond Radius", "900.000000", "900.034200"],
+      ["Reach Boundary", "12.000000", "12.000456"],
+    ])
+  + dr(TX, 624, TW, 0.6, DD.rule)
+  + dp(TX, 648, "All four recompute without remainder.", 13, DD.ink)
+  + dp(TX, 668, "There is no materiality floor. A derived value is", 12.5, DD.inkDim)
+  + dp(TX, 684, "restated because it is derived.", 12.5, DD.inkDim)
+  + dp(TX, 716, "No survey was conducted. No mark was moved.", 13.5, DD.ink)
+  + dp(TX, 736, "The amendment is arithmetic and takes effect on", 12.5, DD.inkDim)
+  + dp(TX, 752, "posting. 2,206 registries of record notified.", 12.5, DD.inkDim)
+  + dh(TX, 782, "SUBSCRIBED: CUSTODIAN OF THE STANDING TABLE", 10.5, DD.inkFaint);
+
+// 03. The row is there, the realm column carries an entry, the length column is
+// present, and the length column at row 7 reads what it has always read.
+const ddSchedule = () => ddHead(228, ["SCHEDULE OF STANDARD INTERVALS", "STANDARDS DIRECTORATE · SD 4/1/43", "REVISION 43, PUBLISHED CLICK 6, GALAXAL 879"])
+  + dr(TX, 292, TW, 0.7, DD.rule)
+  + dp(TX, 316, "The intervals of the Standard are eight. An interval", 12, DD.inkDim)
+  + dp(TX, 332, "against which a length is stated is in use.", 12, DD.inkDim)
+  + ddTable(376, [{ t: "ROW", w: 40 }, { t: "INTERVAL", w: 104 }, { t: "REALM", w: 88 }, { t: "LENGTH", w: 182, a: "end" }], [
+      ["1", "Grain", "", "the base"],
+      ["2", "Flick", "", "72.000000 grains"],
+      ["3", "Tick", "", "20.000000 flicks"],
+      ["4", "Momenta", "", "50.000114 ticks"],
+      ["5", "Click", "", "14.599967 momenta"],
+      ["6", "Galaxal", "", "228.000000 clicks"],
+      ["7", "Elysheim", "Elysheim", "not yet required"],
+      ["8", "Kelm", "", "not yet required"],
+    ], { step: 30, mark: 6 })
+  + dr(TX, 656, TW, 0.6, DD.rule)
+  + dp(TX, 682, "Where a length is stated it is stated against the", 12.5, DD.inkDim)
+  + dp(TX, 698, "interval next below, save at row 1.", 12.5, DD.inkDim)
+  + dp(TX, 726, "Reading copy, public counter, one sheet printed both", 12, DD.inkFaint)
+  + dp(TX, 742, "sides, creased along the vertical centre. No removal.", 12, DD.inkFaint)
+  + dh(TX, 776, "PRODUCED AT THE COUNTER · READ AT THE COUNTER", 10.5, DD.inkFaint)
+  + dh(TX, 792, "RETURNED TO THE COUNTER FILE WITHIN THE TICK", 10.5, DD.inkFaint);
+
+// 04. The definition is a description of a survey state, and it says nothing at
+// all about the question he came in with, because nothing was outstanding.
+const ddFlag = () => ddHead(228, ["STANDING REGULATIONS, PART 4", "READING ROOM WORKING SET · REVISION 43", "THE FLAG, AS PRINTED"])
+  + dr(TX, 292, TW, 0.7, DD.rule)
+  + `<rect x="${TX}" y="318" width="${TW}" height="112" fill="none" stroke="${DD.ink}" stroke-opacity="0.55" stroke-width="1.4"/>`
+  + dp(TX + 18, 352, "Concluded:", 16, DD.ink)
+  + dp(TX + 18, 376, "survey complete;", 16, DD.ink)
+  + dp(TX + 18, 398, "no phenomena outstanding;", 16, DD.ink)
+  + dp(TX + 18, 420, "no further contact indicated.", 16, DD.ink)
+  + dh(TX, 464, "SCHEDULE 12 TO PART 4", 12, DD.inkDim)
+  + dr(TX, 472, TW, 0.5, DD.rule)
+  + ddFields(500, [
+      ["Reporting", "no further obligation"],
+      ["Corrective action", "none required or anticipated"],
+      ["Assessment", "not altered by a later finding"],
+      ["Contact", "not indicated"],
+    ], { lw: 148 })
+  + dr(TX, 634, TW, 0.6, DD.rule)
+  + dp(TX, 658, "The definition describes a survey state. The", 12.5, DD.inkDim)
+  + dp(TX, 674, "population of record was assessed as stable, housed", 12.5, DD.inkDim)
+  + dp(TX, 690, "and provisioned at last survey.", 12.5, DD.inkDim)
+  // the pencil annotation in the margin of the third row, and nothing else
+  + `<path d="M${TX - 22} 552 l10 -3 l-2 8 z" fill="${DD.inkFaint}" opacity="0.8"/>`
+  + dh(TX, 736, "TWO SHEETS, 0.001 LINEAR, SOUND.", 10.5, DD.inkFaint)
+  + dh(TX, 754, "ONE FOLDED ONCE AT THE HEAD.", 10.5, DD.inkFaint)
+  + dh(TX, 772, "ONE CARRYING A PENCIL ANNOTATION IN THE", 10.5, DD.inkFaint)
+  + dh(TX, 788, "MARGIN OF THE THIRD ROW.", 10.5, DD.inkFaint);
+
+// 05. Two certificates, both hers, both true as at the dates stated on them,
+// and neither states anything about the other.
+const ddCerts = () => {
+  const cw = 196, gx = 22, y0 = 274, ch = 312;
+  const cert = (x, no, rev, posted, val, asAt) => {
+    const ix = x + 12, iw = cw - 24;
+    return `<rect x="${x}" y="${y0}" width="${cw}" height="${ch}" fill="${DD.paper0}" stroke="${DD.edge}" stroke-width="1"/>`
+      + dh(ix, y0 + 26, "CERTIFICATE OF A", 9.5, DD.inkFaint) + dh(ix, y0 + 40, "HELD VALUE", 9.5, DD.inkFaint)
+      + dh(ix, y0 + 62, no, 12.5, DD.ink)
+      + dr(ix, y0 + 74, iw, 0.5, DD.rule)
+      + dp(ix, y0 + 96, "Standing Table of", 11, DD.inkDim)
+      + dp(ix, y0 + 111, "Standard Values, Marn.", 11, DD.inkDim)
+      + dp(ix, y0 + 133, `Revision ${rev}, posted`, 11, DD.inkDim)
+      + dp(ix, y0 + 148, posted, 11, DD.inkDim)
+      + dp(ix, y0 + 172, "Entry: Standard Bond", 11, DD.inkDim)
+      + dp(ix, y0 + 187, "Radius, default.", 11, DD.inkDim)
+      + dr(ix, y0 + 204, iw, 0.5, DD.rule)
+      + dp(ix, y0 + 234, val, 17, DD.ink)
+      + dp(ix, y0 + 252, "Spans.", 12, DD.inkDim)
+      + dp(ix, y0 + 278, `As at: ${asAt}.`, 11.5, DD.ink)
+      + dp(ix, y0 + 294, "Sealed: click 22, galaxal 884.", 10.5, DD.inkFaint)
+      // sealed at the foot in violet, which is the only ink in this season
+      + `<g opacity="0.85" filter="url(#ddpad)"><circle cx="${x + cw - 32}" cy="${y0 + 276}" r="19" fill="none" stroke="${DD.violet}" stroke-width="2.4"/><circle cx="${x + cw - 32}" cy="${y0 + 276}" r="12" fill="none" stroke="${DD.violet}" stroke-width="1"/><text x="${x + cw - 32}" y="${y0 + 280}" text-anchor="middle" font-family="${DD.mono}" font-size="8.5" fill="${DD.violet}" letter-spacing="0.4">SEAL</text></g>`;
+  };
+  return ddHead(228, ["RESPONSE OF THIS OFFICE · FORM C4/R", "CERTIFICATION SECTION · REQUEST 11-0488", "TWO CERTIFICATES, ONE SHEET EACH, SEALED AT THE FOOT"])
+    + cert(TX, "C4-2211", 61, "click 15, galaxal 884", "900.034200", "click 21, galaxal 884")
+    + cert(TX + cw + gx, "C4-2212", 62, "click 22, galaxal 884", "900.068401", "click 22, galaxal 884")
+    + dr(TX, 612, TW, 0.6, DD.rule)
+    + dp(TX, 636, "The two figures differ. Both are true as at the dates", 13, DD.ink)
+    + dp(TX, 654, "stated on them, both are certified, and neither", 13, DD.ink)
+    + dp(TX, 672, "certificate states anything about the other.", 13, DD.ink)
+    + dp(TX, 702, "The figure requested was the figure at the counter on", 12, DD.inkDim)
+    + dp(TX, 718, "the date of the request. A certificate of this office", 12, DD.inkDim)
+    + dp(TX, 734, "states a figure as at the date of certification.", 12, DD.inkDim)
+    + dh(TX, 768, "A RETURN IS PRODUCED COMPLETE. A PART OF A RETURN IS", 10.5, DD.inkFaint)
+    + dh(TX, 784, "NOT SEPARATELY RELEASABLE.", 10.5, DD.inkFaint);
+};
+
+// 06. The document is complete, legible and sound. What is missing is the
+// provenance, and the form has a value for exactly that.
+const ddProvenance = () => ddHead(228, ["DESCRIPTION OF SERIES 9", "AS AT THE LAST INVENTORY", "EXTRACTED FROM THE GENERAL INDEX"])
+  + dr(TX, 292, TW, 0.7, DD.rule)
+  + ddFields(324, [
+      ["Series", "9."],
+      ["Provenance", "found in collection."],
+      ["Extent", "0.9 linear at the last inventory."],
+      ["", "0.8 linear at the inventory before."],
+      ["Contents", "sixty one items at the last inventory."],
+      ["Condition", "sound throughout."],
+      ["Arrangement", ""],
+      ["Access", "no restriction. Retrieval available"],
+      ["", "on production of a description."],
+    ], { lw: 116, step: 32, big: 1 })
+  + dr(TX, 620, TW, 0.6, DD.rule)
+  + dp(TX, 644, "An item is described into Series 9 where it is present", 12, DD.inkDim)
+  + dp(TX, 660, "at an inventory and no deposit record is held for it.", 12, DD.inkDim)
+  + dp(TX, 676, "An item leaves the series where a deposit record is", 12, DD.inkDim)
+  + dp(TX, 692, "produced.", 12, DD.inkDim)
+  + dr(TX, 712, TW, 0.4, DD.rule)
+  + dh(TX, 736, "ITEM 9/44 · SPECIFICATION 4-118, DOOR CHECK,", 10.5, DD.ink)
+  + dh(TX, 752, "PATTERN 4 · TWENTY TWO SHEETS, UNBOUND, SOUND.", 10.5, DD.ink)
+  + dh(TX, 776, "PART 7.7: WHERE THE PROVENANCE STATEMENT READS FOUND", 10, DD.inkFaint)
+  + dh(TX, 790, "IN COLLECTION, A COPY IS ISSUED STAMPED NOT FOR RELIANCE.", 10, DD.inkFaint);
+
+// 07. He asked for the withdrawal not to be kept. The register entry for the
+// asking is the fourth description in the return.
+const ddWithdrawal = () => ddHead(228, ["SCHEDULE OF DESCRIPTIONS PRODUCED", "ATTACHED TO AND FORMING PART OF THE RESPONSE", "REFERENCE: REQUEST 11-0509"])
+  + dr(TX, 292, TW, 0.7, DD.rule)
+  + dh(TX, 318, "1 · SERIES 2, REQUEST REGISTER, VOLUME 6", 11, DD.inkDim)
+  + ddTable(344, [{ t: "FIELD", w: 168 }, { t: "ENTRY", w: 246, a: "end" }], [
+      ["Reference", "06-2214"],
+      ["Received", "click 11, galaxal 884"],
+      ["Class", "not assigned"],
+      ["Disposition", "withdrawn, click 22, galaxal 884"],
+    ], { head: false, step: 25 })
+  + dp(TX, 468, "Prior to the annotation of click 22 the disposition", 11.5, DD.inkFaint)
+  + dp(TX, 483, "field carried no value.", 11.5, DD.inkFaint)
+  + dh(TX, 512, "2 · THE SLIP HELD WITH ENTRY 06-2214 · EXTENT: ONE", 11, DD.inkDim)
+  + dh(TX, 527, "SHEET. CONDITION: NOT STATED. THE SHEET IS HELD.", 11, DD.inkDim)
+  + dh(TX, 552, "3 · SERIES 4, WITHDRAWALS, ITEM 1,318 · FORM W/9", 11, DD.inkDim)
+  + dh(TX, 567, "ONE LINE STRUCK. STRUCK MATTER IS NOT REPRODUCED.", 11, DD.inkDim)
+  + dh(TX, 596, "4 · SERIES 2, REQUEST REGISTER, VOLUME 11", 11, DD.ink)
+  + ddTable(622, [{ t: "FIELD", w: 168 }, { t: "ENTRY", w: 246, a: "end" }], [
+      ["Reference", "11-0509"],
+      ["Received", "click 22, galaxal 884"],
+      ["Class", "III"],
+      ["Disposition", "returned complete, click 23"],
+    ], { head: false, step: 25, mark: 0 })
+  + dr(TX, 742, TW, 0.5, DD.rule)
+  + dp(TX, 766, "One entry, being this request. The hand reduces in", 12, DD.inkDim)
+  + dp(TX, 782, "size over the last four lines.", 12, DD.inkDim);
+
+// 08. Item 1 of series 1, described at item level in the same register as a
+// folded sheet, with the caveat printed where a caveat goes.
+const ddIndex = () => ddHead(228, ["GENERAL INDEX TO THE HOLDINGS", "OF THE REPOSITORY", "FONDS 1, SERIES 1, ITEM 1 · AT ITEM LEVEL"])
+  + dr(TX, 292, TW, 0.7, DD.rule)
+  + ddFields(322, [
+      ["Extent", "4.1 linear. 58 volumes."],
+      ["Physical form", "sheets in fastened volumes."],
+      ["Condition", "sound. Volumes 4 and 5 rebacked."],
+      ["Arrangement", "by fonds, thereunder by series,"],
+      ["", "thereunder by item."],
+      ["Provenance", "created by the repository in the"],
+      ["", "course of its function of describing"],
+      ["", "its holdings."],
+    ], { lw: 122, step: 30 })
+  + dr(TX, 570, TW, 0.5, DD.rule)
+  + dh(TX, 594, "AGGREGATE EXTENT DESCRIBED", 11, DD.inkFaint)
+  + dp(TX, 626, "1,206,411.4 linear", 21, DD.ink)
+  + dp(TX + 178, 626, "at the last inventory", 12, DD.inkDim)
+  + `<rect x="${TX - 8}" y="646" width="${TW + 16}" height="96" fill="${DD.ink}" opacity="0.055"/>`
+  + dh(TX, 668, "NOTE ON EXTENT", 11, DD.ink)
+  + dp(TX, 690, "The extent stated is not the extent at time of", 13, DD.ink)
+  + dp(TX, 708, "reading, and no procedure exists that would make", 13, DD.ink)
+  + dp(TX, 726, "it so. The figure does not include the record of", 13, DD.ink)
+  + dp(TX, 744, "the inventory.", 13, DD.ink)
+  + dh(TX, 776, "ACCESS: NO RESTRICTION.", 10.5, DD.inkFaint)
+  + dh(TX, 792, "THE ITEM IS NOT PRODUCED.", 10.5, DD.inkFaint);
+
+// 09. She asked why they came in that order. The arrangement statement for the
+// series is a complete and correct answer, and the field is blank.
+const ddArranged = () => ddHead(228, ["DESCRIPTION OF SERIES 12", "AS AT THE LAST INVENTORY · CERTIFIED A TRUE COPY", "SERIES 12. MILL WORKS, THURL REACH."])
+  + dr(TX, 292, TW, 0.7, DD.rule)
+  + ddFields(324, [
+      ["Extent", "8.2 linear at the last inventory."],
+      ["", "1,140 items."],
+      ["Physical form", "sheets, loose and folded, in tied"],
+      ["", "bundles; eleven notebooks; three"],
+      ["", "rolled sheets in a tube."],
+      ["Condition", "sound throughout. Foxing to the head"],
+      ["", "margins of bundle 7."],
+      ["Arrangement", ""],
+      ["Provenance", "transferred at the closure of the"],
+      ["", "Mill Works office, Thurl Reach."],
+      ["Access", "no restriction. Retrieval available"],
+      ["", "on production of a description."],
+    ], { lw: 122, step: 30 })
+  // the field label is printed and the ruled line after it is empty, so the
+  // container still shows the missing thing's size
+  + `<rect x="${TX - 8}" y="${324 + 7 * 30 - 20}" width="${TW + 16}" height="30" fill="${DD.ink}" opacity="0.055"/>`
+  + dr(TX, 720, TW, 0.6, DD.rule)
+  + dp(TX, 744, "A description is reproduced as it stands, and a field", 12.5, DD.inkDim)
+  + dp(TX, 760, "carrying no value is reproduced carrying no value.", 12.5, DD.inkDim)
+  + dh(TX, 776, "FORTY ONE ITEMS PRODUCED, COMPLETE, INSIDE THE", 10.5, DD.inkFaint)
+  + dh(TX, 792, "STANDARD. PRODUCED AGAIN ON THE FOLLOWING TICK.", 10.5, DD.inkFaint);
+
+// 10. A column is completed when a value arises. A column for which no value
+// has arisen is left as printed.
+const ddNoField = () => ddHead(228, ["REQUEST REGISTER, FEE PERIOD 11", "FORM R/R, REVISION 3 · VOLUME 11", "KEPT AT THE COUNTER, IN THE ORDER OF RECEIPT"])
+  + dr(TX, 292, TW, 0.7, DD.rule)
+  + ddTable(320, [{ t: "FIELD", w: 158 }, { t: "ENTRY", w: 256, a: "end" }], [
+      ["Register number", "11-0463"],
+      ["Received", "tick 124, click 21, galaxal 884"],
+      ["Requester", "Nirras"],
+      ["Class assigned", "I"],
+      ["Disposition", "returned complete"],
+      ["Date returned", "tick 124, click 21, galaxal 884"],
+      ["Fee assessed", "none"],
+    ], { head: false, step: 25 })
+  + dr(TX, 512, TW, 0.5, DD.rule)
+  + ddTable(538, [{ t: "FIELD", w: 158 }, { t: "ENTRY", w: 256, a: "end" }], [
+      ["Register number", "11-0544"],
+      ["Received", "tick 121, click 22, galaxal 884"],
+      ["Requester", "Nirras"],
+      ["Class assigned", "not assigned"],
+      ["Disposition", ""],
+      ["Date returned", ""],
+      ["Fee assessed", "none"],
+    ], { head: false, step: 25 })
+  + dp(TX, 726, "Note 1 to the register form. A column is completed", 12, DD.inkDim)
+  + dp(TX, 742, "when a value arises. A column for which no value has", 12, DD.inkDim)
+  + dp(TX, 758, "arisen is left as printed and is not struck, ruled", 12, DD.inkDim)
+  + dp(TX, 774, "through, marked not applicable, or otherwise", 12, DD.inkDim)
+  + dp(TX, 790, "annotated.", 12, DD.inkDim);
+
+// ── the flat sheets. Heading, form number, and ruled lines standing in for
+// body copy, because everything in this tray that is not the slip is flat.
+function ddFlat(box, f) {
+  const [x, y, w, h] = box, ix = x + 26;
+  let o = ddSheet(x, y, w, h, { shade: 0.05 });
+  o += dh(ix, y + 40, f.head, 12, DD.ink);
+  o += dh(ix, y + 58, f.form, 10, DD.inkFaint);
+  o += dr(ix, y + 70, w - 52, 0.6, DD.rule);
+  (f.lines || []).forEach((t, i) => { o += dp(ix, y + 96 + i * 17, t, 12, DD.inkDim); });
+  o += ddBody(ix, y + 104 + (f.lines || []).length * 17 + 14, w - 52, f.rules ?? 8);
+  if (f.stamp) {
+    const sx = x + w - 246;
+    o += `<g transform="rotate(-3 ${sx + 112} ${y + 31})" filter="url(#ddpad)" opacity="0.8">
+    <rect x="${sx}" y="${y + 14}" width="224" height="34" rx="3" fill="none" stroke="${DD.violet}" stroke-width="2.4"/>
+    <text x="${sx + 112}" y="${y + 38}" text-anchor="middle" font-family="${DD.mono}" font-size="14" font-weight="700" fill="${DD.violet}" letter-spacing="2">${esc(f.stamp)}</text></g>`;
+  }
+  return o;
+}
+
+// ── the retrieval note. Written last, so it sits at the bottom of the file. ──
+// The three cited lines have to stop short of the CLOSED stamp, and the only
+// way to know they do is to fail the render when they do not.
+const DD_NOTE_MAX = 118;
+function ddNote(e) {
+  const [x, y, w, h] = DDG.note, ix = x + 26;
+  for (const [k, v] of [["Holding cited: ", e.note.holding], ["Extent and condition: ", e.note.extent], ["Access: ", e.note.access]]) {
+    if ((k + v).length > DD_NOTE_MAX) throw new Error(`${e.req}: retrieval note line runs under the stamp (${(k + v).length} > ${DD_NOTE_MAX}): ${k}${v}`);
+  }
+  let o = ddSheet(x, y, w, h, { shade: 0.03 });
+  o += dh(ix, y + 32, `RETRIEVAL NOTE · REQUEST ${e.req}`, 12, DD.ink);
+  o += dr(ix, y + 42, 660, 0.6, DD.rule);
+  o += dp(ix, y + 62, `Holding cited: ${e.note.holding}`, 11.5, DD.inkDim);
+  o += dp(ix, y + 78, `Extent and condition: ${e.note.extent}`, 11.5, DD.inkDim);
+  o += dp(ix, y + 94, `Access: ${e.note.access}`, 11.5, DD.inkDim);
+  o += dp(ix, y + 120, `Requests in class not assigned: ${e.note.notAssigned}`, 12.5, DD.ink);
+  o += dp(ix, y + 136, `Found in collection at last inventory: ${e.note.found}`, 12.5, DD.ink);
+  o += dp(ix, y + 158, "This description is of the holding. It is not a copy of the holding.", 11, DD.inkFaint);
+  o += dp(ix, y + 172, "This finding aid describes the holdings of the repository. It does not describe the repository.", 11, DD.inkFaint);
+  return o;
+}
+
+// ── the slip. The one object in the tray at full fidelity: ink and pressure,
+// the crossing out, the wrong box ticked, and the hand getting smaller. It is
+// the only place a person speaks in this series and it is where the warmth is.
+function ddSlip(e) {
+  const [x, y, w, h] = DDG.slip, ix = x + 34, iw = w - 68;
+  // two sheets stepped out behind it: the rest of the file, fastened and flat
+  let o = ddSheet(x + 16, y + 14, w, h, { rot: 0.9, shade: 0.34 })
+        + ddSheet(x + 8, y + 7, w, h, { rot: 0.45, shade: 0.2 })
+        + ddSheet(x, y, w, h);
+  o += dh(ix + 26, y + 32, "REQUEST SLIP", 12.5, DD.ink);
+  e.slip.form.forEach((t, i) => { o += dh(ix, y + 48 + i * 15, t, 10, DD.inkFaint); });
+  o += dr(ix, y + 96, iw, 0.6, DD.rule);
+  o += dh(ix, y + 116, `RECEIVED: ${e.recLong}`, 9.5, DD.inkDim);
+  o += dh(ix, y + 142, "NAME OF REQUESTER", 9, DD.inkFaint);
+  o += ddHandName(ix, y + 172, e.slip.name);
+  o += dr(ix, y + 180, iw, 0.4, DD.inkFaint);
+  o += dh(ix, y + 204, "CLASS OF RETRIEVAL SOUGHT. THE REQUESTER'S ESTIMATE,", 9, DD.inkFaint);
+  o += dh(ix, y + 217, "AND NOT BINDING. SEE NOTE 3.", 9, DD.inkFaint);
+  ["I", "II", "III", "IV"].forEach((t, i) => {
+    const bx = ix + i * 84, by = y + 232;
+    o += `<rect x="${bx}" y="${by}" width="17" height="17" fill="none" stroke="${DD.inkDim}" stroke-width="1.2"/>`;
+    o += dh(bx + 24, by + 14, t, 12, DD.inkDim);
+    if (e.slip.tick === i) o += `<path d="M${bx + 3} ${by + 9} l5 6 l8 -13" fill="none" stroke="${DD.ink}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>`;
+    if (e.slip.struck === i) {
+      o += `<path d="M${bx + 3} ${by + 3} l11 11 M${bx + 14} ${by + 3} l-11 11" fill="none" stroke="${DD.ink}" stroke-width="1.8" stroke-linecap="round"/>`;
+      o += `<line x1="${bx - 4}" y1="${by + 9}" x2="${bx + 40}" y2="${by + 7}" stroke="${DD.ink}" stroke-opacity="0.8" stroke-width="1.6" stroke-linecap="round"/>`;
+    }
+  });
+  o += dr(ix, y + 268, iw, 0.6, DD.rule);
+  o += dp(ix, y + 288, "Describe the item required. Be as exact as you are able.", 10.5, DD.inkFaint, "start", ' font-style="italic"');
+  o += dp(ix, y + 302, "Match is by description. This office cannot search for what", 10.5, DD.inkFaint, "start", ' font-style="italic"');
+  o += dp(ix, y + 316, "you are not able to describe.", 10.5, DD.inkFaint, "start", ' font-style="italic"');
+  for (let i = 0; i < 14; i++) o += dr(ix, y + 336 + i * 22, iw, 0.3, DD.inkFaint);
+  o += ddHand(ix, y + 332, e.slip.lines);
+  o += dr(ix, y + 632, iw, 0.5, DD.rule);
+  o += dh(ix, y + 650, "SIGNED", 9, DD.inkFaint);
+  o += ddHandName(ix + 54, y + 652, e.slip.name, 22);
+  o += dh(ix + iw, y + 650, e.recLong, 8.5, DD.inkFaint, "end");
+  return o;
+}
+const ddHandName = (x, y, n, sz = 25) =>
+  `<text x="${x}" y="${y}" font-family="${DD.hand}" font-size="${sz}" fill="${DD.ink}" fill-opacity="0.95">${esc(n)}</text>`;
+
+// ── the ten files ───────────────────────────────────────────────────────────
+// Dates are the dates the files themselves state. RECEIVED and CLOSED are the
+// receipt and the return; file ten was received and has not been returned, so
+// it carries RECEIVED and no CLOSED.
+const G = "GALAXAL 884";
+const DDE = [
+  { n: "01", slug: "the-word-the-form-will-not-take", req: "11-0447",
+    label: "11-0447 · CLASS II · RETURNED COMPLETE",
+    recLong: "TICK 9, MOMENTA 3, CLICK 21, GALAXAL 884",
+    received: { coarse: `CLICK 21 · ${G}`, fine: "TICK 9 · MOMENTA 3" },
+    closed: { coarse: `CLICK 21 · ${G}`, fine: "TICK 4 · MOMENTA 4" },
+    slip: { name: "Tervi", form: ["FORM R/1, REVISION 12", "READING ROOM, GENERAL INDEX"], tick: 0, struck: -1, lines: [
+      { t: "My grandmother's people had a word for" },
+      { t: "themselves. I have been trying for four" },
+      { t: "momenta to put it on a residency form" },
+      { t: "and the form will not take it." },
+      { t: "I want to say first that I am not", strike: true, press: 0.6 },
+      { t: "accusing anybody of", strike: true, press: 0.6 },
+      { t: "I am not saying anybody has made a" },
+      { t: "mistake. So the word is either in the" },
+      { t: "returns or it is not." },
+      { t: "If it is there I would like a copy of", sz: 19 },
+      { t: "the line. Not the sheet. The line.", sz: 18 },
+      { t: "I will pay for the sheet it comes on.", sz: 17 },
+    ] },
+    turn: ddWord,
+    flatL: { head: "NOTICE OF NON-ACCEPTANCE", form: "RESIDENCY REGISTER, BRACK REACH", lines: ["Papers returned. The application is not refused.", "It is not accepted at the counter, which is a", "different thing.", "Note 2. The permitted list was compiled from the", "first enumeration returns."], rules: 4 },
+    flatR: { head: "FEE NOTE", form: "GENERAL INDEX · FORM GI/40", lines: ["Copy, one sheet, made by hand · 4 marks", "Extract from a published schedule · no charge", "Search · not applicable, the item was described", "Tendered 5. Overpayment of 1 returned."], rules: 5 },
+    note: { holding: "fonds 3, series 12, item 4471, third column, line 19.", extent: "one sheet, ruled in eight columns, one hand, sound. Copy supplied: one sheet.", access: "no restriction. A copy may not be used to amend the schedule compiled from it.", notAssigned: "4,112", found: "61" } },
+
+  { n: "02", slug: "charged-by-the-sheet", req: "11-0452",
+    label: "11-0452 · CLASS III · RETURNED COMPLETE",
+    recLong: "CLICK 21, GALAXAL 884",
+    received: { coarse: `CLICK 21 · ${G}`, fine: "" },
+    closed: { coarse: `CLICK 22 · ${G}`, fine: "" },
+    slip: { name: "Orven", form: ["FORM Q/1, REVISION 12", "READING SERVICES, PUBLIC COUNTER"], tick: 1, struck: -1, lines: [
+      { t: "My eastern boundary is not where my" },
+      { t: "deeds say it is. It is out by about the" },
+      { t: "width of my hand, and by the same" },
+      { t: "amount the whole way along." },
+      { t: "The stone is my father's stone. He set" },
+      { t: "it and I have re-bedded it twice." },
+      { t: "I am not saying anybody", strike: true, press: 0.6 },
+      { t: "I am not accusing anybody of anything." },
+      { t: "So I would like to know when it moved", sz: 19 },
+      { t: "and who moved it. I would like a date", sz: 18 },
+      { t: "I can write on the form.", sz: 17 },
+    ] },
+    turn: ddSpan,
+    flatL: { head: "CLOSURE NOTICE", form: "STANDARDS DIRECTORATE · SD 2/117/9", lines: ["Survey Designation 71-119 is reclassified from", "Category 3, Active Survey, to Concluded.", "Standing Order Six applies.", "Subscribed: Aennik Vöhl, Standards Officer."], rules: 5 },
+    flatR: { head: "FILING NOTE", form: "PARCEL REGISTRY, COOMBE REACH · PR-C 12/61/2", lines: ["Copies posted: 1. Copies requested since", "posting: 0. The board was last cleared for", "repainting on click 19. The notice was removed", "at that time, along with eleven others.", "No record was kept of which."], rules: 3 },
+    note: { holding: "SD 2/117/9; SD 1/1/6; TC 4/88/3; PR-C 12/61/1; PR-C 12/61/2.", extent: "ten sheets, copied complete from five items. Four items sound. TC 4/88/3 foxed, legible.", access: "no restriction. The amended cadastral sheet is not retrievable, a sheet in current use not being a holding.", notAssigned: "4,118", found: "61" } },
+
+  { n: "03", slug: "the-column-is-present", req: "11-0463",
+    label: "11-0463 · CLASS I · RETURNED COMPLETE",
+    recLong: "CLICK 21, GALAXAL 884",
+    received: { coarse: `CLICK 21 · ${G}`, fine: "" },
+    closed: { coarse: `CLICK 21 · ${G}`, fine: "WITHIN THE TICK" },
+    slip: { name: "Nirras", form: ["FORM Q/1, REVISION 12", "READING SERVICES, PUBLIC COUNTER"], tick: 2, struck: -1, lines: [
+      { t: "I want to know how long one Elysheim" },
+      { t: "is. In clicks, or in ticks, or in" },
+      { t: "anything I can count on my fingers." },
+      { t: "My agreement is for a term of one" },
+      { t: "Elysheim. I have had the rooms eleven" },
+      { t: "years and never needed to know." },
+      { t: "It is the floor. He will lay it new for" },
+      { t: "four hundred and ten." },
+      { t: "I am not asking anybody how long I am", strike: true, press: 0.6 },
+      { t: "allowed to", strike: true, press: 0.6 },
+      { t: "I only want to know how long the word", sz: 19 },
+      { t: "is.", sz: 18 },
+    ] },
+    turn: ddSchedule,
+    flatL: { head: "COUNTER RETURN", form: "READING SERVICES · WITHIN THE TICK OF RECEIPT", lines: ["Two items answer the description supplied and", "both are enclosed. No charge arises.", "The procedure by which an entry is made in the", "length column has not been invoked at row 7 or", "at row 8."], rules: 4 },
+    flatR: { head: "TABLE OF AMENDMENTS", form: "STANDARDS DIRECTORATE · SD 4/2/1", lines: ["Revisions 1 to 43. Revision 43: length at row 5", "restated under Standing Order Six on closure of", "designation 90-315. Objection period closed with", "nothing filed."], rules: 5 },
+    note: { holding: "SD 4/1/43; SD 4/2/1.", extent: "two sheets, reading copies, public counter file. 0.002 linear at last inventory.", access: "no restriction to either item. Neither item carries the value requested.", notAssigned: "4,121", found: "61" } },
+
+  { n: "04", slug: "no-further-contact-indicated", req: "11-0471",
+    label: "11-0471 · CLASS I · RETURNED COMPLETE",
+    recLong: "CLICK 21, GALAXAL 884",
+    received: { coarse: `CLICK 21 · ${G}`, fine: "" },
+    closed: { coarse: `CLICK 21 · ${G}`, fine: "ON THE TICK OF RECEIPT" },
+    slip: { name: "Dovek", form: ["FORM A1 REV. 9", "READING ROOM, PUBLIC COUNTER"], tick: 3, struck: -1, lines: [
+      { t: "I was born on a world and I left it" },
+      { t: "when I was seven and I have been told" },
+      { t: "it is Concluded." },
+      { t: "I do not know what that word means." },
+      { t: "I would like the definition. That is" },
+      { t: "the whole of it." },
+      { t: "I am aware this is a stupid question." },
+      { t: "My mother called it Sekk. There is a" },
+      { t: "well at the top of the town that a" },
+      { t: "surveyor measured for four days." },
+      { t: "And whether anyone is", strike: true, sz: 19, press: 0.5 },
+      { t: "If there is any way at all of knowing", strike: true, sz: 17, press: 0.4 },
+      { t: "whether", strike: true, sz: 15, press: 0.35 },
+    ] },
+    turn: ddFlag,
+    flatL: { head: "COUNTER MEMORANDUM", form: "READING ROOM · RECEIPT A9/2211", lines: ["Sum tendered at the counter: six marks, being", "the certification fee and an estimate of the", "sheet rate. Class I carries no charge. The sum", "was returned in full. The receipt is retained on", "this file because a receipt is a record."], rules: 3 },
+    flatR: { head: "SCHEDULE 12 TO PART 4", form: "STANDING REGULATIONS · REVISION 43", lines: ["What a Concluded designation carries: no further", "reporting obligation, no corrective action", "required or anticipated. An assessment as at a", "later date is not available for retrieval."], rules: 5 },
+    note: { holding: "Standing Regulations, Part 4, and Schedule 12 to Part 4. Reading room working set.", extent: "two sheets, 0.001 linear, sound. One folded once at the head, one carrying a pencil annotation.", access: "no restriction to either enclosure and both are on open sale.", notAssigned: "4,127", found: "61" } },
+
+  { n: "05", slug: "certified-as-at", req: "11-0488",
+    label: "11-0488 · CLASS IV · RETURNED COMPLETE",
+    recLong: "CLICK 21, GALAXAL 884",
+    received: { coarse: `CLICK 21 · ${G}`, fine: "" },
+    closed: { coarse: `CLICK 22 · ${G}`, fine: "CERTIFIED SAME CLICK" },
+    slip: { name: "Hesk", form: ["FORM R/IV, REVISION 9", "RETRIEVAL COUNTER · PAID IN ADVANCE"], tick: 3, struck: 2, lines: [
+      { t: "I want a certified copy of one line off" },
+      { t: "the standing table. The Standard Bond" },
+      { t: "Radius, the default one, the figure on" },
+      { t: "the sheet at your counter today." },
+      { t: "It says 900.034200 Spans. That is the" },
+      { t: "figure. That one, in those words, with" },
+      { t: "the date on it." },
+      { t: "I am being taken for everything I have", strike: true, press: 0.6 },
+      { t: "by a man who has never", strike: true, press: 0.6 },
+      { t: "Boundary dispute, Halloway Reach," },
+      { t: "Cause 4/118." },
+      { t: "I cannot afford to come back and ask", sz: 18 },
+      { t: "again, and I would like that noted.", sz: 17 },
+    ] },
+    turn: ddCerts,
+    flatL: { head: "REPUBLICATION ADDENDUM", form: "TABLE CUSTODIANSHIP, MARN · REVISION 62", lines: ["Filed and posted click 22, galaxal 884, with the", "standing order it was made under reproduced", "beneath it. No survey was conducted and no mark", "was moved. The objection period is one momenta", "from click 22 and is open."], rules: 3 },
+    flatR: { head: "SCHEDULE 7, REVISION 8", form: "WITHDRAWAL OF A CERTIFICATE · FORM C4/W", lines: ["A certificate may be withdrawn by the person to", "whom it was issued and by nobody else. The entry", "it certifies is produced to anybody who asks for", "it, on the same tick, at no charge.", "Form C4/W is enclosed, unused."], rules: 3 },
+    note: { holding: "Standing Table of Standard Values, Marn. Fonds 4, series 2, item 19, revisions 61 and 62.", extent: "1.1 linear, bound in nine volumes, sound. Revision 62 is interleaved and is not yet bound in.", access: "no restriction to either certificate. A certificate may be withdrawn by the person to whom it was issued.", notAssigned: "4,131", found: "61" } },
+];
+
+DDE.push(
+  { n: "06", slug: "not-for-reliance", req: "11-0501",
+    label: "11-0501 · CLASS II · RETURNED COMPLETE",
+    recLong: "TICK 9, MOMENTA 4, CLICK 21, GALAXAL 884",
+    received: { coarse: `CLICK 21 · ${G}`, fine: "TICK 9 · MOMENTA 4" },
+    closed: { coarse: `CLICK 21 · ${G}`, fine: "TICK 47 · MOMENTA 4" },
+    slip: { name: "Aldvik", form: ["FORM R-2, REVISION 9", "READING ROOM, PUBLIC ACCESS COUNTER"], tick: 1, struck: 2, lines: [
+      { t: "Specification 4-118, door check," },
+      { t: "Pattern 4. Fittings Standards Office," },
+      { t: "Ferrow. Twenty two sheets." },
+      { t: "I want the whole of it and I will pay" },
+      { t: "for the whole of it, but if it helps you" },
+      { t: "to know which sheet I am really after," },
+      { t: "it is sheet 11, and on sheet 11 it is" },
+      { t: "the seat depth for the friction shoe," },
+      { t: "part 4c." },
+      { t: "We have four copies in the shop. All", sz: 19 },
+      { t: "four are copies of copies. We have been", sz: 18 },
+      { t: "getting it right by feel, and feel is", sz: 17 },
+      { t: "not a thing I can write on a job sheet.", sz: 16 },
+    ] },
+    turn: ddProvenance,
+    flatL: { head: "RETRIEVAL RESPONSE", form: "READING ROOM · PART 7.7", lines: ["The item is described at item level in Series 9.", "Its provenance statement reads found in", "collection. The description of Series 9", "accompanies this response, the provenance", "statement being made at series level."], rules: 3 },
+    flatR: { head: "SHEET 11 OF 22", form: "PARTS SCHEDULE · SEAT DEPTH, FRICTION SHOE, 4c", stamp: "NOT FOR RELIANCE", lines: ["The seat depth is the only dimension in this", "specification on which the safe closing of the", "leaf depends. It is given to three places and is", "to be worked to three places."], rules: 3 },
+    note: { holding: "Series 9, item 9/44. Specification 4-118, door check, Pattern 4, Fittings Standards Office, Ferrow.", extent: "twenty two sheets, unbound, in a folder, 0.01 linear, sound. Sheet 11 repaired at one corner.", access: "no restriction applies. Certification is not available.", notAssigned: "4,138", found: "61" } },
+
+  { n: "07", slug: "a-withdrawal-is-a-record", req: "11-0509",
+    label: "11-0509 · CLASS III · RETURNED COMPLETE",
+    recLong: "CLICK 22, GALAXAL 884",
+    received: { coarse: `CLICK 22 · ${G}`, fine: "" },
+    closed: { coarse: `CLICK 23 · ${G}`, fine: "" },
+    slip: { name: "Vunn", form: ["FORM R/2", "READING ROOM COUNTER"], tick: 2, struck: -1, lines: [
+      { t: "I filed a request at this counter on" },
+      { t: "click 11 of this galaxal, in my own" },
+      { t: "name, and I would like it withdrawn." },
+      { t: "The form asks what it was about. I am" },
+      { t: "not going to write it down a second" },
+      { t: "time, and that is the", strike: true, press: 0.6 },
+      { t: "not writing it down is the whole of my" },
+      { t: "difficulty. Please take it out." },
+      { t: "Then when it is out, please do not keep", sz: 19 },
+      { t: "the taking out. I can hear how that", sz: 17.5 },
+      { t: "sounds. I am asking for it to be done", sz: 16 },
+      { t: "the once, and for no note to be made.", sz: 14.5 },
+    ] },
+    turn: ddWithdrawal,
+    flatL: { head: "FORM W/9, REVISION 4", form: "WITHDRAWAL OF A REQUEST · STANDING REGULATIONS", lines: ["A requester may withdraw a request at any time", "before it is answered. No ground need be given.", "Withdrawal requires no decision by any office.", "The entry is annotated in the register. It is not", "removed. Annotation is the only operation the", "register supports."], rules: 2 },
+    flatR: { head: "MEMORANDUM AND REPLY", form: "ENCLOSURE C · RETENTION SCHEDULE RS/1", lines: ["This office asks which office holds the procedure", "for the disposal of such a record.", "Reply: the retention schedule specifies no", "disposal action at expiry. This office holds no", "procedure for the disposal of a holding."], rules: 3 },
+    note: { holding: "Series 2, Request Register, volumes 6 and 11. Series 4, Withdrawals, item 1,318.", extent: "two entries, one line each, in bound volumes, ink, sound. One sheet, form W/9, folded once.", access: "no restriction. The sheet held with entry 06-2214 is not described, and retrieval is by description.", notAssigned: "4,137", found: "64" } },
+
+  { n: "08", slug: "described-at-item-level", req: "11-0517",
+    label: "11-0517 · CLASS II · RETURNED COMPLETE",
+    recLong: "TICK 39, CLICK 22, GALAXAL 884",
+    received: { coarse: `CLICK 22 · ${G}`, fine: "TICK 39" },
+    closed: { coarse: `CLICK 22 · ${G}`, fine: "TICK 41" },
+    slip: { name: "Torgir", form: ["FORM R-1, REVISION 8", "READING ROOM"], tick: 1, struck: 2, lines: [
+      { t: "I came in this morning to file the" },
+      { t: "search and I have not filed it, because" },
+      { t: "the search is charged by the hour with" },
+      { t: "an hour minimum and I would like to" },
+      { t: "know what an hour buys before I buy two" },
+      { t: "of them." },
+      { t: "I have been told you describe" },
+      { t: "yourselves the same as you describe" },
+      { t: "everything else, and that it has an" },
+      { t: "extent on it like a bundle of paper has" },
+      { t: "an extent on it." },
+      { t: "I am not asking anybody to guess. I am", sz: 19 },
+      { t: "asking for the sheet with the number on", sz: 18 },
+      { t: "it.", sz: 17 },
+    ] },
+    turn: ddIndex,
+    flatL: { head: "RESPONSE TO REQUEST", form: "READING ROOM · SCHEDULE OF FEES, REVISION 12", lines: ["A copy is enclosed at enclosure A, three sheets.", "Copying, four sheets at 2 the sheet: 8. No other", "charge arises. Class II service standard is one", "momenta. This request is returned in two ticks", "and is within standard."], rules: 3 },
+    flatR: { head: "NOTICE OF INVENTORY", form: "FONDS 2, SERIES 14, ITEM 3", lines: ["Closed: tick 288, click 21, galaxal 884.", "Every holding was produced, described, and", "returned to its place. Extent figures are not", "restated between inventories. A figure taken at", "this inventory carries that date wherever it is", "stated."], rules: 2 },
+    note: { holding: "fonds 1, series 1, item 1. General index to the holdings. Enclosure B: fonds 2, series 14, item 3.", extent: "4.1 linear, sheets in fastened volumes, 58 volumes, sound; volumes 4 and 5 rebacked.", access: "no restriction applies. The item is not produced.", notAssigned: "4,143", found: "64" } },
+
+  { n: "09", slug: "arranged-by", req: "11-0530",
+    label: "11-0530 · CLASS III · RETURNED COMPLETE",
+    recLong: "TICK 97, CLICK 22, GALAXAL 884",
+    received: { coarse: `CLICK 22 · ${G}`, fine: "TICK 97" },
+    closed: { coarse: `CLICK 22 · ${G}`, fine: "TICK 100" },
+    slip: { name: "Semmi", form: ["FORM R/2", "READING ROOM COUNTER"], tick: 2, struck: -1, lines: [
+      { t: "I am a stone dresser and I have six" },
+      { t: "days." },
+      { t: "What I want is every sheet you hold" },
+      { t: "that is a setting out for a stone face." },
+      { t: "A circle drawn at full size. The circle" },
+      { t: "divided. The furrows laid off from a" },
+      { t: "chord and ruled through to the skirt." },
+      { t: "The count of cracks to the land written" },
+      { t: "at the same edge or on the back." },
+      { t: "I do not know how many there are.", strike: true, press: 0.6 },
+      { t: "I do not know how many there are, and", sz: 19 },
+      { t: "I am not asking anybody to tell me", sz: 18 },
+      { t: "before they look. I have written this", sz: 17 },
+      { t: "out three times and this is the third.", sz: 16 },
+    ] },
+    turn: ddArranged,
+    flatL: { head: "SCHEDULE OF ITEMS PRODUCED", form: "SERIES 12, MILL WORKS, THURL REACH", lines: ["Forty one items, 0.3 linear, sound. Produced", "complete inside the standard. Four items carry", "the conditions stated in the schedule and none", "of them crosses a drawn line.", "Second production: item 12/499/8 is at the", "position it carries in the schedule."], rules: 2 },
+    flatR: { head: "COUNTER NOTE", form: "READING ROOM · FILED TICK 100", lines: ["A communication received at the counter is filed", "with the request it relates to. It is reproduced.", "The second day it came off the same way as the", "first, in the same order, and the one I wanted", "was eleventh along both times.", "The communication is filed. Nothing further", "arises."], rules: 1 },
+    note: { holding: "Series 12, Mill Works, Thurl Reach, forty one items, scheduled. Enclosure A: the entry for series 12.", extent: "0.3 linear, forty one items, sheets loose and folded and two notebooks, sound.", access: "no restriction. The items are not catalogued by subject and retrieval is by description.", notAssigned: "4,149", found: "64" } },
+
+  { n: "10", slug: "if-it-is-ever-filled-in", req: "11-0544",
+    label: "11-0544 · CLASS NOT ASSIGNED",
+    recLong: "TICK 121, CLICK 22, GALAXAL 884",
+    received: { coarse: `CLICK 22 · ${G}`, fine: "TICK 121" },
+    closed: null,
+    slip: { name: "Nirras", form: ["FORM R/1, REVISION 12", "READING ROOM, GENERAL INDEX"], tick: -1, struck: -1, lines: [
+      { t: "If the length is ever filled in I would" },
+      { t: "like to be told, and I will come in for" },
+      { t: "it myself, and I do not need a copy." },
+    ] },
+    turn: ddNoField,
+    flatL: { head: "COUNTER NOTE", form: "READING ROOM · FORM R/4, REVISION 6", lines: ["Field 5 carries one line of writing in ink,", "occupying rather less than a quarter of the space", "ruled for it, written once, in a steady hand, not", "amended, not struck, not overwritten and not", "continued. Field 6 is not completed. The four", "boxes at field 4 are printed and none of them is", "marked. Field 4 provides four boxes."], rules: 1 },
+    flatR: { head: "MEMORANDUM OF CLASSING", form: "READING ROOM, RETRIEVALS · FORM R/9, REVISION 14", lines: ["The four classes are considered in order, because", "a request that is not in one of them is only in", "the residual once the four have been considered.", "The request is classed in the class not assigned.", "The standard is met. It has been met since the", "tick of receipt."], rules: 2 },
+    note: { holding: "request 11-0544, one sheet, form R/1 revision 12, filed at the counter under its register number.", extent: "one sheet, 0.21 by 0.30, printed both sides, one line at field 5 in one ink, sound, unfolded.", access: "no restriction applies to this request or to the register entry made on it. The request is not returned.", notAssigned: "4,150", found: "64" } },
+);
+
+const ddPlate = (e) => `<!doctype html><html><head><meta charset="utf-8"><style>
+  *{margin:0;padding:0}body{width:${W}px;height:${H}px;background:${DD.counter0};overflow:hidden}
+</style></head><body>
+<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
+  ${ddDefs()}
+  ${ddChrome(e)}
+  ${ddSlip(e)}
+  ${ddSheet(...DDG.turn)}${e.turn()}
+  ${ddFlat(DDG.flatL, e.flatL)}
+  ${ddFlat(DDG.flatR, e.flatR)}
+  ${ddNote(e)}
+  ${ddFastener()}
+  ${ddStamps(e)}
+  ${ddFinish()}
+</svg></body></html>`;
+
+// ── the check. Chrome is byte identical on all ten, and the only way to know
+// that is to blank the three strings it is allowed to carry and compare.
+function assertChromeIdentical() {
+  const blank = { fine: "", coarse: "" };
+  const chrome = (e) => ddChrome({ label: "" }) + ddFastener() + ddStamps({ received: blank, closed: e.closed ? blank : null }) + ddFinish();
+  const ref = chrome(DDE[0]);
+  const refNoClosed = chrome(DDE.find((e) => !e.closed));
+  for (const e of DDE) {
+    if (chrome(e) !== (e.closed ? ref : refNoClosed)) throw new Error(`dd-${e.n}: chrome is not byte identical`);
+  }
+  // and the plate-ten difference is exactly one absent stamp and nothing else
+  if (ref.replace(ddStamp(...DDG.stampC, "CLOSED", "", ""), "") !== refNoClosed) {
+    throw new Error("plate ten differs from the other nine by more than the CLOSED stamp");
+  }
+  const ten = DDE.filter((e) => !e.closed).map((e) => e.n);
+  if (ten.length !== 1 || ten[0] !== "10") throw new Error(`exactly one plate carries RECEIVED only, and it is ten. Got: ${ten.join(",") || "none"}`);
+  console.log("  chrome: byte identical on all ten, CLOSED omitted on 10 only");
+}
+
 // ── render ──────────────────────────────────────────────────────────────────
 const only = process.argv[2];
 mkdirSync(OUT, { recursive: true });
@@ -2058,15 +2933,18 @@ async function shoot(html, w, h, file) {
 
 // arg forms:  (none) = everything · "07" = S1 plate 07 · "s2" = all S2 · "s2-04" = one S2 plate
 //             "s3" = all S3 · "s3-04" = one S3 plate · "s4" = all S4 · "s4-04" = one S4 plate
+//             "dd" = all Dark Directory · "dd-04" = one Dark Directory plate
 const s2Only = only && only.startsWith("s2");
 const s2Pick = s2Only && only.includes("-") ? only.split("-")[1] : null;
 const s3Only = only && only.startsWith("s3");
 const s3Pick = s3Only && only.includes("-") ? only.split("-")[1] : null;
 const s4Only = only && only.startsWith("s4");
 const s4Pick = s4Only && only.includes("-") ? only.split("-")[1] : null;
+const ddOnly = only && only.startsWith("dd");
+const ddPick = ddOnly && only.includes("-") ? only.split("-")[1] : null;
 
 if (!only) await shoot(cover(), 1200, 630, "00-series-cover.png");
-if (!s2Only && !s3Only && !s4Only) {
+if (!s2Only && !s3Only && !s4Only && !ddOnly) {
   for (const e of ENTRIES) {
     if (only && only !== e.n) continue;
     await shoot(plate(e), W, H, `s1-${e.n}-${e.slug}.png`);
@@ -2088,6 +2966,13 @@ if (!only || s4Only) {
   for (const e of ENTRIES4) {
     if (s4Pick && s4Pick !== e.n) continue;
     await shoot(s4Plate(e), W, H, `s4-${e.n}-${e.slug}.png`);
+  }
+}
+if (!only || ddOnly) {
+  assertChromeIdentical();
+  for (const e of DDE) {
+    if (ddPick && ddPick !== e.n) continue;
+    await shoot(ddPlate(e), W, H, `dd-${e.n}-${e.slug}.png`);
   }
 }
 await browser.close();

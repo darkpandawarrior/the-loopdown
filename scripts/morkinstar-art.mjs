@@ -25,6 +25,19 @@ const SIG = join(OUT, "sigils");
 // Every entry's sigil is hashed from the thing that entry is ABOUT, not from its
 // title. Two entries about the same Power would produce the same mark, which is
 // the correct behaviour and the reason the pantheon rule works at all.
+
+// Two entries have no mark, and the absence is the entry. Season four's plates
+// already draw them this way (`noSigil` in morkinstar-plates.mjs): a keyline at
+// exactly the size of the other marks, so the absence has dimensions and a
+// reader can measure it. Emitting nothing would make the absence measureless,
+// which is a different and weaker thing.
+const BLANK = Symbol("no mark");
+const blankSigil = (accent) =>
+  `<svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="no mark">
+  <rect x="12" y="12" width="136" height="136" rx="16" fill="none" stroke="${accent}" stroke-width="4" stroke-dasharray="11 11"/>
+  <text x="80" y="102" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="72" fill="${accent}">Ø</text>
+</svg>\n`;
+
 const GLYPHS = [
   ["s1-01", "K'öæluæ"], ["s1-02", "Uhl"], ["s1-03", "Ottokh"], ["s1-04", "Hælvren"],
   ["s1-05", "Grin"], ["s1-06", "Skalde"], ["s1-07", "Skerrin"], ["s1-08", "Hœl"],
@@ -32,10 +45,38 @@ const GLYPHS = [
   ["s2-01", "The Case"], ["s2-02", "Emmerin"], ["s2-03", "The Kest"], ["s2-04", "Hallovar"],
   ["s2-05", "The Ovai"], ["s2-06", "The Weight"], ["s2-07", "The Bearing"],
   ["s2-08", "The Vedrei"], ["s2-09", "Skerrin"], ["s2-10", "Vænheim"],
+  // Season three burns the case, so a page's mark is the mark of whatever is on
+  // the page, not of the fire. Five of these repeat a season two string on
+  // purpose: it is the same Power, seen twice, and the rule says the mark is
+  // the same. s3-12 also repeats s2-09, because the page where he works it out
+  // is a page about the same thing the correcting hand was about.
+  ["s3-01", "Ossul"], ["s3-02", "Sölrun"], ["s3-03", "Hallovar"], ["s3-04", "The Ovai"],
+  ["s3-05", "The Fish"], ["s3-06", "The Weight"], ["s3-07", "Mörk"], ["s3-08", "The Vedrei"],
+  ["s3-09", "Yska"], ["s3-10", "The Bearing"], ["s3-11", "Ræl · Tuvid"], ["s3-12", "Skerrin"],
+  ["s3-13", "The Unnamed"], ["s3-14", "Kept"],
+  // Season four is a city, so the thing an entry is about is a district's
+  // mechanism rather than a world's Power. s4-12 is Skerrin again, for the
+  // fourth time in the anthology: the record has a weight there too.
+  ["s4-01", "Gate Fourteen"], ["s4-02", "Ondrit"], ["s4-03", "Ombri"], ["s4-04", "The Midpoint"],
+  ["s4-05", "Fourteen Past"], ["s4-06", BLANK], ["s4-07", "Rimmelin"], ["s4-08", "Hraedh"],
+  ["s4-09", "Ashgrenni"], ["s4-10", "The Reject Log"], ["s4-11", "The Survey File"],
+  ["s4-12", "Skerrin"], ["s4-13", BLANK], ["s4-14", "Hevrit"],
+  // The Dark Directory. What a retrieval file is about is the holding, or the
+  // thing the form has no field for. dd-04 is "Concluded", the same string as
+  // s1-09 and therefore the same mark, because it is the same thing: one entry
+  // asks what a Concluded world is and the other asks what the word means.
+  ["dd-01", "Möndri"], ["dd-02", "The Span"], ["dd-03", "The Residual Interval"],
+  ["dd-04", "Concluded"], ["dd-05", "The Standard Bond Radius"], ["dd-06", "Found In Collection"],
+  ["dd-07", "The Withdrawal"], ["dd-08", "The Finding Aid"], ["dd-09", "The Arrangement Statement"],
+  ["dd-10", "Class Not Assigned"],
 ];
 
+// One per season, and each is the accent that season already owns: s1 and s2
+// from the plates, s3 and s4 from seasonTheme.ts, where season three swaps
+// --color-accent to --color-warn and season four swaps it to --color-coverage.
+// The Dark Directory has exactly one colour and this is it: the stamp ink.
 const ACCENT = {
-  s1: "#8FD3FF", s2: "#8A5A28",
+  s1: "#8FD3FF", s2: "#8A5A28", s3: "#F0883E", s4: "#5EC8DC", dd: "#6B3FA0",
 };
 
 mkdirSync(SIG, { recursive: true });
@@ -46,7 +87,10 @@ mkdirSync(SIG, { recursive: true });
 // title and draw once on reveal.
 for (const [key, glyph] of GLYPHS) {
   const accent = ACCENT[key.slice(0, 2)];
-  const svg = sigil(glyph, accent, { size: 160, stroke: 1.9, animate: true, duration: 2.4 });
+  if (!accent) throw new Error(`${key}: no accent for season ${key.slice(0, 2)}`);
+  const svg = glyph === BLANK
+    ? blankSigil(accent)
+    : sigil(glyph, accent, { size: 160, stroke: 1.9, animate: true, duration: 2.4 });
   writeFileSync(join(SIG, `${key}.svg`), svg);
 }
 console.log(`  sigils: ${GLYPHS.length} → assets/sigils/`);
