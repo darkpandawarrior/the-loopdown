@@ -1,32 +1,34 @@
 # The Loopdown
 
-> *loop* + *lowdown* — field notes from an engineer who writes.
+> *loop* + *lowdown*, field notes from an engineer who writes.
 
 Short, sharp technical lessons pulled from real projects (Mileway, kmp-toolkit,
 PaymentsLab, Kursi, Dice), each written once and adapted to LinkedIn, dev.to,
-Hashnode, and Medium — plus an archive of everything I've written before.
+Hashnode, and Medium, plus an archive of everything I've written before.
+
+**Case study:** [The Loopdown](https://cv-siddharth.vercel.app/project/the-loopdown)
 
 This repo does three jobs at once:
 
-1. **📚 Archive** — my complete writing corpus, consolidated and versioned. Nothing lost.
-2. **📡 Engine** — a pipeline that turns a project war-story into a multi-channel post + branded graphic.
-3. **🧱 Wall** — public proof of consistency. The registry below *is* the track record.
+1. **📚 Archive**: my complete writing corpus, consolidated and versioned. Nothing lost.
+2. **📡 Engine**: a pipeline that turns a project war-story into a multi-channel post + branded graphic.
+3. **🧱 Wall**: public proof of consistency. The registry below *is* the track record.
 
 ## The universe
 
-The Loopdown isn't a content calendar — it's a *world*. An engineer stuck in a time loop
+The Loopdown isn't a content calendar, it's a *world*. An engineer stuck in a time loop
 (52 iterations of the same Wednesday), filing field notes on the same bugs and lying
 systems each pass. Because **seniority is the loop**: you don't know more code, you've
 just run the same failure enough times to name it on sight.
 
-Posts share a recurring cast — [The Concussed Witness](lore/cast.md) (GPS that lies with
+Posts share a recurring cast, [The Concussed Witness](lore/cast.md) (GPS that lies with
 total confidence), [Doze the Jailer](lore/cast.md), [The Messenger](lore/cast.md)
-(CancellationException, forever mistaken for an assassin) — grouped into
+(CancellationException, forever mistaken for an assassin), grouped into
 [series](lore/series.md) you can binge. Continuity is tracked automatically (see Cast
 Appearances below). The world is in [`lore/`](lore/bible.md); the voice is in
 [`voice/`](voice/voice-profile.md).
 
-## 🔭 The Morkinstar Journals — the fiction anthology
+## 🔭 The Morkinstar Journals, the fiction anthology
 
 Separate universe, same author. **[Two seasons, twenty entries](fiction/morkinstar-journals/README.md)**,
 grown out of a single 2021 story in the archive that turned out to have a whole series folded
@@ -58,22 +60,22 @@ The rhyme is the reward.
 
 | Date | Title | Series | Status | Live |
 |------|-------|--------|--------|------|
-| 2026-09-02 | [The captain routes. The captain never rows.](lessons/2026-09-02-the-captain-never-rows/lesson.md) | notes-from-the-loop | 🟡 ready | — |
-| 2026-08-31 | [I audited my own migrations. It was not fine.](lessons/2026-08-31-the-ferryman-rows-one-way/lesson.md) | crossing-the-schema | 🟡 ready | — |
-| 2026-08-29 | [Plausible is worse than wrong](lessons/2026-08-29-the-borrowed-hand/lesson.md) | notes-from-the-loop | 🟡 ready | — |
-| 2026-08-27 | [Your thresholds do not belong in constants](lessons/2026-08-27-thresholds-in-config/lesson.md) | chain-of-custody | 🟡 ready | — |
-| 2026-08-25 | [Invariants are cheap. Silent corruption is not.](lessons/2026-08-25-invariants-are-cheap/lesson.md) | chain-of-custody | 🟡 ready | — |
-| 2026-08-20 | [Every filter needs a documented exception](lessons/2026-08-20-documented-exception/lesson.md) | sensors-who-lie | 🟡 ready | — |
-| 2026-08-18 | [Never silently change a number someone gets paid on](lessons/2026-08-18-never-silently-change-a-number/lesson.md) | chain-of-custody | 🟡 ready | — |
-| 2026-08-13 | [When two sensors disagree, rank them](lessons/2026-08-13-accelerometer-outranks-gps/lesson.md) | sensors-who-lie | 🟡 ready | — |
-| 2026-08-11 | [Your data model is where uncertainty goes to die](lessons/2026-08-11-uncertainty-dies-in-data-model/lesson.md) | chain-of-custody | 🟡 ready | — |
-| 2026-08-06 | [One global threshold is how you delete valid data](lessons/2026-08-06-one-global-threshold/lesson.md) | sensors-who-lie | 🟡 ready | — |
-| 2026-08-04 | [Filtered should never mean deleted](lessons/2026-08-04-filtered-never-deleted/lesson.md) | sensors-who-lie | 🟡 ready | — |
-| 2026-07-31 | [collectAsState is quietly leaking your work](lessons/2026-07-31-collectasstate-leak/lesson.md) | ghosts-in-the-recomposition | 🟡 ready | — |
-| 2026-07-29 | [expect/actual is the wrong default in KMP](lessons/2026-07-29-kmp-expect-actual-default/lesson.md) | one-brain-two-bodies | 🟡 ready | — |
-| 2026-07-24 | [Your LazyColumn recomposes on every scroll](lessons/2026-07-24-lazycolumn-recomposition/lesson.md) | ghosts-in-the-recomposition | 🟡 ready | — |
-| 2026-07-22 | [The 5-second window that crashes your service](lessons/2026-07-22-foreground-service-five-seconds/lesson.md) | the-night-shift | 🟡 ready | — |
-| 2026-07-20 | [CancellationException is not an assassin](lessons/2026-07-20-coroutine-cancellation-messenger/lesson.md) | the-coroutine-court | 🟡 ready | — |
+| 2026-09-02 | [The captain routes. The captain never rows.](lessons/2026-09-02-the-captain-never-rows/lesson.md) | notes-from-the-loop | 🟡 ready |, |
+| 2026-08-31 | [I audited my own migrations. It was not fine.](lessons/2026-08-31-the-ferryman-rows-one-way/lesson.md) | crossing-the-schema | 🟡 ready |, |
+| 2026-08-29 | [Plausible is worse than wrong](lessons/2026-08-29-the-borrowed-hand/lesson.md) | notes-from-the-loop | 🟡 ready |, |
+| 2026-08-27 | [Your thresholds do not belong in constants](lessons/2026-08-27-thresholds-in-config/lesson.md) | chain-of-custody | 🟡 ready |, |
+| 2026-08-25 | [Invariants are cheap. Silent corruption is not.](lessons/2026-08-25-invariants-are-cheap/lesson.md) | chain-of-custody | 🟡 ready |, |
+| 2026-08-20 | [Every filter needs a documented exception](lessons/2026-08-20-documented-exception/lesson.md) | sensors-who-lie | 🟡 ready |, |
+| 2026-08-18 | [Never silently change a number someone gets paid on](lessons/2026-08-18-never-silently-change-a-number/lesson.md) | chain-of-custody | 🟡 ready |, |
+| 2026-08-13 | [When two sensors disagree, rank them](lessons/2026-08-13-accelerometer-outranks-gps/lesson.md) | sensors-who-lie | 🟡 ready |, |
+| 2026-08-11 | [Your data model is where uncertainty goes to die](lessons/2026-08-11-uncertainty-dies-in-data-model/lesson.md) | chain-of-custody | 🟡 ready |, |
+| 2026-08-06 | [One global threshold is how you delete valid data](lessons/2026-08-06-one-global-threshold/lesson.md) | sensors-who-lie | 🟡 ready |, |
+| 2026-08-04 | [Filtered should never mean deleted](lessons/2026-08-04-filtered-never-deleted/lesson.md) | sensors-who-lie | 🟡 ready |, |
+| 2026-07-31 | [collectAsState is quietly leaking your work](lessons/2026-07-31-collectasstate-leak/lesson.md) | ghosts-in-the-recomposition | 🟡 ready |, |
+| 2026-07-29 | [expect/actual is the wrong default in KMP](lessons/2026-07-29-kmp-expect-actual-default/lesson.md) | one-brain-two-bodies | 🟡 ready |, |
+| 2026-07-24 | [Your LazyColumn recomposes on every scroll](lessons/2026-07-24-lazycolumn-recomposition/lesson.md) | ghosts-in-the-recomposition | 🟡 ready |, |
+| 2026-07-22 | [The 5-second window that crashes your service](lessons/2026-07-22-foreground-service-five-seconds/lesson.md) | the-night-shift | 🟡 ready |, |
+| 2026-07-20 | [CancellationException is not an assassin](lessons/2026-07-20-coroutine-cancellation-messenger/lesson.md) | the-coroutine-court | 🟡 ready |, |
 | 2026-07-19 | [Teaching a phone to disbelieve its own GPS](lessons/2026-07-19-mileway-dead-reckoning/lesson.md) | sensors-who-lie | 🟢 live | [read →](https://dev.to/darkpandawarrior/teaching-a-phone-to-disbelieve-its-own-gps-cip) |
 
 ### 🎭 Cast appearances (continuity)
@@ -128,7 +130,7 @@ idea  →  new-lesson.mjs  →  lesson.md (source of truth, written ONCE)
                     build-registry.mjs → this README updates
 ```
 
-Every draft is checked against [`voice/voice-profile.md`](voice/voice-profile.md) —
+Every draft is checked against [`voice/voice-profile.md`](voice/voice-profile.md)
 the style contract distilled from the archive so new posts sound like *me*, not
 generic LinkedIn.
 
@@ -156,7 +158,7 @@ Accounts, tokens, and the publish flow: **[SETUP.md](SETUP.md)**.
 | `lore/` | The universe: [bible](lore/bible.md), [cast](lore/cast.md), [pantheon](lore/pantheon.md), [series](lore/series.md). |
 | `lore/bestiary.md` · `docs/bestiary.png` | **Generated.** Every entity, its sigil, its dead Aspect, and every post it has appeared in. Rebuilds with the registry. |
 | `series/` | Generated bingeable hub page per arc (cross-post "read the series" target). |
-| `profile.yaml` | Cross-platform identity — handles + canonical strategy; threads into every footer. |
+| `profile.yaml` | Cross-platform identity, handles + canonical strategy; threads into every footer. |
 | `lessons/<date>-<slug>/` | One folder per lesson: source + per-channel adapts + assets + metrics. |
 | `scripts/design-kit.mjs` | The visual identity: textures, diagram figures, and the **cast drawn as specimen plates**. |
 | `scripts/slide-css.mjs` | Carousel stylesheet. Slides are HTML, screenshotted through Chromium, so body copy wraps itself. |
@@ -171,29 +173,29 @@ Accounts, tokens, and the publish flow: **[SETUP.md](SETUP.md)**.
 ## Voice, in one line
 
 > Hook you with a scene, teach you something real, land a payload you didn't see
-> coming — while clearly having fun. See [`voice/voice-profile.md`](voice/voice-profile.md).
+> coming, while clearly having fun. See [`voice/voice-profile.md`](voice/voice-profile.md).
 
-## Publishing — one connected campaign, not four copies
+## Publishing, one connected campaign, not four copies
 
 Each lesson goes out as a *coordinated cross-platform drop* ([SETUP.md](SETUP.md)):
 
 - **dev.to + Hashnode + Medium** → native APIs (draft-first, per-post approval). Medium
   uses the legacy token if your account has one, else a one-click import from the canonical URL.
 - **LinkedIn** → paste-ready file with the full-write-up link auto-embedded (optional Buffer queue). No tool touches the account directly.
-- **One canonical home** so cross-posts don't compete in search — the rest declare `canonical → it`.
+- **One canonical home** so cross-posts don't compete in search, the rest declare `canonical → it`.
 - **Consistent branded footer** on every article: series, featured cast, "previously in this
-  series," follow links — all generated from [`profile.yaml`](profile.yaml). Edit once, threads everywhere.
-- **Series hubs** ([`series/`](series/)) — a bingeable index page per arc, linked from every post in it.
+  series," follow links, all generated from [`profile.yaml`](profile.yaml). Edit once, threads everywhere.
+- **Series hubs** ([`series/`](series/)), a bingeable index page per arc, linked from every post in it.
 
 ## Roadmap
 
 - [x] Repo + archive + voice profile + visual engine + first lesson
-- [x] Lore layer — universe bible, cast, series, continuity index
-- [x] `export.mjs` — dev.to/Hashnode/Buffer + paste files; `check-setup.mjs` dashboard
+- [x] Lore layer, universe bible, cast, series, continuity index
+- [x] `export.mjs`, dev.to/Hashnode/Buffer + paste files; `check-setup.mjs` dashboard
 - [ ] Fill `.env` tokens ([SETUP.md](SETUP.md)) + push to GitHub
-- [ ] GitHub Action — auto-render assets + rebuild registry on push
+- [ ] GitHub Action, auto-render assets + rebuild registry on push
 - [ ] AI hero-image hook for flagship/story posts
-- [ ] Cadence: 2–3 posts/week from the backlog
+- [ ] Cadence: 2 to 3 posts/week from the backlog
 
 ## License
 
