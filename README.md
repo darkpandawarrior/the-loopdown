@@ -6,6 +6,8 @@ Short, sharp technical lessons pulled from real projects (Mileway, kmp-toolkit,
 PaymentsLab, Kursi, Dice), each written once and adapted to LinkedIn, dev.to,
 Hashnode, and Medium — plus an archive of everything I've written before.
 
+**Case study:** [The Loopdown](https://cv-siddharth.vercel.app/project/the-loopdown)
+
 This repo does three jobs at once:
 
 1. **📚 Archive** — my complete writing corpus, consolidated and versioned. Nothing lost.
