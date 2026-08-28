@@ -16,6 +16,10 @@ once I understood it, a whole class of "works on my machine" bugs made sense.
 
 ## The promise you make
 
+<!-- figures:start -->
+![The trap: Five seconds spent before the promise](assets/carousel/slide-03.png)
+<!-- figures:end -->
+
 When you start a foreground service, you are telling Android something specific: I am
 about to show a persistent notification and do work the user cares about, so please do
 not kill me the moment the screen sleeps. That is a real privilege. Foreground services
@@ -26,6 +30,10 @@ calling `startForeground()` with a notification. Keep that promise and you get t
 Miss it and the system kills the service and throws.
 
 ## Why it only broke for some users
+
+<!-- figures:start -->
+![The rules: Working the night shift](assets/carousel/slide-05.png)
+<!-- figures:end -->
 
 Our service did this:
 
@@ -83,6 +91,10 @@ WorkManager.getInstance(context).enqueue(work)
 ```
 
 ## The takeaway
+
+<!-- figures:start -->
+![The payload: The platform is not out to get you](assets/carousel/slide-06.png)
+<!-- figures:end -->
 
 The platform is not out to get you. Every one of these rules exists because some app,
 somewhere, tried to run forever and drained a stranger's battery. Post your notification

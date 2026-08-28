@@ -19,6 +19,10 @@ screen with live data, it quietly keeps working long after the user has walked a
 
 ## The screen nobody is watching
 
+<!-- figures:start -->
+![The one word: collectAsState WithLifecycle](assets/carousel/slide-03.png)
+<!-- figures:end -->
+
 `collectAsState` starts collecting the flow and stops only when the composable leaves the
 composition. That sounds right until you remember what backgrounding an app does, which is
 almost nothing to the composition. Send the app to the background and the composable is
@@ -30,6 +34,10 @@ the dark. It is also a quiet source of bugs, because off-screen updates can pile
 then hit the user with a jump of stale changes the moment they return.
 
 ## The one-word fix
+
+<!-- figures:start -->
+![The rule: Make lifecycle the default](assets/carousel/slide-04.png)
+<!-- figures:end -->
 
 ```kotlin
 val state by viewModel.data.collectAsStateWithLifecycle()
@@ -52,6 +60,10 @@ hidden should be a deliberate, commented decision, not something you got by reac
 the shorter name out of habit.
 
 ## The takeaway
+
+<!-- figures:start -->
+![The payload: Lifecycle is not a thing you bolt on later](assets/carousel/slide-05.png)
+<!-- figures:end -->
 
 Lifecycle awareness is not a nice-to-have you bolt on later. It is the line between work
 that stops when the user leaves and work that runs forever in the background. The

@@ -19,11 +19,6 @@ live: https://dev.to/darkpandawarrior/the-5-second-window-that-crashes-your-serv
 # The 5-second window that crashes your service
 
 ## The hook
-
-<!-- figures:start -->
-![The cast: It runs the night shift](assets/carousel/slide-02.png)
-<!-- figures:end -->
-
 Primary: Our service crashed for thousands of users, and the stack trace blamed a line that does nothing wrong.
 
 Variants to A/B:
@@ -32,11 +27,6 @@ Variants to A/B:
 - The bug only happened on cheap phones. That was the clue.
 
 ## The insight
-
-<!-- figures:start -->
-![The trap: Five seconds spent before the promise](assets/carousel/slide-03.png)
-<!-- figures:end -->
-
 When you start a foreground service, you promise the system you will show a notification
 and do visible work. The system gives you about 5 seconds to keep that promise by calling
 startForeground(). Do slow work before that call and a cold, loaded device blows past the
@@ -44,11 +34,6 @@ window. The system does not wait. It kills the service. Post the notification fi
 the slow work after.
 
 ## The story / how it played out
-
-<!-- figures:start -->
-![The rules: Working the night shift](assets/carousel/slide-05.png)
-<!-- figures:end -->
-
 Location tracking on Mileway runs in a foreground service. It worked on every phone in
 the office. In the crash logs it was falling over for a slice of real users, always the
 same exception: ForegroundServiceDidNotStartInTimeException.
@@ -65,11 +50,6 @@ The fix:
    at all. Use WorkManager with an expedited request instead.
 
 ## The takeaway
-
-<!-- figures:start -->
-![The payload: The platform is not out to get you](assets/carousel/slide-06.png)
-<!-- figures:end -->
-
 The platform is not out to get you. It is protecting the user's battery and attention
 from apps that want to run forever. Post your notification first, work with the
 lifecycle, and it leaves you alone.

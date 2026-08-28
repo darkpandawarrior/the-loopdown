@@ -23,10 +23,19 @@
 // an illustration cannot. Decorative raster art next to a real before/after
 // snippet reads as filler, and would cost money to make the piece worse.
 //
-// WHY IT WRITES INTO lesson.md. That file is the source of truth: it renders
-// on GitHub, it is what a human reviews, and export.mjs already absolutises
-// its asset paths on the way out. Injecting at export time instead would mean
-// the figures exist only on platforms nobody can diff.
+// WHY IT WRITES INTO article.md. That is the file that actually ships:
+// export.mjs builds the published body from `article.body || lesson.body`, so
+// figures placed in lesson.md reach nobody — verified the hard way, by putting
+// them there first and finding zero images in the article on dev.to. It also
+// renders on GitHub and is what a human reviews, and export.mjs already
+// absolutises its asset paths on the way out.
+//
+// PLACEMENT IS ORDINAL, NOT BY HEADING NAME. lesson.md uses a fixed template
+// ("## The hook", "## The insight"); article.md does not — its headings are
+// written per piece ("Compose can skip, if you let it", "The fix is the type")
+// and only "## The takeaway" is common, and only to twelve of seventeen. So
+// the slides are distributed across the article's own H2 sections in narrative
+// order, with the takeaway slide pinned to that heading when it exists.
 import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
 import { join, basename } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -51,18 +60,23 @@ const CLOSE = "<!-- figures:end -->";
  * headings — so the mapping is a lookup, not a guess. A lesson missing a type
  * simply gets no figure at that beat rather than a wrong one.
  */
-const PLACEMENT = [
-  // The antagonist, introduced where the hook names the symptom.
-  { heading: "## The hook", types: ["character"] },
-  // The mechanism, where the insight explains it. A diagram if the lesson drew
-  // one, otherwise the before/after code, which makes the same point in the
-  // reader's own language.
-  { heading: "## The insight", types: ["diagram", "code"] },
-  // The remedy, at the end of the narrative and before the summary.
-  { heading: "## The story / how it played out", types: ["fixes"] },
-  // The line worth remembering, beside the takeaway itself.
-  { heading: "## The takeaway", types: ["takeaway"] },
+const NARRATIVE = [
+  // In the order a reader meets them: who is doing this, how it works, what
+  // fixes it, what to remember.
+  ["character"],
+  ["diagram", "code"],
+  ["fixes"],
+  ["takeaway"],
 ];
+
+/** The article's own H2 offsets, in document order. */
+function headingOffsets(md) {
+  const out = [];
+  const re = /^## .+$/gm;
+  let m;
+  while ((m = re.exec(md))) out.push({ at: m.index, text: m[0] });
+  return out;
+}
 
 /** Alt text from the slide's own words — never "image" or "figure". */
 function altFor(slide) {
@@ -84,7 +98,7 @@ function altFor(slide) {
     .slice(0, 160);
 }
 
-function figuresFor(dir) {
+function figuresFor(dir, md) {
   const metaPath = join(dir, "assets", "carousel.json");
   const slidesDir = join(dir, "assets", "carousel");
   if (!existsSync(metaPath) || !existsSync(slidesDir)) return [];
@@ -92,14 +106,51 @@ function figuresFor(dir) {
   const files = readdirSync(slidesDir).filter((f) => /^slide-\d+\.png$/.test(f)).sort();
   if (slides.length !== files.length) return [];
 
+  // Never re-place a slide the author already put in by hand. Each article
+  // ships with one or more figures already — usually the cast specimen plate
+  // near the top — and the first version of this tool added that same slide a
+  // second time a few lines below it. What is placed here is only what is
+  // missing.
+  const already = new Set(
+    [...md.matchAll(/!\[[^\]]*\]\(([^)]+)\)/g)].map((m) => basename(m[1].trim())),
+  );
+
+  // Pick one slide per narrative beat, never reusing one.
   const used = new Set();
-  const out = [];
-  for (const { heading, types } of PLACEMENT) {
-    // First matching type wins, and a slide is never placed twice.
-    const idx = slides.findIndex((s, i) => types.includes(s.type) && !used.has(i));
+  const picked = [];
+  for (const types of NARRATIVE) {
+    const idx = slides.findIndex(
+      (sl, i) => types.includes(sl.type) && !used.has(i) && !already.has(files[i]),
+    );
     if (idx < 0) continue;
     used.add(idx);
-    out.push({ heading, file: `assets/carousel/${files[idx]}`, alt: altFor(slides[idx]) });
+    picked.push({ file: `assets/carousel/${files[idx]}`, alt: altFor(slides[idx]), type: slides[idx].type });
+  }
+  if (!picked.length) return [];
+
+  const headings = headingOffsets(md);
+  if (!headings.length) return [];
+
+  // The takeaway slide belongs at the takeaway, when the article has one.
+  const takeawayIdx = headings.findIndex((h) => /^##\s+The takeaway\s*$/i.test(h.text));
+  const out = [];
+  const claimed = new Set();
+
+  const takeaway = picked.find((p) => p.type === "takeaway");
+  if (takeaway && takeawayIdx >= 0) {
+    out.push({ ...takeaway, heading: headings[takeawayIdx].text });
+    claimed.add(takeawayIdx);
+  }
+
+  // Everything else lands on the remaining H2s, in order, one apiece.
+  const rest = picked.filter((p) => p !== takeaway || takeawayIdx < 0);
+  let h = 0;
+  for (const p of rest) {
+    while (h < headings.length && claimed.has(h)) h++;
+    if (h >= headings.length) break;
+    out.push({ ...p, heading: headings[h].text });
+    claimed.add(h);
+    h++;
   }
   return out;
 }
@@ -148,7 +199,8 @@ const dirs = only
 let changed = 0;
 for (const rel of dirs) {
   const dir = join(ROOT, rel);
-  const mdPath = join(dir, "lesson.md");
+  // The file export.mjs actually publishes from.
+  const mdPath = existsSync(join(dir, "article.md")) ? join(dir, "article.md") : join(dir, "lesson.md");
   if (!existsSync(mdPath)) continue;
   const md = readFileSync(mdPath, "utf8");
 
@@ -158,7 +210,7 @@ for (const rel of dirs) {
     continue;
   }
 
-  const figures = figuresFor(dir);
+  const figures = figuresFor(dir, md);
   if (!figures.length) { console.log(`  ${basename(dir)}: no placeable slides`); continue; }
   const next = apply(md, figures);
   if (next === md) { console.log(`  ${basename(dir)}: already current (${figures.length})`); continue; }

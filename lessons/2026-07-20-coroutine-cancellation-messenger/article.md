@@ -19,6 +19,10 @@ The culprit was one line I wrote myself.
 
 ## Cancellation is a message, not a bullet
 
+<!-- figures:start -->
+![The trap: The line that ate the message](assets/carousel/slide-04.png)
+<!-- figures:end -->
+
 This is the part people miss about Kotlin coroutines. Cancelling one does not reach
 in and kill it. It cannot. The coroutine has to cooperate. So the machinery throws a
 `CancellationException` up through your suspend calls, and that exception is the
@@ -28,6 +32,10 @@ Your job is to let that message travel. Most cancellation bugs are really one bu
 stopped the message from traveling.
 
 ## The line that ate the message
+
+<!-- figures:start -->
+![Pick one: Four ways out](assets/carousel/slide-07.png)
+<!-- figures:end -->
 
 ```kotlin
 try {
@@ -114,6 +122,10 @@ exception in the system that is doing exactly what you asked. It is the app shut
 things down cleanly, on time, on request.
 
 ## The takeaway
+
+<!-- figures:start -->
+![The payload: Do not shoot the messenger](assets/carousel/slide-08.png)
+<!-- figures:end -->
 
 Cancellation is a conversation, not a kill switch. If you swallow the message, the work
 does not stop. It just stops telling you it is still running.

@@ -21,11 +21,6 @@ loop_iteration: 8
 # One global threshold is how you delete valid data
 
 ## The hook
-
-<!-- figures:start -->
-![The cast: One number, every context](assets/carousel/slide-02.png)
-<!-- figures:end -->
-
 Primary: Our jitter filter worked perfectly, right up until someone sat in Bangalore traffic.
 
 Variants to A/B:
@@ -34,22 +29,12 @@ Variants to A/B:
 - Thresholds should be relative to context. Almost nobody writes them that way first.
 
 ## The insight
-
-<!-- figures:start -->
-![The claim you made: A constant is an assumption](assets/carousel/slide-03.png)
-<!-- figures:end -->
-
 A constant like "ignore movement under 5 metres" is really a claim that 5 metres means the same
 thing while walking, cycling, driving, and sitting in traffic. It does not. Every threshold worth
 keeping is a function of context: current speed band, time since the last reading, and what the
 recent history says.
 
 ## The story / how it played out
-
-<!-- figures:start -->
-![The fix: Thresholds take context](assets/carousel/slide-05.png)
-<!-- figures:end -->
-
 GPS wanders while you are stationary. A parked phone will drift a few metres and each drift looks
 like distance. So you add a floor: ignore steps under N metres.
 
@@ -73,11 +58,6 @@ is only dropped when a rolling window of the last 5 readings averages under 1.5 
 slow movement is movement. Genuine stillness is stillness. The window tells them apart.
 
 ## The takeaway
-
-<!-- figures:start -->
-![The payload: A constant with no context is a bug on a delay](assets/carousel/slide-06.png)
-<!-- figures:end -->
-
 When you write a constant into a filter, ask what context you are assuming. If the answer is "all
 of them", you have not written a threshold, you have written a bug with a delay on it.
 

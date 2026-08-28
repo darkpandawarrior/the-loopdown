@@ -21,11 +21,6 @@ loop_iteration: 7
 # Filtered should never mean deleted
 
 ## The hook
-
-<!-- figures:start -->
-![The cast: We threw away its testimony](assets/carousel/slide-02.png)
-<!-- figures:end -->
-
 Primary: We shipped a filter that threw away bad GPS. Months later someone asked if it was
 working, and I could not answer, because the evidence was gone.
 
@@ -35,22 +30,12 @@ Variants to A/B:
 - Our pipeline made a judgement call thousands of times a day and kept no record of any of it.
 
 ## The insight
-
-<!-- figures:start -->
-![The shape that works: Classify. Do not discard.](assets/carousel/slide-04.png)
-<!-- figures:end -->
-
 Dropping a bad reading destroys the only evidence that could tell you whether dropping it was
 correct. Persist everything, classify it into named buckets, and let the trusted number be a
 view over the data rather than the only thing that survived. The buckets then become the
 instrument you tune the filter with.
 
 ## The story / how it played out
-
-<!-- figures:start -->
-![The pattern: Keep the rejects](assets/carousel/slide-05.png)
-<!-- figures:end -->
-
 When we started cleaning GPS on Mileway, we did the obvious thing. A reading fails the
 plausibility check, drop it, move on. Clean data out the other end. It felt responsible.
 
@@ -77,11 +62,6 @@ disputed trip and show exactly what was removed. When a threshold felt too aggre
 real journeys and counted. Twice the data said we were wrong, and we moved the threshold.
 
 ## The takeaway
-
-<!-- figures:start -->
-![The payload: You cannot tune a filter you cannot audit](assets/carousel/slide-06.png)
-<!-- figures:end -->
-
 You cannot tune a filter you cannot audit, and you cannot audit what you deleted. If your
 pipeline drops rows, know where they go. "Nowhere" is an answer, just not a good one.
 

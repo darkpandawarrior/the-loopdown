@@ -12,6 +12,10 @@ Our GPS filter worked perfectly, right up until someone sat in Bangalore traffic
 
 ## The phantom distance problem
 
+<!-- figures:start -->
+![The claim you made: A constant is an assumption](assets/carousel/slide-03.png)
+<!-- figures:end -->
+
 A parked phone does not sit still in the data. The reported position wanders a few metres in every
 direction, and if you naively sum the gaps between readings, a stationary car quietly accumulates
 kilometres. On a mileage app that becomes an expense claim, so it matters.
@@ -28,6 +32,10 @@ Then a driver crawls through traffic at walking pace for forty minutes. Every ge
 take is under five metres. We deleted the whole journey and told them they had not moved.
 
 ## The constant was making a claim
+
+<!-- figures:start -->
+![The fix: Thresholds take context](assets/carousel/slide-05.png)
+<!-- figures:end -->
 
 `MIN_DISPLACEMENT_M = 5.0` looks like a number. It is really an assertion: five metres means the same thing
 whether you are parked, walking, cycling, on a motorway, or crawling in first gear. That assertion
@@ -102,6 +110,10 @@ Tuning becomes a config change rather than a release. The defaults reproduce the
 values exactly, so extracting them proved nothing changed.
 
 ## The takeaway
+
+<!-- figures:start -->
+![The payload: A constant with no context is a bug on a delay](assets/carousel/slide-06.png)
+<!-- figures:end -->
 
 When you write a constant into a filter, ask what context you are assuming. If the answer is "all
 of them", you have not written a threshold. You have written a bug with a delay on it.

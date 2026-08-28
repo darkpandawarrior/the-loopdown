@@ -16,6 +16,10 @@ There was a ghost in the recomposition, and it had one cause.
 
 ## Compose can skip, if you let it
 
+<!-- figures:start -->
+![The cause: A List is not a stable type](assets/carousel/slide-03.png)
+<!-- figures:end -->
+
 Compose has a quiet superpower called skipping. When a composable's inputs have not
 changed, Compose skips re-running it entirely. That is most of why it is fast.
 
@@ -29,6 +33,10 @@ changed, and recomposes the rows that read it. On a scrolling feed, that means r
 everything you can see, constantly.
 
 ## The fix is the type
+
+<!-- figures:start -->
+![The fix: Let it prove nothing changed](assets/carousel/slide-04.png)
+<!-- figures:end -->
 
 ```kotlin
 // before: List is unstable, rows cannot skip
@@ -54,12 +62,15 @@ Without keys, Compose tracks rows by position. Insert one at the top and every r
 shifts identity, so more of them redraw than needed. A stable key ties a row to its data.
 
 ## See it for yourself
-
 Turn on recomposition counts in Layout Inspector and scroll. With an unstable list, the
 counter on every row climbs. Switch to an immutable list and add keys, and the counters go
 still. That stillness is the whole point.
 
 ## The takeaway
+
+<!-- figures:start -->
+![The payload: Compose is fast. You handed it a puzzle](assets/carousel/slide-05.png)
+<!-- figures:end -->
 
 Compose is not slow. It is fast by default. Almost every "Compose is janky" story is
 really the same story: someone handed a composable a type it could not reason about, so it

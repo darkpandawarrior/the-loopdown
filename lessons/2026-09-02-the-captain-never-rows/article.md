@@ -13,6 +13,10 @@ Not because the work was too big. Because the most expensive model in the fleet 
 
 ## The wrong mental model
 
+<!-- figures:start -->
+![The fix: One sentence, made mandatory](assets/carousel/slide-05.png)
+<!-- figures:end -->
+
 Model tiers arrive looking like a quality ladder. A small one, a medium one, a large one. So the instinct is obvious: the work matters, use the best one you can afford.
 
 That instinct is what empties a budget, because it treats capability as the only axis and ignores volume completely. Capability is what you need for one hard decision. Volume is what you need for four hundred easy ones. Those are different problems and they want different answers.
@@ -24,6 +28,10 @@ They are roles, not ranks.
 - **Orchestration and judgement** is where the largest model earns its price. Deciding what the work is. Splitting it. Ruling on the ambiguous case that the spec did not cover.
 
 ## The failure has a name
+
+<!-- figures:start -->
+![The routing rule: Four lines](assets/carousel/slide-04.png)
+<!-- figures:end -->
 
 An orchestrator that starts doing the work itself is a captain picking up an oar. The ship stops steering at precisely the moment the volume shows up, which is precisely when steering was the thing you were paying for.
 
@@ -61,6 +69,10 @@ The shape is not new. It is the same reasoning behind not running your analytics
 The resource with the highest capability usually also has the lowest throughput and the highest cost per unit. Spending it on volume is how systems fall over, and it always feels like diligence while you are doing it.
 
 ## The takeaway
+
+<!-- figures:start -->
+![The payload: The captain never rows](assets/carousel/slide-06.png)
+<!-- figures:end -->
 
 Tiers are roles, not ranks. Pick the cheapest one that covers the work, escalate one rung at a time and only on verified failure, and never escalate because there is a lot of something.
 

@@ -21,11 +21,6 @@ loop_iteration: 17
 # The captain routes. The captain never rows.
 
 ## The hook
-
-<!-- figures:start -->
-![The crew: A captain who never rows](assets/carousel/slide-02.png)
-<!-- figures:end -->
-
 Primary: Two runs died on rate limits in the same week. Not because the work was too big, but
 because the most expensive model in the fleet was doing the rowing.
 
@@ -35,11 +30,6 @@ Variants to A/B:
 - The orchestrator has one job and it is not the job.
 
 ## The insight
-
-<!-- figures:start -->
-![The fix: One sentence, made mandatory](assets/carousel/slide-05.png)
-<!-- figures:end -->
-
 The natural instinct with model tiers is to read them as a quality ladder: a small one, a medium
 one, a big one, so use the biggest you can afford. That framing is what burns a budget, because
 it treats capability as the only axis and ignores volume entirely.
@@ -54,11 +44,6 @@ is a captain who picks up an oar, and the ship stops steering at exactly the mom
 arrives.
 
 ## The story / how it played out
-
-<!-- figures:start -->
-![The routing rule: Four lines](assets/carousel/slide-04.png)
-<!-- figures:end -->
-
 I run a fleet of agents across my own tooling. Early on I wired the top-tier model as both the
 planner and the executor, on the reasoning that the work mattered and I wanted the best output.
 
@@ -72,11 +57,6 @@ told to plan and execute will execute, because executing is the more concrete in
 concrete instructions win.
 
 ## The takeaway
-
-<!-- figures:start -->
-![The payload: The captain never rows](assets/carousel/slide-06.png)
-<!-- figures:end -->
-
 Pick the cheapest tier that covers the work, and let the expensive one spend its whole budget on
 deciding. Escalate one rung at a time, and only on verified failure or genuine spec ambiguity,
 never on volume. Volume is the signal to go down a tier, not up.

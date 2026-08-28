@@ -13,6 +13,10 @@ I found it two days later, by accident, looking at something else.
 
 ## Wrong code gets caught. Plausible code ships.
 
+<!-- figures:start -->
+![The line: Reasonable. Also a no-op.](assets/carousel/slide-03.png)
+<!-- figures:end -->
+
 A junior engineer fails in a way you can see. The code looks off, the naming is strange, something in the shape of it makes you slow down and read twice. That instinct is most of what code review actually is.
 
 Borrowed work does not fail like that. Ask a model for something and it returns code that looks exactly right, because looking right is the thing it is best at. It compiles. It runs. It returns success. When your instructions run out, it does not stop and ask. It fills the gap with the most plausible thing, because being helpful is the only mode it has.
@@ -22,6 +26,10 @@ So the defect never lands in the syntax, which is where review is looking. It la
 Two from the same week, both in the tooling that publishes this series.
 
 ## One: the line that returned 200 and did nothing
+
+<!-- figures:start -->
+![What I do now: Four habits](assets/carousel/slide-05.png)
+<!-- figures:end -->
 
 The publisher pushes each article to the dev.to API. The line read:
 
@@ -100,6 +108,10 @@ The practical version, for when you are reviewing work you did not personally ty
 4. **Make the check mechanical.** An assertion, a linter rule, a test. Your attention is the one component in this system guaranteed to degrade, and it degrades fastest exactly when the output looks good.
 
 ## The takeaway
+
+<!-- figures:start -->
+![The payload: Wrong code gets caught. Plausible code ships.](assets/carousel/slide-06.png)
+<!-- figures:end -->
 
 Borrowed work does not fail like bad work. It fails like confident work that answers a question slightly next to the one you asked.
 

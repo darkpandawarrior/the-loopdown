@@ -12,6 +12,10 @@ GPS said the car was moving. The accelerometer said the phone had not twitched i
 
 ## Asking a sensor to check itself
 
+<!-- figures:start -->
+![The better question: Rank per question, not overall](assets/carousel/slide-03.png)
+<!-- figures:end -->
+
 Stationary drift is the oldest problem in location tracking. A parked phone reports small
 movements in every direction. Sum the gaps and a car that never left the car park has quietly
 driven three kilometres.
@@ -25,6 +29,10 @@ threshold you add is really a guess about your own input. You can spend months m
 more elaborate without making it more correct.
 
 ## A second signal that fails differently
+
+<!-- figures:start -->
+![The method: Corroborate, do not tune](assets/carousel/slide-05.png)
+<!-- figures:end -->
 
 The accelerometer is a poor navigator. Integrate it for position and the error compounds within
 seconds. But ask it a narrower question, "did this device physically move", and it is far better
@@ -94,6 +102,10 @@ server-side one. A cache's view of a value against the source of truth. A model'
 against observed outcomes.
 
 ## The takeaway
+
+<!-- figures:start -->
+![The payload: Correlation beats cleverness](assets/carousel/slide-06.png)
+<!-- figures:end -->
 
 Do not build a smarter threshold on a lonely sensor. Find a second signal that fails differently,
 and give it authority over the specific question it is genuinely good at.

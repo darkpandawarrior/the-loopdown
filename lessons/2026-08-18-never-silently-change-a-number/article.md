@@ -13,6 +13,10 @@ Shipping that silently would still have been wrong.
 
 ## When cleaning stops being technical
 
+<!-- figures:start -->
+![Explicit degradation: Report the delta, not just the answer](assets/carousel/slide-03.png)
+<!-- figures:end -->
+
 Mileage tracking ends in an expense claim. Someone drives, the app measures, and the measurement
 becomes money.
 
@@ -27,6 +31,10 @@ and an employer quietly trimming expenses. From where they sit, both look identi
 number, no explanation. Being right is invisible.
 
 ## Explicit degradation, in the UI
+
+<!-- figures:start -->
+![What the user is owed: Four things, every time](assets/carousel/slide-04.png)
+<!-- figures:end -->
 
 The fix is not better filtering. It is showing the work.
 
@@ -56,6 +64,10 @@ not an irregularity, because the tracker recovers on its own. If every notice is
 learn to dismiss all of them, and the disclosure you worked on becomes noise.
 
 ## This needs the data model to cooperate
+
+<!-- figures:start -->
+![The payload: Correctness is table stakes. Transparency ships.](assets/carousel/slide-05.png)
+<!-- figures:end -->
 
 None of this is possible if the pipeline throws away what it rejects. Showing original versus
 cleaned requires both numbers to survive. Naming the categories requires per-category

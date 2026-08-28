@@ -16,11 +16,6 @@ loop_iteration: 5
 # expect/actual is the wrong default in KMP
 
 ## The hook
-
-<!-- figures:start -->
-![The cast: Cast by name. No swapping.](assets/carousel/slide-02.png)
-<!-- figures:end -->
-
 Primary: Every KMP tutorial teaches expect/actual first. Then people use it for everything, and their shared code turns into a knot.
 
 Variants to A/B:
@@ -29,11 +24,6 @@ Variants to A/B:
 - An interface in common beats expect/actual almost every time. Here is when it does not.
 
 ## The insight
-
-<!-- figures:start -->
-![The alternative: An interface in common, injected per platform](assets/carousel/slide-03.png)
-<!-- figures:end -->
-
 expect/actual binds a common declaration to exactly one platform implementation, chosen by
 the compiler by name. That means you cannot inject a fake, cannot hold two
 implementations, and cannot test the common code in isolation. For anything that varies or
@@ -41,11 +31,6 @@ needs a test, define an interface in common and inject platform implementations 
 constructor or DI. Save expect/actual for the small, fixed, one-per-platform joints.
 
 ## The story / how it played out
-
-<!-- figures:start -->
-![How to choose: Weld, or hinge?](assets/carousel/slide-05.png)
-<!-- figures:end -->
-
 Early PaymentsLab common code used expect/actual for everything that touched a platform:
 storage, clipboard, an http client. It compiled and ran. Then I tried to unit-test a use
 case in commonTest and could not, because the expect declarations had no test actual, and
@@ -59,11 +44,6 @@ expect/actual earned its place in exactly one spot: a type alias to a platform t
 genuinely has one meaning per platform and never needs a stand-in.
 
 ## The takeaway
-
-<!-- figures:start -->
-![The payload: Reach for the tool that keeps your options open](assets/carousel/slide-06.png)
-<!-- figures:end -->
-
 Reach for the tool that keeps your options open. Interfaces and injection compose and
 test. expect/actual welds. Use the weld only where you truly want one permanent joint.
 

@@ -13,6 +13,10 @@ tuning, which is the worst possible outcome.
 
 ## Eighteen guesses in a const val
 
+<!-- figures:start -->
+![The ladder: Make tuning cheap](assets/carousel/slide-04.png)
+<!-- figures:end -->
+
 Our location pipeline accumulated roughly eighteen numbers that shaped its behaviour:
 
 - speed band boundaries (walking, cycling, driving)
@@ -29,6 +33,10 @@ reasonable, and still a guess about how phones behave in the hands of thousands 
 The kind of thing you obviously want to revisit once real data arrives.
 
 ## The cost of revisiting
+
+<!-- figures:start -->
+![The payload: Separate the algorithm from its parameters](assets/carousel/slide-05.png)
+<!-- figures:end -->
 
 Except revisiting meant: edit code, open a PR, get review, cut a build, push to the store, wait for
 rollout. A week at best to move a number by 0.5.

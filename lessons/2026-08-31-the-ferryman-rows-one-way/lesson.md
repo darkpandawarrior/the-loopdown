@@ -21,11 +21,6 @@ loop_iteration: 16
 # I audited my own migrations. It was not fine.
 
 ## The hook
-
-<!-- figures:start -->
-![The toll collector: The boat only rows one way](assets/carousel/slide-02.png)
-<!-- figures:end -->
-
 Primary: Forty-seven schema crossings in one app. Fifteen with a test behind them. I would have
 told you, confidently, that it was fine.
 
@@ -35,11 +30,6 @@ Variants to A/B:
 - The dangerous migrations are not the complicated ones. They are the ones that touch a constraint.
 
 ## The insight
-
-<!-- figures:start -->
-![The line that matters: Assert the data, not the schema](assets/carousel/slide-05.png)
-<!-- figures:end -->
-
 A migration is the single piece of code with no retry. It runs once, on a device you cannot see,
 against data you cannot reproduce, and if it is wrong the user's data is gone rather than merely
 broken. Yet it is routinely the least tested code in an Android codebase, because it *looks*
@@ -48,11 +38,6 @@ against a real pre-migration schema in a JVM-speed instrumentation test, and the
 one is not coverage. It is that a migration is the only thing you cannot fix in the next release.
 
 ## The story / how it played out
-
-<!-- figures:start -->
-![Sort by what it touches: Coverage is the wrong instrument](assets/carousel/slide-04.png)
-<!-- figures:end -->
-
 I ran an audit across Mileway's database this week, expecting to feel good about it.
 
 Forty-seven `Migration` objects. Current schema version 48. Eight test files covering fifteen
@@ -71,11 +56,6 @@ Those four are not "low coverage". They are the entire risk surface, and they we
 underneath a number I had been quoting as a strength.
 
 ## The takeaway
-
-<!-- figures:start -->
-![The payload: Pay the toll before you get on the boat](assets/carousel/slide-06.png)
-<!-- figures:end -->
-
 Coverage percentage is the wrong instrument for migrations. Sort them by what they touch:
 constraints, data movement, and drops. Test those first and you have bought almost all of the
 safety for a fraction of the work. The rest is honest bookkeeping.

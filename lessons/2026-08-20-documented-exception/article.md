@@ -12,6 +12,10 @@ A filter with no exceptions has not met production yet. It has only met your tes
 
 ## The rule that was right nearly always
 
+<!-- figures:start -->
+![The discipline: Every exception earns three things](assets/carousel/slide-04.png)
+<!-- figures:end -->
+
 GPS reports an accuracy radius with every reading. Ours had a straightforward rule: anything worse
 than 50 metres is persisted, but does not count toward trusted distance.
 
@@ -77,6 +81,10 @@ Relaxing one rule must never silently relax the neighbours. An exception should 
 the situation that justifies it, and no narrower than the code makes explicit.
 
 ## The takeaway
+
+<!-- figures:start -->
+![The payload: An undocumented special case looks exactly like a bug](assets/carousel/slide-05.png)
+<!-- figures:end -->
 
 Write the rule. Then go looking for the legitimate case it breaks, because there is always one.
 When you find it, do not weaken the rule and do not smuggle in a condition. Give it a name, a

@@ -15,6 +15,10 @@ That question changed how I build anything that rejects data.
 
 ## The obvious version, and why it rots
 
+<!-- figures:start -->
+![The shape that works: Classify. Do not discard.](assets/carousel/slide-04.png)
+<!-- figures:end -->
+
 Mileage tracking depends on trustworthy distance, and GPS lies constantly. So the first version of
 our cleanup did what everyone's first version does:
 
@@ -32,6 +36,10 @@ through a tunnel rather than a glitch. We had built a thing that made a judgemen
 of times a day and kept no record of any of it.
 
 ## Persist, then classify
+
+<!-- figures:start -->
+![The pattern: Keep the rejects](assets/carousel/slide-05.png)
+<!-- figures:end -->
 
 The rebuild flipped the default. Rejection stopped being a `return` and became a label.
 
@@ -66,6 +74,10 @@ accelerometer snapshot, battery level, device model, plus `isMock` and `isAbnorm
 reading is still sitting there, labelled with exactly why it did not count.
 
 ## What that bought
+
+<!-- figures:start -->
+![The payload: You cannot tune a filter you cannot audit](assets/carousel/slide-06.png)
+<!-- figures:end -->
 
 **Disputes became answerable.** This is mileage that turns into an expense claim. When a driver
 says the distance is wrong, we pull the journey and show what was removed and why. Before, the

@@ -22,11 +22,6 @@ loop_iteration: 1                # the "Day N / Iteration N" device
 # Teaching a phone to disbelieve its own GPS
 
 ## The hook
-
-<!-- figures:start -->
-![Meet the witness: Confident. Cooperative. Often wrong.](assets/carousel/slide-02.png)
-<!-- figures:end -->
-
 Primary: "Your app says I hit 400 kmph. I was at a red light." (real bug report, a Tuesday)
 
 Variants to A/B:
@@ -41,11 +36,6 @@ not a better sensor. It is teaching the software when to stop trusting the one i
 and dead-reckon from motion sensors until GPS is worth believing again.
 
 ## The story / how it played out
-
-<!-- figures:start -->
-![What we did: Three fixes](assets/carousel/slide-04.png)
-<!-- figures:end -->
-
 Mileage tracking lives or dies on trip accuracy. Ours started around 50 percent. The
 killers were the moments GPS lied with full confidence: a signal bounced off a glass
 tower putting the user two streets over, or a tunnel returning the last known point
@@ -63,11 +53,6 @@ Three moves took us from 50 to 95 percent:
    whichever spoke last. Good GPS pulls hard, bad GPS gets outvoted.
 
 ## The takeaway
-
-<!-- figures:start -->
-![The payload: Assume your inputs will lie](assets/carousel/slide-06.png)
-<!-- figures:end -->
-
 Good systems are not the ones with perfect inputs, because nobody gets perfect
 inputs. They are the ones that assume their inputs will lie, and plan for the day they
 do. Trust, but verify. Especially your own sensors.

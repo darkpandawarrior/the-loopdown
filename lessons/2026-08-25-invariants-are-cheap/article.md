@@ -12,6 +12,10 @@ We had five numbers that were supposed to add up. Nothing in the codebase checke
 
 ## The relationship nobody wrote down
 
+<!-- figures:start -->
+![How to grade them: Errors and warnings](assets/carousel/slide-04.png)
+<!-- figures:end -->
+
 A tracked journey produces five distance figures: `original`, `cleaned`, `mock`, `abnormal` and
 `spike`. Anyone on the team could tell you how they relate:
 
@@ -97,6 +101,10 @@ Against that: distance figures that quietly drift wrong for weeks, discovered th
 queue, with no way to identify which journeys were affected.
 
 ## The takeaway
+
+<!-- figures:start -->
+![The payload: Invariants are cheap. Silent corruption is not.](assets/carousel/slide-05.png)
+<!-- figures:end -->
 
 Every system has relationships it assumes and never asserts. Components summing to a total. A
 subset never exceeding its parent. Two independent measurements staying within range. A count

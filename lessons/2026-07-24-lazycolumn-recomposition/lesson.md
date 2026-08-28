@@ -16,11 +16,6 @@ loop_iteration: 4
 # Your LazyColumn recomposes on every scroll
 
 ## The hook
-
-<!-- figures:start -->
-![The cast: It redraws the room every time you blink](assets/carousel/slide-02.png)
-<!-- figures:end -->
-
 Primary: Your LazyColumn redraws every visible row every time anything changes. Here is the one reason it usually happens: you passed it a List.
 
 Variants to A/B:
@@ -29,11 +24,6 @@ Variants to A/B:
 - Turn on recomposition counts and scroll. Every row ticks up. Now you see the ghost.
 
 ## The insight
-
-<!-- figures:start -->
-![The cause: A List is not a stable type](assets/carousel/slide-03.png)
-<!-- figures:end -->
-
 Compose can skip redrawing a composable if it can prove the inputs did not change. That
 proof is called stability. A plain List, Map, or Set is unstable, because the compiler
 cannot prove the contents did not change under it. Pass one to your rows and Compose
@@ -41,11 +31,6 @@ gives up skipping and recomposes them. Hand it an ImmutableList instead and skip
 comes back.
 
 ## The story / how it played out
-
-<!-- figures:start -->
-![The fix: Let it prove nothing changed](assets/carousel/slide-04.png)
-<!-- figures:end -->
-
 A feed screen on Dice felt heavy while scrolling on mid-range devices. Layout Inspector
 showed every visible row recomposing on every scroll frame, even rows whose data had not
 changed. The list parameter was a plain List. Compose could not prove it was unchanged,
@@ -57,11 +42,6 @@ Two changes fixed it:
    not position.
 
 ## The takeaway
-
-<!-- figures:start -->
-![The payload: Compose is fast. You handed it a puzzle](assets/carousel/slide-05.png)
-<!-- figures:end -->
-
 Compose is fast by default, as long as you let it prove what did not change. Most "Compose
 is janky" problems are really "I handed it something it could not reason about."
 

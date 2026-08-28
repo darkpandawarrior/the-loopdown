@@ -19,6 +19,10 @@ Here is how we got it to 95, and the one idea underneath all of it.
 
 ## GPS is a witness with a concussion
 
+<!-- figures:start -->
+![The payload: Assume your inputs will lie](assets/carousel/slide-06.png)
+<!-- figures:end -->
+
 We treat GPS like a source of truth. Out in the world, where people actually drive, it behaves more like a witness who took a hard knock to the head. Confident. Cooperative. Frequently wrong.
 
 Three places break it badly:

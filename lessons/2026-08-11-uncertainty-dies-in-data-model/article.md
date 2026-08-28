@@ -13,6 +13,10 @@ threw it away on the way in.
 
 ## Everything arrives with an error bar
 
+<!-- figures:start -->
+![The schema: Design the row to carry doubt](assets/carousel/slide-03.png)
+<!-- figures:end -->
+
 Android hands you a `Location` object that is far richer than a point on a map. It has an accuracy
 radius in metres, the provider that produced it, a bearing, an altitude, a timestamp, sometimes a
 speed. The platform is telling you, on every reading, how much to believe it.
@@ -40,6 +44,10 @@ radius on every write, which meant the discard was permanent.
 
 ## The questions you cannot answer later
 
+<!-- figures:start -->
+![The columns: What every row owes you](assets/carousel/slide-05.png)
+<!-- figures:end -->
+
 Within a few months, the real questions arrived:
 
 - Was this journey tracked well, or was the phone in a basement the whole time?
@@ -54,6 +62,10 @@ You cannot backfill confidence. Once the row is written without it, that uncerta
 every future reader, forever.
 
 ## The row that carries its papers
+
+<!-- figures:start -->
+![The payload: You cannot backfill confidence you discarded](assets/carousel/slide-06.png)
+<!-- figures:end -->
 
 What we persist now:
 

@@ -13,6 +13,10 @@ I would have told you, confidently, that it was fine. I have been quoting the mi
 
 ## A migration is the only code that gets one attempt
 
+<!-- figures:start -->
+![The line that matters: Assert the data, not the schema](assets/carousel/slide-05.png)
+<!-- figures:end -->
+
 Everything else you ship has a second chance. A bad screen gets a hotfix. A wrong API call gets retried. A crash gets a patch release and an apologetic changelog entry.
 
 A migration runs once, on a device you cannot see, against data you cannot reproduce, at a moment you do not choose. If it is wrong, the user's data is not broken. It is gone. There is no second attempt because the schema has already moved, and the row you needed to read in order to recover is the row that did not survive.
@@ -20,6 +24,10 @@ A migration runs once, on a device you cannot see, against data you cannot repro
 And yet it is routinely the least tested code in the codebase, because it looks trivial. One `ALTER TABLE`. Ship it.
 
 ## The audit
+
+<!-- figures:start -->
+![Sort by what it touches: Coverage is the wrong instrument](assets/carousel/slide-04.png)
+<!-- figures:end -->
 
 I ran a count across Mileway this week:
 
@@ -103,6 +111,10 @@ And never leave `fallbackToDestructiveMigration()` in a shipping build. It conve
 6. **Write the test before the migration ships**, because after it ships you are no longer testing, you are doing forensics.
 
 ## The takeaway
+
+<!-- figures:start -->
+![The payload: Pay the toll before you get on the boat](assets/carousel/slide-06.png)
+<!-- figures:end -->
 
 I did not find a bug this week. I found thirty-five crossings I had never rehearsed, and four of them touch the things that actually eat data.
 

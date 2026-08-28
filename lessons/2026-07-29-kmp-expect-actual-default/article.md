@@ -17,6 +17,10 @@ narrow job, and the wrong default for most of them.
 
 ## What expect/actual actually is
 
+<!-- figures:start -->
+![The alternative: An interface in common, injected per platform](assets/carousel/slide-03.png)
+<!-- figures:end -->
+
 It is a compile-time binding by name. You declare something in common:
 
 ```kotlin
@@ -39,6 +43,10 @@ The binding is fixed at build time. There is one `actual` for Android, one for i
 the compiler wires them in. That sounds convenient, and for the right case it is.
 
 ## Where it hurts
+
+<!-- figures:start -->
+![How to choose: Weld, or hinge?](assets/carousel/slide-05.png)
+<!-- figures:end -->
 
 The moment you want to do anything other than "one fixed body per platform," the weld
 gets in the way.
@@ -105,6 +113,10 @@ For the small, fixed, one-per-platform joints where a stand-in makes no sense:
 Those are genuine welds. One joint, permanent, no reason to swap it.
 
 ## The takeaway
+
+<!-- figures:start -->
+![The payload: Reach for the tool that keeps your options open](assets/carousel/slide-06.png)
+<!-- figures:end -->
 
 The KMP question is rarely "how do I reach the platform." It is "what do I hand my common
 code." Hand it an interface it owns, and inject the platform body. Keep `expect`/`actual`

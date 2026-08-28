@@ -21,11 +21,6 @@ loop_iteration: 15
 # Plausible is worse than wrong
 
 ## The hook
-
-<!-- figures:start -->
-![Meet the accused: It will do anything you can describe](assets/carousel/slide-02.png)
-<!-- figures:end -->
-
 Primary: The API returned 200. The post published. Every single tag was silently dropped, and
 nothing anywhere said so.
 
@@ -36,11 +31,6 @@ Variants to A/B:
   describing.
 
 ## The insight
-
-<!-- figures:start -->
-![The line: Reasonable. Also a no-op.](assets/carousel/slide-03.png)
-<!-- figures:end -->
-
 Borrowed work does not fail like a junior engineer fails. A junior writes something that looks
 wrong and you catch it. A model writes something that looks exactly right, compiles, runs, and
 returns success, because filling the gap with something plausible is the only thing it knows how
@@ -52,11 +42,6 @@ The two defences are mechanical, not attentional. Specify the predicate rather t
 and verify the outcome rather than the call.
 
 ## The story / how it played out
-
-<!-- figures:start -->
-![What I do now: Four habits](assets/carousel/slide-05.png)
-<!-- figures:end -->
-
 Two real ones from the same week, in the tooling that publishes this series.
 
 **One.** The publisher sends an article to the dev.to API. The line read:
@@ -81,11 +66,6 @@ line of it would have compiled.
 I asked for a block that *fits*. I meant a block that *demonstrates the claim*. Nobody lied to me.
 
 ## The takeaway
-
-<!-- figures:start -->
-![The payload: Wrong code gets caught. Plausible code ships.](assets/carousel/slide-06.png)
-<!-- figures:end -->
-
 Review is not a formality you perform on borrowed work. It is where the work actually happens,
 because the failure mode is not bad code, it is confident code that answers a question slightly
 adjacent to the one you asked. Specify the predicate, not the shape. Verify the outcome, not the
