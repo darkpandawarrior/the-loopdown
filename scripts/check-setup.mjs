@@ -58,6 +58,15 @@ if (!has("HASHNODE_TOKEN")) {
       } else {
         console.log(dim("       no publications found — create one on Hashnode first."));
       }
+    } else if (!r.json) {
+      // The endpoint answered, but not with GraphQL. Measured 2026-08-29:
+      // gql.hashnode.com 301s to an HTML page and api.hashnode.com fails TLS
+      // SAN validation, so BOTH known endpoints return something that is not
+      // an API. Reporting that as "token rejected or no Pro" sent the reader
+      // to re-issue a token that was never the problem — a diagnosis that
+      // names the wrong cause costs more than no diagnosis.
+      line("Hashnode", bad("✕"), `endpoint did not return GraphQL (HTTP ${r.status}) — the API moved or is down; the token is not implicated`);
+      console.log(dim("       check Hashnode's current API endpoint before touching HASHNODE_TOKEN."));
     } else {
       line("Hashnode", bad("✕"), `token rejected or no Pro (${r.json?.errors?.[0]?.message || "HTTP " + r.status})`);
     }
