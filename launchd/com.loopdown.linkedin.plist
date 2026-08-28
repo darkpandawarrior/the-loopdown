@@ -5,6 +5,20 @@
     <key>Label</key>
     <string>com.loopdown.linkedin</string>
 
+    <!-- launchd does not inherit a login shell's PATH. Without this, every
+         child process the job shells out to dies with ENOENT: the voice-lint
+         gate first, and behind it the claim audit, which calls python3/pypdf
+         to read the resume PDFs and reported 14 false failures when it could
+         not. Both gates then refused to publish — correctly, on bad evidence —
+         and sixteen finished lessons sat queued while the job "ran" every
+         morning. Measured: stripped PATH exits 1 with 14 failures; with
+         /opt/homebrew/bin on PATH it exits 0 and reports CLEAN. -->
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    </dict>
+
     <key>ProgramArguments</key>
     <array>
         <string>/opt/homebrew/bin/node</string>

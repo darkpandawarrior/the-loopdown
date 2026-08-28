@@ -21,6 +21,21 @@ import { dirname, join, resolve } from "node:path";
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, "..");
 const DRY = process.argv.includes("--dry-run");
+
+/**
+ * The node running THIS script, never the bare string "node".
+ *
+ * launchd does not inherit a login shell's PATH. The plist invokes node by
+ * absolute path so the job starts fine, but every child process spawned as
+ * "node" then died with ENOENT — so the voice-lint gate failed, the run
+ * correctly refused to publish, and sixteen finished lessons sat queued while
+ * the job "ran" every morning at 04:00. Five consecutive days are in
+ * data/launchd-devto.log before anyone looked.
+ *
+ * process.execPath is the interpreter already executing, so it is correct
+ * under launchd, cron, a shell, and CI alike.
+ */
+const NODE = process.execPath;
 const LOG = join(ROOT, "data", "publish.log");
 
 const stamp = () => new Date().toISOString().replace("T", " ").slice(0, 19);
@@ -84,10 +99,10 @@ const gate = (name, fn) => {
 };
 
 gate("voice lint", () =>
-  execFileSync("node", [join(HERE, "lint-voice.mjs"), join("lessons", next)], { cwd: ROOT, encoding: "utf8" }));
+  execFileSync(NODE, [join(HERE, "lint-voice.mjs"), join("lessons", next)], { cwd: ROOT, encoding: "utf8" }));
 
 const audit = "/Users/darkpandawarrior/Tools/DevTools/AgentHarness/skills/claim-audit/audit.mjs";
-if (existsSync(audit)) gate("claim audit", () => execFileSync("node", [audit], { encoding: "utf8" }));
+if (existsSync(audit)) gate("claim audit", () => execFileSync(NODE, [audit], { encoding: "utf8" }));
 else log("  gate skipped: claim audit not found on this machine");
 
 // --- soft check: who is this for? -----------------------------------------
@@ -106,7 +121,7 @@ else log("  gate skipped: claim audit not found on this machine");
 if (DRY) { log(`dry run: would publish ${next} to dev.to. Nothing sent.`); process.exit(0); }
 
 try {
-  const out = execFileSync("node", [join(HERE, "export.mjs"), join("lessons", next), "--publish"],
+  const out = execFileSync(NODE, [join(HERE, "export.mjs"), join("lessons", next), "--publish"],
     { cwd: ROOT, encoding: "utf8" });
   const url = (out.match(/https:\/\/dev\.to\/\S+/) || [])[0] || "(no url in output)";
   log(`PUBLISHED ${next} -> ${url}`);
