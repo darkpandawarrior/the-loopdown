@@ -5,12 +5,15 @@ type: lesson
 pillar: background-execution
 project: Mileway
 tags: [android, foreground-service, workmanager, lifecycle, doze]
-status: ready
+status: published
 created: 2026-07-22
 channels: [linkedin, devto, hashnode, medium]
 series: the-night-shift
 cast: [doze-the-jailer]
 loop_iteration: 3
+url_devto: https://dev.to/darkpandawarrior/the-5-second-window-that-crashes-your-service-5cmm
+published: 2026-08-28
+live: https://dev.to/darkpandawarrior/the-5-second-window-that-crashes-your-service-5cmm
 ---
 
 # The 5-second window that crashes your service

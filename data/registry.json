@@ -685,7 +685,7 @@
         "lifecycle",
         "doze"
       ],
-      "status": "ready",
+      "status": "published",
       "created": "2026-07-22",
       "channels": [
         "linkedin",
@@ -698,7 +698,12 @@
         "doze-the-jailer"
       ],
       "loop_iteration": "3",
-      "links": {}
+      "url_devto": "https://dev.to/darkpandawarrior/the-5-second-window-that-crashes-your-service-5cmm",
+      "published": "2026-08-28",
+      "live": "https://dev.to/darkpandawarrior/the-5-second-window-that-crashes-your-service-5cmm",
+      "links": {
+        "devto": "https://dev.to/darkpandawarrior/the-5-second-window-that-crashes-your-service-5cmm"
+      }
     },
     {
       "file": "lessons/2026-07-20-coroutine-cancellation-messenger/lesson.md",
@@ -715,7 +720,7 @@
         "structured-concurrency",
         "android"
       ],
-      "status": "ready",
+      "status": "published",
       "created": "2026-07-20",
       "channels": [
         "linkedin",
@@ -728,7 +733,12 @@
         "the-messenger"
       ],
       "loop_iteration": "2",
-      "links": {}
+      "url_devto": "https://dev.to/darkpandawarrior/cancellationexception-is-not-an-assassin-2220",
+      "published": "2026-08-28",
+      "live": "https://dev.to/darkpandawarrior/cancellationexception-is-not-an-assassin-2220",
+      "links": {
+        "devto": "https://dev.to/darkpandawarrior/cancellationexception-is-not-an-assassin-2220"
+      }
     },
     {
       "file": "lessons/2026-07-19-mileway-dead-reckoning/lesson.md",

@@ -5,12 +5,15 @@ type: lesson
 pillar: concurrency
 project: Dice
 tags: [kotlin, coroutines, cancellation, structured-concurrency, android]
-status: ready
+status: published
 created: 2026-07-20
 channels: [linkedin, devto, hashnode, medium]
 series: the-coroutine-court
 cast: [the-messenger]
 loop_iteration: 2
+url_devto: https://dev.to/darkpandawarrior/cancellationexception-is-not-an-assassin-2220
+published: 2026-08-28
+live: https://dev.to/darkpandawarrior/cancellationexception-is-not-an-assassin-2220
 ---
 
 # CancellationException is not an assassin

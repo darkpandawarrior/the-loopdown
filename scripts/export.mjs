@@ -209,11 +209,103 @@ if (want("linkedin")) {
   }
 }
 
-// --- log results into meta.yaml ---
+/**
+ * Record the publish in lesson.md's FRONT-MATTER, which is the canonical
+ * record everything downstream reads.
+ *
+ * scripts/build-registry.mjs builds data/registry.json from these front-matter
+ * keys (`url_devto`, `url_linkedin`, ...), and cv-siddharth's gen-loopdown.mjs
+ * pulls that registry to build the site's outbound links. The publisher wrote
+ * none of them: it appended a comment to meta.yaml and wrote state.json, so a
+ * lesson that had genuinely gone out still read `status: ready` with no url
+ * anywhere the registry looks.
+ *
+ * The visible consequence was the whole complaint: articles get published and
+ * the site never links them, because the only machine-readable trace lived in
+ * a file no generator reads.
+ */
+function recordInFrontMatter(lessonDir, results, canonical) {
+  const mdPath = resolve(lessonDir, "lesson.md");
+  if (!existsSync(mdPath)) return;
+  const md = readFileSync(mdPath, "utf8");
+  const m = /^---\n([\s\S]*?)\n---/.exec(md);
+  if (!m) return;
+
+  let fm = m[1];
+  const setKey = (key, value) => {
+    const re = new RegExp(`^${key}:.*$`, "m");
+    fm = re.test(fm) ? fm.replace(re, `${key}: ${value}`) : `${fm}\n${key}: ${value}`;
+  };
+
+  let anyPublished = false;
+  for (const [channel, r] of Object.entries(results)) {
+    if (r.status !== "published" || !r.url) continue;
+    anyPublished = true;
+    setKey(`url_${channel}`, r.url);
+  }
+  if (!anyPublished) return;
+
+  setKey("status", "published");
+  setKey("published", new Date().toISOString().slice(0, 10));
+  // `live` is the canonical destination a reader is sent to.
+  if (canonical || results.devto?.url) setKey("live", canonical || results.devto.url);
+
+  writeFileSync(mdPath, md.slice(0, m.index) + `---\n${fm}\n---` + md.slice(m.index + m[0].length));
+  console.log("  recorded in lesson.md front-matter");
+}
+
+/**
+ * Record the result in meta.yaml — in the STRUCTURED fields, not only as a
+ * trailing comment.
+ *
+ * This used to append a `# --- export publish ---` comment block and nothing
+ * else, so a lesson that had genuinely gone out still read
+ * `status: ready` with `devto: { status: pending, url: "" }`. Two things
+ * followed from that, and both were live:
+ *
+ *   1. cv-siddharth's gen-loopdown.mjs reads these channel fields to build the
+ *      site's outbound links. A published post therefore appeared on the site
+ *      with no link to itself — which is exactly "we have articles but none of
+ *      them are linked".
+ *   2. `status:` stayed `ready`, so the queue never shrank in the file a human
+ *      reads. (Re-publishing was never a risk — state.json carries the article
+ *      id and publish-next checks it — but the file said the opposite of the
+ *      truth.)
+ *
+ * The comment block stays: it is the human-readable audit trail, and it
+ * records the canonical URL choice. What is added is the machine-readable half
+ * that everything downstream actually consumes.
+ */
 if (Object.keys(results).length) {
-  const stamp = `\n# --- export ${mode} (canonical: ${canonicalResolved || "n/a"}) ---\n` + Object.entries(results).map(([c, r]) => `#   ${c}: ${r.status}${r.url ? " " + r.url : ""}`).join("\n") + "\n";
+  recordInFrontMatter(lessonDir, results, canonicalResolved);
   const metaPath = resolve(lessonDir, "meta.yaml");
-  if (existsSync(metaPath)) writeFileSync(metaPath, readFileSync(metaPath, "utf8") + stamp);
+  if (existsSync(metaPath)) {
+    let meta = readFileSync(metaPath, "utf8");
+    let published = false;
+
+    for (const [channel, r] of Object.entries(results)) {
+      if (r.status !== "published" || !r.url) continue;
+      published = true;
+      // Rewrite just this channel's inline mapping, leaving the rest of the
+      // line's keys (impressions, reactions, ...) exactly as they are.
+      const line = new RegExp(`^(\\s*${channel}:\\s*\\{)([^}]*)(\\})`, "m");
+      if (line.test(meta)) {
+        meta = meta.replace(line, (_m, open, body, close) => {
+          const patched = body
+            .replace(/status:\s*[a-z]+/, "status: published")
+            .replace(/url:\s*""/, `url: "${r.url}"`)
+            .replace(/published:\s*""/, `published: "${new Date().toISOString().slice(0, 10)}"`);
+          return open + patched + close;
+        });
+      }
+    }
+
+    // A lesson is published once ANY channel carries it.
+    if (published) meta = meta.replace(/^status:\s*ready\s*$/m, "status: published");
+
+    const stamp = `\n# --- export ${mode} (canonical: ${canonicalResolved || "n/a"}) ---\n` + Object.entries(results).map(([c, r]) => `#   ${c}: ${r.status}${r.url ? " " + r.url : ""}`).join("\n") + "\n";
+    writeFileSync(metaPath, meta + stamp);
+  }
   console.log(`\n  logged to meta.yaml`);
 }
 console.log(mode === "dry-run" ? "\n  dry-run only — no network publish. Re-run with --draft or --publish.\n" : "\n  done.\n");
