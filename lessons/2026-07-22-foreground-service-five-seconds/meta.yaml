@@ -2,9 +2,33 @@ slug: foreground-service-five-seconds
 status: published
 channels:
   linkedin:  { status: pending, url: "", scheduled: "", published: "", impressions: 0, reactions: 0, comments: 0 }
-  devto:     { status: published, url: "https://dev.to/darkpandawarrior/the-5-second-window-that-crashes-your-service-5cmm", published: "", reactions: 0, comments: 0 }
+  devto:     { status: published, url: "https://dev.to/darkpandawarrior/the-5-second-window-that-crashes-your-service-5cmm", published: "2026-08-28", reactions: 0, comments: 0 }
   hashnode:  { status: pending, url: "", published: "", reactions: 0, comments: 0 }
   medium:    { status: pending, url: "", published: "", claps: 0 }
 
 # --- export publish (canonical: https://dev.to/darkpandawarrior/the-5-second-window-that-crashes-your-service-5cmm) ---
+#   devto: published https://dev.to/darkpandawarrior/the-5-second-window-that-crashes-your-service-5cmm
+
+# --- export draft (canonical: https://dev.to/darkpandawarrior/the-5-second-window-that-crashes-your-service-5cmm) ---
+#   devto: draft https://dev.to/darkpandawarrior/the-5-second-window-that-crashes-your-service-5cmm
+
+# --- export publish (canonical: https://dev.to/darkpandawarrior/the-5-second-window-that-crashes-your-service-5cmm) ---
+#   devto: published https://dev.to/darkpandawarrior/the-5-second-window-that-crashes-your-service-5cmm
+
+# --- export draft (canonical: https://dev.to/darkpandawarrior/the-5-second-window-that-crashes-your-service-5cmm) ---
+#   devto: draft https://dev.to/darkpandawarrior/the-5-second-window-that-crashes-your-service-5cmm
+
+# --- export draft (canonical: https://dev.to/darkpandawarrior/the-5-second-window-that-crashes-your-service-5cmm) ---
+#   devto: draft https://dev.to/darkpandawarrior/the-5-second-window-that-crashes-your-service-5cmm
+
+# --- export publish (canonical: https://dev.to/darkpandawarrior/the-5-second-window-that-crashes-your-service-5cmm) ---
+#   devto: published https://dev.to/darkpandawarrior/the-5-second-window-that-crashes-your-service-5cmm
+
+# --- export draft (canonical: https://dev.to/darkpandawarrior/the-5-second-window-that-crashes-your-service-5cmm) ---
+#   devto: draft https://dev.to/darkpandawarrior/the-5-second-window-that-crashes-your-service-5cmm
+
+# --- export publish (canonical: https://dev.to/darkpandawarrior/the-5-second-window-that-crashes-your-service-5cmm) ---
+#   devto: published https://dev.to/darkpandawarrior/the-5-second-window-that-crashes-your-service-5cmm
+
+# --- export draft (canonical: https://dev.to/darkpandawarrior/the-5-second-window-that-crashes-your-service-5cmm) ---
 #   devto: published https://dev.to/darkpandawarrior/the-5-second-window-that-crashes-your-service-5cmm

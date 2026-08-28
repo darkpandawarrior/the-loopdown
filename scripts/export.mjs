@@ -130,7 +130,49 @@ if (want("devto")) {
   else {
     // tags MUST be an array. Passing the comma string makes dev.to accept the
     // request and silently drop every tag (post 002 shipped untagged that way).
-    const payload = { article: { title, body_markdown: body, published: live, tags, series: fm.series || null, main_image: cover || null, canonical_url: explicitCanonical || null } };
+    // NEVER downgrade a live post to a draft.
+    //
+    // `--draft` sends published:false, and the PUT reuses the SAME article id
+    // that `--publish` created — which is what makes draft-then-publish
+    // idempotent. It also means running --draft over an article that is
+    // already out UNPUBLISHES it. Re-staging all seventeen to pick up new
+    // figures did exactly that: three live posts silently became drafts and
+    // their public URLs stopped resolving.
+    //
+    // Publishing is one-way here. If the post is live and this run is a draft
+    // run, keep it live and update the body.
+    // Ask dev.to, do not trust local state.
+    //
+    // The first version of this guard read state.json — and state.json can be
+    // wrong about the very thing being guarded. It was: a --draft run recorded
+    // status "draft" for a post it had left published, the next --draft run
+    // read that, believed the article was a draft, and unpublished it for
+    // real. A guard whose evidence is the thing it is protecting is not a
+    // guard.
+    //
+    // The platform is the authority on whether a post is live. If that lookup
+    // fails, fall back to local state and then to the flag — an unreachable
+    // API must not become a reason to unpublish.
+    let wasPublished = loadState().devto?.status === "published";
+    const knownId = loadState().devto?.id;
+    if (knownId) {
+      try {
+        // The LISTING, not /articles/{id}. The single-article endpoint does not
+        // return a `published` field at all — it was checked, the guard read
+        // undefined, fell back to the corrupted local state and unpublished a
+        // live post anyway. /articles/me/all does return it, for drafts and
+        // published alike.
+        const check = await post("https://dev.to/api/articles/me/all?per_page=100", {
+          method: "GET", headers: { "api-key": get("DEVTO_API_KEY") },
+        });
+        const mine = Array.isArray(check.json) ? check.json.find((a) => a.id === knownId) : null;
+        if (mine && typeof mine.published === "boolean") wasPublished = mine.published;
+      } catch { /* keep the local guess rather than risk an unpublish */ }
+    }
+    const publishFlag = live || wasPublished;
+    if (!live && wasPublished) log("devto", "already published: updating in place, not reverting to draft");
+
+    const payload = { article: { title, body_markdown: body, published: publishFlag, tags, series: fm.series || null, main_image: cover || null, canonical_url: explicitCanonical || null } };
     try {
       // Reuse an existing article if we have one (idempotent: draft → publish updates the SAME post).
       let id = loadState().devto?.id;
@@ -138,7 +180,10 @@ if (want("devto")) {
       const url = id ? `https://dev.to/api/articles/${id}` : "https://dev.to/api/articles";
       const method = id ? "PUT" : "POST";
       const r = await post(url, { method, headers: { "api-key": get("DEVTO_API_KEY"), "Content-Type": "application/json" }, body: JSON.stringify(payload) });
-      if (r.status === 200 || r.status === 201) { results.devto = { status: live ? "published" : "draft", url: r.json?.url || "" }; if (r.json?.id) saveState({ devto: { id: r.json.id, url: r.json.url, status: results.devto.status } }); if (!canonicalResolved && r.json?.url) canonicalResolved = r.json.url; log("devto", `${results.devto.status} (${method === "PUT" ? "updated" : "created"}): ${results.devto.url}`);
+      if (r.status === 200 || r.status === 201) { // Report what the post IS, not what the flag asked for: a --draft run
+        // over a live article keeps it published, and a log that called that
+        // "draft" would be lying about the one thing worth knowing.
+        results.devto = { status: publishFlag ? "published" : "draft", url: r.json?.url || "" }; if (r.json?.id) saveState({ devto: { id: r.json.id, url: r.json.url, status: results.devto.status } }); if (!canonicalResolved && r.json?.url) canonicalResolved = r.json.url; log("devto", `${results.devto.status} (${method === "PUT" ? "updated" : "created"}): ${results.devto.url}`);
         // dev.to drops the whole set if any single tag is invalid, and still returns 200.
         const landed = r.json?.tags || [];
         if (tags.length && !landed.length) log("devto", `WARNING: tags were rejected (sent ${tags.join(",")}). Set valid ones on the post or fix lesson.md frontmatter.`);

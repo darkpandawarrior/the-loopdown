@@ -7,7 +7,7 @@ project: Mileway
 tags: [android, location, sensor-fusion, dead-reckoning, kalman]
 status: published
 created: 2026-07-19
-published: 2026-07-20
+published: 2026-08-28
 live: https://dev.to/darkpandawarrior/teaching-a-phone-to-disbelieve-its-own-gps-cip
 url_devto: https://dev.to/darkpandawarrior/teaching-a-phone-to-disbelieve-its-own-gps-cip
 url_linkedin: https://www.linkedin.com/posts/siddharth-pandalai_the-concussed-witness-ugcPost-7484693809122045952-8zta
