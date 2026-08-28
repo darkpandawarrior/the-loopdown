@@ -5,3 +5,6 @@ channels:
   linkedin:  { status: pending, url: "", scheduled: "", published: "", impressions: 0, reactions: 0, comments: 0 }
   hashnode:  { status: pending, url: "", published: "", reactions: 0, comments: 0 }
   medium:    { status: pending, url: "", published: "", claps: 0 }
+
+# --- export draft (canonical: https://dev.to/darkpandawarrior/plausible-is-worse-than-wrong-2iom-temp-slug-392849) ---
+#   devto: draft https://dev.to/darkpandawarrior/plausible-is-worse-than-wrong-2iom-temp-slug-392849

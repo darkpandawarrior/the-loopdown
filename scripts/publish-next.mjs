@@ -72,12 +72,40 @@ const readMeta = (d) => {
   const p = join(lessonsDir, d, "meta.yaml");
   return existsSync(p) ? readFileSync(p, "utf8") : "";
 };
+/**
+ * Out means PUBLISHED, not "has a dev.to id".
+ *
+ * This used to return true for any recorded devto.id. A draft has an id too —
+ * export.mjs creates one on --draft and reuses it on --publish, which is the
+ * whole reason draft-to-publish is idempotent. So the moment drafts are staged
+ * ahead of time, every lesson looks "already out", the queue empties, and the
+ * daily job publishes nothing forever while reporting an empty queue.
+ *
+ * A draft is staged work, not shipped work. Only `status: published` in
+ * state.json, or a recorded published url in the front matter, means out.
+ */
 const alreadyOut = (d) => {
-  const meta = readMeta(d);
-  if (/url:\s*https:\/\/dev\.to/.test(meta)) return true;
   const s = join(lessonsDir, d, "state.json");
-  if (existsSync(s)) { try { return !!JSON.parse(readFileSync(s, "utf8")).devto?.id; } catch { return false; } }
+  if (existsSync(s)) {
+    try {
+      const devto = JSON.parse(readFileSync(s, "utf8")).devto;
+      if (devto?.status === "published") return true;
+    } catch { /* unreadable state is not proof of anything */ }
+  }
+  // lesson.md front matter is the canonical record the registry reads.
+  const md = join(lessonsDir, d, "lesson.md");
+  if (existsSync(md) && /^url_devto:\s*https:\/\/dev\.to\/\S+/m.test(readFileSync(md, "utf8"))) return true;
   return false;
+};
+
+/** A dev.to draft already staged for this lesson, if any. */
+const stagedDraft = (d) => {
+  const s = join(lessonsDir, d, "state.json");
+  if (!existsSync(s)) return null;
+  try {
+    const devto = JSON.parse(readFileSync(s, "utf8")).devto;
+    return devto?.id && devto.status !== "published" ? devto : null;
+  } catch { return null; }
 };
 const isReady = (d) => /^status:\s*ready\s*$/m.test(readMeta(d));
 
@@ -85,7 +113,8 @@ const queue = lessons.filter((d) => isReady(d) && !alreadyOut(d));
 if (!queue.length) { log("queue empty: nothing marked ready and unpublished. Stopping."); process.exit(0); }
 
 const next = queue[0];
-log(`next in queue: ${next}   (${queue.length} waiting)`);
+const draft = stagedDraft(next);
+log(`next in queue: ${next}   (${queue.length} waiting)${draft ? `   [draft staged: ${draft.url}]` : ""}`);
 
 // --- gates ----------------------------------------------------------------
 const gate = (name, fn) => {

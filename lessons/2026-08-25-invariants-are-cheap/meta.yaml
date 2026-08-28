@@ -5,3 +5,6 @@ channels:
   devto:     { status: pending, url: "", published: "", reactions: 0, comments: 0 }
   hashnode:  { status: pending, url: "", published: "", reactions: 0, comments: 0 }
   medium:    { status: pending, url: "", published: "", claps: 0 }
+
+# --- export draft (canonical: https://dev.to/darkpandawarrior/invariants-are-cheap-silent-corruption-is-not-3o1k-temp-slug-8855385) ---
+#   devto: draft https://dev.to/darkpandawarrior/invariants-are-cheap-silent-corruption-is-not-3o1k-temp-slug-8855385
