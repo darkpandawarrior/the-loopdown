@@ -21,6 +21,11 @@ loop_iteration: 14
 # Your thresholds do not belong in constants
 
 ## The hook
+
+<!-- figures:start -->
+![The cast: A threshold is a hypothesis](assets/carousel/slide-02.png)
+<!-- figures:end -->
+
 Primary: Every tuning change needed a release, a review, and a week of store rollout. So we
 stopped tuning, which is the worst possible outcome.
 
@@ -36,6 +41,11 @@ defending them. Move them into one serialisable config object and tuning becomes
 change, then eventually a server change, without touching the algorithm.
 
 ## The story / how it played out
+
+<!-- figures:start -->
+![The ladder: Make tuning cheap](assets/carousel/slide-04.png)
+<!-- figures:end -->
+
 Our location pipeline accumulated about eighteen tuning numbers: speed band boundaries, jitter
 gates per band, a stationary threshold, a rolling window size, a movement threshold, a spike gate,
 four gap tiers with their speed caps, a maximum gap distance. All const val, scattered through the
@@ -59,6 +69,11 @@ config became a later change to where the object comes from, not to the algorith
 never learns where its numbers came from.
 
 ## The takeaway
+
+<!-- figures:start -->
+![The payload: Separate the algorithm from its parameters](assets/carousel/slide-05.png)
+<!-- figures:end -->
+
 Separate the algorithm from its parameters. Constants are for things that cannot change, like the
 number of metres in a kilometre. A jitter threshold is a hypothesis, and hypotheses need to be
 cheap to revise.

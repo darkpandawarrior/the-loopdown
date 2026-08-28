@@ -21,6 +21,11 @@ loop_iteration: 13
 # Invariants are cheap. Silent corruption is not.
 
 ## The hook
+
+<!-- figures:start -->
+![The cast: Assert the relationships](assets/carousel/slide-02.png)
+<!-- figures:end -->
+
 Primary: We had five numbers that were supposed to add up. Nothing in the codebase checked that
 they did, and for a while they quietly did not.
 
@@ -36,6 +41,11 @@ other. These usually live in someone's head or a comment. Writing them as a vali
 before persistence or submission is one of the highest-value-per-line things you can do.
 
 ## The story / how it played out
+
+<!-- figures:start -->
+![How to grade them: Errors and warnings](assets/carousel/slide-04.png)
+<!-- figures:end -->
+
 Our distance model has five numbers: original, cleaned, mock, abnormal and spike. They are related:
 
 ```
@@ -61,6 +71,11 @@ The comment above the invariant is deliberately loud, because the spike exclusio
 oversight until you know why.
 
 ## The takeaway
+
+<!-- figures:start -->
+![The payload: Invariants are cheap. Silent corruption is not.](assets/carousel/slide-05.png)
+<!-- figures:end -->
+
 Find the relationships your code assumes and make them executable. Errors for what must never
 happen, warnings for what is merely suspicious. Both should run before the data leaves the device.
 

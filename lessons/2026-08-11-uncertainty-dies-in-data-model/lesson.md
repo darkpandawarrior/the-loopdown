@@ -21,6 +21,11 @@ loop_iteration: 9
 # Your data model is where uncertainty goes to die
 
 ## The hook
+
+<!-- figures:start -->
+![The cast: It keeps every reading's papers](assets/carousel/slide-02.png)
+<!-- figures:end -->
+
 Primary: The sensor knew how much to trust itself. Our database column did not have room for that,
 so we threw it away on the way in.
 
@@ -31,6 +36,11 @@ Variants to A/B:
 - Your table schema is a claim about what matters. Most of them claim confidence does not.
 
 ## The insight
+
+<!-- figures:start -->
+![The schema: Design the row to carry doubt](assets/carousel/slide-03.png)
+<!-- figures:end -->
+
 Sensors and upstream systems almost always tell you how much to trust them. GPS ships an accuracy
 radius, a provider, a timestamp. Models ship a confidence. APIs ship a staleness. Then we design a
 table with the value and drop the rest, and every downstream consumer is forced to treat a 4 metre
@@ -38,6 +48,11 @@ fix and a 200 metre fix as the same fact. Uncertainty does not get lost in the a
 lost at the schema.
 
 ## The story / how it played out
+
+<!-- figures:start -->
+![The columns: What every row owes you](assets/carousel/slide-05.png)
+<!-- figures:end -->
+
 Android hands you a Location with accuracy in metres, the provider that produced it, a bearing,
 an altitude, and a timestamp. Our early row kept lat, lng, speed and time. Everything else was
 dropped at the door because it was not needed yet.
@@ -58,6 +73,11 @@ UI can act on: penalties for mock location, missing permission, battery optimisa
 a killed process, GPS off, plus an accuracy tier penalty and a small bonus for a stable stream.
 
 ## The takeaway
+
+<!-- figures:start -->
+![The payload: You cannot backfill confidence you discarded](assets/carousel/slide-06.png)
+<!-- figures:end -->
+
 Design the row to carry doubt. If a value can be wrong, the schema needs somewhere to say how
 wrong, where it came from, and what you already concluded. Add those columns before you need them,
 because you cannot backfill confidence that was discarded at write time.

@@ -21,6 +21,11 @@ loop_iteration: 11
 # Never silently change a number someone gets paid on
 
 ## The hook
+
+<!-- figures:start -->
+![The cast: Show your working](assets/carousel/slide-02.png)
+<!-- figures:end -->
+
 Primary: Our algorithm decided a driver had travelled 4km less than they thought. It was probably
 right. Shipping that silently would still have been wrong.
 
@@ -32,12 +37,22 @@ Variants to A/B:
   trusting it. Those are different.
 
 ## The insight
+
+<!-- figures:start -->
+![Explicit degradation: Report the delta, not just the answer](assets/carousel/slide-03.png)
+<!-- figures:end -->
+
 Cleaning data is a technical act right up until the cleaned number pays somebody. After that,
 correctness is not sufficient. The user needs to see the original, see what was removed, see why,
 and in some cases be able to overrule it. Explicit degradation is a product requirement, not a
 nicety.
 
 ## The story / how it played out
+
+<!-- figures:start -->
+![What the user is owed: Four things, every time](assets/carousel/slide-04.png)
+<!-- figures:end -->
+
 Mileage tracking on Dice ends in an expense claim. Our pipeline removes GPS spikes, mock location
 distance, and implausible jumps. The cleaned figure is more accurate than the raw one, so shipping
 only the cleaned figure feels like the obvious call.
@@ -54,6 +69,11 @@ One detail I like: an app-killed event is deliberately marked as not an irregula
 tracker recovers on its own. Disclosure only means something if you are not crying wolf.
 
 ## The takeaway
+
+<!-- figures:start -->
+![The payload: Correctness is table stakes. Transparency ships.](assets/carousel/slide-05.png)
+<!-- figures:end -->
+
 When your output becomes an input to somebody's money, time, or reputation, correctness is table
 stakes and transparency is the actual product. Show the original, show the delta, show the reason,
 and let them push back.

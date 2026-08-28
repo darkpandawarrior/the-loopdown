@@ -21,6 +21,11 @@ loop_iteration: 10
 # When two sensors disagree, rank them
 
 ## The hook
+
+<!-- figures:start -->
+![The cast: Cannot say where. Knows whether.](assets/carousel/slide-02.png)
+<!-- figures:end -->
+
 Primary: GPS said the car was moving. The accelerometer said the phone had not twitched in ten
 minutes. Only one of them can be right, and it is not the one you think.
 
@@ -30,12 +35,22 @@ Variants to A/B:
 - The accelerometer outranks GPS on the question of whether you are moving. Not on where you are.
 
 ## The insight
+
+<!-- figures:start -->
+![The better question: Rank per question, not overall](assets/carousel/slide-03.png)
+<!-- figures:end -->
+
 A single sensor can only ever be checked against itself, which means your filter is really just a
 guess about its own input. The moment you have an independent signal you can ask a better
 question: do these two agree, and when they do not, which one is authoritative for this specific
 question? Rank sensors per question, not overall.
 
 ## The story / how it played out
+
+<!-- figures:start -->
+![The method: Corroborate, do not tune](assets/carousel/slide-05.png)
+<!-- figures:end -->
+
 Stationary GPS drift is the classic phantom-distance problem. A parked phone reports small
 movements, and reported speed sometimes agrees, because the drift itself looks like motion.
 
@@ -55,6 +70,11 @@ they diverge by more than 30 percent we raise a warning rather than silently tru
 happened to compute.
 
 ## The takeaway
+
+<!-- figures:start -->
+![The payload: Correlation beats cleverness](assets/carousel/slide-06.png)
+<!-- figures:end -->
+
 Do not build a smarter threshold on a lonely sensor. Find a second signal that fails differently
 and give it authority over the specific question it is actually good at. Correlation beats
 cleverness.

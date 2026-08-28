@@ -19,6 +19,11 @@ live: https://dev.to/darkpandawarrior/cancellationexception-is-not-an-assassin-2
 # CancellationException is not an assassin
 
 ## The hook
+
+<!-- figures:start -->
+![Meet the accused: It only ever delivers a note](assets/carousel/slide-02.png)
+<!-- figures:end -->
+
 Primary: I cancelled a coroutine. It kept running for 8 more seconds. It just did not care.
 
 Variants to A/B:
@@ -27,6 +32,11 @@ Variants to A/B:
 - Stop shooting the messenger. It is the only reason your app shuts down cleanly.
 
 ## The insight
+
+<!-- figures:start -->
+![The trap: The line that ate the message](assets/carousel/slide-04.png)
+<!-- figures:end -->
+
 Cancelling a coroutine does not kill it on the spot. It throws a CancellationException
 up through your suspend calls, and that exception is the message: we are done, pack up.
 A broad catch (e: Exception) swallows that message, the coroutine never hears it, and
@@ -34,6 +44,11 @@ the work keeps going. Cancellation is cooperative. Catch the messenger and nobod
 the news.
 
 ## The story / how it played out
+
+<!-- figures:start -->
+![Pick one: Four ways out](assets/carousel/slide-07.png)
+<!-- figures:end -->
+
 A search screen on Dice kept firing stale network work. User types, we cancel the old
 job, start a new one. Except the old one kept running and sometimes won the race,
 painting old results over new. I had cancelled it. I watched the cancel call run.
@@ -61,6 +76,11 @@ The fixes:
    `withContext(NonCancellable) { ... }`, not a naked catch.
 
 ## The takeaway
+
+<!-- figures:start -->
+![The payload: Do not shoot the messenger](assets/carousel/slide-08.png)
+<!-- figures:end -->
+
 Cancellation is a conversation, not a kill switch. If you swallow the message, the work
 does not stop. It just stops telling you it is still running. Do not shoot the
 messenger.

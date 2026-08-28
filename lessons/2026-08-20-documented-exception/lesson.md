@@ -21,6 +21,11 @@ loop_iteration: 12
 # Every filter needs a documented exception
 
 ## The hook
+
+<!-- figures:start -->
+![The cast: The legitimate case it breaks](assets/carousel/slide-02.png)
+<!-- figures:end -->
+
 Primary: A filter with no exceptions has not met production yet. It has only met your test data.
 
 Variants to A/B:
@@ -35,6 +40,11 @@ named, commented and tested, or whether it lives as an unexplained condition tha
 deletes during a cleanup.
 
 ## The story / how it played out
+
+<!-- figures:start -->
+![The discipline: Every exception earns three things](assets/carousel/slide-04.png)
+<!-- figures:end -->
+
 Our rule: readings with accuracy worse than 50 metres do not count toward trusted distance. Sound,
 and correct nearly always. Poor accuracy usually means a phone in a basement or an urban canyon.
 
@@ -59,6 +69,11 @@ The name is the important part. Six months later nobody has to guess why those c
 there, and nobody deletes them while tidying up.
 
 ## The takeaway
+
+<!-- figures:start -->
+![The payload: An undocumented special case looks exactly like a bug](assets/carousel/slide-05.png)
+<!-- figures:end -->
+
 Write the rule, then go looking for the legitimate case it breaks. There is always one. Give it a
 name, a comment explaining the reasoning, and a test. An undocumented special case is
 indistinguishable from a bug, and gets removed like one.
