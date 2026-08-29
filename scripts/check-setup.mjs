@@ -59,14 +59,20 @@ if (!has("HASHNODE_TOKEN")) {
         console.log(dim("       no publications found — create one on Hashnode first."));
       }
     } else if (!r.json) {
-      // The endpoint answered, but not with GraphQL. Measured 2026-08-29:
-      // gql.hashnode.com 301s to an HTML page and api.hashnode.com fails TLS
-      // SAN validation, so BOTH known endpoints return something that is not
-      // an API. Reporting that as "token rejected or no Pro" sent the reader
-      // to re-issue a token that was never the problem — a diagnosis that
-      // names the wrong cause costs more than no diagnosis.
-      line("Hashnode", bad("✕"), `endpoint did not return GraphQL (HTTP ${r.status}) — the API moved or is down; the token is not implicated`);
-      console.log(dim("       check Hashnode's current API endpoint before touching HASHNODE_TOKEN."));
+      // Hashnode RETIRED free API access on 2026-05-13: "Every API request,
+      // queries and mutations, now requires a Pro plan on your publication."
+      // Without Pro, gql.hashnode.com answers a POST with a 301 to that
+      // announcement page rather than a GraphQL error — so the response is
+      // HTML, `data.me` is absent, and any check parsing for it lands in
+      // whichever branch it happens to fall into.
+      //
+      // Both plausible readings are wrong on their own. "Token rejected" sends
+      // the reader to re-issue working credentials; "the API moved or is down"
+      // (this branch's first wording) implies an outage that will pass. It is
+      // neither: it is a deliberate paywall, and the only fix is a Pro plan or
+      // the free import path.
+      line("Hashnode", bad("✕"), `free API access was retired 2026-05-13 — publishing needs Pro on the publication (HTTP ${r.status}, redirected to the announcement)`);
+      console.log(dim("       free path: publish to dev.to, then import that URL from the Hashnode editor."));
     } else {
       line("Hashnode", bad("✕"), `token rejected or no Pro (${r.json?.errors?.[0]?.message || "HTTP " + r.status})`);
     }

@@ -209,7 +209,12 @@ if (want("hashnode")) {
       const r = await post("https://gql.hashnode.com", { method: "POST", headers: { "Content-Type": "application/json", Authorization: get("HASHNODE_TOKEN") }, body: JSON.stringify({ query: mutation, variables: { input } }) });
       const url = r.json?.data?.publishPost?.post?.url;
       if (url) { results.hashnode = { status: "published", url }; log("hashnode", `published: ${url}`); }
-      else log("hashnode", `FAILED (Pro required?): ${r.json?.errors?.[0]?.message || "HTTP " + r.status}`);
+      // Not a guess any more. Hashnode retired free API access on 2026-05-13;
+      // without Pro the endpoint answers a POST with a 301 to that
+      // announcement rather than a GraphQL error, so `r.json` is empty and
+      // there is no message to quote.
+      else if (!r.json) log("hashnode", `SKIPPED: free API access was retired 2026-05-13, publishing needs Pro. out/hashnode.md is ready to import instead.`);
+      else log("hashnode", `FAILED: ${r.json?.errors?.[0]?.message || "HTTP " + r.status}`);
     } catch (e) { log("hashnode", `error: ${e.message}`); }
   }
 }
