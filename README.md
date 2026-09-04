@@ -71,9 +71,9 @@ The rhyme is the reward.
 | 2026-08-11 | [Your data model is where uncertainty goes to die](lessons/2026-08-11-uncertainty-dies-in-data-model/lesson.md) | chain-of-custody | 🟡 ready | — |
 | 2026-08-06 | [One global threshold is how you delete valid data](lessons/2026-08-06-one-global-threshold/lesson.md) | sensors-who-lie | 🟡 ready | — |
 | 2026-08-04 | [Filtered should never mean deleted](lessons/2026-08-04-filtered-never-deleted/lesson.md) | sensors-who-lie | 🟡 ready | — |
-| 2026-07-31 | [collectAsState is quietly leaking your work](lessons/2026-07-31-collectasstate-leak/lesson.md) | ghosts-in-the-recomposition | 🟡 ready | — |
-| 2026-07-29 | [expect/actual is the wrong default in KMP](lessons/2026-07-29-kmp-expect-actual-default/lesson.md) | one-brain-two-bodies | 🟡 ready | — |
-| 2026-07-24 | [Your LazyColumn recomposes on every scroll](lessons/2026-07-24-lazycolumn-recomposition/lesson.md) | ghosts-in-the-recomposition | 🟡 ready | — |
+| 2026-07-31 | [collectAsState is quietly leaking your work](lessons/2026-07-31-collectasstate-leak/lesson.md) | ghosts-in-the-recomposition | 🟢 live | [read →](https://dev.to/darkpandawarrior/collectasstate-is-quietly-leaking-your-work-4ak0) |
+| 2026-07-29 | [expect/actual is the wrong default in KMP](lessons/2026-07-29-kmp-expect-actual-default/lesson.md) | one-brain-two-bodies | 🟢 live | [read →](https://dev.to/darkpandawarrior/expectactual-is-the-wrong-default-in-kmp-5g7p) |
+| 2026-07-24 | [Your LazyColumn recomposes on every scroll](lessons/2026-07-24-lazycolumn-recomposition/lesson.md) | ghosts-in-the-recomposition | 🟢 live | [read →](https://dev.to/darkpandawarrior/your-lazycolumn-recomposes-on-every-scroll-3amj) |
 | 2026-07-22 | [The 5-second window that crashes your service](lessons/2026-07-22-foreground-service-five-seconds/lesson.md) | the-night-shift | 🟢 live | [read →](https://dev.to/darkpandawarrior/the-5-second-window-that-crashes-your-service-5cmm) |
 | 2026-07-20 | [CancellationException is not an assassin](lessons/2026-07-20-coroutine-cancellation-messenger/lesson.md) | the-coroutine-court | 🟢 live | [read →](https://dev.to/darkpandawarrior/cancellationexception-is-not-an-assassin-2220) |
 | 2026-07-19 | [Teaching a phone to disbelieve its own GPS](lessons/2026-07-19-mileway-dead-reckoning/lesson.md) | sensors-who-lie | 🟢 live | [read →](https://dev.to/darkpandawarrior/teaching-a-phone-to-disbelieve-its-own-gps-cip) |
