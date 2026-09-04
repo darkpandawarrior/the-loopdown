@@ -2,13 +2,23 @@
 title: Voice Profile — Siddharth Pandalai
 type: reference
 status: living
-updated: 2026-07-19
-sources: [archive/*.md]
+updated: 2026-09-02
+sources: [archive/*.md, private/originals/*.docx, lessons/**, sent mail, AgentHarness/skills/writing-for-humans/VOICE-MEASURED.md]
 ---
 
 # Voice Profile
 
 The style contract. **Every draft in `lessons/` gets checked against this before it ships.**
+
+> **Measured 2026-09-02, and the measurement changed it.** The numbers behind every rule below now
+> live in `AgentHarness/skills/writing-for-humans/VOICE-MEASURED.md` (gate one: six surfaces,
+> 250,000 words, re-runnable with `scripts/voice-measure.py`). Read it before editing a rule here.
+> The short version: this file's four core rules are correct and were being obeyed nowhere. Against
+> the 2011-21 archive, the shipped lessons run contractions 23.19 -> 1.89 per 1k, first person
+> 20.23 -> 4.09, questions 8.70 -> 1.48, hedging 8.28 -> 2.53. Direct address is the exception and
+> went UP, 11.89 -> 14.48. `lint-voice.mjs` reported clean throughout, because it was checking
+> dashes and phrases, which is the mechanical tier and the half that matters least.
+
 Distilled from the archive (magazine fiction, essays, humor) and tuned for the new job:
 technical LinkedIn / dev.to / Hashnode / Medium content that still sounds unmistakably like Siddharth.
 
@@ -60,11 +70,13 @@ The whole point is that this reads like a person wrote it. These are non-negotia
   tell there is. If you reframe (and you should), make it a vivid image, not a negation.
   "Think of GPS as a witness with a concussion" is fine. "GPS isn't a sensor, it's a
   liability" is a tell.
-- **Banned phrases** (the linter flags them): *here's the thing, at the end of the day,
-  when it comes to, in today's world, let's dive in, delve, game-changer, testament to,
-  underscores, in the realm of, needless to say, it's worth noting, that said, seamless,
-  robust solution, leverage (as a verb), unlock, elevate, supercharge, navigate the
-  landscape, the fact that, in conclusion, moreover, furthermore.*
+- **Banned phrases.** The linter carries the full list, which is cheap to keep and catches drift
+  that has not happened yet. **The six that have actually appeared in his writing** are the ones
+  worth holding in your head while drafting: *the fact that* (17 hits), *unlock* (11), *moreover*
+  (7), *that said* (3), *at the end of the day* (2), *when it comes to* (1). The other 17 have
+  never fired in 250,000 words. Do not grow the list from a blog post; grow it when a real
+  sentence goes wrong. Every reserved term strands its general class, and the fiction needs
+  words like *realm* (9 hits there) that a generic slop list would take away.
 - **Vary your sentences.** Real writing has lumpy rhythm: a three-word line, then a long
   winding one, then a fragment. Uniform medium-length sentences read like a machine.
 - **Don't over-list.** Not every idea needs a tidy rule-of-three. Sometimes it's two
@@ -74,6 +86,21 @@ The whole point is that this reads like a person wrote it. These are non-negotia
 - **One joke or aside per post, minimum.** Your archive is funny. Let it be.
 
 Run `node scripts/lint-voice.mjs lessons/<dir>` before shipping. Zero flags or it doesn't go out.
+
+**A clean run certifies the mechanical tier only** — dashes, banned phrases, pipeline residue. It
+also prints a VOICE FLOOR advisory when a draft has no contractions, no "I", no hedging and no
+asides at all (six lessons currently do). That advisory never blocks, because whether a sentence
+needs a contraction is a judgment no script can make. Read it and decide.
+
+## The four signals to protect, ranked by measured evidence
+
+1. **The parenthetical aside** — the signature move. Survived the tech transition nearly intact
+   (2.90 -> 2.39 per 1k) and peaks in his email at 7.45. Never edit one out.
+2. **Direct address** — the only signal that ROSE (11.89 -> 14.48). It is already working.
+3. **Contractions** — the biggest loss, -92%. Asserted in four documents for a year, obeyed in
+   none of them. Half the lessons contain zero.
+4. **Honest hedging** — *I think*, *probably*, *not sure*. Down 69%, and half the lesson files
+   have none. Uncertainty is information; flattening it out is what makes writing sound generated.
 
 ## Hard limits (don't cross)
 

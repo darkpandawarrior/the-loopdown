@@ -1,10 +1,13 @@
 slug: collectasstate-leak
-status: ready
+status: published
 channels:
   linkedin:  { status: pending, url: "", scheduled: "", published: "", impressions: 0, reactions: 0, comments: 0 }
-  devto:     { status: pending, url: "", published: "", reactions: 0, comments: 0 }
+  devto:     { status: published, url: "https://dev.to/darkpandawarrior/collectasstate-is-quietly-leaking-your-work-4ak0", published: "2026-09-04", reactions: 0, comments: 0 }
   hashnode:  { status: pending, url: "", published: "", reactions: 0, comments: 0 }
   medium:    { status: pending, url: "", published: "", claps: 0 }
 
 # --- export draft (canonical: https://dev.to/darkpandawarrior/collectasstate-is-quietly-leaking-your-work-2kli-temp-slug-6622284) ---
 #   devto: draft https://dev.to/darkpandawarrior/collectasstate-is-quietly-leaking-your-work-2kli-temp-slug-6622284
+
+# --- export publish (canonical: https://dev.to/darkpandawarrior/collectasstate-is-quietly-leaking-your-work-4ak0) ---
+#   devto: published https://dev.to/darkpandawarrior/collectasstate-is-quietly-leaking-your-work-4ak0

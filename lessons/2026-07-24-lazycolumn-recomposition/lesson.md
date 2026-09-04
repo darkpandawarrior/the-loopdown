@@ -5,12 +5,15 @@ type: lesson
 pillar: compose-performance
 project: Dice
 tags: [android, jetpack-compose, recomposition, stability, performance]
-status: ready
+status: published
 created: 2026-07-24
 channels: [linkedin, devto, hashnode, medium]
 series: ghosts-in-the-recomposition
 cast: [the-recomposer]
 loop_iteration: 4
+url_devto: https://dev.to/darkpandawarrior/your-lazycolumn-recomposes-on-every-scroll-3amj
+published: 2026-08-30
+live: https://dev.to/darkpandawarrior/your-lazycolumn-recomposes-on-every-scroll-3amj
 ---
 
 # Your LazyColumn recomposes on every scroll

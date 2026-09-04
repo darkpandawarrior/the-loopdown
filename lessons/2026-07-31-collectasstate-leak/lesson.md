@@ -5,12 +5,15 @@ type: lesson
 pillar: compose-performance
 project: Dice
 tags: [android, jetpack-compose, flow, lifecycle, collectAsStateWithLifecycle]
-status: ready
+status: published
 created: 2026-07-31
 channels: [linkedin, devto, hashnode, medium]
 series: ghosts-in-the-recomposition
 cast: [the-recomposer]
 loop_iteration: 6
+url_devto: https://dev.to/darkpandawarrior/collectasstate-is-quietly-leaking-your-work-4ak0
+published: 2026-09-04
+live: https://dev.to/darkpandawarrior/collectasstate-is-quietly-leaking-your-work-4ak0
 ---
 
 # collectAsState is quietly leaking your work

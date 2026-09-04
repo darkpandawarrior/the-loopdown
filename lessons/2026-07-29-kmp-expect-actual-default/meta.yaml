@@ -1,8 +1,8 @@
 slug: kmp-expect-actual-default
-status: ready
+status: published
 channels:
   linkedin:  { status: pending, url: "", scheduled: "", published: "", impressions: 0, reactions: 0, comments: 0 }
-  devto:     { status: pending, url: "", published: "", reactions: 0, comments: 0 }
+  devto:     { status: published, url: "https://dev.to/darkpandawarrior/expectactual-is-the-wrong-default-in-kmp-5g7p", published: "2026-09-02", reactions: 0, comments: 0 }
   hashnode:  { status: pending, url: "", published: "", reactions: 0, comments: 0 }
   medium:    { status: pending, url: "", published: "", claps: 0 }
 
@@ -11,3 +11,6 @@ channels:
 
 # --- export draft (canonical: https://dev.to/darkpandawarrior/expectactual-is-the-wrong-default-in-kmp-28c6-temp-slug-4776872) ---
 #   devto: draft https://dev.to/darkpandawarrior/expectactual-is-the-wrong-default-in-kmp-28c6-temp-slug-4776872
+
+# --- export publish (canonical: https://dev.to/darkpandawarrior/expectactual-is-the-wrong-default-in-kmp-5g7p) ---
+#   devto: published https://dev.to/darkpandawarrior/expectactual-is-the-wrong-default-in-kmp-5g7p

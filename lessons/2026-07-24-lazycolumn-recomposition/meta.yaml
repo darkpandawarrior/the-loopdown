@@ -1,8 +1,8 @@
 slug: lazycolumn-recomposition
-status: ready
+status: published
 channels:
   linkedin:  { status: pending, url: "", scheduled: "", published: "", impressions: 0, reactions: 0, comments: 0 }
-  devto:     { status: pending, url: "", published: "", reactions: 0, comments: 0 }
+  devto:     { status: published, url: "https://dev.to/darkpandawarrior/your-lazycolumn-recomposes-on-every-scroll-3amj", published: "2026-08-30", reactions: 0, comments: 0 }
   hashnode:  { status: pending, url: "", published: "", reactions: 0, comments: 0 }
   medium:    { status: pending, url: "", published: "", claps: 0 }
 
@@ -17,3 +17,6 @@ channels:
 
 # --- export draft (canonical: https://dev.to/darkpandawarrior/your-lazycolumn-recomposes-on-every-scroll-43k9-temp-slug-3454918) ---
 #   devto: draft https://dev.to/darkpandawarrior/your-lazycolumn-recomposes-on-every-scroll-43k9-temp-slug-3454918
+
+# --- export publish (canonical: https://dev.to/darkpandawarrior/your-lazycolumn-recomposes-on-every-scroll-3amj) ---
+#   devto: published https://dev.to/darkpandawarrior/your-lazycolumn-recomposes-on-every-scroll-3amj

@@ -91,6 +91,36 @@ const PHRASES = [
 ];
 
 let flags = 0;
+let advisories = 0;
+
+// VOICE SIGNALS -- the judgment tier (voice/VOICE-MEASURED.md, gate one, 2026-09-02).
+//
+// The checks above are the MECHANICAL tier: a dash is in the string or it is not. They were the
+// only thing this linter ever checked, and they pass at 0.00 em dashes across 50,144 words of
+// lessons -- while the four signals that actually make the writing his collapsed against the
+// 2011-21 archive: contractions 23.19 -> 1.89 per 1k, first person 20.23 -> 4.09, questions
+// 8.70 -> 1.48, hedging 8.28 -> 2.53. A clean run reported "sounds human" through all of it.
+//
+// Thresholds are read off the corpus, never guessed. Per file at 200+ words the medians are
+// contractions 1.0, I 2.9, hedge 0.0, parentheticals 4.2. A rule at "2 or more signals at zero"
+// flags 29 of 51 files: accurate, and useless as a gate, because a warning that fires on 57% of
+// a corpus gets ignored along with the rest. At "all four at zero" it flags 6 -- files with no
+// voice in them at all. That is the floor, it is advisory, and it never sets the exit code:
+// whether a sentence needs a contraction is a judgment a script cannot make.
+const SIGNALS = [
+  ["contractions", /\b\w+['\u2019](s|t|re|ve|ll|d|m)\b/g],
+  ["I", /\bI\b/g],
+  ["hedging", /\b(i think|probably|maybe|kinda|not sure|roughly|might)\b/gi],
+  ["parentheticals", /\(/g],
+];
+
+function voiceSignals(text) {
+  const words = (text.match(/[A-Za-z][A-Za-z'-]*/g) || []).length;
+  if (words < 200) return null;
+  const rates = SIGNALS.map(([name, re]) => [name, ((text.match(re) || []).length * 1000) / words]);
+  return { words, rates, zeros: rates.filter(([, r]) => r === 0).map(([n]) => n) };
+}
+
 const strip = (t) => t.replace(/^---\n[\s\S]*?\n---\n/, "").replace(/```[\s\S]*?```/g, "").replace(/`[^`]*`/g, ""); // drop frontmatter + code
 
 for (const file of files) {
@@ -142,6 +172,12 @@ for (const file of files) {
     }
   });
   const name = file.split("/").slice(-2).join("/");
+  const sig = isFiction ? null : voiceSignals(text);
+  if (sig && sig.zeros.length === SIGNALS.length) {
+    advisories++;
+    console.log(`\n  ~ ${name}  VOICE FLOOR: no contractions, no "I", no hedging, no asides in ${sig.words} words`);
+    console.log(`      judgment tier, not a blocker. The archive runs 23.19 contractions and 20.23 "I" per 1k.`);
+  }
   if (hits.length) {
     flags += hits.length;
     console.log(`\n  ✗ ${name}`);
@@ -150,5 +186,13 @@ for (const file of files) {
     console.log(`  ✓ ${name}`);
   }
 }
-console.log(flags ? `\n  ${flags} flag(s). Fix before shipping.\n` : `\n  clean — sounds human. ✅\n`);
+// "clean, sounds human" was the green build that proved nothing: it said that with the voice
+// signals at zero. It now says exactly what it checked, and names what it did not.
+const tail = advisories ? `  ${advisories} voice-floor advisory(ies) — read them, they are not blockers.\n` : "";
+console.log(
+  flags
+    ? `\n  ${flags} flag(s). Fix before shipping.\n${tail}`
+    : `\n  clean on the mechanical tier: no dashes, no banned phrases, no residue.\n` +
+      `  That is all a script can certify. Voice is judged by reading it.\n${tail}`,
+);
 process.exit(flags ? 1 : 0);

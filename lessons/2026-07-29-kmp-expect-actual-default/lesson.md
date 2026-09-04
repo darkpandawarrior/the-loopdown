@@ -5,12 +5,15 @@ type: lesson
 pillar: kmp
 project: PaymentsLab
 tags: [kotlin, kmp, multiplatform, architecture, expect-actual, di]
-status: ready
+status: published
 created: 2026-07-29
 channels: [linkedin, devto, hashnode, medium]
 series: one-brain-two-bodies
 cast: [the-understudy]
 loop_iteration: 5
+url_devto: https://dev.to/darkpandawarrior/expectactual-is-the-wrong-default-in-kmp-5g7p
+published: 2026-09-02
+live: https://dev.to/darkpandawarrior/expectactual-is-the-wrong-default-in-kmp-5g7p
 ---
 
 # expect/actual is the wrong default in KMP
