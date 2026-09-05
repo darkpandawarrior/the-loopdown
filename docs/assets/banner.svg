@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 320" width="1280" height="320">
+<title>The Loopdown — banner</title>
+<rect x="0" y="0" width="1280" height="320" fill="#0A0D0C"/>
+<g transform="translate(80,64) scale(4)" fill="none">
+<line x1="12" y1="10" x2="12" y2="38" stroke="#F2A13D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="16" y1="10" x2="16" y2="38" stroke="#F2A13D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="12" y1="13" x2="34" y2="13" stroke="#F2A13D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="12" y1="21" x2="34" y2="21" stroke="#F2A13D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="12" y1="29" x2="34" y2="29" stroke="#F2A13D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="12" y1="37" x2="34" y2="37" stroke="#F2A13D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="37" cy="13" r="3" stroke="#F2A13D" stroke-width="2"/>
+<circle cx="37" cy="21" r="3" stroke="#F2A13D" stroke-width="2"/>
+<circle cx="37" cy="29" r="3" stroke="#F2A13D" stroke-width="2"/>
+<circle cx="37" cy="37" r="3" stroke="#F2A13D" stroke-width="2"/>
+<circle cx="12" cy="10" r="3" fill="#F2A13D"/>
+</g>
+<text x="320" y="129" dominant-baseline="central" font-family="'Space Grotesk','Segoe UI',sans-serif" font-weight="600" font-size="120" letter-spacing="-0.01em" fill="#F7F5F1">The Loopdown</text>
+<text x="320" y="213" dominant-baseline="central" font-family="'JetBrains Mono','Courier New',monospace" font-weight="400" font-size="40" letter-spacing="0.16em" fill="#C47F2A">ONE LESSON, FOUR PLATFORMS</text>
+</svg>

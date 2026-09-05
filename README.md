@@ -1,3 +1,5 @@
+<p align="center"><img src="docs/assets/banner.svg" alt="The Loopdown — one lesson, four platforms" width="640"></p>
+
 # The Loopdown
 
 > *loop* + *lowdown*, field notes from an engineer who writes.
