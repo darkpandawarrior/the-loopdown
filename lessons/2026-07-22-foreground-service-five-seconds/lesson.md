@@ -3,7 +3,7 @@ title: "The 5-second window that crashes your service"
 slug: foreground-service-five-seconds
 type: lesson
 pillar: background-execution
-project: Mileway
+project: Doori
 tags: [android, foreground-service, workmanager, lifecycle, doze]
 status: published
 created: 2026-07-22

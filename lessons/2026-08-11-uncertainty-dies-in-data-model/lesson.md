@@ -3,7 +3,7 @@ title: "Your data model is where uncertainty goes to die"
 slug: uncertainty-dies-in-data-model
 type: lesson
 pillar: data-integrity
-project: Mileway
+project: Doori
 tags: [data-modelling, architecture, provenance, sensors, api-design]
 status: ready
 created: 2026-08-11

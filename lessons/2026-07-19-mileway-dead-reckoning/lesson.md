@@ -3,7 +3,7 @@ title: "Teaching a phone to disbelieve its own GPS"
 slug: mileway-dead-reckoning
 type: lesson
 pillar: location
-project: Mileway
+project: Doori
 tags: [android, location, sensor-fusion, dead-reckoning, kalman]
 status: published
 created: 2026-07-19

@@ -3,7 +3,7 @@ title: "One global threshold is how you delete valid data"
 slug: one-global-threshold
 type: lesson
 pillar: data-integrity
-project: Mileway
+project: Doori
 tags: [android, location, thresholds, heuristics, sensor-fusion]
 status: ready
 created: 2026-08-06

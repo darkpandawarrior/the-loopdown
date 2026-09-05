@@ -3,7 +3,7 @@ title: "expect/actual is the wrong default in KMP"
 slug: kmp-expect-actual-default
 type: lesson
 pillar: kmp
-project: PaymentsLab
+project: PaymentsLab-KMP
 tags: [kotlin, kmp, multiplatform, architecture, expect-actual, di]
 status: published
 created: 2026-07-29

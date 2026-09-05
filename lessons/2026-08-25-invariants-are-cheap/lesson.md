@@ -3,7 +3,7 @@ title: "Invariants are cheap. Silent corruption is not."
 slug: invariants-are-cheap
 type: lesson
 pillar: data-integrity
-project: Mileway
+project: Doori
 tags: [data-integrity, validation, architecture, kotlin, testing]
 status: ready
 created: 2026-08-25

@@ -3,7 +3,7 @@ title: "I audited my own migrations. It was not fine."
 slug: the-ferryman-rows-one-way
 type: lesson
 pillar: data-integrity
-project: Mileway
+project: Doori
 tags: [android, room, migrations, testing, kotlin]
 status: ready
 created: 2026-08-31

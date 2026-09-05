@@ -3,7 +3,7 @@ title: "Filtered should never mean deleted"
 slug: filtered-never-deleted
 type: lesson
 pillar: data-integrity
-project: Mileway
+project: Doori
 tags: [android, data-modelling, filtering, observability, architecture]
 status: ready
 created: 2026-08-04

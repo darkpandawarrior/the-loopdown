@@ -3,7 +3,7 @@ title: "Every filter needs a documented exception"
 slug: documented-exception
 type: lesson
 pillar: data-integrity
-project: Mileway
+project: Doori
 tags: [android, filtering, edge-cases, code-quality, location]
 status: ready
 created: 2026-08-20

@@ -3,7 +3,7 @@ title: "Your thresholds do not belong in constants"
 slug: thresholds-in-config
 type: lesson
 pillar: data-integrity
-project: Mileway
+project: Doori
 tags: [architecture, configuration, kotlin, refactoring, tuning]
 status: ready
 created: 2026-08-27

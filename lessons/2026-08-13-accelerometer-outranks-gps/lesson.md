@@ -3,7 +3,7 @@ title: "When two sensors disagree, rank them"
 slug: accelerometer-outranks-gps
 type: lesson
 pillar: data-integrity
-project: Mileway
+project: Doori
 tags: [android, sensors, sensor-fusion, imu, location]
 status: ready
 created: 2026-08-13

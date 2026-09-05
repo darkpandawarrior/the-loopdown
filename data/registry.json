@@ -235,7 +235,7 @@
       "slug": "the-ferryman-rows-one-way",
       "type": "lesson",
       "pillar": "data-integrity",
-      "project": "Mileway",
+      "project": "Doori",
       "tags": [
         "android",
         "room",
@@ -305,7 +305,7 @@
       "slug": "thresholds-in-config",
       "type": "lesson",
       "pillar": "data-integrity",
-      "project": "Mileway",
+      "project": "Doori",
       "tags": [
         "architecture",
         "configuration",
@@ -340,7 +340,7 @@
       "slug": "invariants-are-cheap",
       "type": "lesson",
       "pillar": "data-integrity",
-      "project": "Mileway",
+      "project": "Doori",
       "tags": [
         "data-integrity",
         "validation",
@@ -375,7 +375,7 @@
       "slug": "documented-exception",
       "type": "lesson",
       "pillar": "data-integrity",
-      "project": "Mileway",
+      "project": "Doori",
       "tags": [
         "android",
         "filtering",
@@ -445,7 +445,7 @@
       "slug": "accelerometer-outranks-gps",
       "type": "lesson",
       "pillar": "data-integrity",
-      "project": "Mileway",
+      "project": "Doori",
       "tags": [
         "android",
         "sensors",
@@ -481,7 +481,7 @@
       "slug": "uncertainty-dies-in-data-model",
       "type": "lesson",
       "pillar": "data-integrity",
-      "project": "Mileway",
+      "project": "Doori",
       "tags": [
         "data-modelling",
         "architecture",
@@ -516,7 +516,7 @@
       "slug": "one-global-threshold",
       "type": "lesson",
       "pillar": "data-integrity",
-      "project": "Mileway",
+      "project": "Doori",
       "tags": [
         "android",
         "location",
@@ -551,7 +551,7 @@
       "slug": "filtered-never-deleted",
       "type": "lesson",
       "pillar": "data-integrity",
-      "project": "Mileway",
+      "project": "Doori",
       "tags": [
         "android",
         "data-modelling",
@@ -621,7 +621,7 @@
       "slug": "kmp-expect-actual-default",
       "type": "lesson",
       "pillar": "kmp",
-      "project": "PaymentsLab",
+      "project": "PaymentsLab-KMP",
       "tags": [
         "kotlin",
         "kmp",
@@ -692,7 +692,7 @@
       "slug": "foreground-service-five-seconds",
       "type": "lesson",
       "pillar": "background-execution",
-      "project": "Mileway",
+      "project": "Doori",
       "tags": [
         "android",
         "foreground-service",
@@ -762,7 +762,7 @@
       "slug": "mileway-dead-reckoning",
       "type": "lesson",
       "pillar": "location",
-      "project": "Mileway",
+      "project": "Doori",
       "tags": [
         "android",
         "location",
