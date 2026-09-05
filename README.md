@@ -2,8 +2,8 @@
 
 > *loop* + *lowdown*, field notes from an engineer who writes.
 
-Short, sharp technical lessons pulled from real projects (Mileway, kmp-toolkit,
-PaymentsLab, Kursi, Dice), each written once and adapted to LinkedIn, dev.to,
+Short, sharp technical lessons pulled from real projects (Doori, kmp-toolkit,
+PaymentsLab-KMP, Gaddi, Dice), each written once and adapted to LinkedIn, dev.to,
 Hashnode, and Medium, plus an archive of everything I've written before.
 
 **Case study:** [The Loopdown](https://cv-siddharth.vercel.app/project/the-loopdown)
@@ -139,7 +139,7 @@ generic LinkedIn.
 ```bash
 cd scripts && npm install          # once (pulls @resvg/resvg-js for SVG→PNG)
 
-node new-lesson.mjs "dead reckoning" --pillar location --project Mileway --date 2026-07-19
+node new-lesson.mjs "dead reckoning" --pillar location --project Doori --date 2026-07-19
 node render.mjs lessons/2026-07-19-dead-reckoning      # card.yaml → card.png
 node build-registry.mjs                                 # regenerate registry + this README
 node check-setup.mjs                                    # pipeline readiness dashboard
