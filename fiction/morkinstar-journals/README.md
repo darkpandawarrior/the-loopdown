@@ -20,8 +20,9 @@ each one tells about its own weather, until the season he stops visiting anywher
 Entry #2245 was written in 2021 and lives in [`archive/`](../../archive/legend-of-koaeluae-scales.md).
 It had the whole frame in it and did not know it was a series yet. The other forty-seven grew out of it.
 
-**Read it on the site:** <https://cv-siddharth.vercel.app/anthology>. All four seasons, every
-entry, the plates, the tellers and the starmap.
+**Read it on the site:** <https://siddharth-pandalai.vercel.app/anthology> (also at
+<https://cv-siddharth.vercel.app/anthology>). All four seasons, every entry, the plates, the
+tellers and the starmap.
 
 A self-contained local copy can be rebuilt any time with `node scripts/morkinstar-site.mjs`.
 It is gitignored because it is 2.2MB of generated output that changes on every run.

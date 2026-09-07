@@ -33,10 +33,16 @@ idea → `new-lesson` → author `lesson.md` → adapt `linkedin.md`/`article.md
 ## Tracking schema (`meta.yaml`)
 Per channel: `{status, url, scheduled, published, <engagement counters>}`. Rolls into `registry.json`.
 
-## Deliberately deferred (ponytail)
-- `export.mjs` to dev.to/Hashnode — needs the author's API tokens; stubbed + documented, built when tokens exist.
-- GitHub Action for auto-render/registry — add once the manual flow feels right.
-- AI hero images — hook exists in the pipeline (`assets/`), wired when a flagship post wants one.
+## Shipped since this spec
+- `export.mjs` to dev.to/Hashnode: built. Six lessons are live across dev.to, LinkedIn, Medium
+  and Hashnode.
+- GitHub Action for auto-render/registry: built. `.github/workflows/pipeline.yml` lints voice,
+  smoke-tests renders, and fails the build when the registry or README drift from source.
+
+## Deliberately not built
+- AI hero images: rejected, not deferred. `scripts/figures.mjs` places each lesson's own
+  carousel art in the article body instead. That art already exists, is on-brand, and generated
+  decorative art would cost money to make the piece worse (see the file's own header comment).
 
 ## Non-goals
 - No CMS, no DB, no web app. Markdown + git + a rasterizer is the whole system.

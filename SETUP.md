@@ -19,7 +19,7 @@ Needed so cover images have a public URL and the repo becomes your portfolio wal
 
 ```bash
 gh auth login                       # if not already
-cd /Users/darkpandawarrior/Repos/the-loopdown
+cd /Users/darkpandawarrior/Repos/Writing/the-loopdown
 gh repo create the-loopdown --public --source=. --push
 ```
 Then set in `.env`:

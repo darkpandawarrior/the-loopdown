@@ -8,7 +8,8 @@ Short, sharp technical lessons pulled from real projects (Doori, kmp-toolkit,
 PaymentsLab-KMP, Gaddi, Dice), each written once and adapted to LinkedIn, dev.to,
 Hashnode, and Medium, plus an archive of everything I've written before.
 
-**Case study:** [The Loopdown](https://cv-siddharth.vercel.app/project/the-loopdown)
+**Case study:** [The Loopdown](https://siddharth-pandalai.vercel.app/project/the-loopdown)
+(also at [cv-siddharth.vercel.app](https://cv-siddharth.vercel.app/project/the-loopdown))
 
 This repo does three jobs at once:
 
@@ -32,7 +33,7 @@ Appearances below). The world is in [`lore/`](lore/bible.md); the voice is in
 
 ## 🔭 The Morkinstar Journals, the fiction anthology
 
-Separate universe, same author. **[Two seasons, twenty entries](fiction/morkinstar-journals/README.md)**,
+Separate universe, same author. **[Four seasons, forty-eight entries](fiction/morkinstar-journals/README.md)**,
 grown out of a single 2021 story in the archive that turned out to have a whole series folded
 inside it.
 
@@ -40,15 +41,18 @@ inside it.
 > one tells about its own weather. Every world independently reports fourteen gods and fourteen
 > monsters. Nobody anywhere can name the fourteenth.
 
-- **[Read it on the site →](https://cv-siddharth.vercel.app/anthology)** (both seasons, every entry,
-  the plates, the tellers and the starmap)
-- Canon: [S1 bible](fiction/morkinstar-journals/bible.md) · [S2 bible](fiction/morkinstar-journals/s2-bible.md)
-- Both seasons were audited by multi-lens councils plus cross-family ensembles:
+- **[Read it on the site →](https://siddharth-pandalai.vercel.app/anthology)** (also at
+  [cv-siddharth.vercel.app](https://cv-siddharth.vercel.app/anthology)): all four seasons, every
+  entry, the plates, the tellers and the starmap
+- Canon: [S1 bible](fiction/morkinstar-journals/bible.md) · [S2 bible](fiction/morkinstar-journals/s2-bible.md) ·
+  [S3 bible](fiction/morkinstar-journals/s3-bible.md) · [S4 bible](fiction/morkinstar-journals/s4-bible.md)
+- Seasons One and Two were audited by multi-lens councils plus cross-family ensembles:
   [S1](fiction/morkinstar-journals/council-2026-08-15.md) ·
-  [S2 ownership audit](fiction/morkinstar-journals/council-s2-2026-08-15.md)
+  [S2 ownership audit](fiction/morkinstar-journals/council-s2-2026-08-15.md). Season Three's
+  ownership test is recorded inline in [s3-bible.md](fiction/morkinstar-journals/s3-bible.md).
 
 ```bash
-node scripts/morkinstar-plates.mjs   # 21 field plates, both seasons
+node scripts/morkinstar-plates.mjs   # 49 field plates, all four seasons + cover
 node scripts/morkinstar-site.mjs     # → site.html
 ```
 
@@ -194,9 +198,9 @@ Each lesson goes out as a *coordinated cross-platform drop* ([SETUP.md](SETUP.md
 - [x] Repo + archive + voice profile + visual engine + first lesson
 - [x] Lore layer, universe bible, cast, series, continuity index
 - [x] `export.mjs`, dev.to/Hashnode/Buffer + paste files; `check-setup.mjs` dashboard
-- [ ] Fill `.env` tokens ([SETUP.md](SETUP.md)) + push to GitHub
-- [ ] GitHub Action, auto-render assets + rebuild registry on push
-- [ ] AI hero-image hook for flagship/story posts
+- [x] Tokens filled, repo pushed: six lessons live across dev.to, LinkedIn, Medium and Hashnode
+- [x] `.github/workflows/pipeline.yml`: lints voice, smoke-tests renders, fails the build on
+      registry drift, on every push to main
 - [ ] Cadence: 2 to 3 posts/week from the backlog
 
 ## License
