@@ -265,6 +265,20 @@ const castRows = castIndex.length
   ? castIndex.map((c) => `| \`${c.id}\` | ${c.appearances} | ${c.in.map((x) => link(x.title, x.file)).join(", ")} |`).join("\n")
   : "| _no cast on stage yet_ | 0 | |";
 
+// Sibling series of the anthology (The Dark Directory and, later, whatever
+// joins it). Entry count comes straight off anthology.siblings so this line
+// can never say a number the fiction directory doesn't back, the same reason
+// the tables above are generated instead of retyped. No canon-file link here:
+// a sibling's working bible is a spoiler index barred from every fiction
+// surface by the corpus's own leak doctrine, and this table sits one section
+// above the anthology it indexes.
+const siblingRows = (anthology?.siblings ?? [])
+  .map((s) => `| [${s.title}](fiction/morkinstar-journals/README.md#${s.slug}) | ${s.entries.length} |`)
+  .join("\n");
+const siblingsSection = siblingRows
+  ? `\n### 🗄️ Sibling series (same universe, not a season)\n\n| Series | Entries |\n|--------|---------|\n${siblingRows}\n`
+  : "";
+
 const block = `<!-- REGISTRY:START -->
 ### 📡 Lessons (dev content)
 
@@ -283,7 +297,7 @@ ${castRows}
 | Title | Form | Era | Words | Tags |
 |-------|------|-----|-------|------|
 ${archiveRows}
-<!-- REGISTRY:END -->`;
+${siblingsSection}<!-- REGISTRY:END -->`;
 
 const readmePath = join(ROOT, "README.md");
 let readme = readFileSync(readmePath, "utf8");
