@@ -50,6 +50,8 @@ inside it.
   [S1](fiction/morkinstar-journals/council-2026-08-15.md) ·
   [S2 ownership audit](fiction/morkinstar-journals/council-s2-2026-08-15.md). Season Three's
   ownership test is recorded inline in [s3-bible.md](fiction/morkinstar-journals/s3-bible.md).
+- Sibling series, same universe, no shared cast: [The Dark Directory](fiction/morkinstar-journals/README.md#the-dark-directory)
+  (entry count in the registry table below)
 
 ```bash
 node scripts/morkinstar-plates.mjs   # 49 field plates, all four seasons + cover
@@ -113,6 +115,12 @@ The rhyme is the reward.
 | [The Legend Of K'öæluæ's Scales](archive/legend-of-koaeluae-scales.md) | short-fiction | 2021 | 1804 | `world-building` `mythology` `sci-fi` `framed-narrative` |
 | [The Loopdown](archive/the-loopdown-story.md) | short-fiction | 2020 | 1973 | `time-loop` `sci-fi` `world-building` `diary` |
 | [The Pun Force](archive/the-pun-force.md) | humor | humor | 627 | `puns` `meta` `comedy` `world-building` |
+
+### 🗄️ Sibling series (same universe, not a season)
+
+| Series | Entries |
+|--------|---------|
+| [The Dark Directory](fiction/morkinstar-journals/README.md#the-dark-directory) | 10 |
 <!-- REGISTRY:END -->
 
 ---

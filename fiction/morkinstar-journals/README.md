@@ -138,6 +138,31 @@ close: [`error-doctrine.md`](error-doctrine.md).
 
 ---
 
+## The Dark Directory
+
+A sibling series, not a fifth season: it shares the universe and not the cast. Ten retrieval
+files, each one a request answered by an archive that never once states anything false and is
+not the kind of thing that can be right about itself.
+
+| # | Entry |
+|---|---|
+| 01 | [The Word The Form Will Not Take](dd-01-the-word-the-form-will-not-take.md) |
+| 02 | [Charged By The Sheet](dd-02-charged-by-the-sheet.md) |
+| 03 | [The Column Is Present](dd-03-the-column-is-present.md) |
+| 04 | [No Further Contact Indicated](dd-04-no-further-contact-indicated.md) |
+| 05 | [Certified As At](dd-05-certified-as-at.md) |
+| 06 | [Not For Reliance](dd-06-not-for-reliance.md) |
+| 07 | [A Withdrawal Is A Record](dd-07-a-withdrawal-is-a-record.md) |
+| 08 | [Described At Item Level](dd-08-described-at-item-level.md) |
+| 09 | [Arranged By](dd-09-arranged-by.md) |
+| 10 | [If It Is Ever Filled In](dd-10-if-it-is-ever-filled-in.md) |
+
+No council or ownership audit is on record for this series. Its working bible is not linked from
+here: a working bible is a spoiler index, and the corpus's own leak doctrine bars it from every
+fiction surface.
+
+---
+
 ## The art
 
 Three layers, and which layer a thing belongs to is a canon decision, not a design one.
