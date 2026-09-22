@@ -5,10 +5,10 @@ type: lesson
 pillar: data-integrity
 project: Doori
 tags: [android, sensors, sensor-fusion, imu, location]
-status: ready
+status: published
 created: 2026-08-13
-live:
-url_devto:
+live: https://dev.to/darkpandawarrior/when-two-sensors-disagree-rank-them-12ki
+url_devto: https://dev.to/darkpandawarrior/when-two-sensors-disagree-rank-them-12ki
 url_linkedin:
 url_medium:
 url_hashnode:
@@ -16,6 +16,7 @@ channels: [linkedin, devto, hashnode, medium]
 series: sensors-who-lie
 cast: [the-concussed-witness, the-second-witness]
 loop_iteration: 10
+published: 2026-09-18
 ---
 
 # When two sensors disagree, rank them

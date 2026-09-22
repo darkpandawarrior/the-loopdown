@@ -1,8 +1,8 @@
 slug: filtered-never-deleted
-status: ready
+status: published
 channels:
   linkedin:  { status: pending, url: "", scheduled: "", published: "", impressions: 0, reactions: 0, comments: 0 }
-  devto:     { status: pending, url: "", published: "", reactions: 0, comments: 0 }
+  devto:     { status: published, url: "https://dev.to/darkpandawarrior/filtered-should-never-mean-deleted-5081", published: "2026-09-06", reactions: 0, comments: 0 }
   hashnode:  { status: pending, url: "", published: "", reactions: 0, comments: 0 }
   medium:    { status: pending, url: "", published: "", claps: 0 }
 
@@ -11,3 +11,6 @@ channels:
 
 # --- export draft (canonical: https://dev.to/darkpandawarrior/filtered-should-never-mean-deleted-3kpc-temp-slug-4385277) ---
 #   devto: draft https://dev.to/darkpandawarrior/filtered-should-never-mean-deleted-3kpc-temp-slug-4385277
+
+# --- export publish (canonical: https://dev.to/darkpandawarrior/filtered-should-never-mean-deleted-5081) ---
+#   devto: published https://dev.to/darkpandawarrior/filtered-should-never-mean-deleted-5081

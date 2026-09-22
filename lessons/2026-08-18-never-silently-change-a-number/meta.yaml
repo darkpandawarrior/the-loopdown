@@ -1,8 +1,8 @@
 slug: never-silently-change-a-number
-status: ready
+status: published
 channels:
   linkedin:  { status: pending, url: "", scheduled: "", published: "", impressions: 0, reactions: 0, comments: 0 }
-  devto:     { status: pending, url: "", published: "", reactions: 0, comments: 0 }
+  devto:     { status: published, url: "https://dev.to/darkpandawarrior/never-silently-change-a-number-someone-gets-paid-on-h4n", published: "2026-09-20", reactions: 0, comments: 0 }
   hashnode:  { status: pending, url: "", published: "", reactions: 0, comments: 0 }
   medium:    { status: pending, url: "", published: "", claps: 0 }
 
@@ -11,3 +11,6 @@ channels:
 
 # --- export draft (canonical: https://dev.to/darkpandawarrior/never-silently-change-a-number-someone-gets-paid-on-4m55-temp-slug-4450928) ---
 #   devto: draft https://dev.to/darkpandawarrior/never-silently-change-a-number-someone-gets-paid-on-4m55-temp-slug-4450928
+
+# --- export publish (canonical: https://dev.to/darkpandawarrior/never-silently-change-a-number-someone-gets-paid-on-h4n) ---
+#   devto: published https://dev.to/darkpandawarrior/never-silently-change-a-number-someone-gets-paid-on-h4n

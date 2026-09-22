@@ -5,10 +5,10 @@ type: lesson
 pillar: data-integrity
 project: Doori
 tags: [data-modelling, architecture, provenance, sensors, api-design]
-status: ready
+status: published
 created: 2026-08-11
-live:
-url_devto:
+live: https://dev.to/darkpandawarrior/your-data-model-is-where-uncertainty-goes-to-die-g6j
+url_devto: https://dev.to/darkpandawarrior/your-data-model-is-where-uncertainty-goes-to-die-g6j
 url_linkedin:
 url_medium:
 url_hashnode:
@@ -16,6 +16,7 @@ channels: [linkedin, devto, hashnode, medium]
 series: chain-of-custody
 cast: [the-archivist]
 loop_iteration: 9
+published: 2026-09-16
 ---
 
 # Your data model is where uncertainty goes to die

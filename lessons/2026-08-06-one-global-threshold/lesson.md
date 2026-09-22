@@ -5,10 +5,10 @@ type: lesson
 pillar: data-integrity
 project: Doori
 tags: [android, location, thresholds, heuristics, sensor-fusion]
-status: ready
+status: published
 created: 2026-08-06
-live:
-url_devto:
+live: https://dev.to/darkpandawarrior/one-global-threshold-is-how-you-delete-valid-data-303h
+url_devto: https://dev.to/darkpandawarrior/one-global-threshold-is-how-you-delete-valid-data-303h
 url_linkedin:
 url_medium:
 url_hashnode:
@@ -16,6 +16,7 @@ channels: [linkedin, devto, hashnode, medium]
 series: sensors-who-lie
 cast: [the-concussed-witness]
 loop_iteration: 8
+published: 2026-09-14
 ---
 
 # One global threshold is how you delete valid data

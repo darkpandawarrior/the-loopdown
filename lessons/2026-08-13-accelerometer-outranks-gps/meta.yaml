@@ -1,8 +1,8 @@
 slug: accelerometer-outranks-gps
-status: ready
+status: published
 channels:
   linkedin:  { status: pending, url: "", scheduled: "", published: "", impressions: 0, reactions: 0, comments: 0 }
-  devto:     { status: pending, url: "", published: "", reactions: 0, comments: 0 }
+  devto:     { status: published, url: "https://dev.to/darkpandawarrior/when-two-sensors-disagree-rank-them-12ki", published: "2026-09-18", reactions: 0, comments: 0 }
   hashnode:  { status: pending, url: "", published: "", reactions: 0, comments: 0 }
   medium:    { status: pending, url: "", published: "", claps: 0 }
 
@@ -11,3 +11,6 @@ channels:
 
 # --- export draft (canonical: https://dev.to/darkpandawarrior/when-two-sensors-disagree-rank-them-3ce2-temp-slug-4172699) ---
 #   devto: draft https://dev.to/darkpandawarrior/when-two-sensors-disagree-rank-them-3ce2-temp-slug-4172699
+
+# --- export publish (canonical: https://dev.to/darkpandawarrior/when-two-sensors-disagree-rank-them-12ki) ---
+#   devto: published https://dev.to/darkpandawarrior/when-two-sensors-disagree-rank-them-12ki

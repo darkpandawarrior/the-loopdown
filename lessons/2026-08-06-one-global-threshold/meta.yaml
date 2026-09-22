@@ -1,8 +1,8 @@
 slug: one-global-threshold
-status: ready
+status: published
 channels:
   linkedin:  { status: pending, url: "", scheduled: "", published: "", impressions: 0, reactions: 0, comments: 0 }
-  devto:     { status: pending, url: "", published: "", reactions: 0, comments: 0 }
+  devto:     { status: published, url: "https://dev.to/darkpandawarrior/one-global-threshold-is-how-you-delete-valid-data-303h", published: "2026-09-14", reactions: 0, comments: 0 }
   hashnode:  { status: pending, url: "", published: "", reactions: 0, comments: 0 }
   medium:    { status: pending, url: "", published: "", claps: 0 }
 
@@ -11,3 +11,6 @@ channels:
 
 # --- export draft (canonical: https://dev.to/darkpandawarrior/one-global-threshold-is-how-you-delete-valid-data-3724-temp-slug-6391758) ---
 #   devto: draft https://dev.to/darkpandawarrior/one-global-threshold-is-how-you-delete-valid-data-3724-temp-slug-6391758
+
+# --- export publish (canonical: https://dev.to/darkpandawarrior/one-global-threshold-is-how-you-delete-valid-data-303h) ---
+#   devto: published https://dev.to/darkpandawarrior/one-global-threshold-is-how-you-delete-valid-data-303h

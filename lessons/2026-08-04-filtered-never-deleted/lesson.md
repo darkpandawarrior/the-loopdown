@@ -5,10 +5,10 @@ type: lesson
 pillar: data-integrity
 project: Doori
 tags: [android, data-modelling, filtering, observability, architecture]
-status: ready
+status: published
 created: 2026-08-04
-live:
-url_devto:
+live: https://dev.to/darkpandawarrior/filtered-should-never-mean-deleted-5081
+url_devto: https://dev.to/darkpandawarrior/filtered-should-never-mean-deleted-5081
 url_linkedin:
 url_medium:
 url_hashnode:
@@ -16,6 +16,7 @@ channels: [linkedin, devto, hashnode, medium]
 series: sensors-who-lie
 cast: [the-concussed-witness]
 loop_iteration: 7
+published: 2026-09-06
 ---
 
 # Filtered should never mean deleted

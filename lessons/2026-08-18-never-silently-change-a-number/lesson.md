@@ -5,10 +5,10 @@ type: lesson
 pillar: data-integrity
 project: Dice
 tags: [product-engineering, trust, ux, data-integrity, android]
-status: ready
+status: published
 created: 2026-08-18
-live:
-url_devto:
+live: https://dev.to/darkpandawarrior/never-silently-change-a-number-someone-gets-paid-on-h4n
+url_devto: https://dev.to/darkpandawarrior/never-silently-change-a-number-someone-gets-paid-on-h4n
 url_linkedin:
 url_medium:
 url_hashnode:
@@ -16,6 +16,7 @@ channels: [linkedin, devto, hashnode, medium]
 series: chain-of-custody
 cast: [the-archivist]
 loop_iteration: 11
+published: 2026-09-20
 ---
 
 # Never silently change a number someone gets paid on
