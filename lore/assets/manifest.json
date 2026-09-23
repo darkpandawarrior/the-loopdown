@@ -1,0 +1,272 @@
+[
+  {
+    "id": "the-concussed-witness",
+    "kind": "cast",
+    "file": "lore/assets/cast/the-concussed-witness.png",
+    "alt": "A bandaged detective points down a dark alley with total, serene confidence, certain and pointing the wrong way.",
+    "cast_ids": [
+      "the-concussed-witness"
+    ],
+    "series_ids": [],
+    "model": "google/gemini-3-pro-image",
+    "generatedAt": "2026-09-23T17:12:32.525Z"
+  },
+  {
+    "id": "the-archivist",
+    "kind": "cast",
+    "file": "lore/assets/cast/the-archivist.png",
+    "alt": "A clerk stamps a fresh folder into an infinite filing wall, smugly certain a properly dated record is the only thing that survives a dispute.",
+    "cast_ids": [
+      "the-archivist"
+    ],
+    "series_ids": [],
+    "model": "google/gemini-3-pro-image",
+    "generatedAt": "2026-09-23T17:20:42.541Z"
+  },
+  {
+    "id": "the-second-witness",
+    "kind": "cast",
+    "file": "lore/assets/cast/the-second-witness.png",
+    "alt": "A figure presses both palms flat to a wall in total darkness, eyes shut, one finger lighting up the instant it feels a tremor it cannot locate.",
+    "cast_ids": [
+      "the-second-witness"
+    ],
+    "series_ids": [],
+    "model": "google/gemini-3-pro-image",
+    "generatedAt": "2026-09-23T17:20:42.543Z"
+  },
+  {
+    "id": "doze-the-jailer",
+    "kind": "cast",
+    "file": "lore/assets/cast/doze-the-jailer.png",
+    "alt": "A jailer studies a glowing stopwatch with its hand almost at the end of the sweep, one palm already on the bolt, unmoved and about to close the door.",
+    "cast_ids": [
+      "doze-the-jailer"
+    ],
+    "series_ids": [],
+    "model": "google/gemini-3-pro-image",
+    "generatedAt": "2026-09-23T17:23:19.057Z"
+  },
+  {
+    "id": "the-recomposer",
+    "kind": "cast",
+    "file": "lore/assets/cast/the-recomposer.png",
+    "alt": "A gremlin perched on a ladder repaints an already-empty room, brush loaded and bored, because nothing had to change for it to redo the work anyway.",
+    "cast_ids": [
+      "the-recomposer"
+    ],
+    "series_ids": [],
+    "model": "google/gemini-3-pro-image",
+    "generatedAt": "2026-09-23T17:20:42.543Z"
+  },
+  {
+    "id": "the-understudy",
+    "kind": "cast",
+    "file": "lore/assets/cast/the-understudy.png",
+    "alt": "A performer stands between two stage doors adjusting a costume that no longer fits the part, a rack of other roles waiting in the dark behind them.",
+    "cast_ids": [
+      "the-understudy"
+    ],
+    "series_ids": [],
+    "model": "google/gemini-3-pro-image",
+    "generatedAt": "2026-09-23T17:23:19.060Z"
+  },
+  {
+    "id": "the-messenger",
+    "kind": "cast",
+    "file": "lore/assets/cast/the-messenger.png",
+    "alt": "A hooded courier holds out a small glowing note while unseen hands drag at his cloak to strike him down for carrying it.",
+    "cast_ids": [
+      "the-messenger"
+    ],
+    "series_ids": [],
+    "model": "google/gemini-3-pro-image",
+    "generatedAt": "2026-09-23T17:20:42.543Z"
+  },
+  {
+    "id": "the-ferryman",
+    "kind": "cast",
+    "file": "lore/assets/cast/the-ferryman.png",
+    "alt": "A cloaked ferryman poles away from a crumbling dock, still gripping a passenger's wrist across the widening gap, the crossing already irreversible.",
+    "cast_ids": [
+      "the-ferryman"
+    ],
+    "series_ids": [],
+    "model": "google/gemini-3-pro-image",
+    "generatedAt": "2026-09-23T17:20:42.543Z"
+  },
+  {
+    "id": "the-vault-keeper",
+    "kind": "cast",
+    "file": "lore/assets/cast/the-vault-keeper.png",
+    "alt": "A guard winces as he turns a key set into a lock built into his own chest, sealing something away from himself as surely as from anyone else.",
+    "cast_ids": [
+      "the-vault-keeper"
+    ],
+    "series_ids": [],
+    "model": "google/gemini-3-pro-image",
+    "generatedAt": "2026-09-23T17:20:42.543Z"
+  },
+  {
+    "id": "the-backlog",
+    "kind": "cast",
+    "file": "lore/assets/cast/the-backlog.png",
+    "alt": "A many-headed hydra severs one of its own necks with a satisfied snip, two new heads already budding at the stump before the cut lands.",
+    "cast_ids": [
+      "the-backlog"
+    ],
+    "series_ids": [],
+    "model": "google/gemini-3-pro-image",
+    "generatedAt": "2026-09-23T17:20:42.543Z"
+  },
+  {
+    "id": "the-fleet",
+    "kind": "cast",
+    "file": "lore/assets/cast/the-fleet.png",
+    "alt": "A captain stands clean-handed at the helm pointing at a chart, while a crew of identical rowers strains in unison below deck doing all the actual work.",
+    "cast_ids": [
+      "the-fleet"
+    ],
+    "series_ids": [],
+    "model": "google/gemini-3-pro-image",
+    "generatedAt": "2026-09-23T17:20:42.543Z"
+  },
+  {
+    "id": "the-borrowed-hand",
+    "kind": "cast",
+    "file": "lore/assets/cast/the-borrowed-hand.png",
+    "alt": "A single vast hand reaches up through a hatch to complete a blueprint, filling in the missing corner with something plausible that was never drawn.",
+    "cast_ids": [
+      "the-borrowed-hand"
+    ],
+    "series_ids": [],
+    "model": "google/gemini-3-pro-image",
+    "generatedAt": "2026-09-23T17:20:42.543Z"
+  },
+  {
+    "id": "null",
+    "kind": "cast",
+    "file": "lore/assets/cast/null.png",
+    "alt": "A featureless black figure steps calmly out of a hairline crack in the wall at the worst possible moment, and every professional in the room reacts too late.",
+    "cast_ids": [
+      "null"
+    ],
+    "series_ids": [],
+    "model": "google/gemini-3-pro-image",
+    "generatedAt": "2026-09-23T17:20:42.543Z"
+  },
+  {
+    "id": "sensors-who-lie",
+    "kind": "series",
+    "file": "lore/assets/series/sensors-who-lie.png",
+    "alt": "A bandaged, confident figure points the wrong way down a lamplit alley while a huddle of trusting instruments follow the gesture without question.",
+    "cast_ids": [
+      "the-concussed-witness"
+    ],
+    "series_ids": [
+      "sensors-who-lie"
+    ],
+    "model": "google/gemini-3-pro-image",
+    "generatedAt": "2026-09-23T17:20:42.543Z"
+  },
+  {
+    "id": "the-night-shift",
+    "kind": "series",
+    "file": "lore/assets/series/the-night-shift.png",
+    "alt": "A jailer studies a glowing stopwatch at a cell door while a line of weary night workers wait to make their case before it closes.",
+    "cast_ids": [
+      "doze-the-jailer"
+    ],
+    "series_ids": [
+      "the-night-shift"
+    ],
+    "model": "google/gemini-3-pro-image",
+    "generatedAt": "2026-09-23T17:20:42.543Z"
+  },
+  {
+    "id": "ghosts-in-the-recomposition",
+    "kind": "series",
+    "file": "lore/assets/series/ghosts-in-the-recomposition.png",
+    "alt": "A gremlin repaints an already-empty room from a ladder, because the room redraws itself whether or not anyone asked it to.",
+    "cast_ids": [
+      "the-recomposer"
+    ],
+    "series_ids": [
+      "ghosts-in-the-recomposition"
+    ],
+    "model": "google/gemini-3-pro-image",
+    "generatedAt": "2026-09-23T17:20:42.543Z"
+  },
+  {
+    "id": "the-coroutine-court",
+    "kind": "series",
+    "file": "lore/assets/series/the-coroutine-court.png",
+    "alt": "A courier holds out a small glowing note to a judge whose gavel is already falling, the note the only evidence anyone in the room is looking at.",
+    "cast_ids": [
+      "the-messenger"
+    ],
+    "series_ids": [
+      "the-coroutine-court"
+    ],
+    "model": "google/gemini-3-pro-image",
+    "generatedAt": "2026-09-23T17:20:42.543Z"
+  },
+  {
+    "id": "crossing-the-schema",
+    "kind": "series",
+    "file": "lore/assets/series/crossing-the-schema.png",
+    "alt": "A ferryman poles a boat of passengers away from a crumbling shore toward a distant vault door, the crossing visibly one-way on both banks.",
+    "cast_ids": [
+      "the-ferryman",
+      "the-vault-keeper"
+    ],
+    "series_ids": [
+      "crossing-the-schema"
+    ],
+    "model": "google/gemini-3-pro-image",
+    "generatedAt": "2026-09-23T17:20:42.543Z"
+  },
+  {
+    "id": "one-brain-two-bodies",
+    "kind": "series",
+    "file": "lore/assets/series/one-brain-two-bodies.png",
+    "alt": "A single performer, split down the middle into two different costumes, holds open two stage doors at once, belonging fully to neither.",
+    "cast_ids": [
+      "the-understudy"
+    ],
+    "series_ids": [
+      "one-brain-two-bodies"
+    ],
+    "model": "google/gemini-3-pro-image",
+    "generatedAt": "2026-09-23T17:20:42.543Z"
+  },
+  {
+    "id": "chain-of-custody",
+    "kind": "series",
+    "file": "lore/assets/series/chain-of-custody.png",
+    "alt": "A clerk stamps a fresh folder while an unbroken chain of tied, dated folders recedes into the dark behind him, every one still accounted for.",
+    "cast_ids": [
+      "the-archivist"
+    ],
+    "series_ids": [
+      "chain-of-custody"
+    ],
+    "model": "google/gemini-3-pro-image",
+    "generatedAt": "2026-09-23T17:20:42.543Z"
+  },
+  {
+    "id": "notes-from-the-loop",
+    "kind": "series",
+    "file": "lore/assets/series/notes-from-the-loop.png",
+    "alt": "A captain charts a course while his crew rows below deck and a many-headed sea serpent keeps pace alongside the hull, always one head ahead.",
+    "cast_ids": [
+      "the-fleet",
+      "the-backlog"
+    ],
+    "series_ids": [
+      "notes-from-the-loop"
+    ],
+    "model": "google/gemini-3-pro-image",
+    "generatedAt": "2026-09-23T17:20:42.543Z"
+  }
+]
