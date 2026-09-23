@@ -15,7 +15,7 @@
     "id": "the-archivist",
     "kind": "cast",
     "file": "lore/assets/cast/the-archivist.png",
-    "alt": "A clerk stamps a fresh folder into an infinite filing wall, smugly certain a properly dated record is the only thing that survives a dispute.",
+    "alt": "A clerk stamps a fresh folder at his desk beside a bank of filing cabinet drawers, smugly certain a properly dated record is the only thing that survives a dispute.",
     "cast_ids": [
       "the-archivist"
     ],
@@ -33,7 +33,7 @@
     ],
     "series_ids": [],
     "model": "google/gemini-3-pro-image",
-    "generatedAt": "2026-09-23T17:20:42.543Z"
+    "generatedAt": "2026-09-23T17:31:06.798Z"
   },
   {
     "id": "doze-the-jailer",
@@ -87,7 +87,7 @@
     "id": "the-ferryman",
     "kind": "cast",
     "file": "lore/assets/cast/the-ferryman.png",
-    "alt": "A cloaked ferryman poles away from a crumbling dock, still gripping a passenger's wrist across the widening gap, the crossing already irreversible.",
+    "alt": "A cloaked ferryman poles a laden boat away from a crumbling dock, raising an amber lantern toward a passenger's hand still reaching from the dock across the widening gap.",
     "cast_ids": [
       "the-ferryman"
     ],
@@ -105,7 +105,7 @@
     ],
     "series_ids": [],
     "model": "google/gemini-3-pro-image",
-    "generatedAt": "2026-09-23T17:20:42.543Z"
+    "generatedAt": "2026-09-23T17:30:33.789Z"
   },
   {
     "id": "the-backlog",
@@ -181,7 +181,7 @@
       "the-night-shift"
     ],
     "model": "google/gemini-3-pro-image",
-    "generatedAt": "2026-09-23T17:20:42.543Z"
+    "generatedAt": "2026-09-23T17:31:57.692Z"
   },
   {
     "id": "ghosts-in-the-recomposition",
@@ -209,7 +209,7 @@
       "the-coroutine-court"
     ],
     "model": "google/gemini-3-pro-image",
-    "generatedAt": "2026-09-23T17:20:42.543Z"
+    "generatedAt": "2026-09-23T17:32:31.902Z"
   },
   {
     "id": "crossing-the-schema",
