@@ -17,9 +17,9 @@ name: loopdown-pipeline
 on:
   push:
     branches: [main]
-    paths: ["lessons/**", "archive/**", "fiction/**", "scripts/**", "templates/**", "lore/**", "profile.yaml", ".github/workflows/**"]
+    paths: ["lessons/**", "archive/**", "fiction/**", "scripts/**", "templates/**", "lore/**", "profile.yaml", "README.md", "data/registry.json", "series/**", ".github/workflows/**"]
   pull_request:
-    paths: ["lessons/**", "archive/**", "fiction/**", "scripts/**", "templates/**", "lore/**", "profile.yaml", ".github/workflows/**"]
+    paths: ["lessons/**", "archive/**", "fiction/**", "scripts/**", "templates/**", "lore/**", "profile.yaml", "README.md", "data/registry.json", "series/**", ".github/workflows/**"]
 
 # one run per ref; cancel superseded runs
 concurrency:

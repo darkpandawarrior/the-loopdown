@@ -418,10 +418,10 @@
         "data-integrity",
         "android"
       ],
-      "status": "ready",
+      "status": "published",
       "created": "2026-08-18",
-      "live": "",
-      "url_devto": "",
+      "live": "https://dev.to/darkpandawarrior/never-silently-change-a-number-someone-gets-paid-on-h4n",
+      "url_devto": "https://dev.to/darkpandawarrior/never-silently-change-a-number-someone-gets-paid-on-h4n",
       "url_linkedin": "",
       "url_medium": "",
       "url_hashnode": "",
@@ -436,7 +436,10 @@
         "the-archivist"
       ],
       "loop_iteration": "11",
-      "links": {}
+      "published": "2026-09-20",
+      "links": {
+        "devto": "https://dev.to/darkpandawarrior/never-silently-change-a-number-someone-gets-paid-on-h4n"
+      }
     },
     {
       "file": "lessons/2026-08-13-accelerometer-outranks-gps/lesson.md",
@@ -453,10 +456,10 @@
         "imu",
         "location"
       ],
-      "status": "ready",
+      "status": "published",
       "created": "2026-08-13",
-      "live": "",
-      "url_devto": "",
+      "live": "https://dev.to/darkpandawarrior/when-two-sensors-disagree-rank-them-12ki",
+      "url_devto": "https://dev.to/darkpandawarrior/when-two-sensors-disagree-rank-them-12ki",
       "url_linkedin": "",
       "url_medium": "",
       "url_hashnode": "",
@@ -472,7 +475,10 @@
         "the-second-witness"
       ],
       "loop_iteration": "10",
-      "links": {}
+      "published": "2026-09-18",
+      "links": {
+        "devto": "https://dev.to/darkpandawarrior/when-two-sensors-disagree-rank-them-12ki"
+      }
     },
     {
       "file": "lessons/2026-08-11-uncertainty-dies-in-data-model/lesson.md",
@@ -489,10 +495,10 @@
         "sensors",
         "api-design"
       ],
-      "status": "ready",
+      "status": "published",
       "created": "2026-08-11",
-      "live": "",
-      "url_devto": "",
+      "live": "https://dev.to/darkpandawarrior/your-data-model-is-where-uncertainty-goes-to-die-g6j",
+      "url_devto": "https://dev.to/darkpandawarrior/your-data-model-is-where-uncertainty-goes-to-die-g6j",
       "url_linkedin": "",
       "url_medium": "",
       "url_hashnode": "",
@@ -507,7 +513,10 @@
         "the-archivist"
       ],
       "loop_iteration": "9",
-      "links": {}
+      "published": "2026-09-16",
+      "links": {
+        "devto": "https://dev.to/darkpandawarrior/your-data-model-is-where-uncertainty-goes-to-die-g6j"
+      }
     },
     {
       "file": "lessons/2026-08-06-one-global-threshold/lesson.md",
@@ -524,10 +533,10 @@
         "heuristics",
         "sensor-fusion"
       ],
-      "status": "ready",
+      "status": "published",
       "created": "2026-08-06",
-      "live": "",
-      "url_devto": "",
+      "live": "https://dev.to/darkpandawarrior/one-global-threshold-is-how-you-delete-valid-data-303h",
+      "url_devto": "https://dev.to/darkpandawarrior/one-global-threshold-is-how-you-delete-valid-data-303h",
       "url_linkedin": "",
       "url_medium": "",
       "url_hashnode": "",
@@ -542,7 +551,10 @@
         "the-concussed-witness"
       ],
       "loop_iteration": "8",
-      "links": {}
+      "published": "2026-09-14",
+      "links": {
+        "devto": "https://dev.to/darkpandawarrior/one-global-threshold-is-how-you-delete-valid-data-303h"
+      }
     },
     {
       "file": "lessons/2026-08-04-filtered-never-deleted/lesson.md",
@@ -559,10 +571,10 @@
         "observability",
         "architecture"
       ],
-      "status": "ready",
+      "status": "published",
       "created": "2026-08-04",
-      "live": "",
-      "url_devto": "",
+      "live": "https://dev.to/darkpandawarrior/filtered-should-never-mean-deleted-5081",
+      "url_devto": "https://dev.to/darkpandawarrior/filtered-should-never-mean-deleted-5081",
       "url_linkedin": "",
       "url_medium": "",
       "url_hashnode": "",
@@ -577,7 +589,10 @@
         "the-concussed-witness"
       ],
       "loop_iteration": "7",
-      "links": {}
+      "published": "2026-09-06",
+      "links": {
+        "devto": "https://dev.to/darkpandawarrior/filtered-should-never-mean-deleted-5081"
+      }
     },
     {
       "file": "lessons/2026-07-31-collectasstate-leak/lesson.md",
