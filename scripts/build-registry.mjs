@@ -60,7 +60,7 @@ if (Object.keys(bySeries).length) mkdirSync(seriesDir, { recursive: true });
 const titleize = (id) => String(id).split("-").map((w) => w[0]?.toUpperCase() + w.slice(1)).join(" ");
 for (const [id, eps] of Object.entries(bySeries)) {
   eps.sort((a, b) => String(a.created).localeCompare(String(b.created)));
-  const rows = eps.map((e, i) => `${i + 1}. **[${e.title}](../${e.file})** — ${e.created} ${e.status === "published" ? "" : `_(${e.status})_`}`).join("\n");
+  const rows = eps.map((e, i) => `${i + 1}. **[${e.title}](../${e.file})** — ${e.created} ${e.status === "published" ? "" : `_(${e.status})_`}`.trimEnd()).join("\n");
   writeFileSync(join(seriesDir, `${id}.md`),
     `# ${titleize(id)}\n\n_Part of [The Loopdown](../README.md). ${eps.length} episode(s)._\n\n${rows}\n`);
 }

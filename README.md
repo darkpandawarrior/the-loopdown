@@ -74,11 +74,11 @@ The rhyme is the reward.
 | 2026-08-27 | [Your thresholds do not belong in constants](lessons/2026-08-27-thresholds-in-config/lesson.md) | chain-of-custody | 🟡 ready | — |
 | 2026-08-25 | [Invariants are cheap. Silent corruption is not.](lessons/2026-08-25-invariants-are-cheap/lesson.md) | chain-of-custody | 🟡 ready | — |
 | 2026-08-20 | [Every filter needs a documented exception](lessons/2026-08-20-documented-exception/lesson.md) | sensors-who-lie | 🟡 ready | — |
-| 2026-08-18 | [Never silently change a number someone gets paid on](lessons/2026-08-18-never-silently-change-a-number/lesson.md) | chain-of-custody | 🟡 ready | — |
-| 2026-08-13 | [When two sensors disagree, rank them](lessons/2026-08-13-accelerometer-outranks-gps/lesson.md) | sensors-who-lie | 🟡 ready | — |
-| 2026-08-11 | [Your data model is where uncertainty goes to die](lessons/2026-08-11-uncertainty-dies-in-data-model/lesson.md) | chain-of-custody | 🟡 ready | — |
-| 2026-08-06 | [One global threshold is how you delete valid data](lessons/2026-08-06-one-global-threshold/lesson.md) | sensors-who-lie | 🟡 ready | — |
-| 2026-08-04 | [Filtered should never mean deleted](lessons/2026-08-04-filtered-never-deleted/lesson.md) | sensors-who-lie | 🟡 ready | — |
+| 2026-08-18 | [Never silently change a number someone gets paid on](lessons/2026-08-18-never-silently-change-a-number/lesson.md) | chain-of-custody | 🟢 live | [read →](https://dev.to/darkpandawarrior/never-silently-change-a-number-someone-gets-paid-on-h4n) |
+| 2026-08-13 | [When two sensors disagree, rank them](lessons/2026-08-13-accelerometer-outranks-gps/lesson.md) | sensors-who-lie | 🟢 live | [read →](https://dev.to/darkpandawarrior/when-two-sensors-disagree-rank-them-12ki) |
+| 2026-08-11 | [Your data model is where uncertainty goes to die](lessons/2026-08-11-uncertainty-dies-in-data-model/lesson.md) | chain-of-custody | 🟢 live | [read →](https://dev.to/darkpandawarrior/your-data-model-is-where-uncertainty-goes-to-die-g6j) |
+| 2026-08-06 | [One global threshold is how you delete valid data](lessons/2026-08-06-one-global-threshold/lesson.md) | sensors-who-lie | 🟢 live | [read →](https://dev.to/darkpandawarrior/one-global-threshold-is-how-you-delete-valid-data-303h) |
+| 2026-08-04 | [Filtered should never mean deleted](lessons/2026-08-04-filtered-never-deleted/lesson.md) | sensors-who-lie | 🟢 live | [read →](https://dev.to/darkpandawarrior/filtered-should-never-mean-deleted-5081) |
 | 2026-07-31 | [collectAsState is quietly leaking your work](lessons/2026-07-31-collectasstate-leak/lesson.md) | ghosts-in-the-recomposition | 🟢 live | [read →](https://dev.to/darkpandawarrior/collectasstate-is-quietly-leaking-your-work-4ak0) |
 | 2026-07-29 | [expect/actual is the wrong default in KMP](lessons/2026-07-29-kmp-expect-actual-default/lesson.md) | one-brain-two-bodies | 🟢 live | [read →](https://dev.to/darkpandawarrior/expectactual-is-the-wrong-default-in-kmp-5g7p) |
 | 2026-07-24 | [Your LazyColumn recomposes on every scroll](lessons/2026-07-24-lazycolumn-recomposition/lesson.md) | ghosts-in-the-recomposition | 🟢 live | [read →](https://dev.to/darkpandawarrior/your-lazycolumn-recomposes-on-every-scroll-3amj) |
