@@ -73,7 +73,7 @@ The rhyme is the reward.
 | 2026-08-29 | [Plausible is worse than wrong](lessons/2026-08-29-the-borrowed-hand/lesson.md) | notes-from-the-loop | 🟡 ready | — |
 | 2026-08-27 | [Your thresholds do not belong in constants](lessons/2026-08-27-thresholds-in-config/lesson.md) | chain-of-custody | 🟡 ready | — |
 | 2026-08-25 | [Invariants are cheap. Silent corruption is not.](lessons/2026-08-25-invariants-are-cheap/lesson.md) | chain-of-custody | 🟡 ready | — |
-| 2026-08-20 | [Every filter needs a documented exception](lessons/2026-08-20-documented-exception/lesson.md) | sensors-who-lie | 🟡 ready | — |
+| 2026-08-20 | [Every filter needs a documented exception](lessons/2026-08-20-documented-exception/lesson.md) | sensors-who-lie | 🟢 live | [read →](https://dev.to/darkpandawarrior/every-filter-needs-a-documented-exception-2j3k) |
 | 2026-08-18 | [Never silently change a number someone gets paid on](lessons/2026-08-18-never-silently-change-a-number/lesson.md) | chain-of-custody | 🟢 live | [read →](https://dev.to/darkpandawarrior/never-silently-change-a-number-someone-gets-paid-on-h4n) |
 | 2026-08-13 | [When two sensors disagree, rank them](lessons/2026-08-13-accelerometer-outranks-gps/lesson.md) | sensors-who-lie | 🟢 live | [read →](https://dev.to/darkpandawarrior/when-two-sensors-disagree-rank-them-12ki) |
 | 2026-08-11 | [Your data model is where uncertainty goes to die](lessons/2026-08-11-uncertainty-dies-in-data-model/lesson.md) | chain-of-custody | 🟢 live | [read →](https://dev.to/darkpandawarrior/your-data-model-is-where-uncertainty-goes-to-die-g6j) |

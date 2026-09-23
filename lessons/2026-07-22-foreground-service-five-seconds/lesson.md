@@ -34,7 +34,7 @@ window. The system does not wait. It kills the service. Post the notification fi
 the slow work after.
 
 ## The story / how it played out
-Location tracking on Mileway runs in a foreground service. It worked on every phone in
+Location tracking on Doori runs in a foreground service. It worked on every phone in
 the office. In the crash logs it was falling over for a slice of real users, always the
 same exception: ForegroundServiceDidNotStartInTimeException.
 
@@ -55,7 +55,7 @@ from apps that want to run forever. Post your notification first, work with the
 lifecycle, and it leaves you alone.
 
 ## Receipts
-- Real crash cluster on Mileway, only on low-end devices under load.
+- Real crash cluster on Doori, only on low-end devices under load.
 - Fixed by moving startForeground() to the first line and deferring setup.
 - Part of the 80 percent crash-reduction work.
 

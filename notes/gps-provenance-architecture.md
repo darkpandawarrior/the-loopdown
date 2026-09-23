@@ -12,7 +12,7 @@ named buckets so a filtered value can always be audited and reversed.
 
 ## Where the code lives
 
-### Mileway (KMP, current, the mature version)
+### Doori (KMP, current, the mature version)
 | What | Path |
 |---|---|
 | `LocationProcessor`, `GpsFix`, `ProcessResult`, `TrackStats` | `feature/tracking/src/commonMain/.../service/location/TrackingPipeline.kt` |

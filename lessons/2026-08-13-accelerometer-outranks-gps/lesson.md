@@ -61,7 +61,7 @@ and give it authority over the specific question it is actually good at. Correla
 cleverness.
 
 ## Receipts
-- Mileway pipeline: motionStill and harshAccel override the GPS speed heuristic for jitter.
+- Doori pipeline: motionStill and harshAccel override the GPS speed heuristic for jitter.
 - Comment in the code says it plainly: accelerometer stillness is authoritative.
 - DistanceValidator warns when GPS distance and odometer diverge by more than 30 percent.
 

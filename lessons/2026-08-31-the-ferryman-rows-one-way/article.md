@@ -29,7 +29,7 @@ And yet it is routinely the least tested code in the codebase, because it looks 
 ![Sort by what it touches: Coverage is the wrong instrument](assets/carousel/slide-04.png)
 <!-- figures:end -->
 
-I ran a count across Mileway this week:
+I ran a count across Doori this week:
 
 - **47** `Migration` objects
 - schema version **48**

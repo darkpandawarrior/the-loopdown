@@ -37,7 +37,7 @@ view over the data rather than the only thing that survived. The buckets then be
 instrument you tune the filter with.
 
 ## The story / how it played out
-When we started cleaning GPS on Mileway, we did the obvious thing. A reading fails the
+When we started cleaning GPS on Doori, we did the obvious thing. A reading fails the
 plausibility check, drop it, move on. Clean data out the other end. It felt responsible.
 
 Then someone asked whether the filter was actually right, and I had nothing. I could not say how
@@ -67,7 +67,7 @@ You cannot tune a filter you cannot audit, and you cannot audit what you deleted
 pipeline drops rows, know where they go. "Nowhere" is an answer, just not a good one.
 
 ## Receipts
-- Mileway LocationProcessor: original / cleaned / abnormal / mock / spike accumulators.
+- Doori LocationProcessor: original / cleaned / abnormal / mock / spike accumulators.
 - Only two hard drops in the whole pipeline (impossible coordinates, impossible accuracy).
 - DistanceValidator enforces cleaned = total - (mock + abnormal) before submission.
 
