@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Scaffold a new lesson folder from the template.
 //
-//   node scripts/new-lesson.mjs "dead reckoning gps" --pillar location --project Mileway
+//   node scripts/new-lesson.mjs "dead reckoning gps" --pillar location --project Doori
 //
 // Creates lessons/YYYY-MM-DD-<slug>/ with lesson.md, linkedin.md, article.md,
 // meta.yaml, and assets/card.yaml prefilled. Date is passed in (scripts can't

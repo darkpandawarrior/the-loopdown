@@ -8,7 +8,7 @@ Status: 🟢 ready to write · 🟡 needs a detail check · 💤 someday
 Came out of Alex's comment on post 001. His framing beats my original: the lesson is not
 "reject the absurd value", it is "carry confidence and provenance with every reading".
 That is the more senior idea and it should anchor the whole location series. All of these
-are backed by real Mileway/Dice code with verified constants in the notes doc.
+are backed by real Doori/Dice code with verified constants in the notes doc.
 
 - 🟢 **"Filtered should never mean deleted."** ← do this next, strongest of the lot.
   The bucket architecture: original / cleaned / abnormal / mock / spike. A system that
@@ -30,17 +30,17 @@ are backed by real Mileway/Dice code with verified constants in the notes doc.
 - 🟡 **"Thresholds belong in config, not constants."** Making tuning a config change, and
   proving the refactor was behaviour-neutral.
 
-## Location / sensor engineering (Mileway)
+## Location / sensor engineering (Doori)
 - 🟢 **"Our app clocked a parked user at 400 km/h."** → dead reckoning + spike detection. *(shipped as the first lesson)*
 - 🟢 **"The 5-second window that can crash your foreground service."** → `startForeground()` deadline, FGS types, the ANR if you miss it.
 - 🟡 **"Doze mode is not your enemy. Your wakelocks are."** → surviving battery restrictions without draining 20%/hr.
 - 🟡 **"A floating bubble saved our tracking accuracy."** → why a visible service beats a silent one on hostile OEMs.
 
-## KMP / multiplatform (kmp-toolkit, PaymentsLab)
+## KMP / multiplatform (kmp-toolkit, PaymentsLab-KMP)
 - 🟢 **"expect/actual is the wrong default. Here's the right one."** → interface + platform binding vs expect/actual; when each wins. (see kmp-boundaries)
 - 🟢 **"I shared a ViewModel across iOS and Android. Here's what actually shared — and what didn't."**
 - 🟡 **"Koin or Hilt for KMP? I picked the boring one."** → DI choice in a real multiplatform app.
-- 🟡 **"A payments SDK has no room for 'probably'."** → modeling money, idempotency, retries in PaymentsLab.
+- 🟡 **"A payments SDK has no room for 'probably'."** → modeling money, idempotency, retries in PaymentsLab-KMP.
 
 ## Compose (Dice — 92% Compose)
 - 🟢 **"Your LazyColumn recomposes on every scroll. Here's the one-line reason."** → stability, `List` vs `ImmutableList`.
@@ -59,10 +59,10 @@ are backed by real Mileway/Dice code with verified constants in the notes doc.
 - 🟡 **"flowOn goes AFTER the operator. Everyone puts it in the wrong place once."**
 - 🟡 **"SupervisorJob doesn't do what its name promises."**
 
-## Build-in-public (PaymentsLab, Kursi, HireSignal)
+## Build-in-public (PaymentsLab-KMP, Gaddi, Candidai)
 - 🟢 **"I built a payments integration lab in 16 modules. Here's the module map."**
 - 🟡 **"Commit 1 vs commit 400: what I'd tell past me."** → diary/timestamped format (see voice-profile structural habits).
-- 💤 **"I gave my job search to an AI agent fleet. It found bugs in my resume."** → HireSignal / agent harness angle.
+- 💤 **"I gave my job search to an AI agent fleet. It found bugs in my resume."** → Candidai / agent harness angle.
 
 ## AI-assisted engineering (the differentiator)
 - 🟢 **"I code with a fleet of AI agents. Here's the routing rule that stopped them wasting tokens."** → Haiku/Sonnet/Opus roles.

@@ -60,7 +60,7 @@ gets in the way.
   across storage, networking, clipboard, analytics, and everything else you reached for it
   with.
 
-I lived this on PaymentsLab. Early common code used `expect`/`actual` for every platform
+I lived this on PaymentsLab-KMP. Early common code used `expect`/`actual` for every platform
 seam. It compiled and shipped. Then I sat down to unit-test a payment use case in
 `commonTest` and simply could not, because the seams had no fakes.
 

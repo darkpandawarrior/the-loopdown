@@ -64,7 +64,7 @@ name, a comment explaining the reasoning, and a test. An undocumented special ca
 indistinguishable from a bug, and gets removed like one.
 
 ## Receipts
-- Mileway exceptionalStationary: speed <= 0.1 m/s AND accuracy < 20m AND recent movement history.
+- Doori exceptionalStationary: speed <= 0.1 m/s AND accuracy < 20m AND recent movement history.
 - Post-resume grace window relaxes the spike gate but still enforces the accuracy gate.
 
 ## Lore

@@ -64,7 +64,7 @@ wrong, where it came from, and what you already concluded. Add those columns bef
 because you cannot backfill confidence that was discarded at write time.
 
 ## Receipts
-- Mileway LocationData persists accuracy, provider, bearing, altitude, IMU, battery, device model
+- Doori LocationData persists accuracy, provider, bearing, altitude, IMU, battery, device model
   alongside isMock / isAbnormal / isPaused / displacement.
 - TrackingQualityScorer turns environment into a 0-100 confidence number carried with the session.
 

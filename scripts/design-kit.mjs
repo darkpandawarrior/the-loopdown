@@ -16,7 +16,7 @@ export const T = {
   ink: "#F2F6FA", inkDim: "#A6B6C8", inkFaint: "#5C6878",
   panel: "#04060A", line: "#1E2733",
   paper: "#E8DEC8", danger: "#FF6B81", good: "#7EE787",
-  // Tape: the register that cannot lie. Borrowed intact from DEADLOCK's
+  // Tape: the register that cannot lie. Borrowed intact from STUTTER's
   // audiovisual canon, where recorded evidence is warm amber and monospace and
   // the narrator's own testimony is a cool sans. Numbers, code and logs are tape.
   amber: "#D9A441",

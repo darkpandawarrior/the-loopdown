@@ -58,7 +58,7 @@ inputs. They are the ones that assume their inputs will lie, and plan for the da
 do. Trust, but verify. Especially your own sensors.
 
 ## Receipts
-- GPS accuracy 50 to 95 percent (Mileway, production).
+- GPS accuracy 50 to 95 percent (Doori, production).
 - Foreground service plus floating bubble kept the pipeline alive through Doze and OEM
   battery restrictions.
 - Contributed to the 80 percent crash-reduction work on the same platform.

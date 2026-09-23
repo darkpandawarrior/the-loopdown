@@ -63,7 +63,7 @@ When you write a constant into a filter, ask what context you are assuming. If t
 of them", you have not written a threshold, you have written a bug with a delay on it.
 
 ## Receipts
-- Mileway AbnormalDetectionConfig: walking/cycling/driving jitter gates, gap tiers, history window.
+- Doori AbnormalDetectionConfig: walking/cycling/driving jitter gates, gap tiers, history window.
 - 5 reading rolling speed window at 1.5 m/s decides whether a sub-gate step is jitter.
 - All values live in a serialisable config, not constants, so tuning is not a release.
 

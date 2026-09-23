@@ -34,7 +34,7 @@ needs a test, define an interface in common and inject platform implementations 
 constructor or DI. Save expect/actual for the small, fixed, one-per-platform joints.
 
 ## The story / how it played out
-Early PaymentsLab common code used expect/actual for everything that touched a platform:
+Early PaymentsLab-KMP common code used expect/actual for everything that touched a platform:
 storage, clipboard, an http client. It compiled and ran. Then I tried to unit-test a use
 case in commonTest and could not, because the expect declarations had no test actual, and
 faking them meant adding a whole extra source set just to lie to the compiler.
@@ -51,7 +51,7 @@ Reach for the tool that keeps your options open. Interfaces and injection compos
 test. expect/actual welds. Use the weld only where you truly want one permanent joint.
 
 ## Receipts
-- PaymentsLab: full KMP, Koin for DI, Ktor for networking.
+- PaymentsLab-KMP: full KMP, Koin for DI, Ktor for networking.
 - Moving platform seams from expect/actual to injected interfaces made commonTest real.
 - Kept expect/actual for a small number of genuine one-per-platform declarations.
 

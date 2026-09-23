@@ -64,7 +64,7 @@ number of metres in a kilometre. A jitter threshold is a hypothesis, and hypothe
 cheap to revise.
 
 ## Receipts
-- Mileway AbnormalDetectionConfig: one serialisable object holding every abnormal-detection value.
+- Doori AbnormalDetectionConfig: one serialisable object holding every abnormal-detection value.
 - DEFAULT reproduces the previously hardcoded constants exactly, so extraction was risk-free.
 - Nests inside TrackingConfig, so a local JSON or server source is a swap, not a rewrite.
 

@@ -38,7 +38,7 @@ against a real pre-migration schema in a JVM-speed instrumentation test, and the
 one is not coverage. It is that a migration is the only thing you cannot fix in the next release.
 
 ## The story / how it played out
-I ran an audit across Mileway's database this week, expecting to feel good about it.
+I ran an audit across Doori's database this week, expecting to feel good about it.
 
 Forty-seven `Migration` objects. Current schema version 48. Eight test files covering fifteen
 version pairs. So roughly two thirds of the crossings have never been executed against a real
@@ -66,10 +66,10 @@ do when `exportSchema = false`, builds it from what you *remember* the old versi
 are real tests. Only one of them catches the day your memory and the schema stopped agreeing.
 
 ## Receipts
-- Mileway: 47 `MIGRATION_x_y` objects, schema version 48, 8 androidTest files covering 15 pairs.
+- Doori: 47 `MIGRATION_x_y` objects, schema version 48, 8 androidTest files covering 15 pairs.
 - Untested and structurally risky: 5->6 (FK), 16->17 (FK), 32->33 (data move), 47->48 (DROP).
 - Dice, separately: 24 Room migrations across 2 databases (MileageDatabase 1..17, AccountDatabase 1..9).
-- Mileway runs `exportSchema = false`, so its 8 existing tests hand-build the old schema with
+- Doori runs `exportSchema = false`, so its 8 existing tests hand-build the old schema with
   `BundledSQLiteDriver` rather than using `MigrationTestHelper`. The tests say so in their KDoc.
 
 ## Lore

@@ -65,7 +65,7 @@ Find the relationships your code assumes and make them executable. Errors for wh
 happen, warnings for what is merely suspicious. Both should run before the data leaves the device.
 
 ## Receipts
-- Mileway DistanceValidator: enforces cleaned = total - (mock + abnormal), spike excluded.
+- Doori DistanceValidator: enforces cleaned = total - (mock + abnormal), spike excluded.
 - Blocking errors for negatives, mismatch beyond 0.1m, cleaned > total.
 - Ratio warnings at 50% mock/abnormal, 30% spike, 30% odometer divergence.
 
