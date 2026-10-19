@@ -5,10 +5,10 @@ type: lesson
 pillar: data-integrity
 project: Doori
 tags: [android, room, migrations, testing, kotlin]
-status: ready
+status: published
 created: 2026-08-31
-live:
-url_devto:
+live: https://dev.to/darkpandawarrior/i-audited-my-own-migrations-it-was-not-fine-f45
+url_devto: https://dev.to/darkpandawarrior/i-audited-my-own-migrations-it-was-not-fine-f45
 url_linkedin:
 url_medium:
 url_hashnode:
@@ -16,6 +16,7 @@ channels: [linkedin, devto, hashnode, medium]
 series: crossing-the-schema
 cast: [the-ferryman]
 loop_iteration: 16
+published: 2026-10-03
 ---
 
 # I audited my own migrations. It was not fine.

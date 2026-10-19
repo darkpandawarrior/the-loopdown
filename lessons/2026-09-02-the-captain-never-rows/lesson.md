@@ -5,10 +5,10 @@ type: lesson
 pillar: engineering-practice
 project: AgentHarness
 tags: [ai-assisted-development, orchestration, cost-engineering, tooling]
-status: ready
+status: published
 created: 2026-09-02
-live:
-url_devto:
+live: https://dev.to/darkpandawarrior/the-captain-routes-the-captain-never-rows-4o2p
+url_devto: https://dev.to/darkpandawarrior/the-captain-routes-the-captain-never-rows-4o2p
 url_linkedin:
 url_medium:
 url_hashnode:
@@ -16,6 +16,7 @@ channels: [linkedin, devto, hashnode, medium]
 series: notes-from-the-loop
 cast: [the-fleet]
 loop_iteration: 17
+published: 2026-10-05
 ---
 
 # The captain routes. The captain never rows.

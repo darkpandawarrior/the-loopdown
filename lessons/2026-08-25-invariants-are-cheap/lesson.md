@@ -5,10 +5,10 @@ type: lesson
 pillar: data-integrity
 project: Doori
 tags: [data-integrity, validation, architecture, kotlin, testing]
-status: ready
+status: published
 created: 2026-08-25
-live:
-url_devto:
+live: https://dev.to/darkpandawarrior/invariants-are-cheap-silent-corruption-is-not-c9m
+url_devto: https://dev.to/darkpandawarrior/invariants-are-cheap-silent-corruption-is-not-c9m
 url_linkedin:
 url_medium:
 url_hashnode:
@@ -16,6 +16,7 @@ channels: [linkedin, devto, hashnode, medium]
 series: chain-of-custody
 cast: [the-archivist]
 loop_iteration: 13
+published: 2026-09-26
 ---
 
 # Invariants are cheap. Silent corruption is not.
