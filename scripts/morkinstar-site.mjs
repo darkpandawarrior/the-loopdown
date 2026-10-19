@@ -142,34 +142,39 @@ console.log(`  season 1: ${s1.length} entries · season 2: ${s2.length} pages`);
 // some lines do not need WebGL, and the publish target blocks external libraries.
 const STARMAP = JSON.parse(readFileSync(join(FIC, "starmap.json"), "utf8"));
 
-const card = (e) => `<article class="card" data-open="${e.season}-${e.idx}">
-  ${e.plate ? `<div class="thumb"><img loading="lazy" src="${e.plate}" alt=""></div>` : `<div class="thumb ph"></div>`}
+// Each plate ships once, in PLATES. Cards and the hero carry only a data-p key; the script
+// sets src at runtime.
+const card = (e) => `<a class="card" href="#${e.season}-${e.idx}" data-open="${e.season}-${e.idx}">
+  ${e.plate ? `<div class="thumb"><img data-p="${e.season}-${e.idx}" alt=""></div>` : `<div class="thumb ph"></div>`}
   <div class="meta">
     <div class="kick">${e.season === 1 ? `ENTRY #${esc(e.entry)}` : `PAGE ${esc(e.page)} OF 91`}</div>
     <h3>${esc(e.title)}</h3>
     <div class="where">${esc(e.where)}${e.system && e.system !== "[none]" ? ` · ${esc(e.system)}` : ""}</div>
     <p>${esc(e.blurb)}</p>
-  </div></article>`;
+  </div></a>`;
 
 const reader = (e) => `<section class="read" id="r-${e.season}-${e.idx}" hidden>
   <button class="back" data-back>← all ${e.season === 1 ? "entries" : "pages"}</button>
-  ${e.plate ? `<img class="hero" src="${e.plate}" alt="">` : ""}
+  ${e.plate ? `<img class="hero" data-p="${e.season}-${e.idx}" alt="">` : ""}
   <div class="prose">${e.html}</div>
   <div class="navrow">
     ${e.idx > 1 ? `<button data-open="${e.season}-${e.idx - 1}">← previous</button>` : "<span></span>"}
     ${e.idx < (e.season === 1 ? s1.length : s2.length) ? `<button data-open="${e.season}-${e.idx + 1}">next →</button>` : "<span></span>"}
   </div></section>`;
 
-const html = `<title>The Morkinstar Journals</title>
+const html = `<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>The Morkinstar Journals</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
 :root{
   --bg:#06080B; --bg2:#0D1219; --panel:#101822; --line:#1E2733;
-  --ink:#F2F6FA; --dim:#A6B6C8; --faint:#5C6878; --accent:#8FD3FF; --amber:#D9A441;
+  --ink:#F2F6FA; --dim:#A6B6C8; --faint:#8A97A8; --accent:#8FD3FF; --amber:#D9A441;
   --mono:"SF Mono",ui-monospace,Menlo,monospace; --sans:-apple-system,system-ui,"Inter",sans-serif;
 }
 body.s2{ --bg:#DED1B4; --bg2:#E9DFC9; --panel:#F2EAD8; --line:#C3B492;
-  --ink:#1F1A12; --dim:#5E5340; --faint:#8E8368; --accent:#8A5A28; --amber:#7A3E2E; }
+  --ink:#1F1A12; --dim:#5E5340; --faint:#625740; --accent:#8A5A28; --amber:#7A3E2E; }
 *{box-sizing:border-box;margin:0;padding:0}
 /* an explicit display: wins over the hidden attribute, so make hidden win back */
 [hidden]{display:none!important}
@@ -189,8 +194,11 @@ h1.title{font-size:clamp(34px,6vw,62px);line-height:1;letter-spacing:-.03em;marg
 .note{font-family:var(--mono);font-size:12px;color:var(--faint);margin-bottom:26px;letter-spacing:.06em}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;
-  cursor:pointer;transition:.2s;display:flex;flex-direction:column}
-.card:hover{transform:translateY(-3px);border-color:var(--accent)}
+  cursor:pointer;transition:.2s;display:flex;flex-direction:column;color:inherit;text-decoration:none}
+@media(hover:hover){.card:hover{transform:translateY(-3px)}}
+.card:hover{border-color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 .thumb{aspect-ratio:1200/1560;overflow:hidden;background:var(--bg2)}
 .thumb img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
 .thumb.ph{display:grid;place-items:center}
@@ -221,14 +229,14 @@ table{border-collapse:collapse;width:100%;font-size:14px}
 th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line)}
 th{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
 .mapwrap{position:relative;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#04060A}
-#sky{display:block;width:100%;height:clamp(380px,62vh,720px);cursor:grab;touch-action:none}
+#sky{display:block;width:100%;height:clamp(380px,62vh,720px);cursor:grab;touch-action:pan-y}
 #sky:active{cursor:grabbing}
 .hud{position:absolute;left:16px;top:14px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;
-  color:#7C8A9C;background:rgba(4,6,10,.72);padding:8px 12px;border-radius:8px;pointer-events:none;max-width:78%}
+  color:#8A97A8;background:rgba(4,6,10,.72);padding:8px 12px;border-radius:8px;pointer-events:none;max-width:78%}
 .hud b{color:#C8D6E6}
 .cnt{position:absolute;right:18px;top:14px;text-align:right;font-family:var(--mono);pointer-events:none}
 .cnt span{display:block;font-size:32px;font-weight:700;color:#D9A441;line-height:1}
-.cnt small{font-size:10px;letter-spacing:.24em;color:#6B7684}
+.cnt small{font-size:10px;letter-spacing:.24em;color:#8693A4}
 .timeline{margin:22px 0 8px}
 .timeline label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.18em;
   text-transform:uppercase;color:var(--faint);margin-bottom:12px}
@@ -265,7 +273,7 @@ footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
     <div id="map" hidden>
       <div class="mapwrap">
         <canvas id="sky"></canvas>
-        <div class="hud" id="hud"><b>Drag to turn.</b> Scroll to close. Click a world to read it.</div>
+        <div class="hud" id="hud"><b>Drag sideways to turn.</b> Pinch or scroll to close. Tap a world to read it.</div>
         <div class="cnt"><span id="cnum">611</span><small>CONCLUDED</small></div>
       </div>
       <div class="timeline">
@@ -291,6 +299,9 @@ footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--line);
 
 <script>
 const DATA = ${JSON.stringify(all.map((e) => ({ s: e.season, i: e.idx })))};
+const PLATES = ${JSON.stringify(Object.fromEntries(all.filter((e) => e.plate).map((e) => [`${e.season}-${e.idx}`, e.plate])))};
+const fillPlates = (root) => root.querySelectorAll('img[data-p]').forEach(i => {
+  if (!i.getAttribute('src')) i.src = PLATES[i.dataset.p]; });
 const CARDS = { 1: ${JSON.stringify(s1.map(card))}, 2: ${JSON.stringify(s2.map(card))} };
 const NOTE = {
   1: "Filed to the Galactic Directory. Entry numbers are global; series positions are per system, so the gaps are real. He travels.",
@@ -307,7 +318,7 @@ function paint(){
   document.body.classList.toggle('s2', season === 2);
   const isMap = season === 3;
   grid.hidden = isMap; mapEl.hidden = !isMap;
-  if (!isMap) grid.innerHTML = CARDS[season].join('');
+  if (!isMap) { grid.innerHTML = CARDS[season].join(''); fillPlates(grid); }
   snote.textContent = NOTE[season];
   document.querySelectorAll('.seasons button').forEach(b =>
     b.setAttribute('aria-pressed', String(Number(b.dataset.season) === season)));
@@ -418,17 +429,25 @@ const sky = (() => {
 
   let drag = null;
   cv.addEventListener('pointerdown', e => { drag = { x:e.clientX, y:e.clientY, rx, ry }; cv.setPointerCapture(e.pointerId); });
-  cv.addEventListener('pointerup', () => drag = null);
+  cv.addEventListener('pointerup', e => {
+    const moved = drag ? Math.hypot(e.clientX - drag.x, e.clientY - drag.y) : 99;
+    drag = null;
+    if (moved < 8) {  // a tap (touch has no hover): open the world under the finger
+      const r = cv.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top;
+      const hit = (window.__ws || []).find(o => Math.hypot(o.sx - mx, o.sy - my) < Math.max(18, o.r + 12));
+      if (hit?.w.k) open(hit.w.k);
+    }
+  });
+  cv.addEventListener('pointercancel', () => drag = null);
   cv.addEventListener('pointermove', e => {
     if (drag){ ry = drag.ry + (e.clientX - drag.x) * 0.006; rx = Math.max(-1.3, Math.min(1.3, drag.rx + (e.clientY - drag.y) * 0.006)); draw(); return; }
     const r = cv.getBoundingClientRect(), mx = e.clientX - r.left, my = e.clientY - r.top;
     const hit = (window.__ws || []).find(o => Math.hypot(o.sx - mx, o.sy - my) < Math.max(10, o.r + 8));
     if (hit !== hover){ hover = hit || null; cv.style.cursor = hit?.w.k ? 'pointer' : 'grab';
       hud.innerHTML = hover ? \`<b>\${hover.w.n}</b> · \${hover.w.d}\${hover.w.k ? ' · click to read' : ''}\`
-        : '<b>Drag to turn.</b> Scroll to close. Click a world to read it.';
+        : '<b>Drag sideways to turn.</b> Pinch or scroll to close. Tap a world to read it.';
       draw(); }
   });
-  cv.addEventListener('click', () => { if (hover?.w.k) open(hover.w.k); });
   cv.addEventListener('wheel', e => { e.preventDefault(); zoom = Math.max(0.45, Math.min(3, zoom * (e.deltaY > 0 ? 0.92 : 1.08))); draw(); }, { passive:false });
   tl.addEventListener('input', () => {
     count = Number(tl.value); cnum.textContent = count;
@@ -439,32 +458,41 @@ const sky = (() => {
   addEventListener('resize', () => { if (season === 3) resize(); });
   return { resize, draw };
 })();
-function open(key){
+function show(key){
   const [s] = key.split('-').map(Number);
   season = s; paint();
   home.hidden = true;
   readers.querySelectorAll('.read').forEach(r => r.hidden = true);
   const el = document.getElementById('r-' + key);
   if (el) el.hidden = false;
+  fillPlates(el || document);
   window.scrollTo(0, 0);
-  location.hash = key;
+  const h = el && el.querySelector('h1'); if (h) { h.tabIndex = -1; h.focus({ preventScroll: true }); }
 }
-function close(){
+const open = (key) => { if (location.hash.slice(1) === key) show(key); else location.hash = key; };
+const close = () => { if (location.hash) location.hash = ''; else hide(); };
+function hide(){
   home.hidden = false;
   readers.querySelectorAll('.read').forEach(r => r.hidden = true);
   window.scrollTo(0, 0);
-  history.replaceState(null, '', location.pathname);
 }
+// Hash is the single source of truth: open()/close() callers only change the hash, and
+// hashchange (which Back and Forward also fire) renders the view.
+function route(){
+  const k = location.hash.slice(1);
+  if (k && document.getElementById('r-' + k)) show(k); else hide();
+}
+addEventListener('hashchange', route);
 document.addEventListener('click', e => {
   const o = e.target.closest('[data-open]');
-  if (o) { open(o.dataset.open); return; }
+  if (o) { if (o.tagName !== 'A') open(o.dataset.open); return; }  // anchors navigate by href
   if (e.target.closest('[data-back]')) { close(); return; }
   const s = e.target.closest('[data-season]');
   if (s) { season = Number(s.dataset.season); paint(); }
 });
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && home.hidden) close(); });
 paint();
-if (location.hash) { const k = location.hash.slice(1); if (document.getElementById('r-' + k)) open(k); }
+route();
 </script>`;
 
 const outFile = join(FIC, "site.html");
