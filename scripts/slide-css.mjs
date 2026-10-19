@@ -10,7 +10,7 @@ export const css = (accent) => `
   --accent: ${accent};
   --ink: #F4F8FC;
   --ink-dim: #A9B9CB;
-  --ink-faint: #5E6A7A;
+  --ink-faint: #8693A4;
   --line: rgba(255,255,255,.09);
   --panel: rgba(4,7,12,.72);
   --danger: #FF6B81;
