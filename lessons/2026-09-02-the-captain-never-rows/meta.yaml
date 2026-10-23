@@ -1,10 +1,13 @@
 slug: the-captain-never-rows
-status: ready
+status: published
 channels:
-  devto:     { status: pending, url: "", published: "", reactions: 0, comments: 0 }
+  devto:     { status: published, url: "https://dev.to/darkpandawarrior/the-captain-routes-the-captain-never-rows-4o2p", published: "2026-10-05", reactions: 0, comments: 0 }
   linkedin:  { status: pending, url: "", scheduled: "", published: "", impressions: 0, reactions: 0, comments: 0 }
   hashnode:  { status: pending, url: "", published: "", reactions: 0, comments: 0 }
   medium:    { status: pending, url: "", published: "", claps: 0 }
 
 # --- export draft (canonical: https://dev.to/darkpandawarrior/the-captain-routes-the-captain-never-rows-2k8a-temp-slug-2118672) ---
 #   devto: draft https://dev.to/darkpandawarrior/the-captain-routes-the-captain-never-rows-2k8a-temp-slug-2118672
+
+# --- export publish (canonical: https://dev.to/darkpandawarrior/the-captain-routes-the-captain-never-rows-4o2p) ---
+#   devto: published https://dev.to/darkpandawarrior/the-captain-routes-the-captain-never-rows-4o2p

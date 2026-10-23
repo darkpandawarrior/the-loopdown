@@ -5,10 +5,10 @@ type: lesson
 pillar: engineering-practice
 project: The Loopdown
 tags: [ai-assisted-development, code-review, api-design, kotlin, android]
-status: ready
+status: published
 created: 2026-08-29
-live:
-url_devto:
+live: https://dev.to/darkpandawarrior/plausible-is-worse-than-wrong-2dl2
+url_devto: https://dev.to/darkpandawarrior/plausible-is-worse-than-wrong-2dl2
 url_linkedin:
 url_medium:
 url_hashnode:
@@ -16,6 +16,7 @@ channels: [linkedin, devto, hashnode, medium]
 series: notes-from-the-loop
 cast: [the-borrowed-hand]
 loop_iteration: 15
+published: 2026-10-01
 ---
 
 # Plausible is worse than wrong

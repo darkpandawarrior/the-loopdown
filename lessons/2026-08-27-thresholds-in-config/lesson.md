@@ -5,10 +5,10 @@ type: lesson
 pillar: data-integrity
 project: Doori
 tags: [architecture, configuration, kotlin, refactoring, tuning]
-status: ready
+status: published
 created: 2026-08-27
-live:
-url_devto:
+live: https://dev.to/darkpandawarrior/your-thresholds-do-not-belong-in-constants-3loe
+url_devto: https://dev.to/darkpandawarrior/your-thresholds-do-not-belong-in-constants-3loe
 url_linkedin:
 url_medium:
 url_hashnode:
@@ -16,6 +16,7 @@ channels: [linkedin, devto, hashnode, medium]
 series: chain-of-custody
 cast: [the-archivist]
 loop_iteration: 14
+published: 2026-09-28
 ---
 
 # Your thresholds do not belong in constants
