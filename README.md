@@ -1,4 +1,4 @@
-<p align="center"><img src="docs/assets/banner.svg" alt="The Loopdown — one lesson, four platforms" width="640"></p>
+<p align="center"><img src="docs/assets/banner.svg" alt="The Loopdown: one lesson, four platforms" width="640"></p>
 
 # The Loopdown
 

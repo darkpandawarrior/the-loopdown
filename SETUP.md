@@ -1,4 +1,4 @@
-# Setup — accounts, tokens, and the pipeline
+# Setup: accounts, tokens, and the pipeline
 
 Do the account/token steps yourself (I can't create accounts or hold credentials). Each
 takes 2–5 min. As you add each token, `node scripts/check-setup.mjs` lights it up.
@@ -9,12 +9,12 @@ cp ../.env.example ../.env          # then fill ../.env with what you have
 node check-setup.mjs                # readiness dashboard (safe, read-only)
 ```
 
-You never commit `.env` — it's gitignored. Nothing here leaves your machine except the
+You never commit `.env`. It's gitignored. Nothing here leaves your machine except the
 authenticated API calls *you* trigger.
 
 ---
 
-## 1. GitHub (push the repo) — do this first
+## 1. GitHub (push the repo): do this first
 Needed so cover images have a public URL and the repo becomes your portfolio wall.
 
 ```bash
@@ -27,25 +27,25 @@ Then set in `.env`:
 GITHUB_ASSET_BASE_URL=https://raw.githubusercontent.com/darkpandawarrior/the-loopdown/main
 ```
 
-## 2. dev.to — easiest, full automation ✅
+## 2. dev.to: easiest, full automation ✅
 1. dev.to → **Settings → Extensions** → *DEV Community API Keys* → name it "loopdown" → **Generate API Key**.
 2. Paste into `.env` → `DEVTO_API_KEY=...`
 3. `node check-setup.mjs` should show dev.to ●.
 
 Publishing creates a **draft by default** (`--draft`) so you review on-platform; `--publish` goes live.
 
-## 3. Hashnode — FREE via import (its API needs Pro, so we skip the API) 🔵
+## 3. Hashnode: FREE via import (its API needs Pro, so we skip the API) 🔵
 As of **2026-05-13** Hashnode's publish API requires **Pro**. On free, don't bother with a
 token. Instead: after dev.to publishes, either paste `out/hashnode.md`, or use Hashnode's
-**"Import from URL"** and give it your dev.to article URL — canonical stays clean, cost stays zero.
+**"Import from URL"** and give it your dev.to article URL: canonical stays clean, cost stays zero.
 Leave `HASHNODE_TOKEN`/`HASHNODE_PUBLICATION_ID` blank.
 
-## 4. LinkedIn — FREE, paste 🔵
+## 4. LinkedIn: FREE, paste 🔵
 Export writes `out/linkedin.txt` (with the full-write-up link already embedded). Paste it into
-LinkedIn yourself — free, and honestly the best for early engagement (native posts beat
+LinkedIn yourself, free, and honestly the best for early engagement (native posts beat
 scheduler posts). Buffer auto-queueing is optional and not needed; leave its keys blank.
 
-## 5. Medium — legacy API, one-click *if your account can still mint a token* 🔵
+## 5. Medium: legacy API, one-click *if your account can still mint a token* 🔵
 Medium stopped issuing new integration tokens, but existing ones work and the field is
 often still there:
 1. **medium.com → Settings → Security and apps → Integration tokens.** If you see it,
@@ -54,13 +54,13 @@ often still there:
 3. Now `export.mjs` posts to Medium directly (draft-first), with canonical pointing home.
 
 **If the token field is gone** on your account: leave both blank. Export still writes
-`out/medium.md`, and you use **medium.com/p/import** to pull your published dev.to URL —
+`out/medium.md`, and you use **medium.com/p/import** to pull your published dev.to URL,
 one extra click, and canonical stays clean either way.
 
-## 6. Canonical home (SEO) — optional but recommended
+## 6. Canonical home (SEO): optional but recommended
 So cross-posts don't compete with each other in search, one URL is "the original" and the
 rest declare `canonical → it`. Default (`profile.yaml: canonical_strategy: auto`): **dev.to
-is the original**, Hashnode/Medium point to it. Better long-term: your own site —
+is the original**, Hashnode/Medium point to it. Better long-term: your own site,
 set `CANONICAL_BASE_URL=https://darkpandawarrior.github.io/the-loopdown` in `.env` and
 *you* own the SEO. Edit handles/cross-links once in **`profile.yaml`**; they thread into
 every post's footer automatically.
@@ -88,5 +88,5 @@ to refresh the README wall.
 
 ## Safety notes
 - Default is **dry-run**. Nothing publishes unless you pass `--draft`/`--publish`.
-- No tool ever touches your LinkedIn account directly — worst case it queues to Buffer, which you approve.
+- No tool ever touches your LinkedIn account directly. Worst case it queues to Buffer, which you approve.
 - Tokens live only in `.env` (gitignored). Rotate any token by regenerating on the platform and re-pasting.
