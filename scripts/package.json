@@ -16,7 +16,10 @@
     "metrics": "node metrics.mjs",
     "dashboard": "node dashboard.mjs",
     "bestiary": "node bestiary.mjs",
-    "summon": "node summon.mjs"
+    "summon": "node summon.mjs",
+    "post-done": "node post-done.mjs",
+    "sync-state": "node sync-state.mjs",
+    "test": "node lib/linkedin.mjs && node post-done.mjs --self-test && node sync-state.mjs --self-test && node lib/frontmatter.mjs"
   },
   "dependencies": {
     "@resvg/resvg-js": "^2.6.2",

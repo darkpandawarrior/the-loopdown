@@ -74,11 +74,11 @@ The rhyme is the reward.
 | 2026-11-07 | [My README said 66 gateways. The code said 70.](lessons/2026-11-07-my-readme-said-66-gateways-the-code-said-70/lesson.md) | chain-of-custody | ⚪ draft | — |
 | 2026-11-05 | [SupervisorJob does not catch anything](lessons/2026-11-05-supervisorjob-does-not-catch-anything/lesson.md) | the-coroutine-court | ⚪ draft | — |
 | 2026-11-03 | [The wake lock with an expiry date](lessons/2026-11-03-the-wake-lock-with-an-expiry-date/lesson.md) | the-night-shift | ⚪ draft | — |
-| 2026-09-02 | [The captain routes. The captain never rows.](lessons/2026-09-02-the-captain-never-rows/lesson.md) | notes-from-the-loop | 🟡 ready | — |
-| 2026-08-31 | [I audited my own migrations. It was not fine.](lessons/2026-08-31-the-ferryman-rows-one-way/lesson.md) | crossing-the-schema | 🟡 ready | — |
-| 2026-08-29 | [Plausible is worse than wrong](lessons/2026-08-29-the-borrowed-hand/lesson.md) | notes-from-the-loop | 🟡 ready | — |
-| 2026-08-27 | [Your thresholds do not belong in constants](lessons/2026-08-27-thresholds-in-config/lesson.md) | chain-of-custody | 🟡 ready | — |
-| 2026-08-25 | [Invariants are cheap. Silent corruption is not.](lessons/2026-08-25-invariants-are-cheap/lesson.md) | chain-of-custody | 🟡 ready | — |
+| 2026-09-02 | [The captain routes. The captain never rows.](lessons/2026-09-02-the-captain-never-rows/lesson.md) | notes-from-the-loop | 🟢 live | [read →](https://dev.to/darkpandawarrior/the-captain-routes-the-captain-never-rows-4o2p) |
+| 2026-08-31 | [I audited my own migrations. It was not fine.](lessons/2026-08-31-the-ferryman-rows-one-way/lesson.md) | crossing-the-schema | 🟢 live | [read →](https://dev.to/darkpandawarrior/i-audited-my-own-migrations-it-was-not-fine-f45) |
+| 2026-08-29 | [Plausible is worse than wrong](lessons/2026-08-29-the-borrowed-hand/lesson.md) | notes-from-the-loop | 🟢 live | [read →](https://dev.to/darkpandawarrior/plausible-is-worse-than-wrong-2dl2) |
+| 2026-08-27 | [Your thresholds do not belong in constants](lessons/2026-08-27-thresholds-in-config/lesson.md) | chain-of-custody | 🟢 live | [read →](https://dev.to/darkpandawarrior/your-thresholds-do-not-belong-in-constants-3loe) |
+| 2026-08-25 | [Invariants are cheap. Silent corruption is not.](lessons/2026-08-25-invariants-are-cheap/lesson.md) | chain-of-custody | 🟢 live | [read →](https://dev.to/darkpandawarrior/invariants-are-cheap-silent-corruption-is-not-c9m) |
 | 2026-08-20 | [Every filter needs a documented exception](lessons/2026-08-20-documented-exception/lesson.md) | sensors-who-lie | 🟢 live | [read →](https://dev.to/darkpandawarrior/every-filter-needs-a-documented-exception-2j3k) |
 | 2026-08-18 | [Never silently change a number someone gets paid on](lessons/2026-08-18-never-silently-change-a-number/lesson.md) | chain-of-custody | 🟢 live | [read →](https://dev.to/darkpandawarrior/never-silently-change-a-number-someone-gets-paid-on-h4n) |
 | 2026-08-13 | [When two sensors disagree, rank them](lessons/2026-08-13-accelerometer-outranks-gps/lesson.md) | sensors-who-lie | 🟢 live | [read →](https://dev.to/darkpandawarrior/when-two-sensors-disagree-rank-them-12ki) |
@@ -201,7 +201,7 @@ Each lesson goes out as a *coordinated cross-platform drop* ([SETUP.md](SETUP.md
 
 - **dev.to + Hashnode + Medium** → native APIs (draft-first, per-post approval). Medium
   uses the legacy token if your account has one, else a one-click import from the canonical URL.
-- **LinkedIn** → paste-ready file with the full-write-up link auto-embedded (optional Buffer queue). No tool touches the account directly.
+- **LinkedIn** → paste-ready file with the full-write-up link auto-embedded (optional Buffer queue). No tool touches the account directly. A reminder lands on Tue/Thu/Sat at 09:00; after posting, `npm run post-done <url>` (in `scripts/`) records it. See [SETUP.md](SETUP.md#posting-to-linkedin).
 - **One canonical home** so cross-posts don't compete in search, the rest declare `canonical → it`.
 - **Consistent branded footer** on every article: series, featured cast, "previously in this
   series," follow links, all generated from [`profile.yaml`](profile.yaml). Edit once, threads everywhere.
