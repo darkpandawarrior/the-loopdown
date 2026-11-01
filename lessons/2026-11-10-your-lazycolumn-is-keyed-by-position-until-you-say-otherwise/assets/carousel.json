@@ -1,0 +1,85 @@
+{
+  "accent": "#4aa3ff",
+  "brand": "The Loopdown",
+  "handle": "@darkpandawarrior",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Ghosts in the Recomposition",
+      "ghost": "id",
+      "cast": "the-recomposer",
+      "head": [
+        "No key.",
+        "Nothing wrong.",
+        "That's the bug."
+      ],
+      "body": [
+        "I found a chat list in my own app that identifies rows by position.",
+        "",
+        "It works. I wanted to know why."
+      ],
+      "arrow": "swipe"
+    },
+    {
+      "type": "character",
+      "kicker": "The cast",
+      "head": [
+        "The Recomposer,",
+        "*waiting"
+      ],
+      "cast": "the-recomposer",
+      "exhibit": "05",
+      "caption": "Not redrawing anything today. He's waiting for the list to reorder, and for a row to remember something."
+    },
+    {
+      "type": "code",
+      "kicker": "The list",
+      "head": [
+        "Position-keyed,",
+        "with an id in hand"
+      ],
+      "code": [
+        "items(messages) { message ->",
+        "  AgentMessageBubble(",
+        "    message = message,",
+        "    feedbackRating =",
+        "      feedbackMap[message.id],",
+        "  )",
+        "}"
+      ],
+      "filename": "AgentChatScreen.kt",
+      "callout": [
+        "It's safe for two lucky reasons.",
+        "The chat only appends, and the row holds no remembered state."
+      ]
+    },
+    {
+      "type": "statement",
+      "kicker": "Why not five characters",
+      "head": [
+        "The id is a",
+        "timestamp"
+      ],
+      "body": [
+        "The id is \"u_\" or \"a_\" plus a millisecond timestamp. Two messages from one side in the same millisecond would collide.",
+        "",
+        "A keyed list throws on a duplicate key. Add the key and you inherit a crash that was always latent."
+      ]
+    },
+    {
+      "type": "takeaway",
+      "kicker": "The payload",
+      "head": [
+        "Key it when you",
+        "write the list.",
+        "*Then check the id."
+      ],
+      "body": [
+        "A missing key stays invisible while rows are stateless and the list only grows.",
+        "",
+        "That's exactly why it survives review."
+      ],
+      "arrow": "dev.to / LinkedIn"
+    }
+  ]
+}

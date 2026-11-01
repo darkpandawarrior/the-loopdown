@@ -1,0 +1,20 @@
+template: code-card
+accent: "#4aa3ff"
+pillar: ghosts in the recomposition
+handle: "@darkpandawarrior"
+title:
+  - "Your LazyColumn is keyed"
+  - "by position by default"
+code:
+  - "items(messages) { message ->"
+  - "  AgentMessageBubble(message)"
+  - "}"
+  - ""
+  - "items("
+  - "  messages,"
+  - "  key = { it.id }"
+  - ") { message -> ... }"
+takeaway:
+  - "Add the key when you write the list."
+  - "Then check the id is unique."
+cast: the-recomposer
