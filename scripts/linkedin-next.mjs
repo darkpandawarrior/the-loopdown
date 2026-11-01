@@ -14,6 +14,7 @@ import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { stalenessDecision } from "./lib/linkedin.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, "..");
@@ -49,7 +50,18 @@ const bodyNoLink = body.replace(/^.*(?:Full write-up|📖).*$/gm, "").replace(/\
 const pdf = join(lessonsDir, next, "assets", "carousel.pdf");
 const title = (readFileSync(join(lessonsDir, next, "lesson.md"), "utf8").match(/title:\s*"?([^"\n]+)"?/) || [])[1] || next;
 
-const out = `# LinkedIn queue
+// How long has this same post been waiting? The clock starts the first time a lesson
+// is "Up next" and resets only when a different lesson takes the slot (post-done does that).
+const statePath = join(ROOT, "data", "linkedin-state.json");
+let prevState = null;
+try { prevState = JSON.parse(readFileSync(statePath, "utf8")); } catch {}
+const wait = stalenessDecision(prevState, next);
+writeFileSync(statePath, JSON.stringify(wait.state, null, 2) + "\n");
+const waitDays = Math.max(wait.days, 2);
+const nag = wait.stale ? `waiting ${waitDays} days, ${pending.length} queued` : "";
+const banner = nag ? `> **STALE: this post has been ${nag}.** Paste it, then run \`npm run post-done <url>\` in scripts/.\n\n` : "";
+
+const out = `${banner}# LinkedIn queue
 
 Prepared ${new Date().toISOString().slice(0, 16).replace("T", " ")}. ${pending.length} post(s) pending.
 
@@ -60,7 +72,7 @@ Prepared ${new Date().toISOString().slice(0, 16).replace("T", " ")}. ${pending.l
 - [ ] Post it
 - [ ] First comment: paste the links block
 - [ ] Reply to every comment for the first 2 hours
-- [ ] Record the URL in \`lessons/${next}/meta.yaml\` and set the linkedin status
+- [ ] Record it: \`cd scripts && npm run post-done <the post URL>\` (updates \`lessons/${next}/meta.yaml\` and moves the queue on)
 
 ### The post
 
@@ -83,7 +95,11 @@ const outPath = join(ROOT, "data", "linkedin-queue.md");
 writeFileSync(outPath, out);
 console.log(`prepared: ${title}\n  -> ${outPath}`);
 
+// Notification only, never `display alert`: an alert is modal and blocks the run.
+const subtitle = nag ? `LinkedIn post ${nag}` : "LinkedIn post ready to paste";
 try {
   execFileSync("osascript", ["-e",
-    `display notification "${title.replace(/"/g, "")}" with title "The Loopdown" subtitle "LinkedIn post ready to paste"`]);
+    `display notification "${title.replace(/"/g, "")}" with title "The Loopdown" subtitle "${subtitle}"`]);
 } catch {}
+// Stale: also open the queue file once per run so it cannot stay out of sight.
+if (nag) { try { execFileSync("open", [outPath]); } catch {} }

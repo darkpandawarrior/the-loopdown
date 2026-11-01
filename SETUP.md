@@ -45,6 +45,12 @@ Export writes `out/linkedin.txt` (with the full-write-up link already embedded).
 LinkedIn yourself, free, and honestly the best for early engagement (native posts beat
 scheduler posts). Buffer auto-queueing is optional and not needed; leave its keys blank.
 
+### Posting to LinkedIn
+
+1. A notification appears at 09:00 on Tue, Thu and Sat, and `data/linkedin-queue.md` holds the next post. If it waits more than 48 hours the notification says how long, the file opens itself and carries a STALE banner.
+2. Paste the post from `data/linkedin-queue.md`, attach the carousel PDF, then add the first comment.
+3. Run `cd scripts && npm run post-done <post URL>`. It records the URL in `meta.yaml` and `lesson.md`, rebuilds the registry and moves the queue to the next post. Add `--dry-run` to preview.
+
 ## 5. Medium: legacy API, one-click *if your account can still mint a token* 🔵
 Medium stopped issuing new integration tokens, but existing ones work and the field is
 often still there:

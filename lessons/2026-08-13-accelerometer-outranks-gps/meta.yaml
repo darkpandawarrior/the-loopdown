@@ -6,11 +6,5 @@ channels:
   hashnode:  { status: pending, url: "", published: "", reactions: 0, comments: 0 }
   medium:    { status: pending, url: "", published: "", claps: 0 }
 
-# --- export draft (canonical: https://dev.to/darkpandawarrior/when-two-sensors-disagree-rank-them-3ce2-temp-slug-4172699) ---
-#   devto: draft https://dev.to/darkpandawarrior/when-two-sensors-disagree-rank-them-3ce2-temp-slug-4172699
-
-# --- export draft (canonical: https://dev.to/darkpandawarrior/when-two-sensors-disagree-rank-them-3ce2-temp-slug-4172699) ---
-#   devto: draft https://dev.to/darkpandawarrior/when-two-sensors-disagree-rank-them-3ce2-temp-slug-4172699
-
 # --- export publish (canonical: https://dev.to/darkpandawarrior/when-two-sensors-disagree-rank-them-12ki) ---
 #   devto: published https://dev.to/darkpandawarrior/when-two-sensors-disagree-rank-them-12ki
