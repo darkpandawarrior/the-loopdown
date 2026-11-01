@@ -76,6 +76,10 @@ jobs:
           node scripts/lint-coverage.mjs fiction/morkinstar-journals || fail=1
           exit $fail
 
+      - name: Script self-tests (LinkedIn URL check, staleness, state sync)
+        working-directory: scripts
+        run: npm test
+
       - name: Graphics render smoke test
         run: |
           for d in lessons/*/; do

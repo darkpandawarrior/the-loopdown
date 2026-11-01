@@ -6,11 +6,5 @@ channels:
   hashnode:  { status: pending, url: "", published: "", reactions: 0, comments: 0 }
   medium:    { status: pending, url: "", published: "", claps: 0 }
 
-# --- export draft (canonical: https://dev.to/darkpandawarrior/never-silently-change-a-number-someone-gets-paid-on-4m55-temp-slug-4450928) ---
-#   devto: draft https://dev.to/darkpandawarrior/never-silently-change-a-number-someone-gets-paid-on-4m55-temp-slug-4450928
-
-# --- export draft (canonical: https://dev.to/darkpandawarrior/never-silently-change-a-number-someone-gets-paid-on-4m55-temp-slug-4450928) ---
-#   devto: draft https://dev.to/darkpandawarrior/never-silently-change-a-number-someone-gets-paid-on-4m55-temp-slug-4450928
-
 # --- export publish (canonical: https://dev.to/darkpandawarrior/never-silently-change-a-number-someone-gets-paid-on-h4n) ---
 #   devto: published https://dev.to/darkpandawarrior/never-silently-change-a-number-someone-gets-paid-on-h4n

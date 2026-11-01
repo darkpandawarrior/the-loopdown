@@ -157,6 +157,11 @@ try {
   const warned = /WARNING/.test(out);
   if (warned) log(`  note: export warned. ${out.split("\n").filter((l) => /WARNING/.test(l)).join(" | ")}`);
   log(`  ${queue.length - 1} left in the queue`);
+  // Keep meta.yaml and lesson.md in step with state.json so the records cannot drift again.
+  try {
+    const synced = execFileSync(NODE, [join(HERE, "sync-state.mjs")], { cwd: ROOT, encoding: "utf8" }).trim();
+    log(`  ${synced.split("\n")[0]}`);
+  } catch (e) { log(`  note: sync-state failed (${String(e.message).split("\n")[0]}). Run it by hand.`); }
 } catch (e) {
   log(`PUBLISH FAILED for ${next}: ${String(e.stdout || e.message).trim().split("\n").slice(-6).join(" | ")}`);
   process.exit(1);

@@ -208,10 +208,10 @@
         "cost-engineering",
         "tooling"
       ],
-      "status": "ready",
+      "status": "published",
       "created": "2026-09-02",
-      "live": "",
-      "url_devto": "",
+      "live": "https://dev.to/darkpandawarrior/the-captain-routes-the-captain-never-rows-4o2p",
+      "url_devto": "https://dev.to/darkpandawarrior/the-captain-routes-the-captain-never-rows-4o2p",
       "url_linkedin": "",
       "url_medium": "",
       "url_hashnode": "",
@@ -226,7 +226,10 @@
         "the-fleet"
       ],
       "loop_iteration": "17",
-      "links": {}
+      "published": "2026-10-05",
+      "links": {
+        "devto": "https://dev.to/darkpandawarrior/the-captain-routes-the-captain-never-rows-4o2p"
+      }
     },
     {
       "file": "lessons/2026-08-31-the-ferryman-rows-one-way/lesson.md",
@@ -243,10 +246,10 @@
         "testing",
         "kotlin"
       ],
-      "status": "ready",
+      "status": "published",
       "created": "2026-08-31",
-      "live": "",
-      "url_devto": "",
+      "live": "https://dev.to/darkpandawarrior/i-audited-my-own-migrations-it-was-not-fine-f45",
+      "url_devto": "https://dev.to/darkpandawarrior/i-audited-my-own-migrations-it-was-not-fine-f45",
       "url_linkedin": "",
       "url_medium": "",
       "url_hashnode": "",
@@ -261,7 +264,10 @@
         "the-ferryman"
       ],
       "loop_iteration": "16",
-      "links": {}
+      "published": "2026-10-03",
+      "links": {
+        "devto": "https://dev.to/darkpandawarrior/i-audited-my-own-migrations-it-was-not-fine-f45"
+      }
     },
     {
       "file": "lessons/2026-08-29-the-borrowed-hand/lesson.md",
@@ -278,10 +284,10 @@
         "kotlin",
         "android"
       ],
-      "status": "ready",
+      "status": "published",
       "created": "2026-08-29",
-      "live": "",
-      "url_devto": "",
+      "live": "https://dev.to/darkpandawarrior/plausible-is-worse-than-wrong-2dl2",
+      "url_devto": "https://dev.to/darkpandawarrior/plausible-is-worse-than-wrong-2dl2",
       "url_linkedin": "",
       "url_medium": "",
       "url_hashnode": "",
@@ -296,7 +302,10 @@
         "the-borrowed-hand"
       ],
       "loop_iteration": "15",
-      "links": {}
+      "published": "2026-10-01",
+      "links": {
+        "devto": "https://dev.to/darkpandawarrior/plausible-is-worse-than-wrong-2dl2"
+      }
     },
     {
       "file": "lessons/2026-08-27-thresholds-in-config/lesson.md",
@@ -313,10 +322,10 @@
         "refactoring",
         "tuning"
       ],
-      "status": "ready",
+      "status": "published",
       "created": "2026-08-27",
-      "live": "",
-      "url_devto": "",
+      "live": "https://dev.to/darkpandawarrior/your-thresholds-do-not-belong-in-constants-3loe",
+      "url_devto": "https://dev.to/darkpandawarrior/your-thresholds-do-not-belong-in-constants-3loe",
       "url_linkedin": "",
       "url_medium": "",
       "url_hashnode": "",
@@ -331,7 +340,10 @@
         "the-archivist"
       ],
       "loop_iteration": "14",
-      "links": {}
+      "published": "2026-09-28",
+      "links": {
+        "devto": "https://dev.to/darkpandawarrior/your-thresholds-do-not-belong-in-constants-3loe"
+      }
     },
     {
       "file": "lessons/2026-08-25-invariants-are-cheap/lesson.md",
@@ -348,10 +360,10 @@
         "kotlin",
         "testing"
       ],
-      "status": "ready",
+      "status": "published",
       "created": "2026-08-25",
-      "live": "",
-      "url_devto": "",
+      "live": "https://dev.to/darkpandawarrior/invariants-are-cheap-silent-corruption-is-not-c9m",
+      "url_devto": "https://dev.to/darkpandawarrior/invariants-are-cheap-silent-corruption-is-not-c9m",
       "url_linkedin": "",
       "url_medium": "",
       "url_hashnode": "",
@@ -366,7 +378,10 @@
         "the-archivist"
       ],
       "loop_iteration": "13",
-      "links": {}
+      "published": "2026-09-26",
+      "links": {
+        "devto": "https://dev.to/darkpandawarrior/invariants-are-cheap-silent-corruption-is-not-c9m"
+      }
     },
     {
       "file": "lessons/2026-08-20-documented-exception/lesson.md",
