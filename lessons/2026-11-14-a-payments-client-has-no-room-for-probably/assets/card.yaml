@@ -1,0 +1,19 @@
+template: code-card
+accent: "#c48bff"
+pillar: one brain two bodies
+handle: "@darkpandawarrior"
+title:
+  - "A payments client has"
+  - "no room for probably"
+code:
+  - "val idempotencyKey ="
+  - "  current.idempotencyKey"
+  - "    ?: Uuid.random().toString()"
+  - ""
+  - "// fails: key stays"
+  - "// succeeds: key cleared"
+  - "// product changes: key reset"
+takeaway:
+  - "Make the retry safe, not unlikely."
+  - "The key lives as long as the intent."
+cast: the-concussed-witness

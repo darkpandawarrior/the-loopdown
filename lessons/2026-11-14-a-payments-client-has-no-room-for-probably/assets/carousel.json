@@ -1,0 +1,86 @@
+{
+  "accent": "#c48bff",
+  "brand": "The Loopdown",
+  "handle": "@darkpandawarrior",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "One Brain, Two Bodies",
+      "ghost": "?",
+      "cast": "the-concussed-witness",
+      "head": [
+        "The request",
+        "timed out.",
+        "Did you charge them?"
+      ],
+      "body": [
+        "\"Probably not\" is not a state a payments client can be in.",
+        "",
+        "Failed and did not happen are different claims."
+      ],
+      "arrow": "swipe"
+    },
+    {
+      "type": "character",
+      "kicker": "The cast",
+      "head": [
+        "A timeout is a",
+        "*quiet witness"
+      ],
+      "cast": "the-concussed-witness",
+      "exhibit": "01",
+      "caption": "It went silent mid-sentence. The only safe way to ask again is to ask the same question."
+    },
+    {
+      "type": "code",
+      "kicker": "The key",
+      "head": [
+        "The ViewModel owns",
+        "the attempt"
+      ],
+      "code": [
+        "data class CreateOrderRequest(",
+        "  val catalogItemId: String,",
+        "  val gatewayId: String,",
+        "  val idempotencyKey: String,",
+        ")",
+        "",
+        "val key = state.idempotencyKey",
+        "  ?: Uuid.random().toString()"
+      ],
+      "filename": "PaymentProtocol.kt / CheckoutViewModel.kt",
+      "callout": [
+        "No amount in the request. The server owns the price.",
+        "The key survives a failure and dies on success or a changed selection."
+      ]
+    },
+    {
+      "type": "statement",
+      "kicker": "The server's half",
+      "head": [
+        "Eight calls,",
+        "one order"
+      ],
+      "body": [
+        "The store writes the record, then publishes the key with putIfAbsent. The loser returns the winner's order.",
+        "",
+        "A test fires eight concurrent createOrder calls with one key and asserts a single order id."
+      ]
+    },
+    {
+      "type": "takeaway",
+      "kicker": "The payload",
+      "head": [
+        "Make the retry",
+        "safe, not",
+        "*unlikely"
+      ],
+      "body": [
+        "The backend is in-memory, so dedup is process-local. I haven't traced a retry after a hard decline.",
+        "",
+        "Both limits stated, neither hidden."
+      ],
+      "arrow": "dev.to / LinkedIn"
+    }
+  ]
+}
