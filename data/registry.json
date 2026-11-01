@@ -2,7 +2,7 @@
   "generated": "run `node scripts/build-registry.mjs`",
   "counts": {
     "archive": 10,
-    "lessons": 17,
+    "lessons": 23,
     "cast": 10,
     "series": 8,
     "anthology": 48
@@ -194,6 +194,216 @@
     }
   ],
   "lessons": [
+    {
+      "file": "lessons/2026-11-14-a-payments-client-has-no-room-for-probably/lesson.md",
+      "dir": "2026-11-14-a-payments-client-has-no-room-for-probably",
+      "title": "A payments client has no room for probably",
+      "slug": "a-payments-client-has-no-room-for-probably",
+      "type": "lesson",
+      "pillar": "kmp",
+      "project": "PaymentsLab-KMP",
+      "tags": [
+        "payments",
+        "idempotency",
+        "kotlin",
+        "kmp",
+        "viewmodel"
+      ],
+      "status": "draft",
+      "created": "2026-11-14",
+      "live": "",
+      "url_devto": "",
+      "url_linkedin": "",
+      "url_medium": "",
+      "url_hashnode": "",
+      "channels": [
+        "linkedin",
+        "devto",
+        "hashnode",
+        "medium"
+      ],
+      "series": "one-brain-two-bodies",
+      "cast": [
+        "the-concussed-witness"
+      ],
+      "loop_iteration": "23",
+      "links": {}
+    },
+    {
+      "file": "lessons/2026-11-12-gateway-number-71-is-one-line-and-nothing-checks-it/lesson.md",
+      "dir": "2026-11-12-gateway-number-71-is-one-line-and-nothing-checks-it",
+      "title": "Gateway number 71 is one line, and nothing checks it",
+      "slug": "gateway-number-71-is-one-line-and-nothing-checks-it",
+      "type": "lesson",
+      "pillar": "build-in-public",
+      "project": "PaymentsLab-KMP",
+      "tags": [
+        "kotlin",
+        "koin",
+        "architecture",
+        "kmp",
+        "dependency-injection"
+      ],
+      "status": "draft",
+      "created": "2026-11-12",
+      "live": "",
+      "url_devto": "",
+      "url_linkedin": "",
+      "url_medium": "",
+      "url_hashnode": "",
+      "channels": [
+        "linkedin",
+        "devto",
+        "hashnode",
+        "medium"
+      ],
+      "series": "notes-from-the-loop",
+      "cast": [
+        "the-understudy"
+      ],
+      "loop_iteration": "22",
+      "links": {}
+    },
+    {
+      "file": "lessons/2026-11-10-your-lazycolumn-is-keyed-by-position-until-you-say-otherwise/lesson.md",
+      "dir": "2026-11-10-your-lazycolumn-is-keyed-by-position-until-you-say-otherwise",
+      "title": "Your LazyColumn is keyed by position until you say otherwise",
+      "slug": "your-lazycolumn-is-keyed-by-position-until-you-say-otherwise",
+      "type": "lesson",
+      "pillar": "compose-performance",
+      "project": "Doori",
+      "tags": [
+        "compose",
+        "lazycolumn",
+        "state",
+        "android",
+        "kotlin"
+      ],
+      "status": "draft",
+      "created": "2026-11-10",
+      "live": "",
+      "url_devto": "",
+      "url_linkedin": "",
+      "url_medium": "",
+      "url_hashnode": "",
+      "channels": [
+        "linkedin",
+        "devto",
+        "hashnode",
+        "medium"
+      ],
+      "series": "ghosts-in-the-recomposition",
+      "cast": [
+        "the-recomposer"
+      ],
+      "loop_iteration": "21",
+      "links": {}
+    },
+    {
+      "file": "lessons/2026-11-07-my-readme-said-66-gateways-the-code-said-70/lesson.md",
+      "dir": "2026-11-07-my-readme-said-66-gateways-the-code-said-70",
+      "title": "My README said 66 gateways. The code said 70.",
+      "slug": "my-readme-said-66-gateways-the-code-said-70",
+      "type": "lesson",
+      "pillar": "data-integrity",
+      "project": "PaymentsLab-KMP",
+      "tags": [
+        "documentation",
+        "testing",
+        "kotlin",
+        "readme",
+        "build-in-public"
+      ],
+      "status": "draft",
+      "created": "2026-11-07",
+      "live": "",
+      "url_devto": "",
+      "url_linkedin": "",
+      "url_medium": "",
+      "url_hashnode": "",
+      "channels": [
+        "linkedin",
+        "devto",
+        "hashnode",
+        "medium"
+      ],
+      "series": "chain-of-custody",
+      "cast": [
+        "the-archivist"
+      ],
+      "loop_iteration": "20",
+      "links": {}
+    },
+    {
+      "file": "lessons/2026-11-05-supervisorjob-does-not-catch-anything/lesson.md",
+      "dir": "2026-11-05-supervisorjob-does-not-catch-anything",
+      "title": "SupervisorJob does not catch anything",
+      "slug": "supervisorjob-does-not-catch-anything",
+      "type": "lesson",
+      "pillar": "concurrency",
+      "project": "Doori",
+      "tags": [
+        "kotlin",
+        "coroutines",
+        "android",
+        "error-handling",
+        "supervisorjob"
+      ],
+      "status": "draft",
+      "created": "2026-11-05",
+      "live": "",
+      "url_devto": "",
+      "url_linkedin": "",
+      "url_medium": "",
+      "url_hashnode": "",
+      "channels": [
+        "linkedin",
+        "devto",
+        "hashnode",
+        "medium"
+      ],
+      "series": "the-coroutine-court",
+      "cast": [
+        "the-messenger"
+      ],
+      "loop_iteration": "19",
+      "links": {}
+    },
+    {
+      "file": "lessons/2026-11-03-the-wake-lock-with-an-expiry-date/lesson.md",
+      "dir": "2026-11-03-the-wake-lock-with-an-expiry-date",
+      "title": "The wake lock with an expiry date",
+      "slug": "the-wake-lock-with-an-expiry-date",
+      "type": "lesson",
+      "pillar": "background-execution",
+      "project": "Doori",
+      "tags": [
+        "android",
+        "wakelock",
+        "foreground-service",
+        "doze",
+        "battery"
+      ],
+      "status": "draft",
+      "created": "2026-11-03",
+      "live": "",
+      "url_devto": "",
+      "url_linkedin": "",
+      "url_medium": "",
+      "url_hashnode": "",
+      "channels": [
+        "linkedin",
+        "devto",
+        "hashnode",
+        "medium"
+      ],
+      "series": "the-night-shift",
+      "cast": [
+        "doze-the-jailer"
+      ],
+      "loop_iteration": "18",
+      "links": {}
+    },
     {
       "file": "lessons/2026-09-02-the-captain-never-rows/lesson.md",
       "dir": "2026-09-02-the-captain-never-rows",
@@ -818,8 +1028,13 @@
   "cast": [
     {
       "id": "the-concussed-witness",
-      "appearances": 5,
+      "appearances": 6,
       "in": [
+        {
+          "title": "A payments client has no room for probably",
+          "file": "lessons/2026-11-14-a-payments-client-has-no-room-for-probably/lesson.md",
+          "date": "2026-11-14"
+        },
         {
           "title": "Every filter needs a documented exception",
           "file": "lessons/2026-08-20-documented-exception/lesson.md",
@@ -849,8 +1064,13 @@
     },
     {
       "id": "the-archivist",
-      "appearances": 4,
+      "appearances": 5,
       "in": [
+        {
+          "title": "My README said 66 gateways. The code said 70.",
+          "file": "lessons/2026-11-07-my-readme-said-66-gateways-the-code-said-70/lesson.md",
+          "date": "2026-11-07"
+        },
         {
           "title": "Your thresholds do not belong in constants",
           "file": "lessons/2026-08-27-thresholds-in-config/lesson.md",
@@ -875,8 +1095,13 @@
     },
     {
       "id": "the-recomposer",
-      "appearances": 2,
+      "appearances": 3,
       "in": [
+        {
+          "title": "Your LazyColumn is keyed by position until you say otherwise",
+          "file": "lessons/2026-11-10-your-lazycolumn-is-keyed-by-position-until-you-say-otherwise/lesson.md",
+          "date": "2026-11-10"
+        },
         {
           "title": "collectAsState is quietly leaking your work",
           "file": "lessons/2026-07-31-collectasstate-leak/lesson.md",
@@ -886,6 +1111,54 @@
           "title": "Your LazyColumn recomposes on every scroll",
           "file": "lessons/2026-07-24-lazycolumn-recomposition/lesson.md",
           "date": "2026-07-24"
+        }
+      ]
+    },
+    {
+      "id": "the-understudy",
+      "appearances": 2,
+      "in": [
+        {
+          "title": "Gateway number 71 is one line, and nothing checks it",
+          "file": "lessons/2026-11-12-gateway-number-71-is-one-line-and-nothing-checks-it/lesson.md",
+          "date": "2026-11-12"
+        },
+        {
+          "title": "expect/actual is the wrong default in KMP",
+          "file": "lessons/2026-07-29-kmp-expect-actual-default/lesson.md",
+          "date": "2026-07-29"
+        }
+      ]
+    },
+    {
+      "id": "the-messenger",
+      "appearances": 2,
+      "in": [
+        {
+          "title": "SupervisorJob does not catch anything",
+          "file": "lessons/2026-11-05-supervisorjob-does-not-catch-anything/lesson.md",
+          "date": "2026-11-05"
+        },
+        {
+          "title": "CancellationException is not an assassin",
+          "file": "lessons/2026-07-20-coroutine-cancellation-messenger/lesson.md",
+          "date": "2026-07-20"
+        }
+      ]
+    },
+    {
+      "id": "doze-the-jailer",
+      "appearances": 2,
+      "in": [
+        {
+          "title": "The wake lock with an expiry date",
+          "file": "lessons/2026-11-03-the-wake-lock-with-an-expiry-date/lesson.md",
+          "date": "2026-11-03"
+        },
+        {
+          "title": "The 5-second window that crashes your service",
+          "file": "lessons/2026-07-22-foreground-service-five-seconds/lesson.md",
+          "date": "2026-07-22"
         }
       ]
     },
@@ -932,46 +1205,13 @@
           "date": "2026-08-13"
         }
       ]
-    },
-    {
-      "id": "the-understudy",
-      "appearances": 1,
-      "in": [
-        {
-          "title": "expect/actual is the wrong default in KMP",
-          "file": "lessons/2026-07-29-kmp-expect-actual-default/lesson.md",
-          "date": "2026-07-29"
-        }
-      ]
-    },
-    {
-      "id": "doze-the-jailer",
-      "appearances": 1,
-      "in": [
-        {
-          "title": "The 5-second window that crashes your service",
-          "file": "lessons/2026-07-22-foreground-service-five-seconds/lesson.md",
-          "date": "2026-07-22"
-        }
-      ]
-    },
-    {
-      "id": "the-messenger",
-      "appearances": 1,
-      "in": [
-        {
-          "title": "CancellationException is not an assassin",
-          "file": "lessons/2026-07-20-coroutine-cancellation-messenger/lesson.md",
-          "date": "2026-07-20"
-        }
-      ]
     }
   ],
   "series": [
     {
       "id": "chain-of-custody",
       "title": "Chain Of Custody",
-      "episodes": 4
+      "episodes": 5
     },
     {
       "id": "crossing-the-schema",
@@ -981,17 +1221,17 @@
     {
       "id": "ghosts-in-the-recomposition",
       "title": "Ghosts In The Recomposition",
-      "episodes": 2
+      "episodes": 3
     },
     {
       "id": "notes-from-the-loop",
       "title": "Notes From The Loop",
-      "episodes": 2
+      "episodes": 3
     },
     {
       "id": "one-brain-two-bodies",
       "title": "One Brain Two Bodies",
-      "episodes": 1
+      "episodes": 2
     },
     {
       "id": "sensors-who-lie",
@@ -1001,12 +1241,12 @@
     {
       "id": "the-coroutine-court",
       "title": "The Coroutine Court",
-      "episodes": 1
+      "episodes": 2
     },
     {
       "id": "the-night-shift",
       "title": "The Night Shift",
-      "episodes": 1
+      "episodes": 2
     }
   ],
   "anthology": {
