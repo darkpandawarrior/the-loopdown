@@ -1,0 +1,84 @@
+{
+  "accent": "#d9a441",
+  "brand": "The Loopdown",
+  "handle": "@darkpandawarrior",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Notes from the Loop",
+      "ghost": "71",
+      "cast": "the-understudy",
+      "head": [
+        "Adding a gateway",
+        "is one line.",
+        "Nothing checks it."
+      ],
+      "body": [
+        "70 gateways when I counted, so the next is 71. I'm proud of that line.",
+        "",
+        "Then I asked what happens if two gateways share an id."
+      ],
+      "arrow": "swipe"
+    },
+    {
+      "type": "character",
+      "kicker": "The cast",
+      "head": [
+        "Cast by Koin,",
+        "*not by me"
+      ],
+      "cast": "the-understudy",
+      "exhibit": "06",
+      "caption": "Perfect for a small fixed role. Nobody checks that two understudies didn't turn up for the same part."
+    },
+    {
+      "type": "code",
+      "kicker": "The registry",
+      "head": [
+        "Last one wins,",
+        "quietly"
+      ],
+      "code": [
+        "class DefaultPaymentGatewayRegistry(",
+        "  override val gateways: List<PaymentGateway>,",
+        ") {",
+        "  private val byId =",
+        "    gateways.associateBy { it.id }",
+        "}"
+      ],
+      "filename": "PaymentGatewayRegistry.kt",
+      "callout": [
+        "associateBy keeps the last element on a key clash.",
+        "I searched the code and tests for a duplicate-id check. Found none."
+      ]
+    },
+    {
+      "type": "statement",
+      "kicker": "The trade",
+      "head": [
+        "Nobody reads",
+        "the whole list"
+      ],
+      "body": [
+        "The container assembles it. That's why adding a provider touches nothing.",
+        "",
+        "It's also why a rule over the whole list has nowhere natural to live."
+      ]
+    },
+    {
+      "type": "takeaway",
+      "kicker": "The payload",
+      "head": [
+        "Own the check on",
+        "the list the",
+        "*container builds"
+      ],
+      "body": [
+        "One require() at construction. It fails at startup, not mid-payment.",
+        "",
+        "I'm not claiming a duplicate exists. Only that nothing could tell me."
+      ],
+      "arrow": "dev.to / LinkedIn"
+    }
+  ]
+}

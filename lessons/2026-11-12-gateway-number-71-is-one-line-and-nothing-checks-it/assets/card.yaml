@@ -1,0 +1,20 @@
+template: code-card
+accent: "#d9a441"
+pillar: notes from the loop
+handle: "@darkpandawarrior"
+title:
+  - "Gateway 71 is one line."
+  - "Nothing checks it."
+code:
+  - "gateways.associateBy { it.id }"
+  - ""
+  - "// two modules, same GatewayId?"
+  - "// last one wins. no error."
+  - ""
+  - "require(gateways"
+  - "  .map { it.id }.distinct().size"
+  - "    == gateways.size)"
+takeaway:
+  - "The container assembles the list."
+  - "So own the check on all of it."
+cast: the-understudy
