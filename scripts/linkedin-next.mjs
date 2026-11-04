@@ -14,7 +14,7 @@ import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { stalenessDecision } from "./lib/linkedin.mjs";
+import { linkedinUrl, stalenessDecision } from "./lib/linkedin.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, "..");
@@ -22,7 +22,7 @@ const lessonsDir = join(ROOT, "lessons");
 
 const meta = (d) => { const p = join(lessonsDir, d, "meta.yaml"); return existsSync(p) ? readFileSync(p, "utf8") : ""; };
 const devtoUrl = (d) => (meta(d).match(/(https:\/\/dev\.to\/\S+)/) || [])[1] || "";
-const linkedinDone = (d) => /linkedin:[\s\S]{0,240}?url:\s*"?https/.test(meta(d));
+const linkedinDone = (d) => /^https/.test(linkedinUrl(meta(d)));
 const isReady = (d) => /^status:\s*(ready|published)\s*$/m.test(meta(d));
 
 const all = readdirSync(lessonsDir).filter((d) => /^\d{4}-\d{2}-\d{2}-/.test(d)).sort();
@@ -35,7 +35,7 @@ const url = devtoUrl(next);
 
 // the previous post that DID go out on LinkedIn, for the series callback
 const prevLi = all.filter(linkedinDone).pop();
-const prevLiUrl = prevLi ? (meta(prevLi).match(/linkedin:[\s\S]*?url:\s*"?(https:\/\/[^"\s]+)/) || [])[1] : "";
+const prevLiUrl = prevLi ? linkedinUrl(meta(prevLi)) : "";
 
 const textPath = join(lessonsDir, next, "out", "linkedin.txt");
 const body = existsSync(textPath)
