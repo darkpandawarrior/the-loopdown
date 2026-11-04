@@ -1,8 +1,10 @@
 // Pure decisions for the assisted LinkedIn flow, kept apart so they can be tested.
 //   node scripts/lib/linkedin.mjs        # self-test
-import { LI_URL } from "./record.mjs";
+import { LI_URL, readChannel } from "./record.mjs";
 
 export const STALE_HOURS = 48;
+
+export const linkedinUrl = (meta) => readChannel(meta, "linkedin").url;
 
 /** Accept only https://www.linkedin.com/... with no whitespace. Returns "" when valid, else the reason. */
 export function urlProblem(u) {
@@ -37,6 +39,12 @@ export function selfTest() {
   eq(urlProblem("https://www.linkedin.com.evil.io/x") !== "", true, "look-alike host rejected");
   eq(urlProblem("https://www.linkedin.com/a b") !== "", true, "whitespace rejected");
   eq(urlProblem("") !== "", true, "empty rejected");
+  const devto = '  devto: { status: published, url: "https://dev.to/darkpandawarrior/your-lazycolumn-recomposes-on-every-scroll-3amj" }';
+  eq(linkedinUrl(`channels:\n  linkedin: { status: pending, url: "" }\n${devto}\n`), "", "empty flow LinkedIn URL does not borrow the following dev.to URL");
+  eq(linkedinUrl(`channels:\n  linkedin:\n    status: pending\n    url: ""\n${devto}\n`), "", "empty block LinkedIn URL stays empty");
+  const posted = "https://www.linkedin.com/posts/siddharth-pandalai_the-concussed-witness-ugcPost-7484693809122045952-8zta";
+  eq(linkedinUrl(`channels:\n  linkedin: { status: published, url: "${posted}" }\n${devto}\n`), posted, "posted flow LinkedIn URL is retained");
+  eq(linkedinUrl(`channels:\n  linkedin:\n    status: published\n    url: ${posted}\n${devto}\n`), posted, "posted block LinkedIn URL is retained");
   const t0 = Date.parse("2026-11-01T09:00:00Z"), h = 3.6e6;
   const fresh = stalenessDecision(null, "a", t0);
   eq(fresh.stale, false, "first sight is not stale");
