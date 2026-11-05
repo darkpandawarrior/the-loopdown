@@ -1,0 +1,20 @@
+template: code-card
+accent: "#6f86c9"
+pillar: chain of custody
+handle: "@darkpandawarrior"
+title:
+  - "My README said 66."
+  - "The code said 70."
+code:
+  - "val trueCount ="
+  - "  singleInstanceGatewayCount +"
+  - "  1 + // wallet"
+  - "  allMobileMoneyConfigs.size +"
+  - "  allHostedGatewayConfigs.size +"
+  - "  allStubGatewayConfigs.size"
+  - ""
+  - "assertTrue(readme.contains(trueCount))"
+takeaway:
+  - "Derive the number in a test."
+  - "Make the README answer to it."
+cast: the-archivist

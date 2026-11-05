@@ -1,0 +1,19 @@
+template: code-card
+accent: "#4ec9b0"
+pillar: the coroutine court
+handle: "@darkpandawarrior"
+title:
+  - "SupervisorJob does"
+  - "not catch anything"
+code:
+  - "CoroutineScope("
+  - "  SupervisorJob() +"
+  - "  Dispatchers.IO"
+  - ")"
+  - ""
+  - "// siblings survive."
+  - "// the exception goes nowhere."
+takeaway:
+  - "It decides who else is cancelled."
+  - "Not where the error goes."
+cast: the-messenger

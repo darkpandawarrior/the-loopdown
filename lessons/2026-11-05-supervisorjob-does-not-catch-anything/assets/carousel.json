@@ -1,0 +1,86 @@
+{
+  "accent": "#4ec9b0",
+  "brand": "The Loopdown",
+  "handle": "@darkpandawarrior",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "The Coroutine Court",
+      "ghost": "0",
+      "cast": "the-messenger",
+      "head": [
+        "Supervised.",
+        "Not",
+        "handled."
+      ],
+      "body": [
+        "My app scope has a SupervisorJob, four launches into it, and zero exception handlers.",
+        "",
+        "I searched for CoroutineExceptionHandler. Zero hits."
+      ],
+      "arrow": "swipe"
+    },
+    {
+      "type": "character",
+      "kicker": "The cast",
+      "head": [
+        "A cameo from",
+        "*the Messenger"
+      ],
+      "cast": "the-messenger",
+      "exhibit": "07",
+      "caption": "One launch in my app honours his rule: rethrow the note, log the rest. The three after it never met him."
+    },
+    {
+      "type": "code",
+      "kicker": "The careful one",
+      "head": [
+        "The backfill knows",
+        "where errors go"
+      ],
+      "code": [
+        "appScope.launch {",
+        "  runCatching { backfill() }",
+        "    .onFailure { f ->",
+        "      if (f is CancellationException",
+        "          || f !is Exception) throw f",
+        "      Napier.e(\"retry next start\", f)",
+        "    }",
+        "}"
+      ],
+      "filename": "MilewayApplication.kt",
+      "callout": [
+        "Three siblings follow it with no wrapper.",
+        "SupervisorJob keeps them alive. It does not catch for them."
+      ]
+    },
+    {
+      "type": "statement",
+      "kicker": "What the name means",
+      "head": [
+        "It stops the spread",
+        "sideways"
+      ],
+      "body": [
+        "A failing child won't cancel its siblings. That's the entire feature.",
+        "",
+        "With no handler in the context, the exception reaches the thread's uncaught handler, and on Android that ends the process."
+      ]
+    },
+    {
+      "type": "takeaway",
+      "kicker": "The payload",
+      "head": [
+        "Decide where a",
+        "failure goes before",
+        "*who it may cancel"
+      ],
+      "body": [
+        "One handler in the scope, or a wrapper on each launch.",
+        "",
+        "I have no crash report for these, and I haven't read every callee. The gap is real either way."
+      ],
+      "arrow": "dev.to / LinkedIn"
+    }
+  ]
+}

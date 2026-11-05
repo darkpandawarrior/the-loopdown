@@ -1,0 +1,87 @@
+{
+  "accent": "#6f86c9",
+  "brand": "The Loopdown",
+  "handle": "@darkpandawarrior",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Chain of Custody",
+      "ghost": "66",
+      "cast": "the-archivist",
+      "head": [
+        "README: 66.",
+        "Fixture: 68.",
+        "Code: 70."
+      ],
+      "body": [
+        "Nobody lied. All three numbers had been true once.",
+        "",
+        "Nothing was invented. It just stopped being updated."
+      ],
+      "arrow": "swipe"
+    },
+    {
+      "type": "character",
+      "kicker": "The cast",
+      "head": [
+        "This time the Archivist",
+        "*audits me"
+      ],
+      "cast": "the-archivist",
+      "exhibit": "03",
+      "caption": "Keeps every paper in order and is faintly smug about it. Show your working applies to the README too."
+    },
+    {
+      "type": "code",
+      "kicker": "The fix",
+      "head": [
+        "The build",
+        "remembers for me"
+      ],
+      "code": [
+        "val trueCount =",
+        "  singleInstanceGatewayCount +  // 15",
+        "  1 +                           // wallet",
+        "  allMobileMoneyConfigs.size +",
+        "  allHostedGatewayConfigs.size +",
+        "  allStubGatewayConfigs.size",
+        "",
+        "assertTrue(readme.contains(",
+        "  \"$trueCount gateways behind it\"))"
+      ],
+      "filename": "ReadmeGatewayCountTest.kt",
+      "callout": [
+        "The 15 is a hand-kept constant.",
+        "The comment says where to update it. The seam is written down."
+      ]
+    },
+    {
+      "type": "statement",
+      "kicker": "The catch",
+      "head": [
+        "It guards one sentence,",
+        "not the document"
+      ],
+      "body": [
+        "Two screens below it, the README's module map said 14 include()s in settings.gradle.kts.",
+        "",
+        "The file has 17."
+      ]
+    },
+    {
+      "type": "takeaway",
+      "kicker": "The payload",
+      "head": [
+        "Derive it in a test,",
+        "or say you",
+        "*couldn't"
+      ],
+      "body": [
+        "Then go find the next hand-written number. There is one.",
+        "",
+        "Counts are as of the commits cited and will move."
+      ],
+      "arrow": "dev.to / LinkedIn"
+    }
+  ]
+}

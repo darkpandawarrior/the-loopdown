@@ -1,0 +1,85 @@
+{
+  "accent": "#ff9f45",
+  "brand": "The Loopdown",
+  "handle": "@darkpandawarrior",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "The Night Shift",
+      "ghost": "60m",
+      "cast": "doze-the-jailer",
+      "head": [
+        "The wake lock",
+        "with an",
+        "expiry date."
+      ],
+      "body": [
+        "I added a one hour timeout so it could never leak. Then I searched for the line that renews it.",
+        "",
+        "There isn't one."
+      ],
+      "arrow": "swipe"
+    },
+    {
+      "type": "character",
+      "kicker": "The cast",
+      "head": [
+        "The guard who reads",
+        "*the paperwork"
+      ],
+      "cast": "doze-the-jailer",
+      "exhibit": "04",
+      "caption": "Not cruel, just by the book. He doesn't mind a lock you hold. He notices the one that quietly ran out."
+    },
+    {
+      "type": "code",
+      "kicker": "The lock",
+      "head": [
+        "One acquire,",
+        "one deadline"
+      ],
+      "code": [
+        "wakeLock = pm.newWakeLock(",
+        "    PowerManager.PARTIAL_WAKE_LOCK,",
+        "    \"mileway:tracking\",",
+        ").apply {",
+        "    setReferenceCounted(false)",
+        "    acquire(WAKE_LOCK_TIMEOUT_MS)  // 1 hour",
+        "}"
+      ],
+      "filename": "LocationTrackingService.kt",
+      "callout": [
+        "One call site, in the trip-start path.",
+        "Nothing runs at minute 59 to renew it."
+      ]
+    },
+    {
+      "type": "statement",
+      "kicker": "The dead twin",
+      "head": [
+        "Two sets of numbers,",
+        "one of them live"
+      ],
+      "body": [
+        "LocationTrackingConstants.kt declares its own wake lock tag and a ten minute maximum. No Kotlin file in the repo references either.",
+        "",
+        "The real timeout is a private constant in a different file. Grep for it and you find the wrong one first."
+      ]
+    },
+    {
+      "type": "takeaway",
+      "kicker": "The payload",
+      "head": [
+        "A timeout is",
+        "a leak guard.",
+        "*It is also a cliff."
+      ],
+      "body": [
+        "I haven't measured minute 61, so I won't invent what happens there.",
+        "",
+        "Renew it on a schedule you can name, or write down why expiry is fine."
+      ],
+      "arrow": "dev.to / LinkedIn"
+    }
+  ]
+}

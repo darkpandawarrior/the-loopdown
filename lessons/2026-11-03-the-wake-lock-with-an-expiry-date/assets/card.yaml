@@ -1,0 +1,20 @@
+template: code-card
+accent: "#ff9f45"
+pillar: the night shift
+handle: "@darkpandawarrior"
+title:
+  - "The wake lock with"
+  - "an expiry date"
+code:
+  - "pm.newWakeLock("
+  - "  PARTIAL_WAKE_LOCK,"
+  - "  \"mileway:tracking\""
+  - ").apply {"
+  - "  acquire(60 * 60 * 1000L)"
+  - "}"
+  - ""
+  - "// who renews it at minute 59?"
+takeaway:
+  - "A timeout is a leak guard."
+  - "It is also a cliff."
+cast: doze-the-jailer

@@ -1,6 +1,7 @@
 # Notes From The Loop
 
-_Part of [The Loopdown](../README.md). 2 episode(s)._
+_Part of [The Loopdown](../README.md). 3 episode(s)._
 
 1. **[Plausible is worse than wrong](../lessons/2026-08-29-the-borrowed-hand/lesson.md)** — 2026-08-29
 2. **[The captain routes. The captain never rows.](../lessons/2026-09-02-the-captain-never-rows/lesson.md)** — 2026-09-02
+3. **[Gateway number 71 is one line, and nothing checks it](../lessons/2026-11-12-gateway-number-71-is-one-line-and-nothing-checks-it/lesson.md)** — 2026-11-12 _(draft)_

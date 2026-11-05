@@ -68,6 +68,12 @@ The rhyme is the reward.
 
 | Date | Title | Series | Status | Live |
 |------|-------|--------|--------|------|
+| 2026-11-14 | [A payments client has no room for probably](lessons/2026-11-14-a-payments-client-has-no-room-for-probably/lesson.md) | one-brain-two-bodies | ⚪ draft | — |
+| 2026-11-12 | [Gateway number 71 is one line, and nothing checks it](lessons/2026-11-12-gateway-number-71-is-one-line-and-nothing-checks-it/lesson.md) | notes-from-the-loop | ⚪ draft | — |
+| 2026-11-10 | [Your LazyColumn is keyed by position until you say otherwise](lessons/2026-11-10-your-lazycolumn-is-keyed-by-position-until-you-say-otherwise/lesson.md) | ghosts-in-the-recomposition | ⚪ draft | — |
+| 2026-11-07 | [My README said 66 gateways. The code said 70.](lessons/2026-11-07-my-readme-said-66-gateways-the-code-said-70/lesson.md) | chain-of-custody | ⚪ draft | — |
+| 2026-11-05 | [SupervisorJob does not catch anything](lessons/2026-11-05-supervisorjob-does-not-catch-anything/lesson.md) | the-coroutine-court | ⚪ draft | — |
+| 2026-11-03 | [The wake lock with an expiry date](lessons/2026-11-03-the-wake-lock-with-an-expiry-date/lesson.md) | the-night-shift | ⚪ draft | — |
 | 2026-09-02 | [The captain routes. The captain never rows.](lessons/2026-09-02-the-captain-never-rows/lesson.md) | notes-from-the-loop | 🟢 live | [read →](https://dev.to/darkpandawarrior/the-captain-routes-the-captain-never-rows-4o2p) |
 | 2026-08-31 | [I audited my own migrations. It was not fine.](lessons/2026-08-31-the-ferryman-rows-one-way/lesson.md) | crossing-the-schema | 🟢 live | [read →](https://dev.to/darkpandawarrior/i-audited-my-own-migrations-it-was-not-fine-f45) |
 | 2026-08-29 | [Plausible is worse than wrong](lessons/2026-08-29-the-borrowed-hand/lesson.md) | notes-from-the-loop | 🟢 live | [read →](https://dev.to/darkpandawarrior/plausible-is-worse-than-wrong-2dl2) |
@@ -90,16 +96,16 @@ The rhyme is the reward.
 
 | Character | Appearances | In |
 |-----------|-------------|----|
-| `the-concussed-witness` | 5 | [Every filter needs a documented exception](lessons/2026-08-20-documented-exception/lesson.md), [When two sensors disagree, rank them](lessons/2026-08-13-accelerometer-outranks-gps/lesson.md), [One global threshold is how you delete valid data](lessons/2026-08-06-one-global-threshold/lesson.md), [Filtered should never mean deleted](lessons/2026-08-04-filtered-never-deleted/lesson.md), [Teaching a phone to disbelieve its own GPS](lessons/2026-07-19-mileway-dead-reckoning/lesson.md) |
-| `the-archivist` | 4 | [Your thresholds do not belong in constants](lessons/2026-08-27-thresholds-in-config/lesson.md), [Invariants are cheap. Silent corruption is not.](lessons/2026-08-25-invariants-are-cheap/lesson.md), [Never silently change a number someone gets paid on](lessons/2026-08-18-never-silently-change-a-number/lesson.md), [Your data model is where uncertainty goes to die](lessons/2026-08-11-uncertainty-dies-in-data-model/lesson.md) |
-| `the-recomposer` | 2 | [collectAsState is quietly leaking your work](lessons/2026-07-31-collectasstate-leak/lesson.md), [Your LazyColumn recomposes on every scroll](lessons/2026-07-24-lazycolumn-recomposition/lesson.md) |
+| `the-concussed-witness` | 6 | [A payments client has no room for probably](lessons/2026-11-14-a-payments-client-has-no-room-for-probably/lesson.md), [Every filter needs a documented exception](lessons/2026-08-20-documented-exception/lesson.md), [When two sensors disagree, rank them](lessons/2026-08-13-accelerometer-outranks-gps/lesson.md), [One global threshold is how you delete valid data](lessons/2026-08-06-one-global-threshold/lesson.md), [Filtered should never mean deleted](lessons/2026-08-04-filtered-never-deleted/lesson.md), [Teaching a phone to disbelieve its own GPS](lessons/2026-07-19-mileway-dead-reckoning/lesson.md) |
+| `the-archivist` | 5 | [My README said 66 gateways. The code said 70.](lessons/2026-11-07-my-readme-said-66-gateways-the-code-said-70/lesson.md), [Your thresholds do not belong in constants](lessons/2026-08-27-thresholds-in-config/lesson.md), [Invariants are cheap. Silent corruption is not.](lessons/2026-08-25-invariants-are-cheap/lesson.md), [Never silently change a number someone gets paid on](lessons/2026-08-18-never-silently-change-a-number/lesson.md), [Your data model is where uncertainty goes to die](lessons/2026-08-11-uncertainty-dies-in-data-model/lesson.md) |
+| `the-recomposer` | 3 | [Your LazyColumn is keyed by position until you say otherwise](lessons/2026-11-10-your-lazycolumn-is-keyed-by-position-until-you-say-otherwise/lesson.md), [collectAsState is quietly leaking your work](lessons/2026-07-31-collectasstate-leak/lesson.md), [Your LazyColumn recomposes on every scroll](lessons/2026-07-24-lazycolumn-recomposition/lesson.md) |
+| `the-understudy` | 2 | [Gateway number 71 is one line, and nothing checks it](lessons/2026-11-12-gateway-number-71-is-one-line-and-nothing-checks-it/lesson.md), [expect/actual is the wrong default in KMP](lessons/2026-07-29-kmp-expect-actual-default/lesson.md) |
+| `the-messenger` | 2 | [SupervisorJob does not catch anything](lessons/2026-11-05-supervisorjob-does-not-catch-anything/lesson.md), [CancellationException is not an assassin](lessons/2026-07-20-coroutine-cancellation-messenger/lesson.md) |
+| `doze-the-jailer` | 2 | [The wake lock with an expiry date](lessons/2026-11-03-the-wake-lock-with-an-expiry-date/lesson.md), [The 5-second window that crashes your service](lessons/2026-07-22-foreground-service-five-seconds/lesson.md) |
 | `the-fleet` | 1 | [The captain routes. The captain never rows.](lessons/2026-09-02-the-captain-never-rows/lesson.md) |
 | `the-ferryman` | 1 | [I audited my own migrations. It was not fine.](lessons/2026-08-31-the-ferryman-rows-one-way/lesson.md) |
 | `the-borrowed-hand` | 1 | [Plausible is worse than wrong](lessons/2026-08-29-the-borrowed-hand/lesson.md) |
 | `the-second-witness` | 1 | [When two sensors disagree, rank them](lessons/2026-08-13-accelerometer-outranks-gps/lesson.md) |
-| `the-understudy` | 1 | [expect/actual is the wrong default in KMP](lessons/2026-07-29-kmp-expect-actual-default/lesson.md) |
-| `doze-the-jailer` | 1 | [The 5-second window that crashes your service](lessons/2026-07-22-foreground-service-five-seconds/lesson.md) |
-| `the-messenger` | 1 | [CancellationException is not an assassin](lessons/2026-07-20-coroutine-cancellation-messenger/lesson.md) |
 
 ### 📚 Archive (10 pieces)
 
