@@ -21,7 +21,7 @@ loop_iteration: 19
 # SupervisorJob does not catch anything
 
 ## The hook
-Primary: My application scope has a SupervisorJob, three sibling launches and zero exception handlers. The name had me feeling safer than the code deserved.
+Primary: My application scope has a SupervisorJob, four launches and zero exception handlers. The name had me feeling safer than the code deserved.
 
 Variants to A/B:
 - SupervisorJob promises that one child's failure won't cancel its siblings. Nobody promised the failure goes anywhere.
@@ -55,7 +55,7 @@ appScope.launch {
 }
 ```
 
-It rethrows `CancellationException` (the Messenger's rule, from episode two of this loop), rethrows anything
+It rethrows `CancellationException` (the Messenger's rule, from episode two of this series), rethrows anything
 that isn't an `Exception`, and logs the rest. The three launches after it have no such wrapper:
 the database seeding plus the weekly maintenance schedule, `recoverReportPayouts()`, and the
 session reconciliation that posts its outcome to a holder.
