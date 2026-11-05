@@ -77,8 +77,8 @@ And all of it, the protocol types, the orchestrator and both ViewModels, lives i
 The platform bodies only host the SDKs. One brain decides what "same attempt" means, on every
 platform that runs it.
 
-Two honest limits. The backend here is an in-memory store, and the code says so in a comment:
-dedup is process-local, and a real database would want a unique constraint on the key. And I
+Two honest limits. The backend here is an in-memory store, and the code calls it a demo store.
+So dedup is process-local, and a real database would want a unique constraint on the key. And I
 haven't traced what the server returns when the same key is retried after a definitive decline
 rather than an ambiguous timeout. That's a design question I'd want answered before this saw
 real money.
