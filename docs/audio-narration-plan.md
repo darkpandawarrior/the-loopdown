@@ -27,3 +27,11 @@ Nothing else in the pipeline changes. data/registry.json can list the audio file
 - Voice: a stock ElevenLabs voice to begin with. Cloning is allowed for the owner's own voice only, and only if he chooses it; never anyone else. Cloning also needs his own recording and, I believe, a paid plan (not verified).
 - Key: stored with `harness secrets set ELEVENLABS_API_KEY` when he has one, read from the environment by the script. It is never typed in chat, never in .env in this repo, never committed.
 - No sign-up, no payment and no key creation by an agent.
+
+## Owner steps (one screen)
+1. Read lessons/2026-07-20-coroutine-cancellation-messenger/narration.md aloud once; change any line that isn't yours.
+2. Decide: free plan with attribution, or paid plan. Sign up yourself at elevenlabs.io (no VPN).
+3. On the pricing page, confirm the free credit amount and that the free plan allows API use.
+4. Create an API key in the ElevenLabs dashboard, then run in your terminal: `! harness secrets set ELEVENLABS_API_KEY` and paste when prompted. Do not paste it in chat.
+5. Tell the agent. It builds scripts/narrate.mjs, makes one MP3 with a stock voice, and you listen before anything is posted.
+6. Voice clone of yourself: only if you want it, with your own recording, after step 5.
