@@ -166,7 +166,7 @@ Each lesson goes out as one coordinated drop. dev.to, Hashnode and Medium use th
 
 ## Where it stands
 
-The repo started on 2026-08-15. The workflow in `.github/workflows/pipeline.yml` lints the voice, smoke-tests the renders and fails on registry drift. The lessons dated after today in the table are drafts waiting for their slot. The cadence I am aiming for is two to three posts a week from the backlog in `data/backlog.md`; I have not hit it yet.
+The repo started on 2026-07-19. The workflow in `.github/workflows/pipeline.yml` lints the voice, smoke-tests the renders and fails on registry drift. The registry shows six drafts. Four are dated after today and wait for their slot. Two, from 2026-11-03 and 2026-11-05, are past their date and still unpublished. The cadence I am aiming for is two to three posts a week from the backlog in `data/backlog.md`; I have not hit it yet.
 
 ## Licence
 
